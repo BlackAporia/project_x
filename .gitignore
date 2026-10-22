@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+# Cartridge session keys and burner keys must never be committed
+.session/
+secrets/
+*.key
+# local runtime output (the bot writes its live data into site/data when run locally)
+runs/
+data/local/
+trainer/__pycache__/
+trainer/.venv/
+*.pyc
+.DS_Store

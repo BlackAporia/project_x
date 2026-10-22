@@ -1,0 +1,24 @@
+[
+ {
+  "date": "2026-10-22T18:51:28.006Z",
+  "generation": 4,
+  "objective": "blend",
+  "fitness": 333.60333333333335,
+  "mean": 176.49833333333333,
+  "p90": 371,
+  "max": 1054,
+  "games": 600,
+  "source": "cmaes"
+ },
+ {
+  "date": "2026-10-22T18:53:29.367Z",
+  "generation": 8,
+  "objective": "blend",
+  "fitness": 348.6066666666667,
+  "mean": 187.13833333333332,
+  "p90": 404,
+  "max": 1212,
+  "games": 600,
+  "source": "cmaes"
+ }
+]
