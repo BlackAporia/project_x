@@ -1,105 +1,32 @@
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts learn --limit 30
+> node --import tsx src/cli.ts leaders --limit 25
 
-[retry] v2 minted_at_block_number failed (1/3): Unexpected token 'R', "Rate limit exceeded
-" is not valid JSON
-[retry] v2 minted_at_block_number failed (1/3): Unexpected token 'R', "Rate limit exceeded
-" is not valid JSON
-[retry] v2 minted_at_block_number failed (1/3): Unexpected token 'R', "Rate limit exceeded
-" is not valid JSON
-[retry] v2 minted_at_block_number failed (1/3): Unexpected token 'R', "Rate limit exceeded
-" is not valid JSON
-[retry] v2 minted_at_block_number failed (1/3): Unexpected token 'R', "Rate limit exceeded
-" is not valid JSON
-[retry] v2 minted_at_block_number failed (1/3): Unexpected token 'R', "Rate limit exceeded
-" is not valid JSON
-[retry] v2 minted_at_block_number failed (1/3): Unexpected token 'R', "Rate limit exceeded
-" is not valid JSON
-[retry] v2 minted_at_block_number failed (1/3): Unexpected token 'R', "Rate limit exceeded
-" is not valid JSON
-[retry] v2 minted_at_block_number failed (1/3): Unexpected token 'R', "Rate limit exceeded
-" is not valid JSON
-[retry] v2 minted_at_block_number failed (1/3): Unexpected token 'R', "Rate limit exceeded
-" is not valid JSON
-[retry] v2 minted_at_block_number failed (1/3): Unexpected token 'R', "Rate limit exceeded
-" is not valid JSON
-[retry] v2 minted_at_block_number failed (1/3): Unexpected token 'R', "Rate limit exceeded
-" is not valid JSON
-[retry] v2 minted_at_block_number failed (1/3): Unexpected token 'R', "Rate limit exceeded
-" is not valid JSON
-[retry] v2 minted_at_block_number failed (1/3): Unexpected token 'R', "Rate limit exceeded
-" is not valid JSON
-[retry] v2 minted_at_block_number failed (1/3): Unexpected token 'R', "Rate limit exceeded
-" is not valid JSON
-[retry] v2 minted_at_block_number failed (1/3): Unexpected token 'R', "Rate limit exceeded
-" is not valid JSON
-[retry] v2 minted_at_block_number failed (1/3): Unexpected token 'R', "Rate limit exceeded
-" is not valid JSON
-[retry] v2 minted_at_block_number failed (1/3): Unexpected token 'R', "Rate limit exceeded
-" is not valid JSON
-[retry] v2 minted_at_block_number failed (1/3): Unexpected token 'R', "Rate limit exceeded
-" is not valid JSON
-[retry] v2 minted_at_block_number failed (1/3): Unexpected token 'R', "Rate limit exceeded
-" is not valid JSON
-[retry] v2 minted_at_block_number failed (1/3): Unexpected token 'R', "Rate limit exceeded
-" is not valid JSON
-[retry] v2 minted_at_block_number failed (1/3): Unexpected token 'R', "Rate limit exceeded
-" is not valid JSON
-[retry] v2 minted_at_block_number failed (1/3): Unexpected token 'R', "Rate limit exceeded
-" is not valid JSON
-[retry] v2 minted_at_block_number failed (1/3): Unexpected token 'R', "Rate limit exceeded
-" is not valid JSON
-[retry] v2 minted_at_block_number failed (1/3): Unexpected token 'R', "Rate limit exceeded
-" is not valid JSON
-[retry] v2 minted_at_block_number failed (1/3): Unexpected token 'R', "Rate limit exceeded
-" is not valid JSON
-[retry] v2 minted_at_block_number failed (1/3): Unexpected token 'R', "Rate limit exceeded
-" is not valid JSON
-[retry] v2 minted_at_block_number failed (1/3): Unexpected token 'R', "Rate limit exceeded
-" is not valid JSON
-[retry] game.get_game_state failed (1/3): Unexpected token 'R', "Rate limit exceeded
-" is not valid JSON
-[retry] game.get_game_state failed (2/3): RPC: starknet_call with params {
-  "request": {
-    "contract_address": "0x023f86f5b4702f6ba114b82fb73448c58aad8f37a28b508b80bf129ee1edc405",
-    "entry_point_selector": "0x2305fda54e31f8525bf15eaf4f2
-[retry] game.get_game_state failed (1/3): RPC: starknet_call with params {
-  "request": {
-    "contract_address": "0x023f86f5b4702f6ba114b82fb73448c58aad8f37a28b508b80bf129ee1edc405",
-    "entry_point_selector": "0x2305fda54e31f8525bf15eaf4f2
-[retry] game.get_game_state failed (2/3): RPC: starknet_call with params {
-  "request": {
-    "contract_address": "0x023f86f5b4702f6ba114b82fb73448c58aad8f37a28b508b80bf129ee1edc405",
-    "entry_point_selector": "0x2305fda54e31f8525bf15eaf4f2
-[retry] game.get_game_state failed (1/3): Unexpected token 'R', "Rate limit exceeded
-" is not valid JSON
-[retry] game.get_game_state failed (1/3): RPC: starknet_call with params {
-  "request": {
-    "contract_address": "0x023f86f5b4702f6ba114b82fb73448c58aad8f37a28b508b80bf129ee1edc405",
-    "entry_point_selector": "0x2305fda54e31f8525bf15eaf4f2
-[retry] game.get_game_state failed (2/3): RPC: starknet_call with params {
-  "request": {
-    "contract_address": "0x023f86f5b4702f6ba114b82fb73448c58aad8f37a28b508b80bf129ee1edc405",
-    "entry_point_selector": "0x2305fda54e31f8525bf15eaf4f2
-[retry] game.get_game_state failed (1/3): RPC: starknet_call with params {
-  "request": {
-    "contract_address": "0x023f86f5b4702f6ba114b82fb73448c58aad8f37a28b508b80bf129ee1edc405",
-    "entry_point_selector": "0x2305fda54e31f8525bf15eaf4f2
-[retry] game.get_game_state failed (2/3): RPC: starknet_call with params {
-  "request": {
-    "contract_address": "0x023f86f5b4702f6ba114b82fb73448c58aad8f37a28b508b80bf129ee1edc405",
-    "entry_point_selector": "0x2305fda54e31f8525bf15eaf4f2
-[retry] game.get_game_state failed (1/3): RPC: starknet_call with params {
-  "request": {
-    "contract_address": "0x023f86f5b4702f6ba114b82fb73448c58aad8f37a28b508b80bf129ee1edc405",
-    "entry_point_selector": "0x2305fda54e31f8525bf15eaf4f2
-[retry] game.get_game_state failed (2/3): RPC: starknet_call with params {
-  "request": {
-    "contract_address": "0x023f86f5b4702f6ba114b82fb73448c58aad8f37a28b508b80bf129ee1edc405",
-    "entry_point_selector": "0x2305fda54e31f8525bf15eaf4f2
-learn: 36 builds analysed, 5 errors (first: 197987108336887595175184694778031091060932289752133940141854870732802: RPC: starknet_call with params {
-  "request": {
-    "contract_address": "0x023f86f5b4702f6ba114b82fb73448c58aad8f37a28b508b80bf129ee1edc405",
-    "entry_point_selector": "0x2305fda54e31f8525bf15eaf4f2)
-  early ratios {"str":0.378,"dex":0.569,"vit":0.59,"int":0.292,"wis":0.372,"cha":0.701} (7 players), late {"str":0.204,"dex":0.631,"vit":0.771,"int":0.038,"wis":0.076,"cha":0.187} (29)
+[retry] https://api-v2-next.up.railway.app/adventurer/19798710833688759517518469477803109106093228 failed (1/2): 400 https://api-v2-next.up.railway.app/adventurer/197987108336887595175184694778031091060932289752133940141854870732802
+  1979871083368875… 2564 xp: not found
+  2969806625053312… 2326 xp: 1978 events (v1 api)
+  2826581908384074… 2323 xp: 1643 events (v1 api)
+[retry] https://api-v2-next.up.railway.app/adventurer/20809708833706908509818485458425100301113499 failed (1/2): 400 https://api-v2-next.up.railway.app/adventurer/208097088337069085098184854584251003011134999183255527427533717897218
+  2080970883370690… 2232 xp: not found
+  1811371416699183… 2215 xp: 1778 events (v1 api)
+  6073564439510733… 2211 xp: 1404 events (v1 api)
+  2674932208381352… 2205 xp: 1751 events (v1 api)
+  3812304958401770… 2191 xp: 1580 events (v1 api)
+  1053122916686200… 2191 xp: 1645 events (v1 api)
+  2300020450041288… 2187 xp: 1993 events (v1 api)
+  3770180041734347… 2186 xp: 1227 events (v1 api)
+  7582485000136117… 2178 xp: 1882 events (v1 api)
+  1735546566697822… 2172 xp: 1573 events (v1 api)
+  2864494333384755… 2166 xp: 2206 events (v1 api)
+  2177858191705762… 2157 xp: 1305 events (v1 api)
+  7582485000136117… 2152 xp: 1712 events (v1 api)
+  1251110025022459… 2150 xp: 1838 events (v1 api)
+  3471093133395644… 2147 xp: 1709 events (v1 api)
+  3622742833398367… 2146 xp: 1244 events (v1 api)
+  1326934875023820… 2144 xp: 1407 events (v1 api)
+  3791242500068058… 2144 xp: 1347 events (v1 api)
+  3226768616724592… 2143 xp: 1592 events (v1 api)
+  2666507225047867… 2136 xp: 1392 events (v1 api)
+  2615957325046960… 2134 xp: 1355 events (v1 api)
+  7582485000136117… 2128 xp: 1543 events (v1 api)
+leaders: 25 games saved to botdata/data/leaders
