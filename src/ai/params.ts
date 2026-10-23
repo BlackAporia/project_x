@@ -87,6 +87,9 @@ export interface PolicyParams {
   rotateMaxRisk?: number;
   /** shop priority of buying a fresh piece for a slot whose worn piece is finished (0: off) */
   rotateBuyGain?: number;
+  /** weapon rotation from this adventurer level (0: off): explore with an unfinished weapon, swap to the finished one
+   *  in battle against strong beasts */
+  rotateWeapon?: number;
   /** kill-shot swap (0/1): before a sure killing blow, wear unfinished pieces and the Gold Ring (one beast attack) */
   killSwap?: number;
   /** ...only when the beast's free hit is expected to cost at most this fraction of current health */
@@ -151,6 +154,7 @@ export const DEFAULT_PARAMS: PolicyParams = {
   rotateG: 0,
   rotateMaxRisk: 0.01,
   rotateBuyGain: 0,
+  rotateWeapon: 0,
   killSwap: 0,
   killSwapMaxHp: 0.1,
   collectGain: 0,

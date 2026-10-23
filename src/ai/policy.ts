@@ -422,6 +422,13 @@ export class Policy {
         continue;
       }
       if (rotateArmor && slot !== SLOT.Weapon && slot !== SLOT.Neck && slot !== SLOT.Ring && adv.equipment[slot].id !== 0) continue;
+      if (rotateArmor && slot === SLOT.Weapon && (this.params.rotateWeapon ?? 0) > 0) {
+        // weapon rotation: explore with an unfinished weapon (weak beasts level it); against a strong beast the
+        // in-battle swap returns to the finished one
+        const w = this.weaponChoice(state);
+        if (w !== null) out.push(w);
+        continue;
+      }
       const cur = adv.equipment[slot];
       let best = cur;
       let bestPower = cur.id === 0 ? -1 : this.itemPower(cur, false);
@@ -563,6 +570,21 @@ export class Policy {
     return tryItems(all) ?? tryItems(all.filter((i) => lootInfo(i.id).slot !== SLOT.Weapon));
   }
 
+  /** Weapon to explore with under weapon rotation (null: keep the current one). */
+  private weaponChoice(state: GameState): number | null {
+    const g = this.params.rotateG ?? 0;
+    const cur = state.adventurer.equipment[SLOT.Weapon];
+    const weapons = state.bag.filter((i) => i.id !== 0 && lootInfo(i.id).slot === SLOT.Weapon);
+    if (cur.id !== 0 && greatness(cur.xp) < g) return null; // still leveling
+    const unfinished = weapons.filter((i) => greatness(i.xp) < g && lootInfo(i.id).tier <= (this.params.collectMaxTier ?? 2));
+    if (unfinished.length && level(state.adventurer) >= (this.params.rotateWeapon ?? 0)) {
+      return unfinished.reduce((m, i) => (this.itemPower(i, false) > this.itemPower(m, false) ? i : m)).id;
+    }
+    // nothing to level: the strongest weapon
+    const best = [cur, ...weapons].reduce((m, i) => (this.itemPower(i, false) > this.itemPower(m, false) ? i : m), cur);
+    return best.id !== cur.id ? best.id : null;
+  }
+
   /** Bag items to drop so gear rotation keeps two free bag slots. */
   bagDrops(state: GameState): number[] {
     if (!this.rotating(state)) return [];
@@ -583,6 +605,8 @@ export class Policy {
       }
       if (greatness(i.xp) < g && info.slot !== SLOT.Weapon) v += 1 + this.farmValue(i.id, adv); // to be leveled
       if (info.slot === SLOT.Weapon && info.type !== weaponType) v += 1.5; // elemental swaps in battle
+      if (info.slot === SLOT.Weapon && this.itemPower(i, false) >= this.itemPower(adv.equipment[SLOT.Weapon], false)) v += 3; // the main weapon while another one levels
+      if (info.slot === SLOT.Weapon && greatness(i.xp) < g && (this.params.rotateWeapon ?? 0) > 0 && info.tier <= (this.params.collectMaxTier ?? 2)) v += 1; // weapon to level
       return v;
     };
     return items
