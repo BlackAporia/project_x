@@ -337,7 +337,13 @@ export class Policy {
       ['wis', Math.min(p.wisCap, Math.floor(r(p.wisRatio, p.wisRatioLate) * lvl))],
       ['str', Math.min(p.strCap, Math.floor(r(p.strRatio, p.strRatioLate) * lvl))],
     ];
+    const gap = p.dexFloorGap ?? 99;
     for (let n = 0; n < adv.statUpgrades; n++) {
+      // guaranteed flee: DEX >= level makes every escape certain (top players' "DEX early" rule)
+      if (gap < 40 && lvl <= (p.dexFloorUntil ?? 99) && cur('dex') < lvl - gap) {
+        alloc.dex += 1;
+        continue;
+      }
       let pick: keyof Stats | null = null;
       let bestDeficit = 0;
       for (const [k, t] of targets) {
@@ -364,6 +370,8 @@ export class Policy {
   itemPower(item: Item, isNew: boolean): number {
     const info = lootInfo(item.id);
     if (item.id === 0) return 0;
+    const h = this.params.itemHorizonXp;
+    if (h !== undefined && h > 0) return tierMultiplier(info.tier) * greatness(Math.min(400, (isNew ? 0 : item.xp) + h));
     const g = isNew ? 1 : greatness(item.xp);
     const gEff = Math.min(20, g + this.params.itemGrowth);
     return tierMultiplier(info.tier) * gEff;
@@ -442,7 +450,7 @@ export class Policy {
         scored.push({ id, slot, gain: 1000 + newPower, price: cost, equip: true, key: true });
       } else if (newPower > curPower * (1 + p.upgradeMargin)) {
         const rel = (newPower - curPower) / Math.max(1, curPower);
-        const weaponBoost = slot === SLOT.Weapon ? 3 : 1; // damage drives gold income and safety
+        const weaponBoost = slot === SLOT.Weapon ? (p.weaponBoost ?? 3) : 1; // damage drives gold income and safety
         scored.push({ id, slot, gain: rel * weaponBoost * 100, price: cost, equip: true, key: info.tier <= 2 });
       }
     }

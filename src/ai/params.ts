@@ -66,6 +66,13 @@ export interface PolicyParams {
   // ---- battle ----
   /** consider swapping gear from the bag when it improves the battle value by at least this much */
   swapMinGain: number;
+  /** keep DEX >= level - dexFloorGap (guaranteed flee) with top priority, up to level dexFloorUntil (gap >= 40: off) */
+  dexFloorGap?: number;
+  dexFloorUntil?: number;
+  /** priority multiplier of weapon upgrades in the shop (damage drives gold income and safety) */
+  weaponBoost?: number;
+  /** item valuation horizon in item XP (all equipped items gain XP together): power = tier x greatness(xp + horizon) */
+  itemHorizonXp?: number;
   /** depth cap of the exact battle solver */
   battleDepth: number;
 
