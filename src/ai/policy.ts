@@ -14,9 +14,9 @@ import {
 } from '../game/adventurer.ts';
 import { beastGoldReward, beastName, beastXpReward } from '../game/beast.ts';
 import { tierMultiplier } from '../game/combat.ts';
-import { ARMOR_SLOTS, POTION_HEALTH_AMOUNT, SLOT, SLOT_NAMES, STARTER_WEAPONS, TYPE } from '../game/constants.ts';
-import { buyItems, currentBeast, equip, selectStatUpgrades } from '../game/engine.ts';
-import { greatness, isJewelry, itemPrice, lootInfo } from '../game/loot.ts';
+import { ARMOR_SLOTS, BAG_SIZE, POTION_HEALTH_AMOUNT, SLOT, SLOT_NAMES, STARTER_WEAPONS, TYPE } from '../game/constants.ts';
+import { buyItems, currentBeast, drop, equip, selectStatUpgrades } from '../game/engine.ts';
+import { applyBagBoost, greatness, isJewelry, itemPrice, itemSuffix, lootInfo } from '../game/loot.ts';
 import { FastRandom, type RandomSource } from '../game/rng.ts';
 import type { Action, Adventurer, Beast, GameState, Item, ItemPurchase, Stats } from '../game/types.ts';
 import { solveBattle, type BattlePlan, type BattleSolution } from './battle.ts';
@@ -196,6 +196,19 @@ export class Policy {
       beastTier: beast.spec.tier,
     };
 
+    // kill-shot swap: level unfinished gear with the kill's item xp
+    if (sol.action === 'attack') {
+      const ks = this.killShotSwap(state, adv, beast);
+      if (ks) {
+        return {
+          phase: 'battle',
+          actions: [{ type: 'equip', items: ks }],
+          reason: `Kill-shot swap vs ${name}: wear ${ks.map((i) => lootInfo(i).name).join(', ')} for the kill (xp to unfinished gear)`,
+          metrics,
+        };
+      }
+    }
+
     // gear swap from the bag (costs one free beast attack)
     const swap = this.params.spareArmor || this.params.spareWeapons || state.bag.some((i) => i.id !== 0) ? this.bestSwap(state, adv, beast) : null;
     if (swap) {
@@ -293,6 +306,14 @@ export class Policy {
       reasons.push(`Stats ${fmtStats(alloc)}`);
     }
 
+    // make room in the bag for gear rotation (finished pieces without a bag boost are dead weight)
+    const drops = this.bagDrops(s);
+    if (drops.length > 0) {
+      actions.push({ type: 'drop', items: drops });
+      s = drop(s, drops, PLANNING_RNG).state;
+      reasons.push(`Drop ${drops.map((i) => lootInfo(i).name).join(', ')}`);
+    }
+
     // equip better items already in the bag (free outside battle)
     const fromBag = this.bagUpgrades(s);
     if (fromBag.length > 0) {
@@ -380,7 +401,23 @@ export class Policy {
   private bagUpgrades(state: GameState): number[] {
     const adv = state.adventurer;
     const out: number[] = [];
+    const rotate = (this.params.jewelryRotateG ?? 0) > 0;
+    const rotateArmor = this.rotating(state);
+    let trial = adv;
     for (let slot = 1; slot <= 8; slot++) {
+      if (rotate && (slot === SLOT.Neck || slot === SLOT.Ring)) {
+        const j = this.jewelryChoice(state, slot);
+        if (j !== null) out.push(j);
+        continue;
+      }
+      if (rotateArmor && slot !== SLOT.Weapon && slot !== SLOT.Neck && slot !== SLOT.Ring && trial.equipment[slot].id !== 0) {
+        const next = this.exploreArmor(state, trial, slot);
+        if (next && next.id !== trial.equipment[slot].id) {
+          out.push(next.id);
+          trial = withItem(trial, next);
+        }
+        continue;
+      }
       const cur = adv.equipment[slot];
       let best = cur;
       let bestPower = cur.id === 0 ? -1 : this.itemPower(cur, false);
@@ -395,6 +432,142 @@ export class Policy {
       if (best.id !== cur.id) out.push(best.id);
     }
     return out;
+  }
+
+  /**
+   * Jewelry to wear (leaders' luck farm). Luck is the greatness of every owned neck/ring piece, bag included, and
+   * luck is the hero's critical hit chance (a crit adds the elemental damage again). Only worn pieces gain xp, so
+   * wear a piece until it reaches greatness `jewelryRotateG`, then the least experienced one; once every piece is
+   * leveled, wear the one with the best worn bonus.
+   */
+  private jewelryChoice(state: GameState, slot: number): number | null {
+    const g = this.params.jewelryRotateG ?? 0;
+    const adv = state.adventurer;
+    const cur = adv.equipment[slot];
+    const bag = state.bag.filter((i) => i.id !== 0 && lootInfo(i.id).slot === slot);
+    if (bag.length === 0) return null;
+    if (cur.id !== 0 && greatness(cur.xp) < g) return null;
+    const growing = bag.filter((i) => greatness(i.xp) < g);
+    if (growing.length) return growing.reduce((m, i) => (i.xp < m.xp ? i : m)).id;
+    const luck = loadAssets(adv, state.bag).stats.luck;
+    const score = (i: Item) => (i.id === 0 ? -1 : jewelryWornScore(i, adv, luck - (cur.id === 4 ? greatness(cur.xp) : 0)));
+    const best = bag.reduce((m, i) => (score(i) > score(m) ? i : m), cur);
+    return best.id !== cur.id ? best.id : null;
+  }
+
+  /** Gear rotation is active (needs item specials: the G20 stat point and the suffix boosts). */
+  rotating(state: GameState): boolean {
+    return (this.params.rotateG ?? 0) > 0 && !state.settings.noItemSpecials;
+  }
+
+  /** Long-run value of finishing an item: its suffix's VIT/CHA boost works from the bag (known once the specials seed is set). */
+  farmValue(itemId: number, adv: Adventurer): number {
+    let v = 0.1 * tierMultiplier(lootInfo(itemId).tier);
+    if (adv.itemSpecialsSeed) {
+      const st: Stats = { str: 0, dex: 0, vit: 0, int: 0, wis: 0, cha: 0, luck: 0 };
+      applyBagBoost(st, itemSuffix(itemId, adv.itemSpecialsSeed));
+      v += st.vit + 0.5 * st.cha;
+    }
+    return v;
+  }
+
+  /** Instant-death risk of the next explore at full health with `item` worn instead of the current piece. */
+  riskWith(state: GameState, stored: Adventurer, item: Item | null): number {
+    const a = loadAssets(item ? withItem(stored, item) : stored, state.bag);
+    const hp = Math.min(1024, maxHealth(a.stats));
+    return this.peril(a, state).instantDeath[hp];
+  }
+
+  /**
+   * Armor piece to explore with: an unfinished piece (it collects obstacle xp and is worn for the kill) when it raises
+   * the explore risk by at most rotateMaxRisk over the best finished piece, otherwise the best finished piece.
+   */
+  private exploreArmor(state: GameState, stored: Adventurer, slot: number): Item | null {
+    const g = this.params.rotateG ?? 0;
+    const cur = stored.equipment[slot];
+    const owned = [cur, ...state.bag.filter((i) => i.id !== 0 && lootInfo(i.id).slot === slot)];
+    const finished = owned.filter((i) => greatness(i.xp) >= g);
+    const best = finished.length ? finished.reduce((m, i) => (this.itemPower(i, false) > this.itemPower(m, false) ? i : m)) : cur;
+    const base = withItem(stored, best);
+    const baseRisk = this.riskWith(state, base, null);
+    const unfinished = owned
+      .filter((i) => greatness(i.xp) < g)
+      .sort((a, b) => (a.id === cur.id ? -1 : b.id === cur.id ? 1 : this.itemPower(b, false) - this.itemPower(a, false)));
+    for (const u of unfinished) if (this.riskWith(state, base, u) - baseRisk <= (this.params.rotateMaxRisk ?? 0.01)) return u;
+    return best;
+  }
+
+  /**
+   * Leaders' kill-shot swap: when the next attack kills the beast anyway, wear unfinished pieces (and the Gold Ring)
+   * for it, so the kill's item xp and gold bonus land on them. Costs one beast attack, so only against weak hits.
+   */
+  private killShotSwap(state: GameState, adv: Adventurer, beast: Beast): number[] | null {
+    const p = this.params;
+    if (!p.killSwap || !this.rotating(state)) return null;
+    const g = p.rotateG ?? 0;
+    const pick = new Map<number, Item>();
+    for (const it of state.bag) {
+      if (it.id === 0) continue;
+      const slot = lootInfo(it.id).slot;
+      const cur = adv.equipment[slot];
+      if (slot === SLOT.Ring && it.id === 8 && !(greatness(cur.xp) < g)) {
+        if (!pick.has(slot) || greatness(pick.get(slot)!.xp) >= g) pick.set(slot, it); // Gold Ring: +3% gold per greatness on the kill
+        continue;
+      }
+      if (greatness(it.xp) >= g || greatness(cur.xp) < g) continue;
+      const prev = pick.get(slot);
+      if (!prev || greatness(prev.xp) >= g || it.xp > prev.xp) pick.set(slot, it); // closest to finishing first
+    }
+    if (pick.size === 0) return null;
+    const tryItems = (items: Item[]): number[] | null => {
+      if (!items.length) return null;
+      const eq = adv.equipment.map((x) => ({ ...x }));
+      for (const it of items) eq[lootInfo(it.id).slot] = { ...it };
+      const swapped = loadAssets({ ...state.adventurer, equipment: eq }, state.bag.map((b) => (items.some((i) => i.id === b.id) ? { id: 0, xp: 0 } : b)));
+      const after = { ...swapped, health: adv.health, beastHealth: adv.beastHealth };
+      // the free hit must be harmless and the next attack must still kill
+      let expDmg = 0;
+      for (const o of beastDamageOptions(after, beast, state.settings, false)) {
+        if (o.dmg >= adv.health) return null;
+        expDmg += o.p * o.dmg;
+      }
+      if (expDmg > (p.killSwapMaxHp ?? 0.1) * adv.health) return null;
+      let pKill = 0;
+      for (const o of heroDamageOptions(after, beast)) if (o.dmg >= adv.beastHealth) pKill += o.p;
+      return pKill >= 0.95 ? items.map((i) => i.id) : null;
+    };
+    const all = [...pick.values()];
+    return tryItems(all) ?? tryItems(all.filter((i) => lootInfo(i.id).slot !== SLOT.Weapon));
+  }
+
+  /** Bag items to drop so gear rotation keeps two free bag slots. */
+  bagDrops(state: GameState): number[] {
+    if (!this.rotating(state)) return [];
+    const items = state.bag.filter((i) => i.id !== 0);
+    const free = BAG_SIZE - items.length;
+    if (free >= 2) return [];
+    const adv = state.adventurer;
+    const g = this.params.rotateG ?? 0;
+    const weaponType = lootInfo(adv.equipment[SLOT.Weapon].id).type;
+    const keep = (i: Item): number => {
+      const info = lootInfo(i.id);
+      if (isJewelry(i.id)) return 100; // luck
+      let v = 0;
+      if (greatness(i.xp) >= 15 && adv.itemSpecialsSeed) {
+        const st: Stats = { str: 0, dex: 0, vit: 0, int: 0, wis: 0, cha: 0, luck: 0 };
+        applyBagBoost(st, itemSuffix(i.id, adv.itemSpecialsSeed));
+        v += 2 * st.vit + st.cha;
+      }
+      if (greatness(i.xp) < g && info.slot !== SLOT.Weapon) v += 1 + this.farmValue(i.id, adv); // to be leveled
+      if (info.slot === SLOT.Weapon && info.type !== weaponType) v += 1.5; // elemental swaps in battle
+      return v;
+    };
+    return items
+      .map((i) => ({ id: i.id, v: keep(i) }))
+      .filter((x) => x.v < 0.6)
+      .sort((a, b) => a.v - b.v)
+      .slice(0, 2 - free)
+      .map((x) => x.id);
   }
 
   /** Potions needed to bring the next explore's instant-death risk under the threshold. */
@@ -431,6 +604,13 @@ export class Policy {
     const claimedSlots = new Set<number>();
     type Cand = { id: number; slot: number; gain: number; price: number; equip: boolean; key: boolean };
     const scored: Cand[] = [];
+    const rotateBuy = this.rotating(state) ? (p.rotateBuyGain ?? 0) : 0;
+    const collect = p.collectGain ?? 0;
+    const ownedTypes = new Set<number>();
+    for (const it of [...adv.equipment.slice(1), ...state.bag]) if (it.id !== 0) ownedTypes.add(lootInfo(it.id).slot * 10 + lootInfo(it.id).type);
+    // slots that already have an unfinished piece waiting in the bag
+    const needsPiece = new Set<number>();
+    if (rotateBuy > 0) for (const i of state.bag) if (i.id !== 0 && greatness(i.xp) < (p.rotateG ?? 0)) needsPiece.add(lootInfo(i.id).slot);
     for (const id of [...new Set(state.market)]) {
       if (owned(id)) continue;
       const info = lootInfo(id);
@@ -438,6 +618,14 @@ export class Policy {
       const cur = adv.equipment[slot];
       const cost = itemPrice(id, adv.stats.cha);
       if (slot === SLOT.Neck || slot === SLOT.Ring) {
+        const collect = p.jewelryCollectGain ?? 0;
+        if (collect > 0) {
+          // every owned piece adds its greatness to luck (= crit chance, capped at 100)
+          const need = Math.max(0, 100 - adv.stats.luck) / 100;
+          const wearNow = cur.id === 0 || ((p.jewelryRotateG ?? 0) > 0 && greatness(cur.xp) >= (p.jewelryRotateG ?? 0));
+          if (cur.id === 0 || need > 0) scored.push({ id, slot, gain: (cur.id === 0 ? 50 : 0) + collect * need, price: cost, equip: wearNow, key: false });
+          continue;
+        }
         if (!p.buyJewelry && cur.id !== 0) continue;
         const gain = jewelryGain(id, adv, cur);
         if (gain > 0) scored.push({ id, slot, gain: cur.id === 0 ? 50 + gain : gain, price: cost, equip: true, key: false });
@@ -445,6 +633,17 @@ export class Policy {
       }
       const newPower = this.itemPower({ id, xp: 0 }, true);
       const curPower = cur.id === 0 ? 0 : this.itemPower(cur, false);
+      if (collect > 0 && cur.id !== 0 && info.tier <= (p.collectMaxTier ?? 2) && !ownedTypes.has(slot * 10 + info.type)) {
+        // elemental alternative for in-battle set swaps (leaders carry every weapon and armor type)
+        scored.push({ id, slot, gain: collect * (info.tier === 1 ? 1 : info.tier === 2 ? 0.6 : 0.3), price: cost, equip: false, key: false });
+      }
+      if (rotateBuy > 0 && slot !== SLOT.Weapon && cur.id !== 0 && greatness(cur.xp) >= (p.rotateG ?? 0) && !needsPiece.has(slot) && info.tier <= (p.collectMaxTier ?? 2)) {
+        // fresh piece for a finished slot: worn right away when the explore risk allows
+        if (this.riskWith(state, state.adventurer, { id, xp: 0 }) - this.riskWith(state, state.adventurer, null) <= (p.rotateMaxRisk ?? 0.01)) {
+          scored.push({ id, slot, gain: rotateBuy * (1 + this.farmValue(id, adv)), price: cost, equip: true, key: false });
+        }
+        continue;
+      }
       if (cur.id === 0) {
         // empty armor slot: very high priority (an empty slot takes +50% damage with 0 armor)
         scored.push({ id, slot, gain: 1000 + newPower, price: cost, equip: true, key: true });
@@ -458,8 +657,14 @@ export class Policy {
     scored.sort((a, b) => b.gain - a.gain);
     const items: ItemPurchase[] = [];
     let savingFor = 0;
+    const picked = new Set<number>();
+    const pickedTypes = new Set<number>();
     for (const c of scored) {
-      if (claimedSlots.has(c.slot)) continue;
+      if (picked.has(c.id)) continue;
+      if (claimedSlots.has(c.slot) && c.equip) continue;
+      // one collected piece per slot and type
+      const typeKey = !c.equip && c.slot !== SLOT.Neck && c.slot !== SLOT.Ring ? c.slot * 10 + lootInfo(c.id).type : 0;
+      if (typeKey && pickedTypes.has(typeKey)) continue;
       const fillsEmpty = adv.equipment[c.slot].id === 0 && c.slot !== SLOT.Neck && c.slot !== SLOT.Ring;
       if (fillsEmpty && c.price <= emptySlotBudget && c.price > budget) {
         // an empty armor slot takes +50% damage with no armor: fill it even from the healing reserve,
@@ -467,6 +672,7 @@ export class Policy {
         const cheapest = scored.filter((x) => x.slot === c.slot).reduce((m, x) => (x.price < m.price ? x : m), c);
         if (cheapest.price <= emptySlotBudget) {
           items.push({ itemId: cheapest.id, equip: true });
+          picked.add(cheapest.id);
           emptySlotBudget -= cheapest.price;
           budget -= cheapest.price;
           gold -= cheapest.price;
@@ -479,16 +685,17 @@ export class Policy {
         if (c.key && savingFor === 0 && c.price <= gold + 40) savingFor = c.price;
         continue;
       }
-      if (adv.equipment[c.slot].id !== 0) {
+      if (adv.equipment[c.slot].id !== 0 || claimedSlots.has(c.slot)) {
         if (bagUsed >= bagFree) continue;
         bagUsed++;
       }
-      // for an empty slot, skip a cheap filler when a better tier for the same slot is affordable later in the list
       items.push({ itemId: c.id, equip: c.equip });
+      picked.add(c.id);
+      if (typeKey) pickedTypes.add(typeKey);
       budget -= c.price;
       emptySlotBudget -= c.price;
       gold -= c.price;
-      claimedSlots.add(c.slot);
+      if (c.equip) claimedSlots.add(c.slot);
     }
     // 2) potions: mandatory ones, then top up (cheap potions) unless saving for a key item
     let potions = Math.min(mandatory, Math.floor(gold / price));
@@ -549,6 +756,23 @@ function slotDamage(adv: Adventurer, beast: Beast, slot: number, state: GameStat
   const per = beastDamageOptions(only, beast, state.settings, false);
   void opts;
   return per.reduce((s, o) => s + o.dmg * o.p, 0);
+}
+
+/** Value of wearing a leveled jewelry piece (its worn-only bonus); luckWithoutWorn excludes the silver ring bonus. */
+function jewelryWornScore(item: Item, adv: Adventurer, luckWithoutWorn: number): number {
+  const g = greatness(item.xp);
+  switch (item.id) {
+    case 7: return 3 * g; // Titanium: +3% crit damage per greatness
+    case 4: return luckWithoutWorn < 100 ? 4 * Math.min(g, 100 - luckWithoutWorn) : 0; // Silver: +greatness luck
+    case 6: return 1.5 * g; // Platinum: name match damage
+    case 8: return 1.2 * g; // Gold: beast gold
+    case 5: return 0;
+    default: {
+      // necklaces: +3% armor per greatness on matching armor pieces
+      const t = item.id === 1 ? TYPE.BladeHide : item.id === 2 ? TYPE.BludgeonMetal : TYPE.MagicCloth;
+      return g * ARMOR_SLOTS.filter((s) => lootInfo(adv.equipment[s].id).type === t).length;
+    }
+  }
 }
 
 /** Heuristic gain of a jewelry piece vs the current one in that slot. */

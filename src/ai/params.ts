@@ -73,6 +73,28 @@ export interface PolicyParams {
   weaponBoost?: number;
   /** item valuation horizon in item XP (all equipped items gain XP together): power = tier x greatness(xp + horizon) */
   itemHorizonXp?: number;
+  /** jewelry rotation (leaders' luck farm): luck counts the greatness of every owned piece, bag included, but only
+   *  equipped pieces gain xp. Level the equipped piece to this greatness, then equip the least experienced one
+   *  (0: off, keep the best piece equipped) */
+  jewelryRotateG?: number;
+  /** shop priority of collecting jewelry not owned yet (scaled by the missing luck; 0: off) */
+  jewelryCollectGain?: number;
+  /** gear rotation (leaders' item farm, rules with item specials only): an armor piece that reached this greatness is
+   *  swapped for an unfinished one from the bag, so every piece gets leveled - each G20 item grants a stat point and
+   *  its suffix's VIT/CHA boost keeps working from the bag (0: off) */
+  rotateG?: number;
+  /** a rotation is allowed when it raises the next explore's instant-death risk at full health by at most this */
+  rotateMaxRisk?: number;
+  /** shop priority of buying a fresh piece for a slot whose worn piece is finished (0: off) */
+  rotateBuyGain?: number;
+  /** kill-shot swap (0/1): before a sure killing blow, wear unfinished pieces and the Gold Ring (one beast attack) */
+  killSwap?: number;
+  /** ...only when the beast's free hit is expected to cost at most this fraction of current health */
+  killSwapMaxHp?: number;
+  /** shop priority of collecting armor/weapons of the elemental types not owned yet for a slot (0: off) */
+  collectGain?: number;
+  /** highest (worst) tier worth collecting */
+  collectMaxTier?: number;
   /** depth cap of the exact battle solver */
   battleDepth: number;
 
@@ -124,6 +146,15 @@ export const DEFAULT_PARAMS: PolicyParams = {
   swapMinGain: 0.5,
   battleDepth: 60,
   tillBeastMaxRisk: 0.0005,
+  jewelryRotateG: 0,
+  jewelryCollectGain: 0,
+  rotateG: 0,
+  rotateMaxRisk: 0.01,
+  rotateBuyGain: 0,
+  killSwap: 0,
+  killSwapMaxHp: 0.1,
+  collectGain: 0,
+  collectMaxTier: 2,
 };
 
 /** Bounds used by the tuners (numeric parameters only). */
@@ -160,6 +191,11 @@ export const PARAM_BOUNDS: Record<string, [number, number]> = {
   buyJewelry: [0, 1],
   swapMinGain: [0, 20],
   tillBeastMaxRisk: [0, 0.02],
+  jewelryRotateG: [0, 20],
+  jewelryCollectGain: [0, 200],
+  rotateG: [0, 20],
+  rotateMaxRisk: [0, 0.05],
+  rotateBuyGain: [0, 200],
 };
 
 export const TUNABLE_KEYS = Object.keys(PARAM_BOUNDS) as Array<keyof PolicyParams>;

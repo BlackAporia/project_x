@@ -4,6 +4,7 @@ import { Policy } from '../ai/policy.ts';
 import type { PolicyParams } from '../ai/params.ts';
 import type { Settings } from '../game/types.ts';
 import { simulateGame } from '../sim/simulate.ts';
+import { splitRun, type SplitStage } from '../sim/splitting.ts';
 
 export interface EvalTask {
   id: number;
@@ -12,6 +13,8 @@ export interface EvalTask {
   collect?: boolean;
   /** dungeon settings (default rules when absent) */
   settings?: Settings;
+  /** multilevel splitting instead of plain games (seeds start stage 0) */
+  split?: { levels: number[]; effort: number; seed: number };
 }
 
 export interface EvalResult {
@@ -21,11 +24,17 @@ export interface EvalResult {
   xpByLevel: number[][];
   errors: number;
   ms: number;
+  stages?: SplitStage[];
 }
 
 parentPort?.on('message', (task: EvalTask) => {
   const t0 = performance.now();
   const policy = new Policy(task.params, { fast: true });
+  if (task.split) {
+    const stages = splitRun(policy, { seeds: task.seeds, settings: task.settings, ...task.split });
+    parentPort?.postMessage({ id: task.id, xp: [], levels: [], xpByLevel: [], errors: 0, ms: performance.now() - t0, stages } satisfies EvalResult);
+    return;
+  }
   const xp: number[] = [];
   const levels: number[] = [];
   const xpByLevel: number[][] = [];

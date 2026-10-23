@@ -3,6 +3,7 @@ import { availableParallelism } from 'node:os';
 import { Worker } from 'node:worker_threads';
 import type { PolicyParams } from '../ai/params.ts';
 import type { Settings } from '../game/types.ts';
+import { mergeStages, type SplitStage } from '../sim/splitting.ts';
 import type { EvalResult, EvalTask } from './worker.ts';
 
 export class EvalPool {
@@ -54,8 +55,8 @@ export class EvalPool {
   /** dungeon settings used by every evaluation of this pool */
   settings?: Settings;
 
-  run(params: PolicyParams, seeds: number[], collect = false): Promise<EvalResult> {
-    const task: EvalTask = { id: this.nextId++, params, seeds, collect, settings: this.settings };
+  run(params: PolicyParams, seeds: number[], collect = false, split?: EvalTask['split']): Promise<EvalResult> {
+    const task: EvalTask = { id: this.nextId++, params, seeds, collect, settings: this.settings, split };
     return new Promise((resolve, reject) => {
       const w = this.idle.pop();
       if (w) this.dispatch(w, task, resolve, reject);
@@ -76,6 +77,22 @@ export class EvalPool {
       xpByLevel: res.flatMap((r) => r.xpByLevel),
       errors: res.reduce((s, r) => s + r.errors, 0),
     };
+  }
+
+  /**
+   * Multilevel splitting estimate of reaching deep levels: one independent replicate per worker
+   * (seeds split across them, `effort` trajectories per stage in total).
+   */
+  async split(params: PolicyParams, seeds: number[], levels: number[], effort: number, seed = 1): Promise<SplitStage[]> {
+    const n = Math.min(seeds.length, this.size);
+    const per = Math.ceil(seeds.length / n);
+    const parts: Promise<EvalResult>[] = [];
+    for (let i = 0; i < n; i++) {
+      const chunk = seeds.slice(i * per, (i + 1) * per);
+      if (chunk.length) parts.push(this.run(params, chunk, false, { levels, effort: Math.ceil(effort / n), seed: seed * 1000 + i }));
+    }
+    const res = await Promise.all(parts);
+    return mergeStages(res.map((r) => r.stages ?? []));
   }
 
   async close(): Promise<void> {
