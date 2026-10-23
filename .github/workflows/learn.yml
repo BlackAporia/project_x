@@ -11,7 +11,7 @@ on:
     inputs:
       generations:
         description: CMA-ES generations (tail tuning of the mainnet policy)
-        default: '6'
+        default: '3'
       games:
         description: stage-0 games per candidate (multilevel splitting)
         default: '800'
@@ -54,9 +54,12 @@ jobs:
         run: npm run learn -- --data botdata/data --limit 40
 
       - name: Tune mainnet policy (V2 rules, deep-level objective)
+        # an improved policy is saved as soon as a validation adopts it, so a timeout keeps what was found
+        continue-on-error: true
+        timeout-minutes: 180
         run: >-
           npm run tune -- --objective tail --dungeon default:mainnet
-          --generations "${{ inputs.generations || '6' }}" --games "${{ inputs.games || '800' }}" --effort 400
+          --generations "${{ inputs.generations || '3' }}" --games "${{ inputs.games || '800' }}" --effort 400
           --levels 10,20,30,35,40,43,46 --seed ${{ github.run_number }}
 
       - name: Tune dungeon policies (practice rules)
