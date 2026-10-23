@@ -28,6 +28,7 @@ export const TAIL_KEYS: Array<keyof PolicyParams> = [
   'collectGain',
   'killSwapMaxHp',
   'jewelryCollectGain',
+  'futureScale',
 ];
 
 export interface TailOptions {

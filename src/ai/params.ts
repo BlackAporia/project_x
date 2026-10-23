@@ -34,6 +34,8 @@ export interface PolicyParams {
   futureB: number;
   /** learned table: mean remaining XP by level (index = level) */
   futureXpByLevel?: number[];
+  /** multiplier of the continuation value from level 20 (ramp from level 10): >1 values survival over xp */
+  futureScale?: number;
   /** value of one gold coin in XP units */
   goldValue: number;
   /** extra value per point of item xp gained (items level up while equipped) */
@@ -159,6 +161,7 @@ export const DEFAULT_PARAMS: PolicyParams = {
   rotateBuyGain: 0,
   rotateWeapon: 0,
   rotateUntil: 0,
+  futureScale: 1,
   killSwap: 0,
   killSwapMaxHp: 0.1,
   collectGain: 0,
@@ -206,6 +209,7 @@ export const PARAM_BOUNDS: Record<string, [number, number]> = {
   rotateBuyGain: [0, 200],
   killSwapMaxHp: [0, 0.5],
   rotateUntil: [0, 60],
+  futureScale: [0.5, 6],
   collectGain: [0, 200],
 };
 
@@ -233,10 +237,12 @@ export function clampParams(p: PolicyParams): PolicyParams {
 }
 
 export function futureXp(p: PolicyParams, lvl: number): number {
+  // value of staying alive, scaled up from level 10 to 20 by futureScale (the leaderboard top needs deep survival)
+  const scale = 1 + ((p.futureScale ?? 1) - 1) * Math.min(1, Math.max(0, (lvl - 10) / 10));
   const t = p.futureXpByLevel;
   if (t && t.length > 0) {
-    if (lvl < t.length && t[lvl] !== undefined && t[lvl] > 0) return t[lvl];
-    return t[t.length - 1] ?? p.futureA + p.futureB * lvl;
+    if (lvl < t.length && t[lvl] !== undefined && t[lvl] > 0) return t[lvl] * scale;
+    return (t[t.length - 1] ?? p.futureA + p.futureB * lvl) * scale;
   }
-  return p.futureA + p.futureB * lvl;
+  return (p.futureA + p.futureB * lvl) * scale;
 }
