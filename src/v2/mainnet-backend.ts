@@ -57,8 +57,7 @@ export class V2MainnetBackend implements Backend {
       let label = `settings #${settingsId}`;
       let market: MarketConfig | null = null;
       try {
-        const d = dungeonEngineSettings(settingsId, this.snapshot);
-        settings = { ...d.settings, noItemSpecials: false }; // on-chain games have entropy: specials unlock
+        const d = dungeonEngineSettings(settingsId, this.snapshot, 'mainnet'); // on-chain games: specials unlock, density market
         label = d.label;
         const raw = this.snapshot.settings[String(settingsId)]?.settings as { market_config?: MarketConfig } | undefined;
         market = raw?.market_config ?? null;

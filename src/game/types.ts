@@ -67,6 +67,8 @@ export interface Settings {
   noStarterBeast?: boolean;
   /** client-only (practice) games: item specials and the greatness-20 stat point never unlock */
   noItemSpecials?: boolean;
+  /** V2 mainnet market: per-item density 0..32 (item on sale with probability density/32 at each level) */
+  marketDensities?: number[];
   /** V2: random stat points added to the start template */
   randomStartingStats?: number;
 }

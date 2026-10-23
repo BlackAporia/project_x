@@ -239,6 +239,13 @@ export function startGame(state: GameState, weapon: number, rng: RandomSource): 
 /** Market items: marketSize 0 means every item is for sale (lootsurvivor.io client-only / practice games). */
 export const ALL_ITEMS: readonly number[] = Array.from({ length: 101 }, (_, i) => i + 1);
 function marketFor(state: GameState, rng: RandomSource, seed: bigint): number[] {
+  const d = state.settings.marketDensities;
+  if (d) {
+    // V2 probability market: each item is on sale with probability density/32
+    const out: number[] = [];
+    for (let id = 1; id <= 101; id++) if (d[id - 1] > 0 && rng.randomness(id, seed).r8a < d[id - 1] * 8) out.push(id);
+    return out;
+  }
   return state.settings.marketSize === 0 ? ALL_ITEMS.slice() : rng.market(state.adventurerId, seed, state.settings.marketSize);
 }
 
@@ -265,7 +272,8 @@ function startV2(state: GameState, weapon: number, rng: RandomSource): { state: 
   if (extra > 0) {
     const before = maxHealth(adv.stats);
     const keys = ['str', 'dex', 'vit', 'int', 'wis', 'cha'] as const;
-    let bits = r1;
+    // exact games derive the points from the action seed; simulations draw them from the generator
+    let bits = rng.exact ? r1 : BigInt(rng.randomness(0, r1).r32a) * 4294967296n + BigInt(rng.randomness(0, r2).r32a);
     for (let i = 0; i < extra; i++) {
       const k = keys[Number(bits % 6n)];
       if (adv.stats[k] < 31) adv.stats[k] += 1;

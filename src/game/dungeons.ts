@@ -5,6 +5,7 @@ import { DUNGEON_SETTINGS } from '../chain/config.ts';
 import { decodeAdventurer, decodeBag } from '../chain/state.ts';
 import { defaultSettings } from './engine.ts';
 import type { Settings } from './types.ts';
+import { marketDensities } from '../v2/protocol.ts';
 
 interface Snapshot {
   settings: Record<string, { name?: string; settings: Record<string, any> }>;
@@ -27,7 +28,11 @@ export function resolveSettingsId(dungeon: string | number): number {
 }
 
 /** Engine settings that reproduce a dungeon's client-only (practice) games. */
-export function dungeonEngineSettings(dungeon: string | number, snapshot = loadSnapshot()): { settings: Settings; label: string } {
+export function dungeonEngineSettings(dungeon: string | number, snapshot = loadSnapshot(), mode: 'practice' | 'mainnet' = 'practice'): { settings: Settings; label: string } {
+  if (typeof dungeon === 'string' && dungeon.endsWith(':mainnet')) {
+    mode = 'mainnet';
+    dungeon = dungeon.slice(0, -':mainnet'.length);
+  }
   const id = resolveSettingsId(dungeon);
   const entry = snapshot.settings[String(id)];
   if (!entry) throw new Error(`no snapshot of game settings #${id} (run: npm run bot -- dungeon-settings --ids ${id} --data config)`);
@@ -38,10 +43,11 @@ export function dungeonEngineSettings(dungeon: string | number, snapshot = loadS
     baseDamageReduction: Number(raw.base_damage_reduction ?? 0),
     marketSize: 0, // practice games accept any item
     noStarterBeast: true,
-    noItemSpecials: true,
+    noItemSpecials: mode === 'practice',
+    marketDensities: mode === 'mainnet' && raw.market_config ? marketDensities(raw.market_config) : undefined,
     startAdventurer: decodeAdventurer(raw.adventurer),
     startBag: decodeBag(raw.bag),
     randomStartingStats: Number(raw.random_starting_stats ?? 0),
   };
-  return { settings, label: `${entry.name || 'settings'} #${id}` };
+  return { settings, label: `${entry.name || 'settings'} #${id}${mode === 'mainnet' ? ' (mainnet rules)' : ''}` };
 }
