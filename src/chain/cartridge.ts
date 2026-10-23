@@ -9,7 +9,7 @@ export async function runAuthorizeCommand(): Promise<void> {
   if (existing) {
     console.log(`Session already active for ${existing.address}.`);
   } else {
-    console.log('Opening Cartridge to approve a session for the loot-survivor preset...');
+    console.log('Opening Cartridge to approve a bot session (only commit_actions / verify_game on the Loot Survivor game core)...');
     console.log('(If no browser opens, copy the printed URL into your browser and log in with your Controller.)');
     const account = await sp.connect();
     if (!account) throw new Error('Session was not approved');

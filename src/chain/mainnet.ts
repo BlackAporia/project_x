@@ -1,8 +1,7 @@
 // Mainnet play with the owner's own Cartridge Controller account through a session key.
 //   1. once, on your own computer: `npm run authorize` -> approve the session in the browser
 //   2. store .session/cartridge/session.json as the GitHub secret CARTRIDGE_SESSION_B64 (base64)
-// The session key can only call the methods allowed by the Cartridge "loot-survivor" preset (game actions, VRF,
-// mint) and expires; the Controller owner key never leaves Cartridge. Nothing secret is ever printed or logged.
+// The session key can only call commit_actions / verify_game on the game core (see botPolicies) and expires; the Controller owner key never leaves Cartridge. Nothing secret is ever printed or logged.
 import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import type { Call } from 'starknet';
@@ -21,13 +20,33 @@ export function restoreSessionFromEnv(): boolean {
   return true;
 }
 
+/**
+ * Least-privilege session: only the calls the bot makes on the V2 game core (commit moves, settle finished games).
+ * Set CARTRIDGE_USE_PRESET=true to request the full lootsurvivor.io preset instead (needed for V1 games).
+ */
+export function botPolicies() {
+  return {
+    contracts: {
+      [MAINNET.gameCoreV2]: {
+        name: 'Loot Survivor game core',
+        description: 'Play and settle your Loot Survivor games',
+        methods: [
+          { name: 'Commit Actions', entrypoint: 'commit_actions', description: 'Submit game moves' },
+          { name: 'Verify Game', entrypoint: 'verify_game', description: 'Settle a finished game so its score counts' },
+        ],
+      },
+    },
+  };
+}
+
 export async function sessionProvider() {
   const mod = await import('@cartridge/controller/session/node');
   const SessionProvider = mod.default;
+  const usePreset = process.env.CARTRIDGE_USE_PRESET === 'true';
   return new SessionProvider({
     rpc: MAINNET.cartridgeRpc,
     chainId: MAINNET.chainId,
-    preset: MAINNET.preset,
+    ...(usePreset ? { preset: MAINNET.preset } : { policies: botPolicies() as never, shouldOverridePresetPolicies: true }),
     basePath: SESSION_DIR,
   });
 }
