@@ -54,6 +54,13 @@ jobs:
       - name: Tune policy (simulation)
         run: npm run tune -- --generations "${{ inputs.generations || '16' }}" --games "${{ inputs.games || '200' }}" --objective blend --seed ${{ github.run_number }}
 
+      - name: Tune dungeon policies (practice rules)
+        continue-on-error: true
+        run: |
+          for d in ${{ vars.TUNE_DUNGEONS || 'ronke' }}; do
+            npm run tune -- --dungeon "$d" --policy "policy/$d.json" --generations 12 --games 300 --objective blend --seed ${{ github.run_number }}
+          done
+
       - name: Validate and commit policy
         run: |
           npm test
