@@ -134,8 +134,9 @@ export async function runDiscoverCommand(opts: { out: string }): Promise<void> {
 
   report.problems = problems;
   writeFileSync(join(opts.out, 'report.json'), JSON.stringify(report, null, 1) + '\n');
-  mkdirSync('site/data', { recursive: true });
-  writeFileSync('site/data/discovery.json', JSON.stringify(report, null, 1) + '\n');
+  const dataDir = process.env.BOT_DATA_DIR ?? 'site/data';
+  mkdirSync(dataDir, { recursive: true });
+  writeFileSync(join(dataDir, 'discovery.json'), JSON.stringify(report, null, 1) + '\n');
   console.log(`discovery written to ${opts.out}/report.json`);
   for (const p of problems) console.log(`  ! ${p}`);
 }

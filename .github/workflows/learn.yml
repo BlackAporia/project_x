@@ -1,0 +1,83 @@
+name: Learn
+
+# Daily: verify live contracts/dungeons, snapshot the leaderboard, learn from top players' on-chain builds, then
+# re-tune the policy in simulation (top-player build is tried as a candidate) and commit the improved policy.
+on:
+  schedule:
+    - cron: '41 4 * * *'
+  workflow_dispatch:
+    inputs:
+      generations:
+        description: CMA-ES generations
+        default: '16'
+      games:
+        description: simulated games per candidate
+        default: '200'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: bot-data
+  cancel-in-progress: false
+
+jobs:
+  learn:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    env:
+      BOT_DATA_DIR: botdata/data
+      MAINNET_ACCOUNT_ADDRESS: ${{ vars.MAINNET_ACCOUNT_ADDRESS }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: scripts/data-branch.sh checkout
+
+      - name: Discover live contracts and dungeons
+        continue-on-error: true
+        run: npm run discover -- --out botdata/data/discovery
+
+      - name: Leaderboard
+        continue-on-error: true
+        run: npm run leaderboard -- --data botdata/data --limit 200
+
+      - name: Learn from top players
+        continue-on-error: true
+        run: npm run learn -- --data botdata/data --limit 40
+
+      - name: Tune policy (simulation)
+        run: npm run tune -- --generations "${{ inputs.generations || '16' }}" --games "${{ inputs.games || '200' }}" --objective blend --seed ${{ github.run_number }}
+
+      - name: Validate and commit policy
+        run: |
+          npm test
+          git config user.name loot-survivor-bot
+          git config user.email loot-survivor-bot@users.noreply.github.com
+          git add policy/
+          if git diff --cached --quiet; then echo "policy unchanged"; else
+            git commit -m "Policy update from daily learning run ${{ github.run_number }}"
+            for i in 1 2 3 4; do git push origin "HEAD:${GITHUB_REF_NAME}" && break; sleep $((2 ** i)); git pull --rebase origin "${GITHUB_REF_NAME}"; done
+          fi
+
+      - name: Summaries
+        if: always()
+        run: npm run site -- --data botdata/data
+
+      - name: Push data
+        if: always()
+        run: scripts/data-branch.sh push "learn run ${{ github.run_id }}"
+
+  pages:
+    needs: learn
+    if: always()
+    uses: ./.github/workflows/pages.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write

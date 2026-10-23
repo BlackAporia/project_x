@@ -1,0 +1,86 @@
+name: Bot
+
+# Plays the free practice dungeon on a schedule and, once enabled, the account's mainnet games.
+#   Repository variables (Settings -> Secrets and variables -> Actions -> Variables):
+#     MAINNET_ENABLED=true   also run the mainnet step (needs secret CARTRIDGE_SESSION_B64)
+#     MAINNET_LIVE=true      actually send mainnet transactions (otherwise: dry run that only logs decisions)
+#     PRACTICE_MINUTES / MAINNET_MINUTES  time budgets (defaults 40 / 120)
+on:
+  schedule:
+    - cron: '17 */3 * * *'
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: practice | mainnet | both
+        default: practice
+      minutes:
+        description: minutes of play per mode
+        default: '40'
+      live:
+        description: send mainnet transactions (true) or dry run (false)
+        default: 'false'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: bot-data
+  cancel-in-progress: false
+
+jobs:
+  play:
+    runs-on: ubuntu-latest
+    timeout-minutes: 330
+    env:
+      BOT_DATA_DIR: botdata/data
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: scripts/data-branch.sh checkout
+
+      - name: Practice dungeon
+        if: github.event_name == 'schedule' || inputs.mode == 'practice' || inputs.mode == 'both'
+        continue-on-error: true
+        run: npm run play -- --mode practice --minutes "${{ inputs.minutes || vars.PRACTICE_MINUTES || '40' }}" --max-games 200
+
+      - name: Mainnet
+        if: (github.event_name == 'schedule' && vars.MAINNET_ENABLED == 'true') || inputs.mode == 'mainnet' || inputs.mode == 'both'
+        continue-on-error: true
+        env:
+          CARTRIDGE_SESSION_B64: ${{ secrets.CARTRIDGE_SESSION_B64 }}
+          MAINNET_ACCOUNT_ADDRESS: ${{ vars.MAINNET_ACCOUNT_ADDRESS }}
+          MAINNET_LIVE: ${{ (github.event_name == 'schedule' && vars.MAINNET_LIVE == 'true') || inputs.live == 'true' }}
+        run: npm run play -- --mode mainnet --minutes "${{ inputs.minutes || vars.MAINNET_MINUTES || '120' }}" --max-games 100
+
+      - name: Leaderboard snapshot
+        continue-on-error: true
+        env:
+          MAINNET_ACCOUNT_ADDRESS: ${{ vars.MAINNET_ACCOUNT_ADDRESS }}
+        run: npm run leaderboard -- --data botdata/data
+
+      - name: Summaries
+        if: always()
+        run: npm run site -- --data botdata/data
+
+      - name: Remove session material
+        if: always()
+        run: rm -rf .session
+
+      - name: Push data
+        if: always()
+        run: scripts/data-branch.sh push "bot run ${{ github.run_id }}"
+
+  pages:
+    needs: play
+    if: always()
+    uses: ./.github/workflows/pages.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write

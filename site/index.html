@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Loot Survivor Bot</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <span class="logo" aria-hidden="true">⚔</span>
+    <div>
+      <h1>Loot Survivor Bot</h1>
+      <p class="sub">Автономний гравець Death Mountain · мета: топ‑1 у mainnet</p>
+    </div>
+  </div>
+  <div class="state" id="state"><span class="dot"></span><span id="stateText">завантаження…</span></div>
+</header>
+
+<main>
+  <section class="kpis" id="kpis" aria-label="Ключові показники"></section>
+
+  <section class="grid2">
+    <article class="card" id="liveCard">
+      <h2>Поточна гра</h2>
+      <div id="live" class="live"><p class="muted">Немає активної гри.</p></div>
+    </article>
+    <article class="card">
+      <h2>Останні рішення <span class="muted small" id="recentMode"></span></h2>
+      <ol id="recent" class="log"></ol>
+    </article>
+  </section>
+
+  <section class="card">
+    <div class="card-head">
+      <h2>Прогрес до топ‑1</h2>
+      <span class="muted small">XP: найкращий результат бота vs лідерборд mainnet</span>
+    </div>
+    <div id="progressChart" class="chart"></div>
+  </section>
+
+  <section class="grid2">
+    <article class="card">
+      <div class="card-head"><h2>Навчання політики</h2><span class="muted small">валідація CMA‑ES на симуляціях</span></div>
+      <div id="trainingChart" class="chart"></div>
+    </article>
+    <article class="card">
+      <div class="card-head">
+        <h2>Результати ігор</h2>
+        <div class="seg" id="modeSeg" role="tablist">
+          <button data-mode="mainnet">Mainnet</button><button data-mode="practice">Practice</button><button data-mode="sim">Симуляція</button>
+        </div>
+      </div>
+      <div id="modeStats" class="mini-kpis"></div>
+      <h3>Рівень на момент смерті</h3>
+      <div id="levelChart" class="chart short"></div>
+      <h3>Причини смерті</h3>
+      <div id="deathChart" class="chart"></div>
+    </article>
+  </section>
+
+  <section class="grid2">
+    <article class="card">
+      <div class="card-head"><h2>Лідерборд mainnet</h2><span class="muted small" id="lbUpdated"></span></div>
+      <div class="table-wrap"><table id="lbTable"><thead><tr><th>#</th><th>Гравець</th><th class="num">XP</th><th class="num">Рів.</th><th>Стан</th></tr></thead><tbody></tbody></table></div>
+    </article>
+    <article class="card">
+      <div class="card-head"><h2>Навчання на лідерах</h2><span class="muted small" id="insUpdated"></span></div>
+      <p class="muted small">Стати на рівень (stat/level) у топ‑гравців vs цілі бота. Тюнер перевіряє білд лідерів у симуляції й бере його, лише якщо він кращий.</p>
+      <div id="insightChart" class="chart"></div>
+      <div id="insightFacts" class="facts"></div>
+    </article>
+  </section>
+
+  <section class="card">
+    <div class="card-head">
+      <h2>Журнал гри</h2>
+      <select id="gameSelect" aria-label="Оберіть гру"></select>
+    </div>
+    <div id="gameMeta" class="muted small"></div>
+    <div class="table-wrap tall"><table id="gameLog"><thead><tr><th>#</th><th>Рів.</th><th class="num">XP</th><th class="num">HP</th><th class="num">Золото</th><th>Дія</th><th>Чому</th></tr></thead><tbody></tbody></table></div>
+  </section>
+
+  <section class="card">
+    <div class="card-head"><h2>Живі контракти та підземелля</h2><span class="muted small" id="discUpdated"></span></div>
+    <div id="discovery" class="disc"></div>
+  </section>
+</main>
+
+<footer class="muted small">Дані оновлюються GitHub Actions після кожного запуску бота · <span id="updated"></span></footer>
+<div id="tip" class="tip" role="tooltip" hidden></div>
+<script src="app.js"></script>
+</body>
+</html>

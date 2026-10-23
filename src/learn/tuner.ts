@@ -122,7 +122,7 @@ export function fitFutureXp(xp: number[], xpByLevel: number[][]): number[] {
 export async function tune(opts: TuneOptions): Promise<PolicyParams> {
   const log = opts.log ?? ((m: string) => console.log(m));
   const policyPath = opts.policyPath ?? 'policy/policy.json';
-  const trainingPath = opts.trainingPath ?? 'site/data/training.json';
+  const trainingPath = opts.trainingPath ?? (process.env.BOT_DATA_DIR ? `${process.env.BOT_DATA_DIR}/training.json` : 'site/data/training.json');
   const base = existsSync(policyPath) ? loadParams(policyPath) : { ...DEFAULT_PARAMS };
   const pool = new EvalPool(opts.workers);
   const es = new CMAES(encode(base), { sigma: opts.sigma ?? 0.12, seed: opts.seed ?? Date.now() & 0xffff });
