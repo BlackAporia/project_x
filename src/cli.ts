@@ -135,12 +135,12 @@ async function main(): Promise<void> {
     }
     case 'leaderboard': {
       const { runLeaderboardCommand } = await import('./commands/leaderboard.ts');
-      await runLeaderboardCommand({ dataDir: str(values.data, 'site/data'), limit: num(values.limit, 100) });
+      await runLeaderboardCommand({ dataDir: str(values.data, process.env.BOT_DATA_DIR ?? 'site/data'), limit: num(values.limit, 100) });
       break;
     }
     case 'learn': {
       const { runLearnCommand } = await import('./commands/learn.ts');
-      await runLearnCommand({ dataDir: str(values.data, 'site/data'), limit: num(values.limit, 25) });
+      await runLearnCommand({ dataDir: str(values.data, process.env.BOT_DATA_DIR ?? 'site/data'), limit: num(values.limit, 25) });
       break;
     }
     case 'authorize': {
