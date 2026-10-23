@@ -500,18 +500,7 @@ export class Policy {
       const finished = items.filter((i) => greatness(i.xp) >= g);
       if (finished.length) set = withItem(set, finished.reduce((m, i) => (this.itemPower(i, false) > this.itemPower(m, false) ? i : m)));
     }
-    // finished pieces: pick per slot the one with the lowest explore risk (armor types and the necklace bonus matter)
-    let baseRisk = this.riskWith(state, set, null);
-    for (const [slot, items] of owned) {
-      for (const it of items) {
-        if (greatness(it.xp) < g || it.id === set.equipment[slot].id) continue;
-        const r = this.riskWith(state, set, it);
-        if (r < baseRisk - 1e-6) {
-          set = withItem(set, it);
-          baseRisk = r;
-        }
-      }
-    }
+    const baseRisk = this.riskWith(state, set, null);
     const budget = this.params.rotateMaxRisk ?? 0.01;
     for (const [slot, items] of owned) {
       const cur = adv.equipment[slot];
@@ -583,13 +572,6 @@ export class Policy {
     const adv = state.adventurer;
     const g = this.params.rotateG ?? 0;
     const weaponType = lootInfo(adv.equipment[SLOT.Weapon].id).type;
-    const bestOfType = new Map<number, number>();
-    for (const i of items) {
-      const info = lootInfo(i.id);
-      const k = info.slot * 10 + info.type;
-      const prev = bestOfType.get(k);
-      if (prev === undefined || this.itemPower(i, false) > this.itemPower(items.find((x) => x.id === prev)!, false)) bestOfType.set(k, i.id);
-    }
     const keep = (i: Item): number => {
       const info = lootInfo(i.id);
       if (isJewelry(i.id)) return 100; // luck
@@ -601,8 +583,6 @@ export class Policy {
       }
       if (greatness(i.xp) < g && info.slot !== SLOT.Weapon) v += 1 + this.farmValue(i.id, adv); // to be leveled
       if (info.slot === SLOT.Weapon && info.type !== weaponType) v += 1.5; // elemental swaps in battle
-      // the strongest bag piece of another armor type for its slot: in-battle set swaps against the beast's attack
-      if (info.slot !== SLOT.Weapon && info.type !== lootInfo(adv.equipment[info.slot].id).type && bestOfType.get(info.slot * 10 + info.type) === i.id) v += 1;
       return v;
     };
     return items
