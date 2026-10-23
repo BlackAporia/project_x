@@ -328,6 +328,7 @@ export function explore(state: GameState, tillBeast: boolean, rng: RandomSource)
 }
 
 function exploreLoop(ctx: Ctx, exploreSeed: bigint, tillBeast: boolean): void {
+  const v2 = ctx.state.settings.noStarterBeast === true;
   for (;;) {
     const adv = ctx.adv;
     const r = ctx.rng.randomness(adv.xp, exploreSeed);
@@ -335,9 +336,15 @@ function exploreLoop(ctx: Ctx, exploreSeed: bigint, tillBeast: boolean): void {
     if (result === 0) {
       beastEncounter(ctx, exploreSeed, r.r32a, r.r16a, r.r16b, r.r8a, r.r8b, r.r8c);
     } else if (result === 1) {
+      const hp = adv.health;
       obstacleEncounter(ctx, r.r32a, r.r16b, r.r8a, r.r8b, r.r8c, r.r16a);
+      // V2 explore(till_damage=1): stop at the first damage taken
+      if (v2 && ctx.adv.health < hp) break;
     } else {
       processDiscovery(ctx, r.r8a, r.r8b, r.r8c);
+      // V2 stops when loot was found (also when it was converted to gold)
+      const last = ctx.events[ctx.events.length - 1];
+      if (v2 && last?.type === 'discovery' && last.kind === 'Loot') break;
     }
     if (!(tillBeast && canExplore(ctx.adv))) break;
   }

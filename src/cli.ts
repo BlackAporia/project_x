@@ -29,6 +29,12 @@ function loadDotEnv(): void {
   }
 }
 
+/** A dungeon's own tuned policy (policy/<dungeon>.json) when it exists, else the main policy. */
+function dungeonPolicy(dungeon: string): string {
+  const key = dungeon.toLowerCase().replace(/[^a-z]/g, '');
+  return key && existsSync(`policy/${key}.json`) ? `policy/${key}.json` : 'policy/policy.json';
+}
+
 async function main(): Promise<void> {
   loadDotEnv();
   const [cmd, ...rest] = process.argv.slice(2);
@@ -107,7 +113,7 @@ async function main(): Promise<void> {
         minutes: num(values.minutes, Number(process.env.BOT_MINUTES ?? 20)),
         maxGames: num(values['max-games'], Number(process.env.BOT_MAX_GAMES ?? 50)),
         dataDir: str(values.data, process.env.BOT_DATA_DIR ?? 'site/data'),
-        policyPath: str(values.policy, 'policy/policy.json'),
+        policyPath: str(values.policy, dungeonPolicy(str(values.dungeon, process.env.BOT_DUNGEON ?? ''))),
         live: values.live === true || process.env.MAINNET_LIVE === 'true',
         dungeon: str(values.dungeon, process.env.BOT_DUNGEON ?? '') || undefined,
         frontend: str(values.frontend, '') || undefined,
