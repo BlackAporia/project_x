@@ -17,6 +17,7 @@ const COMMANDS: Record<string, string> = {
   authorize: 'One-time Cartridge Controller session authorization for mainnet play',
   site: 'Rebuild site/data summaries from the bot data directory',
   local: 'Local GPU learning loop: self-play dataset -> value net (PyTorch) -> A/B -> tune',
+  validate: 'A/B a candidate policy on the official site engine (practice) and adopt it only if better',
   'dungeon-settings': 'Read dungeon game settings (e.g. Ronke Casino #7) from the V2 game core',
 };
 
@@ -66,6 +67,9 @@ async function main(): Promise<void> {
       dungeon: { type: 'string' },
       frontend: { type: 'string' },
       ids: { type: 'string' },
+      candidate: { type: 'string' },
+      baseline: { type: 'string' },
+      adopt: { type: 'string' },
       core: { type: 'string' },
       'settings-id': { type: 'string' },
       python: { type: 'string' },
@@ -151,6 +155,20 @@ async function main(): Promise<void> {
         python: str(values.python, process.platform === 'win32' ? 'python' : 'python3'),
         seed: num(values.seed, 1),
       });
+      break;
+    }
+    case 'validate': {
+      const { runValidateCommand } = await import('./commands/validate.ts');
+      const ok = await runValidateCommand({
+        dungeon: str(values.dungeon, 'default'),
+        candidate: str(values.candidate, 'policy/candidate.json'),
+        baseline: str(values.baseline, 'policy/policy.json'),
+        games: num(values.games, 150),
+        frontend: str(values.frontend, '') || undefined,
+        dataDir: str(values.data, process.env.BOT_DATA_DIR ?? 'site/data'),
+        adoptTo: str(values.adopt, '') || undefined,
+      });
+      process.exitCode = ok ? 0 : 3;
       break;
     }
     case 'dungeon-settings': {

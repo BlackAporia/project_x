@@ -27,7 +27,7 @@ export async function runPlayCommand(opts: {
   if (opts.mode === 'sim') {
     backend = new SimBackend(Date.now() % 1_000_000_000);
   } else if (opts.mode === 'practice') {
-    backend = await openSitePractice(store, opts);
+    backend = await openSitePracticeBackend(store, opts);
   } else if (opts.mode === 'practice-slot') {
     const p = await openPractice();
     console.log(`[practice] rpc ${p.rpc}, burner ${p.executor.address}`);
@@ -92,7 +92,7 @@ async function resolvePracticeSettings(client: GameClient, store: DataStore, dun
 }
 
 /** Practice = client-only game on the official site engine with a dungeon's on-chain settings. */
-async function openSitePractice(store: DataStore, opts: { dungeon?: string; settingsId?: number; frontend?: string; dataDir: string }): Promise<Backend> {
+export async function openSitePracticeBackend(store: DataStore, opts: { dungeon?: string; settingsId?: number; frontend?: string; dataDir: string }): Promise<Backend> {
   const { existsSync } = await import('node:fs');
   const { execFileSync } = await import('node:child_process');
   const { DUNGEON_SETTINGS } = await import('../chain/config.ts');

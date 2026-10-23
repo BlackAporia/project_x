@@ -58,7 +58,12 @@ jobs:
         continue-on-error: true
         run: |
           for d in ${{ vars.TUNE_DUNGEONS || 'ronke' }}; do
-            npm run tune -- --dungeon "$d" --policy "policy/$d.json" --generations 12 --games 300 --objective blend --seed ${{ github.run_number }}
+            base="policy/$d.json"; [ -f "$base" ] || base="policy/policy.json"
+            cp "$base" "policy/$d.candidate.json"
+            npm run tune -- --dungeon "$d" --policy "policy/$d.candidate.json" --generations 12 --games 400 --objective blend --seed ${{ github.run_number }}
+            # adopt only if the candidate also wins on the official site engine (practice games)
+            npm run bot -- validate --dungeon "$d" --candidate "policy/$d.candidate.json" --baseline "$base" --games 150 --adopt "policy/$d.json" --data botdata/data || true
+            rm -f "policy/$d.candidate.json"
           done
 
       - name: Validate and commit policy

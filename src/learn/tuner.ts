@@ -24,6 +24,8 @@ export interface TuneOptions {
   /** tune for a dungeon's rules (e.g. Ronke Casino #7) */
   settings?: import('../game/types.ts').Settings;
   label?: string;
+  /** required z-score of the paired mean improvement before a new policy is saved */
+  minZ?: number;
 }
 
 export interface TrainingRecord {
@@ -162,6 +164,7 @@ export async function tune(opts: TuneOptions): Promise<PolicyParams> {
     }
   }
 
+  let validationRound = 0;
   for (let gen = 0; gen < opts.generations; gen++) {
     const seeds = Array.from({ length: opts.games }, (_, i) => seedBase + i);
     seedBase += opts.games;
@@ -177,10 +180,18 @@ export async function tune(opts: TuneOptions): Promise<PolicyParams> {
     // validate the distribution mean every few generations (and at the end)
     if ((gen + 1) % 4 === 0 || gen === opts.generations - 1) {
       const meanParams = { ...decode(es.state.mean, best), futureXpByLevel: best.futureXpByLevel };
-      const val = await pool.evaluate(meanParams, valSeeds, true);
+      // fresh seeds every round (no repeated selection on one validation set), candidate and incumbent on the same games
+      validationRound++;
+      const roundSeeds = valSeeds.map((x) => x + validationRound * 10_000_000);
+      const [val, inc] = await Promise.all([pool.evaluate(meanParams, roundSeeds, true), pool.evaluate(best, roundSeeds)]);
       const vf = fitnessOf(val.xp, opts.objective);
+      const incFit = fitnessOf(inc.xp, opts.objective);
       const vs = stats(val.xp);
-      log(`  validation of CMA mean: ${opts.objective}=${vf.toFixed(1)} mean=${vs.mean.toFixed(1)} p90=${vs.p90} max=${vs.max} (best so far ${bestFit.toFixed(1)})`);
+      const diffs = val.xp.map((x, i) => x - inc.xp[i]);
+      const dMean = diffs.reduce((a, b) => a + b, 0) / diffs.length;
+      const dSe = Math.sqrt(diffs.reduce((a, b) => a + (b - dMean) ** 2, 0) / Math.max(1, diffs.length - 1) / diffs.length);
+      const significant = vf > incFit && dMean > (opts.minZ ?? 1.5) * dSe;
+      log(`  validation of CMA mean: ${opts.objective}=${vf.toFixed(1)} vs incumbent ${incFit.toFixed(1)} on the same ${roundSeeds.length} games; mean diff ${dMean.toFixed(1)}±${dSe.toFixed(1)}${significant ? ' (significant)' : ''}`);
       appendTraining(trainingPath, {
         date: new Date().toISOString(),
         generation: es.state.generation,
@@ -192,7 +203,7 @@ export async function tune(opts: TuneOptions): Promise<PolicyParams> {
         games: valSeeds.length,
         source: 'cmaes',
       });
-      if (vf > bestFit) {
+      if (significant) {
         bestFit = vf;
         // value learning: refresh the expected-remaining-xp table from the validation games
         const future = fitFutureXp(val.xp, val.xpByLevel);

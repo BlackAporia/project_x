@@ -23,7 +23,18 @@ let browserReady = false;
 async function registerBrowser(): Promise<void> {
   if (browserReady) return;
   const { GlobalRegistrator } = await import('@happy-dom/global-registrator');
-  GlobalRegistrator.register({ url: 'https://lootsurvivor.io/play', width: 1280, height: 800 });
+  GlobalRegistrator.register({
+    url: 'https://lootsurvivor.io/play',
+    width: 1280,
+    height: 800,
+    settings: {
+      disableIframePageLoading: true,
+      disableJavaScriptFileLoading: true,
+      disableCSSFileLoading: true,
+      disableErrorCapturing: true,
+      handleDisabledFileLoadingAsSuccess: true,
+    },
+  } as never);
   // the engine is pure computation: block network access from the bundle (analytics, presets, RPC)
   globalThis.fetch = (async (u: unknown) => {
     throw new Error(`offline: ${String(u).slice(0, 80)}`);
