@@ -142,10 +142,16 @@ export function slotProfiles(adv: Adventurer): SlotProfile[] {
   });
 }
 
+// module-local copies of imported functions/constants used in the hot loops (avoids live-binding getters)
+const effectivenessL = effectiveness;
+const reduceL = applyDamageReduction;
+const WEAK_L = WEAK;
+const STRONG_L = STRONG;
+
 function elemental(base: number, attackType: number, armorType: number): number {
-  const e = effectiveness(attackType, armorType);
+  const e = effectivenessL(attackType, armorType);
   const half = Math.floor(base / 2);
-  return e === WEAK ? base - half : e === STRONG ? base + half : base;
+  return e === WEAK_L ? base - half : e === STRONG_L ? base + half : base;
 }
 
 /** calculate_damage + necklace adjustment for an attacker with no strength. */
@@ -220,8 +226,8 @@ export function perilTable(adv: Adventurer, settings: Settings): PerilTable {
             const pc = c === 1 ? pcObs : 1 - pcObs;
             if (pc <= 0) continue;
             let d = hitDamage(elem, 0, c === 1, pr.armorHp, pr.neckBonus, MIN_OBS);
-            d = applyDamageReduction(d, reductionBase);
-            if (intRed) d = applyDamageReduction(d, intRed);
+            d = reduceL(d, reductionBase);
+            if (intRed) d = reduceL(d, intRed);
             const ww = w * pc * 0.2;
             obs[d < HIST ? d : HIST - 1] += ww;
             wObs += ww;
@@ -244,8 +250,8 @@ export function perilTable(adv: Adventurer, settings: Settings): PerilTable {
               if (pm <= 0) continue;
               const bonus = (m2 ? elem * SP2_MULT : 0) + (m3 ? elem * SP3_MULT : 0);
               let d = hitDamage(elem, bonus, c === 1, pr.armorHp, pr.neckBonus, MIN_BEAST);
-              d = applyDamageReduction(d, reductionBase);
-              if (wisRed) d = applyDamageReduction(d, wisRed);
+              d = reduceL(d, reductionBase);
+              if (wisRed) d = reduceL(d, wisRed);
               const ww = w * pc * 0.2 * pm;
               amb[d < HIST ? d : HIST - 1] += ww;
               wAmb += ww;

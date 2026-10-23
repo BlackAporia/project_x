@@ -31,7 +31,7 @@ export interface TuneOptions {
 export interface TrainingRecord {
   date: string;
   generation: number;
-  objective: Objective;
+  objective: Objective | 'tail';
   fitness: number;
   mean: number;
   p90: number;
@@ -69,7 +69,7 @@ export function encode(p: PolicyParams): number[] {
   return TUNABLE_KEYS.map((k) => {
     const [lo, hi] = PARAM_BOUNDS[k as string];
     const v = p[k] as number;
-    return hi === lo ? 0 : (v - lo) / (hi - lo);
+    return hi === lo ? 0 : Math.min(1, Math.max(0, (v - lo) / (hi - lo)));
   });
 }
 

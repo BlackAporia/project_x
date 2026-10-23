@@ -46,6 +46,7 @@ export class Policy {
   private planKey = '';
   private plan: BattlePlan | null = null;
   private valueNet: ValueNet | null;
+  private upgradeMemo = new Map<string, number[]>();
 
   constructor(params: PolicyParams = DEFAULT_PARAMS, options: PolicyOptions = {}) {
     this.params = params;
@@ -136,7 +137,7 @@ export class Policy {
     return maxHp;
   }
 
-  evaluateBattle(state: GameState, adv: Adventurer, beast: Beast): { sol: BattleSolution; rootValues: Float64Array } {
+  evaluateBattle(state: GameState, adv: Adventurer, beast: Beast, wantRoots = false): { sol: BattleSolution; rootValues: Float64Array } {
     const p = this.params;
     const peril = this.peril(adv, state);
     const lvl = level(adv);
@@ -157,10 +158,10 @@ export class Policy {
     const hero = heroDamageOptions(adv, beast);
     const beastOpts = beastDamageOptions(adv, beast, state.settings, false);
     const pFlee = fleeProbability(adv);
-    const sol = solveBattle({ heroHp: H, beastHp: adv.beastHealth, hero, beast: beastOpts, pFlee, win: W, escape: E, maxDepth: p.battleDepth, keepPlan: this.fast });
+    const sol = solveBattle({ heroHp: H, beastHp: adv.beastHealth, hero, beast: beastOpts, pFlee, win: W, escape: E, maxDepth: p.battleDepth, keepPlan: this.fast && !wantRoots, wantRoots });
     // root values for all health levels (used by the swap evaluation)
-    const rootValues = new Float64Array(H + 1);
-    rootValues[H] = sol.value;
+    const rootValues = sol.roots ?? new Float64Array(H + 1);
+    if (!sol.roots) rootValues[H] = sol.value;
     return { sol, rootValues };
   }
 
@@ -281,13 +282,12 @@ export class Policy {
     }
     const swapped = loadAssets({ ...after.adventurer, health: adv.health, beastHealth: adv.beastHealth }, after.bag);
     const freeHit = beastDamageOptions(swapped, beast, state.settings, false);
+    // one solve at the current health gives the battle value for every lower health (the beast's health is unchanged)
+    const { rootValues } = this.evaluateBattle({ ...state, adventurer: after.adventurer, bag: after.bag }, swapped, beast, true);
     let value = 0;
     for (const o of freeHit) {
       const h = adv.health - o.dmg;
-      if (h <= 0) continue;
-      const trial = { ...swapped, health: h };
-      const { sol } = this.evaluateBattle({ ...state, adventurer: after.adventurer, bag: after.bag }, trial, beast);
-      value += o.p * sol.value;
+      if (h > 0) value += o.p * rootValues[h];
     }
     return { items: changes, value };
   }
@@ -399,6 +399,17 @@ export class Policy {
   }
 
   private bagUpgrades(state: GameState): number[] {
+    // the choice depends only on gear (worn greatness, bag items), stats and level: memoize between explores
+    const key = gearKey(state);
+    const hit = this.upgradeMemo.get(key);
+    if (hit) return hit.slice();
+    const out = this.computeBagUpgrades(state);
+    if (this.upgradeMemo.size > 2048) this.upgradeMemo.clear();
+    this.upgradeMemo.set(key, out.slice());
+    return out;
+  }
+
+  private computeBagUpgrades(state: GameState): number[] {
     const adv = state.adventurer;
     const out: number[] = [];
     const rotate = (this.params.jewelryRotateG ?? 0) > 0;
@@ -718,6 +729,16 @@ function perilKey(adv: Adventurer, state: GameState): string {
   const e = adv.equipment;
   let k = `${level(adv)}|${adv.stats.int}|${adv.stats.wis}|${state.settings.statsMode}|${adv.itemSpecialsSeed}`;
   for (let s = 1; s <= 8; s++) k += `|${e[s].id}:${greatness(e[s].xp)}`;
+  return k;
+}
+
+/** Everything the out-of-battle gear choice depends on (worn items by greatness: their xp changes every kill). */
+function gearKey(state: GameState): string {
+  const a = state.adventurer;
+  const st = a.stats;
+  let k = `${a.xp > 0 ? level(a) : 0}|${st.str},${st.dex},${st.vit},${st.int},${st.wis},${st.cha}|${a.itemSpecialsSeed}|${state.settings.noItemSpecials ? 1 : 0}`;
+  for (let s = 1; s <= 8; s++) k += `|${a.equipment[s].id}:${greatness(a.equipment[s].xp)}`;
+  for (const b of state.bag) if (b.id) k += `/${b.id}:${b.xp}`;
   return k;
 }
 

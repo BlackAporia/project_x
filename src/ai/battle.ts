@@ -23,6 +23,8 @@ export interface BattleInput {
   maxDepth?: number; // cap on hero hits considered (default 60)
   /** keep the action table of every state so later rounds of the same battle need no new solve */
   keepPlan?: boolean;
+  /** also return the root value for every hero health 0..heroHp (same beast health) */
+  wantRoots?: boolean;
 }
 
 /** Optimal action for every reachable (hero health, beast health) state of one battle. */
@@ -76,6 +78,8 @@ export interface BattleSolution {
   pDieNextHit: number;
   depthCapped: boolean;
   plan?: BattlePlan;
+  /** value of the battle from its start for hero health h (index), when requested */
+  roots?: Float64Array;
 }
 
 // reusable buffers
@@ -304,5 +308,6 @@ export function solveBattle(input: BattleInput): BattleSolution {
     pDieNextHit,
     depthCapped,
     plan: keep ? new BattlePlan(b0, dN, dC, H, diagonals) : undefined,
+    roots: input.wantRoots ? Float64Array.from(cV.subarray(0, H + 1), (v, i) => (i === 0 ? 0 : v)) : undefined,
   };
 }

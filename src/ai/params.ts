@@ -196,6 +196,8 @@ export const PARAM_BOUNDS: Record<string, [number, number]> = {
   rotateG: [0, 20],
   rotateMaxRisk: [0, 0.05],
   rotateBuyGain: [0, 200],
+  killSwapMaxHp: [0, 0.5],
+  collectGain: [0, 200],
 };
 
 export const TUNABLE_KEYS = Object.keys(PARAM_BOUNDS) as Array<keyof PolicyParams>;

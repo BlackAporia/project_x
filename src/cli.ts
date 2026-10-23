@@ -32,10 +32,15 @@ function loadDotEnv(): void {
   }
 }
 
-/** A dungeon's own tuned policy (policy/<dungeon>.json) when it exists, else the main policy. */
-function dungeonPolicy(dungeon: string): string {
+/**
+ * Policy file for a run: a dungeon's own tuned policy (policy/<dungeon>.json) when it exists; practice games (no item
+ * specials, so no gear farming) use policy/practice.json when present; otherwise the main (mainnet) policy.
+ */
+function dungeonPolicy(dungeon: string, mode = ''): string {
   const key = dungeon.toLowerCase().replace(/[^a-z]/g, '');
-  return key && existsSync(`policy/${key}.json`) ? `policy/${key}.json` : 'policy/policy.json';
+  if (key && existsSync(`policy/${key}.json`)) return `policy/${key}.json`;
+  if (mode.startsWith('practice') && existsSync('policy/practice.json')) return 'policy/practice.json';
+  return 'policy/policy.json';
 }
 
 async function main(): Promise<void> {
@@ -76,6 +81,8 @@ async function main(): Promise<void> {
       core: { type: 'string' },
       'settings-id': { type: 'string' },
       python: { type: 'string' },
+      levels: { type: 'string' },
+      effort: { type: 'string' },
     },
   });
   const num = (v: unknown, d: number) => (typeof v === 'string' && v !== '' && !Number.isNaN(Number(v)) ? Number(v) : d);
@@ -96,6 +103,22 @@ async function main(): Promise<void> {
       const { tune } = await import('./learn/tuner.ts');
       const dungeonName = str(values.dungeon, '');
       const dungeon = dungeonName ? (await import('./game/dungeons.ts')).dungeonEngineSettings(dungeonName) : null;
+      if (str(values.objective, '') === 'tail') {
+        // optimize P(reaching the leaderboard top) by multilevel splitting
+        const { tuneTail } = await import('./learn/tail.ts');
+        await tuneTail({
+          settings: dungeon?.settings,
+          label: dungeon?.label,
+          generations: num(values.generations, 6),
+          games: num(values.games, 800),
+          effort: num(values.effort, 400),
+          levels: str(values.levels, '10,15,20,25,30,35,40,43,46').split(',').map(Number),
+          workers: num(values.workers, 0) || undefined,
+          policyPath: str(values.policy, 'policy/policy.json'),
+          seed: num(values.seed, 1),
+        });
+        break;
+      }
       await tune({
         settings: dungeon?.settings,
         label: dungeon?.label,
@@ -120,7 +143,7 @@ async function main(): Promise<void> {
         minutes: num(values.minutes, Number(process.env.BOT_MINUTES ?? 20)),
         maxGames: num(values['max-games'], Number(process.env.BOT_MAX_GAMES ?? 50)),
         dataDir: str(values.data, process.env.BOT_DATA_DIR ?? 'site/data'),
-        policyPath: str(values.policy, dungeonPolicy(str(values.dungeon, process.env.BOT_DUNGEON ?? ''))),
+        policyPath: str(values.policy, dungeonPolicy(str(values.dungeon, process.env.BOT_DUNGEON ?? ''), str(values.mode, process.env.BOT_MODE ?? 'practice'))),
         live: values.live === true || process.env.MAINNET_LIVE === 'true',
         dungeon: str(values.dungeon, process.env.BOT_DUNGEON ?? '') || undefined,
         frontend: str(values.frontend, '') || undefined,
