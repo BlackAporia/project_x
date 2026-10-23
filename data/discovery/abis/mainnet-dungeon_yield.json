@@ -1,0 +1,1126 @@
+{
+ "address": "0x0616042ee02abc8c73d7eb975d33ade3b53f8296005363d1ee56a1ccefd4f49f",
+ "abi": [
+  {
+   "type": "impl",
+   "name": "OpusYieldImpl",
+   "interface_name": "death_mountain::dungeons::opus_yield::IOpusYield"
+  },
+  {
+   "type": "enum",
+   "name": "core::option::Option::<core::felt252>",
+   "variants": [
+    {
+     "name": "Some",
+     "type": "core::felt252"
+    },
+    {
+     "name": "None",
+     "type": "()"
+    }
+   ]
+  },
+  {
+   "type": "enum",
+   "name": "core::bool",
+   "variants": [
+    {
+     "name": "False",
+     "type": "()"
+    },
+    {
+     "name": "True",
+     "type": "()"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "core::integer::u256",
+   "members": [
+    {
+     "name": "low",
+     "type": "core::integer::u128"
+    },
+    {
+     "name": "high",
+     "type": "core::integer::u128"
+    }
+   ]
+  },
+  {
+   "type": "interface",
+   "name": "death_mountain::dungeons::opus_yield::IOpusYield",
+   "items": [
+    {
+     "type": "function",
+     "name": "buy_game",
+     "inputs": [
+      {
+       "name": "player_name",
+       "type": "core::option::Option::<core::felt252>"
+      },
+      {
+       "name": "to",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "soulbound",
+       "type": "core::bool"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::felt252"
+      }
+     ],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "claim_tickets",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u128"
+      }
+     ],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "deposit",
+     "inputs": [
+      {
+       "name": "cash_amount",
+       "type": "core::integer::u256"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u128"
+      }
+     ],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "withdraw",
+     "inputs": [
+      {
+       "name": "shares",
+       "type": "core::integer::u128"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u256"
+      }
+     ],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "close_week",
+     "inputs": [],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "propose_winner",
+     "inputs": [
+      {
+       "name": "week_id",
+       "type": "core::integer::u32"
+      },
+      {
+       "name": "candidate",
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "open_week",
+     "inputs": [],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "close_dungeon",
+     "inputs": [],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "open_dungeon",
+     "inputs": [],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_cost_to_play",
+     "inputs": [
+      {
+       "name": "cost",
+       "type": "core::integer::u128"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_fee_amount",
+     "inputs": [
+      {
+       "name": "fee_amount",
+       "type": "core::integer::u128"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_fee_receiver",
+     "inputs": [
+      {
+       "name": "fee_receiver",
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_settings_id",
+     "inputs": [
+      {
+       "name": "settings_id",
+       "type": "core::integer::u32"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_week_epoch",
+     "inputs": [
+      {
+       "name": "epoch",
+       "type": "core::integer::u64"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_denshokan",
+     "inputs": [
+      {
+       "name": "addr",
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_max_slippage_bps",
+     "inputs": [
+      {
+       "name": "bps",
+       "type": "core::integer::u16"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "current_week_id",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::integer::u32"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "week_state",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::integer::u8"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "is_pre_launch",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::bool"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "is_play_open_now",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::bool"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "is_open_window_now",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::bool"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "lp_shares_of",
+     "inputs": [
+      {
+       "name": "user",
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u128"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "total_lp_shares",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::integer::u128"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "week_entry_pool",
+     "inputs": [
+      {
+       "name": "week_id",
+       "type": "core::integer::u32"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u256"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "week_yield_pool",
+     "inputs": [
+      {
+       "name": "week_id",
+       "type": "core::integer::u32"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u256"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "week_winner_of",
+     "inputs": [
+      {
+       "name": "week_id",
+       "type": "core::integer::u32"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "participant_count",
+     "inputs": [
+      {
+       "name": "week_id",
+       "type": "core::integer::u32"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u32"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "tickets_of",
+     "inputs": [
+      {
+       "name": "week_id",
+       "type": "core::integer::u32"
+      },
+      {
+       "name": "player",
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u128"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "cost_to_play",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::integer::u128"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "fee_amount",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::integer::u128"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "fee_receiver",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "settings_id",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::integer::u32"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "denshokan_address",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "stabilizer_address",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "cash_token",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "usdc_token",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "week_epoch",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::integer::u64"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "staked_token_id",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::integer::u64"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "week_commit_block",
+     "inputs": [
+      {
+       "name": "week_id",
+       "type": "core::integer::u32"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u64"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "is_closed",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::bool"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "max_slippage_bps",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::integer::u16"
+      }
+     ],
+     "state_mutability": "view"
+    }
+   ]
+  },
+  {
+   "type": "impl",
+   "name": "UpgradeableImpl",
+   "interface_name": "openzeppelin_interfaces::upgrades::IUpgradeable"
+  },
+  {
+   "type": "interface",
+   "name": "openzeppelin_interfaces::upgrades::IUpgradeable",
+   "items": [
+    {
+     "type": "function",
+     "name": "upgrade",
+     "inputs": [
+      {
+       "name": "new_class_hash",
+       "type": "core::starknet::class_hash::ClassHash"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    }
+   ]
+  },
+  {
+   "type": "impl",
+   "name": "OwnableMixinImpl",
+   "interface_name": "openzeppelin_interfaces::access::ownable::OwnableABI"
+  },
+  {
+   "type": "interface",
+   "name": "openzeppelin_interfaces::access::ownable::OwnableABI",
+   "items": [
+    {
+     "type": "function",
+     "name": "owner",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "transfer_ownership",
+     "inputs": [
+      {
+       "name": "new_owner",
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "renounce_ownership",
+     "inputs": [],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "transferOwnership",
+     "inputs": [
+      {
+       "name": "newOwner",
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "renounceOwnership",
+     "inputs": [],
+     "outputs": [],
+     "state_mutability": "external"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "ekubo::types::keys::PoolKey",
+   "members": [
+    {
+     "name": "token0",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "token1",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "fee",
+     "type": "core::integer::u128"
+    },
+    {
+     "name": "tick_spacing",
+     "type": "core::integer::u128"
+    },
+    {
+     "name": "extension",
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "ekubo::types::i129::i129",
+   "members": [
+    {
+     "name": "mag",
+     "type": "core::integer::u128"
+    },
+    {
+     "name": "sign",
+     "type": "core::bool"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "ekubo::types::bounds::Bounds",
+   "members": [
+    {
+     "name": "lower",
+     "type": "ekubo::types::i129::i129"
+    },
+    {
+     "name": "upper",
+     "type": "ekubo::types::i129::i129"
+    }
+   ]
+  },
+  {
+   "type": "constructor",
+   "name": "constructor",
+   "inputs": [
+    {
+     "name": "owner",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "denshokan_address",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "game_token_address",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "game_core_address",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "stabilizer_address",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "ekubo_positions",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "ekubo_positions_nft",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "ekubo_router",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "cash_token",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "usdc_token",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "pool_key",
+     "type": "ekubo::types::keys::PoolKey"
+    },
+    {
+     "name": "bounds",
+     "type": "ekubo::types::bounds::Bounds"
+    },
+    {
+     "name": "settings_id",
+     "type": "core::integer::u32"
+    },
+    {
+     "name": "cost_to_play",
+     "type": "core::integer::u128"
+    },
+    {
+     "name": "fee_amount",
+     "type": "core::integer::u128"
+    },
+    {
+     "name": "fee_receiver",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "week_epoch",
+     "type": "core::integer::u64"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferred",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "previous_owner",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    },
+    {
+     "name": "new_owner",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferStarted",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "previous_owner",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    },
+    {
+     "name": "new_owner",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "openzeppelin_access::ownable::ownable::OwnableComponent::Event",
+   "kind": "enum",
+   "variants": [
+    {
+     "name": "OwnershipTransferred",
+     "type": "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferred",
+     "kind": "nested"
+    },
+    {
+     "name": "OwnershipTransferStarted",
+     "type": "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferStarted",
+     "kind": "nested"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Upgraded",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "class_hash",
+     "type": "core::starknet::class_hash::ClassHash",
+     "kind": "data"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Event",
+   "kind": "enum",
+   "variants": [
+    {
+     "name": "Upgraded",
+     "type": "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Upgraded",
+     "kind": "nested"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "death_mountain::dungeons::opus_yield::OpusYield::LiquidityAdded",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "user",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    },
+    {
+     "name": "cash",
+     "type": "core::integer::u256",
+     "kind": "data"
+    },
+    {
+     "name": "shares",
+     "type": "core::integer::u128",
+     "kind": "data"
+    },
+    {
+     "name": "total_shares",
+     "type": "core::integer::u128",
+     "kind": "data"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "death_mountain::dungeons::opus_yield::OpusYield::LiquidityRemoved",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "user",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    },
+    {
+     "name": "cash",
+     "type": "core::integer::u256",
+     "kind": "data"
+    },
+    {
+     "name": "shares",
+     "type": "core::integer::u128",
+     "kind": "data"
+    },
+    {
+     "name": "total_shares",
+     "type": "core::integer::u128",
+     "kind": "data"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "death_mountain::dungeons::opus_yield::OpusYield::GameBought",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252",
+     "kind": "key"
+    },
+    {
+     "name": "player",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    },
+    {
+     "name": "week_id",
+     "type": "core::integer::u32",
+     "kind": "data"
+    },
+    {
+     "name": "fee_paid",
+     "type": "core::integer::u128",
+     "kind": "data"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "death_mountain::dungeons::opus_yield::OpusYield::RewardsClaimed",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252",
+     "kind": "key"
+    },
+    {
+     "name": "level",
+     "type": "core::integer::u8",
+     "kind": "data"
+    },
+    {
+     "name": "reward",
+     "type": "core::integer::u256",
+     "kind": "data"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "death_mountain::dungeons::opus_yield::OpusYield::WeekClosed",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "week_id",
+     "type": "core::integer::u32",
+     "kind": "key"
+    },
+    {
+     "name": "yield_harvested",
+     "type": "core::integer::u256",
+     "kind": "data"
+    },
+    {
+     "name": "entry_pool",
+     "type": "core::integer::u256",
+     "kind": "data"
+    },
+    {
+     "name": "commit_block",
+     "type": "core::integer::u64",
+     "kind": "data"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "death_mountain::dungeons::opus_yield::OpusYield::WinnerProposed",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "week_id",
+     "type": "core::integer::u32",
+     "kind": "key"
+    },
+    {
+     "name": "candidate",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    },
+    {
+     "name": "score",
+     "type": "core::integer::u256",
+     "kind": "data"
+    },
+    {
+     "name": "became_leader",
+     "type": "core::bool",
+     "kind": "data"
+    },
+    {
+     "name": "current_leader",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "data"
+    },
+    {
+     "name": "current_best_score",
+     "type": "core::integer::u256",
+     "kind": "data"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "death_mountain::dungeons::opus_yield::OpusYield::WinnerPaid",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "week_id",
+     "type": "core::integer::u32",
+     "kind": "key"
+    },
+    {
+     "name": "winner",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    },
+    {
+     "name": "amount",
+     "type": "core::integer::u256",
+     "kind": "data"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "death_mountain::dungeons::opus_yield::OpusYield::WeekOpened",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "week_id",
+     "type": "core::integer::u32",
+     "kind": "key"
+    },
+    {
+     "name": "position_token_id",
+     "type": "core::integer::u64",
+     "kind": "data"
+    },
+    {
+     "name": "total_shares",
+     "type": "core::integer::u128",
+     "kind": "data"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "death_mountain::dungeons::opus_yield::OpusYield::Event",
+   "kind": "enum",
+   "variants": [
+    {
+     "name": "OwnableEvent",
+     "type": "openzeppelin_access::ownable::ownable::OwnableComponent::Event",
+     "kind": "flat"
+    },
+    {
+     "name": "UpgradeableEvent",
+     "type": "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Event",
+     "kind": "flat"
+    },
+    {
+     "name": "LiquidityAdded",
+     "type": "death_mountain::dungeons::opus_yield::OpusYield::LiquidityAdded",
+     "kind": "nested"
+    },
+    {
+     "name": "LiquidityRemoved",
+     "type": "death_mountain::dungeons::opus_yield::OpusYield::LiquidityRemoved",
+     "kind": "nested"
+    },
+    {
+     "name": "GameBought",
+     "type": "death_mountain::dungeons::opus_yield::OpusYield::GameBought",
+     "kind": "nested"
+    },
+    {
+     "name": "RewardsClaimed",
+     "type": "death_mountain::dungeons::opus_yield::OpusYield::RewardsClaimed",
+     "kind": "nested"
+    },
+    {
+     "name": "WeekClosed",
+     "type": "death_mountain::dungeons::opus_yield::OpusYield::WeekClosed",
+     "kind": "nested"
+    },
+    {
+     "name": "WinnerProposed",
+     "type": "death_mountain::dungeons::opus_yield::OpusYield::WinnerProposed",
+     "kind": "nested"
+    },
+    {
+     "name": "WinnerPaid",
+     "type": "death_mountain::dungeons::opus_yield::OpusYield::WinnerPaid",
+     "kind": "nested"
+    },
+    {
+     "name": "WeekOpened",
+     "type": "death_mountain::dungeons::opus_yield::OpusYield::WeekOpened",
+     "kind": "nested"
+    }
+   ]
+  }
+ ]
+}

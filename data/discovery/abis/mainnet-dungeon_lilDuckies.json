@@ -1,0 +1,910 @@
+{
+ "address": "0x04427c2cdd82bf2283deb39aa939e1ad61051ab932e0de714032fbe22ed0a419",
+ "abi": [
+  {
+   "type": "impl",
+   "name": "DuckiesImpl",
+   "interface_name": "death_mountain::dungeons::duckies::IDuckies"
+  },
+  {
+   "type": "enum",
+   "name": "death_mountain::dungeons::duckies::Ticket",
+   "variants": [
+    {
+     "name": "Beast",
+     "type": "core::integer::u32"
+    },
+    {
+     "name": "Ducky",
+     "type": "core::integer::u32"
+    },
+    {
+     "name": "DuckFren",
+     "type": "core::integer::u32"
+    }
+   ]
+  },
+  {
+   "type": "enum",
+   "name": "core::option::Option::<core::felt252>",
+   "variants": [
+    {
+     "name": "Some",
+     "type": "core::felt252"
+    },
+    {
+     "name": "None",
+     "type": "()"
+    }
+   ]
+  },
+  {
+   "type": "enum",
+   "name": "core::bool",
+   "variants": [
+    {
+     "name": "False",
+     "type": "()"
+    },
+    {
+     "name": "True",
+     "type": "()"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "core::integer::u256",
+   "members": [
+    {
+     "name": "low",
+     "type": "core::integer::u128"
+    },
+    {
+     "name": "high",
+     "type": "core::integer::u128"
+    }
+   ]
+  },
+  {
+   "type": "interface",
+   "name": "death_mountain::dungeons::duckies::IDuckies",
+   "items": [
+    {
+     "type": "function",
+     "name": "enter_dungeon",
+     "inputs": [
+      {
+       "name": "ticket",
+       "type": "death_mountain::dungeons::duckies::Ticket"
+      },
+      {
+       "name": "player_name",
+       "type": "core::option::Option::<core::felt252>"
+      },
+      {
+       "name": "to",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "soulbound",
+       "type": "core::bool"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::felt252"
+      }
+     ],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "claim_reward",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      },
+      {
+       "name": "beast_id",
+       "type": "core::integer::u8"
+      },
+      {
+       "name": "prefix",
+       "type": "core::integer::u8"
+      },
+      {
+       "name": "suffix",
+       "type": "core::integer::u8"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "close_dungeon",
+     "inputs": [],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "open_dungeon",
+     "inputs": [],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "withdraw_ducks",
+     "inputs": [
+      {
+       "name": "to",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "amount",
+       "type": "core::integer::u256"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_settings_id",
+     "inputs": [
+      {
+       "name": "settings_id",
+       "type": "core::integer::u32"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_beast_contract",
+     "inputs": [
+      {
+       "name": "beast_contract",
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_duck_nft_contract",
+     "inputs": [
+      {
+       "name": "duck_nft_contract",
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_duck_fren_contract",
+     "inputs": [
+      {
+       "name": "duck_fren_contract",
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_duck_token_address",
+     "inputs": [
+      {
+       "name": "duck_token_address",
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_duck_token_id",
+     "inputs": [
+      {
+       "name": "duck_token_id",
+       "type": "core::integer::u256"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "register_receiver_interface",
+     "inputs": [],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "duckies_remaining",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::integer::u8"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "beast_last_entry",
+     "inputs": [
+      {
+       "name": "beast_token_id",
+       "type": "core::integer::u32"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u64"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "duck_nft_last_entry",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::integer::u32"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u64"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "duck_fren_last_entry",
+     "inputs": [
+      {
+       "name": "player",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "token_id",
+       "type": "core::integer::u32"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u64"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "duck_fren_daily_usage",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::integer::u32"
+      },
+      {
+       "name": "day_number",
+       "type": "core::integer::u64"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u32"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "duck_fren_daily_limit",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::integer::u32"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u32"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "beast_contract",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "duck_nft_contract",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "duck_fren_contract",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "duck_token_address",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "duck_token_id",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::integer::u256"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "settings_id",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::integer::u32"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "is_closed",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::bool"
+      }
+     ],
+     "state_mutability": "view"
+    }
+   ]
+  },
+  {
+   "type": "impl",
+   "name": "UpgradeableImpl",
+   "interface_name": "openzeppelin_interfaces::upgrades::IUpgradeable"
+  },
+  {
+   "type": "interface",
+   "name": "openzeppelin_interfaces::upgrades::IUpgradeable",
+   "items": [
+    {
+     "type": "function",
+     "name": "upgrade",
+     "inputs": [
+      {
+       "name": "new_class_hash",
+       "type": "core::starknet::class_hash::ClassHash"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    }
+   ]
+  },
+  {
+   "type": "impl",
+   "name": "OwnableMixinImpl",
+   "interface_name": "openzeppelin_interfaces::access::ownable::OwnableABI"
+  },
+  {
+   "type": "interface",
+   "name": "openzeppelin_interfaces::access::ownable::OwnableABI",
+   "items": [
+    {
+     "type": "function",
+     "name": "owner",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "transfer_ownership",
+     "inputs": [
+      {
+       "name": "new_owner",
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "renounce_ownership",
+     "inputs": [],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "transferOwnership",
+     "inputs": [
+      {
+       "name": "newOwner",
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "renounceOwnership",
+     "inputs": [],
+     "outputs": [],
+     "state_mutability": "external"
+    }
+   ]
+  },
+  {
+   "type": "impl",
+   "name": "ERC1155ReceiverMixinImpl",
+   "interface_name": "openzeppelin_interfaces::token::erc1155::ERC1155ReceiverABI"
+  },
+  {
+   "type": "struct",
+   "name": "core::array::Span::<core::felt252>",
+   "members": [
+    {
+     "name": "snapshot",
+     "type": "@core::array::Array::<core::felt252>"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "core::array::Span::<core::integer::u256>",
+   "members": [
+    {
+     "name": "snapshot",
+     "type": "@core::array::Array::<core::integer::u256>"
+    }
+   ]
+  },
+  {
+   "type": "interface",
+   "name": "openzeppelin_interfaces::token::erc1155::ERC1155ReceiverABI",
+   "items": [
+    {
+     "type": "function",
+     "name": "on_erc1155_received",
+     "inputs": [
+      {
+       "name": "operator",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "from",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "token_id",
+       "type": "core::integer::u256"
+      },
+      {
+       "name": "value",
+       "type": "core::integer::u256"
+      },
+      {
+       "name": "data",
+       "type": "core::array::Span::<core::felt252>"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::felt252"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "on_erc1155_batch_received",
+     "inputs": [
+      {
+       "name": "operator",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "from",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "token_ids",
+       "type": "core::array::Span::<core::integer::u256>"
+      },
+      {
+       "name": "values",
+       "type": "core::array::Span::<core::integer::u256>"
+      },
+      {
+       "name": "data",
+       "type": "core::array::Span::<core::felt252>"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::felt252"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "onERC1155Received",
+     "inputs": [
+      {
+       "name": "operator",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "from",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "tokenId",
+       "type": "core::integer::u256"
+      },
+      {
+       "name": "value",
+       "type": "core::integer::u256"
+      },
+      {
+       "name": "data",
+       "type": "core::array::Span::<core::felt252>"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::felt252"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "onERC1155BatchReceived",
+     "inputs": [
+      {
+       "name": "operator",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "from",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "tokenIds",
+       "type": "core::array::Span::<core::integer::u256>"
+      },
+      {
+       "name": "values",
+       "type": "core::array::Span::<core::integer::u256>"
+      },
+      {
+       "name": "data",
+       "type": "core::array::Span::<core::felt252>"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::felt252"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "supports_interface",
+     "inputs": [
+      {
+       "name": "interface_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::bool"
+      }
+     ],
+     "state_mutability": "view"
+    }
+   ]
+  },
+  {
+   "type": "constructor",
+   "name": "constructor",
+   "inputs": [
+    {
+     "name": "owner",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "denshokan_address",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "game_token_address",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "game_core_address",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "beast_contract",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "duck_nft_contract",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "duck_fren_contract",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "duck_token_address",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "duck_token_id",
+     "type": "core::integer::u256"
+    },
+    {
+     "name": "settings_id",
+     "type": "core::integer::u32"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferred",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "previous_owner",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    },
+    {
+     "name": "new_owner",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferStarted",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "previous_owner",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    },
+    {
+     "name": "new_owner",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "openzeppelin_access::ownable::ownable::OwnableComponent::Event",
+   "kind": "enum",
+   "variants": [
+    {
+     "name": "OwnershipTransferred",
+     "type": "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferred",
+     "kind": "nested"
+    },
+    {
+     "name": "OwnershipTransferStarted",
+     "type": "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferStarted",
+     "kind": "nested"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Upgraded",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "class_hash",
+     "type": "core::starknet::class_hash::ClassHash",
+     "kind": "data"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Event",
+   "kind": "enum",
+   "variants": [
+    {
+     "name": "Upgraded",
+     "type": "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Upgraded",
+     "kind": "nested"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "openzeppelin_introspection::src5::SRC5Component::Event",
+   "kind": "enum",
+   "variants": []
+  },
+  {
+   "type": "event",
+   "name": "openzeppelin_token::erc1155::erc1155_receiver::ERC1155ReceiverComponent::Event",
+   "kind": "enum",
+   "variants": []
+  },
+  {
+   "type": "event",
+   "name": "death_mountain::dungeons::duckies::Duckies::DuckClaimed",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252",
+     "kind": "key"
+    },
+    {
+     "name": "collectable_id",
+     "type": "core::felt252",
+     "kind": "data"
+    },
+    {
+     "name": "beast_id",
+     "type": "core::integer::u8",
+     "kind": "data"
+    },
+    {
+     "name": "prefix",
+     "type": "core::integer::u8",
+     "kind": "data"
+    },
+    {
+     "name": "suffix",
+     "type": "core::integer::u8",
+     "kind": "data"
+    },
+    {
+     "name": "player",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "data"
+    },
+    {
+     "name": "duck_number",
+     "type": "core::integer::u8",
+     "kind": "data"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "death_mountain::dungeons::duckies::Duckies::DungeonEntered",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252",
+     "kind": "key"
+    },
+    {
+     "name": "nft_contract",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "data"
+    },
+    {
+     "name": "token_id",
+     "type": "core::integer::u32",
+     "kind": "data"
+    },
+    {
+     "name": "entered_at",
+     "type": "core::integer::u64",
+     "kind": "data"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "death_mountain::dungeons::duckies::Duckies::Event",
+   "kind": "enum",
+   "variants": [
+    {
+     "name": "OwnableEvent",
+     "type": "openzeppelin_access::ownable::ownable::OwnableComponent::Event",
+     "kind": "flat"
+    },
+    {
+     "name": "UpgradeableEvent",
+     "type": "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Event",
+     "kind": "flat"
+    },
+    {
+     "name": "SRC5Event",
+     "type": "openzeppelin_introspection::src5::SRC5Component::Event",
+     "kind": "flat"
+    },
+    {
+     "name": "ERC1155ReceiverEvent",
+     "type": "openzeppelin_token::erc1155::erc1155_receiver::ERC1155ReceiverComponent::Event",
+     "kind": "flat"
+    },
+    {
+     "name": "DuckClaimed",
+     "type": "death_mountain::dungeons::duckies::Duckies::DuckClaimed",
+     "kind": "nested"
+    },
+    {
+     "name": "DungeonEntered",
+     "type": "death_mountain::dungeons::duckies::Duckies::DungeonEntered",
+     "kind": "nested"
+    }
+   ]
+  }
+ ]
+}

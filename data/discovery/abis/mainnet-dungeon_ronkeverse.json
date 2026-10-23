@@ -1,0 +1,1282 @@
+{
+ "address": "0x03ccf47cc8acfba6e5f46f7644fda7576bf668ca7041f25627fb4196d52f349c",
+ "abi": [
+  {
+   "type": "impl",
+   "name": "RonkeverseImpl",
+   "interface_name": "death_mountain::dungeons::ronkeverse::IRonkeverse"
+  },
+  {
+   "type": "struct",
+   "name": "core::array::Span::<core::felt252>",
+   "members": [
+    {
+     "name": "snapshot",
+     "type": "@core::array::Array::<core::felt252>"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "core::starknet::eth_address::EthAddress",
+   "members": [
+    {
+     "name": "address",
+     "type": "core::felt252"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::dungeons::merkle::leaf::LeafData",
+   "members": [
+    {
+     "name": "eth_address",
+     "type": "core::starknet::eth_address::EthAddress"
+    },
+    {
+     "name": "index",
+     "type": "core::integer::u32"
+    },
+    {
+     "name": "quantity",
+     "type": "core::integer::u32"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "core::integer::u256",
+   "members": [
+    {
+     "name": "low",
+     "type": "core::integer::u128"
+    },
+    {
+     "name": "high",
+     "type": "core::integer::u128"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "game_components_metagame::merkledrop::signature::EthereumSignature",
+   "members": [
+    {
+     "name": "v",
+     "type": "core::integer::u32"
+    },
+    {
+     "name": "r",
+     "type": "core::integer::u256"
+    },
+    {
+     "name": "s",
+     "type": "core::integer::u256"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::dungeons::merkle::leaf::StarknetLeafData",
+   "members": [
+    {
+     "name": "player",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "index",
+     "type": "core::integer::u32"
+    },
+    {
+     "name": "quantity",
+     "type": "core::integer::u32"
+    }
+   ]
+  },
+  {
+   "type": "enum",
+   "name": "core::bool",
+   "variants": [
+    {
+     "name": "False",
+     "type": "()"
+    },
+    {
+     "name": "True",
+     "type": "()"
+    }
+   ]
+  },
+  {
+   "type": "interface",
+   "name": "death_mountain::dungeons::ronkeverse::IRonkeverse",
+   "items": [
+    {
+     "type": "function",
+     "name": "commit_action",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      },
+      {
+       "name": "expected_chain",
+       "type": "core::felt252"
+      },
+      {
+       "name": "encoded_actions",
+       "type": "core::array::Span::<core::felt252>"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "claim",
+     "inputs": [
+      {
+       "name": "proof",
+       "type": "core::array::Span::<core::felt252>"
+      },
+      {
+       "name": "leaf",
+       "type": "death_mountain::dungeons::merkle::leaf::LeafData"
+      },
+      {
+       "name": "recipient",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "signature",
+       "type": "game_components_metagame::merkledrop::signature::EthereumSignature"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::array::Span::<core::felt252>"
+      }
+     ],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "claim_bound",
+     "inputs": [
+      {
+       "name": "proof",
+       "type": "core::array::Span::<core::felt252>"
+      },
+      {
+       "name": "leaf",
+       "type": "death_mountain::dungeons::merkle::leaf::LeafData"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::array::Span::<core::felt252>"
+      }
+     ],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "claim_survivor",
+     "inputs": [
+      {
+       "name": "proof",
+       "type": "core::array::Span::<core::felt252>"
+      },
+      {
+       "name": "leaf",
+       "type": "death_mountain::dungeons::merkle::leaf::StarknetLeafData"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::array::Span::<core::felt252>"
+      }
+     ],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "claim_prize",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      },
+      {
+       "name": "beast_id",
+       "type": "core::integer::u8"
+      },
+      {
+       "name": "prefix",
+       "type": "core::integer::u8"
+      },
+      {
+       "name": "suffix",
+       "type": "core::integer::u8"
+      },
+      {
+       "name": "beast_level",
+       "type": "core::integer::u16"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "minter_mint",
+     "inputs": [
+      {
+       "name": "recipient",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "quantity",
+       "type": "core::integer::u32"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::array::Span::<core::felt252>"
+      }
+     ],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "preview_mint",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::felt252"
+      }
+     ],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_root",
+     "inputs": [
+      {
+       "name": "root",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_survivor_root",
+     "inputs": [
+      {
+       "name": "root",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_settings_id",
+     "inputs": [
+      {
+       "name": "settings_id",
+       "type": "core::integer::u32"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_survivor_settings_id",
+     "inputs": [
+      {
+       "name": "settings_id",
+       "type": "core::integer::u32"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_denshokan_address",
+     "inputs": [
+      {
+       "name": "denshokan_address",
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_epoch_schedule",
+     "inputs": [
+      {
+       "name": "start",
+       "type": "core::integer::u64"
+      },
+      {
+       "name": "duration",
+       "type": "core::integer::u64"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "advance_epoch",
+     "inputs": [],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_submit_deadline",
+     "inputs": [
+      {
+       "name": "deadline",
+       "type": "core::integer::u64"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_wanted_bounty_budget",
+     "inputs": [
+      {
+       "name": "budget",
+       "type": "core::integer::u256"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_allowed_minter",
+     "inputs": [
+      {
+       "name": "minter",
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_preview_mint_enabled",
+     "inputs": [
+      {
+       "name": "enabled",
+       "type": "core::bool"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "close_dungeon",
+     "inputs": [],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "open_dungeon",
+     "inputs": [],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "get_root",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::felt252"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "get_survivor_root",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::felt252"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "is_claimed",
+     "inputs": [
+      {
+       "name": "leaf_hash",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::bool"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "is_claimed_in_epoch",
+     "inputs": [
+      {
+       "name": "epoch",
+       "type": "core::integer::u64"
+      },
+      {
+       "name": "leaf_hash",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::bool"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "leaf_hash",
+     "inputs": [
+      {
+       "name": "leaf",
+       "type": "death_mountain::dungeons::merkle::leaf::LeafData"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::felt252"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "survivor_leaf_hash",
+     "inputs": [
+      {
+       "name": "leaf",
+       "type": "death_mountain::dungeons::merkle::leaf::StarknetLeafData"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::felt252"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "current_epoch",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::integer::u64"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "epoch_start",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::integer::u64"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "epoch_duration",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::integer::u64"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "next_epoch_at",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::integer::u64"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "claims_open",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::bool"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "survivor_claims_open",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::bool"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "submit_deadline",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::integer::u64"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "settings_id",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::integer::u32"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "survivor_settings_id",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::integer::u32"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "denshokan_address",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "total_games",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::integer::u64"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "is_closed",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::bool"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "is_preview_mint_enabled",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::bool"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "eth_address_of",
+     "inputs": [
+      {
+       "name": "account",
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::felt252"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "wanted_bounty_budget",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::integer::u256"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "total_requested",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::integer::u256"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "wanted_bounty_remaining",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::integer::u256"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "prizes_won_by_account",
+     "inputs": [
+      {
+       "name": "account",
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u8"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "max_prizes_per_address",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::integer::u8"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "can_claim_prize",
+     "inputs": [
+      {
+       "name": "account",
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::bool"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "quote_prize",
+     "inputs": [
+      {
+       "name": "beast_level",
+       "type": "core::integer::u16"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u256"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "allowed_minter_address",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "state_mutability": "view"
+    }
+   ]
+  },
+  {
+   "type": "impl",
+   "name": "UpgradeableImpl",
+   "interface_name": "openzeppelin_interfaces::upgrades::IUpgradeable"
+  },
+  {
+   "type": "interface",
+   "name": "openzeppelin_interfaces::upgrades::IUpgradeable",
+   "items": [
+    {
+     "type": "function",
+     "name": "upgrade",
+     "inputs": [
+      {
+       "name": "new_class_hash",
+       "type": "core::starknet::class_hash::ClassHash"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    }
+   ]
+  },
+  {
+   "type": "impl",
+   "name": "OwnableMixinImpl",
+   "interface_name": "openzeppelin_interfaces::access::ownable::OwnableABI"
+  },
+  {
+   "type": "interface",
+   "name": "openzeppelin_interfaces::access::ownable::OwnableABI",
+   "items": [
+    {
+     "type": "function",
+     "name": "owner",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "transfer_ownership",
+     "inputs": [
+      {
+       "name": "new_owner",
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "renounce_ownership",
+     "inputs": [],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "transferOwnership",
+     "inputs": [
+      {
+       "name": "newOwner",
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "renounceOwnership",
+     "inputs": [],
+     "outputs": [],
+     "state_mutability": "external"
+    }
+   ]
+  },
+  {
+   "type": "constructor",
+   "name": "constructor",
+   "inputs": [
+    {
+     "name": "owner",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "denshokan_address",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "settings_id",
+     "type": "core::integer::u32"
+    },
+    {
+     "name": "survivor_settings_id",
+     "type": "core::integer::u32"
+    },
+    {
+     "name": "epoch_start",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "epoch_duration",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "submit_deadline",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "merkle_root",
+     "type": "core::felt252"
+    },
+    {
+     "name": "survivor_root",
+     "type": "core::felt252"
+    },
+    {
+     "name": "wanted_bounty_budget",
+     "type": "core::integer::u256"
+    },
+    {
+     "name": "allowed_minter_address",
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferred",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "previous_owner",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    },
+    {
+     "name": "new_owner",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferStarted",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "previous_owner",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    },
+    {
+     "name": "new_owner",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "openzeppelin_access::ownable::ownable::OwnableComponent::Event",
+   "kind": "enum",
+   "variants": [
+    {
+     "name": "OwnershipTransferred",
+     "type": "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferred",
+     "kind": "nested"
+    },
+    {
+     "name": "OwnershipTransferStarted",
+     "type": "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferStarted",
+     "kind": "nested"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Upgraded",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "class_hash",
+     "type": "core::starknet::class_hash::ClassHash",
+     "kind": "data"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Event",
+   "kind": "enum",
+   "variants": [
+    {
+     "name": "Upgraded",
+     "type": "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Upgraded",
+     "kind": "nested"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "death_mountain::dungeons::ronkeverse::Ronkeverse::RootSet",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "root",
+     "type": "core::felt252",
+     "kind": "key"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "death_mountain::dungeons::ronkeverse::Ronkeverse::SurvivorRootSet",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "root",
+     "type": "core::felt252",
+     "kind": "key"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "death_mountain::dungeons::ronkeverse::Ronkeverse::EpochScheduleSet",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "epoch_start",
+     "type": "core::integer::u64",
+     "kind": "data"
+    },
+    {
+     "name": "epoch_duration",
+     "type": "core::integer::u64",
+     "kind": "data"
+    },
+    {
+     "name": "epoch",
+     "type": "core::integer::u64",
+     "kind": "data"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "death_mountain::dungeons::ronkeverse::Ronkeverse::EpochAdvanced",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "epoch",
+     "type": "core::integer::u64",
+     "kind": "data"
+    },
+    {
+     "name": "at",
+     "type": "core::integer::u64",
+     "kind": "data"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "death_mountain::dungeons::ronkeverse::Ronkeverse::GamesClaimed",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "player",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    },
+    {
+     "name": "epoch",
+     "type": "core::integer::u64",
+     "kind": "data"
+    },
+    {
+     "name": "leaf_hash",
+     "type": "core::felt252",
+     "kind": "data"
+    },
+    {
+     "name": "eth_address",
+     "type": "core::felt252",
+     "kind": "data"
+    },
+    {
+     "name": "quantity",
+     "type": "core::integer::u32",
+     "kind": "data"
+    },
+    {
+     "name": "game_ids",
+     "type": "core::array::Span::<core::felt252>",
+     "kind": "data"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "death_mountain::dungeons::ronkeverse::Ronkeverse::SurvivorGamesClaimed",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "player",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    },
+    {
+     "name": "epoch",
+     "type": "core::integer::u64",
+     "kind": "data"
+    },
+    {
+     "name": "leaf_hash",
+     "type": "core::felt252",
+     "kind": "data"
+    },
+    {
+     "name": "settings_id",
+     "type": "core::integer::u32",
+     "kind": "data"
+    },
+    {
+     "name": "quantity",
+     "type": "core::integer::u32",
+     "kind": "data"
+    },
+    {
+     "name": "game_ids",
+     "type": "core::array::Span::<core::felt252>",
+     "kind": "data"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "death_mountain::dungeons::ronkeverse::Ronkeverse::AccountBound",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "eth_address",
+     "type": "core::felt252",
+     "kind": "key"
+    },
+    {
+     "name": "account",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "data"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "death_mountain::dungeons::ronkeverse::Ronkeverse::WantedBeastClaimed",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "eth_address",
+     "type": "core::felt252",
+     "kind": "key"
+    },
+    {
+     "name": "player",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    },
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252",
+     "kind": "data"
+    },
+    {
+     "name": "beast_id",
+     "type": "core::integer::u8",
+     "kind": "data"
+    },
+    {
+     "name": "prefix",
+     "type": "core::integer::u8",
+     "kind": "data"
+    },
+    {
+     "name": "suffix",
+     "type": "core::integer::u8",
+     "kind": "data"
+    },
+    {
+     "name": "beast_level",
+     "type": "core::integer::u16",
+     "kind": "data"
+    },
+    {
+     "name": "amount",
+     "type": "core::integer::u256",
+     "kind": "data"
+    },
+    {
+     "name": "prizes_used",
+     "type": "core::integer::u8",
+     "kind": "data"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "death_mountain::dungeons::ronkeverse::Ronkeverse::MinterMinted",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "recipient",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    },
+    {
+     "name": "quantity",
+     "type": "core::integer::u32",
+     "kind": "data"
+    },
+    {
+     "name": "game_ids",
+     "type": "core::array::Span::<core::felt252>",
+     "kind": "data"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "death_mountain::dungeons::ronkeverse::Ronkeverse::PreviewMinted",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "recipient",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    },
+    {
+     "name": "game_id",
+     "type": "core::felt252",
+     "kind": "data"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "death_mountain::dungeons::ronkeverse::Ronkeverse::Event",
+   "kind": "enum",
+   "variants": [
+    {
+     "name": "OwnableEvent",
+     "type": "openzeppelin_access::ownable::ownable::OwnableComponent::Event",
+     "kind": "flat"
+    },
+    {
+     "name": "UpgradeableEvent",
+     "type": "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Event",
+     "kind": "flat"
+    },
+    {
+     "name": "RootSet",
+     "type": "death_mountain::dungeons::ronkeverse::Ronkeverse::RootSet",
+     "kind": "nested"
+    },
+    {
+     "name": "SurvivorRootSet",
+     "type": "death_mountain::dungeons::ronkeverse::Ronkeverse::SurvivorRootSet",
+     "kind": "nested"
+    },
+    {
+     "name": "EpochScheduleSet",
+     "type": "death_mountain::dungeons::ronkeverse::Ronkeverse::EpochScheduleSet",
+     "kind": "nested"
+    },
+    {
+     "name": "EpochAdvanced",
+     "type": "death_mountain::dungeons::ronkeverse::Ronkeverse::EpochAdvanced",
+     "kind": "nested"
+    },
+    {
+     "name": "GamesClaimed",
+     "type": "death_mountain::dungeons::ronkeverse::Ronkeverse::GamesClaimed",
+     "kind": "nested"
+    },
+    {
+     "name": "SurvivorGamesClaimed",
+     "type": "death_mountain::dungeons::ronkeverse::Ronkeverse::SurvivorGamesClaimed",
+     "kind": "nested"
+    },
+    {
+     "name": "AccountBound",
+     "type": "death_mountain::dungeons::ronkeverse::Ronkeverse::AccountBound",
+     "kind": "nested"
+    },
+    {
+     "name": "WantedBeastClaimed",
+     "type": "death_mountain::dungeons::ronkeverse::Ronkeverse::WantedBeastClaimed",
+     "kind": "nested"
+    },
+    {
+     "name": "MinterMinted",
+     "type": "death_mountain::dungeons::ronkeverse::Ronkeverse::MinterMinted",
+     "kind": "nested"
+    },
+    {
+     "name": "PreviewMinted",
+     "type": "death_mountain::dungeons::ronkeverse::Ronkeverse::PreviewMinted",
+     "kind": "nested"
+    }
+   ]
+  }
+ ]
+}

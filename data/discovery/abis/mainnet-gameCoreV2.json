@@ -1,0 +1,3495 @@
+{
+ "address": "0x06179f1c747672c08861da1df3b167eb337cba403778345db2aa9840cc3deb86",
+ "abi": [
+  {
+   "type": "impl",
+   "name": "GameCoreImpl",
+   "interface_name": "death_mountain::systems::game_core::IGameCore"
+  },
+  {
+   "type": "struct",
+   "name": "core::array::Span::<core::felt252>",
+   "members": [
+    {
+     "name": "snapshot",
+     "type": "@core::array::Array::<core::felt252>"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "core::array::Span::<core::integer::u64>",
+   "members": [
+    {
+     "name": "snapshot",
+     "type": "@core::array::Array::<core::integer::u64>"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::commit_reveal::proof::CommitEpoch",
+   "members": [
+    {
+     "name": "action_count",
+     "type": "core::integer::u32"
+    },
+    {
+     "name": "commit_block",
+     "type": "core::integer::u64"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "core::array::Span::<death_mountain::commit_reveal::proof::CommitEpoch>",
+   "members": [
+    {
+     "name": "snapshot",
+     "type": "@core::array::Array::<death_mountain::commit_reveal::proof::CommitEpoch>"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::commit_reveal::proof::ReplayEffect",
+   "members": [
+    {
+     "name": "kind",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "id",
+     "type": "core::felt252"
+    },
+    {
+     "name": "value",
+     "type": "core::felt252"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "core::array::Span::<death_mountain::commit_reveal::proof::ReplayEffect>",
+   "members": [
+    {
+     "name": "snapshot",
+     "type": "@core::array::Array::<death_mountain::commit_reveal::proof::ReplayEffect>"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::commit_reveal::proof::ProofResult",
+   "members": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252"
+    },
+    {
+     "name": "commitment",
+     "type": "core::felt252"
+    },
+    {
+     "name": "epochs",
+     "type": "core::array::Span::<death_mountain::commit_reveal::proof::CommitEpoch>"
+    },
+    {
+     "name": "mint_hash",
+     "type": "core::felt252"
+    },
+    {
+     "name": "ruleset_hash",
+     "type": "core::felt252"
+    },
+    {
+     "name": "input_root",
+     "type": "core::felt252"
+    },
+    {
+     "name": "packed_adventurer",
+     "type": "core::felt252"
+    },
+    {
+     "name": "packed_bag",
+     "type": "core::felt252"
+    },
+    {
+     "name": "effects",
+     "type": "core::array::Span::<death_mountain::commit_reveal::proof::ReplayEffect>"
+    },
+    {
+     "name": "entropy_root",
+     "type": "core::felt252"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "core::array::Span::<death_mountain::commit_reveal::proof::ProofResult>",
+   "members": [
+    {
+     "name": "snapshot",
+     "type": "@core::array::Array::<death_mountain::commit_reveal::proof::ProofResult>"
+    }
+   ]
+  },
+  {
+   "type": "enum",
+   "name": "core::bool",
+   "variants": [
+    {
+     "name": "False",
+     "type": "()"
+    },
+    {
+     "name": "True",
+     "type": "()"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::systems::settlement::ReplayCheckpoint",
+   "members": [
+    {
+     "name": "rolling",
+     "type": "core::felt252"
+    },
+    {
+     "name": "packed_adventurer",
+     "type": "core::felt252"
+    },
+    {
+     "name": "packed_bag",
+     "type": "core::felt252"
+    },
+    {
+     "name": "packet_count",
+     "type": "core::integer::u32"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::systems::settlement::SettleProgress",
+   "members": [
+    {
+     "name": "rolling",
+     "type": "core::felt252"
+    },
+    {
+     "name": "packed_adventurer",
+     "type": "core::felt252"
+    },
+    {
+     "name": "packed_bag",
+     "type": "core::felt252"
+    },
+    {
+     "name": "boundary_count",
+     "type": "core::integer::u32"
+    },
+    {
+     "name": "replay_cursor",
+     "type": "core::integer::u32"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::systems::settlement::ChainCheck",
+   "members": [
+    {
+     "name": "computed_rolling",
+     "type": "core::felt252"
+    },
+    {
+     "name": "stored_commitment",
+     "type": "core::felt252"
+    },
+    {
+     "name": "matches",
+     "type": "core::bool"
+    },
+    {
+     "name": "packed_adventurer",
+     "type": "core::felt252"
+    },
+    {
+     "name": "packed_bag",
+     "type": "core::felt252"
+    },
+    {
+     "name": "terminal",
+     "type": "core::bool"
+    },
+    {
+     "name": "applied",
+     "type": "core::integer::u32"
+    },
+    {
+     "name": "untrusted_from",
+     "type": "core::integer::u32"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::systems::replay::ProvableReplay",
+   "members": [
+    {
+     "name": "computed_rolling",
+     "type": "core::felt252"
+    },
+    {
+     "name": "stored_commitment",
+     "type": "core::felt252"
+    },
+    {
+     "name": "matches",
+     "type": "core::bool"
+    },
+    {
+     "name": "packed_adventurer",
+     "type": "core::felt252"
+    },
+    {
+     "name": "packed_bag",
+     "type": "core::felt252"
+    },
+    {
+     "name": "terminal",
+     "type": "core::bool"
+    },
+    {
+     "name": "applied",
+     "type": "core::integer::u32"
+    },
+    {
+     "name": "ruleset_hash",
+     "type": "core::felt252"
+    },
+    {
+     "name": "input_root",
+     "type": "core::felt252"
+    },
+    {
+     "name": "effects",
+     "type": "core::array::Array::<death_mountain::commit_reveal::proof::ReplayEffect>"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::commit_reveal::proof::ProofConfig",
+   "members": [
+    {
+     "name": "enabled",
+     "type": "core::bool"
+    },
+    {
+     "name": "proof_target_address",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "l1_destination",
+     "type": "core::felt252"
+    },
+    {
+     "name": "virtual_os_program_hash",
+     "type": "core::felt252"
+    },
+    {
+     "name": "os_config_hash",
+     "type": "core::felt252"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "core::byte_array::ByteArray",
+   "members": [
+    {
+     "name": "data",
+     "type": "core::array::Array::<core::bytes_31::bytes31>"
+    },
+    {
+     "name": "pending_word",
+     "type": "core::felt252"
+    },
+    {
+     "name": "pending_word_len",
+     "type": "core::internal::bounded_int::BoundedInt::<0, 30>"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::models::stats::Stats",
+   "members": [
+    {
+     "name": "strength",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "dexterity",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "vitality",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "intelligence",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "wisdom",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "charisma",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "luck",
+     "type": "core::integer::u8"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::models::item::Item",
+   "members": [
+    {
+     "name": "id",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "xp",
+     "type": "core::integer::u16"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::models::equipment::Equipment",
+   "members": [
+    {
+     "name": "weapon",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "chest",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "head",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "waist",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "foot",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "hand",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "neck",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "ring",
+     "type": "death_mountain::models::item::Item"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::models::adventurer::Adventurer",
+   "members": [
+    {
+     "name": "health",
+     "type": "core::integer::u16"
+    },
+    {
+     "name": "xp",
+     "type": "core::integer::u16"
+    },
+    {
+     "name": "gold",
+     "type": "core::integer::u16"
+    },
+    {
+     "name": "beast_health",
+     "type": "core::integer::u16"
+    },
+    {
+     "name": "stat_upgrades_available",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "stats",
+     "type": "death_mountain::models::stats::Stats"
+    },
+    {
+     "name": "equipment",
+     "type": "death_mountain::models::equipment::Equipment"
+    },
+    {
+     "name": "item_specials_salt",
+     "type": "core::integer::u16"
+    },
+    {
+     "name": "beast_salt",
+     "type": "core::integer::u32"
+    },
+    {
+     "name": "level_salt",
+     "type": "core::integer::u16"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::models::bag::Bag",
+   "members": [
+    {
+     "name": "item_1",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "item_2",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "item_3",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "item_4",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "item_5",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "item_6",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "item_7",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "item_8",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "item_9",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "item_10",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "item_11",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "item_12",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "item_13",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "item_14",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "item_15",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "mutated",
+     "type": "core::bool"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::models::market_probability::PackedMarketConfig",
+   "members": [
+    {
+     "name": "pair01",
+     "type": "core::felt252"
+    },
+    {
+     "name": "pair23",
+     "type": "core::felt252"
+    },
+    {
+     "name": "pair4_enabled",
+     "type": "core::felt252"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::models::settings::GameSettings",
+   "members": [
+    {
+     "name": "settings_id",
+     "type": "core::integer::u32"
+    },
+    {
+     "name": "adventurer",
+     "type": "death_mountain::models::adventurer::Adventurer"
+    },
+    {
+     "name": "bag",
+     "type": "death_mountain::models::bag::Bag"
+    },
+    {
+     "name": "game_seed",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "randomness_mode",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "in_battle",
+     "type": "core::bool"
+    },
+    {
+     "name": "base_damage_reduction",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "market_config",
+     "type": "death_mountain::models::market_probability::PackedMarketConfig"
+    },
+    {
+     "name": "random_starting_stats",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "collectables_enabled",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "start_override",
+     "type": "core::bool"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::models::market_probability::MarketConfig",
+   "members": [
+    {
+     "name": "cutoff_0",
+     "type": "core::integer::u128"
+    },
+    {
+     "name": "cutoff_1",
+     "type": "core::integer::u128"
+    },
+    {
+     "name": "cutoff_2",
+     "type": "core::integer::u128"
+    },
+    {
+     "name": "cutoff_3",
+     "type": "core::integer::u128"
+    },
+    {
+     "name": "cutoff_4",
+     "type": "core::integer::u128"
+    },
+    {
+     "name": "enabled",
+     "type": "core::integer::u128"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::models::settings::ActionSettings",
+   "members": [
+    {
+     "name": "game_seed",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "randomness_mode",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "base_damage_reduction",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "collectables_enabled",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "specials_override",
+     "type": "core::felt252"
+    },
+    {
+     "name": "market_config",
+     "type": "death_mountain::models::market_probability::MarketConfig"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "core::array::Span::<(core::felt252, core::felt252)>",
+   "members": [
+    {
+     "name": "snapshot",
+     "type": "@core::array::Array::<(core::felt252, core::felt252)>"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::models::collectable::Collectable",
+   "members": [
+    {
+     "name": "id",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "level",
+     "type": "core::integer::u16"
+    },
+    {
+     "name": "health",
+     "type": "core::integer::u16"
+    },
+    {
+     "name": "prefix",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "suffix",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "shiny",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "animated",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "collected_by",
+     "type": "core::felt252"
+    },
+    {
+     "name": "last_death_timestamp",
+     "type": "core::integer::u64"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::models::collectable::CollectableStats",
+   "members": [
+    {
+     "name": "adventurers_killed",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "last_kill_timestamp",
+     "type": "core::integer::u64"
+    }
+   ]
+  },
+  {
+   "type": "interface",
+   "name": "death_mountain::systems::game_core::IGameCore",
+   "items": [
+    {
+     "type": "function",
+     "name": "commit_action",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      },
+      {
+       "name": "expected_chain",
+       "type": "core::felt252"
+      },
+      {
+       "name": "encoded_actions",
+       "type": "core::array::Span::<core::felt252>"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "get_commitment",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::felt252"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "initialize_game",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      },
+      {
+       "name": "packed_adventurer",
+       "type": "core::felt252"
+      },
+      {
+       "name": "packed_bag",
+       "type": "core::felt252"
+      },
+      {
+       "name": "specials_override",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "get_start_override",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "(core::felt252, core::felt252, core::felt252)"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "settle_game",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      },
+      {
+       "name": "actions",
+       "type": "core::array::Span::<core::felt252>"
+      },
+      {
+       "name": "blocks",
+       "type": "core::array::Span::<core::integer::u64>"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "fold_chunk",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      },
+      {
+       "name": "attempt_nonce",
+       "type": "core::integer::u64"
+      },
+      {
+       "name": "actions",
+       "type": "core::array::Span::<core::felt252>"
+      },
+      {
+       "name": "blocks",
+       "type": "core::array::Span::<core::integer::u64>"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "replay_chunk",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      },
+      {
+       "name": "attempt_nonce",
+       "type": "core::integer::u64"
+      },
+      {
+       "name": "actions",
+       "type": "core::array::Span::<core::felt252>"
+      },
+      {
+       "name": "blocks",
+       "type": "core::array::Span::<core::integer::u64>"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "finish_attempt",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      },
+      {
+       "name": "attempt_nonce",
+       "type": "core::integer::u64"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "settle_games_with_proof",
+     "inputs": [
+      {
+       "name": "results",
+       "type": "core::array::Span::<death_mountain::commit_reveal::proof::ProofResult>"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "direct_replay_started",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::bool"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "is_settled",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::bool"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "get_replay_checkpoint",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "death_mountain::systems::settlement::ReplayCheckpoint"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "get_progress",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      },
+      {
+       "name": "initiator",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "attempt_nonce",
+       "type": "core::integer::u64"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "death_mountain::systems::settlement::SettleProgress"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "replay_transcript",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      },
+      {
+       "name": "actions",
+       "type": "core::array::Span::<core::felt252>"
+      },
+      {
+       "name": "blocks",
+       "type": "core::array::Span::<core::integer::u64>"
+      },
+      {
+       "name": "hashes",
+       "type": "core::array::Span::<core::felt252>"
+      },
+      {
+       "name": "committed_len",
+       "type": "core::integer::u32"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "death_mountain::systems::settlement::ChainCheck"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "replay_provable_transcript",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      },
+      {
+       "name": "actions",
+       "type": "core::array::Span::<core::felt252>"
+      },
+      {
+       "name": "blocks",
+       "type": "core::array::Span::<core::integer::u64>"
+      },
+      {
+       "name": "claimed_block_hashes",
+       "type": "core::array::Span::<core::felt252>"
+      },
+      {
+       "name": "mint_hash",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "death_mountain::systems::replay::ProvableReplay"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "set_proof_config",
+     "inputs": [
+      {
+       "name": "config",
+       "type": "death_mountain::commit_reveal::proof::ProofConfig"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "get_proof_config",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "death_mountain::commit_reveal::proof::ProofConfig"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "get_entropy_block_offset",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::integer::u64"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "set_entropy_block_offset",
+     "inputs": [
+      {
+       "name": "offset",
+       "type": "core::integer::u64"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "add_settings",
+     "inputs": [
+      {
+       "name": "name",
+       "type": "core::felt252"
+      },
+      {
+       "name": "description",
+       "type": "core::byte_array::ByteArray"
+      },
+      {
+       "name": "settings",
+       "type": "death_mountain::models::settings::GameSettings"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u32"
+      }
+     ],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "get_settings",
+     "inputs": [
+      {
+       "name": "settings_id",
+       "type": "core::integer::u32"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "death_mountain::models::settings::GameSettings"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "get_action_settings",
+     "inputs": [
+      {
+       "name": "settings_id",
+       "type": "core::integer::u32"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "death_mountain::models::settings::ActionSettings"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "create_objective",
+     "inputs": [
+      {
+       "name": "name",
+       "type": "core::byte_array::ByteArray"
+      },
+      {
+       "name": "description",
+       "type": "core::byte_array::ByteArray"
+      },
+      {
+       "name": "score_threshold",
+       "type": "core::integer::u32"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u32"
+      }
+     ],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "load_assets",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "(death_mountain::models::adventurer::Adventurer, death_mountain::models::bag::Bag)"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "get_adventurer",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "death_mountain::models::adventurer::Adventurer"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "get_bag",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "death_mountain::models::bag::Bag"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "get_packed_state",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::array::Span::<core::felt252>"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::array::Span::<(core::felt252, core::felt252)>"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "get_collectable",
+     "inputs": [
+      {
+       "name": "collectable_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "death_mountain::models::collectable::Collectable"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "get_collectable_stats",
+     "inputs": [
+      {
+       "name": "collectable_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "death_mountain::models::collectable::CollectableStats"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "register_enumeration_interface",
+     "inputs": [],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "get_combat_class",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::class_hash::ClassHash"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "get_exploration_class",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::class_hash::ClassHash"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "get_market_class",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::class_hash::ClassHash"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "get_inventory_class",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::class_hash::ClassHash"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "get_stat_upgrades_class",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::class_hash::ClassHash"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "get_settlement_class",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::class_hash::ClassHash"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "get_replay_class",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::class_hash::ClassHash"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "get_settings_class",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::class_hash::ClassHash"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "set_combat_class",
+     "inputs": [
+      {
+       "name": "class_hash",
+       "type": "core::starknet::class_hash::ClassHash"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_exploration_class",
+     "inputs": [
+      {
+       "name": "class_hash",
+       "type": "core::starknet::class_hash::ClassHash"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_market_class",
+     "inputs": [
+      {
+       "name": "class_hash",
+       "type": "core::starknet::class_hash::ClassHash"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_inventory_class",
+     "inputs": [
+      {
+       "name": "class_hash",
+       "type": "core::starknet::class_hash::ClassHash"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_stat_upgrades_class",
+     "inputs": [
+      {
+       "name": "class_hash",
+       "type": "core::starknet::class_hash::ClassHash"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_settlement_class",
+     "inputs": [
+      {
+       "name": "class_hash",
+       "type": "core::starknet::class_hash::ClassHash"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_replay_class",
+     "inputs": [
+      {
+       "name": "class_hash",
+       "type": "core::starknet::class_hash::ClassHash"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_settings_class",
+     "inputs": [
+      {
+       "name": "class_hash",
+       "type": "core::starknet::class_hash::ClassHash"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "get_renderer_address",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "set_renderer_address",
+     "inputs": [
+      {
+       "name": "address",
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    }
+   ]
+  },
+  {
+   "type": "impl",
+   "name": "MinigameAddressesImpl",
+   "interface_name": "death_mountain::systems::game_core::IMinigameAddresses"
+  },
+  {
+   "type": "interface",
+   "name": "death_mountain::systems::game_core::IMinigameAddresses",
+   "items": [
+    {
+     "type": "function",
+     "name": "token_address",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "settings_address",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "objectives_address",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "state_mutability": "view"
+    }
+   ]
+  },
+  {
+   "type": "impl",
+   "name": "TokenDataImpl",
+   "interface_name": "game_components_interfaces::token::core::IMinigameTokenData"
+  },
+  {
+   "type": "interface",
+   "name": "game_components_interfaces::token::core::IMinigameTokenData",
+   "items": [
+    {
+     "type": "function",
+     "name": "score",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u64"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "game_over",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::bool"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "score_batch",
+     "inputs": [
+      {
+       "name": "token_ids",
+       "type": "core::array::Span::<core::felt252>"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::array::Array::<core::integer::u64>"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "game_over_batch",
+     "inputs": [
+      {
+       "name": "token_ids",
+       "type": "core::array::Span::<core::felt252>"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::array::Array::<core::bool>"
+      }
+     ],
+     "state_mutability": "view"
+    }
+   ]
+  },
+  {
+   "type": "impl",
+   "name": "SettingsImpl",
+   "interface_name": "game_components_interfaces::minigame::settings::IMinigameSettings"
+  },
+  {
+   "type": "struct",
+   "name": "core::array::Span::<core::integer::u32>",
+   "members": [
+    {
+     "name": "snapshot",
+     "type": "@core::array::Array::<core::integer::u32>"
+    }
+   ]
+  },
+  {
+   "type": "interface",
+   "name": "game_components_interfaces::minigame::settings::IMinigameSettings",
+   "items": [
+    {
+     "type": "function",
+     "name": "settings_exist",
+     "inputs": [
+      {
+       "name": "settings_id",
+       "type": "core::integer::u32"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::bool"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "settings_exist_batch",
+     "inputs": [
+      {
+       "name": "settings_ids",
+       "type": "core::array::Span::<core::integer::u32>"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::array::Array::<core::bool>"
+      }
+     ],
+     "state_mutability": "view"
+    }
+   ]
+  },
+  {
+   "type": "impl",
+   "name": "SettingsDetailsImpl",
+   "interface_name": "game_components_interfaces::minigame::settings::IMinigameSettingsDetails"
+  },
+  {
+   "type": "struct",
+   "name": "game_components_interfaces::structs::minigame::GameSetting",
+   "members": [
+    {
+     "name": "name",
+     "type": "core::felt252"
+    },
+    {
+     "name": "value",
+     "type": "core::felt252"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "core::array::Span::<game_components_interfaces::structs::minigame::GameSetting>",
+   "members": [
+    {
+     "name": "snapshot",
+     "type": "@core::array::Array::<game_components_interfaces::structs::minigame::GameSetting>"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "game_components_interfaces::structs::minigame::GameSettingDetails",
+   "members": [
+    {
+     "name": "name",
+     "type": "core::byte_array::ByteArray"
+    },
+    {
+     "name": "description",
+     "type": "core::byte_array::ByteArray"
+    },
+    {
+     "name": "settings",
+     "type": "core::array::Span::<game_components_interfaces::structs::minigame::GameSetting>"
+    }
+   ]
+  },
+  {
+   "type": "interface",
+   "name": "game_components_interfaces::minigame::settings::IMinigameSettingsDetails",
+   "items": [
+    {
+     "type": "function",
+     "name": "settings_count",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::integer::u32"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "settings_details",
+     "inputs": [
+      {
+       "name": "settings_id",
+       "type": "core::integer::u32"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "game_components_interfaces::structs::minigame::GameSettingDetails"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "settings_details_batch",
+     "inputs": [
+      {
+       "name": "settings_ids",
+       "type": "core::array::Span::<core::integer::u32>"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::array::Array::<game_components_interfaces::structs::minigame::GameSettingDetails>"
+      }
+     ],
+     "state_mutability": "view"
+    }
+   ]
+  },
+  {
+   "type": "impl",
+   "name": "ObjectivesImpl",
+   "interface_name": "game_components_interfaces::minigame::objectives::IMinigameObjectives"
+  },
+  {
+   "type": "interface",
+   "name": "game_components_interfaces::minigame::objectives::IMinigameObjectives",
+   "items": [
+    {
+     "type": "function",
+     "name": "objective_exists",
+     "inputs": [
+      {
+       "name": "objective_id",
+       "type": "core::integer::u32"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::bool"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "completed_objective",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::felt252"
+      },
+      {
+       "name": "objective_id",
+       "type": "core::integer::u32"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::bool"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "objective_exists_batch",
+     "inputs": [
+      {
+       "name": "objective_ids",
+       "type": "core::array::Span::<core::integer::u32>"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::array::Array::<core::bool>"
+      }
+     ],
+     "state_mutability": "view"
+    }
+   ]
+  },
+  {
+   "type": "impl",
+   "name": "ObjectivesDetailsImpl",
+   "interface_name": "game_components_interfaces::minigame::objectives::IMinigameObjectivesDetails"
+  },
+  {
+   "type": "struct",
+   "name": "game_components_interfaces::structs::minigame::GameObjective",
+   "members": [
+    {
+     "name": "name",
+     "type": "core::felt252"
+    },
+    {
+     "name": "value",
+     "type": "core::felt252"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "core::array::Span::<game_components_interfaces::structs::minigame::GameObjective>",
+   "members": [
+    {
+     "name": "snapshot",
+     "type": "@core::array::Array::<game_components_interfaces::structs::minigame::GameObjective>"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "game_components_interfaces::structs::minigame::GameObjectiveDetails",
+   "members": [
+    {
+     "name": "name",
+     "type": "core::byte_array::ByteArray"
+    },
+    {
+     "name": "description",
+     "type": "core::byte_array::ByteArray"
+    },
+    {
+     "name": "objectives",
+     "type": "core::array::Span::<game_components_interfaces::structs::minigame::GameObjective>"
+    }
+   ]
+  },
+  {
+   "type": "interface",
+   "name": "game_components_interfaces::minigame::objectives::IMinigameObjectivesDetails",
+   "items": [
+    {
+     "type": "function",
+     "name": "objectives_count",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::integer::u32"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "objectives_details",
+     "inputs": [
+      {
+       "name": "objective_id",
+       "type": "core::integer::u32"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "game_components_interfaces::structs::minigame::GameObjectiveDetails"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "objectives_details_batch",
+     "inputs": [
+      {
+       "name": "objective_ids",
+       "type": "core::array::Span::<core::integer::u32>"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::array::Array::<game_components_interfaces::structs::minigame::GameObjectiveDetails>"
+      }
+     ],
+     "state_mutability": "view"
+    }
+   ]
+  },
+  {
+   "type": "impl",
+   "name": "UpgradeableImpl",
+   "interface_name": "openzeppelin_interfaces::upgrades::IUpgradeable"
+  },
+  {
+   "type": "interface",
+   "name": "openzeppelin_interfaces::upgrades::IUpgradeable",
+   "items": [
+    {
+     "type": "function",
+     "name": "upgrade",
+     "inputs": [
+      {
+       "name": "new_class_hash",
+       "type": "core::starknet::class_hash::ClassHash"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    }
+   ]
+  },
+  {
+   "type": "impl",
+   "name": "ERC721MixinImpl",
+   "interface_name": "openzeppelin_interfaces::token::erc721::ERC721ABI"
+  },
+  {
+   "type": "struct",
+   "name": "core::integer::u256",
+   "members": [
+    {
+     "name": "low",
+     "type": "core::integer::u128"
+    },
+    {
+     "name": "high",
+     "type": "core::integer::u128"
+    }
+   ]
+  },
+  {
+   "type": "interface",
+   "name": "openzeppelin_interfaces::token::erc721::ERC721ABI",
+   "items": [
+    {
+     "type": "function",
+     "name": "balance_of",
+     "inputs": [
+      {
+       "name": "account",
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u256"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "owner_of",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::integer::u256"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "safe_transfer_from",
+     "inputs": [
+      {
+       "name": "from",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "to",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "token_id",
+       "type": "core::integer::u256"
+      },
+      {
+       "name": "data",
+       "type": "core::array::Span::<core::felt252>"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "transfer_from",
+     "inputs": [
+      {
+       "name": "from",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "to",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "token_id",
+       "type": "core::integer::u256"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "approve",
+     "inputs": [
+      {
+       "name": "to",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "token_id",
+       "type": "core::integer::u256"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_approval_for_all",
+     "inputs": [
+      {
+       "name": "operator",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "approved",
+       "type": "core::bool"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "get_approved",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::integer::u256"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "is_approved_for_all",
+     "inputs": [
+      {
+       "name": "owner",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "operator",
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::bool"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "supports_interface",
+     "inputs": [
+      {
+       "name": "interface_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::bool"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "name",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::byte_array::ByteArray"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "symbol",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::byte_array::ByteArray"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "token_uri",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::integer::u256"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::byte_array::ByteArray"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "balanceOf",
+     "inputs": [
+      {
+       "name": "account",
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u256"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "ownerOf",
+     "inputs": [
+      {
+       "name": "tokenId",
+       "type": "core::integer::u256"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "safeTransferFrom",
+     "inputs": [
+      {
+       "name": "from",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "to",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "tokenId",
+       "type": "core::integer::u256"
+      },
+      {
+       "name": "data",
+       "type": "core::array::Span::<core::felt252>"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "transferFrom",
+     "inputs": [
+      {
+       "name": "from",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "to",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "tokenId",
+       "type": "core::integer::u256"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "setApprovalForAll",
+     "inputs": [
+      {
+       "name": "operator",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "approved",
+       "type": "core::bool"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "getApproved",
+     "inputs": [
+      {
+       "name": "tokenId",
+       "type": "core::integer::u256"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "isApprovedForAll",
+     "inputs": [
+      {
+       "name": "owner",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "operator",
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::bool"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "tokenURI",
+     "inputs": [
+      {
+       "name": "tokenId",
+       "type": "core::integer::u256"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::byte_array::ByteArray"
+      }
+     ],
+     "state_mutability": "view"
+    }
+   ]
+  },
+  {
+   "type": "impl",
+   "name": "EnumerableImpl",
+   "interface_name": "game_token::enumeration::interface::IEnumerableOwner"
+  },
+  {
+   "type": "interface",
+   "name": "game_token::enumeration::interface::IEnumerableOwner",
+   "items": [
+    {
+     "type": "function",
+     "name": "token_of_owner_by_index",
+     "inputs": [
+      {
+       "name": "owner",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "index",
+       "type": "core::integer::u256"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u256"
+      }
+     ],
+     "state_mutability": "view"
+    }
+   ]
+  },
+  {
+   "type": "impl",
+   "name": "GameTokenImpl",
+   "interface_name": "game_token::interface::IGameToken"
+  },
+  {
+   "type": "struct",
+   "name": "game_token::structs::Lifecycle",
+   "members": [
+    {
+     "name": "start",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "end",
+     "type": "core::integer::u64"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "game_token::structs::GameTokenData",
+   "members": [
+    {
+     "name": "schema_version",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "tx_hash",
+     "type": "core::integer::u16"
+    },
+    {
+     "name": "mint_nonce",
+     "type": "core::integer::u16"
+    },
+    {
+     "name": "minted_at_block_number",
+     "type": "core::integer::u32"
+    },
+    {
+     "name": "minted_at_timestamp",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "start_delay",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "play_duration",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "settings_id",
+     "type": "core::integer::u32"
+    },
+    {
+     "name": "objective_id",
+     "type": "core::integer::u32"
+    },
+    {
+     "name": "minted_by",
+     "type": "core::integer::u32"
+    },
+    {
+     "name": "minter_data",
+     "type": "core::integer::u128"
+    },
+    {
+     "name": "soulbound",
+     "type": "core::bool"
+    },
+    {
+     "name": "paymaster",
+     "type": "core::bool"
+    }
+   ]
+  },
+  {
+   "type": "interface",
+   "name": "game_token::interface::IGameToken",
+   "items": [
+    {
+     "type": "function",
+     "name": "start",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u64"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "end",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u64"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "minted_at",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u64"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "schema_version",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u8"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "is_soulbound",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::bool"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "paymaster",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::bool"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "tx_hash",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u16"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "mint_nonce",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u16"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "minted_at_block_number",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u32"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "minted_at_timestamp",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u64"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "start_delay",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u64"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "play_duration",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u64"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "settings_id",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u32"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "objective_id",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u32"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "minted_by",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u32"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "minter_data",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u128"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "lifecycle",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "game_token::structs::Lifecycle"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "is_lifecycle_open",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::bool"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "minted_by_address",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "token_data",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "game_token::structs::GameTokenData"
+      }
+     ],
+     "state_mutability": "view"
+    }
+   ]
+  },
+  {
+   "type": "impl",
+   "name": "GameTokenMintImpl",
+   "interface_name": "game_token::interface::IGameTokenMint"
+  },
+  {
+   "type": "struct",
+   "name": "game_token::structs::MintParams",
+   "members": [
+    {
+     "name": "start",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "end",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "settings_id",
+     "type": "core::integer::u32"
+    },
+    {
+     "name": "objective_id",
+     "type": "core::integer::u32"
+    },
+    {
+     "name": "minter_data",
+     "type": "core::integer::u128"
+    },
+    {
+     "name": "soulbound",
+     "type": "core::bool"
+    },
+    {
+     "name": "paymaster",
+     "type": "core::bool"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "core::array::Span::<core::starknet::contract_address::ContractAddress>",
+   "members": [
+    {
+     "name": "snapshot",
+     "type": "@core::array::Array::<core::starknet::contract_address::ContractAddress>"
+    }
+   ]
+  },
+  {
+   "type": "interface",
+   "name": "game_token::interface::IGameTokenMint",
+   "items": [
+    {
+     "type": "function",
+     "name": "mint",
+     "inputs": [
+      {
+       "name": "recipient_address",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "params",
+       "type": "game_token::structs::MintParams"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::felt252"
+      }
+     ],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "mint_batch",
+     "inputs": [
+      {
+       "name": "recipient_addresses",
+       "type": "core::array::Span::<core::starknet::contract_address::ContractAddress>"
+      },
+      {
+       "name": "params",
+       "type": "game_token::structs::MintParams"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::array::Span::<core::felt252>"
+      }
+     ],
+     "state_mutability": "external"
+    }
+   ]
+  },
+  {
+   "type": "impl",
+   "name": "ERC2981Impl",
+   "interface_name": "openzeppelin_interfaces::token::erc2981::IERC2981"
+  },
+  {
+   "type": "interface",
+   "name": "openzeppelin_interfaces::token::erc2981::IERC2981",
+   "items": [
+    {
+     "type": "function",
+     "name": "royalty_info",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::integer::u256"
+      },
+      {
+       "name": "sale_price",
+       "type": "core::integer::u256"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "(core::starknet::contract_address::ContractAddress, core::integer::u256)"
+      }
+     ],
+     "state_mutability": "view"
+    }
+   ]
+  },
+  {
+   "type": "impl",
+   "name": "ERC2981InfoImpl",
+   "interface_name": "openzeppelin_interfaces::token::erc2981::IERC2981Info"
+  },
+  {
+   "type": "interface",
+   "name": "openzeppelin_interfaces::token::erc2981::IERC2981Info",
+   "items": [
+    {
+     "type": "function",
+     "name": "default_royalty",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "(core::starknet::contract_address::ContractAddress, core::integer::u128, core::integer::u128)"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "token_royalty",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::integer::u256"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "(core::starknet::contract_address::ContractAddress, core::integer::u128, core::integer::u128)"
+      }
+     ],
+     "state_mutability": "view"
+    }
+   ]
+  },
+  {
+   "type": "impl",
+   "name": "ERC2981AdminImpl",
+   "interface_name": "openzeppelin_interfaces::token::erc2981::IERC2981Admin"
+  },
+  {
+   "type": "interface",
+   "name": "openzeppelin_interfaces::token::erc2981::IERC2981Admin",
+   "items": [
+    {
+     "type": "function",
+     "name": "set_default_royalty",
+     "inputs": [
+      {
+       "name": "receiver",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "fee_numerator",
+       "type": "core::integer::u128"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "delete_default_royalty",
+     "inputs": [],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_token_royalty",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::integer::u256"
+      },
+      {
+       "name": "receiver",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "fee_numerator",
+       "type": "core::integer::u128"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "reset_token_royalty",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::integer::u256"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    }
+   ]
+  },
+  {
+   "type": "impl",
+   "name": "OwnableMixinImpl",
+   "interface_name": "openzeppelin_interfaces::access::ownable::OwnableABI"
+  },
+  {
+   "type": "interface",
+   "name": "openzeppelin_interfaces::access::ownable::OwnableABI",
+   "items": [
+    {
+     "type": "function",
+     "name": "owner",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "transfer_ownership",
+     "inputs": [
+      {
+       "name": "new_owner",
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "renounce_ownership",
+     "inputs": [],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "transferOwnership",
+     "inputs": [
+      {
+       "name": "newOwner",
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "renounceOwnership",
+     "inputs": [],
+     "outputs": [],
+     "state_mutability": "external"
+    }
+   ]
+  },
+  {
+   "type": "constructor",
+   "name": "constructor",
+   "inputs": [
+    {
+     "name": "owner",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "renderer_address",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "combat_class",
+     "type": "core::starknet::class_hash::ClassHash"
+    },
+    {
+     "name": "exploration_class",
+     "type": "core::starknet::class_hash::ClassHash"
+    },
+    {
+     "name": "market_class",
+     "type": "core::starknet::class_hash::ClassHash"
+    },
+    {
+     "name": "inventory_class",
+     "type": "core::starknet::class_hash::ClassHash"
+    },
+    {
+     "name": "stat_upgrades_class",
+     "type": "core::starknet::class_hash::ClassHash"
+    },
+    {
+     "name": "settlement_class",
+     "type": "core::starknet::class_hash::ClassHash"
+    },
+    {
+     "name": "replay_class",
+     "type": "core::starknet::class_hash::ClassHash"
+    },
+    {
+     "name": "settings_class",
+     "type": "core::starknet::class_hash::ClassHash"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "openzeppelin_token::common::erc2981::erc2981::ERC2981Component::Event",
+   "kind": "enum",
+   "variants": []
+  },
+  {
+   "type": "event",
+   "name": "death_mountain::systems::game_core::GameCore::GameInitialized",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252",
+     "kind": "key"
+    },
+    {
+     "name": "packed_adventurer",
+     "type": "core::felt252",
+     "kind": "data"
+    },
+    {
+     "name": "packed_bag",
+     "type": "core::felt252",
+     "kind": "data"
+    },
+    {
+     "name": "specials_override",
+     "type": "core::felt252",
+     "kind": "data"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "death_mountain::systems::game_core::GameCore::ActionCommitted",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252",
+     "kind": "key"
+    },
+    {
+     "name": "encoded_actions",
+     "type": "core::array::Span::<core::felt252>",
+     "kind": "data"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "death_mountain::systems::settlement::Settlement::GameSettled",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252",
+     "kind": "key"
+    },
+    {
+     "name": "settler",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    },
+    {
+     "name": "final_commitment",
+     "type": "core::felt252",
+     "kind": "data"
+    },
+    {
+     "name": "packed_adventurer",
+     "type": "core::felt252",
+     "kind": "data"
+    },
+    {
+     "name": "packed_bag",
+     "type": "core::felt252",
+     "kind": "data"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "death_mountain::systems::settlement::Settlement::CollectableEvent",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252",
+     "kind": "key"
+    },
+    {
+     "name": "collectable_id",
+     "type": "core::felt252",
+     "kind": "data"
+    },
+    {
+     "name": "collectable",
+     "type": "death_mountain::models::collectable::Collectable",
+     "kind": "data"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "death_mountain::systems::settlement::Settlement::CollectableStatsEvent",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252",
+     "kind": "key"
+    },
+    {
+     "name": "collectable_id",
+     "type": "core::felt252",
+     "kind": "data"
+    },
+    {
+     "name": "beast_id",
+     "type": "core::integer::u8",
+     "kind": "data"
+    },
+    {
+     "name": "prefix",
+     "type": "core::integer::u8",
+     "kind": "data"
+    },
+    {
+     "name": "suffix",
+     "type": "core::integer::u8",
+     "kind": "data"
+    },
+    {
+     "name": "stats",
+     "type": "death_mountain::models::collectable::CollectableStats",
+     "kind": "data"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "death_mountain::systems::game_core::GameCore::SettingsAdded",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "settings_id",
+     "type": "core::integer::u32",
+     "kind": "key"
+    },
+    {
+     "name": "name",
+     "type": "core::felt252",
+     "kind": "data"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "game_components_erc721::erc721::erc721::ERC721Component::Transfer",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "from",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    },
+    {
+     "name": "to",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    },
+    {
+     "name": "token_id",
+     "type": "core::integer::u256",
+     "kind": "key"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "game_components_erc721::erc721::erc721::ERC721Component::Approval",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "owner",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    },
+    {
+     "name": "approved",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    },
+    {
+     "name": "token_id",
+     "type": "core::integer::u256",
+     "kind": "key"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "game_components_erc721::erc721::erc721::ERC721Component::ApprovalForAll",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "owner",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    },
+    {
+     "name": "operator",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    },
+    {
+     "name": "approved",
+     "type": "core::bool",
+     "kind": "data"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "game_components_erc721::erc721::erc721::ERC721Component::Event",
+   "kind": "enum",
+   "variants": [
+    {
+     "name": "Transfer",
+     "type": "game_components_erc721::erc721::erc721::ERC721Component::Transfer",
+     "kind": "nested"
+    },
+    {
+     "name": "Approval",
+     "type": "game_components_erc721::erc721::erc721::ERC721Component::Approval",
+     "kind": "nested"
+    },
+    {
+     "name": "ApprovalForAll",
+     "type": "game_components_erc721::erc721::erc721::ERC721Component::ApprovalForAll",
+     "kind": "nested"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "openzeppelin_introspection::src5::SRC5Component::Event",
+   "kind": "enum",
+   "variants": []
+  },
+  {
+   "type": "event",
+   "name": "game_token::component::GameTokenComponent::MinterRegistered",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "minter_id",
+     "type": "core::integer::u32",
+     "kind": "key"
+    },
+    {
+     "name": "minter_address",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "game_token::component::GameTokenComponent::Event",
+   "kind": "enum",
+   "variants": [
+    {
+     "name": "MinterRegistered",
+     "type": "game_token::component::GameTokenComponent::MinterRegistered",
+     "kind": "nested"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferred",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "previous_owner",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    },
+    {
+     "name": "new_owner",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferStarted",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "previous_owner",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    },
+    {
+     "name": "new_owner",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "openzeppelin_access::ownable::ownable::OwnableComponent::Event",
+   "kind": "enum",
+   "variants": [
+    {
+     "name": "OwnershipTransferred",
+     "type": "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferred",
+     "kind": "nested"
+    },
+    {
+     "name": "OwnershipTransferStarted",
+     "type": "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferStarted",
+     "kind": "nested"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Upgraded",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "class_hash",
+     "type": "core::starknet::class_hash::ClassHash",
+     "kind": "data"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Event",
+   "kind": "enum",
+   "variants": [
+    {
+     "name": "Upgraded",
+     "type": "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Upgraded",
+     "kind": "nested"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "game_token::enumeration::enumerable::EnumerableComponent::Event",
+   "kind": "enum",
+   "variants": []
+  },
+  {
+   "type": "event",
+   "name": "death_mountain::systems::game_core::GameCore::Event",
+   "kind": "enum",
+   "variants": [
+    {
+     "name": "ERC2981Event",
+     "type": "openzeppelin_token::common::erc2981::erc2981::ERC2981Component::Event",
+     "kind": "flat"
+    },
+    {
+     "name": "GameInitialized",
+     "type": "death_mountain::systems::game_core::GameCore::GameInitialized",
+     "kind": "nested"
+    },
+    {
+     "name": "ActionCommitted",
+     "type": "death_mountain::systems::game_core::GameCore::ActionCommitted",
+     "kind": "nested"
+    },
+    {
+     "name": "GameSettled",
+     "type": "death_mountain::systems::settlement::Settlement::GameSettled",
+     "kind": "nested"
+    },
+    {
+     "name": "CollectableEvent",
+     "type": "death_mountain::systems::settlement::Settlement::CollectableEvent",
+     "kind": "nested"
+    },
+    {
+     "name": "CollectableStatsEvent",
+     "type": "death_mountain::systems::settlement::Settlement::CollectableStatsEvent",
+     "kind": "nested"
+    },
+    {
+     "name": "SettingsAdded",
+     "type": "death_mountain::systems::game_core::GameCore::SettingsAdded",
+     "kind": "nested"
+    },
+    {
+     "name": "ERC721Event",
+     "type": "game_components_erc721::erc721::erc721::ERC721Component::Event",
+     "kind": "flat"
+    },
+    {
+     "name": "SRC5Event",
+     "type": "openzeppelin_introspection::src5::SRC5Component::Event",
+     "kind": "flat"
+    },
+    {
+     "name": "GameTokenEvent",
+     "type": "game_token::component::GameTokenComponent::Event",
+     "kind": "flat"
+    },
+    {
+     "name": "OwnableEvent",
+     "type": "openzeppelin_access::ownable::ownable::OwnableComponent::Event",
+     "kind": "flat"
+    },
+    {
+     "name": "UpgradeableEvent",
+     "type": "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Event",
+     "kind": "flat"
+    },
+    {
+     "name": "EnumerableEvent",
+     "type": "game_token::enumeration::enumerable::EnumerableComponent::Event",
+     "kind": "flat"
+    }
+   ]
+  }
+ ]
+}

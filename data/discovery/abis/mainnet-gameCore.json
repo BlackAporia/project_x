@@ -1,0 +1,1356 @@
+{
+ "address": "0x023f86f5b4702f6ba114b82fb73448c58aad8f37a28b508b80bf129ee1edc405",
+ "abi": [
+  {
+   "type": "impl",
+   "name": "GameCoreImpl",
+   "interface_name": "death_mountain::systems::game_core::IGameCore"
+  },
+  {
+   "type": "enum",
+   "name": "core::bool",
+   "variants": [
+    {
+     "name": "False",
+     "type": "()"
+    },
+    {
+     "name": "True",
+     "type": "()"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::models::market::ItemPurchase",
+   "members": [
+    {
+     "name": "item_id",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "equip",
+     "type": "core::bool"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::models::stats::Stats",
+   "members": [
+    {
+     "name": "strength",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "dexterity",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "vitality",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "intelligence",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "wisdom",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "charisma",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "luck",
+     "type": "core::integer::u8"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "core::array::Span::<core::integer::u128>",
+   "members": [
+    {
+     "name": "snapshot",
+     "type": "@core::array::Array::<core::integer::u128>"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::models::item::Item",
+   "members": [
+    {
+     "name": "id",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "xp",
+     "type": "core::integer::u16"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::models::equipment::Equipment",
+   "members": [
+    {
+     "name": "weapon",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "chest",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "head",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "waist",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "foot",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "hand",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "neck",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "ring",
+     "type": "death_mountain::models::item::Item"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::models::adventurer::Adventurer",
+   "members": [
+    {
+     "name": "health",
+     "type": "core::integer::u16"
+    },
+    {
+     "name": "xp",
+     "type": "core::integer::u16"
+    },
+    {
+     "name": "gold",
+     "type": "core::integer::u16"
+    },
+    {
+     "name": "beast_health",
+     "type": "core::integer::u16"
+    },
+    {
+     "name": "stat_upgrades_available",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "stats",
+     "type": "death_mountain::models::stats::Stats"
+    },
+    {
+     "name": "equipment",
+     "type": "death_mountain::models::equipment::Equipment"
+    },
+    {
+     "name": "item_specials_salt",
+     "type": "core::integer::u16"
+    },
+    {
+     "name": "beast_salt",
+     "type": "core::integer::u32"
+    },
+    {
+     "name": "level_salt",
+     "type": "core::integer::u16"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::models::bag::Bag",
+   "members": [
+    {
+     "name": "item_1",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "item_2",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "item_3",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "item_4",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "item_5",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "item_6",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "item_7",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "item_8",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "item_9",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "item_10",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "item_11",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "item_12",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "item_13",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "item_14",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "item_15",
+     "type": "death_mountain::models::item::Item"
+    },
+    {
+     "name": "mutated",
+     "type": "core::bool"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::models::combat::SpecialPowers",
+   "members": [
+    {
+     "name": "special1",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "special2",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "special3",
+     "type": "core::integer::u8"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::events::game_events::BeastEvent",
+   "members": [
+    {
+     "name": "id",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "health",
+     "type": "core::integer::u16"
+    },
+    {
+     "name": "level",
+     "type": "core::integer::u16"
+    },
+    {
+     "name": "specials",
+     "type": "death_mountain::models::combat::SpecialPowers"
+    },
+    {
+     "name": "is_collectable",
+     "type": "core::bool"
+    },
+    {
+     "name": "trait_seed",
+     "type": "core::integer::u64"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "core::array::Span::<core::integer::u8>",
+   "members": [
+    {
+     "name": "snapshot",
+     "type": "@core::array::Array::<core::integer::u8>"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::systems::game_core::GameState",
+   "members": [
+    {
+     "name": "adventurer",
+     "type": "death_mountain::models::adventurer::Adventurer"
+    },
+    {
+     "name": "bag",
+     "type": "death_mountain::models::bag::Bag"
+    },
+    {
+     "name": "beast",
+     "type": "death_mountain::events::game_events::BeastEvent"
+    },
+    {
+     "name": "market",
+     "type": "core::array::Span::<core::integer::u8>"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "core::array::Span::<core::felt252>",
+   "members": [
+    {
+     "name": "snapshot",
+     "type": "@core::array::Array::<core::felt252>"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "core::array::Span::<(core::felt252, core::felt252)>",
+   "members": [
+    {
+     "name": "snapshot",
+     "type": "@core::array::Array::<(core::felt252, core::felt252)>"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::models::collectable::Collectable",
+   "members": [
+    {
+     "name": "id",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "level",
+     "type": "core::integer::u16"
+    },
+    {
+     "name": "health",
+     "type": "core::integer::u16"
+    },
+    {
+     "name": "prefix",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "suffix",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "shiny",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "animated",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "collected_by",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "last_death_timestamp",
+     "type": "core::integer::u64"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::models::collectable::CollectableStats",
+   "members": [
+    {
+     "name": "adventurers_killed",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "last_kill_timestamp",
+     "type": "core::integer::u64"
+    }
+   ]
+  },
+  {
+   "type": "interface",
+   "name": "death_mountain::systems::game_core::IGameCore",
+   "items": [
+    {
+     "type": "function",
+     "name": "start_game",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      },
+      {
+       "name": "weapon",
+       "type": "core::integer::u8"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "attack",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      },
+      {
+       "name": "till_health",
+       "type": "core::integer::u16"
+      },
+      {
+       "name": "till_beast_health",
+       "type": "core::integer::u16"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "flee",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      },
+      {
+       "name": "till_health",
+       "type": "core::integer::u16"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "explore",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      },
+      {
+       "name": "till_damage",
+       "type": "core::integer::u16"
+      },
+      {
+       "name": "till_gold",
+       "type": "core::bool"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "buy_items",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      },
+      {
+       "name": "potions",
+       "type": "core::integer::u8"
+      },
+      {
+       "name": "items",
+       "type": "core::array::Array::<death_mountain::models::market::ItemPurchase>"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "equip",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      },
+      {
+       "name": "items",
+       "type": "core::array::Array::<core::integer::u8>"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "drop_items",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      },
+      {
+       "name": "items",
+       "type": "core::array::Array::<core::integer::u8>"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "select_stat_upgrades",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      },
+      {
+       "name": "stats",
+       "type": "death_mountain::models::stats::Stats"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "surrender",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "buy_external_item",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      },
+      {
+       "name": "item_address",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "item_ids",
+       "type": "core::array::Span::<core::integer::u128>"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "get_game_state",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "death_mountain::systems::game_core::GameState"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "load_assets",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "(death_mountain::models::adventurer::Adventurer, death_mountain::models::bag::Bag)"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "get_adventurer",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "death_mountain::models::adventurer::Adventurer"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "get_bag",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "death_mountain::models::bag::Bag"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "get_packed_state",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::array::Span::<core::felt252>"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::array::Span::<(core::felt252, core::felt252)>"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "get_collectable",
+     "inputs": [
+      {
+       "name": "collectable_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "death_mountain::models::collectable::Collectable"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "get_collectable_stats",
+     "inputs": [
+      {
+       "name": "collectable_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "death_mountain::models::collectable::CollectableStats"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "get_combat_address",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "get_exploration_address",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "get_market_address",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "get_inventory_address",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "get_stat_upgrades_address",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "state_mutability": "view"
+    }
+   ]
+  },
+  {
+   "type": "impl",
+   "name": "UpgradeableImpl",
+   "interface_name": "openzeppelin_interfaces::upgrades::IUpgradeable"
+  },
+  {
+   "type": "interface",
+   "name": "openzeppelin_interfaces::upgrades::IUpgradeable",
+   "items": [
+    {
+     "type": "function",
+     "name": "upgrade",
+     "inputs": [
+      {
+       "name": "new_class_hash",
+       "type": "core::starknet::class_hash::ClassHash"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    }
+   ]
+  },
+  {
+   "type": "impl",
+   "name": "OwnableMixinImpl",
+   "interface_name": "openzeppelin_interfaces::access::ownable::OwnableABI"
+  },
+  {
+   "type": "interface",
+   "name": "openzeppelin_interfaces::access::ownable::OwnableABI",
+   "items": [
+    {
+     "type": "function",
+     "name": "owner",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "transfer_ownership",
+     "inputs": [
+      {
+       "name": "new_owner",
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "renounce_ownership",
+     "inputs": [],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "transferOwnership",
+     "inputs": [
+      {
+       "name": "newOwner",
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "renounceOwnership",
+     "inputs": [],
+     "outputs": [],
+     "state_mutability": "external"
+    }
+   ]
+  },
+  {
+   "type": "constructor",
+   "name": "constructor",
+   "inputs": [
+    {
+     "name": "owner",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "settings_contract",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "minigame_token_address",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "combat_contract",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "exploration_contract",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "market_contract",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "inventory_contract",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "stat_upgrades_contract",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "old_beast_contract",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "old_data_contract",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "old_dungeon",
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ]
+  },
+  {
+   "type": "enum",
+   "name": "death_mountain::constants::discovery::DiscoveryEnums::DiscoveryType",
+   "variants": [
+    {
+     "name": "Gold",
+     "type": "core::integer::u16"
+    },
+    {
+     "name": "Health",
+     "type": "core::integer::u16"
+    },
+    {
+     "name": "Loot",
+     "type": "core::integer::u8"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::events::game_events::DiscoveryEvent",
+   "members": [
+    {
+     "name": "discovery_type",
+     "type": "death_mountain::constants::discovery::DiscoveryEnums::DiscoveryType"
+    },
+    {
+     "name": "xp_reward",
+     "type": "core::integer::u16"
+    }
+   ]
+  },
+  {
+   "type": "enum",
+   "name": "death_mountain::constants::combat::CombatEnums::Slot",
+   "variants": [
+    {
+     "name": "None",
+     "type": "()"
+    },
+    {
+     "name": "Weapon",
+     "type": "()"
+    },
+    {
+     "name": "Chest",
+     "type": "()"
+    },
+    {
+     "name": "Head",
+     "type": "()"
+    },
+    {
+     "name": "Waist",
+     "type": "()"
+    },
+    {
+     "name": "Foot",
+     "type": "()"
+    },
+    {
+     "name": "Hand",
+     "type": "()"
+    },
+    {
+     "name": "Neck",
+     "type": "()"
+    },
+    {
+     "name": "Ring",
+     "type": "()"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::events::game_events::ObstacleEvent",
+   "members": [
+    {
+     "name": "obstacle_id",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "dodged",
+     "type": "core::bool"
+    },
+    {
+     "name": "damage",
+     "type": "core::integer::u16"
+    },
+    {
+     "name": "location",
+     "type": "death_mountain::constants::combat::CombatEnums::Slot"
+    },
+    {
+     "name": "critical_hit",
+     "type": "core::bool"
+    },
+    {
+     "name": "xp_reward",
+     "type": "core::integer::u16"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::events::game_events::DefeatedBeastEvent",
+   "members": [
+    {
+     "name": "beast_id",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "gold_reward",
+     "type": "core::integer::u16"
+    },
+    {
+     "name": "xp_reward",
+     "type": "core::integer::u16"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::events::game_events::FledBeastEvent",
+   "members": [
+    {
+     "name": "beast_id",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "xp_reward",
+     "type": "core::integer::u16"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::events::game_events::StatUpgradeEvent",
+   "members": [
+    {
+     "name": "stats",
+     "type": "death_mountain::models::stats::Stats"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "core::array::Span::<death_mountain::models::market::ItemPurchase>",
+   "members": [
+    {
+     "name": "snapshot",
+     "type": "@core::array::Array::<death_mountain::models::market::ItemPurchase>"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::events::game_events::BuyItemsEvent",
+   "members": [
+    {
+     "name": "potions",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "items_purchased",
+     "type": "core::array::Span::<death_mountain::models::market::ItemPurchase>"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::events::game_events::ItemEvent",
+   "members": [
+    {
+     "name": "items",
+     "type": "core::array::Span::<core::integer::u8>"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::events::game_events::LevelUpEvent",
+   "members": [
+    {
+     "name": "level",
+     "type": "core::integer::u8"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::events::game_events::MarketItemsEvent",
+   "members": [
+    {
+     "name": "items",
+     "type": "core::array::Span::<core::integer::u8>"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::events::game_events::AttackEvent",
+   "members": [
+    {
+     "name": "damage",
+     "type": "core::integer::u16"
+    },
+    {
+     "name": "location",
+     "type": "death_mountain::constants::combat::CombatEnums::Slot"
+    },
+    {
+     "name": "critical_hit",
+     "type": "core::bool"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::events::game_events::Randomness",
+   "members": [
+    {
+     "name": "low",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "high",
+     "type": "core::integer::u64"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::events::game_events::CollectableEvent",
+   "members": [
+    {
+     "name": "collectable_id",
+     "type": "core::felt252"
+    },
+    {
+     "name": "collectable",
+     "type": "death_mountain::models::collectable::Collectable"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::events::game_events::CollectableStatsEvent",
+   "members": [
+    {
+     "name": "collectable_id",
+     "type": "core::felt252"
+    },
+    {
+     "name": "beast_id",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "prefix",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "suffix",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "stats",
+     "type": "death_mountain::models::collectable::CollectableStats"
+    }
+   ]
+  },
+  {
+   "type": "enum",
+   "name": "death_mountain::events::game_events::GameEventDetails",
+   "variants": [
+    {
+     "name": "adventurer",
+     "type": "death_mountain::models::adventurer::Adventurer"
+    },
+    {
+     "name": "bag",
+     "type": "death_mountain::models::bag::Bag"
+    },
+    {
+     "name": "beast",
+     "type": "death_mountain::events::game_events::BeastEvent"
+    },
+    {
+     "name": "discovery",
+     "type": "death_mountain::events::game_events::DiscoveryEvent"
+    },
+    {
+     "name": "obstacle",
+     "type": "death_mountain::events::game_events::ObstacleEvent"
+    },
+    {
+     "name": "defeated_beast",
+     "type": "death_mountain::events::game_events::DefeatedBeastEvent"
+    },
+    {
+     "name": "fled_beast",
+     "type": "death_mountain::events::game_events::FledBeastEvent"
+    },
+    {
+     "name": "stat_upgrade",
+     "type": "death_mountain::events::game_events::StatUpgradeEvent"
+    },
+    {
+     "name": "buy_items",
+     "type": "death_mountain::events::game_events::BuyItemsEvent"
+    },
+    {
+     "name": "equip",
+     "type": "death_mountain::events::game_events::ItemEvent"
+    },
+    {
+     "name": "drop",
+     "type": "death_mountain::events::game_events::ItemEvent"
+    },
+    {
+     "name": "level_up",
+     "type": "death_mountain::events::game_events::LevelUpEvent"
+    },
+    {
+     "name": "market_items",
+     "type": "death_mountain::events::game_events::MarketItemsEvent"
+    },
+    {
+     "name": "ambush",
+     "type": "death_mountain::events::game_events::AttackEvent"
+    },
+    {
+     "name": "attack",
+     "type": "death_mountain::events::game_events::AttackEvent"
+    },
+    {
+     "name": "beast_attack",
+     "type": "death_mountain::events::game_events::AttackEvent"
+    },
+    {
+     "name": "flee",
+     "type": "core::bool"
+    },
+    {
+     "name": "randomness",
+     "type": "death_mountain::events::game_events::Randomness"
+    },
+    {
+     "name": "collectable",
+     "type": "death_mountain::events::game_events::CollectableEvent"
+    },
+    {
+     "name": "collectable_stats",
+     "type": "death_mountain::events::game_events::CollectableStatsEvent"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "death_mountain::events::game_events::GameEvent",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252",
+     "kind": "key"
+    },
+    {
+     "name": "details",
+     "type": "death_mountain::events::game_events::GameEventDetails",
+     "kind": "data"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferred",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "previous_owner",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    },
+    {
+     "name": "new_owner",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferStarted",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "previous_owner",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    },
+    {
+     "name": "new_owner",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "openzeppelin_access::ownable::ownable::OwnableComponent::Event",
+   "kind": "enum",
+   "variants": [
+    {
+     "name": "OwnershipTransferred",
+     "type": "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferred",
+     "kind": "nested"
+    },
+    {
+     "name": "OwnershipTransferStarted",
+     "type": "openzeppelin_access::ownable::ownable::OwnableComponent::OwnershipTransferStarted",
+     "kind": "nested"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Upgraded",
+   "kind": "struct",
+   "members": [
+    {
+     "name": "class_hash",
+     "type": "core::starknet::class_hash::ClassHash",
+     "kind": "data"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Event",
+   "kind": "enum",
+   "variants": [
+    {
+     "name": "Upgraded",
+     "type": "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Upgraded",
+     "kind": "nested"
+    }
+   ]
+  },
+  {
+   "type": "event",
+   "name": "death_mountain::systems::game_core::GameCore::Event",
+   "kind": "enum",
+   "variants": [
+    {
+     "name": "GameEvent",
+     "type": "death_mountain::events::game_events::GameEvent",
+     "kind": "nested"
+    },
+    {
+     "name": "OwnableEvent",
+     "type": "openzeppelin_access::ownable::ownable::OwnableComponent::Event",
+     "kind": "flat"
+    },
+    {
+     "name": "UpgradeableEvent",
+     "type": "openzeppelin_upgrades::upgradeable::UpgradeableComponent::Event",
+     "kind": "flat"
+    }
+   ]
+  }
+ ]
+}
