@@ -5,6 +5,8 @@ import { join } from 'node:path';
 export interface GameRecord {
   id: string;
   mode: 'practice' | 'mainnet' | 'sim';
+  /** dungeon / game settings the game was played with (e.g. "Ronke" #3) */
+  dungeon?: string;
   xp: number;
   level: number;
   deathCause: string;
@@ -50,6 +52,7 @@ export interface RunRecord {
   meanXp: number;
   errors: number;
   policy: string;
+  dungeon?: string;
   note?: string;
 }
 

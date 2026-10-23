@@ -56,6 +56,8 @@ async function main(): Promise<void> {
       limit: { type: 'string' },
       'max-games': { type: 'string' },
       rounds: { type: 'string' },
+      dungeon: { type: 'string' },
+      'settings-id': { type: 'string' },
       python: { type: 'string' },
     },
   });
@@ -99,6 +101,8 @@ async function main(): Promise<void> {
         dataDir: str(values.data, process.env.BOT_DATA_DIR ?? 'site/data'),
         policyPath: str(values.policy, 'policy/policy.json'),
         live: values.live === true || process.env.MAINNET_LIVE === 'true',
+        dungeon: str(values.dungeon, process.env.BOT_DUNGEON ?? '') || undefined,
+        settingsId: values['settings-id'] !== undefined ? num(values['settings-id'], NaN) : process.env.PRACTICE_SETTINGS_ID ? Number(process.env.PRACTICE_SETTINGS_ID) : undefined,
       });
       break;
     }

@@ -17,6 +17,8 @@ export interface Backend {
   exact: boolean;
   /** dry run: decide but never send transactions */
   dryRun: boolean;
+  /** dungeon / settings label recorded with every game */
+  dungeon?: string;
   nextGame(): Promise<bigint | null>;
   readState(id: bigint): Promise<GameState>;
   /** returns tx hashes and the actions actually sent (a decision can be cut after its first random action) */
@@ -104,8 +106,9 @@ export class ChainBackend implements Backend {
   private executor: Executor | null;
   private queue: bigint[] = [];
   private mint: (() => Promise<bigint | null>) | null;
+  readonly dungeon?: string;
 
-  constructor(opts: { mode: 'practice' | 'mainnet'; client: GameClient; executor: Executor | null; dryRun: boolean; games?: bigint[]; mint?: () => Promise<bigint | null> }) {
+  constructor(opts: { mode: 'practice' | 'mainnet'; client: GameClient; executor: Executor | null; dryRun: boolean; games?: bigint[]; mint?: () => Promise<bigint | null>; dungeon?: string }) {
     this.mode = opts.mode;
     this.client = opts.client;
     this.executor = opts.executor;
@@ -114,6 +117,7 @@ export class ChainBackend implements Backend {
     this.account = opts.executor?.address;
     this.queue = opts.games ?? [];
     this.mint = opts.mint ?? null;
+    this.dungeon = opts.dungeon;
   }
 
   async nextGame(): Promise<bigint | null> {
@@ -172,6 +176,7 @@ export async function playLoop(opts: PlayOptions): Promise<RunRecord> {
     meanXp: 0,
     errors: 0,
     policy: params.version,
+    dungeon: backend.dungeon,
   };
   const finished: number[] = [];
   const recent: DecisionLog[] = [];
@@ -230,6 +235,7 @@ async function playGame(
   const rec: GameRecord = {
     id: id.toString(),
     mode: backend.mode,
+    dungeon: backend.dungeon,
     xp: 0,
     level: 0,
     deathCause: '',

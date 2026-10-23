@@ -200,6 +200,26 @@ export class GameClient {
     throw new Error('unreachable');
   }
 
+  /** All game settings ("dungeon" presets) registered in the settings contract, with names. */
+  async listSettings(maxCount = 200): Promise<Array<{ id: number; name: string; description: string; settings: unknown }>> {
+    const countRaw = await this.view('settings', ['settings_count'], []);
+    const count = Math.min(maxCount, Number(countRaw ?? 0));
+    const out: Array<{ id: number; name: string; description: string; settings: unknown }> = [];
+    for (let id = 0; id <= count; id++) {
+      try {
+        const d = (await this.view('settings', ['settings_details'], [id])) as Record<string, unknown> | undefined;
+        if (!d) continue;
+        const name = String(d.name ?? '').trim();
+        const settings = d.settings ?? (await this.view('settings', ['setting_details'], [id]));
+        if (!name && id !== 0) continue;
+        out.push({ id, name, description: String(d.description ?? ''), settings });
+      } catch {
+        // ids can start at 1 or have gaps
+      }
+    }
+    return out;
+  }
+
   /** Mint a new game token (practice: free). Returns the new adventurer / token id when it can be read from events. */
   async mintGame(executor: Executor, name: string, settingsId: number): Promise<bigint | null> {
     const abi = this.abis.token;

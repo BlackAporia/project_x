@@ -381,7 +381,7 @@ async function renderGameSelect() {
   const sel = $('#gameSelect');
   const prev = sel.value;
   sel.innerHTML = games.length
-    ? games.map((g) => `<option value="${g.mode}-${g.id}">${MODE_NAMES[g.mode]} · ${g.xp} XP · L${g.level} · ${new Date(g.ended).toLocaleString('uk-UA')}</option>`).join('')
+    ? games.map((g) => `<option value="${g.mode}-${g.id}">${MODE_NAMES[g.mode]}${g.dungeon ? ` (${esc(g.dungeon)})` : ''} · ${g.xp} XP · L${g.level} · ${new Date(g.ended).toLocaleString('uk-UA')}</option>`).join('')
     : '<option>Ще немає зіграних ігор</option>';
   if (prev && [...sel.options].some((o) => o.value === prev)) sel.value = prev;
   if (games.length) await renderGameLog(sel.value);
@@ -396,7 +396,7 @@ async function renderGameLog(key) {
     return;
   }
   const g = data.game;
-  $('#gameMeta').textContent = `${MODE_NAMES[g.mode]} · гра ${g.id} · ${g.xp} XP · рівень ${g.level} · причина: ${g.deathCause || '–'} · ${g.decisions} рішень · ${g.transactions} транзакцій · ${g.reverts} відкатів · ${Math.round(g.seconds / 60)} хв`;
+  $('#gameMeta').textContent = `${MODE_NAMES[g.mode]}${g.dungeon ? ` · ${g.dungeon}` : ''} · гра ${g.id} · ${g.xp} XP · рівень ${g.level} · причина: ${g.deathCause || '–'} · ${g.decisions} рішень · ${g.transactions} транзакцій · ${g.reverts} відкатів · ${Math.round(g.seconds / 60)} хв`;
   body.innerHTML = data.log
     .map(
       (r) => `<tr><td>${r.n}</td><td>${r.level}</td><td class="num">${fmt(r.xp)}</td><td class="num">${r.hp}/${r.maxHp}</td><td class="num">${fmt(r.gold)}</td><td>${esc(r.actions)}${r.ok === false ? ` <span class="no">${esc(r.error ?? '')}</span>` : ''}${r.tx ? ` <a class="muted small" href="https://voyager.online/tx/${esc(r.tx)}" target="_blank" rel="noopener">tx</a>` : ''}</td><td class="why">${esc(r.reason)}</td></tr>`,

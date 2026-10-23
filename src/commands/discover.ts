@@ -24,6 +24,8 @@ async function scanFrontend(site: string): Promise<Record<string, unknown>> {
   const addresses = new Map<string, string[]>();
   const slots = new Set<string>();
   const dungeonNames = new Set<string>();
+  const keywordHits: Record<string, string[]> = {};
+  const keywords = (process.env.DISCOVER_KEYWORDS ?? 'ronke,practice,settings_id,settingsId').split(',').map((k) => k.trim()).filter(Boolean);
   for (const src of scripts.slice(0, 12)) {
     let js = '';
     try {
@@ -40,6 +42,14 @@ async function scanFrontend(site: string): Promise<Record<string, unknown>> {
     }
     for (const m of js.matchAll(/(pg-[a-z0-9-]+|ls_\d+_\d+_\d+)/g)) slots.add(m[1]);
     for (const m of js.matchAll(/["'`]([A-Z][A-Za-z ]{2,30} Dungeon)["'`]/g)) dungeonNames.add(m[1]);
+    for (const k of keywords) {
+      const list = (keywordHits[k] ??= []);
+      for (const m of js.matchAll(new RegExp(k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'gi'))) {
+        if (list.length >= 12) break;
+        const i = m.index ?? 0;
+        list.push(js.slice(Math.max(0, i - 160), i + 200).replace(/\s+/g, ' '));
+      }
+    }
   }
   const known = new Map<string, string>();
   const add = (name: string, a: string) => known.set('0x' + BigInt(a).toString(16).padStart(64, '0'), name);
@@ -49,6 +59,7 @@ async function scanFrontend(site: string): Promise<Record<string, unknown>> {
     scripts: scripts.length,
     slots: [...slots].sort(),
     dungeonNames: [...dungeonNames].sort(),
+    keywordHits,
     addresses: [...addresses.entries()].map(([a, ctx]) => ({ address: a, known: known.get(a) ?? null, context: ctx })),
     configuredButNotSeen: [...known.entries()].filter(([a]) => !addresses.has(a)).map(([a, n]) => ({ name: n, address: a })),
   };
