@@ -45,5 +45,17 @@
   "errors": 0,
   "policy": "tuned-2026-10-22-g24",
   "ended": "2026-10-23T15:49:15.842Z"
+ },
+ {
+  "id": "2026-10-23T17-08-16-370Z",
+  "mode": "practice",
+  "started": "2026-10-23T17:08:16.370Z",
+  "games": 200,
+  "bestXp": 853,
+  "meanXp": 238,
+  "errors": 0,
+  "policy": "tuned-2026-10-22-g24",
+  "dungeon": "Default #0",
+  "ended": "2026-10-23T17:08:26.556Z"
  }
 ]
