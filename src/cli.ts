@@ -58,6 +58,7 @@ async function main(): Promise<void> {
       'max-games': { type: 'string' },
       rounds: { type: 'string' },
       dungeon: { type: 'string' },
+      frontend: { type: 'string' },
       ids: { type: 'string' },
       core: { type: 'string' },
       'settings-id': { type: 'string' },
@@ -98,13 +99,14 @@ async function main(): Promise<void> {
     case 'play': {
       const { runPlayCommand } = await import('./commands/play.ts');
       await runPlayCommand({
-        mode: str(values.mode, process.env.BOT_MODE ?? 'practice') as 'practice' | 'mainnet' | 'sim',
+        mode: str(values.mode, process.env.BOT_MODE ?? 'practice') as 'practice' | 'practice-slot' | 'mainnet' | 'sim',
         minutes: num(values.minutes, Number(process.env.BOT_MINUTES ?? 20)),
         maxGames: num(values['max-games'], Number(process.env.BOT_MAX_GAMES ?? 50)),
         dataDir: str(values.data, process.env.BOT_DATA_DIR ?? 'site/data'),
         policyPath: str(values.policy, 'policy/policy.json'),
         live: values.live === true || process.env.MAINNET_LIVE === 'true',
         dungeon: str(values.dungeon, process.env.BOT_DUNGEON ?? '') || undefined,
+        frontend: str(values.frontend, '') || undefined,
         settingsId: values['settings-id'] !== undefined ? num(values['settings-id'], NaN) : process.env.PRACTICE_SETTINGS_ID ? Number(process.env.PRACTICE_SETTINGS_ID) : undefined,
       });
       break;

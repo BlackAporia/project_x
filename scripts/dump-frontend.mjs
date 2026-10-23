@@ -7,6 +7,8 @@ import { join } from 'node:path';
 const out = process.argv[2] ?? 'frontend-dump';
 const site = process.argv[3] ?? 'https://lootsurvivor.io/';
 mkdirSync(join(out, 'assets'), { recursive: true });
+// the chunks are ES modules (top-level await): mark the folder so Node/tsx load them as ESM
+writeFileSync(join(out, 'package.json'), JSON.stringify({ type: 'module', private: true }) + '\n');
 
 const seen = new Set();
 const queue = [];

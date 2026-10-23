@@ -20,10 +20,10 @@ on:
         description: send mainnet transactions (true) or dry run (false)
         default: 'false'
       dungeon:
-        description: practice dungeon name to play (matched against the slot's game settings, e.g. ronke)
+        description: practice dungeon (ronke, beastmode, lootbag, greed, karats, raidboss or default)
         default: ''
       settings_id:
-        description: practice game settings id (overrides dungeon)
+        description: game settings id on the V2 game core (overrides dungeon, e.g. 7 = Ronkeverse Large)
         default: ''
       max_games:
         description: maximum games per mode

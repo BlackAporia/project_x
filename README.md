@@ -55,9 +55,22 @@ npm run local -- --rounds 3 --games 6000 --python trainer/.venv/Scripts/python
 однакових сидах (таблиця vs мережа) → мережа приймається лише при виграші ≥2% → тюнінг CMA‑ES. Результат —
 файли `policy/policy.json` і `policy/value-net.json`. Закомітьте їх, і онлайн‑бот гратиме новою політикою.
 
-Practice‑підземелля можна ганяти локально скільки завгодно (`npm run play -- --mode practice --minutes 600`):
-там немає VRF, тож бот додатково перевіряє, що його рушій точно передбачає результат кожної транзакції
-(показник «Точність прогнозу» на сайті).
+### Practice у будь‑якому підземеллі (рушій сайту)
+
+Кнопка «Practice» на lootsurvivor.io більше не використовує окремий блокчейн‑слот: гра йде **прямо в браузері**
+на клієнтському рушії V2 з налаштуваннями підземелля (`settings_id`). Бот робить те саме: завантажує свіжий
+JS‑бандл сайту, запускає його рушій у Node (емуляція браузера happy-dom, мережу вимкнено) і грає ним, приймаючи
+рішення своєю політикою. Налаштування підземелля читаються з ігрового ядра V2 у mainnet.
+
+```bash
+npm run play -- --mode practice --dungeon ronke --max-games 50     # Ronke Casino («Ronkeverse Large», #7)
+npm run play -- --mode practice --settings-id 6                     # Ronkeverse Medium
+npm run play -- --mode practice                                     # Default (#0)
+npm run bot -- dungeon-settings --ids 0,1,2,3,4,5,6,7               # переглянути налаштування підземель
+```
+
+Відомі підземелля — `DUNGEON_SETTINGS` у `src/chain/config.ts` (ronke: 7/6/5/4, beastmode: 2, lootbag: 1, …).
+На GitHub: Actions → Bot → Run workflow → `mode=practice`, `dungeon=ronke`.
 
 ## Запуск на GitHub
 

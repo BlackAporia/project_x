@@ -217,6 +217,8 @@ function assertNotInBattle(a: Adventurer): void {
 export function startGame(state: GameState, weapon: number, rng: RandomSource): { state: GameState; events: GameEvent[] } {
   assert(!state.started && state.adventurer.xp === 0 && state.adventurer.health === 0, 'Adventurer has already started');
   assert((STARTER_WEAPONS as readonly number[]).includes(weapon), 'Invalid starting weapon');
+  const preset = state.settings.startAdventurer;
+  if (preset && preset.xp !== 0) return startFromPreset(state, preset, rng);
   const next = cloneState(state);
   const events: GameEvent[] = [];
   const adv = newAdventurer(weapon);
@@ -230,6 +232,35 @@ export function startGame(state: GameState, weapon: number, rng: RandomSource): 
   next.beast = beast;
   next.started = true;
   next.market = rng.market(next.adventurerId, next.marketSeed, next.settings.marketSize);
+  return { state: next, events };
+}
+
+/** start_game for settings with a preset adventurer (dungeons such as Loot Bag / promotions). */
+function startFromPreset(state: GameState, preset: Adventurer, rng: RandomSource): { state: GameState; events: GameEvent[] } {
+  const next = cloneState(state);
+  const events: GameEvent[] = [];
+  const adv = cloneAdventurer(preset);
+  next.bag = state.settings.startBag ? cloneItems(state.settings.startBag) : next.bag;
+  incrementActionCount(adv);
+  const [beastSeed, marketSeed] = rng.actionSeed({
+    adventurerId: state.adventurerId,
+    xp: adv.xp,
+    actionCount: adv.actionCount,
+    inBattle: false,
+    gameSeed: state.settings.gameSeed,
+    gameSeedUntilXp: state.settings.gameSeedUntilXp,
+  });
+  next.adventurer = adv;
+  next.started = true;
+  next.marketSeed = marketSeed;
+  next.market = rng.market(next.adventurerId, marketSeed, next.settings.marketSize);
+  if (state.settings.inBattle) {
+    next.beastSeed = beastSeed;
+    const beast = currentBeast({ ...next, beast: null }, rng);
+    adv.beastHealth = beast.startingHealth;
+    next.beast = beast;
+    events.push({ type: 'beast', beast });
+  }
   return { state: next, events };
 }
 

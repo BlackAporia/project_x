@@ -8,7 +8,9 @@ import { DataStore } from '../runner/datastore.ts';
 import { ChainBackend, SimBackend, playLoop, type Backend } from '../runner/play.ts';
 
 export async function runPlayCommand(opts: {
-  mode: 'practice' | 'mainnet' | 'sim';
+  mode: 'practice' | 'practice-slot' | 'mainnet' | 'sim';
+  /** directory with a lootsurvivor.io frontend dump (practice); downloaded when missing */
+  frontend?: string;
   minutes: number;
   maxGames: number;
   dataDir: string;
@@ -25,6 +27,8 @@ export async function runPlayCommand(opts: {
   if (opts.mode === 'sim') {
     backend = new SimBackend(Date.now() % 1_000_000_000);
   } else if (opts.mode === 'practice') {
+    backend = await openSitePractice(store, opts);
+  } else if (opts.mode === 'practice-slot') {
     const p = await openPractice();
     console.log(`[practice] rpc ${p.rpc}, burner ${p.executor.address}`);
     const chosen = await resolvePracticeSettings(p.client, store, opts.dungeon, opts.settingsId);
@@ -85,4 +89,33 @@ async function resolvePracticeSettings(client: GameClient, store: DataStore, dun
     return { id: hit.id, name: hit.name };
   }
   return { id: PRACTICE.settingsId, name: all.find((s) => s.id === PRACTICE.settingsId)?.name ?? '' };
+}
+
+/** Practice = client-only game on the official site engine with a dungeon's on-chain settings. */
+async function openSitePractice(store: DataStore, opts: { dungeon?: string; settingsId?: number; frontend?: string; dataDir: string }): Promise<Backend> {
+  const { existsSync } = await import('node:fs');
+  const { execFileSync } = await import('node:child_process');
+  const { DUNGEON_SETTINGS } = await import('../chain/config.ts');
+  const { loadSiteEngine, siteSettings } = await import('../v2/site-engine.ts');
+  const { SitePracticeBackend } = await import('../v2/backend.ts');
+  const frontend = opts.frontend ?? process.env.FRONTEND_DIR ?? 'data/local/frontend';
+  if (!existsSync(`${frontend}/assets`)) {
+    console.log(`[practice] downloading the lootsurvivor.io client into ${frontend}`);
+    execFileSync(process.execPath, ['scripts/dump-frontend.mjs', frontend], { stdio: 'inherit' });
+  }
+  const key = (opts.dungeon ?? 'default').toLowerCase().replace(/[^a-z]/g, '');
+  const id = opts.settingsId ?? (key === 'default' ? 0 : DUNGEON_SETTINGS[key]?.ids[0]);
+  if (id === undefined) throw new Error(`unknown dungeon "${opts.dungeon}" (known: ${Object.keys(DUNGEON_SETTINGS).join(', ')}) - or pass --settings-id`);
+  let all = store.readJson<{ settings?: Record<string, { details?: { name?: string }; settings?: Record<string, unknown> }> }>('dungeon-settings.json', {});
+  if (!all.settings?.[id]?.settings || 'error' in (all.settings[id].settings ?? {})) {
+    const { runDungeonSettingsCommand } = await import('./dungeon-settings.ts');
+    await runDungeonSettingsCommand({ dataDir: opts.dataDir, ids: [id] });
+    all = store.readJson('dungeon-settings.json', {});
+  }
+  const entry = all.settings?.[id];
+  if (!entry?.settings) throw new Error(`no game settings #${id} available`);
+  const engine = await loadSiteEngine(frontend);
+  const label = `${entry.details?.name || 'settings'} #${id}`;
+  console.log(`[practice] site engine loaded from ${frontend}; dungeon ${label}`);
+  return new SitePracticeBackend(engine, siteSettings(entry.settings as Record<string, unknown>), label);
 }

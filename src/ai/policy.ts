@@ -54,7 +54,7 @@ export class Policy {
   }
 
   decide(state: GameState): Decision {
-    if (!state.started) return this.decideStart();
+    if (!state.started) return this.decideStart(state);
     const adv = state.adventurer;
     if (adv.health === 0) return { phase: 'dead', actions: [], reason: 'Adventurer is dead', metrics: {} };
     if (adv.beastHealth > 0) return this.decideBattle(state);
@@ -62,10 +62,23 @@ export class Policy {
   }
 
   // ------------------------------------------------------------------ start
-  private decideStart(): Decision {
+  private decideStart(state: GameState): Decision {
     const w = (STARTER_WEAPONS as readonly number[]).includes(this.params.startWeapon)
       ? this.params.startWeapon
       : STARTER_WEAPONS[Math.floor(Math.random() * STARTER_WEAPONS.length)];
+    const preset = state.settings.startAdventurer;
+    if (state.settings.noStarterBeast) {
+      const pw = preset?.equipment[1]?.id;
+      return {
+        phase: 'start',
+        actions: [{ type: 'start', weapon: w }],
+        reason: pw ? `Start the dungeon preset (${lootInfo(pw).name}, ${preset!.health} HP, ${preset!.gold} gold)` : `Start with ${lootInfo(w).name}`,
+        metrics: {},
+      };
+    }
+    if (preset && preset.xp !== 0) {
+      return { phase: 'start', actions: [{ type: 'start', weapon: w }], reason: `Start the dungeon preset (level ${level(preset)} adventurer)`, metrics: {} };
+    }
     return {
       phase: 'start',
       actions: [{ type: 'start', weapon: w }, { type: 'attack', toTheDeath: false }],

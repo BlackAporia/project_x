@@ -60,6 +60,11 @@ export interface Settings {
   inBattle: boolean;
   gameSeed: bigint;
   gameSeedUntilXp: number;
+  /** dungeon preset: start from this stored adventurer instead of a fresh one (used when its xp > 0) */
+  startAdventurer?: Adventurer;
+  startBag?: Item[];
+  /** V2 rules (lootsurvivor.io commit-reveal / client games): no starter-beast fight after start_game */
+  noStarterBeast?: boolean;
 }
 
 /** A purchase request for buy_items. */
