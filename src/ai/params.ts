@@ -72,6 +72,11 @@ export interface PolicyParams {
   // ---- explore ----
   /** use till_beast exploration when the instant-death risk of one explore is below this (fewer transactions) */
   tillBeastMaxRisk: number;
+
+  // ---- learned value network (trainer/train.py, GPU) ----
+  /** blend between the per-level table (0) and the value network (1) for continuation values */
+  valueNetWeight?: number;
+  valueNetPath?: string;
 }
 
 export const DEFAULT_PARAMS: PolicyParams = {

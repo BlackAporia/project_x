@@ -22,6 +22,8 @@ import type { Action, Adventurer, Beast, GameState, Item, ItemPurchase, Stats } 
 import { solveBattle, type BattlePlan, type BattleSolution } from './battle.ts';
 import { beastDamageOptions, fleeProbability, heroDamageOptions, perilTable, type PerilTable } from './model.ts';
 import { DEFAULT_PARAMS, futureXp, type PolicyParams } from './params.ts';
+import { loadedFeatures } from './features.ts';
+import { loadValueNet, type ValueNet } from './valuenet.ts';
 
 export interface Decision {
   phase: 'start' | 'battle' | 'level_up' | 'explore' | 'dead';
@@ -43,10 +45,12 @@ export class Policy {
   private perilCache = new Map<string, PerilTable>();
   private planKey = '';
   private plan: BattlePlan | null = null;
+  private valueNet: ValueNet | null;
 
   constructor(params: PolicyParams = DEFAULT_PARAMS, options: PolicyOptions = {}) {
     this.params = params;
     this.fast = options.fast ?? false;
+    this.valueNet = params.valueNetWeight ? loadValueNet(params.valueNetPath) : null;
   }
 
   decide(state: GameState): Decision {
@@ -86,8 +90,12 @@ export class Policy {
   continuation(adv: Adventurer, state: GameState, gold: number, lvl: number, H: number, peril: PerilTable): Float64Array {
     const p = this.params;
     const out = new Float64Array(H + 1);
-    const K = futureXp(p, lvl);
+    let K = futureXp(p, lvl);
     const maxHp = maxHealth(adv.stats);
+    if (this.valueNet && p.valueNetWeight) {
+      const v = this.valueNet.predict(loadedFeatures(adv, state.bag, maxHp, gold, lvl));
+      K = (1 - p.valueNetWeight) * K + p.valueNetWeight * v;
+    }
     const price = potionPrice(adv);
     const target = this.healTarget(adv, peril, price, maxHp);
     for (let h = 1; h <= H; h++) {

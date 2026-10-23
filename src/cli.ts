@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // Command line entry point.
 //   npm run bot -- <command> [--flags]
-// Commands: play, sim, bench, tune, dataset, discover, leaderboard, learn, authorize, site
+// Commands: play, sim, bench, tune, dataset, discover, leaderboard, learn, authorize, site, local
+import { existsSync, readFileSync } from 'node:fs';
 import { parseArgs } from 'node:util';
 
 const COMMANDS: Record<string, string> = {
@@ -15,9 +16,20 @@ const COMMANDS: Record<string, string> = {
   learn: 'Learn from top players: ingest their games and update insights',
   authorize: 'One-time Cartridge Controller session authorization for mainnet play',
   site: 'Rebuild site/data summaries from the bot data directory',
+  local: 'Local GPU learning loop: self-play dataset -> value net (PyTorch) -> A/B -> tune',
 };
 
+/** Minimal .env loader for local runs (real environment variables win). */
+function loadDotEnv(): void {
+  if (!existsSync('.env')) return;
+  for (const line of readFileSync('.env', 'utf8').split(/\r?\n/)) {
+    const m = /^\s*([A-Z0-9_]+)\s*=\s*(.*?)\s*$/.exec(line);
+    if (m && !line.trimStart().startsWith('#') && process.env[m[1]] === undefined) process.env[m[1]] = m[2].replace(/^["']|["']$/g, '');
+  }
+}
+
 async function main(): Promise<void> {
+  loadDotEnv();
   const [cmd, ...rest] = process.argv.slice(2);
   if (!cmd || cmd === 'help' || cmd === '--help' || !(cmd in COMMANDS)) {
     console.log('Loot Survivor bot\n\nUsage: npm run bot -- <command> [options]\n');
@@ -43,6 +55,8 @@ async function main(): Promise<void> {
       live: { type: 'boolean' },
       limit: { type: 'string' },
       'max-games': { type: 'string' },
+      rounds: { type: 'string' },
+      python: { type: 'string' },
     },
   });
   const num = (v: unknown, d: number) => (typeof v === 'string' && v !== '' && !Number.isNaN(Number(v)) ? Number(v) : d);
@@ -106,6 +120,18 @@ async function main(): Promise<void> {
     case 'authorize': {
       const { runAuthorizeCommand } = await import('./chain/cartridge.ts');
       await runAuthorizeCommand();
+      break;
+    }
+    case 'local': {
+      const { runLocalCommand } = await import('./commands/local.ts');
+      await runLocalCommand({
+        rounds: num(values.rounds, 3),
+        games: num(values.games, 6000),
+        generations: num(values.generations, 12),
+        policyPath: str(values.policy, 'policy/policy.json'),
+        python: str(values.python, process.platform === 'win32' ? 'python' : 'python3'),
+        seed: num(values.seed, 1),
+      });
       break;
     }
     case 'site': {

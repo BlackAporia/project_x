@@ -1,4 +1,5 @@
 // Full-game simulation with the exact engine and statistically identical randomness.
+import { stateFeatures } from '../ai/features.ts';
 import { level } from '../game/adventurer.ts';
 import { applyAction, isDead, newGameState } from '../game/engine.ts';
 import { FastRandom, type RandomSource } from '../game/rng.ts';
@@ -61,8 +62,7 @@ export function simulateGame(policy: Policy, opts: SimOptions): SimResult {
         lastLevel = lvl;
       }
       if (samples && state.adventurer.beastHealth === 0 && actions % 3 === 0) {
-        const a = state.adventurer;
-        samples.push({ level: lvl, xp: a.xp, features: [lvl, a.health, a.gold, a.stats.str, a.stats.dex, a.stats.vit, a.stats.int, a.stats.wis, a.stats.cha] });
+        samples.push({ level: lvl, xp: state.adventurer.xp, features: stateFeatures(state.adventurer, state.bag) });
       }
       if (state.adventurer.gold > maxGold) maxGold = state.adventurer.gold;
     }

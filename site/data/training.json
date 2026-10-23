@@ -119,5 +119,60 @@
   "max": 1218,
   "games": 600,
   "source": "cmaes"
+ },
+ {
+  "date": "2026-10-23T05:40:04.976Z",
+  "generation": 16,
+  "objective": "blend",
+  "fitness": 362.23749999999995,
+  "mean": 206.51666666666668,
+  "p90": 421,
+  "max": 1110,
+  "games": 600,
+  "source": "cmaes"
+ },
+ {
+  "date": "2026-10-23T05:42:10.072Z",
+  "generation": 20,
+  "objective": "blend",
+  "fitness": 373.26250000000005,
+  "mean": 207.36666666666667,
+  "p90": 442,
+  "max": 1167,
+  "games": 600,
+  "source": "cmaes"
+ },
+ {
+  "date": "2026-10-23T05:44:11.415Z",
+  "generation": 24,
+  "objective": "blend",
+  "fitness": 329.62,
+  "mean": 190.015,
+  "p90": 403,
+  "max": 1092,
+  "games": 600,
+  "source": "cmaes"
+ },
+ {
+  "date": "2026-10-23T05:46:34.256Z",
+  "generation": 28,
+  "objective": "blend",
+  "fitness": 340.73083333333335,
+  "mean": 193.20333333333335,
+  "p90": 399,
+  "max": 1194,
+  "games": 600,
+  "source": "cmaes"
+ },
+ {
+  "date": "2026-10-23T05:48:19.435Z",
+  "generation": 30,
+  "objective": "blend",
+  "fitness": 353.5483333333333,
+  "mean": 196.54666666666665,
+  "p90": 408,
+  "max": 1100,
+  "games": 600,
+  "source": "cmaes"
  }
 ]

@@ -20,7 +20,8 @@
     "leaderboard": "node --import tsx src/cli.ts leaderboard",
     "learn": "node --import tsx src/cli.ts learn",
     "authorize": "node --import tsx src/cli.ts authorize",
-    "site": "node --import tsx src/cli.ts site"
+    "site": "node --import tsx src/cli.ts site",
+    "local": "node --import tsx src/cli.ts local"
   },
   "dependencies": {
     "@cartridge/controller": "0.14.2",
