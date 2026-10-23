@@ -6,7 +6,7 @@ import { EvalPool } from '../learn/pool.ts';
 import { DataStore } from '../runner/datastore.ts';
 import { reachProbabilities } from '../sim/splitting.ts';
 
-export async function runReachCommand(opts: { dataDir: string; dungeon: string; policies: string[]; games: number; effort: number; levels: number[]; seed: number }): Promise<void> {
+export async function runReachCommand(opts: { dataDir: string; dungeon: string; policies: string[]; games: number; effort: number; levels: number[]; seed: number; out?: string }): Promise<void> {
   const pool = new EvalPool();
   if (opts.dungeon !== 'v1') pool.settings = dungeonEngineSettings(opts.dungeon).settings;
   const seeds = Array.from({ length: opts.games }, (_, i) => 60_000_000 + opts.seed * 1_000_003 + i);
@@ -24,5 +24,5 @@ export async function runReachCommand(opts: { dataDir: string; dungeon: string; 
     results.push({ policy: path, version: params.version, stages, reach: reach.map((r) => ({ level: r.level, p: r.p, log10Se: r.logSe / Math.LN10 })) });
   }
   await pool.close();
-  new DataStore(opts.dataDir).writeJson('reach-compare.json', { updated: new Date().toISOString(), dungeon: opts.dungeon, games: opts.games, effort: opts.effort, results });
+  new DataStore(opts.dataDir).writeJson(opts.out ?? 'reach-compare.json', { updated: new Date().toISOString(), dungeon: opts.dungeon, games: opts.games, effort: opts.effort, results });
 }

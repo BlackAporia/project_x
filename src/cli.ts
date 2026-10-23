@@ -231,6 +231,7 @@ async function main(): Promise<void> {
         effort: num(values.effort, 1000),
         levels: str(values.levels, '10,15,20,25,30,35,40,43,46,48,50,51').split(',').map(Number),
         seed: num(values.seed, 1),
+        out: str(values.out, 'reach-compare.json'),
       });
       break;
     }
