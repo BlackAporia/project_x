@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-23T15:46:55.697Z",
+ "updated": "2026-10-23T23:06:21.427Z",
  "core": "0x011afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b",
  "functions": [
   "commit_actions(adventurer_id: felt252, expected_chain: felt252, encoded_actions: S<felt252>)",
@@ -136,272 +136,48 @@
  "entropyOffset": "0",
  "games": [
   {
-   "gameId": "2713877091499598330239949450874152722548094798724653333531475156947441323713",
-   "packets": 66,
+   "gameId": "197987108336887595175184694778031091060932289752133940141854870732802",
+   "packets": 0,
    "rollingMatches": true,
-   "lastInstructions": [
-    "explore",
-    "upgrade_stat+explore",
-    "upgrade_stat+explore"
-   ],
+   "lastInstructions": [],
+   "instructionCounts": {},
    "ready": true,
    "terminal": true,
    "gameOver": false,
-   "settingsId": 5,
+   "settingsId": 155973,
    "adventurer": {
-    "level": 28,
-    "xp": 808,
-    "health": 0,
-    "gold": 222,
-    "beastHealth": 346,
-    "statUpgrades": 0,
-    "stats": {
-     "strength": 2,
-     "dexterity": 24,
-     "vitality": 11,
-     "intelligence": 4,
-     "wisdom": 4,
-     "charisma": 10,
-     "luck": 0
-    },
-    "weapon": "Grimoire",
-    "levelSalt": 13039
-   },
-   "beast": {
-    "name": "\"Oblivion Roar\" Sprite",
-    "level": 94,
-    "tier": 4,
-    "startingHealth": 346,
-    "health": 346
-   },
-   "score": 0
-  },
-  {
-   "gameId": "2713877091499598330239949450874152722548101938132833818716550199872580152161",
-   "packets": 71,
-   "rollingMatches": true,
-   "lastInstructions": [
-    "upgrade_stat+buy_potions+explore",
-    "flee",
-    "explore"
-   ],
-   "ready": true,
-   "terminal": true,
-   "gameOver": false,
-   "settingsId": 5,
-   "adventurer": {
-    "level": 32,
-    "xp": 1073,
+    "level": 1,
+    "xp": 0,
     "health": 0,
     "gold": 0,
-    "beastHealth": 334,
-    "statUpgrades": 0,
-    "stats": {
-     "strength": 2,
-     "dexterity": 24,
-     "vitality": 14,
-     "intelligence": 4,
-     "wisdom": 4,
-     "charisma": 13,
-     "luck": 0
-    },
-    "weapon": "Ghost Wand",
-    "levelSalt": 12547
-   },
-   "beast": {
-    "name": "\"Phoenix Moon\" Griffin",
-    "level": 95,
-    "tier": 1,
-    "startingHealth": 334,
-    "health": 334
-   },
-   "score": 0
-  },
-  {
-   "gameId": "2713877091499598330239949450874152722548079870871185046326318249043519737793",
-   "packets": 3,
-   "rollingMatches": true,
-   "lastInstructions": [
-    "buy_item+buy_item+buy_item+equip_item+equip_item+equip_item+explore",
-    "upgrade_stat+explore",
-    "attack"
-   ],
-   "ready": true,
-   "terminal": true,
-   "gameOver": false,
-   "settingsId": 5,
-   "adventurer": {
-    "level": 2,
-    "xp": 6,
-    "health": 0,
-    "gold": 3,
-    "beastHealth": 1,
-    "statUpgrades": 0,
-    "stats": {
-     "strength": 2,
-     "dexterity": 5,
-     "vitality": 2,
-     "intelligence": 4,
-     "wisdom": 4,
-     "charisma": 3,
-     "luck": 0
-    },
-    "weapon": "Grave Wand",
-    "levelSalt": 1096
-   },
-   "beast": {
-    "name": "Balrog",
-    "level": 6,
-    "tier": 1,
-    "startingHealth": 33,
-    "health": 1
-   },
-   "score": 0
-  },
-  {
-   "gameId": "2713877091499598330239949450874152722548079870871185046326318249043521834945",
-   "packets": 71,
-   "rollingMatches": true,
-   "lastInstructions": [
-    "buy_potions+explore",
-    "attack",
-    "upgrade_stat+upgrade_stat+buy_item+equip_item+explore"
-   ],
-   "ready": true,
-   "terminal": true,
-   "gameOver": false,
-   "settingsId": 5,
-   "adventurer": {
-    "level": 20,
-    "xp": 410,
-    "health": 0,
-    "gold": 59,
     "beastHealth": 0,
     "statUpgrades": 0,
     "stats": {
-     "strength": 2,
-     "dexterity": 16,
-     "vitality": 7,
-     "intelligence": 4,
-     "wisdom": 4,
-     "charisma": 8,
-     "luck": 0
-    },
-    "weapon": "Grimoire",
-    "levelSalt": 3978
-   },
-   "score": 0
-  },
-  {
-   "gameId": "904625697166532776746652061824565847215142356634039838717844415362391384001",
-   "packets": 9,
-   "rollingMatches": true,
-   "lastInstructions": [
-    "attack",
-    "explore",
-    "attack"
-   ],
-   "ready": true,
-   "terminal": true,
-   "gameOver": false,
-   "settingsId": 0,
-   "adventurer": {
-    "level": 4,
-    "xp": 24,
-    "health": 0,
-    "gold": 5,
-    "beastHealth": 11,
-    "statUpgrades": 0,
-    "stats": {
      "strength": 0,
-     "dexterity": 4,
-     "vitality": 2,
-     "intelligence": 4,
-     "wisdom": 2,
-     "charisma": 3,
-     "luck": 0
-    },
-    "weapon": "Grimoire",
-    "levelSalt": 4268
-   },
-   "beast": {
-    "name": "Ettin",
-    "level": 6,
-    "tier": 3,
-    "startingHealth": 46,
-    "health": 11
-   },
-   "score": 0
-  },
-  {
-   "gameId": "904625697166532776746652061824565847215142356634039838773184648128981902145",
-   "packets": 4,
-   "rollingMatches": true,
-   "lastInstructions": [
-    "explore",
-    "explore",
-    "upgrade_stat+explore"
-   ],
-   "ready": true,
-   "terminal": false,
-   "gameOver": false,
-   "settingsId": 0,
-   "adventurer": {
-    "level": 2,
-    "xp": 6,
-    "health": 121,
-    "gold": 41,
-    "beastHealth": 45,
-    "statUpgrades": 0,
-    "stats": {
-     "strength": 3,
-     "dexterity": 5,
-     "vitality": 2,
-     "intelligence": 2,
+     "dexterity": 0,
+     "vitality": 0,
+     "intelligence": 0,
      "wisdom": 0,
-     "charisma": 1,
+     "charisma": 0,
      "luck": 0
     },
-    "weapon": "Wand",
-    "levelSalt": 2801
+    "weapon": "None",
+    "levelSalt": 16
    },
-   "beast": {
-    "name": "Cyclops",
-    "level": 5,
-    "tier": 3,
-    "startingHealth": 45,
-    "health": 45
+   "equipment": {
+    "weapon": "-",
+    "chest": "-",
+    "head": "-",
+    "waist": "-",
+    "foot": "-",
+    "hand": "-",
+    "neck": "-",
+    "ring": "-"
    },
+   "bag": [],
    "score": 0
   }
  ],
  "settingsRawLength": 73,
- "sampleMarket": [
-  "Bronze Ring",
-  "Titanium Ring",
-  "Gold Ring",
-  "Grave Wand",
-  "Bone Wand",
-  "Wand",
-  "Divine Robe",
-  "Silk Robe",
-  "Shirt",
-  "Linen Hood",
-  "Divine Gloves",
-  "Wool Gloves",
-  "Short Sword",
-  "Demon Husk",
-  "Dragonskin Armor",
-  "Studded Leather Armor",
-  "Cap",
-  "Hard Leather Boots",
-  "DemonsHands",
-  "Studded Leather Gloves",
-  "Warhammer",
-  "Ring Mail",
-  "Plated Belt",
-  "Holy Greaves",
-  "Ornate Greaves",
-  "Heavy Boots"
- ]
+ "sampleMarket": []
 }

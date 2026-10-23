@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-23T21:26:09.441Z",
+ "updated": "2026-10-23T23:07:22.161Z",
  "modes": {
   "mainnet": {
    "games": 0,
@@ -323,27 +323,38 @@
    "policy": "tuned-2026-10-22-g24",
    "dungeon": "Default #0",
    "ended": "2026-10-23T21:26:08.493Z"
+  },
+  {
+   "id": "2026-10-23T23-07-21-022Z",
+   "mode": "mainnet-dry",
+   "started": "2026-10-23T23:07:21.022Z",
+   "games": 0,
+   "bestXp": 0,
+   "meanXp": 0,
+   "errors": 0,
+   "policy": "leader-2026-10-23",
+   "ended": "2026-10-23T23:07:22.151Z"
   }
  ],
  "policy": {
   "params": {
-   "version": "tuned-2026-10-22-g24",
+   "version": "leader-2026-10-23",
    "startWeapon": 46,
    "phaseLevel": 16.286796362998146,
    "chaRatio": 0.9400724370081446,
-   "chaRatioLate": 0.12549142037284317,
-   "chaCap": 17.645711853256174,
+   "chaRatioLate": 0.5,
+   "chaCap": 31,
    "dexRatio": 1.149175589014733,
-   "dexRatioLate": 0.32756904899271927,
+   "dexRatioLate": 0.7,
    "dexCap": 69.81705196609761,
    "intRatio": 0.3377095373094443,
-   "intRatioLate": 0.10033975997765787,
+   "intRatioLate": 0,
    "intCap": 52.65557725478207,
    "wisRatio": 0.309801143402319,
-   "wisRatioLate": 0.12459931623220027,
+   "wisRatioLate": 0,
    "wisCap": 66.31770140864131,
    "strRatio": 0.09368980805712972,
-   "strRatioLate": 0.17199716922580655,
+   "strRatioLate": 0.2,
    "strCap": 28.942889685796818,
    "vitShare": 0.8197089474634636,
    "futureA": 63.78974530236794,
@@ -400,17 +411,20 @@
     162,
     162,
     162
-   ]
+   ],
+   "jewelryRotateG": 20,
+   "jewelryCollectGain": 40,
+   "rotateG": 20,
+   "rotateMaxRisk": 0.005,
+   "rotateBuyGain": 30,
+   "killSwap": 1,
+   "collectGain": 20
   },
   "meta": {
-   "objective": "blend",
-   "fitness": 401.14916666666664,
-   "mean": 214.165,
-   "p90": 477,
-   "max": 1174,
-   "validationGames": 600,
-   "generation": 24,
-   "updated": "2026-10-22T19:03:09.056Z"
+   "source": "leader strategies (jewelry luck farm, gear rotation, kill-shot swap, elemental sets) on top of tuned-2026-10-22-g24",
+   "objective": "tail",
+   "rules": "default:mainnet",
+   "updated": "2026-10-23T22:54:06.860Z"
   }
  }
 }

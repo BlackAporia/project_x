@@ -69,5 +69,16 @@
   "policy": "tuned-2026-10-22-g24",
   "dungeon": "Default #0",
   "ended": "2026-10-23T21:26:08.493Z"
+ },
+ {
+  "id": "2026-10-23T23-07-21-022Z",
+  "mode": "mainnet-dry",
+  "started": "2026-10-23T23:07:21.022Z",
+  "games": 0,
+  "bestXp": 0,
+  "meanXp": 0,
+  "errors": 0,
+  "policy": "leader-2026-10-23",
+  "ended": "2026-10-23T23:07:22.151Z"
  }
 ]
