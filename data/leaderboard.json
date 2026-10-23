@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-23T17:08:27.385Z",
+ "updated": "2026-10-23T21:26:09.250Z",
  "entries": [
   {
    "rank": 1,
@@ -1104,6 +1104,46 @@
  ],
  "live": [
   {
+   "tokenId": "274233207504925944731783767607228590122907879273313528856519787937793",
+   "player": null,
+   "owner": "0x52eaece65e70b394f6907fbef609a143466ee0b861bc339306ab54dc8668a25",
+   "xp": 0,
+   "level": 1,
+   "gameOver": false,
+   "updated": "2026-10-23T20:40:54.165Z",
+   "settingsId": 1
+  },
+  {
+   "tokenId": "1433510914192401435522601969804368401217017534963485604598795370233857",
+   "player": null,
+   "owner": "0x34b911ec7a6c4276f1ecbc083823d678d0908e3853e345de850ff142e98e16e",
+   "xp": 0,
+   "level": 1,
+   "gameOver": false,
+   "updated": "2026-10-23T20:25:55.994Z",
+   "settingsId": 3
+  },
+  {
+   "tokenId": "432201645007759704398797362584627107059753583260430908718488913707009",
+   "player": null,
+   "owner": "0x34b911ec7a6c4276f1ecbc083823d678d0908e3853e345de850ff142e98e16e",
+   "xp": 0,
+   "level": 1,
+   "gameOver": false,
+   "updated": "2026-10-23T20:25:55.940Z",
+   "settingsId": 3
+  },
+  {
+   "tokenId": "903158213349547443311886782387022127490615265282076658070062909882369",
+   "player": null,
+   "owner": "0x34b911ec7a6c4276f1ecbc083823d678d0908e3853e345de850ff142e98e16e",
+   "xp": 0,
+   "level": 1,
+   "gameOver": false,
+   "updated": "2026-10-23T20:25:55.843Z",
+   "settingsId": 3
+  },
+  {
    "tokenId": "384179240006896617074613669376145646535432602977534446806010892910593",
    "player": null,
    "owner": "0x58e6cacec273b5e7bbac125066186ae32d71b804acef860a9108f8e299a54eb",
@@ -1362,46 +1402,6 @@
    "gameOver": false,
    "updated": "2026-09-13T20:37:28.360Z",
    "settingsId": 3
-  },
-  {
-   "tokenId": "5200742211760029118080524448982535020021455397631822139036841352888321",
-   "player": null,
-   "owner": "0x34b911ec7a6c4276f1ecbc083823d678d0908e3853e345de850ff142e98e16e",
-   "xp": 0,
-   "level": 1,
-   "gameOver": false,
-   "updated": "2026-09-12T19:02:34.125Z",
-   "settingsId": 3
-  },
-  {
-   "tokenId": "5008652591756580809543521966485818739637186051303903687071819288805377",
-   "player": null,
-   "owner": "0x34b911ec7a6c4276f1ecbc083823d678d0908e3853e345de850ff142e98e16e",
-   "xp": 0,
-   "level": 1,
-   "gameOver": false,
-   "updated": "2026-09-12T19:02:21.190Z",
-   "settingsId": 3
-  },
-  {
-   "tokenId": "341211825006128315471658410641430028925436736393432439823659622727681",
-   "player": null,
-   "owner": "0x5cd13f9eaa8f52855859c3ec9c18f37b8a7f23866532f9a80a2ceef62a26199",
-   "xp": 156,
-   "level": 12,
-   "gameOver": false,
-   "updated": "2026-09-12T06:55:58.685Z",
-   "settingsId": 1
-  },
-  {
-   "tokenId": "282236941671736290920824309582444099741772251539144347375334118653953",
-   "player": null,
-   "owner": "0x5f7a79ea7a6814624c1982129873ac6498787bd6c75c3a3b7841a492cf8b4e2",
-   "xp": 100,
-   "level": 10,
-   "gameOver": false,
-   "updated": "2026-09-12T02:12:08.264Z",
-   "settingsId": 1
   }
  ],
  "bot": null,
