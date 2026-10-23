@@ -137,6 +137,26 @@ export async function tune(opts: TuneOptions): Promise<PolicyParams> {
   let bestFit = fitnessOf(baseVal.xp, opts.objective);
   log(`baseline validated ${opts.objective}=${bestFit.toFixed(1)} mean=${stats(baseVal.xp).mean.toFixed(1)}`);
 
+  // learning from top players: their stat build is tried as a candidate and adopted only if it validates better
+  if (existsSync('policy/insights.json')) {
+    try {
+      const { imitationParams } = await import('../commands/learn.ts');
+      const ins = JSON.parse(readFileSync('policy/insights.json', 'utf8'));
+      const imit = clampParams(imitationParams(base, ins.aggregate));
+      const r = await pool.evaluate(imit, valSeeds, true);
+      const f = fitnessOf(r.xp, opts.objective);
+      log(`top-player imitation candidate: ${opts.objective}=${f.toFixed(1)} (${ins.players} players)`);
+      if (f > bestFit) {
+        bestFit = f;
+        best = { ...imit, futureXpByLevel: base.futureXpByLevel };
+        es.state.mean = encode(best);
+        log('  adopted top-player stat targets as the new starting point');
+      }
+    } catch (e) {
+      log(`imitation candidate skipped: ${(e as Error).message}`);
+    }
+  }
+
   for (let gen = 0; gen < opts.generations; gen++) {
     const seeds = Array.from({ length: opts.games }, (_, i) => seedBase + i);
     seedBase += opts.games;

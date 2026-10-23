@@ -20,7 +20,7 @@ export interface Backend {
   nextGame(): Promise<bigint | null>;
   readState(id: bigint): Promise<GameState>;
   /** returns tx hashes and the actions actually sent (a decision can be cut after its first random action) */
-  execute(id: bigint, actions: Action[], state: GameState): Promise<{ sent: Action[]; txs: string[]; reverted?: string }>;
+  execute(id: bigint, actions: Action[], state: GameState): Promise<{ sent: Action[]; txs: string[]; reverted?: string; events?: GameEvent[] }>;
 }
 
 export function describeAction(a: Action): string {
@@ -81,14 +81,17 @@ export class SimBackend implements Backend {
     return cloneState(this.states.get(id)!);
   }
 
-  async execute(id: bigint, actions: Action[]): Promise<{ sent: Action[]; txs: string[] }> {
+  async execute(id: bigint, actions: Action[]): Promise<{ sent: Action[]; txs: string[]; events: GameEvent[] }> {
     let s = this.states.get(id)!;
+    const events: GameEvent[] = [];
     for (const a of actions) {
-      s = applyAction(s, a, this.rngs.get(id)!).state;
+      const r = applyAction(s, a, this.rngs.get(id)!);
+      s = r.state;
+      events.push(...r.events);
       if (isDead(s)) break;
     }
     this.states.set(id, s);
-    return { sent: actions, txs: [] };
+    return { sent: actions, txs: [], events };
   }
 }
 
@@ -307,7 +310,7 @@ async function playGame(
       break;
     }
 
-    let result: { sent: Action[]; txs: string[]; reverted?: string };
+    let result: { sent: Action[]; txs: string[]; reverted?: string; events?: GameEvent[] };
     try {
       result = await backend.execute(id, d.actions, state);
     } catch (e) {
@@ -325,7 +328,7 @@ async function playGame(
 
     // exact prediction of what the chain should now show (practice) -> engine validation + event details
     let predicted: GameState | null = null;
-    const events: GameEvent[] = [];
+    const events: GameEvent[] = result.events ? [...result.events] : [];
     if (backend.exact && backend.mode !== 'sim' && result.sent.length) {
       try {
         let p = state;
@@ -373,6 +376,10 @@ async function playGame(
         if (next.adventurer.xp > state.adventurer.xp) rec.beastsKilled++;
         else rec.fled++;
       }
+    }
+    if (isDead(next) && next.started && (rec.deathCause === 'beast' || rec.deathCause === 'ambush')) {
+      const killer = beast ?? (next.adventurer.beastHealth > 0 ? beastName(currentBeast(next, exactRng)) : null);
+      if (killer) rec.deathCause = rec.deathCause === 'ambush' ? `ambush by ${killer}` : killer;
     }
     if (isDead(next) && next.started && !rec.deathCause) {
       rec.deathCause = state.adventurer.beastHealth > 0 ? beast ?? 'beast' : next.adventurer.beastHealth > 0 ? `ambush by ${beastName(currentBeast(next, exactRng))}` : 'obstacle';
