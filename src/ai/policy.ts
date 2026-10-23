@@ -414,21 +414,14 @@ export class Policy {
     const out: number[] = [];
     const rotate = (this.params.jewelryRotateG ?? 0) > 0;
     const rotateArmor = this.rotating(state);
-    let trial = adv;
+    if (rotateArmor) out.push(...this.exploreArmorSet(state));
     for (let slot = 1; slot <= 8; slot++) {
       if (rotate && (slot === SLOT.Neck || slot === SLOT.Ring)) {
         const j = this.jewelryChoice(state, slot);
         if (j !== null) out.push(j);
         continue;
       }
-      if (rotateArmor && slot !== SLOT.Weapon && slot !== SLOT.Neck && slot !== SLOT.Ring && trial.equipment[slot].id !== 0) {
-        const next = this.exploreArmor(state, trial, slot);
-        if (next && next.id !== trial.equipment[slot].id) {
-          out.push(next.id);
-          trial = withItem(trial, next);
-        }
-        continue;
-      }
+      if (rotateArmor && slot !== SLOT.Weapon && slot !== SLOT.Neck && slot !== SLOT.Ring && adv.equipment[slot].id !== 0) continue;
       const cur = adv.equipment[slot];
       let best = cur;
       let bestPower = cur.id === 0 ? -1 : this.itemPower(cur, false);
@@ -490,22 +483,41 @@ export class Policy {
   }
 
   /**
-   * Armor piece to explore with: an unfinished piece (it collects obstacle xp and is worn for the kill) when it raises
-   * the explore risk by at most rotateMaxRisk over the best finished piece, otherwise the best finished piece.
+   * Armor to explore with. Start from the best finished piece of every slot, then wear unfinished pieces (they collect
+   * obstacle xp and are worn for kills) while the whole set's explore risk stays within rotateMaxRisk of that base.
+   * Returns the bag items to equip.
    */
-  private exploreArmor(state: GameState, stored: Adventurer, slot: number): Item | null {
+  private exploreArmorSet(state: GameState): number[] {
     const g = this.params.rotateG ?? 0;
-    const cur = stored.equipment[slot];
-    const owned = [cur, ...state.bag.filter((i) => i.id !== 0 && lootInfo(i.id).slot === slot)];
-    const finished = owned.filter((i) => greatness(i.xp) >= g);
-    const best = finished.length ? finished.reduce((m, i) => (this.itemPower(i, false) > this.itemPower(m, false) ? i : m)) : cur;
-    const base = withItem(stored, best);
-    const baseRisk = this.riskWith(state, base, null);
-    const unfinished = owned
-      .filter((i) => greatness(i.xp) < g)
-      .sort((a, b) => (a.id === cur.id ? -1 : b.id === cur.id ? 1 : this.itemPower(b, false) - this.itemPower(a, false)));
-    for (const u of unfinished) if (this.riskWith(state, base, u) - baseRisk <= (this.params.rotateMaxRisk ?? 0.01)) return u;
-    return best;
+    const adv = state.adventurer;
+    let set = adv;
+    const owned = new Map<number, Item[]>();
+    for (const slot of ARMOR_SLOTS) {
+      const cur = adv.equipment[slot];
+      if (cur.id === 0) continue;
+      const items = [cur, ...state.bag.filter((i) => i.id !== 0 && lootInfo(i.id).slot === slot)];
+      owned.set(slot, items);
+      const finished = items.filter((i) => greatness(i.xp) >= g);
+      if (finished.length) set = withItem(set, finished.reduce((m, i) => (this.itemPower(i, false) > this.itemPower(m, false) ? i : m)));
+    }
+    const baseRisk = this.riskWith(state, set, null);
+    const budget = this.params.rotateMaxRisk ?? 0.01;
+    for (const [slot, items] of owned) {
+      const cur = adv.equipment[slot];
+      const unfinished = items
+        .filter((i) => greatness(i.xp) < g)
+        .sort((a, b) => (a.id === cur.id ? -1 : b.id === cur.id ? 1 : this.itemPower(b, false) - this.itemPower(a, false)));
+      for (const u of unfinished) {
+        const t = withItem(set, u);
+        if (this.riskWith(state, t, null) - baseRisk <= budget) {
+          set = t;
+          break;
+        }
+      }
+    }
+    const out: number[] = [];
+    for (const slot of owned.keys()) if (set.equipment[slot].id !== adv.equipment[slot].id) out.push(set.equipment[slot].id);
+    return out;
   }
 
   /**
