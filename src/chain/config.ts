@@ -18,7 +18,9 @@ export const MAINNET = {
   preset: env('CARTRIDGE_PRESET', 'loot-survivor'),
   // Current Death Mountain deployment (docs.provable.games/lootsurvivor/contracts + Cartridge preset, Sep-Oct 2026)
   gameCore: env('GAME_CORE_ADDRESS', '0x023f86f5b4702f6ba114b82fb73448c58aad8f37a28b508b80bf129ee1edc405'),
-  gameCoreV2: env('GAME_CORE_V2_ADDRESS', '0x06179f1c747672c08861da1df3b167eb337cba403778345db2aa9840cc3deb86'),
+  // commit-reveal (V2) game core used by lootsurvivor.io for Beast Mode, Loot Bag, Ronke Casino... (VITE_PUBLIC_LOOT_GAME_CORE_ADDRESS)
+  gameCoreV2: env('GAME_CORE_V2_ADDRESS', '0x011afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b'),
+  gameCoreV2Legacy: env('GAME_CORE_V2_LEGACY_ADDRESS', '0x06179f1c747672c08861da1df3b167eb337cba403778345db2aa9840cc3deb86'),
   gameToken: env('GAME_TOKEN_ADDRESS', '0x04de0351ceab4ecd50be6ee09329b0dcb3b96a9da88cc158f453823a389722fa'),
   combat: env('COMBAT_ADDRESS', '0x045b55409c6b5000132211a1c03dab1ae71ea2e51b53b3796f040b80850ec959'),
   exploration: env('EXPLORATION_ADDRESS', '0x026aa88895cfd078bc16e9f089703c70ea492c778a48b55b7f58ad6f6eb134d6'),
@@ -34,7 +36,10 @@ export const MAINNET = {
     greed: env('GREED_DUNGEON', '0x046db77f066f1bec5ae53d2cf3686a262f308eb904e6b426251bcdf3a6bf34f0'),
     hyperGreed: env('HYPER_GREED_DUNGEON', '0x012ac35cf5112dd1bacd2f1e7342eb5951566262ab52c3c7dddd2b9a77840741'),
     karats: env('KARATS_DUNGEON', '0x0337e25669f6cc7b81a507ebe0d908249cacad9b6e2c0fa43fecb6b6b04b109e'),
-    ronkeverse: env('RONKEVERSE_DUNGEON', '0x03ccf47cc8acfba6e5f46f7644fda7576bf668ca7041f25627fb4196d52f349c'),
+    // Ronke Casino promotion (VITE_PUBLIC_RONKEVERSE_ADDRESS); settings variants 7/6/5/4, minter 12
+    ronkeverse: env('RONKEVERSE_DUNGEON', '0x037124697382d8a049b617588197fd07648a788e67168b12324c1668b9cce2c0'),
+    beastModeV2: env('BEAST_MODE_V2_DUNGEON', '0x0368066825ff8c7ed2b2e73ff513ebd9dc6e41afcbbf853bcf2f793a67a0c264'),
+    lootBag: env('LOOT_BAG_DUNGEON', '0x02dab28ac4edaae7495174f9dd7668eece14b1e50ce170ff8af2a0e215f48875'),
     lilDuckies: env('LIL_DUCKIES_DUNGEON', '0x04427c2cdd82bf2283deb39aa939e1ad61051ab932e0de714032fbe22ed0a419'),
     yield: env('YIELD_DUNGEON', '0x0616042ee02abc8c73d7eb975d33ade3b53f8296005363d1ee56a1ccefd4f49f'),
   },
@@ -70,3 +75,13 @@ export function practiceAbis(): Record<string, { address: string; abi: unknown[]
   }
   return practiceAbiCache!;
 }
+
+/** Game settings ids of dungeons on the V2 game core (from the lootsurvivor.io frontend config). */
+export const DUNGEON_SETTINGS: Record<string, { ids: number[]; labels: string[]; note: string }> = {
+  ronke: { ids: [7, 6, 5, 4], labels: ['Ronke 800+', 'Ronke 300+', 'Holder', 'Survivor & FOMO'], note: 'Ronke Casino (Ronkeverse promotion)' },
+  beastmode: { ids: [2], labels: ['Beast Mode'], note: 'Beast Mode' },
+  lootbag: { ids: [1], labels: ['Loot Bag'], note: 'Loot Bag' },
+  greed: { ids: [1], labels: ['Greed Run'], note: 'Greed Run (practice available)' },
+  karats: { ids: [3], labels: ['Karats'], note: 'Karats' },
+  raidboss: { ids: [17], labels: ['Raid Boss'], note: 'Raid Boss' },
+};
