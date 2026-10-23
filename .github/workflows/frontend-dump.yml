@@ -1,0 +1,34 @@
+name: Frontend dump
+
+# One-off analysis helper: stores the public lootsurvivor.io JS bundle on the `frontend-dump` branch so the
+# bot's protocol layer (practice mode, dungeon settings, V2 action encoding) can be checked against it.
+on:
+  workflow_dispatch:
+    inputs:
+      site:
+        description: site to download
+        default: https://lootsurvivor.io/
+
+permissions:
+  contents: write
+
+jobs:
+  dump:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: node scripts/dump-frontend.mjs /tmp/dump "${{ inputs.site }}"
+      - name: Push to frontend-dump branch
+        run: |
+          git config user.name loot-survivor-bot
+          git config user.email loot-survivor-bot@users.noreply.github.com
+          git worktree add --orphan -b frontend-dump /tmp/wt
+          cp -r /tmp/dump/. /tmp/wt/
+          cd /tmp/wt
+          git add -A
+          git commit -q -m "lootsurvivor.io frontend $(date -u +%F)"
+          git push -f origin frontend-dump
