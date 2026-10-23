@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-23T07:16:28.898Z",
+ "updated": "2026-10-23T07:23:43.498Z",
  "modes": {
   "mainnet": {
    "games": 0,
@@ -20,93 +20,96 @@
    "top": []
   },
   "practice": {
-   "games": 100,
+   "games": 400,
    "inProgress": 0,
    "errors": 0,
-   "best": 944,
-   "bestLevel": 30,
-   "mean": 405,
-   "median": 380,
-   "p90": 668,
-   "last20Mean": 396,
+   "best": 1059,
+   "bestLevel": 32,
+   "mean": 408,
+   "median": 389,
+   "p90": 699,
+   "last20Mean": 476,
    "transactions": 0,
    "reverts": 0,
    "predictionAccuracy": null,
    "deathCauses": [
     [
      "obstacle",
-     26
-    ],
-    [
-     "Ammit",
-     5
-    ],
-    [
-     "Phoenix",
-     4
-    ],
-    [
-     "ambush by Roc",
-     4
-    ],
-    [
-     "Chupacabra",
-     4
-    ],
-    [
-     "Minotaur",
-     3
+     86
     ],
     [
      "Qilin",
-     2
+     15
     ],
     [
-     "ambush by Harpy",
-     2
+     "Phoenix",
+     14
     ],
     [
-     "Lich",
-     2
+     "Minotaur",
+     12
+    ],
+    [
+     "Ammit",
+     9
+    ],
+    [
+     "Warlock",
+     9
+    ],
+    [
+     "Chupacabra",
+     8
+    ],
+    [
+     "Hippogriff",
+     8
     ],
     [
      "Roc",
-     2
+     7
     ],
     [
-     "ambush by Griffin",
-     2
+     "Skinwalker",
+     7
     ],
     [
-     "Typhon",
-     2
+     "ambush by Jiangshi",
+     7
+    ],
+    [
+     "Dragon",
+     7
     ]
    ],
    "levels": {
-    "7": 1,
-    "8": 1,
-    "9": 4,
-    "10": 4,
-    "11": 2,
-    "12": 2,
-    "13": 4,
-    "14": 3,
-    "15": 5,
-    "16": 1,
-    "17": 17,
-    "18": 4,
-    "19": 4,
-    "20": 8,
-    "21": 4,
-    "22": 7,
-    "23": 4,
-    "24": 7,
-    "25": 10,
-    "26": 2,
-    "27": 2,
-    "28": 2,
-    "29": 1,
-    "30": 1
+    "6": 1,
+    "7": 5,
+    "8": 5,
+    "9": 15,
+    "10": 7,
+    "11": 10,
+    "12": 15,
+    "13": 14,
+    "14": 21,
+    "15": 19,
+    "16": 21,
+    "17": 30,
+    "18": 25,
+    "19": 15,
+    "20": 37,
+    "21": 20,
+    "22": 26,
+    "23": 18,
+    "24": 19,
+    "25": 26,
+    "26": 15,
+    "27": 13,
+    "28": 7,
+    "29": 9,
+    "30": 5,
+    "31": 1,
+    "32": 1
    },
    "bestOverTime": [
     {
@@ -132,9 +135,33 @@
     {
      "t": "2026-10-23T06:36:12.666Z",
      "xp": 944
+    },
+    {
+     "t": "2026-10-23T07:23:35.110Z",
+     "xp": 988
+    },
+    {
+     "t": "2026-10-23T07:23:39.614Z",
+     "xp": 1059
     }
    ],
    "top": [
+    {
+     "id": "196501",
+     "xp": 1059,
+     "level": 32,
+     "deathCause": "ambush by Dragon",
+     "ended": "2026-10-23T07:23:39.614Z",
+     "policy": "tuned-2026-10-22-g24"
+    },
+    {
+     "id": "196448",
+     "xp": 988,
+     "level": 31,
+     "deathCause": "obstacle",
+     "ended": "2026-10-23T07:23:35.110Z",
+     "policy": "tuned-2026-10-22-g24"
+    },
     {
      "id": "370372",
      "xp": 944,
@@ -144,75 +171,59 @@
      "policy": "tuned-2026-10-22-g24"
     },
     {
-     "id": "370377",
-     "xp": 860,
-     "level": 29,
-     "deathCause": "Phoenix",
-     "ended": "2026-10-23T06:36:13.157Z",
+     "id": "196410",
+     "xp": 943,
+     "level": 30,
+     "deathCause": "ambush by Typhon",
+     "ended": "2026-10-23T07:23:31.780Z",
      "policy": "tuned-2026-10-22-g24"
     },
     {
-     "id": "370395",
-     "xp": 832,
-     "level": 28,
-     "deathCause": "Balrog",
-     "ended": "2026-10-23T06:36:14.786Z",
-     "policy": "tuned-2026-10-22-g24"
-    },
-    {
-     "id": "370428",
-     "xp": 793,
-     "level": 28,
-     "deathCause": "obstacle",
-     "ended": "2026-10-23T06:36:17.343Z",
-     "policy": "tuned-2026-10-22-g24"
-    },
-    {
-     "id": "370406",
-     "xp": 762,
-     "level": 27,
+     "id": "196365",
+     "xp": 929,
+     "level": 30,
      "deathCause": "Ammit",
-     "ended": "2026-10-23T06:36:15.535Z",
+     "ended": "2026-10-23T07:23:27.784Z",
      "policy": "tuned-2026-10-22-g24"
     },
     {
-     "id": "370442",
-     "xp": 760,
-     "level": 27,
-     "deathCause": "Chupacabra",
-     "ended": "2026-10-23T06:36:18.168Z",
+     "id": "196256",
+     "xp": 912,
+     "level": 30,
+     "deathCause": "Titan",
+     "ended": "2026-10-23T07:23:18.319Z",
      "policy": "tuned-2026-10-22-g24"
     },
     {
-     "id": "370386",
-     "xp": 724,
-     "level": 26,
+     "id": "196261",
+     "xp": 903,
+     "level": 30,
+     "deathCause": "Bear",
+     "ended": "2026-10-23T07:23:19.057Z",
+     "policy": "tuned-2026-10-22-g24"
+    },
+    {
+     "id": "196354",
+     "xp": 895,
+     "level": 29,
      "deathCause": "obstacle",
-     "ended": "2026-10-23T06:36:13.789Z",
+     "ended": "2026-10-23T07:23:26.763Z",
      "policy": "tuned-2026-10-22-g24"
     },
     {
-     "id": "370417",
-     "xp": 677,
-     "level": 26,
-     "deathCause": "Hippogriff",
-     "ended": "2026-10-23T06:36:16.580Z",
+     "id": "196442",
+     "xp": 887,
+     "level": 29,
+     "deathCause": "Griffin",
+     "ended": "2026-10-23T07:23:34.699Z",
      "policy": "tuned-2026-10-22-g24"
     },
     {
-     "id": "370369",
-     "xp": 671,
-     "level": 25,
-     "deathCause": "Phoenix",
-     "ended": "2026-10-23T06:36:12.423Z",
-     "policy": "tuned-2026-10-22-g24"
-    },
-    {
-     "id": "370360",
-     "xp": 668,
-     "level": 25,
-     "deathCause": "ambush by Chupacabra",
-     "ended": "2026-10-23T06:36:11.764Z",
+     "id": "196463",
+     "xp": 884,
+     "level": 29,
+     "deathCause": "ambush by Lich",
+     "ended": "2026-10-23T07:23:36.497Z",
      "policy": "tuned-2026-10-22-g24"
     }
    ]
@@ -248,6 +259,18 @@
    "policy": "tuned-2026-10-22-g24",
    "dungeon": "Ronkeverse Large #7",
    "ended": "2026-10-23T06:36:18.728Z"
+  },
+  {
+   "id": "2026-10-23T07-23-16-236Z",
+   "mode": "practice",
+   "started": "2026-10-23T07:23:16.236Z",
+   "games": 300,
+   "bestXp": 1059,
+   "meanXp": 409,
+   "errors": 0,
+   "policy": "tuned-2026-10-22-g24",
+   "dungeon": "Ronkeverse Large #7",
+   "ended": "2026-10-23T07:23:42.198Z"
   }
  ],
  "policy": {
