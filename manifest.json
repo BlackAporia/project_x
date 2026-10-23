@@ -1,0 +1,30 @@
+{
+  "name": "Loot Survivor",
+  "short_name": "Loot Survivor",
+  "description": "Death Mountain is a fully on-chain arcade dungeon crawler game on Starknet.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "background_color": "#100E0E",
+  "theme_color": "#33FF33",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/pwa-icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

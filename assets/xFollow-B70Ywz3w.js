@@ -1,0 +1,1 @@
+var e=`LootSurvivor`,t=`https://x.com/intent/follow?screen_name=${e}`,n=e=>`bridge-bonus:x-followed:${e.toLowerCase()}`;function r(e){if(!e)return!1;try{return localStorage.getItem(n(e))===`1`}catch{return!1}}function i(e){if(e)try{localStorage.setItem(n(e),`1`)}catch{}}export{r as i,e as n,i as r,t};

@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-CAqYUFj9.js";import{P as t}from"./game-BEx2rcRr.js";var n=t((0,e().jsx)(`path`,{d:`M6.99 11 3 15l3.99 4v-3H14v-2H6.99zM21 9l-3.99-4v3H10v2h7.01v3z`}),`SwapHoriz`);export{n as t};

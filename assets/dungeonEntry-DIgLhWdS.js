@@ -1,0 +1,1 @@
+var e=`lootsurvivor-campaigns`,t={[e]:`This dungeon is in the process of being migrated to our new dungeon stack. Expected completion is September 30th`};function n(e){return t[e]}function r(e){let t=n(e);if(t)throw Error(t)}export{r as n,n as r,e as t};

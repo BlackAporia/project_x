@@ -1,0 +1,1 @@
+import{n as e,t}from"./native-kKQXfDUc.js";e();export{t as WebSocket};

@@ -1,0 +1,1 @@
+import{t as e}from"./GamePage-CWcpk1sH.js";export{e as default};

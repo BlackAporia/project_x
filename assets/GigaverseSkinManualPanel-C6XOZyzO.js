@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-CAqYUFj9.js";import{i as t,r as n}from"./useGigaverseSkinEntry-W5lMDu2n.js";var r=e();function i({accent:e,address:i,onBack:a,prizePool:o}){return(0,r.jsx)(t,{...n(i),accent:e,walletLabel:`that address`,onRetry:a,retryLabel:`Check another address`,prizePool:o})}export{i as default};

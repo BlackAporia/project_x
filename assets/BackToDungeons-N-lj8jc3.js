@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-CAqYUFj9.js";import{n as t}from"./chunk-4ZMWKKQ3-B8XKZjr6.js";var n=e();function r(){return(0,n.jsxs)(t,{className:`promo-back-to-dungeons`,to:`/`,children:[(0,n.jsx)(`span`,{"aria-hidden":`true`,children:`←`}),`Back to dungeons`]})}export{r as t};

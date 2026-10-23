@@ -1,0 +1,1 @@
+import{V as e,_t as t}from"./budokan-C1fRF63t.js";import{Qt as n,mn as r,vn as i}from"./AutoAwesome-QoKcRmIl.js";var a=()=>n(t(e(e=>e.dungeonId))),o=()=>i(a()),s=()=>r(a());export{o as n,a as r,s as t};

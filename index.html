@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Keep this first: URL observers must never see a session bearer credential. -->
+    <script>
+      (() => {
+        let captured;
+        let receiver;
+        const invalid = () => ({ error: "The session link is invalid or too large." });
+        const partName = (part) => {
+          const separator = part.indexOf("=");
+          const rawName = separator < 0 ? part : part.slice(0, separator);
+          try {
+            return { name: decodeURIComponent(rawName), separator };
+          } catch {
+            return { name: rawName, separator };
+          }
+        };
+        const isCredential = (name) =>
+          name === "game-session" ||
+          name.startsWith("game-session%") ||
+          name.startsWith("game-session=");
+        const hasCredential = (hash) =>
+          hash
+            .slice(1)
+            .split("&")
+            .some((part) => isCredential(partName(part).name));
+        const eventHasCredential = (url) => {
+          try {
+            return hasCredential(new URL(url).hash);
+          } catch {
+            return false;
+          }
+        };
+        const capture = (event) => {
+          let found = false;
+          let result;
+          const remaining = [];
+          for (const part of location.hash.slice(1).split("&")) {
+            const { name, separator } = partName(part);
+            if (!isCredential(name)) {
+              remaining.push(part);
+              continue;
+            }
+            const value = separator < 0 ? "" : part.slice(separator + 1);
+            result =
+              name === "game-session" &&
+              !found &&
+              value.length <= 8192 &&
+              /^[A-Za-z0-9_-]+$/.test(value)
+                ? { encoded: value }
+                : invalid();
+            found = true;
+          }
+          // HashChangeEvent retains oldURL/newURL after replaceState. Never forward that event.
+          if (
+            event &&
+            (found || eventHasCredential(event.oldURL) || eventHasCredential(event.newURL))
+          )
+            event.stopImmediatePropagation();
+          if (!found) return;
+          const hash = remaining.length ? "#" + remaining.join("&") : "";
+          try {
+            history.replaceState(history.state, "", location.pathname + location.search + hash);
+          } catch {}
+          if (hasCredential(location.hash)) {
+            // A fragment-only replacement is same-document; verify removal before any observer runs.
+            try {
+              location.replace(hash || "#");
+            } catch {}
+          }
+          if (hasCredential(location.hash)) {
+            captured = undefined;
+            receiver = undefined;
+            delete window.__takeGameSessionTransfer;
+            delete window.__connectGameSessionTransfers;
+            window.stop();
+            document.open();
+            // A restrictive policy belongs only to this inert failure document.
+            document.write(
+              '<!doctype html><meta http-equiv="Content-Security-Policy" content="default-src \'none\'"><title>Session link unavailable</title><p>Could not open this session link safely. Close this page and open the app without the link.</p>',
+            );
+            document.close();
+            return;
+          }
+          if (receiver) receiver(result);
+          else captured = result;
+        };
+        Object.defineProperty(window, "__takeGameSessionTransfer", {
+          configurable: true,
+          value: () => {
+            const result = captured;
+            captured = undefined;
+            delete window.__takeGameSessionTransfer;
+            return result;
+          },
+        });
+        Object.defineProperty(window, "__connectGameSessionTransfers", {
+          configurable: true,
+          value: (listener) => {
+            receiver = listener;
+            delete window.__connectGameSessionTransfers;
+          },
+        });
+        window.addEventListener("popstate", capture, true);
+        window.addEventListener("hashchange", capture, true);
+        capture();
+      })();
+    </script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <!--
+      Security headers are delivered as HTTP response headers (vercel.json /
+      app.yaml), which is the only place frame-ancestors and report-only CSP can
+      live. We intentionally DO NOT add a <meta http-equiv="Content-Security-Policy">
+      here: a meta CSP is always ENFORCING (the spec has no report-only meta form)
+      and ignores frame-ancestors, so a blind meta CSP would break this framed app.
+      The referrer policy below is the one security directive that is safe and
+      meaningful as a meta tag, kept as defense-in-depth for non-header hosts.
+    -->
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta
+      name="description"
+      content="Loot Survivor is a verifiably random, procedurally generated dungeon crawler. Explore the endless dungeon in pursuit of mythical loot while fighting for your life against beasts and treacherous obstacles."
+    />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/pwa-icon-192.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="Loot Survivor" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <link rel="preload" href="/images/gameover.png" as="image" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet" />
+    <!-- Inter: body font for the /connect claim flow (Cinzel above is shared). -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>Loot Survivor</title>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://lootsurvivor.io" />
+    <meta property="og:title" content="Loot Survivor" />
+    <meta
+      property="og:description"
+      content="Loot Survivor is a verifiably random, procedurally generated dungeon crawler. Explore the endless dungeon in pursuit of mythical loot while fighting for your life against beasts and treacherous obstacles."
+    />
+    <meta
+      property="og:image"
+      content="https://www.lootsurvivor.io/images/themes/cambria/battle_scenes/trogg.png"
+    />
+    <meta
+      property="og:image:secure_url"
+      content="https://www.lootsurvivor.io/images/themes/cambria/battle_scenes/trogg.png"
+    />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1536" />
+    <meta property="og:image:height" content="1024" />
+    <meta
+      property="og:image:alt"
+      content="Loot Survivor: Cambria Dungeon battle scene featuring a Trogg"
+    />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://lootsurvivor.io" />
+    <meta property="twitter:title" content="Loot Survivor" />
+    <meta
+      property="twitter:description"
+      content="Loot Survivor is a verifiably random, procedurally generated dungeon crawler. Explore the endless dungeon in pursuit of mythical loot while fighting for your life against beasts and treacherous obstacles."
+    />
+    <meta
+      property="twitter:image"
+      content="https://www.lootsurvivor.io/images/themes/cambria/battle_scenes/trogg.webp"
+    />
+    <meta
+      property="twitter:image:alt"
+      content="Loot Survivor: Cambria Dungeon battle scene featuring a Trogg"
+    />
+
+    <!-- Twitter conversion tracking base code -->
+    <script>
+      !(function (e, t, n, s, u, a) {
+        e.twq ||
+          ((s = e.twq =
+            function () {
+              s.exe ? s.exe.apply(s, arguments) : s.queue.push(arguments);
+            }),
+          (s.version = "1.1"),
+          (s.queue = []),
+          (u = t.createElement(n)),
+          (u.async = !0),
+          (u.src = "https://static.ads-twitter.com/uwt.js"),
+          (a = t.getElementsByTagName(n)[0]),
+          a.parentNode.insertBefore(u, a));
+      })(window, document, "script");
+      twq("config", "qbo32");
+    </script>
+    <!-- End Twitter conversion tracking base code -->
+    <script type="module" crossorigin src="/assets/index-C96yeM2_.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/rolldown-runtime-BG2f4sTM.js">
+    <link rel="modulepreload" crossorigin href="/assets/jsx-runtime-CAqYUFj9.js">
+    <link rel="modulepreload" crossorigin href="/assets/module-Dxx4BAyZ.js">
+    <link rel="modulepreload" crossorigin href="/assets/Typography-Bx12EuZ6.js">
+    <link rel="modulepreload" crossorigin href="/assets/ButtonBase-Dg0PgywR.js">
+    <link rel="modulepreload" crossorigin href="/assets/react-dom-xREA9TRW.js">
+    <link rel="modulepreload" crossorigin href="/assets/Modal-D3WvF2Bx.js">
+    <link rel="modulepreload" crossorigin href="/assets/esm-7wwScw8q.js">
+    <link rel="modulepreload" crossorigin href="/assets/beast-CIdUewHl.js">
+    <link rel="modulepreload" crossorigin href="/assets/game-BEx2rcRr.js">
+    <link rel="modulepreload" crossorigin href="/assets/schemas-WwfgfiTo.js">
+    <link rel="modulepreload" crossorigin href="/assets/esm-DJNUAQDg.js">
+    <link rel="modulepreload" crossorigin href="/assets/dist-BThJBCCm.js">
+    <link rel="modulepreload" crossorigin href="/assets/preload-helper-CZgWQFsJ.js">
+    <link rel="modulepreload" crossorigin href="/assets/utils-Cv27uDCc.js">
+    <link rel="modulepreload" crossorigin href="/assets/sha3-UAQRFOJE.js">
+    <link rel="modulepreload" crossorigin href="/assets/call-CHhclvlp.js">
+    <link rel="modulepreload" crossorigin href="/assets/terms-FSl72A2f.js">
+    <link rel="modulepreload" crossorigin href="/assets/starknetRpc-DZQVN1e3.js">
+    <link rel="modulepreload" crossorigin href="/assets/receipt-87BUPfkC.js">
+    <link rel="modulepreload" crossorigin href="/assets/TextField-CrXEZt9E.js">
+    <link rel="modulepreload" crossorigin href="/assets/SheetTransition-DRyBXCh5.js">
+    <link rel="modulepreload" crossorigin href="/assets/CircularProgress-8JV9htS5.js">
+    <link rel="modulepreload" crossorigin href="/assets/Button-qoI0PDcF.js">
+    <link rel="modulepreload" crossorigin href="/assets/esm-Cz6VnCU0.js">
+    <link rel="modulepreload" crossorigin href="/assets/beast-BmP9DTMp.js">
+    <link rel="modulepreload" crossorigin href="/assets/starknet-COWo0tqt.js">
+    <link rel="modulepreload" crossorigin href="/assets/Dialog-aRg0sPgp.js">
+    <link rel="modulepreload" crossorigin href="/assets/collectables-1Np-5-Ed.js">
+    <link rel="modulepreload" crossorigin href="/assets/AutoAwesome-QoKcRmIl.js">
+    <link rel="modulepreload" crossorigin href="/assets/eventemitter3-BkMq5XyD.js">
+    <link rel="modulepreload" crossorigin href="/assets/useMutation-BtHOPIS6.js">
+    <link rel="modulepreload" crossorigin href="/assets/dist-BivFBzmk.js">
+    <link rel="modulepreload" crossorigin href="/assets/dijkstra-CMV0qhU_.js">
+    <link rel="modulepreload" crossorigin href="/assets/browser-M-7ouB-x.js">
+    <link rel="modulepreload" crossorigin href="/assets/clsx.m-BBN1EmyO.js">
+    <link rel="modulepreload" crossorigin href="/assets/chunk-4ZMWKKQ3-B8XKZjr6.js">
+    <link rel="modulepreload" crossorigin href="/assets/rpc-CfbfeutA.js">
+    <link rel="modulepreload" crossorigin href="/assets/rpc-7PARteVu.js">
+    <link rel="modulepreload" crossorigin href="/assets/dungeonEntry-DIgLhWdS.js">
+    <link rel="modulepreload" crossorigin href="/assets/tutorialStorage-Cu2iar4a.js">
+    <link rel="modulepreload" crossorigin href="/assets/icons-2LRLK7-C.js">
+    <link rel="modulepreload" crossorigin href="/assets/inherits_browser-WFEcwtFX.js">
+    <link rel="modulepreload" crossorigin href="/assets/BeastNftCard-BhU0_vY0.js">
+    <link rel="modulepreload" crossorigin href="/assets/budokan-C1fRF63t.js">
+    <link rel="modulepreload" crossorigin href="/assets/market-Ckv558sl.js">
+    <link rel="modulepreload" crossorigin href="/assets/LootBeastToast-D5F21YrP.js">
+    <link rel="modulepreload" crossorigin href="/assets/CheckCircle-OKeBw_fQ.js">
+    <link rel="modulepreload" crossorigin href="/assets/RadioButtonUnchecked-BRTo2D_W.js">
+    <link rel="modulepreload" crossorigin href="/assets/useRpcSettings-C2D5tcn2.js">
+    <link rel="modulepreload" crossorigin href="/assets/usePreviousProps-DGp6Iym2.js">
+    <link rel="modulepreload" crossorigin href="/assets/InputAdornment-C3Ao0IRC.js">
+    <link rel="modulepreload" crossorigin href="/assets/useDungeonTheme-MoNl6FE9.js">
+    <link rel="modulepreload" crossorigin href="/assets/useMatchAlerts-fR7SHG8C.js">
+    <link rel="modulepreload" crossorigin href="/assets/PushSettingsList-D5OaXx9T.js">
+    <link rel="modulepreload" crossorigin href="/assets/discord-DWhJDcBU.js">
+    <link rel="modulepreload" crossorigin href="/assets/X-BP0rkuvu.js">
+    <link rel="modulepreload" crossorigin href="/assets/headerLayout-DELvbbY3.js">
+    <link rel="modulepreload" crossorigin href="/assets/Autocomplete-DIxp8e0z.js">
+    <link rel="modulepreload" crossorigin href="/assets/useEligibility-ChxndUVv.js">
+    <link rel="modulepreload" crossorigin href="/assets/connector-d58f0dd8-DQ_eiXbs.js">
+    <link rel="modulepreload" crossorigin href="/assets/Modal-f68d2590-CUG3p4Vu.js">
+    <link rel="modulepreload" crossorigin href="/assets/index-bee98e0b-DqTkQDvY.js">
+    <link rel="modulepreload" crossorigin href="/assets/HourglassBottom-CjPpfn9P.js">
+    <link rel="modulepreload" crossorigin href="/assets/analytics-Bm5RRXgY.js">
+    <link rel="modulepreload" crossorigin href="/assets/xFollow-B70Ywz3w.js">
+    <link rel="modulepreload" crossorigin href="/assets/BridgeBonusModal-6NQoKRAb.js">
+    <link rel="modulepreload" crossorigin href="/assets/Remove-DjRuW6dV.js">
+    <link rel="modulepreload" crossorigin href="/assets/TermsOfServiceContent-B7kRrawV.js">
+    <link rel="modulepreload" crossorigin href="/assets/clipboard-CGLxOBrl.js">
+    <link rel="modulepreload" crossorigin href="/assets/useRecipientNameLookup-si8V7ihy.js">
+    <link rel="modulepreload" crossorigin href="/assets/GameDirector-CdpjYHYy.js">
+    <link rel="modulepreload" crossorigin href="/assets/useThemeCssVars-DNYwwAdR.js">
+    <link rel="modulepreload" crossorigin href="/assets/OpenInNew-CdBAPy1W.js">
+    <link rel="modulepreload" crossorigin href="/assets/folkloreCollectables-Bgl0z959.js">
+    <link rel="modulepreload" crossorigin href="/assets/useCollectables-ay8-zr3M.js">
+    <link rel="modulepreload" crossorigin href="/assets/FolkloreStatGrid-DrF5hiyk.js">
+    <link rel="modulepreload" crossorigin href="/assets/Add-Cnr5IRb3.js">
+    <link rel="modulepreload" crossorigin href="/assets/lastPlayedDungeon-fxf70pEL.js">
+    <link rel="stylesheet" crossorigin href="/assets/browser-DLBsYoNk.css">
+    <link rel="stylesheet" crossorigin href="/assets/TermsOfServiceContent-CKJSDNOH.css">
+    <link rel="stylesheet" crossorigin href="/assets/index-D8DR2p7S.css">
+  </head>
+
+  <body>
+    <div id="root"></div>
+  </body>
+</html>

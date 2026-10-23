@@ -1,0 +1,1 @@
+import{t as e}from"./GamePage-CiU3bzIc.js";export{e as default};

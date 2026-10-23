@@ -1,0 +1,1 @@
+var e=`dm_last_played_dungeons`;function t(){try{let t=localStorage.getItem(e);if(!t)return[];let n=JSON.parse(t);return Array.isArray(n)?n.filter(e=>typeof e==`string`):[]}catch{return[]}}function n(n){try{let r=t().filter(e=>e!==n);r.unshift(n),localStorage.setItem(e,JSON.stringify(r.slice(0,5)))}catch{}}export{t as n,n as t};
