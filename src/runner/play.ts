@@ -23,6 +23,8 @@ export interface Backend {
   readState(id: bigint): Promise<GameState>;
   /** returns tx hashes and the actions actually sent (a decision can be cut after its first random action) */
   execute(id: bigint, actions: Action[], state: GameState): Promise<{ sent: Action[]; txs: string[]; reverted?: string; events?: GameEvent[] }>;
+  /** optional: settle a finished game (V2 verify_game) */
+  finish?(id: bigint): Promise<string | null>;
 }
 
 export function describeAction(a: Action): string {
@@ -404,7 +406,10 @@ async function playGame(
     }
   }
 
-  if (state.started && isDead(state)) rec.status = 'dead';
+  if (state.started && isDead(state)) {
+    rec.status = 'dead';
+    if (backend.finish && !backend.dryRun) await backend.finish(id);
+  }
   rec.xp = state.adventurer.xp;
   rec.level = level(state.adventurer);
   rec.ended = new Date().toISOString();

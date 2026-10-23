@@ -19,6 +19,8 @@ export async function runPlayCommand(opts: {
   /** practice: dungeon name to look up among the slot's game settings (e.g. "ronke") */
   dungeon?: string;
   settingsId?: number;
+  /** mainnet: play/inspect only this game id (dry run works without an account) */
+  game?: string;
 }): Promise<void> {
   const params = loadParams(opts.policyPath);
   const store = new DataStore(opts.dataDir);
@@ -46,6 +48,8 @@ export async function runPlayCommand(opts: {
       },
       dungeon: chosen.name ? `${chosen.name} #${chosen.id}` : `settings #${chosen.id}`,
     });
+  } else if ((process.env.MAINNET_PROTOCOL ?? 'v2') === 'v2') {
+    backend = await openV2Mainnet(opts.live, opts.game);
   } else {
     const m = await openMainnet({ requireSession: opts.live });
     if (!m.address) throw new Error('mainnet: no account (set CARTRIDGE_SESSION_B64 or MAINNET_ACCOUNT_ADDRESS for a dry run)');
@@ -118,4 +122,30 @@ export async function openSitePracticeBackend(store: DataStore, opts: { dungeon?
   const label = `${entry.details?.name || 'settings'} #${id}`;
   console.log(`[practice] site engine loaded from ${frontend}; dungeon ${label}`);
   return new SitePracticeBackend(engine, siteSettings(entry.settings as Record<string, unknown>), label);
+}
+
+/** Mainnet V2 (commit-reveal) games owned by the Cartridge account. */
+async function openV2Mainnet(live: boolean, game?: string): Promise<Backend> {
+  const { MAINNET } = await import('../chain/config.ts');
+  const { connectProvider } = await import('../chain/rpc.ts');
+  const { restoreSessionFromEnv, sessionProvider, SessionExecutor } = await import('../chain/mainnet.ts');
+  const { V2Chain } = await import('../v2/chain.ts');
+  const { V2MainnetBackend } = await import('../v2/mainnet-backend.ts');
+  const { provider } = await connectProvider(MAINNET.rpcUrls);
+  let executor: InstanceType<typeof SessionExecutor> | null = null;
+  let address = process.env.MAINNET_ACCOUNT_ADDRESS ?? '';
+  if (restoreSessionFromEnv()) {
+    const account = await (await sessionProvider()).probe();
+    if (account) {
+      executor = new SessionExecutor(account as never);
+      address = account.address;
+    }
+  }
+  if (live && !executor) throw new Error('mainnet live play needs a Cartridge session (npm run authorize, secret CARTRIDGE_SESSION_B64)');
+  const chain = new V2Chain(provider, MAINNET.gameCoreV2);
+  if (game) return new V2MainnetBackend({ chain, executor: live ? executor : null, dryRun: !live, games: [BigInt(game)] });
+  if (!address) throw new Error('mainnet: no account (set CARTRIDGE_SESSION_B64 or MAINNET_ACCOUNT_ADDRESS for a dry run)');
+  const games = await chain.ownedGames(address);
+  console.log(`[mainnet v2] account ${address}: ${games.length} game token(s) on the V2 core, live=${live && !!executor}`);
+  return new V2MainnetBackend({ chain, executor, dryRun: !live, games });
 }

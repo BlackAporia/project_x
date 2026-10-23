@@ -124,6 +124,7 @@ async function main(): Promise<void> {
         dungeon: str(values.dungeon, process.env.BOT_DUNGEON ?? '') || undefined,
         frontend: str(values.frontend, '') || undefined,
         settingsId: values['settings-id'] !== undefined ? num(values['settings-id'], NaN) : process.env.PRACTICE_SETTINGS_ID ? Number(process.env.PRACTICE_SETTINGS_ID) : undefined,
+        game: str(values.game, '') || undefined,
       });
       break;
     }
