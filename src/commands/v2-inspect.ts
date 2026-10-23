@@ -48,6 +48,16 @@ export async function runV2InspectCommand(opts: { dataDir: string; games: number
       g.packets = t.packets.length;
       g.rollingMatches = true;
       g.lastInstructions = t.packets.slice(-3).map((p) => decodePacket(p).map((i) => i.type).join('+'));
+      // how the game was played: instruction counts (stat points by stat, potions bought, equips, ...)
+      const counts: Record<string, number> = {};
+      for (const p of t.packets) {
+        for (const i of decodePacket(p)) {
+          const k = i.type === 'upgrade_stat' ? `stat_${['str', 'dex', 'vit', 'int', 'wis', 'cha'][(i as { statId: number }).statId]}` : i.type;
+          const n = i.type === 'upgrade_stat' ? (i as { amount: number }).amount : i.type === 'buy_potions' ? (i as { quantity: number }).quantity : 1;
+          counts[k === 'buy_potions' ? 'potions' : k] = (counts[k === 'buy_potions' ? 'potions' : k] ?? 0) + n;
+        }
+      }
+      g.instructionCounts = counts;
       const st = await chain.state(id, t);
       g.ready = st.ready;
       g.terminal = st.terminal;
@@ -57,6 +67,9 @@ export async function runV2InspectCommand(opts: { dataDir: string; games: number
         const a = st.adventurer;
         const lvl = a.xp === 0 ? 1 : Math.floor(Math.sqrt(a.xp));
         g.adventurer = { level: lvl, xp: a.xp, health: a.health, gold: a.gold, beastHealth: a.beast_health, statUpgrades: a.stat_upgrades_available, stats: a.stats, weapon: lootInfo(a.equipment.weapon.id).name, levelSalt: a.level_salt };
+        const named = (it: { id: number; xp: number }) => (it.id ? `${lootInfo(it.id).name} G${Math.min(20, Math.floor(Math.sqrt(it.xp)) || 1)}` : '-');
+        g.equipment = Object.fromEntries(Object.entries(a.equipment).map(([k, it]) => [k, named(it as { id: number; xp: number })]));
+        g.bag = st.bag.filter((b) => b.id).map(named);
         const b = currentBeastV2(a, id);
         if (b) g.beast = { name: beastName(b), level: b.spec.level, tier: b.spec.tier, startingHealth: b.startingHealth, health: a.beast_health };
         g.score = await chain.score(id).catch(() => null);
