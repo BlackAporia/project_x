@@ -21,6 +21,7 @@ const COMMANDS: Record<string, string> = {
   'v2-inspect': 'Validate the V2 commit-reveal read path on live mainnet games (no account needed)',
   validate: 'A/B a candidate policy on the official site engine (practice) and adopt it only if better',
   'dungeon-settings': 'Read dungeon game settings (e.g. Ronke Casino #7) from the V2 game core',
+  reach: 'Probability of reaching deep levels (multilevel splitting) for one or more policies (--policy a.json,b.json)',
 };
 
 /** Minimal .env loader for local runs (real environment variables win). */
@@ -217,6 +218,19 @@ async function main(): Promise<void> {
         dataDir: str(values.data, process.env.BOT_DATA_DIR ?? 'site/data'),
         ids: ids ? ids.split(',').map(Number) : undefined,
         core: str(values.core, '') || undefined,
+      });
+      break;
+    }
+    case 'reach': {
+      const { runReachCommand } = await import('./commands/reach.ts');
+      await runReachCommand({
+        dataDir: str(values.data, process.env.BOT_DATA_DIR ?? 'site/data'),
+        dungeon: str(values.dungeon, 'default:mainnet'),
+        policies: str(values.policy, 'policy/policy.json').split(','),
+        games: num(values.games, 2000),
+        effort: num(values.effort, 1000),
+        levels: str(values.levels, '10,15,20,25,30,35,40,43,46,48,50,51').split(',').map(Number),
+        seed: num(values.seed, 1),
       });
       break;
     }
