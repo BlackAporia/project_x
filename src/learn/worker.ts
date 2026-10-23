@@ -2,6 +2,7 @@
 import { parentPort } from 'node:worker_threads';
 import { Policy } from '../ai/policy.ts';
 import type { PolicyParams } from '../ai/params.ts';
+import type { Settings } from '../game/types.ts';
 import { simulateGame } from '../sim/simulate.ts';
 
 export interface EvalTask {
@@ -9,6 +10,8 @@ export interface EvalTask {
   params: PolicyParams;
   seeds: number[];
   collect?: boolean;
+  /** dungeon settings (default rules when absent) */
+  settings?: Settings;
 }
 
 export interface EvalResult {
@@ -28,7 +31,7 @@ parentPort?.on('message', (task: EvalTask) => {
   const xpByLevel: number[][] = [];
   let errors = 0;
   for (const seed of task.seeds) {
-    const r = simulateGame(policy, { seed });
+    const r = simulateGame(policy, { seed, settings: task.settings });
     xp.push(r.xp);
     levels.push(r.level);
     if (task.collect) xpByLevel.push(r.xpByLevel);

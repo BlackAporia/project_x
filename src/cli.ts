@@ -71,17 +71,21 @@ async function main(): Promise<void> {
   switch (cmd) {
     case 'sim': {
       const { runSimCommand } = await import('./commands/sim.ts');
-      await runSimCommand({ seed: num(values.seed, 1), policyPath: str(values.policy, 'policy/policy.json'), verbose: values.verbose === true });
+      await runSimCommand({ seed: num(values.seed, 1), policyPath: str(values.policy, 'policy/policy.json'), verbose: values.verbose === true, dungeon: str(values.dungeon, '') || undefined });
       break;
     }
     case 'bench': {
       const { runBenchCommand } = await import('./commands/sim.ts');
-      await runBenchCommand({ games: num(values.games, 400), seed: num(values.seed, 1), policyPath: str(values.policy, 'policy/policy.json'), workers: num(values.workers, 0) || undefined });
+      await runBenchCommand({ games: num(values.games, 400), seed: num(values.seed, 1), policyPath: str(values.policy, 'policy/policy.json'), workers: num(values.workers, 0) || undefined, dungeon: str(values.dungeon, '') || undefined });
       break;
     }
     case 'tune': {
       const { tune } = await import('./learn/tuner.ts');
+      const dungeonName = str(values.dungeon, '');
+      const dungeon = dungeonName ? (await import('./game/dungeons.ts')).dungeonEngineSettings(dungeonName) : null;
       await tune({
+        settings: dungeon?.settings,
+        label: dungeon?.label,
         generations: num(values.generations, 20),
         games: num(values.games, 200),
         objective: str(values.objective, 'blend') as 'mean' | 'p90' | 'top10' | 'blend',

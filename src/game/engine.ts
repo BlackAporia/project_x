@@ -192,7 +192,7 @@ function levelUpMarket(ctx: Ctx, prevLevel: number, marketSeed: bigint): void {
   const newLevel = level(ctx.adv);
   if (prevLevel < newLevel) {
     ctx.state.marketSeed = marketSeed;
-    ctx.state.market = ctx.rng.market(ctx.state.adventurerId, marketSeed, ctx.state.settings.marketSize);
+    ctx.state.market = marketFor(ctx.state, ctx.rng, marketSeed);
     ctx.events.push({ type: 'level_up', level: newLevel });
     ctx.events.push({ type: 'market', items: ctx.state.market.slice() });
   }
@@ -218,6 +218,7 @@ export function startGame(state: GameState, weapon: number, rng: RandomSource): 
   assert(!state.started && state.adventurer.xp === 0 && state.adventurer.health === 0, 'Adventurer has already started');
   assert((STARTER_WEAPONS as readonly number[]).includes(weapon), 'Invalid starting weapon');
   const preset = state.settings.startAdventurer;
+  if (state.settings.noStarterBeast) return startV2(state, weapon, rng);
   if (preset && preset.xp !== 0) return startFromPreset(state, preset, rng);
   const next = cloneState(state);
   const events: GameEvent[] = [];
@@ -231,8 +232,53 @@ export function startGame(state: GameState, weapon: number, rng: RandomSource): 
   next.adventurer = adv;
   next.beast = beast;
   next.started = true;
-  next.market = rng.market(next.adventurerId, next.marketSeed, next.settings.marketSize);
+  next.market = marketFor(next, rng, next.marketSeed);
   return { state: next, events };
+}
+
+/** Market items: marketSize 0 means every item is for sale (lootsurvivor.io client-only / practice games). */
+export const ALL_ITEMS: readonly number[] = Array.from({ length: 101 }, (_, i) => i + 1);
+function marketFor(state: GameState, rng: RandomSource, seed: bigint): number[] {
+  return state.settings.marketSize === 0 ? ALL_ITEMS.slice() : rng.market(state.adventurerId, seed, state.settings.marketSize);
+}
+
+/** V2 start (client engine `start_game`): settings template, optional random stat points, no starter beast. */
+function startV2(state: GameState, weapon: number, rng: RandomSource): { state: GameState; events: GameEvent[] } {
+  const next = cloneState(state);
+  const tpl = state.settings.startAdventurer;
+  const adv = tpl ? cloneAdventurer(tpl) : newAdventurer(weapon);
+  if (tpl) {
+    adv.health = tpl.health;
+    adv.gold = tpl.gold;
+  }
+  if (!adv.equipment[SLOT.Weapon].id) adv.equipment[SLOT.Weapon] = { id: weapon, xp: 0 };
+  next.bag = state.settings.startBag ? cloneItems(state.settings.startBag) : next.bag;
+  const [r1, r2] = rng.actionSeed({
+    adventurerId: state.adventurerId,
+    xp: 0,
+    actionCount: 0,
+    inBattle: false,
+    gameSeed: state.settings.gameSeed,
+    gameSeedUntilXp: state.settings.gameSeedUntilXp,
+  });
+  const extra = state.settings.randomStartingStats ?? 0;
+  if (extra > 0) {
+    const before = maxHealth(adv.stats);
+    const keys = ['str', 'dex', 'vit', 'int', 'wis', 'cha'] as const;
+    let bits = r1;
+    for (let i = 0; i < extra; i++) {
+      const k = keys[Number(bits % 6n)];
+      if (adv.stats[k] < 31) adv.stats[k] += 1;
+      bits /= 6n;
+    }
+    adv.health = Math.min(adv.health + (maxHealth(adv.stats) - before), maxHealth(adv.stats));
+  }
+  next.adventurer = adv;
+  next.started = true;
+  next.marketSeed = r2;
+  next.beastSeed = r1;
+  next.market = marketFor(next, rng, r2);
+  return { state: next, events: [] };
 }
 
 /** start_game for settings with a preset adventurer (dungeons such as Loot Bag / promotions). */
@@ -253,7 +299,7 @@ function startFromPreset(state: GameState, preset: Adventurer, rng: RandomSource
   next.adventurer = adv;
   next.started = true;
   next.marketSeed = marketSeed;
-  next.market = rng.market(next.adventurerId, marketSeed, next.settings.marketSize);
+  next.market = marketFor(next, rng, marketSeed);
   if (state.settings.inBattle) {
     next.beastSeed = beastSeed;
     const beast = currentBeast({ ...next, beast: null }, rng);
@@ -441,6 +487,11 @@ function grantXpToEquippedItems(ctx: Ctx, amount: number, itemSpecialsRnd: numbe
 
 function processItemLevelUp(ctx: Ctx, item: Item, prev: number, next: number, itemSpecialsRnd: number): void {
   const adv = ctx.adv;
+  if (ctx.state.settings.noItemSpecials) {
+    // client-only (practice) games have no entropy for the specials salt: no specials, no greatness-20 bonus
+    ctx.events.push({ type: 'item_level_up', itemId: item.id, from: prev, to: next, suffix: false, prefix: false });
+    return;
+  }
   if (next === ITEM_MAX_GREATNESS) increaseStatUpgrades(adv, MAX_GREATNESS_STAT_BONUS);
   const [suffixUnlocked, prefixUnlocked] = unlockedSpecials(prev, next);
   if (suffixUnlocked || prefixUnlocked) {
@@ -511,7 +562,8 @@ function processBeastDeath(ctx: Ctx, beast: Beast, itemSpecialsRnd: number, leve
   const xp = beastXpReward(beast, level(adv));
   const [prev, next] = increaseXp(adv, xp);
   grantXpToEquippedItems(ctx, xp * ITEM_XP_MULTIPLIER_BEASTS, itemSpecialsRnd);
-  if (prev === 1 && next === 2) {
+  // V1 reveals the starting stats after the starter beast; V2 has no starter beast and no reveal
+  if (prev === 1 && next === 2 && !ctx.state.settings.noStarterBeast) {
     const stats = ctx.rng.startingStats(levelSeed);
     adv.stats = stats;
     adv.health += maxHealth(stats) - STARTING_HEALTH;

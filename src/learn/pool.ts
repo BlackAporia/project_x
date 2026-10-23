@@ -2,6 +2,7 @@
 import { availableParallelism } from 'node:os';
 import { Worker } from 'node:worker_threads';
 import type { PolicyParams } from '../ai/params.ts';
+import type { Settings } from '../game/types.ts';
 import type { EvalResult, EvalTask } from './worker.ts';
 
 export class EvalPool {
@@ -50,8 +51,11 @@ export class EvalPool {
     w.postMessage(task);
   }
 
+  /** dungeon settings used by every evaluation of this pool */
+  settings?: Settings;
+
   run(params: PolicyParams, seeds: number[], collect = false): Promise<EvalResult> {
-    const task: EvalTask = { id: this.nextId++, params, seeds, collect };
+    const task: EvalTask = { id: this.nextId++, params, seeds, collect, settings: this.settings };
     return new Promise((resolve, reject) => {
       const w = this.idle.pop();
       if (w) this.dispatch(w, task, resolve, reject);

@@ -5,13 +5,15 @@ import { FastRandom } from '../game/rng.ts';
 import { Policy } from '../ai/policy.ts';
 import { loadParams } from '../ai/params.ts';
 import { EvalPool } from '../learn/pool.ts';
+import { dungeonEngineSettings } from '../game/dungeons.ts';
 import { fitnessOf, stats } from '../learn/tuner.ts';
 
-export async function runSimCommand(opts: { seed: number; policyPath: string; verbose: boolean }): Promise<void> {
+export async function runSimCommand(opts: { seed: number; policyPath: string; verbose: boolean; dungeon?: string }): Promise<void> {
   const params = loadParams(opts.policyPath);
   const policy = new Policy(params);
   const rng = new FastRandom(opts.seed);
-  let s = newGameState(BigInt(opts.seed));
+  const settings = opts.dungeon ? dungeonEngineSettings(opts.dungeon).settings : undefined;
+  let s = newGameState(BigInt(opts.seed), settings);
   let n = 0;
   while (!isDead(s) && n < 5000) {
     const d = policy.decide(s);
@@ -34,9 +36,11 @@ export async function runSimCommand(opts: { seed: number; policyPath: string; ve
   console.log(`final xp=${s.adventurer.xp} level=${level(s.adventurer)} decisions=${n}`);
 }
 
-export async function runBenchCommand(opts: { games: number; seed: number; policyPath: string; workers?: number }): Promise<void> {
+export async function runBenchCommand(opts: { games: number; seed: number; policyPath: string; workers?: number; dungeon?: string }): Promise<void> {
   const params = loadParams(opts.policyPath);
   const pool = new EvalPool(opts.workers);
+  const dungeon = opts.dungeon ? dungeonEngineSettings(opts.dungeon) : null;
+  pool.settings = dungeon?.settings;
   const seeds = Array.from({ length: opts.games }, (_, i) => opts.seed * 1_000_000 + i);
   const t0 = performance.now();
   const r = await pool.evaluate(params, seeds);
@@ -48,6 +52,7 @@ export async function runBenchCommand(opts: { games: number; seed: number; polic
     JSON.stringify(
       {
         policy: params.version,
+        dungeon: dungeon?.label ?? 'default rules',
         games: r.xp.length,
         mean: +st.mean.toFixed(1),
         p90: st.p90,

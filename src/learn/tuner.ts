@@ -21,6 +21,9 @@ export interface TuneOptions {
   seed?: number;
   validateGames?: number;
   log?: (msg: string) => void;
+  /** tune for a dungeon's rules (e.g. Ronke Casino #7) */
+  settings?: import('../game/types.ts').Settings;
+  label?: string;
 }
 
 export interface TrainingRecord {
@@ -123,11 +126,13 @@ export async function tune(opts: TuneOptions): Promise<PolicyParams> {
   const log = opts.log ?? ((m: string) => console.log(m));
   const policyPath = opts.policyPath ?? 'policy/policy.json';
   const trainingPath = opts.trainingPath ?? (process.env.BOT_DATA_DIR ? `${process.env.BOT_DATA_DIR}/training.json` : 'site/data/training.json');
-  const base = existsSync(policyPath) ? loadParams(policyPath) : { ...DEFAULT_PARAMS };
+  // a new per-dungeon policy starts from the main policy
+  const base = existsSync(policyPath) ? loadParams(policyPath) : existsSync('policy/policy.json') ? loadParams('policy/policy.json') : { ...DEFAULT_PARAMS };
   const pool = new EvalPool(opts.workers);
+  pool.settings = opts.settings;
   const es = new CMAES(encode(base), { sigma: opts.sigma ?? 0.12, seed: opts.seed ?? Date.now() & 0xffff });
   const validateGames = opts.validateGames ?? Math.max(opts.games * 2, 400);
-  log(`tuning ${TUNABLE_KEYS.length} params, lambda=${es.lambda}, ${opts.games} games/candidate, ${pool.size} workers, objective=${opts.objective}`);
+  log(`tuning ${TUNABLE_KEYS.length} params${opts.label ? ` for ${opts.label}` : ''}, lambda=${es.lambda}, ${opts.games} games/candidate, ${pool.size} workers, objective=${opts.objective}`);
 
   // incumbent: validated fitness of the starting policy
   let seedBase = (opts.seed ?? 1) * 1_000_003;

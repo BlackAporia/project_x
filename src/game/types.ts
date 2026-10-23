@@ -65,6 +65,10 @@ export interface Settings {
   startBag?: Item[];
   /** V2 rules (lootsurvivor.io commit-reveal / client games): no starter-beast fight after start_game */
   noStarterBeast?: boolean;
+  /** client-only (practice) games: item specials and the greatness-20 stat point never unlock */
+  noItemSpecials?: boolean;
+  /** V2: random stat points added to the start template */
+  randomStartingStats?: number;
 }
 
 /** A purchase request for buy_items. */

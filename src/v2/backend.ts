@@ -43,6 +43,7 @@ export function siteStateToEngine(game: SiteGame, baseDamageReduction: number): 
     baseDamageReduction,
     statsMode: 'Dodge' as const,
     noStarterBeast: true,
+    noItemSpecials: true,
     startAdventurer: tpl ? decodeAdventurer(tpl) : undefined,
   };
   const s = newGameState(BigInt(game.gameId), settings);
