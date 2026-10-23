@@ -468,7 +468,8 @@ export class Policy {
 
   /** Gear rotation is active (needs item specials: the G20 stat point and the suffix boosts). */
   rotating(state: GameState): boolean {
-    return (this.params.rotateG ?? 0) > 0 && !state.settings.noItemSpecials;
+    const until = this.params.rotateUntil ?? 0;
+    return (this.params.rotateG ?? 0) > 0 && !state.settings.noItemSpecials && (until <= 0 || level(state.adventurer) < until);
   }
 
   /** Long-run value of finishing an item: its suffix's VIT/CHA boost works from the bag (known once the specials seed is set). */

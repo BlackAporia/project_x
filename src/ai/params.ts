@@ -83,6 +83,9 @@ export interface PolicyParams {
    *  swapped for an unfinished one from the bag, so every piece gets leveled - each G20 item grants a stat point and
    *  its suffix's VIT/CHA boost keeps working from the bag (0: off) */
   rotateG?: number;
+  /** stop gear rotation from this adventurer level (0: never): deep down a weak fresh piece costs more risk than its
+   *  stat point is worth */
+  rotateUntil?: number;
   /** a rotation is allowed when it raises the next explore's instant-death risk at full health by at most this */
   rotateMaxRisk?: number;
   /** shop priority of buying a fresh piece for a slot whose worn piece is finished (0: off) */
@@ -155,6 +158,7 @@ export const DEFAULT_PARAMS: PolicyParams = {
   rotateMaxRisk: 0.01,
   rotateBuyGain: 0,
   rotateWeapon: 0,
+  rotateUntil: 0,
   killSwap: 0,
   killSwapMaxHp: 0.1,
   collectGain: 0,
@@ -201,6 +205,7 @@ export const PARAM_BOUNDS: Record<string, [number, number]> = {
   rotateMaxRisk: [0, 0.05],
   rotateBuyGain: [0, 200],
   killSwapMaxHp: [0, 0.5],
+  rotateUntil: [0, 60],
   collectGain: [0, 200],
 };
 
