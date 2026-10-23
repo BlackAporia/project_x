@@ -303,6 +303,21 @@ function renderTraining() {
   );
 }
 
+/** Probability of reaching each level (multilevel splitting in the tail tuner). */
+function renderReach() {
+  const r = DATA.reach;
+  const host = $('#reachTable');
+  if (!r?.levels?.length) {
+    host.innerHTML = '<p class="muted small">З’явиться після запуску <code>npm run tune -- --objective tail</code></p>';
+    return;
+  }
+  const oneIn = (p) => (p >= 0.5 ? '—' : `1 з ${fmt(Math.round(1 / p))}`);
+  host.innerHTML =
+    `<table><thead><tr><th>Рівень</th><th>Ймовірність</th><th>Тобто</th></tr></thead><tbody>` +
+    r.levels.map((l) => `<tr><td>${l.level} (${fmt(l.level * l.level)} XP)</td><td>${l.p < 0.01 ? l.p.toExponential(1) : (100 * l.p).toFixed(1) + '%'}</td><td>${oneIn(l.p)}</td></tr>`).join('') +
+    `</tbody></table><p class="muted small">Правила: ${esc(r.rules)}; політика ${esc(r.policy ?? '')}; оновлено ${new Date(r.updated).toLocaleString('uk-UA')}</p>`;
+}
+
 function renderModes() {
   const modes = DATA.summary?.modes ?? {};
   if (!currentMode) currentMode = ['mainnet', 'practice', 'sim'].find((m) => modes[m]?.games) ?? 'practice';
@@ -425,7 +440,7 @@ function renderDiscovery() {
 
 // ------------------------------------------------------------------ main
 async function refresh() {
-  const [status, summary, leaderboard, lbHistory, training, insights, discovery, games] = await Promise.all([
+  const [status, summary, leaderboard, lbHistory, training, insights, discovery, games, reach] = await Promise.all([
     load('status.json', null),
     load('summary.json', null),
     load('leaderboard.json', null),
@@ -434,13 +449,15 @@ async function refresh() {
     load('insights.json', null),
     load('discovery.json', null),
     load('games.json', []),
+    load('reach.json', null),
   ]);
-  DATA = { status, summary, leaderboard, lbHistory, training, insights, discovery, games };
+  DATA = { status, summary, leaderboard, lbHistory, training, insights, discovery, games, reach };
   renderState(status);
   renderKpis();
   renderLive(status);
   renderProgress();
   renderTraining();
+  renderReach();
   renderModes();
   renderLeaderboard();
   renderInsights();

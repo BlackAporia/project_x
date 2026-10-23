@@ -1,18 +1,20 @@
 name: Learn
 
 # Daily: verify live contracts/dungeons, snapshot the leaderboard, learn from top players' on-chain builds, then
-# re-tune the policy in simulation (top-player build is tried as a candidate) and commit the improved policy.
+# re-tune the policies in simulation and commit the improved ones:
+#   policy/policy.json   mainnet (V2 rules): maximize P(reaching levels 40-46) - the leaderboard top, not the mean
+#   policy/practice.json practice games (no item specials): tuned per dungeon, adopted only if it wins on the site engine
 on:
   schedule:
     - cron: '41 4 * * *'
   workflow_dispatch:
     inputs:
       generations:
-        description: CMA-ES generations
-        default: '16'
+        description: CMA-ES generations (tail tuning of the mainnet policy)
+        default: '6'
       games:
-        description: simulated games per candidate
-        default: '200'
+        description: stage-0 games per candidate (multilevel splitting)
+        default: '800'
 
 permissions:
   contents: write
@@ -51,14 +53,17 @@ jobs:
         continue-on-error: true
         run: npm run learn -- --data botdata/data --limit 40
 
-      - name: Tune policy (simulation)
-        run: npm run tune -- --generations "${{ inputs.generations || '16' }}" --games "${{ inputs.games || '200' }}" --objective blend --seed ${{ github.run_number }}
+      - name: Tune mainnet policy (V2 rules, deep-level objective)
+        run: >-
+          npm run tune -- --objective tail --dungeon default:mainnet
+          --generations "${{ inputs.generations || '6' }}" --games "${{ inputs.games || '800' }}" --effort 400
+          --levels 10,20,30,35,40,43,46 --seed ${{ github.run_number }}
 
       - name: Tune dungeon policies (practice rules)
         continue-on-error: true
         run: |
           for d in ${{ vars.TUNE_DUNGEONS || 'ronke' }}; do
-            base="policy/$d.json"; [ -f "$base" ] || base="policy/policy.json"
+            base="policy/$d.json"; [ -f "$base" ] || base="policy/practice.json"; [ -f "$base" ] || base="policy/policy.json"
             cp "$base" "policy/$d.candidate.json"
             npm run tune -- --dungeon "$d" --policy "policy/$d.candidate.json" --generations 12 --games 400 --objective blend --seed ${{ github.run_number }}
             # adopt only if the candidate also wins on the official site engine (practice games)

@@ -1,7 +1,7 @@
 // Tail tuning: optimize the probability of reaching the leaderboard top instead of the mean score.
 // Every candidate is scored by multilevel splitting (src/sim/splitting.ts): fitness = mean log10 P(reach level) over
 // the deepest stages. The mean-xp tuner favours cheap early safety; this one favours builds that survive levels 40-50.
-import { existsSync } from 'node:fs';
+import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
 import { DEFAULT_PARAMS, PARAM_BOUNDS, clampParams, loadParams, type PolicyParams } from '../ai/params.ts';
 import type { Settings } from '../game/types.ts';
 import { reachProbabilities } from '../sim/splitting.ts';
@@ -84,13 +84,24 @@ export async function tuneTail(opts: TailOptions): Promise<PolicyParams> {
   const evaluate = async (p: PolicyParams, base: number, effortScale = 1) => {
     const seeds = Array.from({ length: Math.round(opts.games * effortScale) }, (_, i) => base + i);
     const stages = await pool.split(p, seeds, opts.levels, Math.round(opts.effort * effortScale), base);
-    return tailFitness(reachProbabilities(stages));
+    const reach = reachProbabilities(stages);
+    return { ...tailFitness(reach), reach };
+  };
+  // dashboard: probability of reaching each level with the current policy
+  const dataDir = process.env.BOT_DATA_DIR ?? 'site/data';
+  const writeReach = (p: PolicyParams, reach: ReturnType<typeof reachProbabilities>) => {
+    mkdirSync(dataDir, { recursive: true });
+    writeFileSync(
+      `${dataDir}/reach.json`,
+      JSON.stringify({ updated: new Date().toISOString(), rules: opts.label ?? 'default', policy: p.version, levels: reach.map((r) => ({ level: r.level, p: r.p, log10Se: r.logSe / Math.LN10 })) }, null, 1) + '\n',
+    );
   };
   const nextBase = () => (seedBase += 1_000_003);
   log(`tail tuning ${TAIL_KEYS.length} params${opts.label ? ` for ${opts.label}` : ''}: stages ${opts.levels.join(',')}, ${opts.games} games + ${opts.effort}/stage per candidate, ${pool.size} workers`);
   let best = base;
   let bestEval = await evaluate(best, nextBase(), 2);
   log(`incumbent: log10 P(deep) = ${bestEval.fit.toFixed(2)} ± ${bestEval.se.toFixed(2)}`);
+  writeReach(best, bestEval.reach);
   const es = new CMAES(encode(best), { sigma: opts.sigma ?? 0.08, seed: opts.seed ?? Date.now() & 0xffff });
   for (let gen = 0; gen < opts.generations; gen++) {
     const cands = es.ask();
@@ -121,6 +132,7 @@ export async function tuneTail(opts: TailOptions): Promise<PolicyParams> {
       if (significant) {
         best = { ...cand, version: `tail-${new Date().toISOString().slice(0, 10)}-g${es.state.generation}` };
         bestEval = ce;
+        writeReach(best, ce.reach);
         savePolicy(opts.policyPath, best, { objective: 'tail', levels: opts.levels, log10Reach: ce.fit, updated: new Date().toISOString() });
         log(`  saved ${opts.policyPath}`);
       }

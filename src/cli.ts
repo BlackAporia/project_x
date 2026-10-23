@@ -33,13 +33,15 @@ function loadDotEnv(): void {
 }
 
 /**
- * Policy file for a run: a dungeon's own tuned policy (policy/<dungeon>.json) when it exists; practice games (no item
- * specials, so no gear farming) use policy/practice.json when present; otherwise the main (mainnet) policy.
+ * Policy file for a run. Practice games (client-side, no item specials, so no gear farming) use a dungeon's own
+ * practice policy (policy/<dungeon>.json) or policy/practice.json; mainnet games use the main policy, tuned for the
+ * deep levels under V2 rules.
  */
 function dungeonPolicy(dungeon: string, mode = ''): string {
+  if (!mode.startsWith('practice')) return 'policy/policy.json';
   const key = dungeon.toLowerCase().replace(/[^a-z]/g, '');
   if (key && existsSync(`policy/${key}.json`)) return `policy/${key}.json`;
-  if (mode.startsWith('practice') && existsSync('policy/practice.json')) return 'policy/practice.json';
+  if (existsSync('policy/practice.json')) return 'policy/practice.json';
   return 'policy/policy.json';
 }
 
