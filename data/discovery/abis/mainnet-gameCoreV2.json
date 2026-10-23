@@ -1,5 +1,5 @@
 {
- "address": "0x06179f1c747672c08861da1df3b167eb337cba403778345db2aa9840cc3deb86",
+ "address": "0x011afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b",
  "abi": [
   {
    "type": "impl",
@@ -60,10 +60,6 @@
     },
     {
      "name": "id",
-     "type": "core::felt252"
-    },
-    {
-     "name": "value",
      "type": "core::felt252"
     }
    ]
@@ -586,7 +582,7 @@
     },
     {
      "name": "collectables_enabled",
-     "type": "core::integer::u8"
+     "type": "core::bool"
     },
     {
      "name": "start_override",
@@ -642,7 +638,7 @@
     },
     {
      "name": "collectables_enabled",
-     "type": "core::integer::u8"
+     "type": "core::bool"
     },
     {
      "name": "specials_override",
@@ -665,58 +661,148 @@
    ]
   },
   {
+   "type": "enum",
+   "name": "death_mountain::constants::combat::CombatEnums::Tier",
+   "variants": [
+    {
+     "name": "None",
+     "type": "()"
+    },
+    {
+     "name": "T1",
+     "type": "()"
+    },
+    {
+     "name": "T2",
+     "type": "()"
+    },
+    {
+     "name": "T3",
+     "type": "()"
+    },
+    {
+     "name": "T4",
+     "type": "()"
+    },
+    {
+     "name": "T5",
+     "type": "()"
+    }
+   ]
+  },
+  {
+   "type": "enum",
+   "name": "death_mountain::constants::combat::CombatEnums::Type",
+   "variants": [
+    {
+     "name": "None",
+     "type": "()"
+    },
+    {
+     "name": "Magic_or_Cloth",
+     "type": "()"
+    },
+    {
+     "name": "Blade_or_Hide",
+     "type": "()"
+    },
+    {
+     "name": "Bludgeon_or_Metal",
+     "type": "()"
+    },
+    {
+     "name": "Necklace",
+     "type": "()"
+    },
+    {
+     "name": "Ring",
+     "type": "()"
+    }
+   ]
+  },
+  {
    "type": "struct",
-   "name": "death_mountain::models::collectable::Collectable",
+   "name": "death_mountain::models::combat::SpecialPowers",
    "members": [
     {
-     "name": "id",
+     "name": "special1",
      "type": "core::integer::u8"
+    },
+    {
+     "name": "special2",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "special3",
+     "type": "core::integer::u8"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::models::combat::CombatSpec",
+   "members": [
+    {
+     "name": "tier",
+     "type": "death_mountain::constants::combat::CombatEnums::Tier"
+    },
+    {
+     "name": "item_type",
+     "type": "death_mountain::constants::combat::CombatEnums::Type"
     },
     {
      "name": "level",
      "type": "core::integer::u16"
     },
     {
-     "name": "health",
-     "type": "core::integer::u16"
-    },
-    {
-     "name": "prefix",
-     "type": "core::integer::u8"
-    },
-    {
-     "name": "suffix",
-     "type": "core::integer::u8"
-    },
-    {
-     "name": "shiny",
-     "type": "core::integer::u8"
-    },
-    {
-     "name": "animated",
-     "type": "core::integer::u8"
-    },
-    {
-     "name": "collected_by",
-     "type": "core::felt252"
-    },
-    {
-     "name": "last_death_timestamp",
-     "type": "core::integer::u64"
+     "name": "specials",
+     "type": "death_mountain::models::combat::SpecialPowers"
     }
    ]
   },
   {
    "type": "struct",
-   "name": "death_mountain::models::collectable::CollectableStats",
+   "name": "death_mountain::models::beast::Beast",
    "members": [
     {
-     "name": "adventurers_killed",
-     "type": "core::integer::u64"
+     "name": "starting_health",
+     "type": "core::integer::u16"
     },
     {
-     "name": "last_kill_timestamp",
-     "type": "core::integer::u64"
+     "name": "combat_spec",
+     "type": "death_mountain::models::combat::CombatSpec"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "death_mountain::models::beast::RecordedKill",
+   "members": [
+    {
+     "name": "beast",
+     "type": "death_mountain::models::beast::Beast"
+    },
+    {
+     "name": "beast_seed",
+     "type": "core::integer::u32"
+    },
+    {
+     "name": "kill_block",
+     "type": "core::integer::u32"
+    }
+   ]
+  },
+  {
+   "type": "enum",
+   "name": "core::option::Option::<death_mountain::models::beast::RecordedKill>",
+   "variants": [
+    {
+     "name": "Some",
+     "type": "death_mountain::models::beast::RecordedKill"
+    },
+    {
+     "name": "None",
+     "type": "()"
     }
    ]
   },
@@ -726,7 +812,27 @@
    "items": [
     {
      "type": "function",
-     "name": "commit_action",
+     "name": "commit_actions",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      },
+      {
+       "name": "expected_chain",
+       "type": "core::felt252"
+      },
+      {
+       "name": "encoded_actions",
+       "type": "core::array::Span::<core::felt252>"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "commit_actions_unchecked",
      "inputs": [
       {
        "name": "adventurer_id",
@@ -802,7 +908,7 @@
     },
     {
      "type": "function",
-     "name": "settle_game",
+     "name": "verify_game",
      "inputs": [
       {
        "name": "adventurer_id",
@@ -822,7 +928,7 @@
     },
     {
      "type": "function",
-     "name": "fold_chunk",
+     "name": "verify_actions",
      "inputs": [
       {
        "name": "adventurer_id",
@@ -846,7 +952,7 @@
     },
     {
      "type": "function",
-     "name": "replay_chunk",
+     "name": "apply_actions",
      "inputs": [
       {
        "name": "adventurer_id",
@@ -870,23 +976,7 @@
     },
     {
      "type": "function",
-     "name": "finish_attempt",
-     "inputs": [
-      {
-       "name": "adventurer_id",
-       "type": "core::felt252"
-      },
-      {
-       "name": "attempt_nonce",
-       "type": "core::integer::u64"
-      }
-     ],
-     "outputs": [],
-     "state_mutability": "external"
-    },
-    {
-     "type": "function",
-     "name": "settle_games_with_proof",
+     "name": "verify_games_with_proof",
      "inputs": [
       {
        "name": "results",
@@ -914,7 +1004,7 @@
     },
     {
      "type": "function",
-     "name": "is_settled",
+     "name": "is_verified",
      "inputs": [
       {
        "name": "adventurer_id",
@@ -1224,32 +1314,36 @@
     },
     {
      "type": "function",
-     "name": "get_collectable",
+     "name": "get_slain_beast",
      "inputs": [
       {
-       "name": "collectable_id",
+       "name": "adventurer_id",
        "type": "core::felt252"
+      },
+      {
+       "name": "encounter_xp",
+       "type": "core::integer::u16"
       }
      ],
      "outputs": [
       {
-       "type": "death_mountain::models::collectable::Collectable"
+       "type": "core::option::Option::<death_mountain::models::beast::RecordedKill>"
       }
      ],
      "state_mutability": "view"
     },
     {
      "type": "function",
-     "name": "get_collectable_stats",
+     "name": "get_slain_adventurer",
      "inputs": [
       {
-       "name": "collectable_id",
+       "name": "adventurer_id",
        "type": "core::felt252"
       }
      ],
      "outputs": [
       {
-       "type": "death_mountain::models::collectable::CollectableStats"
+       "type": "core::option::Option::<death_mountain::models::beast::RecordedKill>"
       }
      ],
      "state_mutability": "view"
@@ -1341,6 +1435,17 @@
     {
      "type": "function",
      "name": "get_settings_class",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::class_hash::ClassHash"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "get_metadata_class",
      "inputs": [],
      "outputs": [
       {
@@ -1447,6 +1552,18 @@
     },
     {
      "type": "function",
+     "name": "set_metadata_class",
+     "inputs": [
+      {
+       "name": "class_hash",
+       "type": "core::starknet::class_hash::ClassHash"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
      "name": "get_renderer_address",
      "inputs": [],
      "outputs": [
@@ -1465,6 +1582,40 @@
        "type": "core::starknet::contract_address::ContractAddress"
       }
      ],
+     "outputs": [],
+     "state_mutability": "external"
+    }
+   ]
+  },
+  {
+   "type": "impl",
+   "name": "GameTokenCompatibilityImpl",
+   "interface_name": "death_mountain::systems::game_core::IGameTokenCompatibility"
+  },
+  {
+   "type": "interface",
+   "name": "death_mountain::systems::game_core::IGameTokenCompatibility",
+   "items": [
+    {
+     "type": "function",
+     "name": "minted_by_address",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "initialize_game_token_metadata",
+     "inputs": [],
      "outputs": [],
      "state_mutability": "external"
     }
@@ -1542,6 +1693,22 @@
     {
      "type": "function",
      "name": "game_over",
+     "inputs": [
+      {
+       "name": "token_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::bool"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "new_game",
      "inputs": [
       {
        "name": "token_id",
@@ -2689,11 +2856,27 @@
     },
     {
      "type": "function",
-     "name": "minted_by_address",
+     "name": "minter_address_by_token_id",
      "inputs": [
       {
        "name": "token_id",
        "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "minter_address_by_id",
+     "inputs": [
+      {
+       "name": "minter_id",
+       "type": "core::integer::u32"
       }
      ],
      "outputs": [
@@ -3054,6 +3237,10 @@
     {
      "name": "settings_class",
      "type": "core::starknet::class_hash::ClassHash"
+    },
+    {
+     "name": "metadata_class",
+     "type": "core::starknet::class_hash::ClassHash"
     }
    ]
   },
@@ -3104,6 +3291,11 @@
      "name": "encoded_actions",
      "type": "core::array::Span::<core::felt252>",
      "kind": "data"
+    },
+    {
+     "name": "rolling",
+     "type": "core::felt252",
+     "kind": "data"
     }
    ]
   },
@@ -3141,7 +3333,7 @@
   },
   {
    "type": "event",
-   "name": "death_mountain::systems::settlement::Settlement::CollectableEvent",
+   "name": "death_mountain::systems::settlement::Settlement::ChunkFolded",
    "kind": "struct",
    "members": [
     {
@@ -3150,20 +3342,30 @@
      "kind": "key"
     },
     {
-     "name": "collectable_id",
-     "type": "core::felt252",
+     "name": "initiator",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    },
+    {
+     "name": "attempt_nonce",
+     "type": "core::integer::u64",
+     "kind": "key"
+    },
+    {
+     "name": "boundary_count",
+     "type": "core::integer::u32",
      "kind": "data"
     },
     {
-     "name": "collectable",
-     "type": "death_mountain::models::collectable::Collectable",
+     "name": "rolling",
+     "type": "core::felt252",
      "kind": "data"
     }
    ]
   },
   {
    "type": "event",
-   "name": "death_mountain::systems::settlement::Settlement::CollectableStatsEvent",
+   "name": "death_mountain::systems::settlement::Settlement::ChunkReplayed",
    "kind": "struct",
    "members": [
     {
@@ -3172,28 +3374,38 @@
      "kind": "key"
     },
     {
-     "name": "collectable_id",
+     "name": "initiator",
+     "type": "core::starknet::contract_address::ContractAddress",
+     "kind": "key"
+    },
+    {
+     "name": "attempt_nonce",
+     "type": "core::integer::u64",
+     "kind": "key"
+    },
+    {
+     "name": "replay_cursor",
+     "type": "core::integer::u32",
+     "kind": "data"
+    },
+    {
+     "name": "packet_count",
+     "type": "core::integer::u32",
+     "kind": "data"
+    },
+    {
+     "name": "checkpoint_rolling",
      "type": "core::felt252",
      "kind": "data"
     },
     {
-     "name": "beast_id",
-     "type": "core::integer::u8",
+     "name": "packed_adventurer",
+     "type": "core::felt252",
      "kind": "data"
     },
     {
-     "name": "prefix",
-     "type": "core::integer::u8",
-     "kind": "data"
-    },
-    {
-     "name": "suffix",
-     "type": "core::integer::u8",
-     "kind": "data"
-    },
-    {
-     "name": "stats",
-     "type": "death_mountain::models::collectable::CollectableStats",
+     "name": "packed_bag",
+     "type": "core::felt252",
      "kind": "data"
     }
    ]
@@ -3445,13 +3657,13 @@
      "kind": "nested"
     },
     {
-     "name": "CollectableEvent",
-     "type": "death_mountain::systems::settlement::Settlement::CollectableEvent",
+     "name": "ChunkFolded",
+     "type": "death_mountain::systems::settlement::Settlement::ChunkFolded",
      "kind": "nested"
     },
     {
-     "name": "CollectableStatsEvent",
-     "type": "death_mountain::systems::settlement::Settlement::CollectableStatsEvent",
+     "name": "ChunkReplayed",
+     "type": "death_mountain::systems::settlement::Settlement::ChunkReplayed",
      "kind": "nested"
     },
     {

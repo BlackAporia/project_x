@@ -1,0 +1,14 @@
+[
+ {
+  "id": "2026-10-23T06-36-10-348Z",
+  "mode": "practice",
+  "started": "2026-10-23T06:36:10.348Z",
+  "games": 100,
+  "bestXp": 944,
+  "meanXp": 405,
+  "errors": 0,
+  "policy": "tuned-2026-10-22-g24",
+  "dungeon": "Ronkeverse Large #7",
+  "ended": "2026-10-23T06:36:18.728Z"
+ }
+]

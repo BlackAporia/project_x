@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-23T05:57:36.783Z",
+ "updated": "2026-10-23T07:16:28.898Z",
  "modes": {
   "mainnet": {
    "games": 0,
@@ -20,22 +20,202 @@
    "top": []
   },
   "practice": {
-   "games": 0,
+   "games": 100,
    "inProgress": 0,
    "errors": 0,
-   "best": 0,
-   "bestLevel": 0,
-   "mean": 0,
-   "median": 0,
-   "p90": 0,
-   "last20Mean": 0,
+   "best": 944,
+   "bestLevel": 30,
+   "mean": 405,
+   "median": 380,
+   "p90": 668,
+   "last20Mean": 396,
    "transactions": 0,
    "reverts": 0,
    "predictionAccuracy": null,
-   "deathCauses": [],
-   "levels": {},
-   "bestOverTime": [],
-   "top": []
+   "deathCauses": [
+    [
+     "obstacle",
+     26
+    ],
+    [
+     "Ammit",
+     5
+    ],
+    [
+     "Phoenix",
+     4
+    ],
+    [
+     "ambush by Roc",
+     4
+    ],
+    [
+     "Chupacabra",
+     4
+    ],
+    [
+     "Minotaur",
+     3
+    ],
+    [
+     "Qilin",
+     2
+    ],
+    [
+     "ambush by Harpy",
+     2
+    ],
+    [
+     "Lich",
+     2
+    ],
+    [
+     "Roc",
+     2
+    ],
+    [
+     "ambush by Griffin",
+     2
+    ],
+    [
+     "Typhon",
+     2
+    ]
+   ],
+   "levels": {
+    "7": 1,
+    "8": 1,
+    "9": 4,
+    "10": 4,
+    "11": 2,
+    "12": 2,
+    "13": 4,
+    "14": 3,
+    "15": 5,
+    "16": 1,
+    "17": 17,
+    "18": 4,
+    "19": 4,
+    "20": 8,
+    "21": 4,
+    "22": 7,
+    "23": 4,
+    "24": 7,
+    "25": 10,
+    "26": 2,
+    "27": 2,
+    "28": 2,
+    "29": 1,
+    "30": 1
+   },
+   "bestOverTime": [
+    {
+     "t": "2026-10-23T06:36:10.677Z",
+     "xp": 496
+    },
+    {
+     "t": "2026-10-23T06:36:10.908Z",
+     "xp": 555
+    },
+    {
+     "t": "2026-10-23T06:36:11.231Z",
+     "xp": 592
+    },
+    {
+     "t": "2026-10-23T06:36:11.764Z",
+     "xp": 668
+    },
+    {
+     "t": "2026-10-23T06:36:12.423Z",
+     "xp": 671
+    },
+    {
+     "t": "2026-10-23T06:36:12.666Z",
+     "xp": 944
+    }
+   ],
+   "top": [
+    {
+     "id": "370372",
+     "xp": 944,
+     "level": 30,
+     "deathCause": "Ent",
+     "ended": "2026-10-23T06:36:12.666Z",
+     "policy": "tuned-2026-10-22-g24"
+    },
+    {
+     "id": "370377",
+     "xp": 860,
+     "level": 29,
+     "deathCause": "Phoenix",
+     "ended": "2026-10-23T06:36:13.157Z",
+     "policy": "tuned-2026-10-22-g24"
+    },
+    {
+     "id": "370395",
+     "xp": 832,
+     "level": 28,
+     "deathCause": "Balrog",
+     "ended": "2026-10-23T06:36:14.786Z",
+     "policy": "tuned-2026-10-22-g24"
+    },
+    {
+     "id": "370428",
+     "xp": 793,
+     "level": 28,
+     "deathCause": "obstacle",
+     "ended": "2026-10-23T06:36:17.343Z",
+     "policy": "tuned-2026-10-22-g24"
+    },
+    {
+     "id": "370406",
+     "xp": 762,
+     "level": 27,
+     "deathCause": "Ammit",
+     "ended": "2026-10-23T06:36:15.535Z",
+     "policy": "tuned-2026-10-22-g24"
+    },
+    {
+     "id": "370442",
+     "xp": 760,
+     "level": 27,
+     "deathCause": "Chupacabra",
+     "ended": "2026-10-23T06:36:18.168Z",
+     "policy": "tuned-2026-10-22-g24"
+    },
+    {
+     "id": "370386",
+     "xp": 724,
+     "level": 26,
+     "deathCause": "obstacle",
+     "ended": "2026-10-23T06:36:13.789Z",
+     "policy": "tuned-2026-10-22-g24"
+    },
+    {
+     "id": "370417",
+     "xp": 677,
+     "level": 26,
+     "deathCause": "Hippogriff",
+     "ended": "2026-10-23T06:36:16.580Z",
+     "policy": "tuned-2026-10-22-g24"
+    },
+    {
+     "id": "370369",
+     "xp": 671,
+     "level": 25,
+     "deathCause": "Phoenix",
+     "ended": "2026-10-23T06:36:12.423Z",
+     "policy": "tuned-2026-10-22-g24"
+    },
+    {
+     "id": "370360",
+     "xp": 668,
+     "level": 25,
+     "deathCause": "ambush by Chupacabra",
+     "ended": "2026-10-23T06:36:11.764Z",
+     "policy": "tuned-2026-10-22-g24"
+    }
+   ]
   },
   "sim": {
    "games": 0,
@@ -56,7 +236,20 @@
    "top": []
   }
  },
- "runs": [],
+ "runs": [
+  {
+   "id": "2026-10-23T06-36-10-348Z",
+   "mode": "practice",
+   "started": "2026-10-23T06:36:10.348Z",
+   "games": 100,
+   "bestXp": 944,
+   "meanXp": 405,
+   "errors": 0,
+   "policy": "tuned-2026-10-22-g24",
+   "dungeon": "Ronkeverse Large #7",
+   "ended": "2026-10-23T06:36:18.728Z"
+  }
+ ],
  "policy": {
   "params": {
    "version": "tuned-2026-10-22-g24",
