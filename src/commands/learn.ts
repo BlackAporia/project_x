@@ -128,6 +128,12 @@ export async function runLearnCommand(opts: { dataDir: string; limit: number }):
   } catch (e) {
     errors.push(`mainnet client: ${(e as Error).message}`);
   }
+  // V2 (current lootsurvivor.io dungeons): the most advanced recently played games on the commit-reveal core
+  try {
+    for (const b of await v2Builds(Math.max(20, opts.limit))) builds.push(b);
+  } catch (e) {
+    errors.push(`v2 builds: ${(e as Error).message.slice(0, 200)}`);
+  }
   if (m) {
     for (const t of tokens) {
       try {
@@ -165,4 +171,52 @@ export async function runLearnCommand(opts: { dataDir: string; limit: number }):
   }
   console.log(`learn: ${builds.length} builds analysed${errors.length ? `, ${errors.length} errors (first: ${errors[0]})` : ''}`);
   console.log(`  early ratios ${JSON.stringify(agg.early.ratios)} (${agg.early.players} players), late ${JSON.stringify(agg.late.ratios)} (${agg.late.players})`);
+}
+
+/** Builds of the deepest recent V2 games (ActionCommitted events -> replay_transcript state). */
+async function v2Builds(limit: number): Promise<PlayerBuild[]> {
+  const { hash, num } = await import('starknet');
+  const { MAINNET } = await import('../chain/config.ts');
+  const { connectProvider } = await import('../chain/rpc.ts');
+  const { V2Chain } = await import('../v2/chain.ts');
+  const { decodeAdventurer } = await import('../chain/state.ts');
+  const { newGameState } = await import('../game/engine.ts');
+  const { provider } = await connectProvider(MAINNET.rpcUrls);
+  const chain = new V2Chain(provider, MAINNET.gameCoreV2);
+  const latest = await chain.latestBlock();
+  const counts = new Map<bigint, number>();
+  let token: string | undefined;
+  let pages = 0;
+  do {
+    const page = (await provider.getEvents({
+      address: MAINNET.gameCoreV2,
+      keys: [[num.toHex(hash.getSelectorFromName('ActionCommitted'))]],
+      from_block: { block_number: Math.max(0, latest - 40000) },
+      to_block: 'latest',
+      chunk_size: 1000,
+      ...(token ? { continuation_token: token } : {}),
+    } as never)) as unknown as { events: Array<{ keys: string[]; data: string[] }>; continuation_token?: string };
+    for (const e of page.events) {
+      const id = BigInt(e.keys[1]);
+      counts.set(id, (counts.get(id) ?? 0) + Number(BigInt(e.data[0] ?? '0x1')));
+    }
+    token = page.continuation_token;
+  } while (token && ++pages < 30);
+  // most packets ~ deepest runs
+  const ids = [...counts.entries()].sort((a, b) => b[1] - a[1]).slice(0, limit).map(([id]) => id);
+  const out: PlayerBuild[] = [];
+  for (const id of ids) {
+    try {
+      const st = await chain.state(id);
+      if (!st.adventurer) continue;
+      const s = newGameState(id);
+      s.adventurer = decodeAdventurer(st.adventurer);
+      s.bag = st.bag.map((b) => ({ id: b.id, xp: b.xp }));
+      s.started = true;
+      out.push(buildOf({ tokenId: id.toString(), playerName: `v2 settings #${await chain.settingsId(id).catch(() => '?')}` } as DenshokanToken, s));
+    } catch {
+      // skip games whose transcript cannot be rebuilt
+    }
+  }
+  return out;
 }
