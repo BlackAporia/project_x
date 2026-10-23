@@ -161,7 +161,11 @@ async function main(): Promise<void> {
   }
 }
 
-main().catch((e) => {
-  console.error(e instanceof Error ? e.stack ?? e.message : e);
-  process.exit(1);
-});
+main().then(
+  // exit explicitly: the site engine bundle (practice) leaves timers running that would keep Node alive
+  () => process.exit(process.exitCode ?? 0),
+  (e) => {
+    console.error(e instanceof Error ? e.stack ?? e.message : e);
+    process.exit(1);
+  },
+);

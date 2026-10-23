@@ -61,6 +61,7 @@ jobs:
       - name: Practice dungeon
         if: github.event_name == 'schedule' || inputs.mode == 'practice' || inputs.mode == 'both'
         continue-on-error: true
+        timeout-minutes: 120
         env:
           BOT_DUNGEON: ${{ inputs.dungeon || vars.PRACTICE_DUNGEON }}
           PRACTICE_SETTINGS_ID: ${{ inputs.settings_id || vars.PRACTICE_SETTINGS_ID }}
@@ -69,6 +70,7 @@ jobs:
       - name: Mainnet
         if: (github.event_name == 'schedule' && vars.MAINNET_ENABLED == 'true') || inputs.mode == 'mainnet' || inputs.mode == 'both'
         continue-on-error: true
+        timeout-minutes: 180
         env:
           CARTRIDGE_SESSION_B64: ${{ secrets.CARTRIDGE_SESSION_B64 }}
           MAINNET_ACCOUNT_ADDRESS: ${{ vars.MAINNET_ACCOUNT_ADDRESS }}
