@@ -1,0 +1,58 @@
+{
+  "updated": "2026-10-24T09:09:05.170Z",
+  "players": 43,
+  "aggregate": {
+    "early": {
+      "players": 3,
+      "ratios": {
+        "str": 0.199,
+        "dex": 0.56,
+        "vit": 0.557,
+        "int": 0.08,
+        "wis": 0.278,
+        "cha": 0.518
+      }
+    },
+    "late": {
+      "players": 40,
+      "ratios": {
+        "str": 0.178,
+        "dex": 0.645,
+        "vit": 0.788,
+        "int": 0.043,
+        "wis": 0.074,
+        "cha": 0.175
+      }
+    },
+    "avgLevel": 42.8,
+    "avgArmorFilled": 4.88,
+    "avgGearTier": 1.2,
+    "jewelryShare": 0.95,
+    "weaponTypes": [
+      [
+        "Warhammer",
+        17
+      ],
+      [
+        "Katana",
+        11
+      ],
+      [
+        "Ghost Wand",
+        10
+      ],
+      [
+        "Grimoire",
+        3
+      ],
+      [
+        "Chronicle",
+        1
+      ],
+      [
+        "Wand",
+        1
+      ]
+    ]
+  }
+}
