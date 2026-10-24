@@ -3,6 +3,7 @@
 import { writeFileSync } from 'node:fs';
 import { DUNGEON_SETTINGS, MAINNET } from '../chain/config.ts';
 import { parsedBotPolicies } from '../chain/mainnet.ts';
+import { GAME_ACCOUNT } from '../chain/game-account.ts';
 
 export const SITE_CONFIG_PATH = 'site/bot-config.json';
 
@@ -15,6 +16,8 @@ export function siteConfig() {
     dungeons: ['default', ...Object.keys(DUNGEON_SETTINGS)],
     workflows: { bot: 'bot.yml', learn: 'learn.yml', pages: 'pages.yml' },
     secret: 'CARTRIDGE_SESSION_B64',
+    gameCore: MAINNET.gameCoreV2,
+    gameAccount: { classHash: GAME_ACCOUNT.classHash, secret: 'GAME_SESSION_LINK', shareFrom: 'https://lootsurvivor.io/ronkeverse' },
   };
 }
 

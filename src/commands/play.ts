@@ -3,7 +3,7 @@ import { playerTokens } from '../chain/denshokan.ts';
 import { openMainnet } from '../chain/mainnet.ts';
 import { openPractice } from '../chain/practice.ts';
 import { PRACTICE } from '../chain/config.ts';
-import type { GameClient } from '../chain/client.ts';
+import type { Executor, GameClient } from '../chain/client.ts';
 import { DataStore } from '../runner/datastore.ts';
 import { ChainBackend, SimBackend, playLoop, type Backend } from '../runner/play.ts';
 
@@ -132,16 +132,27 @@ async function openV2Mainnet(live: boolean, game?: string): Promise<Backend> {
   const { V2Chain } = await import('../v2/chain.ts');
   const { V2MainnetBackend } = await import('../v2/mainnet-backend.ts');
   const { provider } = await connectProvider(MAINNET.rpcUrls);
-  let executor: InstanceType<typeof SessionExecutor> | null = null;
+  let executor: Executor | null = null;
   let address = process.env.MAINNET_ACCOUNT_ADDRESS ?? '';
-  if (restoreSessionFromEnv()) {
+  // a Game Session shared from lootsurvivor.io (account owned by an EVM / Ronin wallet) takes precedence
+  const { gameSessionFromEnv, GameAccountExecutor, sessionAllows } = await import('../chain/game-account.ts');
+  const gs = gameSessionFromEnv();
+  if (gs) {
+    const ga = new GameAccountExecutor(provider, gs);
+    const state = await ga.sessionState();
+    console.log(`[mainnet v2] Game Account ${ga.address} (owner ${gs.owner}), session ${state}, expires ${new Date(Number(gs.approval.expiresAt) * 1000).toISOString()}`);
+    if (!sessionAllows(gs, MAINNET.gameCoreV2, 'commit_actions')) throw new Error('the shared Game Session does not permit commit_actions on the game core');
+    if (state === 'revoked') throw new Error('the shared Game Session was revoked: share a new one from lootsurvivor.io');
+    executor = ga;
+    address = ga.address;
+  } else if (restoreSessionFromEnv()) {
     const account = await (await sessionProvider()).probe();
     if (account) {
       executor = new SessionExecutor(account as never);
       address = account.address;
     }
   }
-  if (live && !executor) throw new Error('mainnet live play needs a Cartridge session (npm run authorize, secret CARTRIDGE_SESSION_B64)');
+  if (live && !executor) throw new Error('mainnet live play needs a Game Session (GAME_SESSION_LINK) or a Cartridge session (CARTRIDGE_SESSION_B64)');
   const chain = new V2Chain(provider, MAINNET.gameCoreV2);
   if (game) return new V2MainnetBackend({ chain, executor: live ? executor : null, dryRun: !live, games: [BigInt(game)] });
   if (!address) throw new Error('mainnet: no account (set CARTRIDGE_SESSION_B64 or MAINNET_ACCOUNT_ADDRESS for a dry run)');

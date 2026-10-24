@@ -2,7 +2,7 @@
 // stored encrypted as a GitHub Actions secret), start and stop bot runs, schedule settings, live run monitoring.
 // Requests go straight from this browser to api.github.com (and the keychain page of x.cartridge.gg). The GitHub
 // token stays in this browser: sessionStorage, or localStorage when "remember" is ticked.
-import { newSessionKey, sealSecret, textToB64 } from './vendor/crypto.js';
+import { newSessionKey, sealSecret, starkKey, textToB64 } from './vendor/crypto.js';
 
 const $ = (s) => document.querySelector(s);
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c]);
@@ -272,6 +272,140 @@ async function finishWallet() {
   }
 }
 
+// ------------------------------------------------------------------ Game Account (EVM / Ronin wallet)
+// lootsurvivor.io signs EVM-wallet players into a Game Account (a Starknet account owned by the wallet). Its owner
+// can share a Game Session link; the bot plays with it (gas sponsored by lootsurvivor.io).
+function parseGameSession(input, cfg) {
+  const m = /game-session=([A-Za-z0-9_-]+)/.exec(input.trim());
+  const payload = m ? m[1] : input.trim();
+  if (!/^[A-Za-z0-9_-]+$/.test(payload)) throw new Error('це не посилання сесії lootsurvivor.io');
+  let t;
+  try {
+    const b64 = payload.replace(/-/g, '+').replace(/_/g, '/');
+    t = JSON.parse(new TextDecoder().decode(Uint8Array.from(atob(b64 + '='.repeat((4 - (b64.length % 4)) % 4)), (c) => c.charCodeAt(0))));
+  } catch {
+    throw new Error('не вдалося розкодувати посилання');
+  }
+  if (!Array.isArray(t) || (t.length !== 6 && t.length !== 7) || t[0] !== 1) throw new Error('невідомий формат сесії');
+  const [, classHash, owner, privateKey, a] = t;
+  if (BigInt(classHash) !== BigInt(cfg.gameAccount.classHash)) throw new Error('це сесія не Game Account');
+  if (!Array.isArray(a) || a.length !== 10) throw new Error('пошкоджені умови сесії');
+  if (BigInt(starkKey(privateKey)) !== BigInt(a[2])) throw new Error('ключ сесії не відповідає підтвердженню');
+  const expiresAt = Number(a[3]);
+  if (expiresAt * 1000 < Date.now() + 120_000) throw new Error(`сесія вже закінчилась (${new Date(expiresAt * 1000).toLocaleString('uk-UA')})`);
+  const perms = a[9].map(([target, method]) => ({ target, method }));
+  const onCore = (m) => perms.some((p) => BigInt(p.target) === BigInt(cfg.gameCore) && p.method === m);
+  if (!onCore('commit_actions')) throw new Error('сесія не дозволяє ходи (commit_actions) у Loot Survivor');
+  return { account: '0x' + BigInt(a[0]).toString(16), owner: String(owner).toLowerCase(), expiresAt, perms, canVerify: onCore('verify_game') };
+}
+
+async function renderGameAccount() {
+  const host = $('#ctlGameAccount');
+  if (!host) return;
+  if (!token()) {
+    host.innerHTML = '<p class="muted">Потрібен GitHub‑токен.</p>';
+    return;
+  }
+  try {
+    const [vars, secret] = await Promise.all([variables(), secretInfo('GAME_SESSION_LINK')]);
+    const exp = Number(vars.GAME_SESSION_EXPIRES?.value ?? 0) * 1000;
+    if (!secret) {
+      host.innerHTML = '<p class="muted">Не підключено. Бот грає акаунтом Cartridge (блок вище).</p>';
+      $('#ctlGaRemove').hidden = true;
+      return;
+    }
+    host.innerHTML = `<dl class="ctl-dl">
+      <dt>Game Account</dt><dd>${esc(short(vars.GAME_ACCOUNT_ADDRESS?.value ?? ''))} <span class="badge ok">активний для бота</span></dd>
+      <dt>Власник (EVM)</dt><dd>${esc(short(vars.GAME_ACCOUNT_OWNER?.value ?? ''))}</dd>
+      <dt>Сесія діє до</dt><dd>${exp ? `${new Date(exp).toLocaleString('uk-UA')}${exp < Date.now() ? ' — <b class="bad">закінчилась</b>' : ''}` : '–'}</dd>
+    </dl>`;
+    $('#ctlGaRemove').hidden = false;
+  } catch (e) {
+    host.innerHTML = `<p class="bad">${esc(e.message)}</p>`;
+  }
+}
+
+$('#ctlGaSave')?.addEventListener('click', async () => {
+  if (needToken('#ctlGaNote')) return;
+  const input = $('#ctlGaLink').value;
+  try {
+    const cfg = await config();
+    const g = parseGameSession(input, cfg);
+    await putSecret(cfg.gameAccount.secret, input.trim());
+    await setVariable('GAME_ACCOUNT_ADDRESS', g.account);
+    await setVariable('GAME_ACCOUNT_OWNER', g.owner);
+    await setVariable('GAME_SESSION_EXPIRES', String(g.expiresAt));
+    await setVariable('MAINNET_ACCOUNT_ADDRESS', g.account);
+    $('#ctlGaLink').value = '';
+    note('#ctlGaNote', `Збережено. Бот гратиме Game Account <b>${esc(short(g.account))}</b> (власник ${esc(short(g.owner))}) до ${new Date(g.expiresAt * 1000).toLocaleString('uk-UA')}.${g.canVerify ? '' : ' Увага: сесія не дозволяє verify_game — результати доведеться зараховувати вручну.'}`, 'ok');
+    await renderGameAccount();
+  } catch (e) {
+    note('#ctlGaNote', esc(e.message), 'bad');
+  }
+});
+
+$('#ctlGaRemove')?.addEventListener('click', async () => {
+  if (needToken('#ctlGaNote') || !confirm('Від’єднати Game Account? Бот повернеться до акаунта Cartridge.')) return;
+  try {
+    await gh(`/repos/${repo}/actions/secrets/GAME_SESSION_LINK`, { method: 'DELETE' });
+    note('#ctlGaNote', 'Game Account від’єднано.', 'ok');
+    await renderGameAccount();
+  } catch (e) {
+    note('#ctlGaNote', esc(e.message), 'bad');
+  }
+});
+
+// ------------------------------------------------------------------ Ronke Casino
+async function renderRonke() {
+  const host = $('#ctlRonke');
+  if (!host) return;
+  const r = await window.botData?.load('ronke.json').catch(() => undefined);
+  const vars = token() ? await variables().catch(() => ({})) : {};
+  const sw = token()
+    ? `<label class="ctl-switch"><input type="checkbox" id="ctlRonkeAuto" ${vars.RONKE_CLAIM?.value === 'true' ? 'checked' : ''}> Забирати щоденні ігри автоматично (з розкладом mainnet)</label>`
+    : '';
+  if (!r) {
+    host.innerHTML = `<p class="muted">Ще не перевірялось. Натисніть «Забрати ігри зараз».</p>${sw}`;
+    return;
+  }
+  const label = { claim: 'можна забрати', playing: 'граються', spent: 'зіграно', missed: 'пропущено', locked: 'закрито' };
+  const days = (r.days ?? []).map((d) => `<span class="badge ${d.state === 'claim' ? 'warn' : d.state === 'missed' ? 'bad' : d.state === 'locked' ? 'muted' : 'ok'}">День ${d.day}: ${label[d.state] ?? d.state}${d.games ? ` · ${d.played ?? 0}/${d.games + (d.bonusClaimed ?? 0)}` : ''}</span>`).join(' ');
+  host.innerHTML = `<dl class="ctl-dl">
+      <dt>Акаунт</dt><dd>${esc(short(r.address))} (${esc(r.kind)})</dd>
+      <dt>Право на ігри</dt><dd>${r.error ? `<span class="bad">${esc(r.error)}</span>` : r.eligible ? `<span class="ok">так</span>${r.dailyGames ? ` · ${r.dailyGames} ігор на день` : ''}` : `<span class="bad">ні</span> — ${esc(r.reason ?? (r.needsWallet ? 'Ronin-гаманець не прив’язаний' : ''))}`}</dd>
+      <dt>Дні</dt><dd>${days || '–'}</dd>
+      <dt>Останнє</dt><dd>${esc(r.message ?? '')}${r.claimed?.length ? ` → ігри ${r.claimed.map(esc).join(', ')}` : ''} <span class="muted small">${new Date(r.updated).toLocaleString('uk-UA')}</span></dd>
+    </dl>${sw}`;
+}
+
+$('#ctlRonke')?.addEventListener('change', async (e) => {
+  if (e.target.id !== 'ctlRonkeAuto') return;
+  try {
+    await setVariable('RONKE_CLAIM', String(e.target.checked));
+    note('#ctlRonkeNote', `Автоматичне отримання ігор ${e.target.checked ? 'увімкнено' : 'вимкнено'}.`, 'ok');
+  } catch (err) {
+    note('#ctlRonkeNote', esc(err.message), 'bad');
+  }
+});
+
+$('#ctlRonkeClaim')?.addEventListener('click', async () => {
+  if (needToken('#ctlRonkeNote')) return;
+  const play = $('#ctlRonkePlay').checked;
+  if (play && !confirm('Забрати ігри й одразу зіграти їх у mainnet (реальні транзакції, газ оплачує lootsurvivor.io для Game Account)?')) return;
+  try {
+    const cfg = await config();
+    const meta = await repoMeta();
+    await gh(`/repos/${repo}/actions/workflows/${cfg.workflows.bot}/dispatches`, {
+      method: 'POST',
+      body: { ref: meta.default_branch, inputs: { mode: play ? 'mainnet' : 'practice', minutes: play ? '120' : '5', live: String(play), dungeon: '', settings_id: '', max_games: play ? '20' : '1', ronke_claim: 'true' } },
+    });
+    note('#ctlRonkeNote', `Запуск у черзі: забрати ігри${play ? ' і зіграти' : ''}. Результат з’явиться тут і в «Запусках».`, 'ok');
+    setTimeout(renderRuns, 4000);
+  } catch (e) {
+    note('#ctlRonkeNote', `Не вдалося запустити: ${esc(e.message)}`, 'bad');
+  }
+});
+
 // ------------------------------------------------------------------ bot runs and schedule
 async function renderControls() {
   const cfg = await config().catch(() => null);
@@ -342,6 +476,7 @@ $('#ctlRun')?.addEventListener('click', async () => {
           dungeon: $('#ctlDungeon').value,
           settings_id: '',
           max_games: String(Math.max(1, Math.min(1000, Number($('#ctlMaxGames').value) || 50))),
+          ronke_claim: String(mode !== 'practice' && $('#ctlRonkeBefore').checked),
         },
       },
     });
@@ -442,7 +577,7 @@ $('#ctlRuns')?.addEventListener('click', async (e) => {
 // ------------------------------------------------------------------ main
 async function renderAll() {
   await renderAccess();
-  await Promise.all([renderWallet(), renderControls(), renderRuns()]);
+  await Promise.all([renderWallet(), renderGameAccount(), renderRonke(), renderControls(), renderRuns()]);
   window.dispatchEvent(new Event('bot:refresh'));
 }
 

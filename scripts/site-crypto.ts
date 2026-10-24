@@ -35,6 +35,11 @@ export function newSessionKey(): { privKey: string; pubKey: string } {
   return { privKey, pubKey: getStarkKey(privKey) };
 }
 
+/** Public Starknet key of a private key (checks that a shared Game Session key matches its approval). */
+export function starkKey(privKey: string): string {
+  return getStarkKey(privKey);
+}
+
 /** libsodium crypto_box_seal: GitHub stores secret values only in this form. */
 export function sealSecret(value: string, publicKeyB64: string): string {
   const rpk = fromB64(publicKeyB64);

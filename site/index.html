@@ -52,6 +52,20 @@
         <div id="ctlWallet"></div>
         <div class="ctl-actions"><button class="btn primary" id="ctlConnect">Підключити Cartridge</button></div>
         <p id="ctlWalletNote" class="ctl-note"></p>
+
+        <h3>…або EVM‑гаманець (Ronin, MetaMask)</h3>
+        <p class="muted small">Власники Ronke грають акаунтом, яким керує їхній Ronin‑гаманець (Game Account), і саме на
+          нього приходять щоденні ігри Ronke Casino. Щоб бот грав цим акаунтом: на
+          <a href="https://lootsurvivor.io/ronkeverse" target="_blank" rel="noopener">lootsurvivor.io</a> увійдіть
+          Ronin‑гаманцем → меню акаунта → <b>Share session</b> → оберіть термін → скопіюйте посилання і вставте сюди.
+          Сесія не може переказувати токени; газ оплачує lootsurvivor.io.</p>
+        <div id="ctlGameAccount"></div>
+        <label class="ctl-field">Посилання сесії <input id="ctlGaLink" type="password" autocomplete="off" placeholder="https://lootsurvivor.io/#game-session=…"></label>
+        <div class="ctl-actions">
+          <button class="btn primary" id="ctlGaSave">Підключити Game Account</button>
+          <button class="btn" id="ctlGaRemove" hidden>Від’єднати</button>
+        </div>
+        <p id="ctlGaNote" class="ctl-note"></p>
       </article>
 
       <article class="ctl-col">
@@ -69,6 +83,7 @@
           <label class="ctl-field">Макс. ігор <input id="ctlMaxGames" type="number" min="1" max="1000" value="50"></label>
         </div>
         <label class="ctl-switch" id="ctlLiveWrap" hidden><input type="checkbox" id="ctlLive"> Реальні транзакції (без цього — dry run: бот лише показує рішення)</label>
+        <label class="ctl-switch"><input type="checkbox" id="ctlRonkeBefore"> Спершу забрати щоденні ігри Ronke Casino</label>
         <div class="ctl-actions">
           <button class="btn primary" id="ctlRun">Запустити</button>
           <button class="btn" id="ctlLearn">Навчання зараз</button>
@@ -81,6 +96,11 @@
       <article class="ctl-col">
         <h3>4. Запуски</h3>
         <div id="ctlRuns" class="table-wrap"><p class="muted">Завантаження…</p></div>
+        <h3>Ronke Casino</h3>
+        <div id="ctlRonke"><p class="muted">Завантаження…</p></div>
+        <label class="ctl-switch"><input type="checkbox" id="ctlRonkePlay" checked> Одразу зіграти отримані ігри</label>
+        <div class="ctl-actions"><button class="btn primary" id="ctlRonkeClaim">Забрати ігри зараз</button></div>
+        <p id="ctlRonkeNote" class="ctl-note"></p>
       </article>
     </div>
   </section>

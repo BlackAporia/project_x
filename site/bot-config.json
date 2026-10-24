@@ -39,5 +39,11 @@
     "learn": "learn.yml",
     "pages": "pages.yml"
   },
-  "secret": "CARTRIDGE_SESSION_B64"
+  "secret": "CARTRIDGE_SESSION_B64",
+  "gameCore": "0x011afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b",
+  "gameAccount": {
+    "classHash": "0x5b73fb61b1d43327bf6bc8eb5ba1f83ae5ff8a798edcb575a04e6d6f365aed7",
+    "secret": "GAME_SESSION_LINK",
+    "shareFrom": "https://lootsurvivor.io/ronkeverse"
+  }
 }

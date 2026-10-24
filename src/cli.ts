@@ -22,6 +22,7 @@ const COMMANDS: Record<string, string> = {
   validate: 'A/B a candidate policy on the official site engine (practice) and adopt it only if better',
   'dungeon-settings': 'Read dungeon game settings (e.g. Ronke Casino #7) from the V2 game core',
   'site-config': 'Write site/bot-config.json (session policies and RPC for approving the bot on the website)',
+  ronke: 'Ronke Casino daily free games: status for the bot account, --claim to claim today\'s games',
   reach: 'Probability of reaching deep levels (multilevel splitting) for one or more policies (--policy a.json,b.json)',
 };
 
@@ -87,6 +88,8 @@ async function main(): Promise<void> {
       python: { type: 'string' },
       levels: { type: 'string' },
       effort: { type: 'string' },
+      claim: { type: 'boolean' },
+      address: { type: 'string' },
     },
   });
   const num = (v: unknown, d: number) => (typeof v === 'string' && v !== '' && !Number.isNaN(Number(v)) ? Number(v) : d);
@@ -234,6 +237,11 @@ async function main(): Promise<void> {
         seed: num(values.seed, 1),
         out: str(values.out, 'reach-compare.json'),
       });
+      break;
+    }
+    case 'ronke': {
+      const { runRonkeCommand } = await import('./commands/ronke.ts');
+      await runRonkeCommand({ dataDir: str(values.data, process.env.BOT_DATA_DIR ?? 'site/data'), claim: values.claim === true, address: str(values.address, '') || undefined });
       break;
     }
     case 'site-config': {
