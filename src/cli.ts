@@ -24,6 +24,7 @@ const COMMANDS: Record<string, string> = {
   'site-config': 'Write site/bot-config.json (session policies and RPC for approving the bot on the website)',
   ronke: 'Ronke Casino daily free games: status for the bot account, --claim to claim today\'s games',
   reach: 'Probability of reaching deep levels (multilevel splitting) for one or more policies (--policy a.json,b.json)',
+  contract: 'Inspect live mainnet contracts: ABI and view calls (--address 0x.. --call name:arg,arg)',
 };
 
 /** Minimal .env loader for local runs (real environment variables win). */
@@ -89,7 +90,8 @@ async function main(): Promise<void> {
       levels: { type: 'string' },
       effort: { type: 'string' },
       claim: { type: 'boolean' },
-      address: { type: 'string' },
+      address: { type: 'string', multiple: true },
+      call: { type: 'string', multiple: true },
     },
   });
   const num = (v: unknown, d: number) => (typeof v === 'string' && v !== '' && !Number.isNaN(Number(v)) ? Number(v) : d);
@@ -241,7 +243,13 @@ async function main(): Promise<void> {
     }
     case 'ronke': {
       const { runRonkeCommand } = await import('./commands/ronke.ts');
-      await runRonkeCommand({ dataDir: str(values.data, process.env.BOT_DATA_DIR ?? 'site/data'), claim: values.claim === true, address: str(values.address, '') || undefined });
+      await runRonkeCommand({ dataDir: str(values.data, process.env.BOT_DATA_DIR ?? 'site/data'), claim: values.claim === true, address: (Array.isArray(values.address) ? String(values.address[0] ?? '') : str(values.address, '')) || undefined });
+      break;
+    }
+    case 'contract': {
+      const { runContractCommand } = await import('./commands/contract.ts');
+      const list = (v: unknown) => (Array.isArray(v) ? v : typeof v === 'string' ? [v] : []).flatMap((x) => String(x).split(/\s+/)).filter(Boolean);
+      await runContractCommand({ addresses: list(values.address), calls: list(values.call), dataDir: str(values.data, process.env.BOT_DATA_DIR ?? 'site/data') });
       break;
     }
     case 'site-config': {
