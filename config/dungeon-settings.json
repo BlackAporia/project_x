@@ -1,0 +1,1222 @@
+{
+ "source": "V2 game core get_settings / settings_details (mainnet)",
+ "core": "0x011afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b",
+ "updated": "2026-10-23T06:03:46.428Z",
+ "settings": {
+  "0": {
+   "name": "Default",
+   "description": "Default Game Settings",
+   "settings": {
+    "settings_id": "0",
+    "adventurer": {
+     "health": "100",
+     "xp": "0",
+     "gold": "40",
+     "beast_health": "0",
+     "stat_upgrades_available": "0",
+     "stats": {
+      "strength": "0",
+      "dexterity": "0",
+      "vitality": "0",
+      "intelligence": "0",
+      "wisdom": "0",
+      "charisma": "0",
+      "luck": "0"
+     },
+     "equipment": {
+      "weapon": {
+       "id": "12",
+       "xp": "0"
+      },
+      "chest": {
+       "id": "0",
+       "xp": "0"
+      },
+      "head": {
+       "id": "0",
+       "xp": "0"
+      },
+      "waist": {
+       "id": "0",
+       "xp": "0"
+      },
+      "foot": {
+       "id": "0",
+       "xp": "0"
+      },
+      "hand": {
+       "id": "0",
+       "xp": "0"
+      },
+      "neck": {
+       "id": "0",
+       "xp": "0"
+      },
+      "ring": {
+       "id": "0",
+       "xp": "0"
+      }
+     },
+     "item_specials_salt": "0",
+     "beast_salt": "0",
+     "level_salt": "0"
+    },
+    "bag": {
+     "item_1": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_2": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_3": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_4": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_5": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_6": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_7": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_8": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_9": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_10": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_11": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_12": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_13": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_14": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_15": {
+      "id": "0",
+      "xp": "0"
+     },
+     "mutated": false
+    },
+    "game_seed": "0",
+    "randomness_mode": "0",
+    "in_battle": false,
+    "base_damage_reduction": "35",
+    "market_config": {
+     "pair01": "0",
+     "pair23": "6427752177035961102167848369362115108888355516328177934794752",
+     "pair4_enabled": "6427752177035961102167848369364650410088811975131171341205503"
+    },
+    "random_starting_stats": "12",
+    "collectables_enabled": false,
+    "start_override": false
+   }
+  },
+  "1": {
+   "name": "Loot Bag",
+   "description": "Bring your own Loot bag: the bag you hold on Ethereum is the run you start.",
+   "settings": {
+    "settings_id": "1",
+    "adventurer": {
+     "health": "100",
+     "xp": "0",
+     "gold": "40",
+     "beast_health": "0",
+     "stat_upgrades_available": "0",
+     "stats": {
+      "strength": "0",
+      "dexterity": "0",
+      "vitality": "0",
+      "intelligence": "0",
+      "wisdom": "0",
+      "charisma": "0",
+      "luck": "0"
+     },
+     "equipment": {
+      "weapon": {
+       "id": "0",
+       "xp": "0"
+      },
+      "chest": {
+       "id": "0",
+       "xp": "0"
+      },
+      "head": {
+       "id": "0",
+       "xp": "0"
+      },
+      "waist": {
+       "id": "0",
+       "xp": "0"
+      },
+      "foot": {
+       "id": "0",
+       "xp": "0"
+      },
+      "hand": {
+       "id": "0",
+       "xp": "0"
+      },
+      "neck": {
+       "id": "0",
+       "xp": "0"
+      },
+      "ring": {
+       "id": "0",
+       "xp": "0"
+      }
+     },
+     "item_specials_salt": "0",
+     "beast_salt": "0",
+     "level_salt": "0"
+    },
+    "bag": {
+     "item_1": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_2": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_3": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_4": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_5": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_6": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_7": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_8": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_9": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_10": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_11": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_12": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_13": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_14": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_15": {
+      "id": "0",
+      "xp": "0"
+     },
+     "mutated": false
+    },
+    "game_seed": "0",
+    "randomness_mode": "0",
+    "in_battle": false,
+    "base_damage_reduction": "35",
+    "market_config": {
+     "pair01": "0",
+     "pair23": "6427752177035961102167848369362115108888355516328177934794752",
+     "pair4_enabled": "6427752177035961102167848369364650410088811975131171341205503"
+    },
+    "random_starting_stats": "0",
+    "collectables_enabled": true,
+    "start_override": true
+   }
+  },
+  "2": {
+   "name": "Beast Mode",
+   "description": "Beast Mode Settings",
+   "settings": {
+    "settings_id": "2",
+    "adventurer": {
+     "health": "100",
+     "xp": "0",
+     "gold": "40",
+     "beast_health": "0",
+     "stat_upgrades_available": "0",
+     "stats": {
+      "strength": "0",
+      "dexterity": "0",
+      "vitality": "0",
+      "intelligence": "0",
+      "wisdom": "0",
+      "charisma": "0",
+      "luck": "0"
+     },
+     "equipment": {
+      "weapon": {
+       "id": "12",
+       "xp": "0"
+      },
+      "chest": {
+       "id": "0",
+       "xp": "0"
+      },
+      "head": {
+       "id": "0",
+       "xp": "0"
+      },
+      "waist": {
+       "id": "0",
+       "xp": "0"
+      },
+      "foot": {
+       "id": "0",
+       "xp": "0"
+      },
+      "hand": {
+       "id": "0",
+       "xp": "0"
+      },
+      "neck": {
+       "id": "0",
+       "xp": "0"
+      },
+      "ring": {
+       "id": "0",
+       "xp": "0"
+      }
+     },
+     "item_specials_salt": "0",
+     "beast_salt": "0",
+     "level_salt": "0"
+    },
+    "bag": {
+     "item_1": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_2": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_3": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_4": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_5": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_6": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_7": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_8": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_9": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_10": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_11": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_12": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_13": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_14": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_15": {
+      "id": "0",
+      "xp": "0"
+     },
+     "mutated": false
+    },
+    "game_seed": "0",
+    "randomness_mode": "0",
+    "in_battle": false,
+    "base_damage_reduction": "35",
+    "market_config": {
+     "pair01": "0",
+     "pair23": "6427752177035961102167848369362115108888355516328177934794752",
+     "pair4_enabled": "6427752177035961102167848369364650410088811975131171341205503"
+    },
+    "random_starting_stats": "12",
+    "collectables_enabled": true,
+    "start_override": false
+   }
+  },
+  "3": {
+   "name": "Ronkeverse Cambria Magic",
+   "description": "Ronkeverse end-to-end test: fixed magic loadout, current packet rules and per-kill bounty records.",
+   "settings": {
+    "settings_id": "3",
+    "adventurer": {
+     "health": "130",
+     "xp": "1",
+     "gold": "40",
+     "beast_health": "0",
+     "stat_upgrades_available": "0",
+     "stats": {
+      "strength": "2",
+      "dexterity": "4",
+      "vitality": "2",
+      "intelligence": "4",
+      "wisdom": "4",
+      "charisma": "3",
+      "luck": "2"
+     },
+     "equipment": {
+      "weapon": {
+       "id": "10",
+       "xp": "0"
+      },
+      "chest": {
+       "id": "21",
+       "xp": "0"
+      },
+      "head": {
+       "id": "26",
+       "xp": "0"
+      },
+      "waist": {
+       "id": "31",
+       "xp": "0"
+      },
+      "foot": {
+       "id": "36",
+       "xp": "0"
+      },
+      "hand": {
+       "id": "41",
+       "xp": "0"
+      },
+      "neck": {
+       "id": "0",
+       "xp": "0"
+      },
+      "ring": {
+       "id": "0",
+       "xp": "0"
+      }
+     },
+     "item_specials_salt": "0",
+     "beast_salt": "0",
+     "level_salt": "0"
+    },
+    "bag": {
+     "item_1": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_2": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_3": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_4": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_5": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_6": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_7": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_8": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_9": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_10": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_11": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_12": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_13": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_14": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_15": {
+      "id": "0",
+      "xp": "0"
+     },
+     "mutated": false
+    },
+    "game_seed": "0",
+    "randomness_mode": "0",
+    "in_battle": false,
+    "base_damage_reduction": "35",
+    "market_config": {
+     "pair01": "0",
+     "pair23": "6427752177035961102167848369362115108888355516328177934794752",
+     "pair4_enabled": "6427752177035961102167848369364650410088811975131171341205503"
+    },
+    "random_starting_stats": "0",
+    "collectables_enabled": false,
+    "start_override": false
+   }
+  },
+  "4": {
+   "name": "Super Survivor Community Start",
+   "description": "Beast Mode Settings",
+   "settings": {
+    "settings_id": "4",
+    "adventurer": {
+     "health": "100",
+     "xp": "0",
+     "gold": "40",
+     "beast_health": "0",
+     "stat_upgrades_available": "0",
+     "stats": {
+      "strength": "2",
+      "dexterity": "2",
+      "vitality": "2",
+      "intelligence": "2",
+      "wisdom": "2",
+      "charisma": "2",
+      "luck": "0"
+     },
+     "equipment": {
+      "weapon": {
+       "id": "12",
+       "xp": "0"
+      },
+      "chest": {
+       "id": "0",
+       "xp": "0"
+      },
+      "head": {
+       "id": "0",
+       "xp": "0"
+      },
+      "waist": {
+       "id": "0",
+       "xp": "0"
+      },
+      "foot": {
+       "id": "0",
+       "xp": "0"
+      },
+      "hand": {
+       "id": "0",
+       "xp": "0"
+      },
+      "neck": {
+       "id": "0",
+       "xp": "0"
+      },
+      "ring": {
+       "id": "0",
+       "xp": "0"
+      }
+     },
+     "item_specials_salt": "0",
+     "beast_salt": "0",
+     "level_salt": "0"
+    },
+    "bag": {
+     "item_1": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_2": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_3": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_4": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_5": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_6": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_7": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_8": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_9": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_10": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_11": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_12": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_13": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_14": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_15": {
+      "id": "0",
+      "xp": "0"
+     },
+     "mutated": false
+    },
+    "game_seed": "0",
+    "randomness_mode": "0",
+    "in_battle": false,
+    "base_damage_reduction": "35",
+    "market_config": {
+     "pair01": "0",
+     "pair23": "6427752177035961102167848369362115108888355516328177934794752",
+     "pair4_enabled": "6427752177035961102167848369364650410088811975131171341205503"
+    },
+    "random_starting_stats": "0",
+    "collectables_enabled": true,
+    "start_override": false
+   }
+  },
+  "5": {
+   "name": "Ronkeverse Small",
+   "description": "Ronkeverse end-to-end test: fixed magic loadout, current packet rules and per-kill bounty records.",
+   "settings": {
+    "settings_id": "5",
+    "adventurer": {
+     "health": "130",
+     "xp": "0",
+     "gold": "30",
+     "beast_health": "0",
+     "stat_upgrades_available": "0",
+     "stats": {
+      "strength": "2",
+      "dexterity": "4",
+      "vitality": "2",
+      "intelligence": "4",
+      "wisdom": "4",
+      "charisma": "3",
+      "luck": "2"
+     },
+     "equipment": {
+      "weapon": {
+       "id": "10",
+       "xp": "1"
+      },
+      "chest": {
+       "id": "21",
+       "xp": "1"
+      },
+      "head": {
+       "id": "26",
+       "xp": "1"
+      },
+      "waist": {
+       "id": "31",
+       "xp": "1"
+      },
+      "foot": {
+       "id": "36",
+       "xp": "1"
+      },
+      "hand": {
+       "id": "41",
+       "xp": "1"
+      },
+      "neck": {
+       "id": "0",
+       "xp": "0"
+      },
+      "ring": {
+       "id": "0",
+       "xp": "0"
+      }
+     },
+     "item_specials_salt": "0",
+     "beast_salt": "0",
+     "level_salt": "0"
+    },
+    "bag": {
+     "item_1": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_2": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_3": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_4": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_5": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_6": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_7": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_8": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_9": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_10": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_11": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_12": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_13": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_14": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_15": {
+      "id": "0",
+      "xp": "0"
+     },
+     "mutated": false
+    },
+    "game_seed": "0",
+    "randomness_mode": "0",
+    "in_battle": false,
+    "base_damage_reduction": "35",
+    "market_config": {
+     "pair01": "0",
+     "pair23": "6427752177035961102167848369362115108888355516328177934794752",
+     "pair4_enabled": "6427752177035961102167848369364650410088811975131171341205503"
+    },
+    "random_starting_stats": "0",
+    "collectables_enabled": true,
+    "start_override": false
+   }
+  },
+  "6": {
+   "name": "Ronkeverse Medium",
+   "description": "Ronkeverse end-to-end test: fixed magic loadout, current packet rules and per-kill bounty records.",
+   "settings": {
+    "settings_id": "6",
+    "adventurer": {
+     "health": "130",
+     "xp": "0",
+     "gold": "40",
+     "beast_health": "0",
+     "stat_upgrades_available": "0",
+     "stats": {
+      "strength": "2",
+      "dexterity": "4",
+      "vitality": "2",
+      "intelligence": "4",
+      "wisdom": "4",
+      "charisma": "3",
+      "luck": "2"
+     },
+     "equipment": {
+      "weapon": {
+       "id": "10",
+       "xp": "1"
+      },
+      "chest": {
+       "id": "21",
+       "xp": "1"
+      },
+      "head": {
+       "id": "26",
+       "xp": "1"
+      },
+      "waist": {
+       "id": "31",
+       "xp": "1"
+      },
+      "foot": {
+       "id": "36",
+       "xp": "1"
+      },
+      "hand": {
+       "id": "41",
+       "xp": "1"
+      },
+      "neck": {
+       "id": "0",
+       "xp": "0"
+      },
+      "ring": {
+       "id": "0",
+       "xp": "0"
+      }
+     },
+     "item_specials_salt": "0",
+     "beast_salt": "0",
+     "level_salt": "0"
+    },
+    "bag": {
+     "item_1": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_2": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_3": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_4": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_5": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_6": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_7": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_8": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_9": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_10": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_11": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_12": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_13": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_14": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_15": {
+      "id": "0",
+      "xp": "0"
+     },
+     "mutated": false
+    },
+    "game_seed": "0",
+    "randomness_mode": "0",
+    "in_battle": false,
+    "base_damage_reduction": "35",
+    "market_config": {
+     "pair01": "0",
+     "pair23": "6427752177035961102167848369362115108888355516328177934794752",
+     "pair4_enabled": "6427752177035961102167848369364650410088811975131171341205503"
+    },
+    "random_starting_stats": "0",
+    "collectables_enabled": true,
+    "start_override": false
+   }
+  },
+  "7": {
+   "name": "Ronkeverse Large",
+   "description": "Ronkeverse end-to-end test: fixed magic loadout, current packet rules and per-kill bounty records.",
+   "settings": {
+    "settings_id": "7",
+    "adventurer": {
+     "health": "130",
+     "xp": "0",
+     "gold": "50",
+     "beast_health": "0",
+     "stat_upgrades_available": "0",
+     "stats": {
+      "strength": "2",
+      "dexterity": "4",
+      "vitality": "2",
+      "intelligence": "4",
+      "wisdom": "4",
+      "charisma": "3",
+      "luck": "2"
+     },
+     "equipment": {
+      "weapon": {
+       "id": "10",
+       "xp": "1"
+      },
+      "chest": {
+       "id": "21",
+       "xp": "1"
+      },
+      "head": {
+       "id": "26",
+       "xp": "1"
+      },
+      "waist": {
+       "id": "31",
+       "xp": "1"
+      },
+      "foot": {
+       "id": "36",
+       "xp": "1"
+      },
+      "hand": {
+       "id": "41",
+       "xp": "1"
+      },
+      "neck": {
+       "id": "0",
+       "xp": "0"
+      },
+      "ring": {
+       "id": "0",
+       "xp": "0"
+      }
+     },
+     "item_specials_salt": "0",
+     "beast_salt": "0",
+     "level_salt": "0"
+    },
+    "bag": {
+     "item_1": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_2": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_3": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_4": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_5": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_6": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_7": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_8": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_9": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_10": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_11": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_12": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_13": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_14": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_15": {
+      "id": "0",
+      "xp": "0"
+     },
+     "mutated": false
+    },
+    "game_seed": "0",
+    "randomness_mode": "0",
+    "in_battle": false,
+    "base_damage_reduction": "35",
+    "market_config": {
+     "pair01": "0",
+     "pair23": "6427752177035961102167848369362115108888355516328177934794752",
+     "pair4_enabled": "6427752177035961102167848369364650410088811975131171341205503"
+    },
+    "random_starting_stats": "0",
+    "collectables_enabled": true,
+    "start_override": false
+   }
+  },
+  "17": {
+   "name": "",
+   "description": "",
+   "settings": {
+    "settings_id": "0",
+    "adventurer": {
+     "health": "0",
+     "xp": "0",
+     "gold": "0",
+     "beast_health": "0",
+     "stat_upgrades_available": "0",
+     "stats": {
+      "strength": "0",
+      "dexterity": "0",
+      "vitality": "0",
+      "intelligence": "0",
+      "wisdom": "0",
+      "charisma": "0",
+      "luck": "0"
+     },
+     "equipment": {
+      "weapon": {
+       "id": "0",
+       "xp": "0"
+      },
+      "chest": {
+       "id": "0",
+       "xp": "0"
+      },
+      "head": {
+       "id": "0",
+       "xp": "0"
+      },
+      "waist": {
+       "id": "0",
+       "xp": "0"
+      },
+      "foot": {
+       "id": "0",
+       "xp": "0"
+      },
+      "hand": {
+       "id": "0",
+       "xp": "0"
+      },
+      "neck": {
+       "id": "0",
+       "xp": "0"
+      },
+      "ring": {
+       "id": "0",
+       "xp": "0"
+      }
+     },
+     "item_specials_salt": "0",
+     "beast_salt": "0",
+     "level_salt": "0"
+    },
+    "bag": {
+     "item_1": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_2": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_3": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_4": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_5": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_6": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_7": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_8": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_9": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_10": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_11": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_12": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_13": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_14": {
+      "id": "0",
+      "xp": "0"
+     },
+     "item_15": {
+      "id": "0",
+      "xp": "0"
+     },
+     "mutated": false
+    },
+    "game_seed": "0",
+    "randomness_mode": "0",
+    "in_battle": false,
+    "base_damage_reduction": "0",
+    "market_config": {
+     "pair01": "0",
+     "pair23": "0",
+     "pair4_enabled": "0"
+    },
+    "random_starting_stats": "0",
+    "collectables_enabled": false,
+    "start_override": false
+   }
+  }
+ }
+}

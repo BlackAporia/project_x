@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    paths-ignore: ['site/data/**', '**.md']
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - name: Policy smoke benchmark (simulation)
+        run: npm run bench -- --games 120 --seed 7

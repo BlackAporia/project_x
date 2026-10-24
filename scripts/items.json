@@ -1,0 +1,917 @@
+{
+ "items": [
+  {
+   "id": 1,
+   "key": "Pendant",
+   "name": "Pendant",
+   "tier": "T1",
+   "type": "Necklace",
+   "slot": "Neck"
+  },
+  {
+   "id": 2,
+   "key": "Necklace",
+   "name": "Necklace",
+   "tier": "T1",
+   "type": "Necklace",
+   "slot": "Neck"
+  },
+  {
+   "id": 3,
+   "key": "Amulet",
+   "name": "Amulet",
+   "tier": "T1",
+   "type": "Necklace",
+   "slot": "Neck"
+  },
+  {
+   "id": 4,
+   "key": "SilverRing",
+   "name": "Silver Ring",
+   "tier": "T2",
+   "type": "Ring",
+   "slot": "Ring"
+  },
+  {
+   "id": 5,
+   "key": "BronzeRing",
+   "name": "Bronze Ring",
+   "tier": "T3",
+   "type": "Ring",
+   "slot": "Ring"
+  },
+  {
+   "id": 6,
+   "key": "PlatinumRing",
+   "name": "Platinum Ring",
+   "tier": "T1",
+   "type": "Ring",
+   "slot": "Ring"
+  },
+  {
+   "id": 7,
+   "key": "TitaniumRing",
+   "name": "Titanium Ring",
+   "tier": "T1",
+   "type": "Ring",
+   "slot": "Ring"
+  },
+  {
+   "id": 8,
+   "key": "GoldRing",
+   "name": "Gold Ring",
+   "tier": "T1",
+   "type": "Ring",
+   "slot": "Ring"
+  },
+  {
+   "id": 9,
+   "key": "GhostWand",
+   "name": "Ghost Wand",
+   "tier": "T1",
+   "type": "Magic_or_Cloth",
+   "slot": "Weapon"
+  },
+  {
+   "id": 10,
+   "key": "GraveWand",
+   "name": "Grave Wand",
+   "tier": "T2",
+   "type": "Magic_or_Cloth",
+   "slot": "Weapon"
+  },
+  {
+   "id": 11,
+   "key": "BoneWand",
+   "name": "Bone Wand",
+   "tier": "T3",
+   "type": "Magic_or_Cloth",
+   "slot": "Weapon"
+  },
+  {
+   "id": 12,
+   "key": "Wand",
+   "name": "Wand",
+   "tier": "T5",
+   "type": "Magic_or_Cloth",
+   "slot": "Weapon"
+  },
+  {
+   "id": 13,
+   "key": "Grimoire",
+   "name": "Grimoire",
+   "tier": "T1",
+   "type": "Magic_or_Cloth",
+   "slot": "Weapon"
+  },
+  {
+   "id": 14,
+   "key": "Chronicle",
+   "name": "Chronicle",
+   "tier": "T2",
+   "type": "Magic_or_Cloth",
+   "slot": "Weapon"
+  },
+  {
+   "id": 15,
+   "key": "Tome",
+   "name": "Tome",
+   "tier": "T3",
+   "type": "Magic_or_Cloth",
+   "slot": "Weapon"
+  },
+  {
+   "id": 16,
+   "key": "Book",
+   "name": "Book",
+   "tier": "T5",
+   "type": "Magic_or_Cloth",
+   "slot": "Weapon"
+  },
+  {
+   "id": 17,
+   "key": "DivineRobe",
+   "name": "Divine Robe",
+   "tier": "T1",
+   "type": "Magic_or_Cloth",
+   "slot": "Chest"
+  },
+  {
+   "id": 18,
+   "key": "SilkRobe",
+   "name": "Silk Robe",
+   "tier": "T2",
+   "type": "Magic_or_Cloth",
+   "slot": "Chest"
+  },
+  {
+   "id": 19,
+   "key": "LinenRobe",
+   "name": "Linen Robe",
+   "tier": "T3",
+   "type": "Magic_or_Cloth",
+   "slot": "Chest"
+  },
+  {
+   "id": 20,
+   "key": "Robe",
+   "name": "Robe",
+   "tier": "T4",
+   "type": "Magic_or_Cloth",
+   "slot": "Chest"
+  },
+  {
+   "id": 21,
+   "key": "Shirt",
+   "name": "Shirt",
+   "tier": "T5",
+   "type": "Magic_or_Cloth",
+   "slot": "Chest"
+  },
+  {
+   "id": 22,
+   "key": "Crown",
+   "name": "Crown",
+   "tier": "T1",
+   "type": "Magic_or_Cloth",
+   "slot": "Head"
+  },
+  {
+   "id": 23,
+   "key": "DivineHood",
+   "name": "Divine Hood",
+   "tier": "T2",
+   "type": "Magic_or_Cloth",
+   "slot": "Head"
+  },
+  {
+   "id": 24,
+   "key": "SilkHood",
+   "name": "Silk Hood",
+   "tier": "T3",
+   "type": "Magic_or_Cloth",
+   "slot": "Head"
+  },
+  {
+   "id": 25,
+   "key": "LinenHood",
+   "name": "Linen Hood",
+   "tier": "T4",
+   "type": "Magic_or_Cloth",
+   "slot": "Head"
+  },
+  {
+   "id": 26,
+   "key": "Hood",
+   "name": "Hood",
+   "tier": "T5",
+   "type": "Magic_or_Cloth",
+   "slot": "Head"
+  },
+  {
+   "id": 27,
+   "key": "BrightsilkSash",
+   "name": "Brightsilk Sash",
+   "tier": "T1",
+   "type": "Magic_or_Cloth",
+   "slot": "Waist"
+  },
+  {
+   "id": 28,
+   "key": "SilkSash",
+   "name": "Silk Sash",
+   "tier": "T2",
+   "type": "Magic_or_Cloth",
+   "slot": "Waist"
+  },
+  {
+   "id": 29,
+   "key": "WoolSash",
+   "name": "Wool Sash",
+   "tier": "T3",
+   "type": "Magic_or_Cloth",
+   "slot": "Waist"
+  },
+  {
+   "id": 30,
+   "key": "LinenSash",
+   "name": "Linen Sash",
+   "tier": "T4",
+   "type": "Magic_or_Cloth",
+   "slot": "Waist"
+  },
+  {
+   "id": 31,
+   "key": "Sash",
+   "name": "Sash",
+   "tier": "T5",
+   "type": "Magic_or_Cloth",
+   "slot": "Waist"
+  },
+  {
+   "id": 32,
+   "key": "DivineSlippers",
+   "name": "Divine Slippers",
+   "tier": "T1",
+   "type": "Magic_or_Cloth",
+   "slot": "Foot"
+  },
+  {
+   "id": 33,
+   "key": "SilkSlippers",
+   "name": "Silk Slippers",
+   "tier": "T2",
+   "type": "Magic_or_Cloth",
+   "slot": "Foot"
+  },
+  {
+   "id": 34,
+   "key": "WoolShoes",
+   "name": "Wool Shoes",
+   "tier": "T3",
+   "type": "Magic_or_Cloth",
+   "slot": "Foot"
+  },
+  {
+   "id": 35,
+   "key": "LinenShoes",
+   "name": "Linen Shoes",
+   "tier": "T4",
+   "type": "Magic_or_Cloth",
+   "slot": "Foot"
+  },
+  {
+   "id": 36,
+   "key": "Shoes",
+   "name": "Shoes",
+   "tier": "T5",
+   "type": "Magic_or_Cloth",
+   "slot": "Foot"
+  },
+  {
+   "id": 37,
+   "key": "DivineGloves",
+   "name": "Divine Gloves",
+   "tier": "T1",
+   "type": "Magic_or_Cloth",
+   "slot": "Hand"
+  },
+  {
+   "id": 38,
+   "key": "SilkGloves",
+   "name": "Silk Gloves",
+   "tier": "T2",
+   "type": "Magic_or_Cloth",
+   "slot": "Hand"
+  },
+  {
+   "id": 39,
+   "key": "WoolGloves",
+   "name": "Wool Gloves",
+   "tier": "T3",
+   "type": "Magic_or_Cloth",
+   "slot": "Hand"
+  },
+  {
+   "id": 40,
+   "key": "LinenGloves",
+   "name": "Linen Gloves",
+   "tier": "T4",
+   "type": "Magic_or_Cloth",
+   "slot": "Hand"
+  },
+  {
+   "id": 41,
+   "key": "Gloves",
+   "name": "Gloves",
+   "tier": "T5",
+   "type": "Magic_or_Cloth",
+   "slot": "Hand"
+  },
+  {
+   "id": 42,
+   "key": "Katana",
+   "name": "Katana",
+   "tier": "T1",
+   "type": "Blade_or_Hide",
+   "slot": "Weapon"
+  },
+  {
+   "id": 43,
+   "key": "Falchion",
+   "name": "Falchion",
+   "tier": "T2",
+   "type": "Blade_or_Hide",
+   "slot": "Weapon"
+  },
+  {
+   "id": 44,
+   "key": "Scimitar",
+   "name": "Scimitar",
+   "tier": "T3",
+   "type": "Blade_or_Hide",
+   "slot": "Weapon"
+  },
+  {
+   "id": 45,
+   "key": "LongSword",
+   "name": "Long Sword",
+   "tier": "T4",
+   "type": "Blade_or_Hide",
+   "slot": "Weapon"
+  },
+  {
+   "id": 46,
+   "key": "ShortSword",
+   "name": "Short Sword",
+   "tier": "T5",
+   "type": "Blade_or_Hide",
+   "slot": "Weapon"
+  },
+  {
+   "id": 47,
+   "key": "DemonHusk",
+   "name": "Demon Husk",
+   "tier": "T1",
+   "type": "Blade_or_Hide",
+   "slot": "Chest"
+  },
+  {
+   "id": 48,
+   "key": "DragonskinArmor",
+   "name": "Dragonskin Armor",
+   "tier": "T2",
+   "type": "Blade_or_Hide",
+   "slot": "Chest"
+  },
+  {
+   "id": 49,
+   "key": "StuddedLeatherArmor",
+   "name": "Studded Leather Armor",
+   "tier": "T3",
+   "type": "Blade_or_Hide",
+   "slot": "Chest"
+  },
+  {
+   "id": 50,
+   "key": "HardLeatherArmor",
+   "name": "Hard Leather Armor",
+   "tier": "T4",
+   "type": "Blade_or_Hide",
+   "slot": "Chest"
+  },
+  {
+   "id": 51,
+   "key": "LeatherArmor",
+   "name": "Leather Armor",
+   "tier": "T5",
+   "type": "Blade_or_Hide",
+   "slot": "Chest"
+  },
+  {
+   "id": 52,
+   "key": "DemonCrown",
+   "name": "Demon Crown",
+   "tier": "T1",
+   "type": "Blade_or_Hide",
+   "slot": "Head"
+  },
+  {
+   "id": 53,
+   "key": "DragonsCrown",
+   "name": "DragonsCrown",
+   "tier": "T2",
+   "type": "Blade_or_Hide",
+   "slot": "Head"
+  },
+  {
+   "id": 54,
+   "key": "WarCap",
+   "name": "War Cap",
+   "tier": "T3",
+   "type": "Blade_or_Hide",
+   "slot": "Head"
+  },
+  {
+   "id": 55,
+   "key": "LeatherCap",
+   "name": "Leather Cap",
+   "tier": "T4",
+   "type": "Blade_or_Hide",
+   "slot": "Head"
+  },
+  {
+   "id": 56,
+   "key": "Cap",
+   "name": "Cap",
+   "tier": "T5",
+   "type": "Blade_or_Hide",
+   "slot": "Head"
+  },
+  {
+   "id": 57,
+   "key": "DemonhideBelt",
+   "name": "Demonhide Belt",
+   "tier": "T1",
+   "type": "Blade_or_Hide",
+   "slot": "Waist"
+  },
+  {
+   "id": 58,
+   "key": "DragonskinBelt",
+   "name": "Dragonskin Belt",
+   "tier": "T2",
+   "type": "Blade_or_Hide",
+   "slot": "Waist"
+  },
+  {
+   "id": 59,
+   "key": "StuddedLeatherBelt",
+   "name": "Studded Leather Belt",
+   "tier": "T3",
+   "type": "Blade_or_Hide",
+   "slot": "Waist"
+  },
+  {
+   "id": 60,
+   "key": "HardLeatherBelt",
+   "name": "Hard Leather Belt",
+   "tier": "T4",
+   "type": "Blade_or_Hide",
+   "slot": "Waist"
+  },
+  {
+   "id": 61,
+   "key": "LeatherBelt",
+   "name": "Leather Belt",
+   "tier": "T5",
+   "type": "Blade_or_Hide",
+   "slot": "Waist"
+  },
+  {
+   "id": 62,
+   "key": "DemonhideBoots",
+   "name": "Demonhide Boots",
+   "tier": "T1",
+   "type": "Blade_or_Hide",
+   "slot": "Foot"
+  },
+  {
+   "id": 63,
+   "key": "DragonskinBoots",
+   "name": "Dragonskin Boots",
+   "tier": "T2",
+   "type": "Blade_or_Hide",
+   "slot": "Foot"
+  },
+  {
+   "id": 64,
+   "key": "StuddedLeatherBoots",
+   "name": "Studded Leather Boots",
+   "tier": "T3",
+   "type": "Blade_or_Hide",
+   "slot": "Foot"
+  },
+  {
+   "id": 65,
+   "key": "HardLeatherBoots",
+   "name": "Hard Leather Boots",
+   "tier": "T4",
+   "type": "Blade_or_Hide",
+   "slot": "Foot"
+  },
+  {
+   "id": 66,
+   "key": "LeatherBoots",
+   "name": "Leather Boots",
+   "tier": "T5",
+   "type": "Blade_or_Hide",
+   "slot": "Foot"
+  },
+  {
+   "id": 67,
+   "key": "DemonsHands",
+   "name": "DemonsHands",
+   "tier": "T1",
+   "type": "Blade_or_Hide",
+   "slot": "Hand"
+  },
+  {
+   "id": 68,
+   "key": "DragonskinGloves",
+   "name": "Dragonskin Gloves",
+   "tier": "T2",
+   "type": "Blade_or_Hide",
+   "slot": "Hand"
+  },
+  {
+   "id": 69,
+   "key": "StuddedLeatherGloves",
+   "name": "Studded Leather Gloves",
+   "tier": "T3",
+   "type": "Blade_or_Hide",
+   "slot": "Hand"
+  },
+  {
+   "id": 70,
+   "key": "HardLeatherGloves",
+   "name": "Hard Leather Gloves",
+   "tier": "T4",
+   "type": "Blade_or_Hide",
+   "slot": "Hand"
+  },
+  {
+   "id": 71,
+   "key": "LeatherGloves",
+   "name": "Leather Gloves",
+   "tier": "T5",
+   "type": "Blade_or_Hide",
+   "slot": "Hand"
+  },
+  {
+   "id": 72,
+   "key": "Warhammer",
+   "name": "Warhammer",
+   "tier": "T1",
+   "type": "Bludgeon_or_Metal",
+   "slot": "Weapon"
+  },
+  {
+   "id": 73,
+   "key": "Quarterstaff",
+   "name": "Quarterstaff",
+   "tier": "T2",
+   "type": "Bludgeon_or_Metal",
+   "slot": "Weapon"
+  },
+  {
+   "id": 74,
+   "key": "Maul",
+   "name": "Maul",
+   "tier": "T3",
+   "type": "Bludgeon_or_Metal",
+   "slot": "Weapon"
+  },
+  {
+   "id": 75,
+   "key": "Mace",
+   "name": "Mace",
+   "tier": "T4",
+   "type": "Bludgeon_or_Metal",
+   "slot": "Weapon"
+  },
+  {
+   "id": 76,
+   "key": "Club",
+   "name": "Club",
+   "tier": "T5",
+   "type": "Bludgeon_or_Metal",
+   "slot": "Weapon"
+  },
+  {
+   "id": 77,
+   "key": "HolyChestplate",
+   "name": "Holy Chestplate",
+   "tier": "T1",
+   "type": "Bludgeon_or_Metal",
+   "slot": "Chest"
+  },
+  {
+   "id": 78,
+   "key": "OrnateChestplate",
+   "name": "Ornate Chestplate",
+   "tier": "T2",
+   "type": "Bludgeon_or_Metal",
+   "slot": "Chest"
+  },
+  {
+   "id": 79,
+   "key": "PlateMail",
+   "name": "Plate Mail",
+   "tier": "T3",
+   "type": "Bludgeon_or_Metal",
+   "slot": "Chest"
+  },
+  {
+   "id": 80,
+   "key": "ChainMail",
+   "name": "Chain Mail",
+   "tier": "T4",
+   "type": "Bludgeon_or_Metal",
+   "slot": "Chest"
+  },
+  {
+   "id": 81,
+   "key": "RingMail",
+   "name": "Ring Mail",
+   "tier": "T5",
+   "type": "Bludgeon_or_Metal",
+   "slot": "Chest"
+  },
+  {
+   "id": 82,
+   "key": "AncientHelm",
+   "name": "Ancient Helm",
+   "tier": "T1",
+   "type": "Bludgeon_or_Metal",
+   "slot": "Head"
+  },
+  {
+   "id": 83,
+   "key": "OrnateHelm",
+   "name": "Ornate Helm",
+   "tier": "T2",
+   "type": "Bludgeon_or_Metal",
+   "slot": "Head"
+  },
+  {
+   "id": 84,
+   "key": "GreatHelm",
+   "name": "Great Helm",
+   "tier": "T3",
+   "type": "Bludgeon_or_Metal",
+   "slot": "Head"
+  },
+  {
+   "id": 85,
+   "key": "FullHelm",
+   "name": "Full Helm",
+   "tier": "T4",
+   "type": "Bludgeon_or_Metal",
+   "slot": "Head"
+  },
+  {
+   "id": 86,
+   "key": "Helm",
+   "name": "Helm",
+   "tier": "T5",
+   "type": "Bludgeon_or_Metal",
+   "slot": "Head"
+  },
+  {
+   "id": 87,
+   "key": "OrnateBelt",
+   "name": "Ornate Belt",
+   "tier": "T1",
+   "type": "Bludgeon_or_Metal",
+   "slot": "Waist"
+  },
+  {
+   "id": 88,
+   "key": "WarBelt",
+   "name": "War Belt",
+   "tier": "T2",
+   "type": "Bludgeon_or_Metal",
+   "slot": "Waist"
+  },
+  {
+   "id": 89,
+   "key": "PlatedBelt",
+   "name": "Plated Belt",
+   "tier": "T3",
+   "type": "Bludgeon_or_Metal",
+   "slot": "Waist"
+  },
+  {
+   "id": 90,
+   "key": "MeshBelt",
+   "name": "Mesh Belt",
+   "tier": "T4",
+   "type": "Bludgeon_or_Metal",
+   "slot": "Waist"
+  },
+  {
+   "id": 91,
+   "key": "HeavyBelt",
+   "name": "Heavy Belt",
+   "tier": "T5",
+   "type": "Bludgeon_or_Metal",
+   "slot": "Waist"
+  },
+  {
+   "id": 92,
+   "key": "HolyGreaves",
+   "name": "Holy Greaves",
+   "tier": "T1",
+   "type": "Bludgeon_or_Metal",
+   "slot": "Foot"
+  },
+  {
+   "id": 93,
+   "key": "OrnateGreaves",
+   "name": "Ornate Greaves",
+   "tier": "T2",
+   "type": "Bludgeon_or_Metal",
+   "slot": "Foot"
+  },
+  {
+   "id": 94,
+   "key": "Greaves",
+   "name": "Greaves",
+   "tier": "T3",
+   "type": "Bludgeon_or_Metal",
+   "slot": "Foot"
+  },
+  {
+   "id": 95,
+   "key": "ChainBoots",
+   "name": "Chain Boots",
+   "tier": "T4",
+   "type": "Bludgeon_or_Metal",
+   "slot": "Foot"
+  },
+  {
+   "id": 96,
+   "key": "HeavyBoots",
+   "name": "Heavy Boots",
+   "tier": "T5",
+   "type": "Bludgeon_or_Metal",
+   "slot": "Foot"
+  },
+  {
+   "id": 97,
+   "key": "HolyGauntlets",
+   "name": "Holy Gauntlets",
+   "tier": "T1",
+   "type": "Bludgeon_or_Metal",
+   "slot": "Hand"
+  },
+  {
+   "id": 98,
+   "key": "OrnateGauntlets",
+   "name": "Ornate Gauntlets",
+   "tier": "T2",
+   "type": "Bludgeon_or_Metal",
+   "slot": "Hand"
+  },
+  {
+   "id": 99,
+   "key": "Gauntlets",
+   "name": "Gauntlets",
+   "tier": "T3",
+   "type": "Bludgeon_or_Metal",
+   "slot": "Hand"
+  },
+  {
+   "id": 100,
+   "key": "ChainGloves",
+   "name": "Chain Gloves",
+   "tier": "T4",
+   "type": "Bludgeon_or_Metal",
+   "slot": "Hand"
+  },
+  {
+   "id": 101,
+   "key": "HeavyGloves",
+   "name": "Heavy Gloves",
+   "tier": "T5",
+   "type": "Bludgeon_or_Metal",
+   "slot": "Hand"
+  }
+ ],
+ "tiers": {
+  "1": [
+   9,
+   13,
+   17,
+   22,
+   27,
+   32,
+   37,
+   42,
+   47,
+   52,
+   57,
+   67,
+   62,
+   72,
+   77,
+   82,
+   92,
+   97,
+   87
+  ],
+  "2": [
+   10,
+   14,
+   18,
+   23,
+   28,
+   33,
+   38,
+   43,
+   53,
+   58,
+   63,
+   48,
+   68,
+   73,
+   78,
+   88,
+   83,
+   93,
+   98
+  ],
+  "3": [
+   15,
+   11,
+   19,
+   24,
+   29,
+   34,
+   39,
+   44,
+   49,
+   64,
+   59,
+   69,
+   54,
+   74,
+   94,
+   99,
+   79,
+   84,
+   89
+  ],
+  "4": [
+   45,
+   60,
+   65,
+   50,
+   55,
+   70,
+   75,
+   80,
+   85,
+   95,
+   100,
+   90,
+   20,
+   25,
+   30,
+   35,
+   40
+  ],
+  "5": [
+   16,
+   12,
+   26,
+   31,
+   21,
+   36,
+   41,
+   76,
+   86,
+   81,
+   96,
+   91,
+   101,
+   46,
+   61,
+   66,
+   51,
+   71,
+   56
+  ]
+ }
+}

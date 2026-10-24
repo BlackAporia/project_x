@@ -1,0 +1,52 @@
+name: Task
+
+# Run any bot command on GitHub (network access to Starknet / lootsurvivor.io) and keep its output on bot-data.
+# Example: command = "dungeon-settings --ids 7,6,5,4"   or   "play --mode sim --max-games 200 ; leaderboard"
+on:
+  workflow_dispatch:
+    inputs:
+      command:
+        description: arguments for `npm run bot --`
+        required: true
+        default: dungeon-settings
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bot-data
+  cancel-in-progress: false
+
+jobs:
+  task:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    env:
+      BOT_DATA_DIR: botdata/data
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: scripts/data-branch.sh checkout
+      - name: Run command
+        env:
+          CMD: ${{ inputs.command }}
+        run: |
+          # several commands separated by ';' (one run: the bot-data concurrency group keeps only one pending run)
+          # each is word-split safely (no shell evaluation)
+          : > botdata/data/task-last.log
+          IFS=';' read -r -a CMDS <<< "$CMD"
+          status=0
+          for c in "${CMDS[@]}"; do
+            read -r -a ARGS <<< "$c"
+            [ ${#ARGS[@]} -eq 0 ] && continue
+            echo "== bot ${ARGS[*]}" | tee -a botdata/data/task-last.log
+            npm run bot -- "${ARGS[@]}" 2>&1 | tee -a botdata/data/task-last.log || status=1
+          done
+          exit $status
+      - name: Push data
+        if: always()
+        run: scripts/data-branch.sh push "task ${{ github.run_id }}"

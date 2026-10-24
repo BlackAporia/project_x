@@ -1,0 +1,39 @@
+{
+  "name": "loot-survivor-bot",
+  "version": "1.0.0",
+  "description": "Autonomous Loot Survivor (Death Mountain) player: exact game engine, probabilistic decision engine, practice + mainnet executors, learning pipeline and a progress dashboard.",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "bot": "node --import tsx src/cli.ts",
+    "play": "node --import tsx src/cli.ts play",
+    "sim": "node --import tsx src/cli.ts sim",
+    "bench": "node --import tsx src/cli.ts bench",
+    "tune": "node --import tsx src/cli.ts tune",
+    "dataset": "node --import tsx src/cli.ts dataset",
+    "discover": "node --import tsx src/cli.ts discover",
+    "leaderboard": "node --import tsx src/cli.ts leaderboard",
+    "learn": "node --import tsx src/cli.ts learn",
+    "authorize": "node --import tsx src/cli.ts authorize",
+    "site": "node --import tsx src/cli.ts site",
+    "local": "node --import tsx src/cli.ts local"
+  },
+  "dependencies": {
+    "@cartridge/controller": "0.14.2",
+    "starknet": "10.8.0"
+  },
+  "devDependencies": {
+    "@happy-dom/global-registrator": "^15.11.7",
+    "@types/libsodium-wrappers": "0.7.14",
+    "@types/node": "22.20.5",
+    "libsodium-wrappers": "0.7.13",
+    "tsx": "4.23.15",
+    "tweetnacl": "1.0.3",
+    "typescript": "5.9.3"
+  }
+}

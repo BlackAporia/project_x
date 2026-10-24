@@ -1,0 +1,38 @@
+// RPC helpers: pick the first healthy endpoint, retry transient failures with exponential backoff.
+import { RpcProvider } from 'starknet';
+
+export const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
+export async function retry<T>(fn: () => Promise<T>, opts: { tries?: number; baseMs?: number; label?: string } = {}): Promise<T> {
+  const tries = opts.tries ?? 4;
+  const base = opts.baseMs ?? 1000;
+  let last: unknown;
+  for (let i = 0; i < tries; i++) {
+    try {
+      return await fn();
+    } catch (e) {
+      last = e;
+      if (i < tries - 1) {
+        const msg = e instanceof Error ? e.message : String(e);
+        if (opts.label) console.warn(`[retry] ${opts.label} failed (${i + 1}/${tries}): ${msg.slice(0, 200)}`);
+        await sleep(base * 2 ** i);
+      }
+    }
+  }
+  throw last;
+}
+
+/** Connect to the first RPC URL that answers starknet_chainId. */
+export async function connectProvider(urls: string[]): Promise<{ provider: RpcProvider; url: string; chainId: string }> {
+  const errors: string[] = [];
+  for (const url of urls) {
+    try {
+      const provider = new RpcProvider({ nodeUrl: url });
+      const chainId = await provider.getChainId();
+      return { provider, url, chainId };
+    } catch (e) {
+      errors.push(`${url}: ${e instanceof Error ? e.message : String(e)}`);
+    }
+  }
+  throw new Error(`no RPC endpoint reachable:\n  ${errors.join('\n  ')}`);
+}

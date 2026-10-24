@@ -1,0 +1,103 @@
+name: Learn
+
+# Daily: verify live contracts/dungeons, snapshot the leaderboard, learn from top players' on-chain builds, then
+# re-tune the policies in simulation and commit the improved ones:
+#   policy/policy.json   mainnet (V2 rules): maximize P(reaching levels 40-46) - the leaderboard top, not the mean
+#   policy/practice.json practice games (no item specials): tuned per dungeon, adopted only if it wins on the site engine
+on:
+  schedule:
+    - cron: '41 4 * * *'
+  workflow_dispatch:
+    inputs:
+      generations:
+        description: CMA-ES generations (tail tuning of the mainnet policy)
+        default: '3'
+      games:
+        description: stage-0 games per candidate (multilevel splitting)
+        default: '800'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: bot-data
+  cancel-in-progress: false
+
+jobs:
+  learn:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    env:
+      BOT_DATA_DIR: botdata/data
+      MAINNET_ACCOUNT_ADDRESS: ${{ vars.MAINNET_ACCOUNT_ADDRESS }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: scripts/data-branch.sh checkout
+
+      - name: Discover live contracts and dungeons
+        continue-on-error: true
+        run: npm run discover -- --out botdata/data/discovery
+
+      - name: Leaderboard
+        continue-on-error: true
+        run: npm run leaderboard -- --data botdata/data --limit 200
+
+      - name: Learn from top players
+        continue-on-error: true
+        run: npm run learn -- --data botdata/data --limit 40
+
+      - name: Tune mainnet policy (V2 rules, deep-level objective)
+        # an improved policy is saved as soon as a validation adopts it, so a timeout keeps what was found
+        continue-on-error: true
+        timeout-minutes: 180
+        run: >-
+          npm run tune -- --objective tail --dungeon default:mainnet
+          --generations "${{ inputs.generations || '3' }}" --games "${{ inputs.games || '800' }}" --effort 400
+          --levels 10,20,30,35,40,43,46 --seed ${{ github.run_number }}
+
+      - name: Tune dungeon policies (practice rules)
+        continue-on-error: true
+        run: |
+          for d in ${{ vars.TUNE_DUNGEONS || 'ronke' }}; do
+            base="policy/$d.json"; [ -f "$base" ] || base="policy/practice.json"; [ -f "$base" ] || base="policy/policy.json"
+            cp "$base" "policy/$d.candidate.json"
+            npm run tune -- --dungeon "$d" --policy "policy/$d.candidate.json" --generations 12 --games 400 --objective blend --seed ${{ github.run_number }}
+            # adopt only if the candidate also wins on the official site engine (practice games)
+            npm run bot -- validate --dungeon "$d" --candidate "policy/$d.candidate.json" --baseline "$base" --games 150 --adopt "policy/$d.json" --data botdata/data || true
+            rm -f "policy/$d.candidate.json"
+          done
+
+      - name: Validate and commit policy
+        run: |
+          npm test
+          git config user.name loot-survivor-bot
+          git config user.email loot-survivor-bot@users.noreply.github.com
+          git add policy/
+          if git diff --cached --quiet; then echo "policy unchanged"; else
+            git commit -m "Policy update from daily learning run ${{ github.run_number }}"
+            for i in 1 2 3 4; do git push origin "HEAD:${GITHUB_REF_NAME}" && break; sleep $((2 ** i)); git pull --rebase origin "${GITHUB_REF_NAME}"; done
+          fi
+
+      - name: Summaries
+        if: always()
+        run: npm run site -- --data botdata/data
+
+      - name: Push data
+        if: always()
+        run: scripts/data-branch.sh push "learn run ${{ github.run_id }}"
+
+  pages:
+    needs: learn
+    if: always()
+    uses: ./.github/workflows/pages.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write

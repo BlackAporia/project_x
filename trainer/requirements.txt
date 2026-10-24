@@ -1,0 +1,3 @@
+# GPU build: pip install torch --index-url https://download.pytorch.org/whl/cu124  (RTX 30xx: CUDA 12.x)
+torch>=2.3
+numpy>=1.26
