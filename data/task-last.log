@@ -1,55 +1,17 @@
-== bot v2-inspect --game 197987108336887595175184694778031091060932289752133940141854870732802
+== bot dungeon-settings --ids 0,51 --core 0x023f86f5b4702f6ba114b82fb73448c58aad8f37a28b508b80bf129ee1edc405
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts v2-inspect --game 197987108336887595175184694778031091060932289752133940141854870732802
+> node --import tsx src/cli.ts dungeon-settings --ids 0,51 --core 0x023f86f5b4702f6ba114b82fb73448c58aad8f37a28b508b80bf129ee1edc405
 
-v2-inspect: core 0x011afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b, entropy offset 0, 1 game(s)
-  game 197987108336887595175184694778031091060932289752133940141854870732802: 0 packets, rolling ok, {"level":1,"xp":0,"health":0,"gold":0,"beastHealth":0,"statUpgrades":0,"stats":{"strength":0,"dexterity":0,"vitality":0,"intelligence":0,"wisdom":0,"charisma":0,"luck":0},"weapon":"None","levelSalt":16} 
-saved botdata/data/v2-inspect.json
-== bot play --mode mainnet --game 904625697166532776746652061824565847215142356634039838773184648128981902145 --max-games 1 --minutes 3
-
-> loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts play --mode mainnet --game 904625697166532776746652061824565847215142356634039838773184648128981902145 --max-games 1 --minutes 3
-
-[mainnet] game 904625697166532776746652061824565847215142356634039838773184648128981902145: resuming at level 2 (6 xp)
-  [dry] L2 xp=6 hp=121/130 -> flee | Flee from Cyclops (L5 T3): P(escape)=100.0% P(death)=0.0%; flee value 207.6 vs attack 203.9
-[mainnet] game 904625697166532776746652061824565847215142356634039838773184648128981902145 dry_run: level 2, 6 xp
-[mainnet] run finished: 0 games, best 0 xp, mean 0, errors 0
-== bot reach --dungeon default:mainnet --games 2000 --effort 1000 --levels 10,20,30,35,40,43,46,48,50,51 --seed 2 --out reach-future.json --policy policy/policy.json,policy/candidates/future.json,policy/practice.json
+settings #0: {"details":{"error":"no settings_details"},"settings":{"error":"no get_settings"},"actionSettings":{"error":"no get_action_settings"}}
+settings #51: {"details":{"error":"no settings_details"},"settings":{"error":"no get_settings"},"actionSettings":{"error":"no get_action_settings"}}
+saved botdata/data/dungeon-settings.json (2 settings, core 0x023f86f5b4702f6ba114b82fb73448c58aad8f37a28b508b80bf129ee1edc405)
+== bot dungeon-settings --ids 51,50,52
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts reach --dungeon default:mainnet --games 2000 --effort 1000 --levels 10,20,30,35,40,43,46,48,50,51 --seed 2 --out reach-future.json --policy policy/policy.json,policy/candidates/future.json,policy/practice.json
+> node --import tsx src/cli.ts dungeon-settings --ids 51,50,52
 
-policy/policy.json [leader-2026-10-23] (default:mainnet, 182s)
-  L10  1567/2000  P(reach)=7.83e-1  log10=-0.11±0.01
-  L20  244/1000  P(reach)=1.91e-1  log10=-0.72±0.02
-  L30  194/1000  P(reach)=3.72e-2  log10=-1.43±0.04
-  L35  348/1000  P(reach)=1.29e-2  log10=-1.89±0.04
-  L40  249/1000  P(reach)=3.23e-3  log10=-2.49±0.05
-  L43  184/1000  P(reach)=5.95e-4  log10=-3.23±0.06
-  L46  57/1000  P(reach)=3.42e-5  log10=-4.47±0.08
-  L48  25/1000  P(reach)=8.70e-7  log10=-6.06±0.12
-  L50  9/1000  P(reach)=8.26e-9  log10=-8.08±0.18
-  L51  27/750  P(reach)=3.02e-10  log10=-9.52±0.20
-policy/candidates/future.json [leader-future] (default:mainnet, 170s)
-  L10  1557/2000  P(reach)=7.78e-1  log10=-0.11±0.01
-  L20  263/1000  P(reach)=2.05e-1  log10=-0.69±0.02
-  L30  165/1000  P(reach)=3.39e-2  log10=-1.47±0.04
-  L35  363/1000  P(reach)=1.23e-2  log10=-1.91±0.04
-  L40  211/1000  P(reach)=2.60e-3  log10=-2.59±0.05
-  L43  153/1000  P(reach)=3.99e-4  log10=-3.40±0.06
-  L46  27/1000  P(reach)=1.09e-5  log10=-4.96±0.10
-  L48  8/1000  P(reach)=9.30e-8  log10=-7.03±0.18
-  L50  0/1000  P(reach)=4.64e-11  log10=-10.33±0.47
-  L51  0/0  P(reach)=2.32e-11  log10=-10.63±0.56
-policy/practice.json [tuned-2026-10-22-g24] (default:mainnet, 54s)
-  L10  1571/2000  P(reach)=7.85e-1  log10=-0.10±0.01
-  L20  270/1000  P(reach)=2.12e-1  log10=-0.67±0.02
-  L30  159/1000  P(reach)=3.38e-2  log10=-1.47±0.04
-  L35  112/1000  P(reach)=3.80e-3  log10=-2.42±0.05
-  L40  21/1000  P(reach)=8.16e-5  log10=-4.09±0.11
-  L43  13/1000  P(reach)=1.10e-6  log10=-5.96±0.16
-  L46  0/750  P(reach)=7.33e-10  log10=-9.13±0.46
-  L48  0/0  P(reach)=3.66e-10  log10=-9.44±0.56
-  L50  0/0  P(reach)=1.83e-10  log10=-9.74±0.63
-  L51  0/0  P(reach)=9.16e-11  log10=-10.04±0.70
+settings #51: {"details":{"name":"","description":"","settings":[{"name":"433321119326202570340158875351413864","value":"48"},{"name":"100890435121534990691620944","value":"48"},{"name":"6611955556124917149965787032676","value":"48"},{"name":"28398132876162011649813448929350859060328","value":"48"},{"name":"7269922016297474982351965145594107771057273","value":"48"},{"name":"2839813287616201164981366200809003898
+settings #50: {"details":{"name":"","description":"","settings":[{"name":"433321119326202570340158875351413864","value":"48"},{"name":"100890435121534990691620944","value":"48"},{"name":"6611955556124917149965787032676","value":"48"},{"name":"28398132876162011649813448929350859060328","value":"48"},{"name":"7269922016297474982351965145594107771057273","value":"48"},{"name":"2839813287616201164981366200809003898
+settings #52: {"details":{"name":"","description":"","settings":[{"name":"433321119326202570340158875351413864","value":"48"},{"name":"100890435121534990691620944","value":"48"},{"name":"6611955556124917149965787032676","value":"48"},{"name":"28398132876162011649813448929350859060328","value":"48"},{"name":"7269922016297474982351965145594107771057273","value":"48"},{"name":"2839813287616201164981366200809003898
+saved botdata/data/dungeon-settings.json (3 settings, core 0x011afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b)
