@@ -89,6 +89,6 @@
     "objective": "tail",
     "rules": "default:mainnet",
     "updated": "2026-10-24T00:09:50.370Z",
-    "reach": "default:mainnet seed 6 (3000 games, 1500/stage): P(L46)=6.1e-5, P(L48)=3.6e-6, P(L50)=1.1e-7, P(L51)=7.6e-9"
+    "reach": "default:mainnet, 3000 games + 1500/stage, seeds 6-9: P(L46)=6e-5..1e-4, P(L48)=4e-6..8e-6, P(L51)=8e-9..2.2e-8"
   }
 }
