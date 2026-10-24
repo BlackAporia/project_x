@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-24T11:01:57.496Z",
+ "updated": "2026-10-24T15:58:22.822Z",
  "modes": {
   "mainnet": {
    "games": 13,
@@ -169,66 +169,66 @@
    ]
   },
   "practice": {
-   "games": 1450,
+   "games": 1650,
    "inProgress": 0,
    "errors": 0,
-   "best": 1062,
-   "bestLevel": 32,
-   "mean": 304,
-   "median": 259,
-   "p90": 604,
-   "last20Mean": 434,
+   "best": 1190,
+   "bestLevel": 34,
+   "mean": 317,
+   "median": 271,
+   "p90": 625,
+   "last20Mean": 404,
    "transactions": 0,
    "reverts": 0,
    "predictionAccuracy": null,
    "deathCauses": [
     [
      "obstacle",
-     336
+     384
     ],
     [
      "Phoenix",
-     32
-    ],
-    [
-     "Minotaur",
-     32
+     38
     ],
     [
      "Dragon",
-     31
+     38
     ],
     [
-     "Griffin",
-     29
-    ],
-    [
-     "ambush by Dragon",
-     29
-    ],
-    [
-     "Chupacabra",
-     28
+     "Minotaur",
+     36
     ],
     [
      "Qilin",
-     27
+     35
     ],
     [
-     "ambush by Griffin",
-     27
+     "Griffin",
+     34
+    ],
+    [
+     "Chupacabra",
+     30
     ],
     [
      "Basilisk",
-     27
+     30
     ],
     [
-     "Warlock",
-     25
+     "ambush by Dragon",
+     30
+    ],
+    [
+     "ambush by Griffin",
+     29
     ],
     [
      "Jiangshi",
-     25
+     29
+    ],
+    [
+     "Warlock",
+     27
     ]
    ],
    "levels": {
@@ -237,33 +237,34 @@
     "3": 3,
     "4": 6,
     "5": 13,
-    "6": 28,
-    "7": 36,
-    "8": 45,
-    "9": 70,
-    "10": 56,
-    "11": 79,
-    "12": 85,
-    "13": 80,
-    "14": 103,
-    "15": 94,
-    "16": 80,
-    "17": 100,
-    "18": 89,
-    "19": 64,
-    "20": 98,
-    "21": 63,
-    "22": 48,
-    "23": 40,
-    "24": 34,
-    "25": 42,
-    "26": 29,
-    "27": 19,
-    "28": 14,
-    "29": 13,
-    "30": 7,
-    "31": 1,
-    "32": 3
+    "6": 29,
+    "7": 37,
+    "8": 47,
+    "9": 71,
+    "10": 62,
+    "11": 85,
+    "12": 97,
+    "13": 92,
+    "14": 109,
+    "15": 108,
+    "16": 93,
+    "17": 107,
+    "18": 102,
+    "19": 75,
+    "20": 115,
+    "21": 77,
+    "22": 60,
+    "23": 43,
+    "24": 46,
+    "25": 53,
+    "26": 35,
+    "27": 26,
+    "28": 16,
+    "29": 15,
+    "30": 10,
+    "31": 6,
+    "32": 3,
+    "34": 1
    },
    "bestOverTime": [
     {
@@ -301,9 +302,21 @@
     {
      "t": "2026-10-24T11:01:43.688Z",
      "xp": 1062
+    },
+    {
+     "t": "2026-10-24T15:58:19.624Z",
+     "xp": 1190
     }
    ],
    "top": [
+    {
+     "id": "483617",
+     "xp": 1190,
+     "level": 34,
+     "deathCause": "Juggernaut",
+     "ended": "2026-10-24T15:58:19.624Z",
+     "policy": "tuned-2026-10-22-g24"
+    },
     {
      "id": "698621",
      "xp": 1062,
@@ -329,6 +342,22 @@
      "policy": "tuned-2026-10-22-g24"
     },
     {
+     "id": "483522",
+     "xp": 1015,
+     "level": 31,
+     "deathCause": "ambush by Harpy",
+     "ended": "2026-10-24T15:58:11.334Z",
+     "policy": "tuned-2026-10-22-g24"
+    },
+    {
+     "id": "483512",
+     "xp": 997,
+     "level": 31,
+     "deathCause": "Kitsune",
+     "ended": "2026-10-24T15:58:10.511Z",
+     "policy": "tuned-2026-10-22-g24"
+    },
+    {
      "id": "196448",
      "xp": 988,
      "level": 31,
@@ -337,51 +366,27 @@
      "policy": "tuned-2026-10-22-g24"
     },
     {
-     "id": "370372",
-     "xp": 944,
-     "level": 30,
-     "deathCause": "Ent",
-     "ended": "2026-10-23T06:36:12.666Z",
+     "id": "483553",
+     "xp": 979,
+     "level": 31,
+     "deathCause": "obstacle",
+     "ended": "2026-10-24T15:58:14.163Z",
      "policy": "tuned-2026-10-22-g24"
     },
     {
-     "id": "196410",
-     "xp": 943,
-     "level": 30,
-     "deathCause": "ambush by Typhon",
-     "ended": "2026-10-23T07:23:31.780Z",
+     "id": "483514",
+     "xp": 978,
+     "level": 31,
+     "deathCause": "ambush by Gorgon",
+     "ended": "2026-10-24T15:58:10.737Z",
      "policy": "tuned-2026-10-22-g24"
     },
     {
-     "id": "285657",
-     "xp": 931,
-     "level": 30,
-     "deathCause": "Jiangshi",
-     "ended": "2026-10-24T08:24:46.712Z",
-     "policy": "tuned-2026-10-22-g24"
-    },
-    {
-     "id": "196365",
-     "xp": 929,
-     "level": 30,
-     "deathCause": "Ammit",
-     "ended": "2026-10-23T07:23:27.784Z",
-     "policy": "tuned-2026-10-22-g24"
-    },
-    {
-     "id": "196256",
-     "xp": 912,
-     "level": 30,
-     "deathCause": "Titan",
-     "ended": "2026-10-23T07:23:18.319Z",
-     "policy": "tuned-2026-10-22-g24"
-    },
-    {
-     "id": "285666",
-     "xp": 912,
-     "level": 30,
-     "deathCause": "ambush by Nue",
-     "ended": "2026-10-24T08:24:47.739Z",
+     "id": "483614",
+     "xp": 961,
+     "level": 31,
+     "deathCause": "obstacle",
+     "ended": "2026-10-24T15:58:19.312Z",
      "policy": "tuned-2026-10-22-g24"
     }
    ]
@@ -622,6 +627,18 @@
    "policy": "tuned-2026-10-22-g24",
    "dungeon": "Ronkeverse Large #7",
    "ended": "2026-10-24T11:01:55.921Z"
+  },
+  {
+   "id": "2026-10-24T15-58-03-441Z",
+   "mode": "practice",
+   "started": "2026-10-24T15:58:03.441Z",
+   "games": 200,
+   "bestXp": 1190,
+   "meanXp": 411,
+   "errors": 0,
+   "policy": "tuned-2026-10-22-g24",
+   "dungeon": "Ronkeverse Large #7",
+   "ended": "2026-10-24T15:58:21.523Z"
   }
  ],
  "policy": {
