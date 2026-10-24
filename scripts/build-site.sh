@@ -3,7 +3,8 @@
 set -euo pipefail
 OUT="${1:-_site}"
 rm -rf "$OUT" && mkdir -p "$OUT/data"
-cp site/index.html site/style.css site/app.js "$OUT/"
+cp site/index.html site/style.css site/app.js site/control.js site/bot-config.json "$OUT/"
+cp -r site/vendor "$OUT/vendor"
 [ -d site/data ] && cp -r site/data/. "$OUT/data/" || true
 if git ls-remote --exit-code --heads origin bot-data >/dev/null 2>&1; then
   git fetch -q --depth=1 origin bot-data

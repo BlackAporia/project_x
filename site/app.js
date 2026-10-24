@@ -16,6 +16,11 @@ const ago = (iso) => {
 const short = (a) => (a ? `${a.slice(0, 6)}…${a.slice(-4)}` : '');
 
 async function load(name, fallback) {
+  // control.js reads the bot's data straight from the bot-data branch (no wait for the Pages rebuild)
+  if (window.botData?.load) {
+    const v = await window.botData.load(name);
+    if (v !== undefined) return v;
+  }
   try {
     const r = await fetch(`data/${name}?t=${Date.now()}`, { cache: 'no-store' });
     if (!r.ok) return fallback;
@@ -485,3 +490,4 @@ addEventListener('resize', () => {
 });
 refresh();
 setInterval(refresh, 60_000);
+addEventListener('bot:refresh', () => refresh());

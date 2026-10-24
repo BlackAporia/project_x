@@ -1,0 +1,43 @@
+{
+  "keychainUrl": "https://x.cartridge.gg",
+  "rpcUrl": "https://api.cartridge.gg/x/starknet/mainnet",
+  "chainId": "0x534e5f4d41494e",
+  "policies": {
+    "verified": false,
+    "contracts": {
+      "0x011afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b": {
+        "name": "Loot Survivor game core",
+        "description": "Play and settle your Loot Survivor games",
+        "methods": [
+          {
+            "name": "Commit Actions",
+            "entrypoint": "commit_actions",
+            "description": "Submit game moves",
+            "authorized": true
+          },
+          {
+            "name": "Verify Game",
+            "entrypoint": "verify_game",
+            "description": "Settle a finished game so its score counts",
+            "authorized": true
+          }
+        ]
+      }
+    }
+  },
+  "dungeons": [
+    "default",
+    "ronke",
+    "beastmode",
+    "lootbag",
+    "greed",
+    "karats",
+    "raidboss"
+  ],
+  "workflows": {
+    "bot": "bot.yml",
+    "learn": "learn.yml",
+    "pages": "pages.yml"
+  },
+  "secret": "CARTRIDGE_SESSION_B64"
+}

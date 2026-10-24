@@ -2,7 +2,7 @@
 //   1. once, on your own computer: `npm run authorize` -> approve the session in the browser
 //   2. store .session/cartridge/session.json as the GitHub secret CARTRIDGE_SESSION_B64 (base64)
 // The session key can only call commit_actions / verify_game on the game core (see botPolicies) and expires; the Controller owner key never leaves Cartridge. Nothing secret is ever printed or logged.
-import { existsSync, mkdirSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import type { Call } from 'starknet';
 import { MAINNET } from './config.ts';
@@ -39,7 +39,40 @@ export function botPolicies() {
   };
 }
 
+/** The policies object exactly as the session provider stores and sends it (methods marked authorized). */
+export function parsedBotPolicies() {
+  const p = botPolicies();
+  return {
+    verified: false,
+    contracts: Object.fromEntries(
+      Object.entries(p.contracts).map(([address, c]) => [address, { ...c, methods: c.methods.map((m) => ({ ...m, authorized: true })) }]),
+    ),
+  };
+}
+
+/**
+ * Sessions approved on the bot's website are stored as {signer, session (raw keychain registration), policies}.
+ * Fill in what the Node session provider derives itself after the keychain callback (it needs the wasm
+ * signerToGuid, which the website does not load).
+ */
+export async function normalizeSessionFile(): Promise<void> {
+  const file = join(SESSION_DIR, 'session.json');
+  if (!existsSync(file)) return;
+  const data = JSON.parse(readFileSync(file, 'utf8')) as { signer?: { pubKey?: string }; session?: Record<string, string> };
+  const s = data.session;
+  if (!s || s.sessionKeyGuid || !data.signer?.pubKey) return;
+  const { signerToGuid } = await import('@cartridge/controller-wasm');
+  const pub = data.signer.pubKey.startsWith('0x') ? data.signer.pubKey : `0x${data.signer.pubKey}`;
+  s.address = String(s.address).toLowerCase();
+  s.ownerGuid = String(s.ownerGuid).toLowerCase();
+  s.guardianKeyGuid = '0x0';
+  s.metadataHash = '0x0';
+  s.sessionKeyGuid = String(signerToGuid({ starknet: { privateKey: pub } } as never));
+  writeFileSync(file, JSON.stringify(data, null, 2), { mode: 0o600 });
+}
+
 export async function sessionProvider() {
+  await normalizeSessionFile();
   const mod = await import('@cartridge/controller/session/node');
   const SessionProvider = mod.default;
   const usePreset = process.env.CARTRIDGE_USE_PRESET === 'true';

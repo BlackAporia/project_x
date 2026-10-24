@@ -21,6 +21,7 @@ const COMMANDS: Record<string, string> = {
   'v2-inspect': 'Validate the V2 commit-reveal read path on live mainnet games (no account needed)',
   validate: 'A/B a candidate policy on the official site engine (practice) and adopt it only if better',
   'dungeon-settings': 'Read dungeon game settings (e.g. Ronke Casino #7) from the V2 game core',
+  'site-config': 'Write site/bot-config.json (session policies and RPC for approving the bot on the website)',
   reach: 'Probability of reaching deep levels (multilevel splitting) for one or more policies (--policy a.json,b.json)',
 };
 
@@ -233,6 +234,11 @@ async function main(): Promise<void> {
         seed: num(values.seed, 1),
         out: str(values.out, 'reach-compare.json'),
       });
+      break;
+    }
+    case 'site-config': {
+      const { runSiteConfigCommand } = await import('./commands/site-config.ts');
+      runSiteConfigCommand();
       break;
     }
     case 'site': {

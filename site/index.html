@@ -19,6 +19,72 @@
 </header>
 
 <main>
+  <section class="card ctl" id="control" aria-labelledby="ctlTitle">
+    <div class="card-head"><h2 id="ctlTitle">Керування ботом</h2><span class="muted small">гаманець · режим · запуски</span></div>
+    <div class="ctl-grid">
+      <article class="ctl-col">
+        <h3>1. Доступ до GitHub</h3>
+        <p class="muted small">Бот працює в GitHub Actions цього репозиторію, а сайт керує ним через ваш токен. Токен
+          зберігається лише в цьому браузері й надсилається тільки на api.github.com.</p>
+        <label class="ctl-field">Репозиторій <input id="ctlRepo" autocomplete="off" spellcheck="false"></label>
+        <label class="ctl-field">Fine‑grained токен <input id="ctlToken" type="password" autocomplete="off" placeholder="github_pat_…"></label>
+        <label class="ctl-switch"><input type="checkbox" id="ctlRemember"> Запам’ятати в цьому браузері</label>
+        <div class="ctl-actions">
+          <button class="btn primary" id="ctlSaveToken">Зберегти</button>
+          <button class="btn" id="ctlForget" hidden>Забути токен</button>
+          <span class="muted small" id="ctlTokenState"></span>
+        </div>
+        <details class="small">
+          <summary>Як створити токен</summary>
+          <ol>
+            <li><a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">GitHub → Fine‑grained tokens → Generate</a></li>
+            <li>Repository access: <b>Only select repositories</b> → цей репозиторій.</li>
+            <li>Permissions → Repository: <b>Actions</b>, <b>Secrets</b>, <b>Variables</b> — Read and write.</li>
+            <li>Скопіюйте токен сюди. Термін дії обирайте короткий (30–90 днів).</li>
+          </ol>
+        </details>
+        <p id="ctlAccessNote" class="ctl-note"></p>
+
+        <h3>2. Гаманець Cartridge</h3>
+        <p class="muted small">Ви підтверджуєте в Cartridge сесію з мінімальними правами: лише ходи
+          (<code>commit_actions</code>) і зарахування результату (<code>verify_game</code>) у Loot Survivor. Без
+          переказів. Ключ сесії одразу шифрується в секрет репозиторію.</p>
+        <div id="ctlWallet"></div>
+        <div class="ctl-actions"><button class="btn primary" id="ctlConnect">Підключити Cartridge</button></div>
+        <p id="ctlWalletNote" class="ctl-note"></p>
+      </article>
+
+      <article class="ctl-col">
+        <h3>3. Запуск бота</h3>
+        <label class="ctl-field">Режим
+          <select id="ctlMode">
+            <option value="practice">Practice (безкоштовно, без транзакцій)</option>
+            <option value="mainnet">Mainnet (ваші ігри)</option>
+            <option value="both">Practice + Mainnet</option>
+          </select>
+        </label>
+        <label class="ctl-field">Practice‑підземелля <select id="ctlDungeon"></select></label>
+        <div class="ctl-row">
+          <label class="ctl-field">Хвилин <input id="ctlMinutes" type="number" min="5" max="300" value="40"></label>
+          <label class="ctl-field">Макс. ігор <input id="ctlMaxGames" type="number" min="1" max="1000" value="50"></label>
+        </div>
+        <label class="ctl-switch" id="ctlLiveWrap" hidden><input type="checkbox" id="ctlLive"> Реальні транзакції (без цього — dry run: бот лише показує рішення)</label>
+        <div class="ctl-actions">
+          <button class="btn primary" id="ctlRun">Запустити</button>
+          <button class="btn" id="ctlLearn">Навчання зараз</button>
+        </div>
+        <h3>Розклад</h3>
+        <div id="ctlSchedule"></div>
+        <p id="ctlRunNote" class="ctl-note"></p>
+      </article>
+
+      <article class="ctl-col">
+        <h3>4. Запуски</h3>
+        <div id="ctlRuns" class="table-wrap"><p class="muted">Завантаження…</p></div>
+      </article>
+    </div>
+  </section>
+
   <section class="kpis" id="kpis" aria-label="Ключові показники"></section>
 
   <section class="grid2">
@@ -93,5 +159,6 @@
 <footer class="muted small">Дані оновлюються GitHub Actions після кожного запуску бота · <span id="updated"></span></footer>
 <div id="tip" class="tip" role="tooltip" hidden></div>
 <script src="app.js"></script>
+<script type="module" src="control.js"></script>
 </body>
 </html>
