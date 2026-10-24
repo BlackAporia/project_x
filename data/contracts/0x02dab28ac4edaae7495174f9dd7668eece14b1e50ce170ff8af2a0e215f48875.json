@@ -1,0 +1,723 @@
+{
+ "address": "0x02dab28ac4edaae7495174f9dd7668eece14b1e50ce170ff8af2a0e215f48875",
+ "updated": "2026-10-24T06:53:51.120Z",
+ "classHash": "0x007b546a670c786c6905bfe9ec6e2c5aa50435ab4d37e1e9e64e613d9b6c3eb0",
+ "functions": [
+  {
+   "name": "enter_dungeon",
+   "inputs": [
+    {
+     "name": "proof",
+     "type": "core::array::Span::<core::felt252>"
+    },
+    {
+     "name": "leaf",
+     "type": "death_mountain::dungeons::merkle::leaf::LootBagLeafData"
+    },
+    {
+     "name": "verification",
+     "type": "death_mountain::dungeons::loot_dungeon::VerificationMethod"
+    },
+    {
+     "name": "recipient",
+     "type": "core::option::Option::<core::starknet::contract_address::ContractAddress>"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::felt252"
+    }
+   ],
+   "state": "external"
+  },
+  {
+   "name": "enter_dungeon_batch",
+   "inputs": [
+    {
+     "name": "claims",
+     "type": "core::array::Span::<death_mountain::dungeons::loot_dungeon::DungeonClaim>"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::array::Span::<core::felt252>"
+    }
+   ],
+   "state": "external"
+  },
+  {
+   "name": "mint_liquidity",
+   "inputs": [
+    {
+     "name": "to",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "bag_ids",
+     "type": "core::array::Span::<core::integer::u64>"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "claim_collectable",
+   "inputs": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252"
+    },
+    {
+     "name": "encounter_xp",
+     "type": "core::integer::u16"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u256"
+    }
+   ],
+   "state": "external"
+  },
+  {
+   "name": "stake_beast",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::integer::u256"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "unsafe_stake_beast",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::integer::u256"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "transform_beast",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::integer::u256"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u256"
+    }
+   ],
+   "state": "external"
+  },
+  {
+   "name": "withdraw_beast",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::integer::u256"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "set_root",
+   "inputs": [
+    {
+     "name": "root",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "set_root_setter",
+   "inputs": [
+    {
+     "name": "root_setter",
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "set_registry_address",
+   "inputs": [
+    {
+     "name": "registry_address",
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "set_root_grace_period",
+   "inputs": [
+    {
+     "name": "grace_period",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "set_max_signature_age",
+   "inputs": [
+    {
+     "name": "max_signature_age",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "set_dungeon_name",
+   "inputs": [
+    {
+     "name": "dungeon_name",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "set_entry_proof_config",
+   "inputs": [
+    {
+     "name": "config",
+     "type": "death_mountain::commit_reveal::proof::ProofConfig"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "entry_proof_config",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "death_mountain::commit_reveal::proof::ProofConfig"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "set_settings_id",
+   "inputs": [
+    {
+     "name": "settings_id",
+     "type": "core::integer::u32"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "set_game_core_address",
+   "inputs": [
+    {
+     "name": "game_core_address",
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "set_stark_loot_address",
+   "inputs": [
+    {
+     "name": "stark_loot_address",
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "set_entry_cooldown",
+   "inputs": [
+    {
+     "name": "entry_cooldown",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "set_soulbound",
+   "inputs": [
+    {
+     "name": "soulbound",
+     "type": "core::bool"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "set_beast_nft_address",
+   "inputs": [
+    {
+     "name": "beast_nft_address",
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "set_transformation_period",
+   "inputs": [
+    {
+     "name": "transformation_period",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "close_dungeon",
+   "inputs": [],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "open_dungeon",
+   "inputs": [],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "get_root",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::felt252"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_previous_root",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::felt252"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "previous_root_valid_until",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u64"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "root_grace_period",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u64"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "max_signature_age",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u64"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "dungeon_name",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::felt252"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "root_setter",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "registry_address",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "leaf_hash",
+   "inputs": [
+    {
+     "name": "leaf",
+     "type": "death_mountain::dungeons::merkle::leaf::LootBagLeafData"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::felt252"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "entry_message",
+   "inputs": [
+    {
+     "name": "bag_id",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "player",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "signed_at",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::byte_array::ByteArray"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "entry_cooldown",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u64"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "last_entry_at",
+   "inputs": [
+    {
+     "name": "bag_id",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u64"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "entry_available_at",
+   "inputs": [
+    {
+     "name": "bag_id",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u64"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "entry_available_at_batch",
+   "inputs": [
+    {
+     "name": "bag_ids",
+     "type": "core::array::Span::<core::integer::u64>"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::array::Span::<core::integer::u64>"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "can_enter",
+   "inputs": [
+    {
+     "name": "bag_id",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "settings_id",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u32"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "game_core_address",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "stark_loot_address",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "soulbound",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "is_closed",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "beast_nft_address",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "transformation_period",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u64"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "beast_stake",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::integer::u256"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "death_mountain::dungeons::loot::beast_nft::BeastStake"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "transformation_reservations",
+   "inputs": [
+    {
+     "name": "beast_id",
+     "type": "core::integer::u8"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u16"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "unsafe_stakes",
+   "inputs": [
+    {
+     "name": "beast_id",
+     "type": "core::integer::u8"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u16"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "mega_beasts",
+   "inputs": [
+    {
+     "name": "beast_id",
+     "type": "core::integer::u8"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u16"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "next_transformation_period",
+   "inputs": [
+    {
+     "name": "beast_id",
+     "type": "core::integer::u8"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u64"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "is_beast_collectable",
+   "inputs": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252"
+    },
+    {
+     "name": "beast_id",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "prefix",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "suffix",
+     "type": "core::integer::u8"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "upgrade",
+   "inputs": [
+    {
+     "name": "new_class_hash",
+     "type": "core::starknet::class_hash::ClassHash"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "owner",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "transfer_ownership",
+   "inputs": [
+    {
+     "name": "new_owner",
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "renounce_ownership",
+   "inputs": [],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "transferOwnership",
+   "inputs": [
+    {
+     "name": "newOwner",
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "renounceOwnership",
+   "inputs": [],
+   "outputs": [],
+   "state": "external"
+  }
+ ],
+ "calls": {}
+}

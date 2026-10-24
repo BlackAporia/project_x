@@ -1,0 +1,296 @@
+{
+ "address": "0x05b73fb61b1d43327bf6bc8eb5ba1f83ae5ff8a798edcb575a04e6d6f365aed7",
+ "updated": "2026-10-24T06:53:51.245Z",
+ "classHash": "0x05b73fb61b1d43327bf6bc8eb5ba1f83ae5ff8a798edcb575a04e6d6f365aed7",
+ "isClass": true,
+ "functions": [
+  {
+   "name": "__validate__",
+   "inputs": [
+    {
+     "name": "calls",
+     "type": "core::array::Array::<core::starknet::account::Call>"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::felt252"
+    }
+   ],
+   "state": "external"
+  },
+  {
+   "name": "__execute__",
+   "inputs": [
+    {
+     "name": "calls",
+     "type": "core::array::Array::<core::starknet::account::Call>"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "is_valid_signature",
+   "inputs": [
+    {
+     "name": "hash",
+     "type": "core::felt252"
+    },
+    {
+     "name": "signature",
+     "type": "core::array::Array::<core::felt252>"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::felt252"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "__validate_deploy__",
+   "inputs": [
+    {
+     "name": "class_hash",
+     "type": "core::felt252"
+    },
+    {
+     "name": "contract_address_salt",
+     "type": "core::felt252"
+    },
+    {
+     "name": "owner",
+     "type": "core::starknet::eth_address::EthAddress"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::felt252"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "execute_from_outside_v2",
+   "inputs": [
+    {
+     "name": "outside_execution",
+     "type": "openzeppelin_interfaces::account::src9::OutsideExecution"
+    },
+    {
+     "name": "signature",
+     "type": "core::array::Span::<core::felt252>"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::array::Array::<core::array::Span::<core::felt252>>"
+    }
+   ],
+   "state": "external"
+  },
+  {
+   "name": "is_valid_outside_execution_nonce",
+   "inputs": [
+    {
+     "name": "nonce",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "revoke_session",
+   "inputs": [
+    {
+     "name": "session_key",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "revoke_all_sessions",
+   "inputs": [],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "get_owner",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::eth_address::EthAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_session",
+   "inputs": [
+    {
+     "name": "session_key",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "oz_session_account::interface::SessionRecord"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_session_fee_exceptions",
+   "inputs": [
+    {
+     "name": "session_key",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "oz_session_account::interface::SessionFeeExceptions"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_session_epoch",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u32"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_session_count",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u64"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_session_key",
+   "inputs": [
+    {
+     "name": "index",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::felt252"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "is_session_permitted",
+   "inputs": [
+    {
+     "name": "session_key",
+     "type": "core::felt252"
+    },
+    {
+     "name": "target",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "selector",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_version",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::felt252"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_execution_digest",
+   "inputs": [
+    {
+     "name": "hash",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u256"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_message_digest",
+   "inputs": [
+    {
+     "name": "hash",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u256"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_session_digest",
+   "inputs": [
+    {
+     "name": "authorization",
+     "type": "oz_session_account::interface::SessionAuthorization"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u256"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "supports_interface",
+   "inputs": [
+    {
+     "name": "interface_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  }
+ ],
+ "calls": {}
+}

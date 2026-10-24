@@ -1,0 +1,86 @@
+{
+ "address": "0x00d042acfc0160b6d725281eca1fb856c3e08ed46fbc20405b4d32d5f3b8ac02",
+ "updated": "2026-10-24T06:53:51.047Z",
+ "classHash": "0x013b2223aa773da7496f693bfc84ba196333a61eaf7f944c80f369a9bb377c5d",
+ "functions": [
+  {
+   "name": "enter_dungeon",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::felt252"
+    }
+   ],
+   "state": "external"
+  },
+  {
+   "name": "set_settings_id",
+   "inputs": [
+    {
+     "name": "settings_id",
+     "type": "core::integer::u32"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "close_dungeon",
+   "inputs": [],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "set_game_core_address",
+   "inputs": [
+    {
+     "name": "game_core_address",
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "settings_id",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u32"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "is_closed",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "game_core_address",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "owner",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  }
+ ],
+ "calls": {}
+}
