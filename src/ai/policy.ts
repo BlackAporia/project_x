@@ -272,6 +272,19 @@ export class Policy {
       }
       if (best.id !== cur.id) changes.push(best.id);
     }
+    // necklace matching the armor worn after the swap (+3% armor per greatness on each matching piece)
+    if (changes.some((id) => lootInfo(id).slot !== SLOT.Weapon)) {
+      const typeAt = (slot: number) => lootInfo((changes.map((id) => ({ id, slot: lootInfo(id).slot })).find((c) => c.slot === slot)?.id) ?? adv.equipment[slot].id).type;
+      const types = ARMOR_SLOTS.map(typeAt);
+      const neckValue = (it: Item) => {
+        const t = it.id === 1 ? TYPE.BladeHide : it.id === 2 ? TYPE.BludgeonMetal : it.id === 3 ? TYPE.MagicCloth : -1;
+        return greatness(it.xp) * types.filter((x) => x === t).length;
+      };
+      const curNeck = adv.equipment[SLOT.Neck];
+      let bestNeck = curNeck;
+      for (const it of bagItems) if (lootInfo(it.id).slot === SLOT.Neck && neckValue(it) > neckValue(bestNeck)) bestNeck = it;
+      if (bestNeck.id !== curNeck.id && curNeck.id !== 0) changes.push(bestNeck.id);
+    }
     if (changes.length === 0) return null;
     // exact evaluation: apply the equip with the engine (beast gets a free hit), average over the hit outcomes
     let after: GameState;
