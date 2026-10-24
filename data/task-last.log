@@ -1,7 +1,7 @@
-== bot contract --address 0x00d042acfc0160b6d725281eca1fb856c3e08ed46fbc20405b4d32d5f3b8ac02 --address 0x02dab28ac4edaae7495174f9dd7668eece14b1e50ce170ff8af2a0e215f48875 --address 0x5b73fb61b1d43327bf6bc8eb5ba1f83ae5ff8a798edcb575a04e6d6f365aed7
+== bot contract --address 0x00d042acfc0160b6d725281eca1fb856c3e08ed46fbc20405b4d32d5f3b8ac02 --call settings_id --call is_closed --call game_core_address
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts contract --address 0x00d042acfc0160b6d725281eca1fb856c3e08ed46fbc20405b4d32d5f3b8ac02 --address 0x02dab28ac4edaae7495174f9dd7668eece14b1e50ce170ff8af2a0e215f48875 --address 0x5b73fb61b1d43327bf6bc8eb5ba1f83ae5ff8a798edcb575a04e6d6f365aed7
+> node --import tsx src/cli.ts contract --address 0x00d042acfc0160b6d725281eca1fb856c3e08ed46fbc20405b4d32d5f3b8ac02 --call settings_id --call is_closed --call game_core_address
 
 0x00d042acfc0160b6d725281eca1fb856c3e08ed46fbc20405b4d32d5f3b8ac02 class 0x013b2223aa773da7496f693bfc84ba196333a61eaf7f944c80f369a9bb377c5d: 8 functions
   write enter_dungeon() -> felt252
@@ -12,84 +12,14 @@
   view  is_closed() -> bool
   view  game_core_address() -> ContractAddress
   view  owner() -> ContractAddress
-0x02dab28ac4edaae7495174f9dd7668eece14b1e50ce170ff8af2a0e215f48875 class 0x007b546a670c786c6905bfe9ec6e2c5aa50435ab4d37e1e9e64e613d9b6c3eb0: 59 functions
-  write enter_dungeon(proof: felt252>, leaf: LootBagLeafData, verification: VerificationMethod, recipient: ContractAddress>) -> felt252
-  write enter_dungeon_batch(claims: DungeonClaim>) -> felt252>
-  write mint_liquidity(to: ContractAddress, bag_ids: u64>) -> 
-  write claim_collectable(adventurer_id: felt252, encounter_xp: u16) -> u256
-  write stake_beast(token_id: u256) -> 
-  write unsafe_stake_beast(token_id: u256) -> 
-  write transform_beast(token_id: u256) -> u256
-  write withdraw_beast(token_id: u256) -> 
-  write set_root(root: felt252) -> 
-  write set_root_setter(root_setter: ContractAddress) -> 
-  write set_registry_address(registry_address: ContractAddress) -> 
-  write set_root_grace_period(grace_period: u64) -> 
-  write set_max_signature_age(max_signature_age: u64) -> 
-  write set_dungeon_name(dungeon_name: felt252) -> 
-  write set_entry_proof_config(config: ProofConfig) -> 
-  view  entry_proof_config() -> ProofConfig
-  write set_settings_id(settings_id: u32) -> 
-  write set_game_core_address(game_core_address: ContractAddress) -> 
-  write set_stark_loot_address(stark_loot_address: ContractAddress) -> 
-  write set_entry_cooldown(entry_cooldown: u64) -> 
-  write set_soulbound(soulbound: bool) -> 
-  write set_beast_nft_address(beast_nft_address: ContractAddress) -> 
-  write set_transformation_period(transformation_period: u64) -> 
-  write close_dungeon() -> 
-  write open_dungeon() -> 
-  view  get_root() -> felt252
-  view  get_previous_root() -> felt252
-  view  previous_root_valid_until() -> u64
-  view  root_grace_period() -> u64
-  view  max_signature_age() -> u64
-  view  dungeon_name() -> felt252
-  view  root_setter() -> ContractAddress
-  view  registry_address() -> ContractAddress
-  view  leaf_hash(leaf: LootBagLeafData) -> felt252
-  view  entry_message(bag_id: u64, player: ContractAddress, signed_at: u64) -> ByteArray
-  view  entry_cooldown() -> u64
-  view  last_entry_at(bag_id: u64) -> u64
-  view  entry_available_at(bag_id: u64) -> u64
-  view  entry_available_at_batch(bag_ids: u64>) -> u64>
-  view  can_enter(bag_id: u64) -> bool
-  view  settings_id() -> u32
-  view  game_core_address() -> ContractAddress
-  view  stark_loot_address() -> ContractAddress
-  view  soulbound() -> bool
-  view  is_closed() -> bool
-  view  beast_nft_address() -> ContractAddress
-  view  transformation_period() -> u64
-  view  beast_stake(token_id: u256) -> BeastStake
-  view  transformation_reservations(beast_id: u8) -> u16
-  view  unsafe_stakes(beast_id: u8) -> u16
-  view  mega_beasts(beast_id: u8) -> u16
-  view  next_transformation_period(beast_id: u8) -> u64
-  view  is_beast_collectable(adventurer_id: felt252, beast_id: u8, prefix: u8, suffix: u8) -> bool
-  write upgrade(new_class_hash: ClassHash) -> 
-  view  owner() -> ContractAddress
-  write transfer_ownership(new_owner: ContractAddress) -> 
-  write renounce_ownership() -> 
-  write transferOwnership(newOwner: ContractAddress) -> 
-  write renounceOwnership() -> 
-0x05b73fb61b1d43327bf6bc8eb5ba1f83ae5ff8a798edcb575a04e6d6f365aed7 class 0x05b73fb61b1d43327bf6bc8eb5ba1f83ae5ff8a798edcb575a04e6d6f365aed7: 20 functions
-  write __validate__(calls: Call>) -> felt252
-  write __execute__(calls: Call>) -> 
-  view  is_valid_signature(hash: felt252, signature: felt252>) -> felt252
-  view  __validate_deploy__(class_hash: felt252, contract_address_salt: felt252, owner: EthAddress) -> felt252
-  write execute_from_outside_v2(outside_execution: OutsideExecution, signature: felt252>) -> felt252>>
-  view  is_valid_outside_execution_nonce(nonce: felt252) -> bool
-  write revoke_session(session_key: felt252) -> 
-  write revoke_all_sessions() -> 
-  view  get_owner() -> EthAddress
-  view  get_session(session_key: felt252) -> SessionRecord
-  view  get_session_fee_exceptions(session_key: felt252) -> SessionFeeExceptions
-  view  get_session_epoch() -> u32
-  view  get_session_count() -> u64
-  view  get_session_key(index: u64) -> felt252
-  view  is_session_permitted(session_key: felt252, target: ContractAddress, selector: felt252) -> bool
-  view  get_version() -> felt252
-  view  get_execution_digest(hash: felt252) -> u256
-  view  get_message_digest(hash: felt252) -> u256
-  view  get_session_digest(authorization: SessionAuthorization) -> u256
-  view  supports_interface(interface_id: felt252) -> bool
+  settings_id = [0x0]
+  is_closed = [0x0]
+  game_core_address = [0x11afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b]
+== bot dungeon-settings --ids 10,1
+
+> loot-survivor-bot@1.0.0 bot
+> node --import tsx src/cli.ts dungeon-settings --ids 10,1
+
+settings #10: {"details":{"name":"","description":"","settings":[{"name":"433321119326202570340158875351413864","value":"48"},{"name":"100890435121534990691620944","value":"48"},{"name":"6611955556124917149965787032676","value":"48"},{"name":"28398132876162011649813448929350859060328","value":"48"},{"name":"7269922016297474982351965145594107771057273","value":"48"},{"name":"2839813287616201164981366200809003898
+settings #1: {"details":{"name":"Loot Bag","description":"Bring your own Loot bag: the bag you hold on Ethereum is the run you start.","settings":[{"name":"433321119326202570340158875351413864","value":"3223600"},{"name":"100890435121534990691620944","value":"48"},{"name":"6611955556124917149965787032676","value":"13360"},{"name":"28398132876162011649813448929350859060328","value":"48"},{"name":"72699220162974
+saved botdata/data/dungeon-settings.json (2 settings, core 0x011afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b)
