@@ -271,5 +271,17 @@
   "errors": 3,
   "policy": "leader-2026-10-24b",
   "ended": "2026-10-24T20:03:34.046Z"
+ },
+ {
+  "id": "2026-10-24T20-50-47-405Z",
+  "mode": "practice",
+  "started": "2026-10-24T20:50:47.405Z",
+  "games": 200,
+  "bestXp": 1008,
+  "meanXp": 408,
+  "errors": 0,
+  "policy": "tuned-2026-10-22-g24",
+  "dungeon": "Ronkeverse Large #7",
+  "ended": "2026-10-24T20:51:07.191Z"
  }
 ]
