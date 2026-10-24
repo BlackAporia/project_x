@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-24T20:00:34.109Z",
+ "updated": "2026-10-24T20:01:50.229Z",
  "modes": {
   "mainnet": {
    "games": 13,
@@ -661,6 +661,17 @@
    "errors": 2,
    "policy": "leader-2026-10-24b",
    "ended": "2026-10-24T20:00:32.992Z"
+  },
+  {
+   "id": "2026-10-24T20-01-18-554Z",
+   "mode": "mainnet-dry",
+   "started": "2026-10-24T20:01:18.554Z",
+   "games": 9,
+   "bestXp": 305,
+   "meanXp": 125,
+   "errors": 2,
+   "policy": "leader-2026-10-24b",
+   "ended": "2026-10-24T20:01:49.015Z"
   }
  ],
  "policy": {
