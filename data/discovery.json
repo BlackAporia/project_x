@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-24T06:09:44.026Z",
+ "updated": "2026-10-24T07:17:51.234Z",
  "mainnetRpc": "https://api.cartridge.gg/x/starknet/mainnet/rpc/v0_9",
  "mainnet": {
   "gameCore": {
@@ -769,6 +769,14 @@
     "address": "0x011afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b"
    },
    {
+    "name": "provingGrounds",
+    "address": "0x00d042acfc0160b6d725281eca1fb856c3e08ed46fbc20405b4d32d5f3b8ac02"
+   },
+   {
+    "name": "dungeon:lootBag",
+    "address": "0x02dab28ac4edaae7495174f9dd7668eece14b1e50ce170ff8af2a0e215f48875"
+   },
+   {
     "name": "gameCoreV2Legacy",
     "address": "0x06179f1c747672c08861da1df3b167eb337cba403778345db2aa9840cc3deb86"
    },
@@ -835,10 +843,6 @@
    {
     "name": "dungeon:beastModeV2",
     "address": "0x0368066825ff8c7ed2b2e73ff513ebd9dc6e41afcbbf853bcf2f793a67a0c264"
-   },
-   {
-    "name": "dungeon:lootBag",
-    "address": "0x02dab28ac4edaae7495174f9dd7668eece14b1e50ce170ff8af2a0e215f48875"
    },
    {
     "name": "dungeon:lilDuckies",
