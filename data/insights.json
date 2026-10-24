@@ -1,0 +1,3346 @@
+{
+ "updated": "2026-10-24T09:09:05.170Z",
+ "source": "top 40 + 10 live games (Denshokan) read on-chain",
+ "players": 43,
+ "aggregate": {
+  "early": {
+   "players": 3,
+   "ratios": {
+    "str": 0.199,
+    "dex": 0.56,
+    "vit": 0.557,
+    "int": 0.08,
+    "wis": 0.278,
+    "cha": 0.518
+   }
+  },
+  "late": {
+   "players": 40,
+   "ratios": {
+    "str": 0.178,
+    "dex": 0.645,
+    "vit": 0.788,
+    "int": 0.043,
+    "wis": 0.074,
+    "cha": 0.175
+   }
+  },
+  "avgLevel": 42.8,
+  "avgArmorFilled": 4.88,
+  "avgGearTier": 1.2,
+  "jewelryShare": 0.95,
+  "weaponTypes": [
+   [
+    "Warhammer",
+    17
+   ],
+   [
+    "Katana",
+    11
+   ],
+   [
+    "Ghost Wand",
+    10
+   ],
+   [
+    "Grimoire",
+    3
+   ],
+   [
+    "Chronicle",
+    1
+   ],
+   [
+    "Wand",
+    1
+   ]
+  ]
+ },
+ "botTargets": {
+  "early": {
+   "cha": 0.9400724370081446,
+   "dex": 1.149175589014733,
+   "int": 0.3377095373094443,
+   "wis": 0.309801143402319,
+   "str": 0.09368980805712972
+  },
+  "late": {
+   "cha": 0.5,
+   "dex": 0.7,
+   "int": 0,
+   "wis": 0,
+   "str": 0.2
+  }
+ },
+ "imitation": {
+  "str": 0.199,
+  "dex": 0.56,
+  "int": 0.08,
+  "wis": 0.278,
+  "cha": 0.518
+ },
+ "builds": [
+  {
+   "tokenId": "296980662505331266488734413424992567447049917505648350680347463122945",
+   "player": null,
+   "xp": 2326,
+   "level": 48,
+   "alive": false,
+   "stats": {
+    "str": 8,
+    "dex": 38,
+    "vit": 56,
+    "int": 5,
+    "wis": 5,
+    "cha": 24,
+    "luck": 100
+   },
+   "perLevel": {
+    "str": 0.146,
+    "dex": 0.667,
+    "vit": 0.667,
+    "int": 0.042,
+    "wis": 0.042,
+    "cha": 0.188
+   },
+   "gold": 274,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Ghost Wand",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Demon Husk",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Crown",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Demonhide Belt",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Demonhide Boots",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Holy Gauntlets",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Pendant",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Platinum Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "282658190838407489097820411935557168384884415693804063778676345405441",
+   "player": null,
+   "xp": 2323,
+   "level": 48,
+   "alive": false,
+   "stats": {
+    "str": 8,
+    "dex": 37,
+    "vit": 56,
+    "int": 5,
+    "wis": 5,
+    "cha": 23,
+    "luck": 80
+   },
+   "perLevel": {
+    "str": 0.125,
+    "dex": 0.688,
+    "vit": 1,
+    "int": 0.042,
+    "wis": 0.042,
+    "cha": 0.25
+   },
+   "gold": 9,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Ghost Wand",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Demon Husk",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Demon Crown",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Studded Leather Belt",
+     "tier": 3,
+     "greatness": 10
+    },
+    {
+     "slot": "Foot",
+     "name": "Demonhide Boots",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "DemonsHands",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Pendant",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Titanium Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "18113714166991836112647370146877709047196597730483933855380278345729",
+   "player": null,
+   "xp": 2215,
+   "level": 47,
+   "alive": false,
+   "stats": {
+    "str": 8,
+    "dex": 39,
+    "vit": 50,
+    "int": 3,
+    "wis": 10,
+    "cha": 23,
+    "luck": 80
+   },
+   "perLevel": {
+    "str": 0.064,
+    "dex": 0.787,
+    "vit": 0.872,
+    "int": -0.043,
+    "wis": 0.191,
+    "cha": 0
+   },
+   "gold": 414,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Warhammer",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Divine Robe",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Crown",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Ornate Belt",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Divine Slippers",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Divine Gloves",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Amulet",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Titanium Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "607356443951073336298654517521098288183889625089",
+   "player": null,
+   "xp": 2211,
+   "level": 47,
+   "alive": false,
+   "stats": {
+    "str": 14,
+    "dex": 32,
+    "vit": 61,
+    "int": 2,
+    "wis": 5,
+    "cha": 23,
+    "luck": 100
+   },
+   "perLevel": {
+    "str": 0.191,
+    "dex": 0.617,
+    "vit": 1.106,
+    "int": 0.021,
+    "wis": -0.064,
+    "cha": 0.17
+   },
+   "gold": 195,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Warhammer",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Holy Chestplate",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Ancient Helm",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Ornate Belt",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Holy Greaves",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Holy Gauntlets",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Necklace",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Titanium Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "267493220838135254213317162900663527678212666822419529368190255628289",
+   "player": null,
+   "xp": 2205,
+   "level": 46,
+   "alive": false,
+   "stats": {
+    "str": 14,
+    "dex": 37,
+    "vit": 52,
+    "int": 4,
+    "wis": 2,
+    "cha": 23,
+    "luck": 120
+   },
+   "perLevel": {
+    "str": 0.196,
+    "dex": 0.761,
+    "vit": 0.891,
+    "int": 0.065,
+    "wis": -0.13,
+    "cha": 0.261
+   },
+   "gold": 375,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Warhammer",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Holy Chestplate",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Ancient Helm",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Ornate Belt",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Holy Greaves",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Holy Gauntlets",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Necklace",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Platinum Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "381230495840177015847068599241741698307351856950862283031592170422273",
+   "player": null,
+   "xp": 2191,
+   "level": 46,
+   "alive": false,
+   "stats": {
+    "str": 14,
+    "dex": 35,
+    "vit": 46,
+    "int": 8,
+    "wis": 8,
+    "cha": 28,
+    "luck": 100
+   },
+   "perLevel": {
+    "str": 0.217,
+    "dex": 0.717,
+    "vit": 0.696,
+    "int": 0.087,
+    "wis": 0.043,
+    "cha": 0.261
+   },
+   "gold": 488,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Warhammer",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Demon Husk",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Ancient Helm",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Ornate Belt",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Demonhide Boots",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Holy Gauntlets",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Pendant",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Titanium Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "10531229166862001677630098578204070266637872263505068328602052853761",
+   "player": null,
+   "xp": 2191,
+   "level": 46,
+   "alive": false,
+   "stats": {
+    "str": 5,
+    "dex": 38,
+    "vit": 48,
+    "int": 6,
+    "wis": 10,
+    "cha": 23,
+    "luck": 90
+   },
+   "perLevel": {
+    "str": -0.022,
+    "dex": 0.783,
+    "vit": 0.804,
+    "int": 0.065,
+    "wis": 0.13,
+    "cha": 0.152
+   },
+   "gold": 0,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Grimoire",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Dragonskin Armor",
+     "tier": 2,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "DragonsCrown",
+     "tier": 2,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Mesh Belt",
+     "tier": 4,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Chain Boots",
+     "tier": 4,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Dragonskin Gloves",
+     "tier": 2,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Pendant",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Platinum Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "230002045004128895748858198042613779193427919755066886022924662210561",
+   "player": null,
+   "xp": 2187,
+   "level": 46,
+   "alive": false,
+   "stats": {
+    "str": 15,
+    "dex": 32,
+    "vit": 41,
+    "int": 5,
+    "wis": 11,
+    "cha": 27,
+    "luck": 100
+   },
+   "perLevel": {
+    "str": 0.217,
+    "dex": 0.63,
+    "vit": 0.587,
+    "int": 0.087,
+    "wis": 0.065,
+    "cha": 0.261
+   },
+   "gold": 438,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Warhammer",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Holy Chestplate",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Ancient Helm",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Ornate Belt",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Holy Greaves",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Holy Gauntlets",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Necklace",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Titanium Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "377018004173434728379153788322392321645656366399807371894681931612161",
+   "player": null,
+   "xp": 2186,
+   "level": 46,
+   "alive": false,
+   "stats": {
+    "str": 10,
+    "dex": 33,
+    "vit": 46,
+    "int": 5,
+    "wis": 12,
+    "cha": 22,
+    "luck": 100
+   },
+   "perLevel": {
+    "str": 0.13,
+    "dex": 0.674,
+    "vit": 0.783,
+    "int": 0,
+    "wis": 0.261,
+    "cha": 0.109
+   },
+   "gold": 187,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Warhammer",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Divine Robe",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Crown",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Brightsilk Sash",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Divine Slippers",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Divine Gloves",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Amulet",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Titanium Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "7582485000136117442855145489966792264302255492786611282517021425665",
+   "player": null,
+   "xp": 2178,
+   "level": 46,
+   "alive": false,
+   "stats": {
+    "str": 20,
+    "dex": 28,
+    "vit": 47,
+    "int": 3,
+    "wis": 6,
+    "cha": 23,
+    "luck": 156
+   },
+   "perLevel": {
+    "str": 0.413,
+    "dex": 0.522,
+    "vit": 0.826,
+    "int": -0.043,
+    "wis": 0.13,
+    "cha": 0.13
+   },
+   "gold": 508,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Ghost Wand",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Divine Robe",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Crown",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Brightsilk Sash",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Divine Slippers",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Divine Gloves",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Amulet",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Titanium Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "173554656669782243678775024124474099771890130920786305613576301182977",
+   "player": null,
+   "xp": 2172,
+   "level": 46,
+   "alive": false,
+   "stats": {
+    "str": 5,
+    "dex": 31,
+    "vit": 42,
+    "int": 7,
+    "wis": 11,
+    "cha": 23,
+    "luck": 100
+   },
+   "perLevel": {
+    "str": 0.087,
+    "dex": 0.565,
+    "vit": 0.652,
+    "int": 0.065,
+    "wis": 0.239,
+    "cha": 0.196
+   },
+   "gold": 450,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Ghost Wand",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Divine Robe",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Crown",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Brightsilk Sash",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Demonhide Boots",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Divine Gloves",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Amulet",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Titanium Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "28644943333847554782438862590316567959282151821041727683177952051201",
+   "player": null,
+   "xp": 2166,
+   "level": 46,
+   "alive": false,
+   "stats": {
+    "str": 18,
+    "dex": 33,
+    "vit": 58,
+    "int": 3,
+    "wis": 4,
+    "cha": 24,
+    "luck": 100
+   },
+   "perLevel": {
+    "str": 0.304,
+    "dex": 0.674,
+    "vit": 1.022,
+    "int": -0.043,
+    "wis": 0.087,
+    "cha": 0.196
+   },
+   "gold": 420,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Warhammer",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Divine Robe",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Crown",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Brightsilk Sash",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Divine Slippers",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Divine Gloves",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Amulet",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Titanium Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "217785819170576262091900190733931277368029318342024182752590908358657",
+   "player": null,
+   "xp": 2157,
+   "level": 46,
+   "alive": false,
+   "stats": {
+    "str": 7,
+    "dex": 36,
+    "vit": 38,
+    "int": 2,
+    "wis": 4,
+    "cha": 23,
+    "luck": 102
+   },
+   "perLevel": {
+    "str": 0.087,
+    "dex": 0.696,
+    "vit": 0.5,
+    "int": -0.022,
+    "wis": 0,
+    "cha": 0.391
+   },
+   "gold": 367,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Katana",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Demon Husk",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Demon Crown",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Demonhide Belt",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Demonhide Boots",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "DemonsHands",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Pendant",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Titanium Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 10
+  },
+  {
+   "tokenId": "75824850001361174423106814139358917399891866045852093532918719184897",
+   "player": null,
+   "xp": 2152,
+   "level": 46,
+   "alive": false,
+   "stats": {
+    "str": 39,
+    "dex": 5,
+    "vit": 42,
+    "int": 2,
+    "wis": 21,
+    "cha": 23,
+    "luck": 100
+   },
+   "perLevel": {
+    "str": 0.761,
+    "dex": 0,
+    "vit": 0.609,
+    "int": 0,
+    "wis": 0.348,
+    "cha": 0.152
+   },
+   "gold": 422,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Ghost Wand",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Holy Chestplate",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Ancient Helm",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Ornate Belt",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Holy Greaves",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "DemonsHands",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Amulet",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Titanium Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "125111002502245937797734119301036790804593068956398544819324389949441",
+   "player": null,
+   "xp": 2150,
+   "level": 46,
+   "alive": false,
+   "stats": {
+    "str": 12,
+    "dex": 38,
+    "vit": 52,
+    "int": 5,
+    "wis": 3,
+    "cha": 23,
+    "luck": 100
+   },
+   "perLevel": {
+    "str": 0.152,
+    "dex": 0.761,
+    "vit": 0.935,
+    "int": 0.087,
+    "wis": -0.109,
+    "cha": 0.348
+   },
+   "gold": 508,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Warhammer",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Holy Chestplate",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Ancient Helm",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Ornate Belt",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Holy Greaves",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Holy Gauntlets",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Necklace",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Titanium Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "347109313339564487356942841983855813626779318395947258445824083886081",
+   "player": "diks",
+   "xp": 2147,
+   "level": 46,
+   "alive": false,
+   "stats": {
+    "str": 16,
+    "dex": 31,
+    "vit": 52,
+    "int": 3,
+    "wis": 7,
+    "cha": 22,
+    "luck": 100
+   },
+   "perLevel": {
+    "str": 0.239,
+    "dex": 0.587,
+    "vit": 0.804,
+    "int": 0,
+    "wis": 0.065,
+    "cha": 0.109
+   },
+   "gold": 424,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Katana",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Demon Husk",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Demon Crown",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Demonhide Belt",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Demonhide Boots",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "DemonsHands",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Pendant",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Gold Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "36227428333983672224688867175010272187871562603161399850818993127425",
+   "player": null,
+   "xp": 2146,
+   "level": 46,
+   "alive": false,
+   "stats": {
+    "str": 14,
+    "dex": 29,
+    "vit": 43,
+    "int": 2,
+    "wis": 7,
+    "cha": 22,
+    "luck": 100
+   },
+   "perLevel": {
+    "str": 0.239,
+    "dex": 0.587,
+    "vit": 0.674,
+    "int": 0.022,
+    "wis": -0.043,
+    "cha": 0.217
+   },
+   "gold": 408,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Katana",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Holy Chestplate",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Ancient Helm",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Heavy Belt",
+     "tier": 5,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Holy Greaves",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Holy Gauntlets",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Necklace",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Platinum Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "132693487502382055239981752749197129097353928205527688955893383168001",
+   "player": "lulhaha",
+   "xp": 2144,
+   "level": 46,
+   "alive": false,
+   "stats": {
+    "str": 34,
+    "dex": 15,
+    "vit": 46,
+    "int": 2,
+    "wis": 13,
+    "cha": 22,
+    "luck": 100
+   },
+   "perLevel": {
+    "str": 0.63,
+    "dex": 0.261,
+    "vit": 0.696,
+    "int": 0.022,
+    "wis": 0.109,
+    "cha": 0.152
+   },
+   "gold": 403,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Warhammer",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Ornate Chestplate",
+     "tier": 2,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Ancient Helm",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Ornate Belt",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Holy Greaves",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Holy Gauntlets",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Necklace",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Titanium Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "3791242500068058721733625225242732868818470351143031395464075280385",
+   "player": null,
+   "xp": 2144,
+   "level": 46,
+   "alive": false,
+   "stats": {
+    "str": 2,
+    "dex": 33,
+    "vit": 45,
+    "int": 18,
+    "wis": 14,
+    "cha": 23,
+    "luck": 120
+   },
+   "perLevel": {
+    "str": -0.043,
+    "dex": 0.696,
+    "vit": 0.696,
+    "int": 0.196,
+    "wis": 0.217,
+    "cha": 0.065
+   },
+   "gold": 389,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Warhammer",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Demon Husk",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Ancient Helm",
+     "tier": 1,
+     "greatness": 9
+    },
+    {
+     "slot": "Waist",
+     "name": "Ornate Belt",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Demonhide Boots",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Divine Gloves",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Pendant",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Silver Ring",
+     "tier": 2,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "322676861672459220043026495361832746756267714405305120522138632060929",
+   "player": null,
+   "xp": 2143,
+   "level": 46,
+   "alive": false,
+   "stats": {
+    "str": 19,
+    "dex": 32,
+    "vit": 37,
+    "int": 3,
+    "wis": 2,
+    "cha": 26,
+    "luck": 80
+   },
+   "perLevel": {
+    "str": 0.391,
+    "dex": 0.609,
+    "vit": 0.565,
+    "int": -0.043,
+    "wis": 0.043,
+    "cha": 0.196
+   },
+   "gold": 505,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Ghost Wand",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Divine Robe",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Crown",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Brightsilk Sash",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Divine Slippers",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Divine Gloves",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Amulet",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Titanium Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "266650722504786796719734961455251795044959308989036642911680360087553",
+   "player": null,
+   "xp": 2136,
+   "level": 46,
+   "alive": false,
+   "stats": {
+    "str": 22,
+    "dex": 32,
+    "vit": 50,
+    "int": 0,
+    "wis": 6,
+    "cha": 23,
+    "luck": 100
+   },
+   "perLevel": {
+    "str": 0.457,
+    "dex": 0.652,
+    "vit": 0.848,
+    "int": -0.109,
+    "wis": 0.13,
+    "cha": 0.043
+   },
+   "gold": 410,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Chronicle",
+     "tier": 2,
+     "greatness": 14
+    },
+    {
+     "slot": "Chest",
+     "name": "Divine Robe",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Crown",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Brightsilk Sash",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Divine Slippers",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Divine Gloves",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Amulet",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Titanium Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "261595732504696051758235534712915825702847602926743452502674475319297",
+   "player": null,
+   "xp": 2134,
+   "level": 46,
+   "alive": false,
+   "stats": {
+    "str": 7,
+    "dex": 37,
+    "vit": 48,
+    "int": 1,
+    "wis": 7,
+    "cha": 23,
+    "luck": 100
+   },
+   "perLevel": {
+    "str": 0.065,
+    "dex": 0.761,
+    "vit": 0.804,
+    "int": -0.065,
+    "wis": 0.087,
+    "cha": 0.065
+   },
+   "gold": 431,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Warhammer",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Divine Robe",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Crown",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Brightsilk Sash",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Divine Slippers",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Divine Gloves",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Necklace",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Titanium Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "7582485000136117442858763496975524342030214182671306769600155222017",
+   "player": null,
+   "xp": 2128,
+   "level": 46,
+   "alive": false,
+   "stats": {
+    "str": 19,
+    "dex": 26,
+    "vit": 46,
+    "int": 9,
+    "wis": 3,
+    "cha": 22,
+    "luck": 100
+   },
+   "perLevel": {
+    "str": 0.348,
+    "dex": 0.478,
+    "vit": 0.739,
+    "int": 0.13,
+    "wis": -0.022,
+    "cha": 0.13
+   },
+   "gold": 409,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Katana",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Demon Husk",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Demon Crown",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Demonhide Belt",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Demonhide Boots",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "DemonsHands",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Pendant",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Titanium Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "1918789954201112941596095095427675034333506575961327522785828907515905",
+   "player": null,
+   "xp": 2110,
+   "level": 45,
+   "alive": false,
+   "stats": {
+    "str": 5,
+    "dex": 41,
+    "vit": 57,
+    "int": 4,
+    "wis": 6,
+    "cha": 22,
+    "luck": 68
+   },
+   "perLevel": {
+    "str": 0.022,
+    "dex": 0.844,
+    "vit": 1.156,
+    "int": 0.089,
+    "wis": -0.022,
+    "cha": 0.156
+   },
+   "gold": 245,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Katana",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Holy Chestplate",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Crown",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Ornate Belt",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Holy Greaves",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Holy Gauntlets",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Necklace",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Gold Ring",
+     "tier": 1,
+     "greatness": 8
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "61923627501111625778982063547831435678948171348948870778751031443457",
+   "player": null,
+   "xp": 2107,
+   "level": 45,
+   "alive": false,
+   "stats": {
+    "str": 3,
+    "dex": 25,
+    "vit": 56,
+    "int": 9,
+    "wis": 9,
+    "cha": 25,
+    "luck": 80
+   },
+   "perLevel": {
+    "str": -0.022,
+    "dex": 0.511,
+    "vit": 0.956,
+    "int": 0.089,
+    "wis": 0.2,
+    "cha": 0.2
+   },
+   "gold": 386,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Warhammer",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Divine Robe",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Crown",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Brightsilk Sash",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Divine Slippers",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Divine Gloves",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Amulet",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Titanium Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "310881885005580815132859913077031810927544787957904541518993115054081",
+   "player": null,
+   "xp": 2100,
+   "level": 45,
+   "alive": false,
+   "stats": {
+    "str": 9,
+    "dex": 31,
+    "vit": 50,
+    "int": 6,
+    "wis": 4,
+    "cha": 22,
+    "luck": 100
+   },
+   "perLevel": {
+    "str": 0.133,
+    "dex": 0.622,
+    "vit": 0.822,
+    "int": 0.067,
+    "wis": 0,
+    "cha": 0.222
+   },
+   "gold": 323,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Katana",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Demon Husk",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Demon Crown",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Demonhide Belt",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Demonhide Boots",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "DemonsHands",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Pendant",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Platinum Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "193353367503470994777982568072768634259694157577479902929155052797953",
+   "player": null,
+   "xp": 2083,
+   "level": 45,
+   "alive": false,
+   "stats": {
+    "str": 12,
+    "dex": 30,
+    "vit": 41,
+    "int": 4,
+    "wis": 6,
+    "cha": 22,
+    "luck": 100
+   },
+   "perLevel": {
+    "str": 0.2,
+    "dex": 0.622,
+    "vit": 0.6,
+    "int": 0.067,
+    "wis": -0.089,
+    "cha": 0.156
+   },
+   "gold": 507,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Katana",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Demon Husk",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Ancient Helm",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Ornate Belt",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Holy Greaves",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Holy Gauntlets",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Necklace",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Titanium Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "342896821672824212517088199730002733017644020679348310613046406938625",
+   "player": null,
+   "xp": 2080,
+   "level": 45,
+   "alive": false,
+   "stats": {
+    "str": 10,
+    "dex": 35,
+    "vit": 41,
+    "int": 7,
+    "wis": 13,
+    "cha": 22,
+    "luck": 100
+   },
+   "perLevel": {
+    "str": 0.111,
+    "dex": 0.733,
+    "vit": 0.556,
+    "int": 0.133,
+    "wis": 0.111,
+    "cha": 0.267
+   },
+   "gold": 427,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Warhammer",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Holy Chestplate",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Ancient Helm",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Ornate Belt",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Holy Greaves",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Holy Gauntlets",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Necklace",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Platinum Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "322255612505784991296236120323431023014943055932252925941896710193153",
+   "player": null,
+   "xp": 2070,
+   "level": 45,
+   "alive": false,
+   "stats": {
+    "str": 6,
+    "dex": 39,
+    "vit": 45,
+    "int": 2,
+    "wis": 4,
+    "cha": 23,
+    "luck": 80
+   },
+   "perLevel": {
+    "str": 0.111,
+    "dex": 0.778,
+    "vit": 0.756,
+    "int": -0.067,
+    "wis": 0.089,
+    "cha": 0.067
+   },
+   "gold": 498,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Ghost Wand",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Divine Robe",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Crown",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Brightsilk Sash",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Divine Slippers",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Divine Gloves",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Amulet",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Titanium Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 14
+  },
+  {
+   "tokenId": "383336741673548159581028660417114055655627963569954585641169882972161",
+   "player": null,
+   "xp": 2069,
+   "level": 45,
+   "alive": false,
+   "stats": {
+    "str": 12,
+    "dex": 33,
+    "vit": 56,
+    "int": 4,
+    "wis": 8,
+    "cha": 22,
+    "luck": 120
+   },
+   "perLevel": {
+    "str": 0.156,
+    "dex": 0.667,
+    "vit": 1.089,
+    "int": 0.067,
+    "wis": 0,
+    "cha": 0.133
+   },
+   "gold": 25,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Warhammer",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Ornate Chestplate",
+     "tier": 2,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Ancient Helm",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Ornate Belt",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Holy Greaves",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Holy Gauntlets",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Necklace",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Titanium Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "201357101670281340967027686492606133636957987156797836216238063222785",
+   "player": null,
+   "xp": 2065,
+   "level": 45,
+   "alive": false,
+   "stats": {
+    "str": 6,
+    "dex": 39,
+    "vit": 57,
+    "int": 7,
+    "wis": 7,
+    "cha": 22,
+    "luck": 100
+   },
+   "perLevel": {
+    "str": 0.067,
+    "dex": 0.8,
+    "vit": 0.978,
+    "int": 0.067,
+    "wis": 0.133,
+    "cha": 0.2
+   },
+   "gold": 118,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Katana",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Divine Robe",
+     "tier": 1,
+     "greatness": 19
+    },
+    {
+     "slot": "Head",
+     "name": "Demon Crown",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Demonhide Belt",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Divine Slippers",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "DemonsHands",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Pendant",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Titanium Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "132272238335707826493191687626023619903023315172069584325435958755329",
+   "player": null,
+   "xp": 2062,
+   "level": 45,
+   "alive": false,
+   "stats": {
+    "str": 5,
+    "dex": 25,
+    "vit": 40,
+    "int": 16,
+    "wis": 15,
+    "cha": 21,
+    "luck": 140
+   },
+   "perLevel": {
+    "str": 0,
+    "dex": 0.511,
+    "vit": 0.533,
+    "int": 0.267,
+    "wis": 0.156,
+    "cha": 0.267
+   },
+   "gold": 505,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Warhammer",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Holy Chestplate",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Ancient Helm",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Ornate Belt",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Holy Greaves",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Holy Gauntlets",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Necklace",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Silver Ring",
+     "tier": 2,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "362695532506510950988236087698548528150981954668011482483204850450433",
+   "player": null,
+   "xp": 2060,
+   "level": 45,
+   "alive": false,
+   "stats": {
+    "str": 16,
+    "dex": 28,
+    "vit": 49,
+    "int": 6,
+    "wis": 1,
+    "cha": 22,
+    "luck": 100
+   },
+   "perLevel": {
+    "str": 0.244,
+    "dex": 0.578,
+    "vit": 0.822,
+    "int": 0.022,
+    "wis": 0,
+    "cha": 0.067
+   },
+   "gold": 341,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Warhammer",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Divine Robe",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Crown",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Brightsilk Sash",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Ornate Greaves",
+     "tier": 2,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Holy Gauntlets",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Pendant",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Bronze Ring",
+     "tier": 3,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "333208090839317942917125555834311048471026230204086891643495220510721",
+   "player": null,
+   "xp": 2056,
+   "level": 45,
+   "alive": false,
+   "stats": {
+    "str": 2,
+    "dex": 40,
+    "vit": 56,
+    "int": 5,
+    "wis": 6,
+    "cha": 22,
+    "luck": 60
+   },
+   "perLevel": {
+    "str": -0.067,
+    "dex": 0.822,
+    "vit": 1.067,
+    "int": 0.067,
+    "wis": 0.133,
+    "cha": 0.156
+   },
+   "gold": 296,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Grimoire",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Silk Robe",
+     "tier": 2,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Divine Hood",
+     "tier": 2,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Wool Sash",
+     "tier": 3,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Silk Slippers",
+     "tier": 2,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Ornate Gauntlets",
+     "tier": 2,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Amulet",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Gold Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "404820449173933825667402613427676733430111408272456527461890031353857",
+   "player": null,
+   "xp": 2054,
+   "level": 45,
+   "alive": false,
+   "stats": {
+    "str": 11,
+    "dex": 38,
+    "vit": 52,
+    "int": 1,
+    "wis": 3,
+    "cha": 22,
+    "luck": 100
+   },
+   "perLevel": {
+    "str": 0.178,
+    "dex": 0.778,
+    "vit": 0.867,
+    "int": -0.089,
+    "wis": 0.067,
+    "cha": 0
+   },
+   "gold": 10,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Grimoire",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Divine Robe",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Crown",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Brightsilk Sash",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Divine Slippers",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Divine Gloves",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Amulet",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Titanium Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "193353367503470994777985454961333965218193303545364556386602707845121",
+   "player": null,
+   "xp": 2050,
+   "level": 45,
+   "alive": false,
+   "stats": {
+    "str": 4,
+    "dex": 32,
+    "vit": 63,
+    "int": 6,
+    "wis": 7,
+    "cha": 22,
+    "luck": 100
+   },
+   "perLevel": {
+    "str": 0.044,
+    "dex": 0.667,
+    "vit": 1.2,
+    "int": 0.022,
+    "wis": 0.133,
+    "cha": -0.156
+   },
+   "gold": 336,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Katana",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Divine Robe",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Crown",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Silk Sash",
+     "tier": 2,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Divine Slippers",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Divine Gloves",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Amulet",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Titanium Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "182400889169941047361399322232283565911473809437857063962981550784513",
+   "player": null,
+   "xp": 2047,
+   "level": 45,
+   "alive": false,
+   "stats": {
+    "str": 17,
+    "dex": 34,
+    "vit": 46,
+    "int": 6,
+    "wis": 3,
+    "cha": 22,
+    "luck": 100
+   },
+   "perLevel": {
+    "str": 0.333,
+    "dex": 0.667,
+    "vit": 0.822,
+    "int": 0.044,
+    "wis": -0.111,
+    "cha": 0.244
+   },
+   "gold": 489,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Ghost Wand",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Holy Chestplate",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Ancient Helm",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Ornate Belt",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Holy Greaves",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Divine Gloves",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Necklace",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Platinum Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 15
+  },
+  {
+   "tokenId": "353849300006352147305610732795528492934226728829298150522307838214145",
+   "player": null,
+   "xp": 2047,
+   "level": 45,
+   "alive": false,
+   "stats": {
+    "str": 7,
+    "dex": 34,
+    "vit": 26,
+    "int": 7,
+    "wis": 5,
+    "cha": 22,
+    "luck": 102
+   },
+   "perLevel": {
+    "str": 0.044,
+    "dex": 0.689,
+    "vit": 0.4,
+    "int": 0.133,
+    "wis": -0.067,
+    "cha": 0.378
+   },
+   "gold": 343,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Warhammer",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Holy Chestplate",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Ancient Helm",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Ornate Belt",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Holy Greaves",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Holy Gauntlets",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Necklace",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Titanium Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 11
+  },
+  {
+   "tokenId": "2713877091499598330239949450874152723228615398043232715677760470221589294977",
+   "player": "v2 settings #7",
+   "xp": 1602,
+   "level": 40,
+   "alive": false,
+   "stats": {
+    "str": 5,
+    "dex": 34,
+    "vit": 22,
+    "int": 4,
+    "wis": 13,
+    "cha": 18,
+    "luck": 62
+   },
+   "perLevel": {
+    "str": 0.05,
+    "dex": 0.775,
+    "vit": 0.4,
+    "int": 0.1,
+    "wis": 0.15,
+    "cha": 0.3
+   },
+   "gold": 354,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Katana",
+     "tier": 1,
+     "greatness": 16
+    },
+    {
+     "slot": "Chest",
+     "name": "Holy Chestplate",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Demon Crown",
+     "tier": 1,
+     "greatness": 12
+    },
+    {
+     "slot": "Waist",
+     "name": "Ornate Belt",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Holy Greaves",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Holy Gauntlets",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Necklace",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Titanium Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 12
+  },
+  {
+   "tokenId": "2713877091499598330239949450874152723228625782636949785037869623500865213057",
+   "player": "v2 settings #7",
+   "xp": 1482,
+   "level": 38,
+   "alive": false,
+   "stats": {
+    "str": 5,
+    "dex": 25,
+    "vit": 36,
+    "int": 8,
+    "wis": 14,
+    "cha": 25,
+    "luck": 80
+   },
+   "perLevel": {
+    "str": 0.053,
+    "dex": 0.553,
+    "vit": 0.632,
+    "int": 0.105,
+    "wis": 0.237,
+    "cha": 0.342
+   },
+   "gold": 290,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Ghost Wand",
+     "tier": 1,
+     "greatness": 15
+    },
+    {
+     "slot": "Chest",
+     "name": "Holy Chestplate",
+     "tier": 1,
+     "greatness": 19
+    },
+    {
+     "slot": "Head",
+     "name": "Ancient Helm",
+     "tier": 1,
+     "greatness": 19
+    },
+    {
+     "slot": "Waist",
+     "name": "War Belt",
+     "tier": 2,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Holy Greaves",
+     "tier": 1,
+     "greatness": 12
+    },
+    {
+     "slot": "Hand",
+     "name": "Dragonskin Gloves",
+     "tier": 2,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Pendant",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Titanium Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 13
+  },
+  {
+   "tokenId": "141108360855866449695477698527605505025917848963696372577158113739669505",
+   "player": null,
+   "xp": 158,
+   "level": 12,
+   "alive": true,
+   "stats": {
+    "str": 2,
+    "dex": 7,
+    "vit": 5,
+    "int": 1,
+    "wis": 2,
+    "cha": 5,
+    "luck": 2
+   },
+   "perLevel": {
+    "str": 0.167,
+    "dex": 0.583,
+    "vit": 0.417,
+    "int": 0.083,
+    "wis": 0.167,
+    "cha": 0.417
+   },
+   "gold": 0,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Katana",
+     "tier": 1,
+     "greatness": 12
+    },
+    {
+     "slot": "Chest",
+     "name": "Ring Mail",
+     "tier": 5,
+     "greatness": 11
+    },
+    {
+     "slot": "Head",
+     "name": "Hood",
+     "tier": 5,
+     "greatness": 10
+    },
+    {
+     "slot": "Waist",
+     "name": "Silk Sash",
+     "tier": 2,
+     "greatness": 12
+    },
+    {
+     "slot": "Foot",
+     "name": "Linen Shoes",
+     "tier": 4,
+     "greatness": 12
+    },
+    {
+     "slot": "Hand",
+     "name": "Gloves",
+     "tier": 5,
+     "greatness": 12
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 2
+  },
+  {
+   "tokenId": "384179240006896617074613669376145646535432602977534446806010892910593",
+   "player": null,
+   "xp": 121,
+   "level": 11,
+   "alive": true,
+   "stats": {
+    "str": 2,
+    "dex": 6,
+    "vit": 5,
+    "int": 0,
+    "wis": 3,
+    "cha": 5,
+    "luck": 2
+   },
+   "perLevel": {
+    "str": 0.182,
+    "dex": 0.545,
+    "vit": 0.455,
+    "int": 0,
+    "wis": 0.273,
+    "cha": 0.455
+   },
+   "gold": 10,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Ghost Wand",
+     "tier": 1,
+     "greatness": 11
+    },
+    {
+     "slot": "Chest",
+     "name": "Linen Robe",
+     "tier": 3,
+     "greatness": 9
+    },
+    {
+     "slot": "Head",
+     "name": "Linen Hood",
+     "tier": 4,
+     "greatness": 11
+    },
+    {
+     "slot": "Waist",
+     "name": "Linen Sash",
+     "tier": 4,
+     "greatness": 1
+    },
+    {
+     "slot": "Foot",
+     "name": "Linen Shoes",
+     "tier": 4,
+     "greatness": 8
+    },
+    {
+     "slot": "Hand",
+     "name": "Linen Gloves",
+     "tier": 4,
+     "greatness": 8
+    },
+    {
+     "slot": "Neck",
+     "name": "Amulet",
+     "tier": 1,
+     "greatness": 1
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 3
+  },
+  {
+   "tokenId": "144488464169263490719948662306273906639652090933863845539187972374529",
+   "player": null,
+   "xp": 4,
+   "level": 2,
+   "alive": true,
+   "stats": {
+    "str": 1,
+    "dex": 1,
+    "vit": 4,
+    "int": 1,
+    "wis": 2,
+    "cha": 3,
+    "luck": 2
+   },
+   "perLevel": {
+    "str": 0.5,
+    "dex": 0.5,
+    "vit": 2,
+    "int": 0.5,
+    "wis": 1,
+    "cha": 1.5
+   },
+   "gold": 40,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Wand",
+     "tier": 5,
+     "greatness": 2
+    }
+   ],
+   "armorFilled": 0,
+   "bagItems": 0
+  }
+ ],
+ "errors": [
+  "197987108336887595175184694778031091060932289752133940141854870732802: RPC: starknet_call with params {\n  \"request\": {\n    \"contract_address\": \"0x023f86f5b4702f6ba114b82fb73448c58aad8f37a28b508b80bf129ee1edc405\",\n    \"entry_point_selector\": \"0x2305fda54e31f8525bf15eaf4f2",
+  "208097088337069085098184854584251003011134999183255527427533717897218: RPC: starknet_call with params {\n  \"request\": {\n    \"contract_address\": \"0x023f86f5b4702f6ba114b82fb73448c58aad8f37a28b508b80bf129ee1edc405\",\n    \"entry_point_selector\": \"0x2305fda54e31f8525bf15eaf4f2",
+  "274233207504925944731783767607228590122907879273313528856519787937793: RPC: starknet_call with params {\n  \"request\": {\n    \"contract_address\": \"0x023f86f5b4702f6ba114b82fb73448c58aad8f37a28b508b80bf129ee1edc405\",\n    \"entry_point_selector\": \"0x2305fda54e31f8525bf15eaf4f2",
+  "1433510914192401435522601969804368401217017534963485604598795370233857: RPC: starknet_call with params {\n  \"request\": {\n    \"contract_address\": \"0x023f86f5b4702f6ba114b82fb73448c58aad8f37a28b508b80bf129ee1edc405\",\n    \"entry_point_selector\": \"0x2305fda54e31f8525bf15eaf4f2",
+  "432201645007759704398797362584627107059753583260430908718488913707009: RPC: starknet_call with params {\n  \"request\": {\n    \"contract_address\": \"0x023f86f5b4702f6ba114b82fb73448c58aad8f37a28b508b80bf129ee1edc405\",\n    \"entry_point_selector\": \"0x2305fda54e31f8525bf15eaf4f2",
+  "903158213349547443311886782387022127490615265282076658070062909882369: RPC: starknet_call with params {\n  \"request\": {\n    \"contract_address\": \"0x023f86f5b4702f6ba114b82fb73448c58aad8f37a28b508b80bf129ee1edc405\",\n    \"entry_point_selector\": \"0x2305fda54e31f8525bf15eaf4f2",
+  "10103661262681377501988797138440090705380429043375124676142823232241665: RPC: starknet_call with params {\n  \"request\": {\n    \"contract_address\": \"0x023f86f5b4702f6ba114b82fb73448c58aad8f37a28b508b80bf129ee1edc405\",\n    \"entry_point_selector\": \"0x2305fda54e31f8525bf15eaf4f2",
+  "236320782504242326950737827876576103998630722865034438212891269136386: RPC: starknet_call with params {\n  \"request\": {\n    \"contract_address\": \"0x023f86f5b4702f6ba114b82fb73448c58aad8f37a28b508b80bf129ee1edc405\",\n    \"entry_point_selector\": \"0x2305fda54e31f8525bf15eaf4f2",
+  "298244410005356983298908706688737821027641122583037497749835939315713: RPC: starknet_call with params {\n  \"request\": {\n    \"contract_address\": \"0x023f86f5b4702f6ba114b82fb73448c58aad8f37a28b508b80bf129ee1edc405\",\n    \"entry_point_selector\": \"0x2305fda54e31f8525bf15eaf4f2"
+ ]
+}
