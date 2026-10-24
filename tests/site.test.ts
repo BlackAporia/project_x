@@ -31,7 +31,8 @@ test('a session approved on the website loads in the Node session provider', asy
   await normalizeSessionFile();
   const s = JSON.parse(readFileSync(join(dir, 'session.json'), 'utf8')).session;
   assert.equal(s.address, registration.address.toLowerCase());
-  assert.match(s.sessionKeyGuid, /^0x[0-9a-f]+$/);
+  const { signerToGuid } = await import('@cartridge/controller-wasm');
+  assert.equal(s.sessionKeyGuid, String(signerToGuid({ starknet: { privateKey: priv } } as never)), 'browser SessionProvider derivation');
   assert.equal(s.guardianKeyGuid, '0x0');
   const account = await (await sessionProvider()).probe();
   assert.ok(account, 'probe() returns a session account');

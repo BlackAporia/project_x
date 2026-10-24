@@ -58,16 +58,17 @@ export function parsedBotPolicies() {
 export async function normalizeSessionFile(): Promise<void> {
   const file = join(SESSION_DIR, 'session.json');
   if (!existsSync(file)) return;
-  const data = JSON.parse(readFileSync(file, 'utf8')) as { signer?: { pubKey?: string }; session?: Record<string, string> };
+  const data = JSON.parse(readFileSync(file, 'utf8')) as { signer?: { privKey?: string }; session?: Record<string, string> };
   const s = data.session;
-  if (!s || s.sessionKeyGuid || !data.signer?.pubKey) return;
+  if (!s || s.sessionKeyGuid || !data.signer?.privKey) return;
   const { signerToGuid } = await import('@cartridge/controller-wasm');
-  const pub = data.signer.pubKey.startsWith('0x') ? data.signer.pubKey : `0x${data.signer.pubKey}`;
+  // same derivation as the browser SessionProvider of @cartridge/controller (guid of the signer's key pair)
+  const priv = data.signer.privKey.startsWith('0x') ? data.signer.privKey : `0x${data.signer.privKey}`;
   s.address = String(s.address).toLowerCase();
   s.ownerGuid = String(s.ownerGuid).toLowerCase();
   s.guardianKeyGuid = '0x0';
   s.metadataHash = '0x0';
-  s.sessionKeyGuid = String(signerToGuid({ starknet: { privateKey: pub } } as never));
+  s.sessionKeyGuid = String(signerToGuid({ starknet: { privateKey: priv } } as never));
   writeFileSync(file, JSON.stringify(data, null, 2), { mode: 0o600 });
 }
 
