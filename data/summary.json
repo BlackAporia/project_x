@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-24T04:38:37.265Z",
+ "updated": "2026-10-24T06:09:58.023Z",
  "modes": {
   "mainnet": {
    "games": 0,
@@ -346,6 +346,17 @@
    "policy": "tuned-2026-10-22-g24",
    "dungeon": "Default #0",
    "ended": "2026-10-24T04:38:35.758Z"
+  },
+  {
+   "id": "2026-10-24T06-09-56-674Z",
+   "mode": "mainnet",
+   "started": "2026-10-24T06:09:56.674Z",
+   "games": 0,
+   "bestXp": 0,
+   "meanXp": 0,
+   "errors": 0,
+   "policy": "leader-2026-10-24b",
+   "ended": "2026-10-24T06:09:56.675Z"
   }
  ],
  "policy": {

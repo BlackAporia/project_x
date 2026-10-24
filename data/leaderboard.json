@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-24T04:38:36.976Z",
+ "updated": "2026-10-24T06:09:57.746Z",
  "entries": [
   {
    "rank": 1,
@@ -1404,7 +1404,11 @@
    "settingsId": 3
   }
  ],
- "bot": null,
+ "bot": {
+  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
+  "bestRank": null,
+  "bestXp": null
+ },
  "target": {
   "xp": 2564,
   "level": 50
