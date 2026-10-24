@@ -158,5 +158,17 @@ async function openV2Mainnet(live: boolean, game?: string): Promise<Backend> {
   if (!address) throw new Error('mainnet: no account (set CARTRIDGE_SESSION_B64 or MAINNET_ACCOUNT_ADDRESS for a dry run)');
   const games = await chain.ownedGames(address);
   console.log(`[mainnet v2] account ${address}: ${games.length} game token(s) on the V2 core, live=${live && !!executor}`);
-  return new V2MainnetBackend({ chain, executor, dryRun: !live, games });
+  // free mainnet games: enter Proving Grounds when the account has no unplayed game left (gas paid by the account)
+  const entries = Number(process.env.PROVING_GROUNDS_GAMES ?? 0);
+  const enter =
+    executor && entries > 0
+      ? async () => {
+          const exec = executor!;
+          const id = await chain.enterDungeon(exec, MAINNET.provingGrounds);
+          console.log(`[mainnet v2] entered Proving Grounds: game ${id}`);
+          return id;
+        }
+      : undefined;
+  if (enter) console.log(`[mainnet v2] Proving Grounds: up to ${entries} free entr${entries === 1 ? 'y' : 'ies'} when no game is left`);
+  return new V2MainnetBackend({ chain, executor, dryRun: !live, games, enter, maxEntries: entries });
 }

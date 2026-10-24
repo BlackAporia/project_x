@@ -20,6 +20,10 @@ export const MAINNET = {
   gameCore: env('GAME_CORE_ADDRESS', '0x023f86f5b4702f6ba114b82fb73448c58aad8f37a28b508b80bf129ee1edc405'),
   // commit-reveal (V2) game core used by lootsurvivor.io for Beast Mode, Loot Bag, Ronke Casino... (VITE_PUBLIC_LOOT_GAME_CORE_ADDRESS)
   gameCoreV2: env('GAME_CORE_V2_ADDRESS', '0x011afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b'),
+  /** Proving Grounds: free `enter_dungeon()` (mints a V2 game with the default settings #0; the player pays gas) */
+  provingGrounds: env('PROVING_GROUNDS_ADDRESS', '0x00d042acfc0160b6d725281eca1fb856c3e08ed46fbc20405b4d32d5f3b8ac02'),
+  /** main dungeon (Loot Bag entry) */
+  lootDungeon: env('LOOT_DUNGEON_ADDRESS', '0x02dab28ac4edaae7495174f9dd7668eece14b1e50ce170ff8af2a0e215f48875'),
   gameCoreV2Legacy: env('GAME_CORE_V2_LEGACY_ADDRESS', '0x06179f1c747672c08861da1df3b167eb337cba403778345db2aa9840cc3deb86'),
   gameToken: env('GAME_TOKEN_ADDRESS', '0x04de0351ceab4ecd50be6ee09329b0dcb3b96a9da88cc158f453823a389722fa'),
   combat: env('COMBAT_ADDRESS', '0x045b55409c6b5000132211a1c03dab1ae71ea2e51b53b3796f040b80850ec959'),

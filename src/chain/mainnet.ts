@@ -1,7 +1,7 @@
 // Mainnet play with the owner's own Cartridge Controller account through a session key.
 //   1. once, on your own computer: `npm run authorize` -> approve the session in the browser
 //   2. store .session/cartridge/session.json as the GitHub secret CARTRIDGE_SESSION_B64 (base64)
-// The session key can only call commit_actions / verify_game on the game core (see botPolicies) and expires; the Controller owner key never leaves Cartridge. Nothing secret is ever printed or logged.
+// The session key can only call commit_actions / verify_game on the game core and enter the free Proving Grounds (see botPolicies) and expires; the Controller owner key never leaves Cartridge. Nothing secret is ever printed or logged.
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import type { Call } from 'starknet';
@@ -34,6 +34,11 @@ export function botPolicies() {
           { name: 'Commit Actions', entrypoint: 'commit_actions', description: 'Submit game moves' },
           { name: 'Verify Game', entrypoint: 'verify_game', description: 'Settle a finished game so its score counts' },
         ],
+      },
+      [MAINNET.provingGrounds]: {
+        name: 'Proving Grounds',
+        description: 'Free entry to Loot Survivor games (you pay only gas)',
+        methods: [{ name: 'Enter Dungeon', entrypoint: 'enter_dungeon', description: 'Start a free Proving Grounds game' }],
       },
     },
   };

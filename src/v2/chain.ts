@@ -6,6 +6,7 @@ import { retry, sleep } from '../chain/rpc.ts';
 import { rollingFold, rollingStart, unpackAdventurer, unpackBag, type V2Adventurer, type V2Item } from './protocol.ts';
 
 const ACTION_COMMITTED = BigInt(hash.getSelectorFromName('ActionCommitted'));
+const TRANSFER = BigInt(hash.getSelectorFromName('Transfer'));
 const hex = (v: bigint | number) => num.toHex(v);
 
 export interface Transcript {
@@ -223,5 +224,29 @@ export class V2Chain {
     const { transaction_hash } = await executor.execute([call]);
     await this.provider.waitForTransaction(transaction_hash, { retryInterval: 2000 });
     return transaction_hash;
+  }
+
+  /**
+   * Enter a dungeon that mints a game to the caller (e.g. Proving Grounds: free `enter_dungeon()`).
+   * Returns the new game id from the core's mint Transfer event (falls back to the newest owned token).
+   */
+  async enterDungeon(executor: Executor, dungeon: string): Promise<bigint> {
+    const { transaction_hash } = await executor.execute([{ contractAddress: dungeon, entrypoint: 'enter_dungeon', calldata: [] }]);
+    const receipt = (await this.provider.waitForTransaction(transaction_hash, { retryInterval: 2000 })) as unknown as {
+      execution_status?: string;
+      revert_reason?: string;
+      events?: Array<{ from_address: string; keys: string[]; data: string[] }>;
+    };
+    if (receipt.execution_status === 'REVERTED') throw new Error(`enter_dungeon reverted: ${String(receipt.revert_reason ?? '').slice(0, 300)}`);
+    const me = BigInt(executor.address);
+    for (const e of receipt.events ?? []) {
+      if (BigInt(e.from_address) !== BigInt(this.core) || BigInt(e.keys[0] ?? 0) !== TRANSFER) continue;
+      // ERC721 Transfer: keys [selector, from, to, id.low, id.high]
+      const k = e.keys.map((x) => BigInt(x));
+      if (k.length >= 5 && k[1] === 0n && k[2] === me) return k[3] + (k[4] << 128n);
+    }
+    const owned = await this.ownedGames(executor.address, 1);
+    if (!owned.length) throw new Error(`enter_dungeon succeeded (${transaction_hash}) but no game was found on the account`);
+    return owned[owned.length - 1];
   }
 }

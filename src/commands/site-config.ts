@@ -3,7 +3,9 @@
 import { writeFileSync } from 'node:fs';
 import { DUNGEON_SETTINGS, MAINNET } from '../chain/config.ts';
 import { parsedBotPolicies } from '../chain/mainnet.ts';
+import { hash } from 'starknet';
 import { GAME_ACCOUNT } from '../chain/game-account.ts';
+import { GAME_ACCOUNT_SALT, MAX_SESSION_SECONDS, SELF_PAID, defaultPermissions } from '../chain/game-session-terms.ts';
 
 export const SITE_CONFIG_PATH = 'site/bot-config.json';
 
@@ -17,7 +19,20 @@ export function siteConfig() {
     workflows: { bot: 'bot.yml', learn: 'learn.yml', pages: 'pages.yml' },
     secret: 'CARTRIDGE_SESSION_B64',
     gameCore: MAINNET.gameCoreV2,
-    gameAccount: { classHash: GAME_ACCOUNT.classHash, secret: 'GAME_SESSION_LINK', shareFrom: 'https://lootsurvivor.io/ronkeverse' },
+    provingGrounds: MAINNET.provingGrounds,
+    gameAccount: {
+      classHash: GAME_ACCOUNT.classHash,
+      salt: GAME_ACCOUNT_SALT,
+      secret: 'GAME_SESSION_LINK',
+      // what the owner approves: the same terms lootsurvivor.io asks for (its session manager / Share is off)
+      permissions: defaultPermissions({ lootDungeon: MAINNET.lootDungeon, provingGrounds: MAINNET.provingGrounds, gameCore: MAINNET.gameCoreV2 }),
+      maxSessionSeconds: MAX_SESSION_SECONDS,
+      maxSelfPaidTxs: SELF_PAID.maxSelfPaidTxs.toString(),
+      maxFeeExceptions: SELF_PAID.maxFeeExceptions.toString(),
+      rpcUrls: [MAINNET.cartridgeRpc, ...MAINNET.rpcUrls.filter((u) => u !== MAINNET.cartridgeRpc)],
+      selectors: { get_session_epoch: hash.getSelectorFromName('get_session_epoch'), balance_of: hash.getSelectorFromName('balance_of') },
+      strk: '0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d',
+    },
   };
 }
 

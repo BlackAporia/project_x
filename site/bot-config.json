@@ -22,6 +22,18 @@
             "authorized": true
           }
         ]
+      },
+      "0x00d042acfc0160b6d725281eca1fb856c3e08ed46fbc20405b4d32d5f3b8ac02": {
+        "name": "Proving Grounds",
+        "description": "Free entry to Loot Survivor games (you pay only gas)",
+        "methods": [
+          {
+            "name": "Enter Dungeon",
+            "entrypoint": "enter_dungeon",
+            "description": "Start a free Proving Grounds game",
+            "authorized": true
+          }
+        ]
       }
     }
   },
@@ -41,9 +53,42 @@
   },
   "secret": "CARTRIDGE_SESSION_B64",
   "gameCore": "0x011afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b",
+  "provingGrounds": "0x00d042acfc0160b6d725281eca1fb856c3e08ed46fbc20405b4d32d5f3b8ac02",
   "gameAccount": {
     "classHash": "0x5b73fb61b1d43327bf6bc8eb5ba1f83ae5ff8a798edcb575a04e6d6f365aed7",
+    "salt": "0x028c0d654fe3920e7ad3c57ec34c195476b373ecd1537a37f5c4fb5234987ed0",
     "secret": "GAME_SESSION_LINK",
-    "shareFrom": "https://lootsurvivor.io/ronkeverse"
+    "permissions": [
+      {
+        "target": "0x02dab28ac4edaae7495174f9dd7668eece14b1e50ce170ff8af2a0e215f48875",
+        "method": "enter_dungeon"
+      },
+      {
+        "target": "0x00d042acfc0160b6d725281eca1fb856c3e08ed46fbc20405b4d32d5f3b8ac02",
+        "method": "enter_dungeon"
+      },
+      {
+        "target": "0x011afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b",
+        "method": "commit_actions"
+      },
+      {
+        "target": "0x011afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b",
+        "method": "verify_game"
+      }
+    ],
+    "maxSessionSeconds": 7772340,
+    "maxSelfPaidTxs": "2000",
+    "maxFeeExceptions": "25",
+    "rpcUrls": [
+      "https://api.cartridge.gg/x/starknet/mainnet",
+      "https://api.cartridge.gg/x/starknet/mainnet/rpc/v0_9",
+      "https://starknet-mainnet.public.blastapi.io/rpc/v0_9",
+      "https://rpc.starknet.lava.build"
+    ],
+    "selectors": {
+      "get_session_epoch": "0x2286994281fb1102092fd26ee4e2d7f95fec51defce01860bbc5d4d857c2553",
+      "balance_of": "0x35a73cd311a05d46deda634c5ee045db92f811b4e74bca4437fcb5302b7af33"
+    },
+    "strk": "0x04718f5a0fc34cc1af16a1cdee98ffb20c31f5cd61d6ab07201858f4287c938d"
   }
 }

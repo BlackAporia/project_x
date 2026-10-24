@@ -30,14 +30,27 @@ export class V2MainnetBackend implements Backend {
   private games = new Map<bigint, GameCtx>();
   private snapshot = loadSnapshot();
   private log: (m: string) => void;
+  private enter?: () => Promise<bigint | null>;
+  private entries: number;
 
-  constructor(opts: { chain: V2Chain; executor: Executor | null; dryRun: boolean; games: bigint[]; log?: (m: string) => void }) {
+  constructor(opts: {
+    chain: V2Chain;
+    executor: Executor | null;
+    dryRun: boolean;
+    games: bigint[];
+    log?: (m: string) => void;
+    /** start a new game when the account has none left (e.g. free Proving Grounds entry) */
+    enter?: () => Promise<bigint | null>;
+    maxEntries?: number;
+  }) {
     this.chain = opts.chain;
     this.executor = opts.executor;
     this.dryRun = opts.dryRun || !opts.executor;
     this.account = opts.executor?.address;
     this.queue = opts.games;
     this.log = opts.log ?? ((m) => console.log(m));
+    this.enter = opts.enter;
+    this.entries = opts.maxEntries ?? 0;
   }
 
   async nextGame(): Promise<bigint | null> {
@@ -45,6 +58,16 @@ export class V2MainnetBackend implements Backend {
       const id = this.queue.shift()!;
       if (await this.chain.gameOver(id).catch(() => false)) continue;
       return id;
+    }
+    if (this.enter && !this.dryRun && this.entries > 0) {
+      this.entries--;
+      try {
+        const id = await this.enter();
+        if (id !== null) return id;
+      } catch (e) {
+        this.entries = 0; // e.g. no gas on the account, or a session without enter_dungeon: stop entering
+        this.log(`[v2] could not start a new game: ${(e as Error).message.slice(0, 300)}`);
+      }
     }
     return null;
   }

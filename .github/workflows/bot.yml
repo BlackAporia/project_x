@@ -5,6 +5,7 @@ name: Bot
 #     MAINNET_ENABLED=true   also run the mainnet step (needs secret GAME_SESSION_LINK or CARTRIDGE_SESSION_B64)
 #     RONKE_CLAIM=true       claim the Ronke Casino daily free games before mainnet play
 #     MAINNET_LIVE=true      actually send mainnet transactions (otherwise: dry run that only logs decisions)
+#     PROVING_GROUNDS_GAMES=N  enter the free Proving Grounds up to N times per run when no game is left (gas: account)
 #     PRACTICE_MINUTES / MAINNET_MINUTES  time budgets (defaults 40 / 120)
 on:
   schedule:
@@ -32,6 +33,9 @@ on:
       ronke_claim:
         description: claim today's Ronke Casino free games before mainnet play (true/false)
         default: 'false'
+      proving_grounds:
+        description: free Proving Grounds entries when the account has no game left (0 = off)
+        default: ''
 
 permissions:
   contents: write
@@ -90,6 +94,7 @@ jobs:
           CARTRIDGE_SESSION_B64: ${{ secrets.CARTRIDGE_SESSION_B64 }}
           MAINNET_ACCOUNT_ADDRESS: ${{ vars.MAINNET_ACCOUNT_ADDRESS }}
           MAINNET_LIVE: ${{ (github.event_name == 'schedule' && vars.MAINNET_LIVE == 'true') || inputs.live == 'true' }}
+          PROVING_GROUNDS_GAMES: ${{ inputs.proving_grounds || vars.PROVING_GROUNDS_GAMES || '0' }}
         run: npm run play -- --mode mainnet --minutes "${{ inputs.minutes || vars.MAINNET_MINUTES || '120' }}" --max-games "${{ inputs.max_games || '100' }}"
 
       - name: Leaderboard snapshot

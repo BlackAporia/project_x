@@ -48,3 +48,15 @@ export function sealSecret(value: string, publicKeyB64: string): string {
   const box = nacl.box(new TextEncoder().encode(value), nonce, rpk, eph.secretKey);
   return toB64(concat(eph.publicKey, box));
 }
+
+// Game Account sessions approved with the owner's EVM wallet (lootsurvivor.io's own Share is switched off)
+export {
+  createSessionTypedData,
+  feeCaps,
+  felt64,
+  gameAccountAddress,
+  ownerSignatureFelts,
+  recoverOwner,
+  sessionDigest,
+  sessionLink,
+} from '../src/chain/game-session-terms.ts';

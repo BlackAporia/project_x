@@ -54,17 +54,33 @@
         <p id="ctlWalletNote" class="ctl-note"></p>
 
         <h3>…або EVM‑гаманець (Ronin, MetaMask)</h3>
-        <p class="muted small">Власники Ronke грають акаунтом, яким керує їхній Ronin‑гаманець (Game Account), і саме на
-          нього приходять щоденні ігри Ronke Casino. Щоб бот грав цим акаунтом: на
-          <a href="https://lootsurvivor.io/ronkeverse" target="_blank" rel="noopener">lootsurvivor.io</a> увійдіть
-          Ronin‑гаманцем → меню акаунта → <b>Share session</b> → оберіть термін → скопіюйте посилання і вставте сюди.
-          Сесія не може переказувати токени; газ оплачує lootsurvivor.io.</p>
+        <p class="muted small">Якщо на lootsurvivor.io ви входите Ethereum/Ronin‑гаманцем, ваш акаунт там — Game Account,
+          яким керує цей гаманець (на нього приходять і щоденні ігри Ronke Casino). Кнопки «Share session» на
+          lootsurvivor.io зараз немає (її вимкнено в коді сайту), тож сесію для бота створюємо тут: гаманець
+          підписує одне повідомлення — <b>без транзакції і без газу</b>. Права ті самі, що просить lootsurvivor.io:
+          вхід у підземелля, ходи і зарахування результату; переказувати токени сесія не може.</p>
         <div id="ctlGameAccount"></div>
-        <label class="ctl-field">Посилання сесії <input id="ctlGaLink" type="password" autocomplete="off" placeholder="https://lootsurvivor.io/#game-session=…"></label>
+        <div class="ctl-row">
+          <label class="ctl-field">Гаманець <select id="ctlEvmWallet"><option value="">шукаю гаманці…</option></select></label>
+          <label class="ctl-field">Термін сесії
+            <select id="ctlGaDays">
+              <option value="7">7 днів</option>
+              <option value="30">30 днів</option>
+              <option value="90" selected>90 днів</option>
+            </select>
+          </label>
+        </div>
         <div class="ctl-actions">
-          <button class="btn primary" id="ctlGaSave">Підключити Game Account</button>
+          <button class="btn primary" id="ctlGaCreate">Створити сесію гаманцем</button>
           <button class="btn" id="ctlGaRemove" hidden>Від’єднати</button>
         </div>
+        <p class="muted small">На телефоні відкрийте цей сайт у вбудованому браузері гаманця (MetaMask або Ronin Wallet).
+          Використайте той самий гаманець, що й на lootsurvivor.io.</p>
+        <details class="small">
+          <summary>Маю готове посилання сесії</summary>
+          <label class="ctl-field">Посилання сесії <input id="ctlGaLink" type="password" autocomplete="off" placeholder="https://lootsurvivor.io/#game-session=…"></label>
+          <div class="ctl-actions"><button class="btn" id="ctlGaSave">Зберегти посилання</button></div>
+        </details>
         <p id="ctlGaNote" class="ctl-note"></p>
       </article>
 
@@ -84,6 +100,8 @@
         </div>
         <label class="ctl-switch" id="ctlLiveWrap" hidden><input type="checkbox" id="ctlLive"> Реальні транзакції (без цього — dry run: бот лише показує рішення)</label>
         <label class="ctl-switch"><input type="checkbox" id="ctlRonkeBefore"> Спершу забрати щоденні ігри Ronke Casino</label>
+        <label class="ctl-field" id="ctlPgWrap" hidden>Proving Grounds — безкоштовних входів, коли ігор немає (газ платить акаунт)
+          <input id="ctlPg" type="number" min="0" max="50" value="0"></label>
         <div class="ctl-actions">
           <button class="btn primary" id="ctlRun">Запустити</button>
           <button class="btn" id="ctlLearn">Навчання зараз</button>
