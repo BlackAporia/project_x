@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-24T15:58:22.822Z",
+ "updated": "2026-10-24T18:13:45.067Z",
  "modes": {
   "mainnet": {
    "games": 13,
@@ -639,6 +639,17 @@
    "policy": "tuned-2026-10-22-g24",
    "dungeon": "Ronkeverse Large #7",
    "ended": "2026-10-24T15:58:21.523Z"
+  },
+  {
+   "id": "2026-10-24T18-12-41-891Z",
+   "mode": "mainnet-dry",
+   "started": "2026-10-24T18:12:41.891Z",
+   "games": 11,
+   "bestXp": 305,
+   "meanXp": 132,
+   "errors": 0,
+   "policy": "leader-2026-10-24b",
+   "ended": "2026-10-24T18:13:43.695Z"
   }
  ],
  "policy": {
