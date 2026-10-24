@@ -1,0 +1,40 @@
+{
+ "updated": "2026-10-24T06:37:00.989Z",
+ "address": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
+ "kind": "address",
+ "eligible": false,
+ "reason": "Ronke holders sign in with their snapshotted Ronin wallet to claim their daily games.",
+ "needsWallet": true,
+ "dailyGames": null,
+ "evmAddress": null,
+ "currentDay": 2,
+ "ended": false,
+ "days": [
+  {
+   "day": 1,
+   "state": "missed",
+   "claimed": false,
+   "played": 0,
+   "bonusClaimed": 0,
+   "games": 3
+  },
+  {
+   "day": 2,
+   "state": "claim",
+   "claimed": false,
+   "played": 0,
+   "bonusClaimed": 0,
+   "games": 3
+  },
+  {
+   "day": 3,
+   "state": "locked",
+   "claimed": false,
+   "played": 0,
+   "bonusClaimed": 0,
+   "games": 3
+  }
+ ],
+ "claimed": [],
+ "message": "status only"
+}

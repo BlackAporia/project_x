@@ -1,17 +1,7 @@
-== bot dungeon-settings --ids 0,51 --core 0x023f86f5b4702f6ba114b82fb73448c58aad8f37a28b508b80bf129ee1edc405
+== bot ronke --address 0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts dungeon-settings --ids 0,51 --core 0x023f86f5b4702f6ba114b82fb73448c58aad8f37a28b508b80bf129ee1edc405
+> node --import tsx src/cli.ts ronke --address 0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82
 
-settings #0: {"details":{"error":"no settings_details"},"settings":{"error":"no get_settings"},"actionSettings":{"error":"no get_action_settings"}}
-settings #51: {"details":{"error":"no settings_details"},"settings":{"error":"no get_settings"},"actionSettings":{"error":"no get_action_settings"}}
-saved botdata/data/dungeon-settings.json (2 settings, core 0x023f86f5b4702f6ba114b82fb73448c58aad8f37a28b508b80bf129ee1edc405)
-== bot dungeon-settings --ids 51,50,52
-
-> loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts dungeon-settings --ids 51,50,52
-
-settings #51: {"details":{"name":"","description":"","settings":[{"name":"433321119326202570340158875351413864","value":"48"},{"name":"100890435121534990691620944","value":"48"},{"name":"6611955556124917149965787032676","value":"48"},{"name":"28398132876162011649813448929350859060328","value":"48"},{"name":"7269922016297474982351965145594107771057273","value":"48"},{"name":"2839813287616201164981366200809003898
-settings #50: {"details":{"name":"","description":"","settings":[{"name":"433321119326202570340158875351413864","value":"48"},{"name":"100890435121534990691620944","value":"48"},{"name":"6611955556124917149965787032676","value":"48"},{"name":"28398132876162011649813448929350859060328","value":"48"},{"name":"7269922016297474982351965145594107771057273","value":"48"},{"name":"2839813287616201164981366200809003898
-settings #52: {"details":{"name":"","description":"","settings":[{"name":"433321119326202570340158875351413864","value":"48"},{"name":"100890435121534990691620944","value":"48"},{"name":"6611955556124917149965787032676","value":"48"},{"name":"28398132876162011649813448929350859060328","value":"48"},{"name":"7269922016297474982351965145594107771057273","value":"48"},{"name":"2839813287616201164981366200809003898
-saved botdata/data/dungeon-settings.json (3 settings, core 0x011afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b)
+[ronke] account 0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82 (address)
+[ronke] status only
