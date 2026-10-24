@@ -1,6 +1,6 @@
 {
   "params": {
-    "version": "leader-2026-10-24",
+    "version": "leader-2026-10-24b",
     "startWeapon": 46,
     "phaseLevel": 16.286796362998146,
     "chaRatio": 0.9400724370081446,
@@ -81,13 +81,14 @@
     "rotateBuyGain": 30,
     "killSwap": 1,
     "collectGain": 20,
-    "rotateWeapon": 20
+    "rotateWeapon": 20,
+    "futureScale": 2.5
   },
   "meta": {
     "source": "leader strategies (jewelry luck farm, gear rotation, kill-shot swap, elemental sets) on top of tuned-2026-10-22-g24",
     "objective": "tail",
     "rules": "default:mainnet",
-    "updated": "2026-10-23T23:36:47.726Z",
-    "reach": "default:mainnet seed 3: P(L46)=5.0e-5, P(L48)=3.7e-6 (vs 4.3e-5 / 1.8e-6 without weapon rotation)"
+    "updated": "2026-10-24T00:09:50.370Z",
+    "reach": "default:mainnet seed 6 (3000 games, 1500/stage): P(L46)=6.1e-5, P(L48)=3.6e-6, P(L50)=1.1e-7, P(L51)=7.6e-9"
   }
 }
