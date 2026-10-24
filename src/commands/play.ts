@@ -140,7 +140,11 @@ async function openV2Mainnet(live: boolean, game?: string): Promise<Backend> {
   if (gs) {
     const ga = new GameAccountExecutor(provider, gs);
     const state = await ga.sessionState();
-    console.log(`[mainnet v2] Game Account ${ga.address} (owner ${gs.owner}), session ${state}, expires ${new Date(Number(gs.approval.expiresAt) * 1000).toISOString()}`);
+    const deployed = await ga.isDeployed();
+    const strk = deployed ? await ga.strkBalance().catch(() => 0n) : 0n;
+    console.log(
+      `[mainnet v2] Game Account ${ga.address} (owner ${gs.owner}), ${deployed ? `deployed, ${(Number(strk) / 1e18).toFixed(3)} STRK for gas` : 'not deployed yet'}, session ${state}, expires ${new Date(Number(gs.approval.expiresAt) * 1000).toISOString()}`,
+    );
     if (!sessionAllows(gs, MAINNET.gameCoreV2, 'commit_actions')) throw new Error('the shared Game Session does not permit commit_actions on the game core');
     if (state === 'revoked') throw new Error('the shared Game Session was revoked: share a new one from lootsurvivor.io');
     executor = ga;
