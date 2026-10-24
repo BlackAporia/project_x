@@ -114,5 +114,16 @@
   "errors": 0,
   "policy": "leader-2026-10-24b",
   "ended": "2026-10-24T07:18:08.321Z"
+ },
+ {
+  "id": "2026-10-24T07-25-13-416Z",
+  "mode": "mainnet",
+  "started": "2026-10-24T07:25:13.416Z",
+  "games": 4,
+  "bestXp": 185,
+  "meanXp": 117,
+  "errors": 0,
+  "policy": "leader-2026-10-24b",
+  "ended": "2026-10-24T07:27:07.697Z"
  }
 ]

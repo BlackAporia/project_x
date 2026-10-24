@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-24T06:09:57.746Z",
+ "updated": "2026-10-24T07:27:08.603Z",
  "entries": [
   {
    "rank": 1,
@@ -1405,7 +1405,7 @@
   }
  ],
  "bot": {
-  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
+  "account": "0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452",
   "bestRank": null,
   "bestXp": null
  },

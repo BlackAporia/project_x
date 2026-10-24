@@ -1,23 +1,57 @@
 {
- "updated": "2026-10-24T07:23:52.241Z",
+ "updated": "2026-10-24T07:27:08.878Z",
  "modes": {
   "mainnet": {
-   "games": 0,
+   "games": 2,
    "inProgress": 0,
    "errors": 0,
-   "best": 0,
-   "bestLevel": 0,
-   "mean": 0,
-   "median": 0,
-   "p90": 0,
-   "last20Mean": 0,
-   "transactions": 0,
+   "best": 65,
+   "bestLevel": 8,
+   "mean": 50,
+   "median": 65,
+   "p90": 65,
+   "last20Mean": 50,
+   "transactions": 21,
    "reverts": 0,
    "predictionAccuracy": null,
-   "deathCauses": [],
-   "levels": {},
-   "bestOverTime": [],
-   "top": []
+   "deathCauses": [
+    [
+     "Qilin",
+     2
+    ]
+   ],
+   "levels": {
+    "5": 1,
+    "8": 1
+   },
+   "bestOverTime": [
+    {
+     "t": "2026-10-24T07:26:22.809Z",
+     "xp": 35
+    },
+    {
+     "t": "2026-10-24T07:27:07.688Z",
+     "xp": 65
+    }
+   ],
+   "top": [
+    {
+     "id": "2713877091499598330239949450874152722207778681874134394647745801171196353505",
+     "xp": 65,
+     "level": 8,
+     "deathCause": "Qilin",
+     "ended": "2026-10-24T07:27:07.688Z",
+     "policy": "leader-2026-10-24b"
+    },
+    {
+     "id": "2713877091499598330239949450874152722207778681874134394647745801171194256353",
+     "xp": 35,
+     "level": 5,
+     "deathCause": "Qilin",
+     "ended": "2026-10-24T07:26:22.809Z",
+     "policy": "leader-2026-10-24b"
+    }
+   ]
   },
   "practice": {
    "games": 1200,
@@ -368,6 +402,17 @@
    "errors": 0,
    "policy": "leader-2026-10-24b",
    "ended": "2026-10-24T07:18:08.321Z"
+  },
+  {
+   "id": "2026-10-24T07-25-13-416Z",
+   "mode": "mainnet",
+   "started": "2026-10-24T07:25:13.416Z",
+   "games": 4,
+   "bestXp": 185,
+   "meanXp": 117,
+   "errors": 0,
+   "policy": "leader-2026-10-24b",
+   "ended": "2026-10-24T07:27:07.697Z"
   }
  ],
  "policy": {
