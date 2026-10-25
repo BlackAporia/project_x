@@ -1,66 +1,10 @@
 {
- "updated": "2026-10-25T16:54:29.466Z",
+ "updated": "2026-10-25T16:55:11.675Z",
  "mode": "mainnet",
- "running": true,
+ "running": false,
  "runId": "2026-10-25T16-00-40-070Z",
  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "recent": [
-  {
-   "n": 1,
-   "t": "2026-10-25T16:49:31.634Z",
-   "level": 2,
-   "xp": 4,
-   "hp": 115,
-   "maxHp": 115,
-   "gold": 6,
-   "phase": "level_up",
-   "reason": "Stats +1 STR; Explore until beast (instant-death risk 0.0%, HP 115/115)",
-   "actions": "stats(str+1) + explore(till beast)",
-   "tx": "0x3c6e655ae1afc954b1ddf52061ceed57d8d83ed7d35ff1adde512c8ac53f80f",
-   "ok": true
-  },
-  {
-   "n": 2,
-   "t": "2026-10-25T16:49:36.067Z",
-   "level": 3,
-   "xp": 9,
-   "hp": 115,
-   "maxHp": 115,
-   "gold": 8,
-   "phase": "level_up",
-   "reason": "Stats +1 DEX; Explore until beast (instant-death risk 0.0%, HP 115/115)",
-   "actions": "stats(dex+1) + explore(till beast)",
-   "tx": "0x77c25fe505568b4200a0c819467fa5d7879180f2398142ba9f8d1b2a750e3fb",
-   "ok": true
-  },
-  {
-   "n": 3,
-   "t": "2026-10-25T16:49:40.485Z",
-   "level": 3,
-   "xp": 9,
-   "hp": 115,
-   "maxHp": 115,
-   "gold": 8,
-   "phase": "battle",
-   "reason": "Attack Leprechaun (L7 T2, 13 HP): P(win)=77.9% P(death)=2.1%; attack value 213.0 vs flee 204.0",
-   "actions": "attack",
-   "tx": "0x3deddf8160feb33fa60343d443f43cd2051d960c39bbc11b08228d01e90b9e0",
-   "ok": true
-  },
-  {
-   "n": 4,
-   "t": "2026-10-25T16:49:46.259Z",
-   "level": 3,
-   "xp": 9,
-   "hp": 91,
-   "maxHp": 115,
-   "gold": 8,
-   "phase": "battle",
-   "reason": "Attack Leprechaun (L7 T2, 9 HP): P(win)=95.8% P(death)=1.7%; attack value 219.7 vs flee 199.8",
-   "actions": "attack",
-   "tx": "0x9eedff2f6c6c1fb775c0f13fd762527a099be78090dedfdddc13669648f1ed",
-   "ok": true
-  },
   {
    "n": 5,
    "t": "2026-10-25T16:49:50.384Z",
@@ -564,35 +508,63 @@
    "actions": "flee",
    "tx": "0x7e834e4c888b02ee7de40c8666e3a04e8c437762e7ec87bea91c96e8334d1b1",
    "ok": true
+  },
+  {
+   "n": 18,
+   "t": "2026-10-25T16:54:29.466Z",
+   "level": 4,
+   "xp": 24,
+   "hp": 51,
+   "maxHp": 160,
+   "gold": 13,
+   "phase": "explore",
+   "reason": "Explore (instant-death risk 0.5%, HP 51/160)",
+   "actions": "explore",
+   "tx": "0x780fc5744dfa6fde6cb30bf354ad3dc07a3343dd5960cbb039358a848a212ac",
+   "ok": true
+  },
+  {
+   "n": 19,
+   "t": "2026-10-25T16:54:34.072Z",
+   "level": 5,
+   "xp": 25,
+   "hp": 51,
+   "maxHp": 160,
+   "gold": 17,
+   "phase": "level_up",
+   "reason": "Stats +1 DEX; Drink 1 potion(s); Explore (instant-death risk 0.8%, HP 61/160)",
+   "actions": "stats(dex+1) + buy(1 potion) + explore",
+   "tx": "0x5f3bc13ad06cae77c68dbb8c27a94e2294c7f136b0858522e265aab0a47a596",
+   "ok": true
+  },
+  {
+   "n": 20,
+   "t": "2026-10-25T16:54:38.476Z",
+   "level": 6,
+   "xp": 41,
+   "hp": 41,
+   "maxHp": 160,
+   "gold": 16,
+   "phase": "level_up",
+   "reason": "Stats +1 CHA; Drink 4 potion(s); Explore (instant-death risk 0.4%, HP 81/160)",
+   "actions": "stats(cha+1) + buy(4 potions) + explore",
+   "tx": "0x16b06cacfc2b486dfa135e6947ce738dd0a5af8a44075a7d7e1d64e1ea7a547",
+   "ok": true
+  },
+  {
+   "n": 21,
+   "t": "2026-10-25T16:54:44.506Z",
+   "level": 6,
+   "xp": 41,
+   "hp": 70,
+   "maxHp": 160,
+   "gold": 12,
+   "phase": "battle",
+   "reason": "Flee from Rakshasa (L12 T1): P(escape)=93.1% P(death)=6.9%; flee value 157.0 vs attack 130.9",
+   "actions": "flee",
+   "tx": "0x5d7548ec88a165ebf7cf6921494748a6bc3c1e31abb460c0f8cf05215a187f2",
+   "ok": true
   }
  ],
- "current": {
-  "id": "904625697166532776746652061824565847215142356634039894168757566112622239169",
-  "level": 4,
-  "xp": 23,
-  "hp": 51,
-  "maxHp": 160,
-  "gold": 13,
-  "gear": [
-   "Wand T5 G5",
-   "Divine Robe T1 G5",
-   "Full Helm T4 G5",
-   "Heavy Belt T5 G4",
-   "Shoes T5 G5",
-   "Linen Gloves T4 G5",
-   "-",
-   "-"
-  ],
-  "stats": {
-   "str": 4,
-   "dex": 3,
-   "vit": 4,
-   "int": 1,
-   "wis": 0,
-   "cha": 3,
-   "luck": 2
-  },
-  "beast": "Minotaur",
-  "lastReason": "Flee from Minotaur (L12 T5): P(escape)=100.0% P(death)=<0.1%; flee value 181.1 vs attack 180.2"
- }
+ "message": "no unplayed games on the account (buy/mint games in the UI)"
 }
