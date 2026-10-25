@@ -160,9 +160,38 @@ function busy(btn, on) {
 
 function needToken(id) {
   if (token()) return false;
-  note(id, 'Спершу додайте GitHub‑токен у блоці «Доступ до GitHub».', 'warn');
+  note(id, 'Спершу додайте GitHub‑токен: вкладка <a href="#accounts" data-goto="accounts">🔑 Акаунти</a>.', 'warn');
   return true;
 }
+
+// ------------------------------------------------------------------ tabs
+const TABS = ['home', 'accounts', 'schedule', 'stats'];
+function showTab(name, remember = true) {
+  if (!TABS.includes(name)) name = 'home';
+  document.querySelectorAll('[data-pane]').forEach((el) => (el.hidden = el.dataset.pane !== name));
+  document.querySelectorAll('#tabs [data-tab]').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.tab === name)));
+  if (remember) safe(() => localStorage.setItem(LS + 'tab', name));
+  if (location.hash.slice(1) !== name) history.replaceState(null, '', `${location.pathname}${location.search}#${name}`);
+  if (name === 'stats') {
+    // charts measure their container: redraw once it is visible
+    requestAnimationFrame(() => {
+      window.dispatchEvent(new Event('resize'));
+      window.dispatchEvent(new Event('bot:refresh'));
+    });
+  }
+}
+$('#tabs')?.addEventListener('click', (e) => {
+  const b = e.target.closest('[data-tab]');
+  if (b) showTab(b.dataset.tab);
+});
+document.addEventListener('click', (e) => {
+  const a = e.target.closest('[data-goto]');
+  if (!a) return;
+  e.preventDefault();
+  showTab(a.dataset.goto);
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+showTab(TABS.includes(location.hash.slice(1)) ? location.hash.slice(1) : (safe(() => localStorage.getItem(LS + 'tab')) ?? 'home'), false);
 
 // ------------------------------------------------------------------ GitHub access
 async function renderAccess() {
@@ -447,6 +476,7 @@ async function saveGameSession(link, g) {
   await setVariable('GAME_ACCOUNT_OWNER', g.owner);
   await setVariable('GAME_SESSION_EXPIRES', String(g.expiresAt));
   await setVariable('MAINNET_ACCOUNT_ADDRESS', g.account);
+  renderChecklist();
 }
 
 $('#ctlGaCreate')?.addEventListener('click', async (ev) => {
@@ -592,8 +622,8 @@ $('#ctlRonkeClaim')?.addEventListener('click', async () => {
 async function renderControls() {
   const cfg = await config().catch(() => null);
   const sel = $('#ctlDungeon');
-  if (cfg && sel && !sel.options.length) {
-    for (const d of cfg.dungeons) sel.add(new Option(d === 'default' ? 'Default' : d, d === 'default' ? '' : d));
+  for (const el of [sel, $('#qaDungeon')]) {
+    if (cfg && el && !el.options.length) for (const d of cfg.dungeons) el.add(new Option(d === 'default' ? 'Default' : d, d === 'default' ? '' : d));
   }
   if (!token()) {
     $('#ctlSchedule').innerHTML = '<p class="muted">Потрібен GitHub‑токен.</p>';
@@ -627,9 +657,10 @@ $('#ctlSchedule')?.addEventListener('change', async (e) => {
   }
   try {
     await setVariable(name, value);
-    note('#ctlRunNote', `Збережено: ${esc(name)} = ${esc(value || '(default)')}`, 'ok');
+    note('#ctlScheduleNote', `Збережено: ${esc(name)} = ${esc(value || '(default)')}`, 'ok');
+    renderChecklist();
   } catch (err) {
-    note('#ctlRunNote', `Не вдалося зберегти ${esc(name)}: ${esc(err.message)}`, 'bad');
+    note('#ctlScheduleNote', `Не вдалося зберегти ${esc(name)}: ${esc(err.message)}`, 'bad');
   }
 });
 
@@ -641,6 +672,21 @@ $('#ctlMode')?.addEventListener('change', () => {
   if (m === 'practice') $('#ctlLive').checked = false;
 });
 
+/** Start the Bot workflow with the given inputs; remembers what was asked so the monitor can name the run. */
+async function dispatchBot(inputs, label) {
+  const cfg = await config();
+  const meta = await repoMeta();
+  const full = { mode: 'practice', minutes: '40', live: 'false', dungeon: '', settings_id: '', max_games: '50', ronke_claim: 'false', proving_grounds: '0', ...inputs };
+  await gh(`/repos/${repo}/actions/workflows/${cfg.workflows.bot}/dispatches`, { method: 'POST', body: { ref: meta.default_branch, inputs: full } });
+  safe(() => localStorage.setItem(LS + 'lastLaunch', JSON.stringify({ label, at: Date.now(), workflow: 'Bot' })));
+  soonRefresh();
+}
+
+function soonRefresh() {
+  anyRunning = true;
+  for (const t of [3000, 8000, 15000]) setTimeout(renderRuns, t);
+}
+
 $('#ctlRun')?.addEventListener('click', async () => {
   if (needToken('#ctlRunNote')) return;
   const mode = $('#ctlMode').value;
@@ -650,28 +696,72 @@ $('#ctlRun')?.addEventListener('click', async () => {
   const btn = $('#ctlRun');
   busy(btn, true);
   try {
-    const cfg = await config();
-    const meta = await repoMeta();
-    await gh(`/repos/${repo}/actions/workflows/${cfg.workflows.bot}/dispatches`, {
-      method: 'POST',
-      body: {
-        ref: meta.default_branch,
-        inputs: {
-          mode,
-          minutes: String(Math.max(5, Math.min(300, Number($('#ctlMinutes').value) || 40))),
-          live: String(live),
-          dungeon: $('#ctlDungeon').value,
-          settings_id: '',
-          max_games: String(Math.max(1, Math.min(1000, Number($('#ctlMaxGames').value) || 50))),
-          ronke_claim: String(mode !== 'practice' && $('#ctlRonkeBefore').checked),
-          proving_grounds: String(pg),
-        },
+    await dispatchBot(
+      {
+        mode,
+        minutes: String(Math.max(5, Math.min(300, Number($('#ctlMinutes').value) || 40))),
+        live: String(live),
+        dungeon: $('#ctlDungeon').value,
+        max_games: String(Math.max(1, Math.min(1000, Number($('#ctlMaxGames').value) || 50))),
+        ronke_claim: String(mode !== 'practice' && $('#ctlRonkeBefore').checked),
+        proving_grounds: String(pg),
       },
-    });
-    note('#ctlRunNote', `Запуск поставлено в чергу: ${esc(mode)}${live ? ' (live)' : ''}. Статус з’явиться в «Запусках» за кілька секунд.`, 'ok');
-    setTimeout(renderRuns, 4000);
+      `Свій запуск: ${mode}${live ? ' · реальні транзакції' : ''}${pg ? ` · Proving Grounds ×${pg}` : ''}`,
+    );
+    note('#ctlRunNote', `Запуск поставлено в чергу: ${esc(mode)}${live ? ' (live)' : ''}. Слідкуйте в блоці «Зараз».`, 'ok');
   } catch (e) {
     note('#ctlRunNote', `Не вдалося запустити: ${esc(e.message)}`, 'bad');
+  } finally {
+    busy(btn, false);
+  }
+});
+
+// quick actions on the home tab
+document.querySelectorAll('[data-step]').forEach((b) =>
+  b.addEventListener('click', () => {
+    const inp = $('#qaPgCount');
+    inp.value = String(Math.max(1, Math.min(50, (Number(inp.value) || 1) + Number(b.dataset.step))));
+  }),
+);
+
+const QUICK = {
+  pg: () => {
+    const n = Math.max(1, Math.min(50, Number($('#qaPgCount').value) || 5));
+    return {
+      confirm: `Зіграти ${n} ${n === 1 ? 'гру' : n < 5 ? 'гри' : 'ігор'} у Proving Grounds у mainnet? Це реальні транзакції з вашого акаунта (газ платить акаунт).`,
+      inputs: { mode: 'mainnet', live: 'true', minutes: String(Math.min(300, 30 + n * 15)), max_games: String(n + 20), proving_grounds: String(n) },
+      label: `Mainnet · Proving Grounds ×${n}`,
+    };
+  },
+  mine: () => ({
+    confirm: 'Дограти незавершені ігри на вашому акаунті (реальні транзакції)?',
+    inputs: { mode: 'mainnet', live: 'true', minutes: '150', max_games: '50' },
+    label: 'Mainnet · дограти мої ігри',
+  }),
+  ronke: () => ({
+    confirm: 'Забрати сьогоднішні ігри Ronke Casino й одразу зіграти їх (реальні транзакції, газ оплачує lootsurvivor.io)?',
+    inputs: { mode: 'mainnet', live: 'true', minutes: '120', max_games: '20', ronke_claim: 'true' },
+    label: 'Ronke Casino · забрати й зіграти',
+  }),
+  practice: () => {
+    const d = $('#qaDungeon').value;
+    return { inputs: { mode: 'practice', minutes: '30', max_games: '200', dungeon: d }, label: `Тренування · ${d || 'Default'}` };
+  },
+};
+
+document.addEventListener('click', async (e) => {
+  const btn = e.target.closest('[data-quick]');
+  if (!btn) return;
+  if (needToken('#ctlRunNote')) return;
+  const q = QUICK[btn.dataset.quick]();
+  if (q.confirm && !confirm(q.confirm)) return;
+  busy(btn, true);
+  try {
+    await dispatchBot(q.inputs, q.label);
+    note('#ctlRunNote', `▶ «${esc(q.label)}» запущено. Прогрес — у блоці «Зараз» нижче.`, 'ok');
+    $('#monitor')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  } catch (err) {
+    note('#ctlRunNote', `Не вдалося запустити: ${esc(err.message)}`, 'bad');
   } finally {
     busy(btn, false);
   }
@@ -683,8 +773,9 @@ $('#ctlLearn')?.addEventListener('click', async () => {
     const cfg = await config();
     const meta = await repoMeta();
     await gh(`/repos/${repo}/actions/workflows/${cfg.workflows.learn}/dispatches`, { method: 'POST', body: { ref: meta.default_branch } });
+    safe(() => localStorage.setItem(LS + 'lastLaunch', JSON.stringify({ label: 'Навчання стратегії', at: Date.now(), workflow: 'Learn' })));
     note('#ctlRunNote', 'Навчання поставлено в чергу (лідерборд, білди лідерів, тюнінг політики).', 'ok');
-    setTimeout(renderRuns, 4000);
+    soonRefresh();
   } catch (e) {
     note('#ctlRunNote', `Не вдалося запустити навчання: ${esc(e.message)}`, 'bad');
   }
@@ -717,8 +808,9 @@ async function renderRuns() {
   if (!host) return;
   try {
     const r = await gh(`/repos/${repo}/actions/runs?per_page=10`);
-    const runs = (r.workflow_runs ?? []).filter((x) => !['CI'].includes(x.name));
+    const runs = (r.workflow_runs ?? []).filter((x) => !['CI', 'Pages', 'pages-build-deployment'].includes(x.name));
     anyRunning = runs.some((x) => x.status !== 'completed');
+    renderMonitor(runs).catch(() => {});
     const steps = {};
     if (token()) {
       for (const run of runs.filter((x) => x.status === 'in_progress').slice(0, 2)) {
@@ -762,10 +854,146 @@ $('#ctlRuns')?.addEventListener('click', async (e) => {
   }
 });
 
+// ------------------------------------------------------------------ live monitor ("Зараз")
+const WF_LABEL = { Bot: 'Гра бота', Learn: 'Навчання', Task: 'Службове завдання' };
+const STEP_LABEL = {
+  'Discover live contracts and dungeons': 'Перевірка контрактів',
+  'Practice dungeon': 'Тренування',
+  'Ronke Casino daily games': 'Ronke Casino',
+  Mainnet: 'Ігри в mainnet',
+  'Leaderboard snapshot': 'Лідерборд',
+  Summaries: 'Підсумки',
+  'Push data': 'Збереження даних',
+};
+function stepName(n) {
+  return STEP_LABEL[n] ?? n.replace(/^Run /, '');
+}
+
+async function renderMonitor(runs) {
+  const host = $('#monitor');
+  if (!host) return;
+  const run = runs.find((x) => x.status !== 'completed') ?? runs[0];
+  if (!run) {
+    host.innerHTML = '<p class="muted">Ще нічого не запускалось. Оберіть дію вище.</p>';
+    return;
+  }
+  const launch = safe(() => JSON.parse(localStorage.getItem(LS + 'lastLaunch') ?? 'null'));
+  const created = new Date(run.created_at).getTime();
+  const label = launch && launch.workflow === run.name && Math.abs(created - launch.at) < 120_000 ? launch.label : `${WF_LABEL[run.name] ?? run.name}${run.event === 'schedule' ? ' · за розкладом' : ''}`;
+  const running = run.status !== 'completed';
+  const [stLabel, stCls] = STATUS[run.conclusion ?? run.status] ?? [run.conclusion ?? run.status, ''];
+  let stepsHtml = '';
+  let pct = running ? 5 : 100;
+  if (token() && (running || Date.now() - new Date(run.updated_at).getTime() < 6 * 3600_000)) {
+    try {
+      const jobs = await gh(`/repos/${repo}/actions/runs/${run.id}/jobs`);
+      const job = jobs.jobs?.find((j) => j.name === 'play' || j.name === 'task' || j.name === 'learn') ?? jobs.jobs?.[0];
+      const steps = (job?.steps ?? []).filter((x) => !/^(Set up job|Complete job|Post |Run actions\/|Run npm ci|Run scripts\/data-branch|Remove session)/.test(x.name));
+      const done = steps.filter((x) => x.status === 'completed').length;
+      if (steps.length) pct = Math.max(pct, Math.round((done / steps.length) * 100));
+      stepsHtml = `<ol class="steps">${steps
+        .map((x) => {
+          const icon = x.status === 'in_progress' ? '⏳' : x.status !== 'completed' ? '○' : x.conclusion === 'skipped' ? '–' : x.conclusion === 'success' ? '✓' : '✗';
+          const cls = x.status === 'in_progress' ? 's-run' : x.conclusion === 'skipped' ? 's-skip' : x.conclusion === 'failure' ? 's-bad' : x.status === 'completed' ? 's-ok' : 's-wait';
+          return `<li class="${cls}"><span class="step-icon">${icon}</span>${esc(stepName(x.name))}</li>`;
+        })
+        .join('')}</ol>`;
+    } catch {
+      /* jobs need the token */
+    }
+  }
+  // results of the latest bot run (bot-data/runs.json)
+  let result = '';
+  if (run.name === 'Bot') {
+    const d = await window.botData?.load('runs.json').catch(() => undefined);
+    const list = Array.isArray(d) ? d : d?.runs ?? [];
+    const since = new Date(run.run_started_at ?? run.created_at).getTime() - 60_000;
+    const mine = list.filter((x) => new Date(x.started).getTime() >= since);
+    if (mine.length) {
+      result = `<div class="mon-results">${mine
+        .map(
+          (x) => `<div class="mon-result"><span class="badge ${x.mode.startsWith('mainnet') ? 'run' : 'muted'}">${esc(x.mode === 'mainnet' ? 'Mainnet' : x.mode === 'mainnet-dry' ? 'Mainnet (dry run)' : 'Тренування')}</span>
+            <b>${x.games}</b> ігор · найкраща <b>${x.bestXp}</b> XP · середня ${x.meanXp}${x.errors ? ` · <span class="bad">${x.errors} помилок</span>` : ''}${x.ended ? '' : ' · <span class="run">триває</span>'}</div>`,
+        )
+        .join('')}</div>`;
+    } else if (running) result = '<p class="muted small">Результати з’являться після першої зіграної гри.</p>';
+  }
+  host.innerHTML = `
+    <div class="mon-head">
+      <div><div class="mon-title">${esc(label)}</div>
+        <div class="muted small">${new Date(run.run_started_at ?? run.created_at).toLocaleString('uk-UA', { dateStyle: 'short', timeStyle: 'short' })} · ${duration(run)}</div></div>
+      <div class="mon-side"><span class="badge ${stCls}">${esc(stLabel)}</span>
+        ${running && token() ? `<button class="btn small" data-cancel="${run.id}">Зупинити</button>` : ''}
+        <a class="btn small" href="${esc(run.html_url)}" target="_blank" rel="noopener">Лог</a></div>
+    </div>
+    <div class="progress" role="progressbar" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"><div class="pbar ${running ? 'b-running' : `b-${stCls}`}" style="width:${pct}%"></div></div>
+    ${stepsHtml}${result}`;
+  $('#monUpdated').textContent = running ? 'оновлюється автоматично' : '';
+}
+
+$('#monitor')?.addEventListener('click', async (e) => {
+  const id = e.target.closest('[data-cancel]')?.dataset.cancel;
+  if (!id || !confirm('Зупинити цей запуск?')) return;
+  try {
+    await gh(`/repos/${repo}/actions/runs/${id}/cancel`, { method: 'POST' });
+    setTimeout(renderRuns, 3000);
+  } catch (err) {
+    note('#ctlRunNote', `Не вдалося зупинити: ${esc(err.message)}`, 'bad');
+  }
+});
+
+// ------------------------------------------------------------------ readiness checklist
+async function renderChecklist() {
+  const host = $('#checklist');
+  if (!host) return;
+  const item = (ok, title, detail, action) =>
+    `<div class="check ${ok === true ? 'c-ok' : ok === false ? 'c-bad' : 'c-warn'}"><span class="check-icon">${ok === true ? '✓' : ok === false ? '!' : '•'}</span>
+      <div><b>${title}</b><div class="muted small">${detail}</div></div>${action ?? ''}</div>`;
+  if (!token()) {
+    host.innerHTML =
+      item(false, 'GitHub‑токен', 'Потрібен, щоб сайт міг запускати бота.', '<a class="btn small primary" href="#accounts" data-goto="accounts">Додати</a>') +
+      item(null, 'Акаунт гри', 'Після токена підключіть Cartridge або EVM‑гаманець.', '') +
+      item(null, 'Розклад', 'Бот може грати сам кожні 3 години.', '');
+    $('#tabAccountsDot').hidden = false;
+    return;
+  }
+  try {
+    const [vars, cart, ga] = await Promise.all([variables(), secretInfo('CARTRIDGE_SESSION_B64'), secretInfo('GAME_SESSION_LINK')]);
+    const now = Date.now();
+    const cExp = Number(vars.CARTRIDGE_SESSION_EXPIRES?.value ?? 0) * 1000;
+    const gExp = Number(vars.GAME_SESSION_EXPIRES?.value ?? 0) * 1000;
+    const cOk = !!cart && (!cExp || cExp > now);
+    const gOk = !!ga && (!gExp || gExp > now);
+    const acct = gOk ? `Game Account ${short(vars.GAME_ACCOUNT_ADDRESS?.value ?? '')}` : cOk ? `Cartridge ${vars.CARTRIDGE_USERNAME?.value ?? short(vars.MAINNET_ACCOUNT_ADDRESS?.value ?? '')}` : '';
+    const exp = gOk ? gExp : cExp;
+    const soon = exp && exp - now < 7 * 86400_000;
+    const sched = vars.MAINNET_ENABLED?.value === 'true';
+    const live = vars.MAINNET_LIVE?.value === 'true';
+    const pg = Number(vars.PROVING_GROUNDS_GAMES?.value ?? 0);
+    host.innerHTML =
+      item(true, 'GitHub‑токен', 'Збережено в цьому браузері.') +
+      item(
+        cOk || gOk ? (soon ? null : true) : false,
+        'Акаунт гри',
+        cOk || gOk ? `${esc(acct)}${exp ? ` · сесія до ${new Date(exp).toLocaleDateString('uk-UA')}${soon ? ' — скоро закінчиться' : ''}` : ''}` : 'Не підключено (або сесія закінчилась) — mainnet‑ігри недоступні.',
+        cOk || gOk ? (soon ? '<a class="btn small" href="#accounts" data-goto="accounts">Оновити</a>' : '') : '<a class="btn small primary" href="#accounts" data-goto="accounts">Підключити</a>',
+      ) +
+      item(
+        sched && live ? true : null,
+        'Розклад',
+        sched ? `Mainnet кожні 3 год${live ? '' : ' (dry run — без транзакцій)'}${pg ? ` · Proving Grounds ×${pg}` : ''}` : 'Вимкнено: бот грає mainnet лише коли ви запускаєте вручну.',
+        '<a class="btn small" href="#schedule" data-goto="schedule">Налаштувати</a>',
+      );
+    $('#tabAccountsDot').hidden = cOk || gOk;
+  } catch (e) {
+    host.innerHTML = `<p class="bad">${esc(e.message)}</p>`;
+  }
+}
+
 // ------------------------------------------------------------------ main
 async function renderAll() {
   await renderAccess();
-  await Promise.all([renderWallet(), renderGameAccount(), renderRonke(), renderControls(), renderRuns()]);
+  await Promise.all([renderWallet(), renderGameAccount(), renderRonke(), renderControls(), renderRuns(), renderChecklist()]);
   window.dispatchEvent(new Event('bot:refresh'));
 }
 
@@ -774,7 +1002,7 @@ await renderAll();
 // poll runs: every 20 s while something runs, otherwise every 90 s (unauthenticated API: 60 requests/hour)
 let last = Date.now();
 setInterval(() => {
-  const every = anyRunning ? 20_000 : token() ? 60_000 : 90_000;
+  const every = anyRunning ? 12_000 : token() ? 60_000 : 90_000;
   if (Date.now() - last >= every && !document.hidden) {
     last = Date.now();
     renderRuns();

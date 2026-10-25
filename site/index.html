@@ -18,12 +18,116 @@
   <div class="state" id="state"><span class="dot"></span><span id="stateText">завантаження…</span></div>
 </header>
 
+<nav class="tabs" id="tabs" role="tablist">
+  <button data-tab="home" role="tab">🏠 Головна</button>
+  <button data-tab="accounts" role="tab">🔑 Акаунти <span class="tab-dot" id="tabAccountsDot" hidden></span></button>
+  <button data-tab="schedule" role="tab">⏰ Розклад</button>
+  <button data-tab="stats" role="tab">📊 Аналітика</button>
+</nav>
+
 <main>
-  <section class="card ctl" id="control" aria-labelledby="ctlTitle">
-    <div class="card-head"><h2 id="ctlTitle">Керування ботом</h2><span class="muted small">гаманець · режим · запуски</span></div>
-    <div class="ctl-grid">
-      <article class="ctl-col">
-        <h3>1. Доступ до GitHub</h3>
+  <!-- ============================== HOME -->
+  <div class="tab-pane" data-pane="home">
+    <section class="card" aria-labelledby="setupTitle">
+      <div class="card-head"><h2 id="setupTitle">Готовність</h2><span class="muted small" id="setupHint"></span></div>
+      <div class="checklist" id="checklist"><p class="muted">Перевіряю…</p></div>
+    </section>
+
+    <section class="card" aria-labelledby="quickTitle">
+      <div class="card-head"><h2 id="quickTitle">Швидкий запуск</h2><span class="muted small">один клік — бот запускається на GitHub Actions</span></div>
+      <div class="actions-grid">
+        <article class="action">
+          <div class="action-icon">⚔️</div>
+          <h3>Mainnet · Proving Grounds</h3>
+          <p class="muted small">Безкоштовний вхід, справжні ігри, що йдуть у таблицю лідерів. Газ — з вашого акаунта.</p>
+          <label class="ctl-field">Скільки ігор
+            <span class="stepper"><button class="btn small" data-step="-1" aria-label="менше">−</button><input id="qaPgCount" type="number" min="1" max="50" value="5"><button class="btn small" data-step="1" aria-label="більше">+</button></span>
+          </label>
+          <button class="btn primary wide" data-quick="pg">Зіграти</button>
+        </article>
+        <article class="action">
+          <div class="action-icon">▶️</div>
+          <h3>Дограти мої ігри</h3>
+          <p class="muted small">Бот зіграє незавершені ігри на вашому акаунті й зарахує їх результати.</p>
+          <button class="btn primary wide" data-quick="mine">Дограти</button>
+        </article>
+        <article class="action">
+          <div class="action-icon">🎰</div>
+          <h3>Ronke Casino</h3>
+          <p class="muted small">Забрати сьогоднішні безкоштовні ігри й одразу їх зіграти (газ оплачує lootsurvivor.io).</p>
+          <button class="btn primary wide" data-quick="ronke">Забрати й зіграти</button>
+        </article>
+        <article class="action">
+          <div class="action-icon">🎮</div>
+          <h3>Тренування</h3>
+          <p class="muted small">Безкоштовні ігри без транзакцій на офіційному рушії гри — щоб перевірити стратегію.</p>
+          <label class="ctl-field">Підземелля <select id="qaDungeon"></select></label>
+          <button class="btn wide" data-quick="practice">Тренуватися</button>
+        </article>
+        <article class="action">
+          <div class="action-icon">🧠</div>
+          <h3>Навчання</h3>
+          <p class="muted small">Підлаштувати стратегію на мільйонах симуляцій (≈1–3 год). Нова політика береться, лише якщо вона краща.</p>
+          <button class="btn wide" id="ctlLearn">Почати навчання</button>
+        </article>
+      </div>
+      <details class="advanced">
+        <summary>Свій запуск (усі налаштування)</summary>
+        <div class="advanced-body">
+        <label class="ctl-field">Режим
+          <select id="ctlMode">
+            <option value="practice">Practice (безкоштовно, без транзакцій)</option>
+            <option value="mainnet">Mainnet (ваші ігри)</option>
+            <option value="both">Practice + Mainnet</option>
+          </select>
+        </label>
+        <label class="ctl-field">Practice‑підземелля <select id="ctlDungeon"></select></label>
+        <div class="ctl-row">
+          <label class="ctl-field">Хвилин <input id="ctlMinutes" type="number" min="5" max="300" value="40"></label>
+          <label class="ctl-field">Макс. ігор <input id="ctlMaxGames" type="number" min="1" max="1000" value="50"></label>
+        </div>
+        <label class="ctl-switch" id="ctlLiveWrap" hidden><input type="checkbox" id="ctlLive"> Реальні транзакції (без цього — dry run: бот лише показує рішення)</label>
+        <label class="ctl-switch"><input type="checkbox" id="ctlRonkeBefore"> Спершу забрати щоденні ігри Ronke Casino</label>
+        <label class="ctl-field" id="ctlPgWrap" hidden>Proving Grounds — безкоштовних входів, коли ігор немає (газ платить акаунт)
+          <input id="ctlPg" type="number" min="0" max="50" value="0"></label>
+        <div class="ctl-actions">
+          <button class="btn primary" id="ctlRun">Запустити</button>
+        </div>
+        </div>
+      </details>
+      <p id="ctlRunNote" class="ctl-note" aria-live="polite"></p>
+    </section>
+
+    <section class="card" aria-labelledby="monTitle">
+      <div class="card-head"><h2 id="monTitle">Зараз</h2><span class="muted small" id="monUpdated"></span></div>
+      <div id="monitor" class="monitor"><p class="muted">Завантаження…</p></div>
+    </section>
+
+  <section class="grid2">
+    <article class="card" id="liveCard">
+      <h2>Поточна гра</h2>
+      <div id="live" class="live"><p class="muted">Немає активної гри.</p></div>
+    </article>
+    <article class="card">
+      <h2>Останні рішення <span class="muted small" id="recentMode"></span></h2>
+      <ol id="recent" class="log"></ol>
+    </article>
+  </section>
+
+
+    <section class="card">
+      <div class="card-head"><h2>Останні запуски</h2></div>
+      <div id="ctlRuns" class="table-wrap"><p class="muted">Завантаження…</p></div>
+    </section>
+  </div>
+
+  <!-- ============================== ACCOUNTS -->
+  <div class="tab-pane" data-pane="accounts" hidden>
+    <section class="card ctl">
+      <div class="card-head"><h2>Акаунти</h2><span class="muted small">GitHub · гаманець бота</span></div>
+      <div class="ctl-grid two">
+        <article class="ctl-col">
+        <h3>Доступ до GitHub</h3>
         <p class="muted small">Бот працює в GitHub Actions цього репозиторію, а сайт керує ним через ваш токен. Токен
           зберігається лише в цьому браузері й надсилається тільки на api.github.com.</p>
         <label class="ctl-field">Репозиторій <input id="ctlRepo" autocomplete="off" spellcheck="false"></label>
@@ -45,7 +149,9 @@
         </details>
         <p id="ctlAccessNote" class="ctl-note"></p>
 
-        <h3>2. Гаманець Cartridge</h3>
+        </article>
+        <article class="ctl-col">
+        <h3>Гаманець Cartridge</h3>
         <p class="muted small">Ви підтверджуєте в Cartridge сесію з мінімальними правами: лише ходи
           (<code>commit_actions</code>) і зарахування результату (<code>verify_game</code>) у Loot Survivor. Без
           переказів. Ключ сесії одразу шифрується в секрет репозиторію.</p>
@@ -82,59 +188,31 @@
           <div class="ctl-actions"><button class="btn" id="ctlGaSave">Зберегти посилання</button></div>
         </details>
         <p id="ctlGaNote" class="ctl-note"></p>
-      </article>
-
-      <article class="ctl-col">
-        <h3>3. Запуск бота</h3>
-        <label class="ctl-field">Режим
-          <select id="ctlMode">
-            <option value="practice">Practice (безкоштовно, без транзакцій)</option>
-            <option value="mainnet">Mainnet (ваші ігри)</option>
-            <option value="both">Practice + Mainnet</option>
-          </select>
-        </label>
-        <label class="ctl-field">Practice‑підземелля <select id="ctlDungeon"></select></label>
-        <div class="ctl-row">
-          <label class="ctl-field">Хвилин <input id="ctlMinutes" type="number" min="5" max="300" value="40"></label>
-          <label class="ctl-field">Макс. ігор <input id="ctlMaxGames" type="number" min="1" max="1000" value="50"></label>
-        </div>
-        <label class="ctl-switch" id="ctlLiveWrap" hidden><input type="checkbox" id="ctlLive"> Реальні транзакції (без цього — dry run: бот лише показує рішення)</label>
-        <label class="ctl-switch"><input type="checkbox" id="ctlRonkeBefore"> Спершу забрати щоденні ігри Ronke Casino</label>
-        <label class="ctl-field" id="ctlPgWrap" hidden>Proving Grounds — безкоштовних входів, коли ігор немає (газ платить акаунт)
-          <input id="ctlPg" type="number" min="0" max="50" value="0"></label>
-        <div class="ctl-actions">
-          <button class="btn primary" id="ctlRun">Запустити</button>
-          <button class="btn" id="ctlLearn">Навчання зараз</button>
-        </div>
-        <h3>Розклад</h3>
-        <div id="ctlSchedule"></div>
-        <p id="ctlRunNote" class="ctl-note"></p>
-      </article>
-
-      <article class="ctl-col">
-        <h3>4. Запуски</h3>
-        <div id="ctlRuns" class="table-wrap"><p class="muted">Завантаження…</p></div>
+        </article>
+      </div>
+    </section>
+    <section class="card ctl">
         <h3>Ronke Casino</h3>
         <div id="ctlRonke"><p class="muted">Завантаження…</p></div>
         <label class="ctl-switch"><input type="checkbox" id="ctlRonkePlay" checked> Одразу зіграти отримані ігри</label>
         <div class="ctl-actions"><button class="btn primary" id="ctlRonkeClaim">Забрати ігри зараз</button></div>
         <p id="ctlRonkeNote" class="ctl-note"></p>
-      </article>
-    </div>
-  </section>
+    </section>
+  </div>
 
+  <!-- ============================== SCHEDULE -->
+  <div class="tab-pane" data-pane="schedule" hidden>
+    <section class="card ctl">
+      <div class="card-head"><h2>Розклад</h2><span class="muted small">бот запускається сам кожні 3 години</span></div>
+      <p class="muted small">Що бот робитиме сам, без вас. Зміни зберігаються одразу.</p>
+      <div id="ctlSchedule"></div>
+      <p id="ctlScheduleNote" class="ctl-note" aria-live="polite"></p>
+    </section>
+  </div>
+
+  <!-- ============================== STATS -->
+  <div class="tab-pane" data-pane="stats" hidden>
   <section class="kpis" id="kpis" aria-label="Ключові показники"></section>
-
-  <section class="grid2">
-    <article class="card" id="liveCard">
-      <h2>Поточна гра</h2>
-      <div id="live" class="live"><p class="muted">Немає активної гри.</p></div>
-    </article>
-    <article class="card">
-      <h2>Останні рішення <span class="muted small" id="recentMode"></span></h2>
-      <ol id="recent" class="log"></ol>
-    </article>
-  </section>
 
   <section class="card">
     <div class="card-head">
@@ -192,6 +270,7 @@
     <div class="card-head"><h2>Живі контракти та підземелля</h2><span class="muted small" id="discUpdated"></span></div>
     <div id="discovery" class="disc"></div>
   </section>
+  </div>
 </main>
 
 <footer class="muted small">Дані оновлюються GitHub Actions після кожного запуску бота · <span id="updated"></span></footer>
