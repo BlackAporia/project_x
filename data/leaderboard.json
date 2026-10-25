@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-25T21:26:12.058Z",
+ "updated": "2026-10-25T21:28:04.787Z",
  "board": {
   "name": "Proving Grounds",
   "minterId": 10,
@@ -339,7 +339,7 @@
    "xp": 594,
    "level": 24,
    "gameOver": true,
-   "settled": false,
+   "settled": true,
    "updated": "2026-10-25T21:25:44.000Z",
    "settingsId": 0,
    "bot": true
