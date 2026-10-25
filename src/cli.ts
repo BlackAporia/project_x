@@ -255,7 +255,8 @@ async function main(): Promise<void> {
     }
     case 'frontend': {
       const { runFrontendCommand } = await import('./commands/frontend.ts');
-      await runFrontendCommand({ dataDir: str(values.data, process.env.BOT_DATA_DIR ?? 'site/data') });
+      const grep = (Array.isArray(values.call) ? values.call : []).map(String);
+      await runFrontendCommand({ dataDir: str(values.data, process.env.BOT_DATA_DIR ?? 'site/data'), grep });
       break;
     }
     case 'site-config': {

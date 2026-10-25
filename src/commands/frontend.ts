@@ -54,14 +54,23 @@ export function extractDungeons(js: string): FrontendDungeon[] {
   return out;
 }
 
-export async function runFrontendCommand(opts: { dataDir: string; site?: string }): Promise<void> {
+export async function runFrontendCommand(opts: { dataDir: string; site?: string; grep?: string[] }): Promise<void> {
   const dir = join(tmpdir(), `lsfront-${Date.now()}`);
   execFileSync(process.execPath, ['scripts/dump-frontend.mjs', dir, opts.site ?? 'https://lootsurvivor.io/'], { stdio: 'inherit' });
   const files = readdirSync(join(dir, 'assets')).filter((f) => f.endsWith('.js'));
   const dungeons = new Map<string, FrontendDungeon>();
   const ronke = new Set<string>();
+  const snippets: Array<{ file: string; keyword: string; text: string }> = [];
   for (const f of files) {
     const js = readFileSync(join(dir, 'assets', f), 'utf8');
+    for (const k of opts.grep ?? []) {
+      let i = js.indexOf(k);
+      let n = 0;
+      while (i >= 0 && n++ < 6) {
+        snippets.push({ file: f, keyword: k, text: js.slice(Math.max(0, i - 1200), i + 1200) });
+        i = js.indexOf(k, i + 1200);
+      }
+    }
     for (const d of extractDungeons(js)) if (!dungeons.has(d.id) || Object.keys(d.fields).length > Object.keys(dungeons.get(d.id)!.fields).length) dungeons.set(d.id, d);
     for (const m of js.matchAll(/`([^`]{0,160}[Rr]onke[^`]{0,200})`/g)) if (ronke.size < 400) ronke.add(m[1].replace(/\s+/g, ' '));
   }
@@ -75,6 +84,10 @@ export async function runFrontendCommand(opts: { dataDir: string; site?: string 
   const list = [...dungeons.values()];
   const added = before.length ? list.filter((d) => !known.has(d.id)).map((d) => d.id) : [];
   writeFileSync(file, JSON.stringify({ updated: new Date().toISOString(), new: added, dungeons: list, ronkeStrings: [...ronke] }, null, 1) + '\n');
+  if (opts.grep?.length) {
+    writeFileSync(join(outDir, 'snippets.json'), JSON.stringify({ updated: new Date().toISOString(), keywords: opts.grep, snippets }, null, 1) + '\n');
+    console.log(`${snippets.length} snippet(s) for ${opts.grep.join(', ')} -> frontend/snippets.json`);
+  }
   console.log(`${list.length} dungeon configs on lootsurvivor.io${added.length ? `, NEW: ${added.join(', ')}` : ''}`);
   for (const d of list) {
     const f = d.fields;
