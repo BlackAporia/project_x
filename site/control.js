@@ -893,6 +893,8 @@ async function renderMonitor(runs) {
   const created = new Date(run.created_at).getTime();
   const label = launch && launch.workflow === run.name && Math.abs(created - launch.at) < 120_000 ? launch.label : `${WF_LABEL[run.name] ?? run.name}${run.event === 'schedule' ? ' · за розкладом' : ''}`;
   const running = run.status !== 'completed';
+  // app.js hides the previous run's live status until this run pushes its own (scripts/live-push.sh, every minute)
+  window.botActiveRunStart = running && run.name === 'Bot' ? new Date(run.run_started_at ?? run.created_at).getTime() : null;
   const [stLabel, stCls] = STATUS[run.conclusion ?? run.status] ?? [run.conclusion ?? run.status, ''];
   let stepsHtml = '';
   let pct = running ? 5 : 100;

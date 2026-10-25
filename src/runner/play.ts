@@ -188,6 +188,8 @@ export async function playLoop(opts: PlayOptions): Promise<RunRecord> {
     store.writeStatus(status);
   };
   store.upsertRun(run);
+  status.message = backend.mode === 'mainnet' ? 'looking for unplayed games on the account' : 'starting';
+  flush();
 
   for (let g = 0; g < opts.maxGames && Date.now() < deadline; g++) {
     let id: bigint | null;

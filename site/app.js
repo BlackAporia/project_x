@@ -255,8 +255,11 @@ function renderKpis() {
 function renderLive(status) {
   const c = status?.current;
   const host = $('#live');
-  if (!c || !status.running) {
-    host.innerHTML = `<p class="muted">Немає активної гри.${status?.message ? `<br>${esc(status.message)}` : ''}</p>`;
+  const stale = window.botActiveRunStart && (!status?.updated || new Date(status.updated).getTime() < window.botActiveRunStart);
+  if (stale) {
+    host.innerHTML = '<p class="muted">Запуск іде, бот ще не надіслав перших даних — вони оновлюються щохвилини.</p>';
+  } else if (!c || !status.running) {
+    host.innerHTML = `<p class="muted">Немає активної гри.${status?.message ? `<br>${esc(status.message)}${status.account ? ` <span class="small">· акаунт ${esc(short(status.account))}</span>` : ''} <span class="small">· ${ago(status.updated)}</span>` : ''}</p>`;
   } else {
     const hpPct = c.maxHp ? Math.round((c.hp / c.maxHp) * 100) : 0;
     const slots = ['Зброя', 'Груди', 'Голова', 'Пояс', 'Ноги', 'Руки', 'Шия', 'Кільце'];

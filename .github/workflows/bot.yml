@@ -73,7 +73,7 @@ jobs:
         env:
           BOT_DUNGEON: ${{ inputs.dungeon || vars.PRACTICE_DUNGEON }}
           PRACTICE_SETTINGS_ID: ${{ inputs.settings_id || vars.PRACTICE_SETTINGS_ID }}
-        run: npm run play -- --mode practice --minutes "${{ inputs.minutes || vars.PRACTICE_MINUTES || '40' }}" --max-games "${{ inputs.max_games || '200' }}"
+        run: scripts/live-push.sh npm run play -- --mode practice --minutes "${{ inputs.minutes || vars.PRACTICE_MINUTES || '40' }}" --max-games "${{ inputs.max_games || '200' }}"
 
       - name: Ronke Casino daily games
         if: (github.event_name == 'schedule' && vars.MAINNET_ENABLED == 'true' && vars.RONKE_CLAIM == 'true') || inputs.ronke_claim == 'true'
@@ -95,7 +95,7 @@ jobs:
           MAINNET_ACCOUNT_ADDRESS: ${{ vars.MAINNET_ACCOUNT_ADDRESS }}
           MAINNET_LIVE: ${{ (github.event_name == 'schedule' && vars.MAINNET_LIVE == 'true') || inputs.live == 'true' }}
           PROVING_GROUNDS_GAMES: ${{ inputs.proving_grounds || vars.PROVING_GROUNDS_GAMES || '0' }}
-        run: npm run play -- --mode mainnet --minutes "${{ inputs.minutes || vars.MAINNET_MINUTES || '120' }}" --max-games "${{ inputs.max_games || '100' }}"
+        run: scripts/live-push.sh npm run play -- --mode mainnet --minutes "${{ inputs.minutes || vars.MAINNET_MINUTES || '120' }}" --max-games "${{ inputs.max_games || '100' }}"
 
       - name: Leaderboard snapshot
         continue-on-error: true

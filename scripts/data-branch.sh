@@ -22,7 +22,7 @@ case "${1:-}" in
   push)
     msg="${2:-bot data}"
     cd "$DIR"
-    git add -A
+    git add -A -- . ':!*.tmp'
     if git diff --cached --quiet; then echo "no data changes"; exit 0; fi
     git commit -q -m "$msg"
     for i in 1 2 3 4 5; do

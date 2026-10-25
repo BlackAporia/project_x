@@ -1,6 +1,12 @@
 // JSON files consumed by the dashboard (site/). Everything is small, append-only and capped so the data branch stays light.
-import { existsSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, readdirSync, renameSync, rmSync, writeFileSync as writeFileRaw } from 'node:fs';
 import { join } from 'node:path';
+
+// atomic writes: the live pusher (scripts/live-push.sh) commits the data dir while the bot is writing
+function writeFileSync(path: string, data: string): void {
+  writeFileRaw(path + '.tmp', data);
+  renameSync(path + '.tmp', path);
+}
 
 export interface GameRecord {
   id: string;
