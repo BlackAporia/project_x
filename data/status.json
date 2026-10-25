@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-25T14:09:46.421Z",
+ "updated": "2026-10-25T14:10:32.293Z",
  "mode": "mainnet",
- "running": true,
+ "running": false,
  "runId": "2026-10-25T14-07-15-459Z",
  "account": "0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452",
  "recent": [
@@ -398,33 +398,5 @@
    "ok": true
   }
  ],
- "message": "looking for unplayed games on the account",
- "current": {
-  "id": "2713877091499598330239949450874152722206844068439598152237922000676334100641",
-  "level": 10,
-  "xp": 106,
-  "hp": 18,
-  "maxHp": 145,
-  "gold": 0,
-  "gear": [
-   "Grimoire T1 G10",
-   "Shirt T5 G10",
-   "Hood T5 G10",
-   "Leather Belt T5 G7",
-   "Leather Boots T5 G9",
-   "Divine Gloves T1 G10",
-   "-",
-   "-"
-  ],
-  "stats": {
-   "str": 2,
-   "dex": 6,
-   "vit": 3,
-   "int": 2,
-   "wis": 2,
-   "cha": 5,
-   "luck": 2
-  },
-  "lastReason": "Stats +1 DEX; Explore (instant-death risk 22.9%, HP 18/145)"
- }
+ "message": "no unplayed games on the account (buy/mint games in the UI)"
 }

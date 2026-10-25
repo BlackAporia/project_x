@@ -1,17 +1,17 @@
 {
- "updated": "2026-10-25T14:06:34.364Z",
+ "updated": "2026-10-25T14:10:33.533Z",
  "modes": {
   "mainnet": {
-   "games": 18,
+   "games": 19,
    "inProgress": 0,
    "errors": 0,
    "best": 355,
    "bestLevel": 18,
-   "mean": 135,
-   "median": 136,
+   "mean": 133,
+   "median": 130,
    "p90": 305,
-   "last20Mean": 135,
-   "transactions": 732,
+   "last20Mean": 133,
+   "transactions": 760,
    "reverts": 3,
    "predictionAccuracy": null,
    "deathCauses": [
@@ -21,7 +21,7 @@
     ],
     [
      "obstacle",
-     2
+     3
     ],
     [
      "Fairy",
@@ -70,6 +70,7 @@
     "7": 1,
     "8": 1,
     "9": 1,
+    "10": 1,
     "11": 4,
     "12": 2,
     "13": 2,
@@ -426,18 +427,6 @@
  },
  "runs": [
   {
-   "id": "2026-10-23T11-40-36-823Z",
-   "mode": "practice",
-   "started": "2026-10-23T11:40:36.823Z",
-   "games": 200,
-   "bestXp": 711,
-   "meanXp": 232,
-   "errors": 0,
-   "policy": "tuned-2026-10-22-g24",
-   "dungeon": "Default #0",
-   "ended": "2026-10-23T11:40:47.033Z"
-  },
-  {
    "id": "2026-10-23T15-49-15-081Z",
    "mode": "mainnet-dry",
    "started": "2026-10-23T15:49:15.081Z",
@@ -767,6 +756,17 @@
    "errors": 0,
    "policy": "tail-2026-10-25-g3",
    "ended": "2026-10-25T13:48:52.608Z"
+  },
+  {
+   "id": "2026-10-25T14-07-15-459Z",
+   "mode": "mainnet",
+   "started": "2026-10-25T14:07:15.459Z",
+   "games": 6,
+   "bestXp": 606,
+   "meanXp": 197,
+   "errors": 0,
+   "policy": "tail-2026-10-25-g3",
+   "ended": "2026-10-25T14:10:32.294Z"
   }
  ],
  "policy": {
