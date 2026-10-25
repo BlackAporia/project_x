@@ -1,10 +1,10 @@
-== bot frontend --call linkEvm( --call linkEvm?.( --call personal_sign --call evm/link --call superSurvivor --call notQualified
+== bot frontend --call linkEvm --call Link-your-Ronin --call bad_signature --call stale
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts frontend --call linkEvm( --call linkEvm?.( --call personal_sign --call evm/link --call superSurvivor --call notQualified
+> node --import tsx src/cli.ts frontend --call linkEvm --call Link-your-Ronin --call bad_signature --call stale
 
-downloaded 338 files, 15.6 MB into /tmp/lsfront-1792923631335
-48 snippet(s) for linkEvm(, linkEvm?.(, personal_sign, evm/link, superSurvivor, notQualified -> frontend/snippets.json
+downloaded 338 files, 15.6 MB into /tmp/lsfront-1792923715149
+30 snippet(s) for linkEvm, Link-your-Ronin, bad_signature, stale -> frontend/snippets.json
 8 dungeon configs on lootsurvivor.io
   trials                   Trials                     online       Free
   beastmode                Beast Mode                 online       1 Ticket settings=dA minter=fA @uA.dungeon
@@ -15,15 +15,3 @@ downloaded 338 files, 15.6 MB into /tmp/lsfront-1792923631335
   proving-grounds          Proving Grounds            hi?`online`:`coming_soon Free minter=Yi @fa
   unknown                  Unknown Dungeon            offline       @0x04253e24220629b737512a24cb3172fc381db7be7a697d5af358ff21ef1172be
 Ronke dungeons: ronke-casino (Ronke Casino)
-== bot ronke --address 0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452
-
-> loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts ronke --address 0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452
-
-[ronke] account 0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452 (address)
-[ronke] eligible=false day 3; status keys: address, evm, x, currentDay, startedAt, days, tasks, depositProgress, bonusRequirements, pushSupported, launchPostId, ended, eligibility, openGame, burn, bogo
-[ronke]   openGame: {"claimed":false,"available":false,"steps":{"x_follow":{"done":false,"claimed":false},"x_reshare":{"done":false,"claimed":false},"discord":{"done":false,"claimed":false},"deposit_1":{"done":false,"claimed":false}},"xReach":{"minFollowers":1000,"verifiedMinFollowers":100,"orVerified":true,"ok":false}
-[ronke]   bogo: {"available":true,"limit":30,"remaining":27,"recorded":null}
-[ronke]   burn: {"available":true,"owner":null,"steps":[{"step":1,"usd":1,"claimed":false},{"step":2,"usd":2,"claimed":false},{"step":3,"usd":3,"claimed":false}],"next":{"step":1,"usd":1}}
-[ronke]   tasks: {"follow_both":"todo","like_reshare":"todo","mobile_notifications":"todo","join_discord":"todo","fund_1":"todo","proving_grounds_15":"todo","share_on_x":"todo","get_super_survivor":"todo"}
-[ronke] status only
