@@ -45,6 +45,13 @@ export async function runV2BeastsCommand(opts: { games: string[]; dataDir: strin
         }
         const b = currentBeastV2(adv, id);
         step.encounter = b ? { name: beastName(b), id: b.id, tier: b.spec.tier, level: b.spec.level, derivedHealth: b.startingHealth } : null;
+        // ground truth once the beast is slain: Option<RecordedKill{beast{starting_health, spec{tier, type, level, specials}}, seed, block}>
+        try {
+          const k = await chain.call('get_slain_beast', [id, adv.xp]);
+          step.slain = k.map((x) => x.toString());
+        } catch (e) {
+          step.slain = `error: ${(e as Error).message.slice(0, 120)}`;
+        }
         step.matches = matches;
       }
       if (prev && prev.beast_health > 0) {
@@ -70,7 +77,7 @@ export async function runV2BeastsCommand(opts: { games: string[]; dataDir: strin
     console.log(`game ${g}: ${t.packets.length} packets, ${enc.length} encounters`);
     for (const s of enc) {
       const e = s.encounter as { name: string; tier: number; level: number; derivedHealth: number } | null;
-      console.log(`  k=${s.k} xp=${s.xp} hp=${s.hp}: chain beast HP ${s.beastHp}, derived ${e ? `${e.name} T${e.tier} L${e.level} HP ${e.derivedHealth}` : '-'} ${JSON.stringify(s.matches)}`);
+      console.log(`  k=${s.k} xp=${s.xp} hp=${s.hp}: chain beast HP ${s.beastHp}, derived ${e ? `${e.name} T${e.tier} L${e.level} HP ${e.derivedHealth}` : '-'} slain=${JSON.stringify(s.slain)}`);
     }
     out.push({ game: g, packets: t.packets.length, effects, steps });
   }
