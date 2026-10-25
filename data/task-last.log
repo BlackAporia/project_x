@@ -1,17 +1,36 @@
-== bot frontend --call linkEvm --call Link-your-Ronin --call bad_signature --call stale
+== bot v2-beasts --game 904625697166532776746652061824565847215142356634039857385949574314741349409,904625697166532776746652061824565847215142356634039857385949574353396942177,904625697166532776746652061824565847215142356634039857367502830056349459713
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts frontend --call linkEvm --call Link-your-Ronin --call bad_signature --call stale
+> node --import tsx src/cli.ts v2-beasts --game 904625697166532776746652061824565847215142356634039857385949574314741349409,904625697166532776746652061824565847215142356634039857385949574353396942177,904625697166532776746652061824565847215142356634039857367502830056349459713
 
-downloaded 338 files, 15.6 MB into /tmp/lsfront-1792923715149
-30 snippet(s) for linkEvm, Link-your-Ronin, bad_signature, stale -> frontend/snippets.json
-8 dungeon configs on lootsurvivor.io
-  trials                   Trials                     online       Free
-  beastmode                Beast Mode                 online       1 Ticket settings=dA minter=fA @uA.dungeon
-  ronke-casino             Ronke Casino               Yt?`online`:`coming_soon Free · 3 days settings=Xt minter=en sponsored @ln
-  lootbag                  Loot Bag                   online       Loot Bag settings=Ya minter=Ri @ji.lootDungeon
-  norwich-games-festival   Norwich Games Festival     online       Free @0x04253e24220629b737512a24cb3172fc381db7be7a697d5af358ff21ef1172be
-  blockhash                Blockhash                  closed       Free settings=0 minter=Ns @Gs.commitVerify
-  proving-grounds          Proving Grounds            hi?`online`:`coming_soon Free minter=Yi @fa
-  unknown                  Unknown Dungeon            offline       @0x04253e24220629b737512a24cb3172fc381db7be7a697d5af358ff21ef1172be
-Ronke dungeons: ronke-casino (Ronke Casino)
+game 904625697166532776746652061824565847215142356634039857385949574314741349409: 8 packets, 2 encounters
+  k=2 xp=4 hp=145: chain beast HP 35, derived Qilin T2 L3 HP 35 {"full":true,"low64":false,"low128":false,"low32":false,"high":false}
+  k=4 xp=6 hp=145: chain beast HP 30, derived Fairy T5 L6 HP 30 {"full":true,"low64":false,"low128":false,"low32":false,"high":false}
+game 904625697166532776746652061824565847215142356634039857385949574353396942177: 45 packets, 9 encounters
+  k=2 xp=4 hp=145: chain beast HP 27, derived Ammit T2 L2 HP 27 {"full":true,"low64":false,"low128":false,"low32":false,"high":false}
+  k=11 xp=10 hp=146: chain beast HP 63, derived Pegasus T3 L3 HP 63 {"full":true,"low64":false,"low128":false,"low32":false,"high":false}
+  k=14 xp=20 hp=146: chain beast HP 24, derived Jaguar T4 L6 HP 24 {"full":true,"low64":false,"low128":false,"low32":false,"high":false}
+  k=18 xp=40 hp=139: chain beast HP 67, derived Griffin T1 L3 HP 67 {"full":true,"low64":false,"low128":false,"low32":false,"high":false}
+  k=22 xp=57 hp=127: chain beast HP 17, derived Anansi T1 L9 HP 17 {"full":true,"low64":false,"low128":false,"low32":false,"high":false}
+  k=37 xp=183 hp=143: chain beast HP 92, derived "Loath Shadow" Skinwalker T2 L36 HP 92 {"full":true,"low64":false,"low128":false,"low32":false,"high":false}
+  k=40 xp=184 hp=94: chain beast HP 40, derived "Mind Shout" Wendigo T2 L20 HP 40 {"full":true,"low64":false,"low128":false,"low32":false,"high":false}
+  k=43 xp=186 hp=1: chain beast HP 122, derived "Armageddon Growl" Kelpie T5 L19 HP 122 {"full":true,"low64":false,"low128":false,"low32":false,"high":false}
+  k=45 xp=187 hp=0: chain beast HP 64, derived "Beast Tear" Chimera T2 L30 HP 64 {"full":true,"low64":false,"low128":false,"low32":false,"high":false}
+game 904625697166532776746652061824565847215142356634039857367502830056349459713: 59 packets, 11 encounters
+  k=1 xp=0 hp=115: chain beast HP 17, derived Basilisk T1 L2 HP 17 {"full":true,"low64":false,"low128":false,"low32":false,"high":false}
+  k=4 xp=12 hp=107: chain beast HP 57, derived Roc T3 L5 HP 57 {"full":true,"low64":false,"low128":false,"low32":false,"high":false}
+  k=7 xp=14 hp=109: chain beast HP 69, derived Vampire T3 L5 HP 69 {"full":true,"low64":false,"low128":false,"low32":false,"high":false}
+  k=11 xp=16 hp=107: chain beast HP 27, derived Hippogriff T4 L1 HP 27 {"full":true,"low64":false,"low128":false,"low32":false,"high":false}
+  k=24 xp=62 hp=97: chain beast HP 18, derived Hydra T2 L3 HP 18 {"full":true,"low64":false,"low128":false,"low32":false,"high":false}
+  k=35 xp=129 hp=94: chain beast HP 52, derived "Torment Instrument" Jaguar T4 L29 HP 52 {"full":true,"low64":false,"low128":false,"low32":false,"high":false}
+  k=39 xp=140 hp=114: chain beast HP 153, derived "Empyrean Shadow" Direwolf T4 L23 HP 153 {"full":true,"low64":false,"low128":false,"low32":false,"high":false}
+  k=51 xp=281 hp=144: chain beast HP 14, derived "Glyph Sun" Basilisk T1 L41 HP 14 {"full":true,"low64":false,"low128":false,"low32":false,"high":false}
+  k=53 xp=282 hp=145: chain beast HP 297, derived Jaguar T4 L10 HP 297 {"full":true,"low64":false,"low128":false,"low32":false,"high":false}
+  k=55 xp=283 hp=145: chain beast HP 45, derived "Cataclysm Bender" Werewolf T3 L26 HP 45 {"full":true,"low64":false,"low128":false,"low32":false,"high":false}
+  k=59 xp=305 hp=0: chain beast HP 109, derived "Dusk Instrument" Hydra T2 L47 HP 109 {"full":true,"low64":false,"low128":false,"low32":false,"high":false}
+derivation matches by game-id encoding:
+  full     22/22
+  low64    0/22
+  low128   0/22
+  low32    0/22
+  high     0/22
