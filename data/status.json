@@ -1,38 +1,10 @@
 {
- "updated": "2026-10-25T16:08:41.160Z",
+ "updated": "2026-10-25T16:08:53.582Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-10-25T16-00-40-070Z",
  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "recent": [
-  {
-   "n": 38,
-   "t": "2026-10-25T16:04:19.489Z",
-   "level": 26,
-   "xp": 688,
-   "hp": 278,
-   "maxHp": 295,
-   "gold": 19,
-   "phase": "battle",
-   "reason": "Flee from \"Gloom Form\" Jaguar (L26 T3): P(escape)=100.0% P(death)=<0.1%; flee value 466.3 vs attack 463.4",
-   "actions": "flee",
-   "tx": "0x1706d2e5915fa3f5d39bb094c92d2d3e84d7db5f866b86f2e33a5013197d245",
-   "ok": true
-  },
-  {
-   "n": 39,
-   "t": "2026-10-25T16:04:23.850Z",
-   "level": 26,
-   "xp": 689,
-   "hp": 278,
-   "maxHp": 295,
-   "gold": 19,
-   "phase": "explore",
-   "reason": "Drink 2 potion(s); Explore (instant-death risk 3.3%, HP 295/295)",
-   "actions": "buy(2 potions) + explore",
-   "tx": "0x6ba1c4347ff1d876f61d6ea4ddc84e6771a3546088661590ae2e365d4867176",
-   "ok": true
-  },
   {
    "n": 40,
    "t": "2026-10-25T16:04:28.017Z",
@@ -564,22 +536,50 @@
    "actions": "attack",
    "tx": "0x4a2bfa38032c05b61c964bd813ec2cc9e62aeb296e2a6771b785e9668dd28cc",
    "ok": true
+  },
+  {
+   "n": 24,
+   "t": "2026-10-25T16:08:41.160Z",
+   "level": 8,
+   "xp": 71,
+   "hp": 96,
+   "maxHp": 145,
+   "gold": 8,
+   "phase": "battle",
+   "reason": "Attack Kelpie (L2 T3, 19 HP): P(win)=100.0% P(death)=0.0%; attack value 173.0 vs flee 166.3",
+   "actions": "attack",
+   "tx": "0x156053397ca0adbde742b262ed4c0e2f5f9bf6f9b5f435097e96cbb349cfd78",
+   "ok": true
+  },
+  {
+   "n": 25,
+   "t": "2026-10-25T16:08:47.399Z",
+   "level": 8,
+   "xp": 75,
+   "hp": 96,
+   "maxHp": 145,
+   "gold": 11,
+   "phase": "explore",
+   "reason": "Drink 1 potion(s); Explore (instant-death risk 0.6%, HP 106/145)",
+   "actions": "buy(1 potion) + explore",
+   "tx": "0x6508996741336dedd99b7cdcb7c6f9693c3e8742cf5eda1f910eb206223a23a",
+   "ok": true
   }
  ],
  "current": {
   "id": "904625697166532776746652061824565847215142356634039893338654075726175833793",
   "level": 8,
-  "xp": 71,
-  "hp": 98,
+  "xp": 75,
+  "hp": 96,
   "maxHp": 145,
-  "gold": 8,
+  "gold": 11,
   "gear": [
-   "Grimoire T1 G8",
-   "Shirt T5 G8",
-   "Hood T5 G8",
-   "Leather Belt T5 G8",
-   "Heavy Boots T5 G8",
-   "Hard Leather Gloves T4 G8",
+   "Grimoire T1 G9",
+   "Shirt T5 G9",
+   "Hood T5 G9",
+   "Leather Belt T5 G9",
+   "Heavy Boots T5 G9",
+   "Hard Leather Gloves T4 G9",
    "-",
    "-"
   ],
@@ -592,7 +592,6 @@
    "cha": 5,
    "luck": 2
   },
-  "beast": "Kelpie",
-  "lastReason": "Attack Kelpie (L2 T3, 39 HP): P(win)=100.0% P(death)=0.0%; attack value 173.0 vs flee 166.3"
+  "lastReason": "Drink 1 potion(s); Explore (instant-death risk 0.6%, HP 106/145)"
  }
 }
