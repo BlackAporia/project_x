@@ -1,9 +1,122 @@
 {
- "updated": "2026-10-25T14:18:50.260Z",
+ "updated": "2026-10-25T14:20:23.314Z",
  "mode": "mainnet",
- "running": false,
- "runId": "2026-10-25T14-17-44-454Z",
- "account": "0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452",
- "recent": [],
- "message": "no unplayed games on the account (buy/mint games in the UI)"
+ "running": true,
+ "runId": "2026-10-25T14-19-36-533Z",
+ "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
+ "recent": [
+  {
+   "n": 0,
+   "t": "2026-10-25T14:19:59.736Z",
+   "level": 1,
+   "xp": 0,
+   "hp": 115,
+   "maxHp": 115,
+   "gold": 40,
+   "phase": "explore",
+   "reason": "Buy Grimoire, Shoes, Linen Sash, Linen Hood, Leather Gloves; Explore until beast (instant-death risk 0.0%, HP 115/115)",
+   "actions": "buy(Grimoire, Shoes, Linen Sash, Linen Hood, Leather Gloves) + explore(till beast)",
+   "tx": "0x15bb9ffb4ee73ee9f56b2a4cf54e5b73d788a2f50456f3369a4876b280145e7",
+   "ok": true
+  },
+  {
+   "n": 1,
+   "t": "2026-10-25T14:20:04.127Z",
+   "level": 2,
+   "xp": 5,
+   "hp": 115,
+   "maxHp": 115,
+   "gold": 1,
+   "phase": "level_up",
+   "reason": "Stats +1 VIT; Explore until beast (instant-death risk 0.0%, HP 130/130)",
+   "actions": "stats(vit+1) + explore(till beast)",
+   "tx": "0x4e0aadbf113682e1a2278fffa1981eea9650e8eba71e4137f45e5ca8ba12f20",
+   "ok": true
+  },
+  {
+   "n": 2,
+   "t": "2026-10-25T14:20:07.740Z",
+   "level": 3,
+   "xp": 9,
+   "hp": 130,
+   "maxHp": 130,
+   "gold": 3,
+   "phase": "level_up",
+   "reason": "Stats +1 CHA; Buy Shirt; Explore until beast (instant-death risk 0.0%, HP 130/130)",
+   "actions": "stats(cha+1) + buy(Shirt) + explore(till beast)",
+   "tx": "0x362f288c632af8fd6694ab415066a6da8f656e5ac76778d61305ca6d86258da",
+   "ok": true
+  },
+  {
+   "n": 3,
+   "t": "2026-10-25T14:20:11.447Z",
+   "level": 3,
+   "xp": 13,
+   "hp": 126,
+   "maxHp": 130,
+   "gold": 1,
+   "phase": "explore",
+   "reason": "Explore until beast (instant-death risk 0.0%, HP 126/130)",
+   "actions": "explore(till beast)",
+   "tx": "0x511f69c36ff228728645daca7be0696169f63393930a4358fd1ce0d1724aabc",
+   "ok": true
+  },
+  {
+   "n": 4,
+   "t": "2026-10-25T14:20:15.313Z",
+   "level": 4,
+   "xp": 20,
+   "hp": 130,
+   "maxHp": 130,
+   "gold": 1,
+   "phase": "level_up",
+   "reason": "Stats +1 CHA; Explore until beast (instant-death risk 0.0%, HP 130/130)",
+   "actions": "stats(cha+1) + explore(till beast)",
+   "tx": "0x2321393c918ba3c7bb58149fb10de9496874b301741988056112d58e229960b",
+   "ok": true
+  },
+  {
+   "n": 5,
+   "t": "2026-10-25T14:20:19.013Z",
+   "level": 4,
+   "xp": 20,
+   "hp": 130,
+   "maxHp": 130,
+   "gold": 1,
+   "phase": "battle",
+   "reason": "Flee from Pixie (L9 T4): P(escape)=100.0% P(death)=0.0%; flee value 197.0 vs attack 192.8",
+   "actions": "flee",
+   "tx": "0x66b8f66116598d255e4ede0e136aa6510d2619c9f6bd0f8c48361e4e283bbd2",
+   "ok": true
+  }
+ ],
+ "current": {
+  "id": "904625697166532776746652061824565847215142356634039891364852443320809922977",
+  "level": 4,
+  "xp": 20,
+  "hp": 130,
+  "maxHp": 130,
+  "gold": 1,
+  "gear": [
+   "Grimoire T1 G3",
+   "Shirt T5 G3",
+   "Linen Hood T4 G3",
+   "Linen Sash T4 G3",
+   "Shoes T5 G3",
+   "Leather Gloves T5 G3",
+   "-",
+   "-"
+  ],
+  "stats": {
+   "str": 4,
+   "dex": 4,
+   "vit": 2,
+   "int": 1,
+   "wis": 1,
+   "cha": 3,
+   "luck": 2
+  },
+  "beast": "Pixie",
+  "lastReason": "Flee from Pixie (L9 T4): P(escape)=100.0% P(death)=0.0%; flee value 197.0 vs attack 192.8"
+ }
 }
