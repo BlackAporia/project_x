@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-25T10:24:48.466Z",
+ "updated": "2026-10-25T13:44:30.196Z",
  "address": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "kind": "cartridge",
  "eligible": false,
@@ -67,7 +67,7 @@
   "bogo": {
    "available": true,
    "limit": 30,
-   "remaining": 27,
+   "remaining": 26,
    "recorded": null
   },
   "burn": {
