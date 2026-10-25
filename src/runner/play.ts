@@ -206,6 +206,7 @@ export async function playLoop(opts: PlayOptions): Promise<RunRecord> {
       log(`[${backend.mode}] ${status.message}`);
       break;
     }
+    status.message = undefined;
     const rec = await playGame(id, backend, policy, store, { deadline: hardDeadline, log, status, flush, recent });
     if (rec.status === 'dead') {
       finished.push(rec.xp);
