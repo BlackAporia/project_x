@@ -244,8 +244,8 @@ function renderKpis() {
   const policy = summary?.policy?.meta;
   $('#kpis').innerHTML = [
     kpi('Найкращий XP (mainnet)', fmt(best), mn.games ? `${fmt(mn.games)} ігор · рівень ${mn.bestLevel}` : 'ще немає ігор'),
-    kpi('Місце в лідерборді', bot?.bestRank ? `#${bot.bestRank}` : '–', bot?.account ? short(bot.account) : 'акаунт не підключено'),
-    kpi('Топ‑1 mainnet', fmt(top1), top1 ? `до цілі: ${fmt(Math.max(0, top1 - best))} XP` : ''),
+    kpi(`Місце · ${leaderboard?.board?.name ?? 'лідерборд'}`, bot?.bestRank ? `#${bot.bestRank}` : '–', bot?.bestRank ? `${fmt(bot.bestXp)} XP${bot.inTop?.length > 1 ? ` · місця ${bot.inTop.slice(0, 5).join(', ')}` : ''}${leaderboard?.board?.total ? ` · з ${fmt(leaderboard.board.total)} ігор` : ''}` : 'ще не в топі'),
+    kpi(`Топ‑1 · ${leaderboard?.board?.name ?? 'mainnet'}`, fmt(top1), top1 ? `до 1-го місця: ${fmt(Math.max(0, top1 + 1 - (bot?.bestXp ?? best)))} XP` : ''),
     kpi('Practice', fmt(pr.best), pr.games ? `${fmt(pr.games)} ігор · сер. ${fmt(pr.mean)}` : 'ще немає ігор'),
     kpi('Політика (симуляції)', fmt(policy ? Math.round(policy.mean) : sim.mean), policy ? `сер. XP · p90 ${fmt(policy.p90)} · max ${fmt(policy.max)}` : 'середній XP'),
     kpi('Точність прогнозу', pr.predictionAccuracy != null ? `${(pr.predictionAccuracy * 100).toFixed(1)}%` : '–', 'рушій бота vs ланцюг (practice)'),
@@ -297,8 +297,8 @@ function renderProgress() {
   lineChart(
     $('#progressChart'),
     [
-      { name: 'Топ‑1 лідерборду', color: css('--series-2'), points: hist.map((h) => ({ x: new Date(h.t), y: h.top1 })) },
-      { name: 'Топ‑10 лідерборду', color: css('--series-3'), points: hist.filter((h) => h.top10).map((h) => ({ x: new Date(h.t), y: h.top10 })) },
+      { name: 'Топ‑1 лідерборду', color: css('--series-2'), points: hist.filter((h) => h.board === 'proving-grounds').map((h) => ({ x: new Date(h.t), y: h.top1 })) },
+      { name: 'Топ‑10 лідерборду', color: css('--series-3'), points: hist.filter((h) => h.top10 && h.board === 'proving-grounds').map((h) => ({ x: new Date(h.t), y: h.top10 })) },
       { name: 'Бот (найкращий)', color: css('--series-1'), points: botPts },
     ],
     { label: 'Прогрес до топ-1', empty: 'Дані з’являться після першого запуску лідерборду / бота в mainnet' },
@@ -363,12 +363,13 @@ function renderLeaderboard() {
   $('#lbUpdated').textContent = lb?.updated ? `оновлено ${ago(lb.updated)}` : '';
   const me = lb?.bot?.account ? BigInt(lb.bot.account) : null;
   const rows = (lb?.entries ?? []).slice(0, 50);
+  $('#lbTitle').textContent = `Лідерборд · ${lb?.board?.name ?? 'mainnet'}`;
   $('#lbTable tbody').innerHTML = rows.length
     ? rows
         .map((e) => {
-          let mine = false;
+          let mine = e.bot === true;
           try {
-            mine = me !== null && BigInt(e.owner) === me;
+            mine ||= me !== null && BigInt(e.owner) === me;
           } catch {}
           return `<tr class="${mine ? 'me' : ''}"><td>${e.rank}</td><td>${esc(e.player || short(e.owner))}${mine ? ' (бот)' : ''}</td><td class="num">${fmt(e.xp)}</td><td class="num">${e.level}</td><td>${e.gameOver ? '<span class="muted">завершена</span>' : '<span class="ok">жива</span>'}</td></tr>`;
         })

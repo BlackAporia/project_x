@@ -150,6 +150,27 @@ export class DataStore {
     writeFileSync(this.path('runs.json'), JSON.stringify(list.slice(-1000), null, 1) + '\n');
   }
 
+  /** Accounts the bot has played mainnet with (accounts.json), plus extra known ones; used to mark its leaderboard rows. */
+  botAccounts(extra: Array<string | undefined> = []): string[] {
+    const list = readJson<string[]>(this.path('accounts.json'), []);
+    const out: string[] = [];
+    for (const a of [...list, ...extra, ...(process.env.BOT_ACCOUNTS ?? '').split(',')]) {
+      if (!a) continue;
+      try {
+        const n = '0x' + BigInt(a).toString(16);
+        if (!out.includes(n)) out.push(n);
+      } catch {
+        /* not an address */
+      }
+    }
+    return out;
+  }
+
+  noteAccount(account: string): void {
+    const list = this.botAccounts([account]);
+    writeFileSync(this.path('accounts.json'), JSON.stringify(list, null, 1) + '\n');
+  }
+
   writeStatus(st: LiveStatus): void {
     writeFileSync(this.path('status.json'), JSON.stringify(st, null, 1) + '\n');
   }

@@ -198,6 +198,7 @@ export async function playLoop(opts: PlayOptions): Promise<RunRecord> {
     store.writeStatus(status);
   };
   store.upsertRun(run);
+  if (backend.mode === 'mainnet' && backend.account) store.noteAccount(backend.account);
   status.message = backend.mode === 'mainnet' ? 'looking for unplayed games on the account' : 'starting';
   flush();
 
