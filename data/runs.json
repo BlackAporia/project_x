@@ -454,5 +454,15 @@
   "errors": 0,
   "policy": "tail-2026-10-25-g3",
   "ended": "2026-10-25T18:08:23.744Z"
+ },
+ {
+  "id": "2026-10-25T20-28-40-735Z",
+  "mode": "mainnet",
+  "started": "2026-10-25T20:28:40.735Z",
+  "games": 0,
+  "bestXp": 0,
+  "meanXp": 0,
+  "errors": 0,
+  "policy": "tail-2026-10-25-g3"
  }
 ]
