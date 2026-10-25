@@ -32,6 +32,8 @@ export interface Backend {
   execute(id: bigint, actions: Action[], state: GameState): Promise<{ sent: Action[]; txs: string[]; reverted?: string; events?: GameEvent[] }>;
   /** optional: settle a finished game (V2 verify_game); null when there is nothing to settle */
   finish?(id: bigint): Promise<SettleResult | null>;
+  /** optional: play this game again later in the run (it stopped on errors while alive) */
+  requeue?(id: bigint): void;
 }
 
 export function describeAction(a: Action): string {
@@ -188,6 +190,7 @@ export async function playLoop(opts: PlayOptions): Promise<RunRecord> {
     dungeon: backend.dungeon,
   };
   const finished: number[] = [];
+  const requeued = new Set<bigint>();
   const recent: DecisionLog[] = [];
   const status: LiveStatus = { updated: '', mode: run.mode, running: true, runId: run.id, account: backend.account, recent };
   const flush = () => {
@@ -221,7 +224,14 @@ export async function playLoop(opts: PlayOptions): Promise<RunRecord> {
       run.bestXp = Math.max(run.bestXp, rec.xp);
       run.meanXp = Math.round(finished.reduce((s, x) => s + x, 0) / finished.length);
     }
-    if (rec.status === 'error') run.errors++;
+    if (rec.status === 'error') {
+      run.errors++;
+      if (backend.requeue && !requeued.has(id)) {
+        requeued.add(id);
+        backend.requeue(id);
+        log(`[${backend.mode}] game ${id} stopped on errors while alive: it will be retried later in this run`);
+      }
+    }
     run.ended = new Date().toISOString();
     store.upsertRun(run);
     if (backend.dryRun && backend.mode === 'mainnet' && g > 25) break;
@@ -284,6 +294,8 @@ async function playGame(
   }
   ctx.log(`[${backend.mode}] game ${id}: ${state.started ? `resuming at level ${level(state.adventurer)} (${state.adventurer.xp} xp)` : 'starting'}`);
   let consecutiveErrors = 0;
+  let transientErrors = 0;
+  const giveUp = () => consecutiveErrors - Math.min(transientErrors, consecutiveErrors) >= 4 || consecutiveErrors >= 12;
 
   while (!(state.started && isDead(state))) {
     if (Date.now() > ctx.deadline) {
@@ -342,7 +354,12 @@ async function playGame(
       rec.reverts++;
       consecutiveErrors++;
       ctx.log(`  ! ${entry.actions}: ${entry.error}`);
-    } else consecutiveErrors = 0;
+      // an RPC hiccup is not a lost game: back off instead of abandoning a live adventurer
+      if (transientError(result.reverted)) {
+        transientErrors++;
+        await new Promise((r) => setTimeout(r, Math.min(60_000, 5_000 * 2 ** Math.min(transientErrors, 4))));
+      }
+    } else consecutiveErrors = transientErrors = 0;
 
     // exact prediction of what the chain should now show (practice) -> engine validation + event details
     let predicted: GameState | null = null;
@@ -368,7 +385,11 @@ async function playGame(
     } catch (e) {
       ctx.log(`  ! state read failed: ${(e as Error).message}`);
       consecutiveErrors++;
-      if (consecutiveErrors >= 4) {
+      if (transientError((e as Error).message)) {
+        transientErrors++;
+        await new Promise((r) => setTimeout(r, Math.min(60_000, 5_000 * 2 ** Math.min(transientErrors, 4))));
+      }
+      if (giveUp()) {
         rec.status = 'error';
         break;
       }
@@ -409,7 +430,7 @@ async function playGame(
     if (rec.decisions % 3 === 0 || isDead(next)) ctx.flush();
     if (backend.mode !== 'sim') ctx.log(`  L${entry.level} xp=${entry.xp} hp=${entry.hp}/${entry.maxHp} g=${entry.gold} -> ${entry.actions}${entry.ok ? '' : ' (reverted)'} | ${d.reason}`);
     state = next;
-    if (consecutiveErrors >= 4) {
+    if (giveUp()) {
       rec.status = 'error';
       rec.deathCause = rec.deathCause || 'too many failed transactions';
       break;
@@ -437,6 +458,8 @@ async function playGame(
   ctx.log(`[${backend.mode}] game ${id} ${rec.status}: level ${rec.level}, ${rec.xp} xp${rec.deathCause ? ` (${rec.deathCause})` : ''}`);
   return rec;
 }
+
+const transientError = (m: string) => /RPC: |fetch failed|timeout|timed out|ECONN|rate limit|429|50[234]|socket hang up|network/i.test(m);
 
 function pushRecent(list: DecisionLog[], e: DecisionLog): void {
   list.push(e);

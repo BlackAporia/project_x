@@ -160,6 +160,11 @@ export class V2MainnetBackend implements Backend {
   }
 
   /** Settle the score of a finished game on-chain. */
+  requeue(id: bigint): void {
+    this.games.delete(id); // re-read the transcript from the chain
+    this.queue.push(id);
+  }
+
   async finish(id: bigint): Promise<SettleResult | null> {
     if (this.dryRun || !this.executor) return null;
     if (await this.chain.isVerified(id).catch(() => false)) return { verified: true };
