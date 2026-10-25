@@ -1,52 +1,10 @@
 {
- "updated": "2026-10-25T14:38:52.139Z",
+ "updated": "2026-10-25T14:39:50.365Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-10-25T14-19-36-533Z",
  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "recent": [
-  {
-   "n": 97,
-   "t": "2026-10-25T14:35:38.758Z",
-   "level": 21,
-   "xp": 476,
-   "hp": 276,
-   "maxHp": 355,
-   "gold": 34,
-   "phase": "battle",
-   "reason": "Attack \"Golem Song\" Wendigo (L38 T5, 279 HP): P(win)=99.9% P(death)=<0.1%; attack value 588.3 vs flee 575.9",
-   "actions": "attack",
-   "tx": "0x4bc70bad599028e0af5ed4e7a290989f6e90a2cea97dbaf6b15c0dde486b87e",
-   "ok": true
-  },
-  {
-   "n": 98,
-   "t": "2026-10-25T14:35:45.753Z",
-   "level": 21,
-   "xp": 476,
-   "hp": 274,
-   "maxHp": 355,
-   "gold": 34,
-   "phase": "battle",
-   "reason": "Attack \"Golem Song\" Wendigo (L38 T5, 197 HP): P(win)=100.0% P(death)=<0.1%; attack value 590.2 vs flee 575.3",
-   "actions": "attack",
-   "tx": "0x7e8ad70ad32d95fdff2e1665b021df7947994aa722feadcd1013a6e5e380a0b",
-   "ok": true
-  },
-  {
-   "n": 99,
-   "t": "2026-10-25T14:35:50.253Z",
-   "level": 21,
-   "xp": 476,
-   "hp": 272,
-   "maxHp": 355,
-   "gold": 34,
-   "phase": "battle",
-   "reason": "Attack \"Golem Song\" Wendigo (L38 T5, 115 HP): P(win)=100.0% P(death)=0.0%; attack value 592.0 vs flee 575.7",
-   "actions": "attack",
-   "tx": "0x6ffa26f497c2faef2c0fc1277cdca512cadab0cda40cf59468b16c54da01f78",
-   "ok": true
-  },
   {
    "n": 100,
    "t": "2026-10-25T14:35:54.116Z",
@@ -564,35 +522,77 @@
    "actions": "flee",
    "tx": "0x614ee4644de94d412268f160caa54dc7730d69de723b8c1be3ea40cb474a1bf",
    "ok": true
+  },
+  {
+   "n": 0,
+   "t": "2026-10-25T14:39:31.716Z",
+   "level": 1,
+   "xp": 0,
+   "hp": 145,
+   "maxHp": 145,
+   "gold": 40,
+   "phase": "explore",
+   "reason": "Buy DemonsHands, Leather Armor, Sash, Greaves; Explore until beast (instant-death risk 0.0%, HP 145/145)",
+   "actions": "buy(DemonsHands, Leather Armor, Sash, Greaves) + explore(till beast)",
+   "tx": "0x2a4011c6d772b10e956383cd98f29af8cbe102b7f0c83ce7a678c54f74037b9",
+   "ok": true
+  },
+  {
+   "n": 1,
+   "t": "2026-10-25T14:39:37.238Z",
+   "level": 1,
+   "xp": 0,
+   "hp": 145,
+   "maxHp": 145,
+   "gold": 4,
+   "phase": "battle",
+   "reason": "Attack Ghoul (L3 T2, 24 HP): P(win)=100.0% P(death)=<0.1%; attack value 218.8 vs flee -1.0",
+   "actions": "attack",
+   "tx": "0x2b16bb2a94923407d543494df73068d22e7c9ca7e00b85717de173e4683582f",
+   "ok": true
+  },
+  {
+   "n": 2,
+   "t": "2026-10-25T14:39:43.339Z",
+   "level": 1,
+   "xp": 0,
+   "hp": 140,
+   "maxHp": 145,
+   "gold": 4,
+   "phase": "battle",
+   "reason": "Attack Ghoul (L3 T2, 20 HP): P(win)=100.0% P(death)=<0.1%; attack value 219.6 vs flee -1.0",
+   "actions": "attack(to death)",
+   "tx": "0x552da5cb6dc61760b42f9bae4d45e70c08d6b2e1ae97138bfe0b66299ebe847",
+   "ok": true
   }
  ],
  "current": {
-  "id": "904625697166532776746652061824565847215142356634039891512426397198975678241",
-  "level": 31,
-  "xp": 988,
-  "hp": 69,
-  "maxHp": 505,
-  "gold": 113,
+  "id": "904625697166532776746652061824565847215142356634039891733787327822951465825",
+  "level": 1,
+  "xp": 0,
+  "hp": 140,
+  "maxHp": 145,
+  "gold": 4,
   "gear": [
-   "Grimoire T1 G20",
-   "Linen Robe T3 G20",
-   "Crown T1 G5",
-   "Brightsilk Sash T1 G20",
-   "Silk Slippers T2 G6",
-   "Divine Gloves T1 G20",
-   "Necklace T1 G12",
-   "Bronze Ring T3 G5"
+   "Wand T5 G1",
+   "Leather Armor T5 G1",
+   "-",
+   "Sash T5 G1",
+   "Greaves T3 G1",
+   "DemonsHands T1 G1",
+   "-",
+   "-"
   ],
   "stats": {
-   "str": 9,
-   "dex": 21,
-   "vit": 27,
+   "str": 1,
+   "dex": 5,
+   "vit": 3,
    "int": 1,
-   "wis": 3,
-   "cha": 16,
-   "luck": 79
+   "wis": 1,
+   "cha": 1,
+   "luck": 2
   },
-  "beast": "\"Kraken Bite\" Bigfoot",
-  "lastReason": "Flee from \"Kraken Bite\" Bigfoot (L79 T2): P(escape)=73.6% P(death)=26.4%; flee value 278.2 vs attack 68.8"
+  "beast": "Ghoul",
+  "lastReason": "Attack Ghoul (L3 T2, 20 HP): P(win)=100.0% P(death)=<0.1%; attack value 219.6 vs flee -1.0"
  }
 }

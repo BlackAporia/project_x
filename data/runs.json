@@ -393,11 +393,11 @@
   "id": "2026-10-25T14-19-36-533Z",
   "mode": "mainnet",
   "started": "2026-10-25T14:19:36.533Z",
-  "games": 2,
-  "bestXp": 187,
-  "meanXp": 175,
+  "games": 3,
+  "bestXp": 988,
+  "meanXp": 446,
   "errors": 0,
   "policy": "tail-2026-10-25-g3",
-  "ended": "2026-10-25T14:27:58.791Z"
+  "ended": "2026-10-25T14:39:12.581Z"
  }
 ]
