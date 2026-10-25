@@ -1,9 +1,122 @@
 {
- "updated": "2026-10-25T13:48:52.601Z",
+ "updated": "2026-10-25T14:07:58.640Z",
  "mode": "mainnet",
- "running": false,
- "runId": "2026-10-25T13-48-51-796Z",
- "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
- "recent": [],
- "message": "no unplayed games on the account (buy/mint games in the UI)"
+ "running": true,
+ "runId": "2026-10-25T14-07-15-459Z",
+ "account": "0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452",
+ "recent": [
+  {
+   "n": 0,
+   "t": "2026-10-25T14:07:27.493Z",
+   "level": 1,
+   "xp": 0,
+   "hp": 100,
+   "maxHp": 130,
+   "gold": 40,
+   "phase": "explore",
+   "reason": "Buy Grimoire, Divine Gloves, Hood; Explore until beast (instant-death risk 0.0%, HP 100/130)",
+   "actions": "buy(Grimoire, Divine Gloves, Hood) + explore(till beast)",
+   "tx": "0x2125183a507b8f539403afc0cb56d592defc7883629cffc4eaa3665bd18a8f2",
+   "ok": true
+  },
+  {
+   "n": 1,
+   "t": "2026-10-25T14:07:33.036Z",
+   "level": 1,
+   "xp": 0,
+   "hp": 100,
+   "maxHp": 130,
+   "gold": 2,
+   "phase": "battle",
+   "reason": "Attack Skeleton (L3 T5, 25 HP): P(win)=100.0% P(death)=0.0%; attack value 210.7 vs flee -1.0",
+   "actions": "attack(to death)",
+   "tx": "0x5885f3765949bcc153ecac70d7421b43bce73e7e9512e126f5e0455d406f99b",
+   "ok": true
+  },
+  {
+   "n": 2,
+   "t": "2026-10-25T14:07:39.141Z",
+   "level": 2,
+   "xp": 4,
+   "hp": 86,
+   "maxHp": 130,
+   "gold": 3,
+   "phase": "level_up",
+   "reason": "Stats +1 VIT; Buy Shirt; Explore until beast (instant-death risk 0.0%, HP 101/145)",
+   "actions": "stats(vit+1) + buy(Shirt) + explore(till beast)",
+   "tx": "0x491c319b7e2267c47e74b1ecbe01bac3e755bf4bbd9b463289f9fe5139fb3f6",
+   "ok": true
+  },
+  {
+   "n": 3,
+   "t": "2026-10-25T14:07:44.724Z",
+   "level": 3,
+   "xp": 12,
+   "hp": 101,
+   "maxHp": 145,
+   "gold": 1,
+   "phase": "level_up",
+   "reason": "Stats +1 DEX; Explore until beast (instant-death risk 0.0%, HP 101/145)",
+   "actions": "stats(dex+1) + explore(till beast)",
+   "tx": "0x35aac937a76e53d29a99002d68261286a705ab4b1e117261b0622fe7fd3c839",
+   "ok": true
+  },
+  {
+   "n": 4,
+   "t": "2026-10-25T14:07:48.652Z",
+   "level": 3,
+   "xp": 12,
+   "hp": 101,
+   "maxHp": 145,
+   "gold": 1,
+   "phase": "battle",
+   "reason": "Flee from Mantis (L6 T3): P(escape)=100.0% P(death)=0.0%; flee value 195.3 vs attack 191.7",
+   "actions": "flee",
+   "tx": "0x4bfa271944ad6b9b882535c09df3ecb69e59e480791b1dabe5ce3dc07c728bc",
+   "ok": true
+  },
+  {
+   "n": 5,
+   "t": "2026-10-25T14:07:54.433Z",
+   "level": 3,
+   "xp": 13,
+   "hp": 101,
+   "maxHp": 145,
+   "gold": 1,
+   "phase": "explore",
+   "reason": "Explore until beast (instant-death risk 0.0%, HP 101/145)",
+   "actions": "explore(till beast)",
+   "tx": "0x7194fba3b22fcdb9aaec676e190c896e6b5889bd1917b71107e376dfd5db097",
+   "ok": true
+  }
+ ],
+ "message": "looking for unplayed games on the account",
+ "current": {
+  "id": "2713877091499598330239949450874152722206844068439598152237922000676334100641",
+  "level": 3,
+  "xp": 13,
+  "hp": 101,
+  "maxHp": 145,
+  "gold": 1,
+  "gear": [
+   "Grimoire T1 G4",
+   "Shirt T5 G2",
+   "Hood T5 G4",
+   "-",
+   "-",
+   "Divine Gloves T1 G4",
+   "-",
+   "-"
+  ],
+  "stats": {
+   "str": 2,
+   "dex": 3,
+   "vit": 3,
+   "int": 2,
+   "wis": 2,
+   "cha": 2,
+   "luck": 2
+  },
+  "lastReason": "Explore until beast (instant-death risk 0.0%, HP 101/145)"
+ }
 }
