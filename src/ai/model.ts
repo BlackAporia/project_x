@@ -182,6 +182,8 @@ const NAME_UNLOCK = BEAST_SPECIAL_NAME_LEVEL_UNLOCK;
 export interface PerilTable {
   /** P(the next explore kills instantly | health h), h = 0..1024 */
   instantDeath: Float64Array;
+  /** P(the next explore meets a beast and the battle that follows kills | health h): flee or fight, whichever is safer */
+  encounterDeath: Float64Array;
   /** expected single-hit damage of the next explore (0 for discoveries) */
   expectedDamage: number;
 }
@@ -281,7 +283,90 @@ export function perilTable(adv: Adventurer, settings: Settings): PerilTable {
     instantDeath[h] = h === 0 ? 1 : (po + pa) / 3;
   }
   const expectedDamage = ((expObs / wObs) * (1 - pDodge) + (expAmb / wAmb) * pAmbush) / 3;
-  return { instantDeath, expectedDamage };
+  // the battle starts after the (possible) ambush hit
+  // (an ambush that kills outright is already in instantDeath; a survived one starts the battle lower)
+  const battle = battleDeathTable(adv, settings);
+  const shift = Math.round(expAmb / wAmb);
+  const encounterDeath = new Float64Array(1025);
+  for (let h = 1; h <= 1024; h++) encounterDeath[h] = ((1 - pAmbush) * battle[h] + pAmbush * battle[Math.max(1, h - shift)]) / 3;
+  encounterDeath[0] = 1 / 3;
+  return { instantDeath, encounterDeath, expectedDamage };
+}
+
+const erfc = (x: number): number => {
+  // Abramowitz-Stegun 7.1.26
+  const z = Math.abs(x);
+  const t = 1 / (1 + 0.3275911 * z);
+  const y = t * (0.254829592 + t * (-0.284496736 + t * (1.421413741 + t * (-1.453152027 + t * 1.061405429)))) * Math.exp(-z * z);
+  return x >= 0 ? y : 2 - y;
+};
+
+/**
+ * P(dying in the battle with an unknown beast met at health h), averaged over the beasts of this level (tier x type x
+ * level grid, beast health quartiles). Per beast: flee every round (survival DP over health) or fight it out (R-1
+ * counterattacks before the kill, normal approximation of their sum), whichever is safer. This is the risk that
+ * the instant-death table misses: most deaths on mainnet rules are failed escapes from beasts met at half health.
+ */
+export function battleDeathTable(adv: Adventurer, settings: Settings): Float64Array {
+  const out = new Float64Array(1025);
+  const lvl = level(adv);
+  const hMax = Math.min(1024, maxHealth(adv.stats) + 30);
+  const { min, max } = encounterLevels(lvl);
+  const hpRange = beastHealthRange(lvl);
+  const beastHps = [0.25, 0.75].map((q) => Math.max(1, Math.round(hpRange.min + q * (hpRange.max - hpRange.min))));
+  const nL = 4;
+  const pF = fleeProbability(adv);
+  const surv = new Float64Array(hMax + 1);
+  const acc = new Float64Array(hMax + 1);
+  const hd = new Int32Array(16);
+  const hq = new Float64Array(16);
+  let wSum = 0;
+  for (let tier = 1; tier <= 5; tier++) {
+    for (let type = 1; type <= 3; type++) {
+      for (let i = 0; i < nL; i++) {
+        const l = Math.max(1, Math.round(min + ((i + 0.5) * (max - min + 1)) / nL - 0.5));
+        const beast: Beast = { id: 0, startingHealth: 1, spec: { tier, type, level: l, specials: { special1: 0, special2: 0, special3: 0 } } };
+        const hits = beastDamageOptions(adv, beast, settings, false);
+        const nh = hits.length;
+        let mu = 0;
+        let m2 = 0;
+        for (let k = 0; k < nh; k++) {
+          hd[k] = hits[k].dmg;
+          hq[k] = (1 - pF) * hits[k].p;
+          mu += hits[k].p * hits[k].dmg;
+          m2 += hits[k].p * hits[k].dmg * hits[k].dmg;
+        }
+        const sd1 = Math.sqrt(Math.max(0, m2 - mu * mu));
+        surv[0] = 0;
+        for (let h = 1; h <= hMax; h++) {
+          let v = pF;
+          for (let k = 0; k < nh; k++) v += hq[k] * surv[h > hd[k] ? h - hd[k] : 0];
+          surv[h] = v;
+        }
+        const heroHit = Math.max(1, heroDamageOptions(adv, beast)[0]?.dmg ?? 1);
+        for (const bh of beastHps) {
+          const n = Math.ceil(bh / heroHit) - 1; // counterattacks taken before the killing blow
+          const mean = n * mu;
+          const sd = Math.sqrt(Math.max(0, n)) * sd1;
+          // the normal tail is 0 / 1 beyond 6 sd: only the band around the mean needs erfc
+          const lo = sd > 0 ? Math.max(1, Math.floor(mean - 6 * sd)) : Math.floor(mean) + 1;
+          const hi = sd > 0 ? Math.min(hMax, Math.ceil(mean + 6 * sd)) : Math.floor(mean);
+          for (let h = 1; h <= hMax; h++) {
+            let fight: number;
+            if (n <= 0 || h > hi) fight = n <= 0 || sd > 0 || h > mean ? 0 : 1;
+            else if (h < lo) fight = 1;
+            else fight = 0.5 * erfc((h - 0.5 - mean) / (sd * Math.SQRT2));
+            const flee = 1 - surv[h];
+            acc[h] += flee < fight ? flee : fight;
+          }
+          wSum++;
+        }
+      }
+    }
+  }
+  out[0] = 1;
+  for (let h = 1; h <= 1024; h++) out[h] = h <= hMax ? acc[h] / wSum : out[hMax];
+  return out;
 }
 
 /** Expected damage a beast deals per counterattack at the current level (averaged over unknown beasts). */

@@ -42,6 +42,8 @@ export interface PolicyParams {
   itemXpValue: number;
   /** weight of the next explore's instant-death risk in the continuation value */
   riskWeight: number;
+  /** weight of the battle-after-encounter death risk added to the instant-death risk (healing, continuation); 0 = off */
+  battleRiskWeight?: number;
   /** weight of the missing-health fraction in the continuation value */
   hpWeight: number;
 
@@ -143,6 +145,7 @@ export const DEFAULT_PARAMS: PolicyParams = {
   riskWeight: 1.0,
   hpWeight: 0.05,
   cheapPotionPrice: 3,
+  battleRiskWeight: 0,
   maxExploreRisk: 0.004,
   potionReserveFactor: 0.35,
   goldReserve: 4,
@@ -192,6 +195,7 @@ export const PARAM_BOUNDS: Record<string, [number, number]> = {
   goldValue: [0, 3],
   itemXpValue: [0, 0.3],
   riskWeight: [0, 4],
+  battleRiskWeight: [0, 3],
   hpWeight: [0, 1],
   cheapPotionPrice: [1, 20],
   maxExploreRisk: [0, 0.05],

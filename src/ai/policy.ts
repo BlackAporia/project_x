@@ -122,7 +122,7 @@ export class Policy {
         hEff = Math.min(maxHp, h + n * POTION_HEALTH_AMOUNT);
         spent = n * price;
       }
-      const risk = peril.instantDeath[hEff > 1024 ? 1024 : hEff];
+      const risk = this.exploreRisk(peril, hEff);
       const missing = 1 - hEff / maxHp;
       out[h] = K * Math.max(0, 1 - p.riskWeight * risk - p.hpWeight * missing) - p.goldValue * spent;
     }
@@ -133,8 +133,14 @@ export class Policy {
     const p = this.params;
     if (price <= p.cheapPotionPrice) return maxHp;
     // smallest health whose instant-death risk is below the threshold
-    for (let h = 1; h <= maxHp; h++) if (peril.instantDeath[h > 1024 ? 1024 : h] <= p.maxExploreRisk) return Math.min(maxHp, h + 1);
+    for (let h = 1; h <= maxHp; h++) if (this.exploreRisk(peril, h) <= p.maxExploreRisk) return Math.min(maxHp, h + 1);
     return maxHp;
+  }
+
+  /** Death risk of the next explore at health h: instant death plus (weighted) the battle after a beast encounter. */
+  exploreRisk(peril: PerilTable, h: number): number {
+    const i = h > 1024 ? 1024 : h;
+    return peril.instantDeath[i] + (this.params.battleRiskWeight ?? 0) * peril.encounterDeath[i];
   }
 
   evaluateBattle(state: GameState, adv: Adventurer, beast: Beast, wantRoots = false): { sol: BattleSolution; rootValues: Float64Array } {
@@ -347,12 +353,13 @@ export class Policy {
     const adv = loadAssets(s.adventurer, s.bag);
     const peril = this.peril(adv, s);
     const risk = peril.instantDeath[adv.health > 1024 ? 1024 : adv.health];
+    const battleRisk = peril.encounterDeath[adv.health > 1024 ? 1024 : adv.health];
     metrics.exploreRisk = risk;
     metrics.health = adv.health;
     metrics.maxHealth = maxHealth(adv.stats);
     const tillBeast = risk <= this.params.tillBeastMaxRisk;
     actions.push({ type: 'explore', tillBeast });
-    reasons.push(`Explore${tillBeast ? ' until beast' : ''} (instant-death risk ${pct(risk)}, HP ${adv.health}/${metrics.maxHealth})`);
+    reasons.push(`Explore${tillBeast ? ' until beast' : ''} (instant-death risk ${pct(risk)}, battle-death risk ${pct(battleRisk)}, HP ${adv.health}/${metrics.maxHealth})`);
     return { phase: actions.some((a) => a.type === 'stats') ? 'level_up' : 'explore', actions, reason: reasons.join('; '), metrics };
   }
 
@@ -500,7 +507,7 @@ export class Policy {
   riskWith(state: GameState, stored: Adventurer, item: Item | null): number {
     const a = loadAssets(item ? withItem(stored, item) : stored, state.bag);
     const hp = Math.min(1024, maxHealth(a.stats));
-    return this.peril(a, state).instantDeath[hp];
+    return this.exploreRisk(this.peril(a, state), hp);
   }
 
   /**
@@ -636,7 +643,7 @@ export class Policy {
     const p = this.params;
     let h = adv.health;
     let n = 0;
-    while (h < maxHp && peril.instantDeath[h > 1024 ? 1024 : h] > p.maxExploreRisk) {
+    while (h < maxHp && this.exploreRisk(peril, h) > p.maxExploreRisk) {
       h += POTION_HEALTH_AMOUNT;
       n++;
     }
