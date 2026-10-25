@@ -1,25 +1,23 @@
-== bot contract --address 0x00d042acfc0160b6d725281eca1fb856c3e08ed46fbc20405b4d32d5f3b8ac02 --call settings_id --call is_closed --call game_core_address
+== bot frontend
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts contract --address 0x00d042acfc0160b6d725281eca1fb856c3e08ed46fbc20405b4d32d5f3b8ac02 --call settings_id --call is_closed --call game_core_address
+> node --import tsx src/cli.ts frontend
 
-0x00d042acfc0160b6d725281eca1fb856c3e08ed46fbc20405b4d32d5f3b8ac02 class 0x013b2223aa773da7496f693bfc84ba196333a61eaf7f944c80f369a9bb377c5d: 8 functions
-  write enter_dungeon() -> felt252
-  write set_settings_id(settings_id: u32) -> 
-  write close_dungeon() -> 
-  write set_game_core_address(game_core_address: ContractAddress) -> 
-  view  settings_id() -> u32
-  view  is_closed() -> bool
-  view  game_core_address() -> ContractAddress
-  view  owner() -> ContractAddress
-  settings_id = [0x0]
-  is_closed = [0x0]
-  game_core_address = [0x11afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b]
-== bot dungeon-settings --ids 10,1
+downloaded 338 files, 15.6 MB into /tmp/lsfront-1792923201636
+8 dungeon configs on lootsurvivor.io
+  trials                   Trials                     online       Free
+  beastmode                Beast Mode                 online       1 Ticket settings=dA minter=fA @uA.dungeon
+  ronke-casino             Ronke Casino               Yt?`online`:`coming_soon Free · 3 days settings=Xt minter=en sponsored @ln
+  lootbag                  Loot Bag                   online       Loot Bag settings=Ya minter=Ri @ji.lootDungeon
+  norwich-games-festival   Norwich Games Festival     online       Free @0x04253e24220629b737512a24cb3172fc381db7be7a697d5af358ff21ef1172be
+  blockhash                Blockhash                  closed       Free settings=0 minter=Ns @Gs.commitVerify
+  proving-grounds          Proving Grounds            hi?`online`:`coming_soon Free minter=Yi @fa
+  unknown                  Unknown Dungeon            offline       @0x04253e24220629b737512a24cb3172fc381db7be7a697d5af358ff21ef1172be
+Ronke dungeons: ronke-casino (Ronke Casino)
+== bot ronke --address 0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts dungeon-settings --ids 10,1
+> node --import tsx src/cli.ts ronke --address 0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452
 
-settings #10: {"details":{"name":"","description":"","settings":[{"name":"433321119326202570340158875351413864","value":"48"},{"name":"100890435121534990691620944","value":"48"},{"name":"6611955556124917149965787032676","value":"48"},{"name":"28398132876162011649813448929350859060328","value":"48"},{"name":"7269922016297474982351965145594107771057273","value":"48"},{"name":"2839813287616201164981366200809003898
-settings #1: {"details":{"name":"Loot Bag","description":"Bring your own Loot bag: the bag you hold on Ethereum is the run you start.","settings":[{"name":"433321119326202570340158875351413864","value":"3223600"},{"name":"100890435121534990691620944","value":"48"},{"name":"6611955556124917149965787032676","value":"13360"},{"name":"28398132876162011649813448929350859060328","value":"48"},{"name":"72699220162974
-saved botdata/data/dungeon-settings.json (2 settings, core 0x011afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b)
+[ronke] account 0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452 (address)
+[ronke] status only
