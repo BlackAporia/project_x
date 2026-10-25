@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-25T21:28:05.067Z",
+ "updated": "2026-10-25T23:18:43.669Z",
  "modes": {
   "mainnet": {
    "games": 57,
@@ -195,101 +195,102 @@
    ]
   },
   "practice": {
-   "games": 3050,
+   "games": 3250,
    "inProgress": 0,
    "errors": 0,
    "best": 1191,
    "bestLevel": 34,
-   "mean": 355,
-   "median": 316,
-   "p90": 667,
-   "last20Mean": 352,
+   "mean": 359,
+   "median": 324,
+   "p90": 669,
+   "last20Mean": 410,
    "transactions": 0,
    "reverts": 0,
    "predictionAccuracy": null,
    "deathCauses": [
     [
      "obstacle",
-     691
+     734
     ],
     [
      "Qilin",
-     70
-    ],
-    [
-     "Minotaur",
-     68
-    ],
-    [
-     "Phoenix",
-     67
+     77
     ],
     [
      "Dragon",
-     67
+     75
+    ],
+    [
+     "Minotaur",
+     71
+    ],
+    [
+     "Phoenix",
+     70
     ],
     [
      "Griffin",
-     61
+     64
+    ],
+    [
+     "Manticore",
+     60
     ],
     [
      "ambush by Dragon",
      58
     ],
     [
-     "Ammit",
-     55
+     "Chupacabra",
+     57
     ],
     [
-     "Jiangshi",
-     54
+     "Ammit",
+     57
+    ],
+    [
+     "Skinwalker",
+     56
     ],
     [
      "Warlock",
-     53
-    ],
-    [
-     "Manticore",
-     53
-    ],
-    [
-     "Chupacabra",
-     52
+     56
     ]
    ],
    "levels": {
-    "1": 5,
+    "1": 6,
     "2": 3,
     "3": 4,
     "4": 8,
-    "5": 15,
+    "5": 17,
     "6": 38,
-    "7": 43,
-    "8": 63,
-    "9": 105,
-    "10": 115,
-    "11": 139,
-    "12": 165,
-    "13": 152,
-    "14": 179,
-    "15": 177,
-    "16": 168,
-    "17": 176,
-    "18": 181,
-    "19": 143,
-    "20": 207,
-    "21": 158,
-    "22": 155,
-    "23": 121,
-    "24": 125,
-    "25": 120,
-    "26": 83,
-    "27": 69,
-    "28": 47,
-    "29": 39,
-    "30": 27,
+    "7": 45,
+    "8": 64,
+    "9": 106,
+    "10": 120,
+    "11": 145,
+    "12": 172,
+    "13": 164,
+    "14": 185,
+    "15": 186,
+    "16": 180,
+    "17": 181,
+    "18": 197,
+    "19": 150,
+    "20": 226,
+    "21": 178,
+    "22": 166,
+    "23": 132,
+    "24": 136,
+    "25": 128,
+    "26": 92,
+    "27": 74,
+    "28": 49,
+    "29": 46,
+    "30": 30,
     "31": 13,
-    "32": 5,
+    "32": 6,
+    "33": 1,
     "34": 2
    },
    "bestOverTime": [
@@ -356,6 +357,14 @@
      "policy": "tuned-2026-10-22-g24"
     },
     {
+     "id": "288753",
+     "xp": 1117,
+     "level": 33,
+     "deathCause": "ambush by Qilin",
+     "ended": "2026-10-25T23:18:13.198Z",
+     "policy": "tuned-2026-10-22-g24"
+    },
+    {
      "id": "649210",
      "xp": 1087,
      "level": 32,
@@ -396,27 +405,19 @@
      "policy": "tuned-2026-10-22-g24"
     },
     {
+     "id": "288770",
+     "xp": 1028,
+     "level": 32,
+     "deathCause": "obstacle",
+     "ended": "2026-10-25T23:18:14.391Z",
+     "policy": "tuned-2026-10-22-g24"
+    },
+    {
      "id": "419852",
      "xp": 1022,
      "level": 31,
      "deathCause": "ambush by Ammit",
      "ended": "2026-10-25T16:57:18.348Z",
-     "policy": "tuned-2026-10-22-g24"
-    },
-    {
-     "id": "483522",
-     "xp": 1015,
-     "level": 31,
-     "deathCause": "ambush by Harpy",
-     "ended": "2026-10-24T15:58:11.334Z",
-     "policy": "tuned-2026-10-22-g24"
-    },
-    {
-     "id": "47569",
-     "xp": 1008,
-     "level": 31,
-     "deathCause": "Werewolf",
-     "ended": "2026-10-24T20:51:04.382Z",
      "policy": "tuned-2026-10-22-g24"
     }
    ]
@@ -441,28 +442,6 @@
   }
  },
  "runs": [
-  {
-   "id": "2026-10-24T07-36-05-956Z",
-   "mode": "mainnet",
-   "started": "2026-10-24T07:36:05.956Z",
-   "games": 0,
-   "bestXp": 0,
-   "meanXp": 0,
-   "errors": 11,
-   "policy": "leader-2026-10-24b",
-   "ended": "2026-10-24T07:37:48.115Z"
-  },
-  {
-   "id": "2026-10-24T07-39-16-865Z",
-   "mode": "mainnet",
-   "started": "2026-10-24T07:39:16.865Z",
-   "games": 11,
-   "bestXp": 305,
-   "meanXp": 132,
-   "errors": 0,
-   "policy": "leader-2026-10-24b",
-   "ended": "2026-10-24T08:11:30.704Z"
-  },
   {
    "id": "2026-10-24T08-24-45-651Z",
    "mode": "practice",
@@ -781,29 +760,52 @@
    "errors": 0,
    "policy": "tail-2026-10-25-g3",
    "ended": "2026-10-25T21:28:03.138Z"
+  },
+  {
+   "id": "2026-10-25T23-18-08-701Z",
+   "mode": "practice",
+   "started": "2026-10-25T23:18:08.701Z",
+   "games": 200,
+   "bestXp": 1117,
+   "meanXp": 423,
+   "errors": 0,
+   "policy": "tuned-2026-10-22-g24",
+   "dungeon": "Ronkeverse Large #7",
+   "ended": "2026-10-25T23:18:23.481Z"
+  },
+  {
+   "id": "2026-10-25T23-18-29-207Z",
+   "mode": "mainnet-dry",
+   "started": "2026-10-25T23:18:29.207Z",
+   "games": 0,
+   "bestXp": 0,
+   "meanXp": 0,
+   "errors": 0,
+   "policy": "tail-pg-2026-10-25",
+   "ended": "2026-10-25T23:18:37.851Z"
   }
  ],
  "policy": {
   "params": {
-   "version": "tail-2026-10-25-g3",
+   "version": "tail-pg-2026-10-25",
    "startWeapon": 46,
-   "phaseLevel": 13.208099584803465,
-   "chaRatio": 0.9696499336367534,
-   "chaRatioLate": 0.5334414086728653,
+   "phaseLevel": 10.52074939813025,
+   "chaRatio": 0.9318165059788341,
+   "chaRatioLate": 0.5241328547191313,
    "chaCap": 31,
-   "dexRatio": 1.1606962726530123,
-   "dexRatioLate": 0.7661399101147305,
+   "dexRatio": 1.1230383152588543,
+   "dexRatioLate": 0.8253261938786447,
    "dexCap": 69.81705196609761,
    "intRatio": 0.3377095373094443,
-   "intRatioLate": 0.03618257576725011,
+   "intRatioLate": 0.020454129729662835,
    "intCap": 52.65557725478207,
    "wisRatio": 0.309801143402319,
-   "wisRatioLate": 0.04627599742688432,
+   "wisRatioLate": 0.0888082900870968,
    "wisCap": 66.31770140864131,
    "strRatio": 0.09368980805712972,
-   "strRatioLate": 0.21758044982811373,
+   "strRatioLate": 0.10979172916514651,
    "strCap": 28.942889685796818,
-   "vitShare": 0.826089875441413,
+   "vitShare": 0.9337365529014959,
    "futureA": 63.78974530236794,
    "futureB": 44.85367538904331,
    "goldValue": 1.4109614497387815,
@@ -811,28 +813,29 @@
    "riskWeight": 1.2336930815821208,
    "hpWeight": 0.15251832292930761,
    "cheapPotionPrice": 3.706660647125672,
-   "maxExploreRisk": 0.007951621653360016,
-   "potionReserveFactor": 0.861796665589673,
+   "battleRiskWeight": 0.5,
+   "maxExploreRisk": 0.0035362959045827248,
+   "potionReserveFactor": 0.773811492821083,
    "goldReserve": 1.1833824464532978,
    "itemGrowth": 8.642094990532183,
    "upgradeMargin": 0.10161406569034498,
    "buyJewelry": 0.5334038831485974,
    "spareWeapons": 1,
    "spareArmor": 1,
-   "swapMinGain": 3.572979181192999,
+   "swapMinGain": 5.637712359509437,
    "battleDepth": 60,
    "tillBeastMaxRisk": 0.0022957755651295017,
    "jewelryRotateG": 20,
-   "jewelryCollectGain": 38.48971705696779,
+   "jewelryCollectGain": 50.298478559181824,
    "rotateG": 20,
-   "rotateMaxRisk": 0.012535289979389042,
-   "rotateBuyGain": 21.002720888437192,
+   "rotateMaxRisk": 0.02172941110909054,
+   "rotateBuyGain": 23.62954569673826,
    "rotateWeapon": 20,
    "rotateUntil": 0,
-   "futureScale": 2.809493805094109,
+   "futureScale": 3.0472888193911287,
    "killSwap": 1,
-   "killSwapMaxHp": 0.13236413788972753,
-   "collectGain": 17.501540596199252,
+   "killSwapMaxHp": 0.15953385693489902,
+   "collectGain": 21.312115359661167,
    "collectMaxTier": 2,
    "futureXpByLevel": [
     0,
@@ -876,15 +879,26 @@
    "objective": "tail",
    "levels": [
     10,
+    15,
     20,
+    25,
     30,
-    35,
+    34,
+    37,
     40,
-    43,
-    46
+    42
    ],
-   "log10Reach": -3.122338506533182,
-   "updated": "2026-10-25T09:49:57.378Z"
+   "log10Reach": -2.3634584316718112,
+   "updated": "2026-10-25",
+   "dungeon": "Default #0 (mainnet rules) = Proving Grounds",
+   "reach": {
+    "L20": 0.232,
+    "L30": 0.0339,
+    "L36": 0.0102,
+    "L40": 0.00419,
+    "L42": 0.0019
+   },
+   "note": "independent splitting estimate (4000 games, effort 2000): P(L40) 4.19e-3 vs 3.48e-3 and P(L42) 1.90e-3 vs 1.52e-3 for the previous policy; battle-after-encounter risk enabled"
   }
  }
 }
