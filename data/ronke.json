@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-25T10:20:56.051Z",
- "address": "0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452",
- "kind": "address",
+ "updated": "2026-10-25T10:24:48.466Z",
+ "address": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
+ "kind": "cartridge",
  "eligible": false,
  "reason": "Ronke holders sign in with their snapshotted Ronin wallet to claim their daily games.",
  "needsWallet": true,
@@ -38,7 +38,7 @@
  "extra": {
   "openGame": {
    "claimed": false,
-   "available": false,
+   "available": true,
    "steps": {
     "x_follow": {
      "done": false,
@@ -99,9 +99,9 @@
    "follow_both": "todo",
    "like_reshare": "todo",
    "mobile_notifications": "todo",
-   "join_discord": "todo",
+   "join_discord": "done",
    "fund_1": "todo",
-   "proving_grounds_15": "todo",
+   "proving_grounds_15": "done",
    "share_on_x": "todo",
    "get_super_survivor": "todo"
   }
@@ -125,5 +125,5 @@
   "bogo"
  ],
  "claimed": [],
- "message": "status only"
+ "message": "not eligible: Ronke holders sign in with their snapshotted Ronin wallet to claim their daily games."
 }
