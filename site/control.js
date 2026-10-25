@@ -754,6 +754,18 @@ document.addEventListener('click', async (e) => {
   if (!btn) return;
   if (needToken('#ctlRunNote')) return;
   const q = QUICK[btn.dataset.quick]();
+  if (btn.dataset.quick === 'ronke') {
+    // Ronke games belong to the Game Account of the Ronin wallet: without its session the bot plays Cartridge
+    const ga = await secretInfo('GAME_SESSION_LINK').catch(() => null);
+    if (!ga) {
+      note(
+        '#ctlRunNote',
+        'Ігри Ronke лежать на вашому <b>Game Account</b> (акаунт Ronin‑гаманця), а бот зараз підключений лише до Cartridge і їх не бачить. Спершу: <a href="#accounts" data-goto="accounts">🔑 Акаунти</a> → «EVM‑гаманець» → <b>Створити сесію гаманцем</b> (той самий Ronin‑гаманець, що на lootsurvivor.io), потім знову натисніть «Забрати й зіграти».',
+        'warn',
+      );
+      return;
+    }
+  }
   if (q.confirm && !confirm(q.confirm)) return;
   busy(btn, true);
   try {
@@ -913,7 +925,8 @@ async function renderMonitor(runs) {
       result = `<div class="mon-results">${mine
         .map(
           (x) => `<div class="mon-result"><span class="badge ${x.mode.startsWith('mainnet') ? 'run' : 'muted'}">${esc(x.mode === 'mainnet' ? 'Mainnet' : x.mode === 'mainnet-dry' ? 'Mainnet (dry run)' : 'Тренування')}</span>
-            <b>${x.games}</b> ігор · найкраща <b>${x.bestXp}</b> XP · середня ${x.meanXp}${x.errors ? ` · <span class="bad">${x.errors} помилок</span>` : ''}${x.ended ? '' : ' · <span class="run">триває</span>'}</div>`,
+            <b>${x.games}</b> ігор · найкраща <b>${x.bestXp}</b> XP · середня ${x.meanXp}${x.errors ? ` · <span class="bad">${x.errors} помилок</span>` : ''}${x.ended ? '' : ' · <span class="run">триває</span>'}
+            ${x.ended && x.games === 0 && x.mode.startsWith('mainnet') ? '<span class="muted small">— на акаунті бота не знайшлося незіграних ігор (ігри Ronke потребують сесії Game Account; для нових ігор — Proving Grounds)</span>' : ''}</div>`,
         )
         .join('')}</div>`;
     } else if (running) result = '<p class="muted small">Результати з’являться після першої зіграної гри.</p>';
