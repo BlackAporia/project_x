@@ -370,11 +370,12 @@
   "id": "2026-10-25T14-07-15-459Z",
   "mode": "mainnet",
   "started": "2026-10-25T14:07:15.459Z",
-  "games": 6,
-  "bestXp": 606,
-  "meanXp": 197,
+  "games": 1,
+  "bestXp": 106,
+  "meanXp": 106,
   "errors": 0,
   "policy": "tail-2026-10-25-g3",
-  "ended": "2026-10-25T14:10:32.294Z"
+  "ended": "2026-10-25T14:10:32.294Z",
+  "note": "5 old finished games were re-counted; corrected"
  }
 ]
