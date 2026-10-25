@@ -1,7 +1,138 @@
-== bot v2-verify --game 904625697166532776746652061824565847215142356634039857385949574314741349409,904625697166532776746652061824565847215142356634039857367502830056349459713
+== bot contract --address 0x011afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b --call is_verified:904625697166532776746652061824565847215142356634039857367502830056349459713 --call is_verified:904625697166532776746652061824565847215142356634039857385949574314741349409 --call is_verified:2713877091499598330239949450874152722207778681874134394647745801171194256353 --call is_verified:904625697166532776746652061824565847215142356634039889132796391693076560289
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts v2-verify --game 904625697166532776746652061824565847215142356634039857385949574314741349409,904625697166532776746652061824565847215142356634039857367502830056349459713
+> node --import tsx src/cli.ts contract --address 0x011afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b --call is_verified:904625697166532776746652061824565847215142356634039857367502830056349459713 --call is_verified:904625697166532776746652061824565847215142356634039857385949574314741349409 --call is_verified:2713877091499598330239949450874152722207778681874134394647745801171194256353 --call is_verified:904625697166532776746652061824565847215142356634039889132796391693076560289
 
-game 904625697166532776746652061824565847215142356634039857385949574314741349409: verify_game would succeed (8 packets) -> []
-game 904625697166532776746652061824565847215142356634039857367502830056349459713: verify_game would succeed (59 packets) -> []
+0x011afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b class 0x011fd12ac33848a5399e04dc25d817214a43f5f1b12337c8b83ae253db3bc2a4: 128 functions
+  write commit_actions(adventurer_id: felt252, expected_chain: felt252, encoded_actions: felt252>) -> 
+  write commit_actions_unchecked(adventurer_id: felt252, expected_chain: felt252, encoded_actions: felt252>) -> 
+  view  get_commitment(adventurer_id: felt252) -> felt252
+  write initialize_game(adventurer_id: felt252, packed_adventurer: felt252, packed_bag: felt252, specials_override: felt252) -> 
+  view  get_start_override(adventurer_id: felt252) -> felt252)
+  write verify_game(adventurer_id: felt252, actions: felt252>, blocks: u64>) -> 
+  write verify_actions(adventurer_id: felt252, attempt_nonce: u64, actions: felt252>, blocks: u64>) -> 
+  write apply_actions(adventurer_id: felt252, attempt_nonce: u64, actions: felt252>, blocks: u64>) -> 
+  write verify_games_with_proof(results: ProofResult>) -> 
+  view  direct_replay_started(adventurer_id: felt252) -> bool
+  view  is_verified(adventurer_id: felt252) -> bool
+  view  get_replay_checkpoint(adventurer_id: felt252) -> ReplayCheckpoint
+  view  get_progress(adventurer_id: felt252, initiator: ContractAddress, attempt_nonce: u64) -> SettleProgress
+  view  replay_transcript(adventurer_id: felt252, actions: felt252>, blocks: u64>, hashes: felt252>, committed_len: u32) -> ChainCheck
+  view  replay_provable_transcript(adventurer_id: felt252, actions: felt252>, blocks: u64>, claimed_block_hashes: felt252>, mint_hash: felt252) -> ProvableReplay
+  write set_proof_config(config: ProofConfig) -> 
+  view  get_proof_config() -> ProofConfig
+  view  get_entropy_block_offset() -> u64
+  write set_entropy_block_offset(offset: u64) -> 
+  write add_settings(name: felt252, description: ByteArray, settings: GameSettings) -> u32
+  view  get_settings(settings_id: u32) -> GameSettings
+  view  get_action_settings(settings_id: u32) -> ActionSettings
+  write create_objective(name: ByteArray, description: ByteArray, score_threshold: u32) -> u32
+  view  load_assets(adventurer_id: felt252) -> Bag)
+  view  get_adventurer(adventurer_id: felt252) -> Adventurer
+  view  get_bag(adventurer_id: felt252) -> Bag
+  view  get_packed_state(adventurer_id: felt252>) -> felt252)>
+  view  get_slain_beast(adventurer_id: felt252, encounter_xp: u16) -> RecordedKill>
+  view  get_slain_adventurer(adventurer_id: felt252) -> RecordedKill>
+  write register_enumeration_interface() -> 
+  view  get_combat_class() -> ClassHash
+  view  get_exploration_class() -> ClassHash
+  view  get_market_class() -> ClassHash
+  view  get_inventory_class() -> ClassHash
+  view  get_stat_upgrades_class() -> ClassHash
+  view  get_settlement_class() -> ClassHash
+  view  get_replay_class() -> ClassHash
+  view  get_settings_class() -> ClassHash
+  view  get_metadata_class() -> ClassHash
+  write set_combat_class(class_hash: ClassHash) -> 
+  write set_exploration_class(class_hash: ClassHash) -> 
+  write set_market_class(class_hash: ClassHash) -> 
+  write set_inventory_class(class_hash: ClassHash) -> 
+  write set_stat_upgrades_class(class_hash: ClassHash) -> 
+  write set_settlement_class(class_hash: ClassHash) -> 
+  write set_replay_class(class_hash: ClassHash) -> 
+  write set_settings_class(class_hash: ClassHash) -> 
+  write set_metadata_class(class_hash: ClassHash) -> 
+  view  get_renderer_address() -> ContractAddress
+  write set_renderer_address(address: ContractAddress) -> 
+  view  minted_by_address(token_id: felt252) -> ContractAddress
+  write initialize_game_token_metadata() -> 
+  view  token_address() -> ContractAddress
+  view  settings_address() -> ContractAddress
+  view  objectives_address() -> ContractAddress
+  view  score(token_id: felt252) -> u64
+  view  game_over(token_id: felt252) -> bool
+  view  new_game(token_id: felt252) -> bool
+  view  score_batch(token_ids: felt252>) -> u64>
+  view  game_over_batch(token_ids: felt252>) -> bool>
+  view  settings_exist(settings_id: u32) -> bool
+  view  settings_exist_batch(settings_ids: u32>) -> bool>
+  view  settings_count() -> u32
+  view  settings_details(settings_id: u32) -> GameSettingDetails
+  view  settings_details_batch(settings_ids: u32>) -> GameSettingDetails>
+  view  objective_exists(objective_id: u32) -> bool
+  view  completed_objective(token_id: felt252, objective_id: u32) -> bool
+  view  objective_exists_batch(objective_ids: u32>) -> bool>
+  view  objectives_count() -> u32
+  view  objectives_details(objective_id: u32) -> GameObjectiveDetails
+  view  objectives_details_batch(objective_ids: u32>) -> GameObjectiveDetails>
+  write upgrade(new_class_hash: ClassHash) -> 
+  view  balance_of(account: ContractAddress) -> u256
+  view  owner_of(token_id: u256) -> ContractAddress
+  write safe_transfer_from(from: ContractAddress, to: ContractAddress, token_id: u256, data: felt252>) -> 
+  write transfer_from(from: ContractAddress, to: ContractAddress, token_id: u256) -> 
+  write approve(to: ContractAddress, token_id: u256) -> 
+  write set_approval_for_all(operator: ContractAddress, approved: bool) -> 
+  view  get_approved(token_id: u256) -> ContractAddress
+  view  is_approved_for_all(owner: ContractAddress, operator: ContractAddress) -> bool
+  view  supports_interface(interface_id: felt252) -> bool
+  view  name() -> ByteArray
+  view  symbol() -> ByteArray
+  view  token_uri(token_id: u256) -> ByteArray
+  view  balanceOf(account: ContractAddress) -> u256
+  view  ownerOf(tokenId: u256) -> ContractAddress
+  write safeTransferFrom(from: ContractAddress, to: ContractAddress, tokenId: u256, data: felt252>) -> 
+  write transferFrom(from: ContractAddress, to: ContractAddress, tokenId: u256) -> 
+  write setApprovalForAll(operator: ContractAddress, approved: bool) -> 
+  view  getApproved(tokenId: u256) -> ContractAddress
+  view  isApprovedForAll(owner: ContractAddress, operator: ContractAddress) -> bool
+  view  tokenURI(tokenId: u256) -> ByteArray
+  view  token_of_owner_by_index(owner: ContractAddress, index: u256) -> u256
+  view  start(token_id: felt252) -> u64
+  view  end(token_id: felt252) -> u64
+  view  minted_at(token_id: felt252) -> u64
+  view  schema_version(token_id: felt252) -> u8
+  view  is_soulbound(token_id: felt252) -> bool
+  view  paymaster(token_id: felt252) -> bool
+  view  tx_hash(token_id: felt252) -> u16
+  view  mint_nonce(token_id: felt252) -> u16
+  view  minted_at_block_number(token_id: felt252) -> u32
+  view  minted_at_timestamp(token_id: felt252) -> u64
+  view  start_delay(token_id: felt252) -> u64
+  view  play_duration(token_id: felt252) -> u64
+  view  settings_id(token_id: felt252) -> u32
+  view  objective_id(token_id: felt252) -> u32
+  view  minted_by(token_id: felt252) -> u32
+  view  minter_data(token_id: felt252) -> u128
+  view  lifecycle(token_id: felt252) -> Lifecycle
+  view  is_lifecycle_open(token_id: felt252) -> bool
+  view  minter_address_by_token_id(token_id: felt252) -> ContractAddress
+  view  minter_address_by_id(minter_id: u32) -> ContractAddress
+  view  token_data(token_id: felt252) -> GameTokenData
+  write mint(recipient_address: ContractAddress, params: MintParams) -> felt252
+  write mint_batch(recipient_addresses: ContractAddress>, params: MintParams) -> felt252>
+  view  royalty_info(token_id: u256, sale_price: u256) -> u256)
+  view  default_royalty() -> u128)
+  view  token_royalty(token_id: u256) -> u128)
+  write set_default_royalty(receiver: ContractAddress, fee_numerator: u128) -> 
+  write delete_default_royalty() -> 
+  write set_token_royalty(token_id: u256, receiver: ContractAddress, fee_numerator: u128) -> 
+  write reset_token_royalty(token_id: u256) -> 
+  view  owner() -> ContractAddress
+  write transfer_ownership(new_owner: ContractAddress) -> 
+  write renounce_ownership() -> 
+  write transferOwnership(newOwner: ContractAddress) -> 
+  write renounceOwnership() -> 
+  is_verified:904625697166532776746652061824565847215142356634039857367502830056349459713 = [0x1]
+  is_verified:904625697166532776746652061824565847215142356634039857385949574314741349409 = [0x1]
+  is_verified:2713877091499598330239949450874152722207778681874134394647745801171194256353 = [0x0]
+  is_verified:904625697166532776746652061824565847215142356634039889132796391693076560289 = [0x1]
