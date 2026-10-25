@@ -1,38 +1,10 @@
 {
- "updated": "2026-10-25T16:32:06.270Z",
+ "updated": "2026-10-25T16:32:17.220Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-10-25T16-00-40-070Z",
  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "recent": [
-  {
-   "n": 104,
-   "t": "2026-10-25T16:28:20.682Z",
-   "level": 22,
-   "xp": 493,
-   "hp": 312,
-   "maxHp": 325,
-   "gold": 34,
-   "phase": "level_up",
-   "reason": "Stats +1 CHA; Buy Studded Leather Armor; Drink 2 potion(s); Explore (instant-death risk 1.7%, HP 325/325)",
-   "actions": "stats(cha+1) + buy(2 potions, Studded Leather Armor) + explore",
-   "tx": "0x4fba38ded285be55d9d841f76073ad45e09b28bd3277a638b25a68e4d12b9",
-   "ok": true
-  },
-  {
-   "n": 105,
-   "t": "2026-10-25T16:28:25.479Z",
-   "level": 22,
-   "xp": 493,
-   "hp": 325,
-   "maxHp": 325,
-   "gold": 31,
-   "phase": "battle",
-   "reason": "Flee from \"Corruption Growl\" Troll (L38 T1): P(escape)=89.0% P(death)=11.0%; flee value 489.4 vs attack 347.5",
-   "actions": "flee",
-   "tx": "0x31d2a5d7774561232546a5ec23ce8c14969739d8e9f985ff39f31d66a412720",
-   "ok": true
-  },
   {
    "n": 106,
    "t": "2026-10-25T16:28:30.175Z",
@@ -564,13 +536,41 @@
    "actions": "stats(cha+1) + explore",
    "tx": "0x17c84321d8966e10606f6445f88c04a2f113291f5b7c3e085ced5d5af1ade39",
    "ok": true
+  },
+  {
+   "n": 144,
+   "t": "2026-10-25T16:32:06.271Z",
+   "level": 26,
+   "xp": 726,
+   "hp": 26,
+   "maxHp": 370,
+   "gold": 7,
+   "phase": "battle",
+   "reason": "Flee from \"Onslaught Instrument\" Qilin (L61 T1): P(escape)=69.1% P(death)=30.9%; flee value 222.8 vs attack 0.0",
+   "actions": "flee",
+   "tx": "0x4b7cb1745b97bab1d546fcef398079bcd788fec26348c45de08bbdf2a2f48f6",
+   "ok": true
+  },
+  {
+   "n": 145,
+   "t": "2026-10-25T16:32:11.976Z",
+   "level": 26,
+   "xp": 727,
+   "hp": 26,
+   "maxHp": 370,
+   "gold": 7,
+   "phase": "explore",
+   "reason": "Drink 7 potion(s); Explore (instant-death risk 17.0%, HP 96/370)",
+   "actions": "buy(7 potions) + explore",
+   "tx": "0x49f3ed8f6ff46acc54259a4f04bef9029a8f1479ebcd57444f8f19955518bbf",
+   "ok": true
   }
  ],
  "current": {
   "id": "904625697166532776746652061824565847215142356634039893560015006552015957889",
   "level": 26,
-  "xp": 726,
-  "hp": 370,
+  "xp": 727,
+  "hp": 26,
   "maxHp": 370,
   "gold": 7,
   "gear": [
@@ -589,9 +589,9 @@
    "vit": 18,
    "int": 6,
    "wis": 5,
-   "cha": 12,
+   "cha": 13,
    "luck": 40
   },
-  "lastReason": "Stats +1 CHA; Explore (instant-death risk 1.8%, HP 370/370)"
+  "lastReason": "Drink 7 potion(s); Explore (instant-death risk 17.0%, HP 96/370)"
  }
 }
