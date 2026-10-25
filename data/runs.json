@@ -377,5 +377,15 @@
   "policy": "tail-2026-10-25-g3",
   "ended": "2026-10-25T14:10:32.294Z",
   "note": "5 old finished games were re-counted; corrected"
+ },
+ {
+  "id": "2026-10-25T14-17-44-454Z",
+  "mode": "mainnet",
+  "started": "2026-10-25T14:17:44.454Z",
+  "games": 0,
+  "bestXp": 0,
+  "meanXp": 0,
+  "errors": 0,
+  "policy": "tail-2026-10-25-g3"
  }
 ]
