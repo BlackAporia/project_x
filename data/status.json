@@ -1,24 +1,10 @@
 {
- "updated": "2026-10-25T16:45:24.371Z",
+ "updated": "2026-10-25T16:45:29.567Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-10-25T16-00-40-070Z",
  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "recent": [
-  {
-   "n": 62,
-   "t": "2026-10-25T16:41:52.989Z",
-   "level": 8,
-   "xp": 70,
-   "hp": 83,
-   "maxHp": 160,
-   "gold": 9,
-   "phase": "battle",
-   "reason": "Attack Ghoul (L2 T2, 6 HP): P(win)=100.0% P(death)=0.0%; attack value 170.3 vs flee 162.6",
-   "actions": "attack",
-   "tx": "0x5912cf1f910130aeaee73a50c15ba97ce6ee7c559b9c5e6d66f578cee76238e",
-   "ok": true
-  },
   {
    "n": 63,
    "t": "2026-10-25T16:41:57.777Z",
@@ -564,12 +550,26 @@
    "actions": "flee",
    "tx": "0x701daafebc7c15e65e27e7464c788a00fca88761beca1ba1d1231bd842652f8",
    "ok": true
+  },
+  {
+   "n": 102,
+   "t": "2026-10-25T16:45:24.372Z",
+   "level": 13,
+   "xp": 172,
+   "hp": 25,
+   "maxHp": 160,
+   "gold": 7,
+   "phase": "explore",
+   "reason": "Drink 7 potion(s); Explore (instant-death risk 5.0%, HP 95/160)",
+   "actions": "buy(7 potions) + explore",
+   "tx": "0x7d57c4dc3831aa368b5d5f954bab24979781864018e42bcd584e0ad08c882ef",
+   "ok": true
   }
  ],
  "current": {
   "id": "904625697166532776746652061824565847215142356634039893892056402576027026721",
   "level": 13,
-  "xp": 171,
+  "xp": 172,
   "hp": 25,
   "maxHp": 160,
   "gold": 7,
@@ -592,7 +592,6 @@
    "cha": 7,
    "luck": 2
   },
-  "beast": "\"Oblivion Bane\" Sprite",
-  "lastReason": "Flee from \"Oblivion Bane\" Sprite (L36 T4): P(escape)=77.4% P(death)=22.6%; flee value 182.9 vs attack 61.0"
+  "lastReason": "Drink 7 potion(s); Explore (instant-death risk 5.0%, HP 95/160)"
  }
 }
