@@ -73,12 +73,18 @@ export class V2MainnetBackend implements Backend {
     }
     if (this.enter && !this.dryRun && this.entries > 0) {
       this.entries--;
-      try {
-        const id = await this.enter();
-        if (id !== null) return id;
-      } catch (e) {
-        this.entries = 0; // e.g. no gas on the account, or a session without enter_dungeon: stop entering
-        this.log(`[v2] could not start a new game: ${(e as Error).message.slice(0, 300)}`);
+      // a one-off 'Transaction execution error' right after settling ended a 10-game run at 8: retry a few times,
+      // stop entering only when it keeps failing (no gas, a session without enter_dungeon...)
+      for (let attempt = 1; attempt <= 3; attempt++) {
+        try {
+          const id = await this.enter();
+          if (id !== null) return id;
+          break;
+        } catch (e) {
+          this.log(`[v2] could not start a new game (attempt ${attempt}/3): ${(e as Error).message.slice(0, 300)}`);
+          if (attempt === 3) this.entries = 0;
+          else await new Promise((r) => setTimeout(r, 20_000 * attempt));
+        }
       }
     }
     return null;
