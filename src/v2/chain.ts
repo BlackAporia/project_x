@@ -132,23 +132,24 @@ export class V2Chain {
     return { gameId, packets, blocks, rolling: packets.length ? rolling : 0n };
   }
 
-  /** Hash of block n, or null if it does not exist yet. */
+  /** Hash of block n, or null if it does not exist yet (RPC errors such as rate limits are retried, not "missing"). */
   async blockHash(n: bigint): Promise<bigint | null> {
     const cached = this.blockHashes.get(n);
     if (cached !== undefined) return cached;
-    try {
-      const b = (await this.provider.getBlockWithTxHashes(Number(n))) as unknown as { block_hash?: string; status?: string };
-      if (!b.block_hash || b.status === 'PRE_CONFIRMED' || b.status === 'PENDING') return null;
-      const h = BigInt(b.block_hash);
-      this.blockHashes.set(n, h);
-      return h;
-    } catch {
-      return null;
-    }
+    if (n > BigInt(await this.latestBlock())) return null;
+    const b = (await retry(() => this.provider.getBlockWithTxHashes(Number(n)), { label: 'v2 block', tries: 5 }).catch(() => null)) as { block_hash?: string; status?: string } | null;
+    if (!b?.block_hash || b.status === 'PRE_CONFIRMED' || b.status === 'PENDING') return null;
+    const h = BigInt(b.block_hash);
+    this.blockHashes.set(n, h);
+    return h;
   }
 
+  private latest = { n: 0, at: 0 };
   async latestBlock(): Promise<number> {
-    return Number(await this.provider.getBlockNumber());
+    if (Date.now() - this.latest.at > 2000) {
+      this.latest = { n: Number(await retry(() => this.provider.getBlockNumber(), { label: 'v2 block number', tries: 5 })), at: Date.now() };
+    }
+    return this.latest.n;
   }
 
   /** Authoritative state: the core replays the transcript (with the entropy block hashes) and returns packed state. */
@@ -176,10 +177,14 @@ export class V2Chain {
     };
   }
 
-  /** Wait until the entropy block of the last commit exists (outcomes become known). */
+  /**
+   * Wait until the entropy block of the last commit exists (outcomes become known). A fresh game has no commit yet:
+   * its start depends on the mint block ("bh: commit unripe" until mint block + offset is produced).
+   */
   async waitReady(t: Transcript, timeoutMs = 300_000): Promise<void> {
-    if (!t.blocks.length) return;
-    const target = t.blocks[t.blocks.length - 1] + (await this.entropyOffset());
+    const base = t.blocks.length ? t.blocks[t.blocks.length - 1] : BigInt(await this.mintBlock(t.gameId));
+    if (!base) return;
+    const target = base + (await this.entropyOffset());
     const until = Date.now() + timeoutMs;
     while (Date.now() < until) {
       if ((await this.blockHash(target)) !== null) return;

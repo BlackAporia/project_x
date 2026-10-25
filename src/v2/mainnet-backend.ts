@@ -98,9 +98,21 @@ export class V2MainnetBackend implements Backend {
 
   async readState(id: bigint): Promise<GameState> {
     const c = await this.ctx(id);
-    await this.chain.waitReady(c.transcript);
-    const st = await this.chain.state(id, c.transcript);
-    if (!st.ready) throw new Error('entropy block not produced yet');
+    // a just-entered or just-committed game is "unripe" until its entropy block exists; RPCs also rate-limit
+    let st: Awaited<ReturnType<V2Chain['state']>> | null = null;
+    for (let attempt = 0; ; attempt++) {
+      try {
+        await this.chain.waitReady(c.transcript);
+        st = await this.chain.state(id, c.transcript);
+        if (st.ready) break;
+        throw new Error('entropy block not produced yet');
+      } catch (e) {
+        const msg = (e as Error).message;
+        if (attempt >= 4 || !/unripe|not produced|rate limit|timeout|ECONN|fetch failed/i.test(msg)) throw e;
+        this.log(`[v2] game ${id}: waiting (${msg.slice(0, 80)})`);
+        await new Promise((r) => setTimeout(r, 10_000 * (attempt + 1)));
+      }
+    }
     if (!st.started || !st.adventurer) {
       // not played yet: the template adventurer of the dungeon (V2 games start implicitly with the first packet)
       const s0 = newGameState(id, c.settings);
