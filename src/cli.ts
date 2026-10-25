@@ -25,6 +25,7 @@ const COMMANDS: Record<string, string> = {
   ronke: 'Ronke Casino daily free games: status for the bot account, --claim to claim today\'s games',
   reach: 'Probability of reaching deep levels (multilevel splitting) for one or more policies (--policy a.json,b.json)',
   contract: 'Inspect live mainnet contracts: ABI and view calls (--address 0x.. --call name:arg,arg)',
+  frontend: 'List the dungeons lootsurvivor.io offers now (new ones highlighted); writes data/frontend/dungeons.json',
 };
 
 /** Minimal .env loader for local runs (real environment variables win). */
@@ -250,6 +251,11 @@ async function main(): Promise<void> {
       const { runContractCommand } = await import('./commands/contract.ts');
       const list = (v: unknown) => (Array.isArray(v) ? v : typeof v === 'string' ? [v] : []).flatMap((x) => String(x).split(/\s+/)).filter(Boolean);
       await runContractCommand({ addresses: list(values.address), calls: list(values.call), dataDir: str(values.data, process.env.BOT_DATA_DIR ?? 'site/data') });
+      break;
+    }
+    case 'frontend': {
+      const { runFrontendCommand } = await import('./commands/frontend.ts');
+      await runFrontendCommand({ dataDir: str(values.data, process.env.BOT_DATA_DIR ?? 'site/data') });
       break;
     }
     case 'site-config': {
