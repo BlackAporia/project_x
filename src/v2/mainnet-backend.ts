@@ -34,8 +34,6 @@ export class V2MainnetBackend implements Backend {
   private entries: number;
   private owned: bigint[];
   private settled = false;
-  /** why verify_game cannot be sent this run (no gas, no sponsorship): later settlements are skipped */
-  private settleBlocked: string | null = null;
 
   constructor(opts: {
     chain: V2Chain;
@@ -72,7 +70,6 @@ export class V2MainnetBackend implements Backend {
       this.settled = true;
       const n = await this.settleFinished(this.owned).catch(() => 0);
       if (n) this.log(`[v2] settled ${n} finished game(s) that were never verified`);
-      if (this.settleBlocked) this.log(`[v2] settlement skipped: ${this.settleBlocked}`);
     }
     if (this.enter && !this.dryRun && this.entries > 0) {
       this.entries--;
@@ -166,7 +163,6 @@ export class V2MainnetBackend implements Backend {
   async finish(id: bigint): Promise<SettleResult | null> {
     if (this.dryRun || !this.executor) return null;
     if (await this.chain.isVerified(id).catch(() => false)) return { verified: true };
-    if (this.settleBlocked) return { verified: false, note: this.settleBlocked };
     const c = await this.ctx(id);
     // the replay needs the entropy block of the last commit: settling right after the final move reverted
     // ("unripe"), which left every finished game unverified (not on the leaderboard)
@@ -180,11 +176,9 @@ export class V2MainnetBackend implements Backend {
         if (await this.chain.isVerified(id).catch(() => false)) return { verified: true };
         const msg = (e as Error).message;
         this.log(`[v2] verify_game failed for ${id} (attempt ${attempt + 1}/4): ${msg.slice(0, 200)}`);
-        // no sponsorship and no gas on the account: retrying cannot help, and it held up the unplayed games
-        if (/needs gas|too expensive|not eligible for sponsorship/.test(msg)) {
-          this.settleBlocked = msg.slice(0, 200);
-          return { verified: false, note: this.settleBlocked };
-        }
+        // not enough STRK for this game, or above the session's fee cap: retrying cannot help (it held up the
+        // unplayed games for minutes); the cost differs per game, so the next game may still fit
+        if (/needs gas|too expensive|not eligible for sponsorship/.test(msg)) return { verified: false, note: msg.slice(0, 200) };
         await new Promise((r) => setTimeout(r, 15_000 * (attempt + 1)));
       }
     }
@@ -195,8 +189,8 @@ export class V2MainnetBackend implements Backend {
   async settleFinished(ids: bigint[]): Promise<number> {
     if (this.dryRun || !this.executor) return 0;
     let n = 0;
-    for (const id of ids) {
-      if (this.settleBlocked) break;
+    // newest first: the latest games matter most when STRK runs short
+    for (const id of [...ids].reverse()) {
       if (await this.chain.isVerified(id).catch(() => true)) continue;
       try {
         const st = await this.readState(id);

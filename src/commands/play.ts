@@ -136,7 +136,11 @@ async function openV2Mainnet(live: boolean, game?: string): Promise<Backend> {
   let address = process.env.MAINNET_ACCOUNT_ADDRESS ?? '';
   // a Game Session shared from lootsurvivor.io (account owned by an EVM / Ronin wallet) takes precedence
   const { gameSessionFromEnv, GameAccountExecutor, sessionAllows } = await import('../chain/game-account.ts');
-  const gs = gameSessionFromEnv();
+  // MAINNET_ACCOUNT=cartridge: Proving Grounds on the Cartridge account (its gas is covered; the Game Account pays
+  // every move itself and each one may use up one of the session's 25 higher-fee exceptions)
+  const which = process.env.MAINNET_ACCOUNT ?? 'auto';
+  const gs = which === 'cartridge' ? null : gameSessionFromEnv();
+  if (which === 'game' && !gs) throw new Error('MAINNET_ACCOUNT=game but no Game Session (GAME_SESSION_LINK) is set');
   if (gs) {
     const ga = new GameAccountExecutor(provider, gs);
     const state = await ga.sessionState();

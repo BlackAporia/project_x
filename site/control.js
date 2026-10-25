@@ -729,7 +729,7 @@ const QUICK = {
     const n = Math.max(1, Math.min(50, Number($('#qaPgCount').value) || 5));
     return {
       confirm: `Зіграти ${n} ${n === 1 ? 'гру' : n < 5 ? 'гри' : 'ігор'} у Proving Grounds у mainnet? Це реальні транзакції з вашого акаунта (газ платить акаунт).`,
-      inputs: { mode: 'mainnet', live: 'true', minutes: String(Math.min(300, 30 + n * 15)), max_games: String(n + 20), proving_grounds: String(n) },
+      inputs: { mode: 'mainnet', live: 'true', minutes: String(Math.min(300, 30 + n * 15)), max_games: String(n + 20), proving_grounds: String(n), account: 'cartridge' },
       label: `Mainnet · Proving Grounds ×${n}`,
     };
   },
@@ -740,7 +740,7 @@ const QUICK = {
   }),
   ronke: () => ({
     confirm: 'Забрати сьогоднішні ігри Ronke Casino й одразу зіграти їх (реальні транзакції, газ оплачує lootsurvivor.io)?',
-    inputs: { mode: 'mainnet', live: 'true', minutes: '120', max_games: '20', ronke_claim: 'true' },
+    inputs: { mode: 'mainnet', live: 'true', minutes: '120', max_games: '20', ronke_claim: 'true', account: 'game' },
     label: 'Ronke Casino · забрати й зіграти',
   }),
   practice: () => {

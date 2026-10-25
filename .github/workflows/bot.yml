@@ -36,6 +36,9 @@ on:
       proving_grounds:
         description: free Proving Grounds entries when the account has no game left (0 = off)
         default: ''
+      account:
+        description: mainnet account - auto (Game Account if shared, else Cartridge), game or cartridge
+        default: 'auto'
 
 permissions:
   contents: write
@@ -95,6 +98,7 @@ jobs:
           MAINNET_ACCOUNT_ADDRESS: ${{ vars.MAINNET_ACCOUNT_ADDRESS }}
           MAINNET_LIVE: ${{ (github.event_name == 'schedule' && vars.MAINNET_LIVE == 'true') || inputs.live == 'true' }}
           PROVING_GROUNDS_GAMES: ${{ inputs.proving_grounds || vars.PROVING_GROUNDS_GAMES || '0' }}
+          MAINNET_ACCOUNT: ${{ inputs.account || vars.MAINNET_ACCOUNT || 'auto' }}
         run: scripts/live-push.sh npm run play -- --mode mainnet --minutes "${{ inputs.minutes || vars.MAINNET_MINUTES || '120' }}" --max-games "${{ inputs.max_games || '100' }}"
 
       - name: Leaderboard snapshot
