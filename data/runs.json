@@ -459,11 +459,11 @@
   "id": "2026-10-25T20-28-40-735Z",
   "mode": "mainnet",
   "started": "2026-10-25T20:28:40.735Z",
-  "games": 6,
-  "bestXp": 243,
-  "meanXp": 153,
+  "games": 7,
+  "bestXp": 582,
+  "meanXp": 214,
   "errors": 0,
   "policy": "tail-2026-10-25-g3",
-  "ended": "2026-10-25T20:57:38.730Z"
+  "ended": "2026-10-25T21:10:13.659Z"
  }
 ]
