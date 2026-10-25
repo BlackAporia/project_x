@@ -62,6 +62,9 @@ export class V2MainnetBackend implements Backend {
     while (this.queue.length) {
       const id = this.queue.shift()!;
       if (await this.chain.gameOver(id).catch(() => false)) continue;
+      // dead but never verified: game_over stays false until settlement, so it would be "played" and counted again
+      const st = await this.readState(id).catch(() => null);
+      if (st?.started && st.adventurer.health === 0) continue;
       return id;
     }
     // unplayed games first, then settle the finished ones that were never verified (once per run)
