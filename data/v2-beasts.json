@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-25T11:36:31.119Z",
+ "updated": "2026-10-25T11:38:16.317Z",
  "tally": {
   "full": {
    "ok": 22,
@@ -33,7 +33,62 @@
      "hp": 145,
      "gold": 0,
      "beastHp": 0,
-     "beastSalt": 0
+     "beastSalt": 0,
+     "adventurer": {
+      "health": 145,
+      "xp": 4,
+      "gold": 0,
+      "beast_health": 0,
+      "stat_upgrades_available": 1,
+      "stats": {
+       "strength": 3,
+       "dexterity": 0,
+       "vitality": 3,
+       "intelligence": 3,
+       "wisdom": 2,
+       "charisma": 1,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 42,
+        "xp": 4
+       },
+       "chest": {
+        "id": 20,
+        "xp": 4
+       },
+       "head": {
+        "id": 55,
+        "xp": 4
+       },
+       "waist": {
+        "id": 30,
+        "xp": 4
+       },
+       "foot": {
+        "id": 0,
+        "xp": 0
+       },
+       "hand": {
+        "id": 0,
+        "xp": 0
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 0,
+      "level_salt": 14348
+     },
+     "packedAdventurer": "0x7018000000002218c031000000010910000000000000000021e02370214022a",
+     "packedBag": "0xc"
     },
     {
      "k": 2,
@@ -42,6 +97,61 @@
      "gold": 0,
      "beastHp": 35,
      "beastSalt": 96664,
+     "adventurer": {
+      "health": 145,
+      "xp": 4,
+      "gold": 0,
+      "beast_health": 35,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 3,
+       "dexterity": 1,
+       "vitality": 3,
+       "intelligence": 3,
+       "wisdom": 2,
+       "charisma": 1,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 42,
+        "xp": 4
+       },
+       "chest": {
+        "id": 20,
+        "xp": 4
+       },
+       "head": {
+        "id": 55,
+        "xp": 4
+       },
+       "waist": {
+        "id": 30,
+        "xp": 4
+       },
+       "foot": {
+        "id": 0,
+        "xp": 0
+       },
+       "hand": {
+        "id": 0,
+        "xp": 0
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 96664,
+      "level_salt": 14348
+     },
+     "packedAdventurer": "0x7019799800002218c23008c000010910000000000000000021e02370214022a",
+     "packedBag": "0xc",
      "encounter": {
       "name": "Qilin",
       "id": 31,
@@ -64,6 +174,61 @@
      "gold": 0,
      "beastHp": 0,
      "beastSalt": 96664,
+     "adventurer": {
+      "health": 145,
+      "xp": 5,
+      "gold": 0,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 3,
+       "dexterity": 1,
+       "vitality": 3,
+       "intelligence": 3,
+       "wisdom": 2,
+       "charisma": 1,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 42,
+        "xp": 4
+       },
+       "chest": {
+        "id": 20,
+        "xp": 4
+       },
+       "head": {
+        "id": 55,
+        "xp": 4
+       },
+       "waist": {
+        "id": 30,
+        "xp": 4
+       },
+       "foot": {
+        "id": 0,
+        "xp": 0
+       },
+       "hand": {
+        "id": 0,
+        "xp": 0
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 96664,
+      "level_salt": 14348
+     },
+     "packedAdventurer": "0x7019799800002218c230000000014910000000000000000021e02370214022a",
+     "packedBag": "0xc",
      "hpLoss": 0,
      "beastHpLoss": 35
     },
@@ -74,6 +239,61 @@
      "gold": 2,
      "beastHp": 30,
      "beastSalt": 21613,
+     "adventurer": {
+      "health": 145,
+      "xp": 6,
+      "gold": 2,
+      "beast_health": 30,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 3,
+       "dexterity": 1,
+       "vitality": 3,
+       "intelligence": 3,
+       "wisdom": 2,
+       "charisma": 1,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 42,
+        "xp": 4
+       },
+       "chest": {
+        "id": 20,
+        "xp": 4
+       },
+       "head": {
+        "id": 55,
+        "xp": 4
+       },
+       "waist": {
+        "id": 30,
+        "xp": 4
+       },
+       "foot": {
+        "id": 0,
+        "xp": 0
+       },
+       "hand": {
+        "id": 0,
+        "xp": 0
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 21613,
+      "level_salt": 14348
+     },
+     "packedAdventurer": "0x7018546d00002218c230078040018910000000000000000021e02370214022a",
+     "packedBag": "0xc",
      "encounter": {
       "name": "Fairy",
       "id": 21,
@@ -96,6 +316,61 @@
      "gold": 2,
      "beastHp": 26,
      "beastSalt": 21613,
+     "adventurer": {
+      "health": 100,
+      "xp": 6,
+      "gold": 2,
+      "beast_health": 26,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 3,
+       "dexterity": 1,
+       "vitality": 3,
+       "intelligence": 3,
+       "wisdom": 2,
+       "charisma": 1,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 42,
+        "xp": 4
+       },
+       "chest": {
+        "id": 20,
+        "xp": 4
+       },
+       "head": {
+        "id": 55,
+        "xp": 4
+       },
+       "waist": {
+        "id": 30,
+        "xp": 4
+       },
+       "foot": {
+        "id": 0,
+        "xp": 0
+       },
+       "hand": {
+        "id": 0,
+        "xp": 0
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 21613,
+      "level_salt": 14348
+     },
+     "packedAdventurer": "0x7018546d00002218c230068040018640000000000000000021e02370214022a",
+     "packedBag": "0xc",
      "hpLoss": 45,
      "beastHpLoss": 4
     },
@@ -106,6 +381,61 @@
      "gold": 2,
      "beastHp": 22,
      "beastSalt": 21613,
+     "adventurer": {
+      "health": 59,
+      "xp": 6,
+      "gold": 2,
+      "beast_health": 22,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 3,
+       "dexterity": 1,
+       "vitality": 3,
+       "intelligence": 3,
+       "wisdom": 2,
+       "charisma": 1,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 42,
+        "xp": 4
+       },
+       "chest": {
+        "id": 20,
+        "xp": 4
+       },
+       "head": {
+        "id": 55,
+        "xp": 4
+       },
+       "waist": {
+        "id": 30,
+        "xp": 4
+       },
+       "foot": {
+        "id": 0,
+        "xp": 0
+       },
+       "hand": {
+        "id": 0,
+        "xp": 0
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 21613,
+      "level_salt": 14348
+     },
+     "packedAdventurer": "0x7018546d00002218c2300580400183b0000000000000000021e02370214022a",
+     "packedBag": "0xc",
      "hpLoss": 41,
      "beastHpLoss": 4
     },
@@ -116,6 +446,61 @@
      "gold": 2,
      "beastHp": 18,
      "beastSalt": 21613,
+     "adventurer": {
+      "health": 18,
+      "xp": 6,
+      "gold": 2,
+      "beast_health": 18,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 3,
+       "dexterity": 1,
+       "vitality": 3,
+       "intelligence": 3,
+       "wisdom": 2,
+       "charisma": 1,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 42,
+        "xp": 4
+       },
+       "chest": {
+        "id": 20,
+        "xp": 4
+       },
+       "head": {
+        "id": 55,
+        "xp": 4
+       },
+       "waist": {
+        "id": 30,
+        "xp": 4
+       },
+       "foot": {
+        "id": 0,
+        "xp": 0
+       },
+       "hand": {
+        "id": 0,
+        "xp": 0
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 21613,
+      "level_salt": 14348
+     },
+     "packedAdventurer": "0x7018546d00002218c230048040018120000000000000000021e02370214022a",
+     "packedBag": "0xc",
      "hpLoss": 41,
      "beastHpLoss": 4
     },
@@ -126,6 +511,61 @@
      "gold": 2,
      "beastHp": 14,
      "beastSalt": 21613,
+     "adventurer": {
+      "health": 0,
+      "xp": 6,
+      "gold": 2,
+      "beast_health": 14,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 3,
+       "dexterity": 1,
+       "vitality": 3,
+       "intelligence": 3,
+       "wisdom": 2,
+       "charisma": 1,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 42,
+        "xp": 4
+       },
+       "chest": {
+        "id": 20,
+        "xp": 4
+       },
+       "head": {
+        "id": 55,
+        "xp": 4
+       },
+       "waist": {
+        "id": 30,
+        "xp": 4
+       },
+       "foot": {
+        "id": 0,
+        "xp": 0
+       },
+       "hand": {
+        "id": 0,
+        "xp": 0
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 21613,
+      "level_salt": 14348
+     },
+     "packedAdventurer": "0x7018546d00002218c230038040018000000000000000000021e02370214022a",
+     "packedBag": "0xc",
      "hpLoss": 18,
      "beastHpLoss": 4
     }
@@ -141,7 +581,62 @@
      "hp": 130,
      "gold": 8,
      "beastHp": 0,
-     "beastSalt": 0
+     "beastSalt": 0,
+     "adventurer": {
+      "health": 130,
+      "xp": 4,
+      "gold": 8,
+      "beast_health": 0,
+      "stat_upgrades_available": 1,
+      "stats": {
+       "strength": 1,
+       "dexterity": 3,
+       "vitality": 2,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 2,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 4
+       },
+       "chest": {
+        "id": 51,
+        "xp": 4
+       },
+       "head": {
+        "id": 25,
+        "xp": 4
+       },
+       "waist": {
+        "id": 61,
+        "xp": 4
+       },
+       "foot": {
+        "id": 36,
+        "xp": 4
+       },
+       "hand": {
+        "id": 71,
+        "xp": 4
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 0,
+      "level_salt": 5782
+     },
+     "packedAdventurer": "0x2d2c0000000042108611000100010820000000002470224023d021902330209",
+     "packedBag": "0xc"
     },
     {
      "k": 2,
@@ -150,6 +645,61 @@
      "gold": 8,
      "beastHp": 27,
      "beastSalt": 83308,
+     "adventurer": {
+      "health": 145,
+      "xp": 4,
+      "gold": 8,
+      "beast_health": 27,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 3,
+       "vitality": 3,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 2,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 4
+       },
+       "chest": {
+        "id": 51,
+        "xp": 4
+       },
+       "head": {
+        "id": 25,
+        "xp": 4
+       },
+       "waist": {
+        "id": 61,
+        "xp": 4
+       },
+       "foot": {
+        "id": 36,
+        "xp": 4
+       },
+       "hand": {
+        "id": 71,
+        "xp": 4
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 83308,
+      "level_salt": 5782
+     },
+     "packedAdventurer": "0x2d2d456c00004210c61006c100010910000000002470224023d021902330209",
+     "packedBag": "0xc",
      "encounter": {
       "name": "Ammit",
       "id": 32,
@@ -172,6 +722,61 @@
      "gold": 8,
      "beastHp": 23,
      "beastSalt": 83308,
+     "adventurer": {
+      "health": 143,
+      "xp": 4,
+      "gold": 8,
+      "beast_health": 23,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 3,
+       "vitality": 3,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 2,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 4
+       },
+       "chest": {
+        "id": 51,
+        "xp": 4
+       },
+       "head": {
+        "id": 25,
+        "xp": 4
+       },
+       "waist": {
+        "id": 61,
+        "xp": 4
+       },
+       "foot": {
+        "id": 36,
+        "xp": 4
+       },
+       "hand": {
+        "id": 71,
+        "xp": 4
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 83308,
+      "level_salt": 5782
+     },
+     "packedAdventurer": "0x2d2d456c00004210c61005c1000108f0000000002470224023d021902330209",
+     "packedBag": "0xc",
      "hpLoss": 2,
      "beastHpLoss": 4
     },
@@ -182,6 +787,61 @@
      "gold": 8,
      "beastHp": 19,
      "beastSalt": 83308,
+     "adventurer": {
+      "health": 139,
+      "xp": 4,
+      "gold": 8,
+      "beast_health": 19,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 3,
+       "vitality": 3,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 2,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 4
+       },
+       "chest": {
+        "id": 51,
+        "xp": 4
+       },
+       "head": {
+        "id": 25,
+        "xp": 4
+       },
+       "waist": {
+        "id": 61,
+        "xp": 4
+       },
+       "foot": {
+        "id": 36,
+        "xp": 4
+       },
+       "hand": {
+        "id": 71,
+        "xp": 4
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 83308,
+      "level_salt": 5782
+     },
+     "packedAdventurer": "0x2d2d456c00004210c61004c1000108b0000000002470224023d021902330209",
+     "packedBag": "0xc",
      "hpLoss": 4,
      "beastHpLoss": 4
     },
@@ -192,6 +852,61 @@
      "gold": 8,
      "beastHp": 15,
      "beastSalt": 83308,
+     "adventurer": {
+      "health": 135,
+      "xp": 4,
+      "gold": 8,
+      "beast_health": 15,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 3,
+       "vitality": 3,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 2,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 4
+       },
+       "chest": {
+        "id": 51,
+        "xp": 4
+       },
+       "head": {
+        "id": 25,
+        "xp": 4
+       },
+       "waist": {
+        "id": 61,
+        "xp": 4
+       },
+       "foot": {
+        "id": 36,
+        "xp": 4
+       },
+       "hand": {
+        "id": 71,
+        "xp": 4
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 83308,
+      "level_salt": 5782
+     },
+     "packedAdventurer": "0x2d2d456c00004210c61003c100010870000000002470224023d021902330209",
+     "packedBag": "0xc",
      "hpLoss": 4,
      "beastHpLoss": 4
     },
@@ -202,6 +917,61 @@
      "gold": 8,
      "beastHp": 11,
      "beastSalt": 83308,
+     "adventurer": {
+      "health": 133,
+      "xp": 4,
+      "gold": 8,
+      "beast_health": 11,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 3,
+       "vitality": 3,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 2,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 4
+       },
+       "chest": {
+        "id": 51,
+        "xp": 4
+       },
+       "head": {
+        "id": 25,
+        "xp": 4
+       },
+       "waist": {
+        "id": 61,
+        "xp": 4
+       },
+       "foot": {
+        "id": 36,
+        "xp": 4
+       },
+       "hand": {
+        "id": 71,
+        "xp": 4
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 83308,
+      "level_salt": 5782
+     },
+     "packedAdventurer": "0x2d2d456c00004210c61002c100010850000000002470224023d021902330209",
+     "packedBag": "0xc",
      "hpLoss": 2,
      "beastHpLoss": 4
     },
@@ -212,6 +982,61 @@
      "gold": 8,
      "beastHp": 7,
      "beastSalt": 83308,
+     "adventurer": {
+      "health": 131,
+      "xp": 4,
+      "gold": 8,
+      "beast_health": 7,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 3,
+       "vitality": 3,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 2,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 4
+       },
+       "chest": {
+        "id": 51,
+        "xp": 4
+       },
+       "head": {
+        "id": 25,
+        "xp": 4
+       },
+       "waist": {
+        "id": 61,
+        "xp": 4
+       },
+       "foot": {
+        "id": 36,
+        "xp": 4
+       },
+       "hand": {
+        "id": 71,
+        "xp": 4
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 83308,
+      "level_salt": 5782
+     },
+     "packedAdventurer": "0x2d2d456c00004210c61001c100010830000000002470224023d021902330209",
+     "packedBag": "0xc",
      "hpLoss": 2,
      "beastHpLoss": 4
     },
@@ -222,6 +1047,61 @@
      "gold": 8,
      "beastHp": 3,
      "beastSalt": 83308,
+     "adventurer": {
+      "health": 129,
+      "xp": 4,
+      "gold": 8,
+      "beast_health": 3,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 3,
+       "vitality": 3,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 2,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 4
+       },
+       "chest": {
+        "id": 51,
+        "xp": 4
+       },
+       "head": {
+        "id": 25,
+        "xp": 4
+       },
+       "waist": {
+        "id": 61,
+        "xp": 4
+       },
+       "foot": {
+        "id": 36,
+        "xp": 4
+       },
+       "hand": {
+        "id": 71,
+        "xp": 4
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 83308,
+      "level_salt": 5782
+     },
+     "packedAdventurer": "0x2d2d456c00004210c61000c100010810000000002470224023d021902330209",
+     "packedBag": "0xc",
      "hpLoss": 2,
      "beastHpLoss": 4
     },
@@ -232,6 +1112,61 @@
      "gold": 12,
      "beastHp": 0,
      "beastSalt": 83308,
+     "adventurer": {
+      "health": 129,
+      "xp": 8,
+      "gold": 12,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 3,
+       "vitality": 3,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 2,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 12
+       },
+       "chest": {
+        "id": 51,
+        "xp": 12
+       },
+       "head": {
+        "id": 25,
+        "xp": 12
+       },
+       "waist": {
+        "id": 61,
+        "xp": 12
+       },
+       "foot": {
+        "id": 36,
+        "xp": 12
+       },
+       "hand": {
+        "id": 71,
+        "xp": 12
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 83308,
+      "level_salt": 5782
+     },
+     "packedAdventurer": "0x2d2d456c00004210c610000180020810000000006470624063d061906330609",
+     "packedBag": "0xc",
      "hpLoss": 0,
      "beastHpLoss": 3
     },
@@ -241,7 +1176,62 @@
      "hp": 131,
      "gold": 12,
      "beastHp": 0,
-     "beastSalt": 83308
+     "beastSalt": 83308,
+     "adventurer": {
+      "health": 131,
+      "xp": 9,
+      "gold": 12,
+      "beast_health": 0,
+      "stat_upgrades_available": 1,
+      "stats": {
+       "strength": 1,
+       "dexterity": 3,
+       "vitality": 3,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 2,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 12
+       },
+       "chest": {
+        "id": 51,
+        "xp": 12
+       },
+       "head": {
+        "id": 25,
+        "xp": 12
+       },
+       "waist": {
+        "id": 61,
+        "xp": 12
+       },
+       "foot": {
+        "id": 36,
+        "xp": 12
+       },
+       "hand": {
+        "id": 71,
+        "xp": 12
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 83308,
+      "level_salt": 4712
+     },
+     "packedAdventurer": "0x24d1456c00004210c611000180024830000000006470624063d061906330609",
+     "packedBag": "0xc"
     },
     {
      "k": 11,
@@ -250,6 +1240,61 @@
      "gold": 15,
      "beastHp": 63,
      "beastSalt": 68458,
+     "adventurer": {
+      "health": 146,
+      "xp": 10,
+      "gold": 15,
+      "beast_health": 63,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 3,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 2,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 12
+       },
+       "chest": {
+        "id": 51,
+        "xp": 12
+       },
+       "head": {
+        "id": 25,
+        "xp": 12
+       },
+       "waist": {
+        "id": 61,
+        "xp": 12
+       },
+       "foot": {
+        "id": 36,
+        "xp": 12
+       },
+       "hand": {
+        "id": 71,
+        "xp": 12
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 68458,
+      "level_salt": 4712
+     },
+     "packedAdventurer": "0x24d10b6a0000421106100fc1e0028920000000006470624063d061906330609",
+     "packedBag": "0xc",
      "encounter": {
       "name": "Pegasus",
       "id": 40,
@@ -272,6 +1317,61 @@
      "gold": 15,
      "beastHp": 0,
      "beastSalt": 68458,
+     "adventurer": {
+      "health": 146,
+      "xp": 11,
+      "gold": 15,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 3,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 2,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 12
+       },
+       "chest": {
+        "id": 51,
+        "xp": 12
+       },
+       "head": {
+        "id": 25,
+        "xp": 12
+       },
+       "waist": {
+        "id": 61,
+        "xp": 12
+       },
+       "foot": {
+        "id": 36,
+        "xp": 12
+       },
+       "hand": {
+        "id": 71,
+        "xp": 12
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 68458,
+      "level_salt": 4712
+     },
+     "packedAdventurer": "0x24d10b6a0000421106100001e002c920000000006470624063d061906330609",
+     "packedBag": "0xc",
      "hpLoss": 0,
      "beastHpLoss": 63
     },
@@ -281,7 +1381,62 @@
      "hp": 146,
      "gold": 15,
      "beastHp": 0,
-     "beastSalt": 68458
+     "beastSalt": 68458,
+     "adventurer": {
+      "health": 146,
+      "xp": 20,
+      "gold": 15,
+      "beast_health": 0,
+      "stat_upgrades_available": 1,
+      "stats": {
+       "strength": 1,
+       "dexterity": 3,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 2,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 21
+       },
+       "chest": {
+        "id": 51,
+        "xp": 21
+       },
+       "head": {
+        "id": 25,
+        "xp": 21
+       },
+       "waist": {
+        "id": 61,
+        "xp": 21
+       },
+       "foot": {
+        "id": 36,
+        "xp": 21
+       },
+       "hand": {
+        "id": 71,
+        "xp": 21
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 68458,
+      "level_salt": 7408
+     },
+     "packedAdventurer": "0x39e10b6a0000421106110001e005092000000000ac70aa40abd0a990ab30a89",
+     "packedBag": "0xc"
     },
     {
      "k": 14,
@@ -290,6 +1445,61 @@
      "gold": 15,
      "beastHp": 24,
      "beastSalt": 42451,
+     "adventurer": {
+      "health": 146,
+      "xp": 20,
+      "gold": 15,
+      "beast_health": 24,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 3,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 3,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 21
+       },
+       "chest": {
+        "id": 51,
+        "xp": 21
+       },
+       "head": {
+        "id": 25,
+        "xp": 21
+       },
+       "waist": {
+        "id": 61,
+        "xp": 21
+       },
+       "foot": {
+        "id": 36,
+        "xp": 21
+       },
+       "hand": {
+        "id": 71,
+        "xp": 21
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 42451,
+      "level_salt": 7408
+     },
+     "packedAdventurer": "0x39e0a5d30000621106100601e005092000000000ac70aa40abd0a990ab30a89",
+     "packedBag": "0xc",
      "encounter": {
       "name": "Jaguar",
       "id": 43,
@@ -312,6 +1522,61 @@
      "gold": 15,
      "beastHp": 9,
      "beastSalt": 42451,
+     "adventurer": {
+      "health": 123,
+      "xp": 20,
+      "gold": 15,
+      "beast_health": 9,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 3,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 3,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 21
+       },
+       "chest": {
+        "id": 51,
+        "xp": 21
+       },
+       "head": {
+        "id": 25,
+        "xp": 21
+       },
+       "waist": {
+        "id": 61,
+        "xp": 21
+       },
+       "foot": {
+        "id": 36,
+        "xp": 21
+       },
+       "hand": {
+        "id": 71,
+        "xp": 21
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 42451,
+      "level_salt": 7408
+     },
+     "packedAdventurer": "0x39e0a5d30000621106100241e00507b000000000ac70aa40abd0a990ab30a89",
+     "packedBag": "0xc",
      "hpLoss": 23,
      "beastHpLoss": 15
     },
@@ -322,6 +1587,61 @@
      "gold": 24,
      "beastHp": 0,
      "beastSalt": 42451,
+     "adventurer": {
+      "health": 123,
+      "xp": 28,
+      "gold": 24,
+      "beast_health": 0,
+      "stat_upgrades_available": 1,
+      "stats": {
+       "strength": 1,
+       "dexterity": 3,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 3,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 37
+       },
+       "chest": {
+        "id": 51,
+        "xp": 37
+       },
+       "head": {
+        "id": 25,
+        "xp": 37
+       },
+       "waist": {
+        "id": 61,
+        "xp": 37
+       },
+       "foot": {
+        "id": 36,
+        "xp": 37
+       },
+       "hand": {
+        "id": 71,
+        "xp": 37
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 42451,
+      "level_salt": 4688
+     },
+     "packedAdventurer": "0x24a0a5d30000621106110003000707b0000000012c712a412bd129912b31289",
+     "packedBag": "0xc",
      "hpLoss": 0,
      "beastHpLoss": 9
     },
@@ -331,7 +1651,62 @@
      "hp": 129,
      "gold": 17,
      "beastHp": 0,
-     "beastSalt": 42451
+     "beastSalt": 42451,
+     "adventurer": {
+      "health": 129,
+      "xp": 40,
+      "gold": 17,
+      "beast_health": 0,
+      "stat_upgrades_available": 1,
+      "stats": {
+       "strength": 1,
+       "dexterity": 4,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 3,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 49
+       },
+       "chest": {
+        "id": 51,
+        "xp": 49
+       },
+       "head": {
+        "id": 25,
+        "xp": 49
+       },
+       "waist": {
+        "id": 61,
+        "xp": 49
+       },
+       "foot": {
+        "id": 35,
+        "xp": 12
+       },
+       "hand": {
+        "id": 71,
+        "xp": 49
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 42451,
+      "level_salt": 7175
+     },
+     "packedAdventurer": "0x380ea5d30000621108110002200a0810000000018c7062318bd189918b31889",
+     "packedBag": "0x12a4000c"
     },
     {
      "k": 18,
@@ -340,6 +1715,61 @@
      "gold": 16,
      "beastHp": 67,
      "beastSalt": 81160,
+     "adventurer": {
+      "health": 139,
+      "xp": 40,
+      "gold": 16,
+      "beast_health": 67,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 4,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 4,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 49
+       },
+       "chest": {
+        "id": 51,
+        "xp": 49
+       },
+       "head": {
+        "id": 25,
+        "xp": 49
+       },
+       "waist": {
+        "id": 61,
+        "xp": 49
+       },
+       "foot": {
+        "id": 35,
+        "xp": 12
+       },
+       "hand": {
+        "id": 71,
+        "xp": 49
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 81160,
+      "level_salt": 7175
+     },
+     "packedAdventurer": "0x380f3d0800008211081010c2000a08b0000000018c7062318bd189918b31889",
+     "packedBag": "0x12a4000c",
      "encounter": {
       "name": "Griffin",
       "id": 26,
@@ -362,6 +1792,61 @@
      "gold": 16,
      "beastHp": 0,
      "beastSalt": 81160,
+     "adventurer": {
+      "health": 139,
+      "xp": 41,
+      "gold": 16,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 4,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 4,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 49
+       },
+       "chest": {
+        "id": 51,
+        "xp": 49
+       },
+       "head": {
+        "id": 25,
+        "xp": 49
+       },
+       "waist": {
+        "id": 61,
+        "xp": 49
+       },
+       "foot": {
+        "id": 35,
+        "xp": 12
+       },
+       "hand": {
+        "id": 71,
+        "xp": 49
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 81160,
+      "level_salt": 7175
+     },
+     "packedAdventurer": "0x380f3d080000821108100002000a48b0000000018c7062318bd189918b31889",
+     "packedBag": "0x12a4000c",
      "hpLoss": 0,
      "beastHpLoss": 67
     },
@@ -371,7 +1856,62 @@
      "hp": 128,
      "gold": 16,
      "beastHp": 0,
-     "beastSalt": 81160
+     "beastSalt": 81160,
+     "adventurer": {
+      "health": 128,
+      "xp": 51,
+      "gold": 16,
+      "beast_health": 0,
+      "stat_upgrades_available": 1,
+      "stats": {
+       "strength": 1,
+       "dexterity": 4,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 4,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 59
+       },
+       "chest": {
+        "id": 51,
+        "xp": 59
+       },
+       "head": {
+        "id": 25,
+        "xp": 59
+       },
+       "waist": {
+        "id": 61,
+        "xp": 59
+       },
+       "foot": {
+        "id": 35,
+        "xp": 22
+       },
+       "hand": {
+        "id": 71,
+        "xp": 59
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 81160,
+      "level_salt": 16226
+     },
+     "packedAdventurer": "0x7ec53d080000821108110002000cc80000000001dc70b231dbd1d991db31d89",
+     "packedBag": "0x12a4000c"
     },
     {
      "k": 21,
@@ -379,7 +1919,62 @@
      "hp": 126,
      "gold": 16,
      "beastHp": 0,
-     "beastSalt": 81160
+     "beastSalt": 81160,
+     "adventurer": {
+      "health": 126,
+      "xp": 55,
+      "gold": 16,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 5,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 4,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 63
+       },
+       "chest": {
+        "id": 51,
+        "xp": 63
+       },
+       "head": {
+        "id": 25,
+        "xp": 63
+       },
+       "waist": {
+        "id": 61,
+        "xp": 63
+       },
+       "foot": {
+        "id": 35,
+        "xp": 26
+       },
+       "hand": {
+        "id": 71,
+        "xp": 63
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 81160,
+      "level_salt": 16226
+     },
+     "packedAdventurer": "0x7ec53d08000082110a100002000dc7e000000001fc70d231fbd1f991fb31f89",
+     "packedBag": "0x12a4000c"
     },
     {
      "k": 22,
@@ -388,6 +1983,61 @@
      "gold": 23,
      "beastHp": 17,
      "beastSalt": 41558,
+     "adventurer": {
+      "health": 127,
+      "xp": 57,
+      "gold": 23,
+      "beast_health": 17,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 5,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 4,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 63
+       },
+       "chest": {
+        "id": 51,
+        "xp": 63
+       },
+       "head": {
+        "id": 25,
+        "xp": 63
+       },
+       "waist": {
+        "id": 61,
+        "xp": 63
+       },
+       "foot": {
+        "id": 35,
+        "xp": 26
+       },
+       "hand": {
+        "id": 71,
+        "xp": 63
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 41558,
+      "level_salt": 16226
+     },
+     "packedAdventurer": "0x7ec4a256000082110a100442e00e47f000000001fc70d231fbd1f991fb31f89",
+     "packedBag": "0x12a4000c",
      "encounter": {
       "name": "Anansi",
       "id": 4,
@@ -410,6 +2060,61 @@
      "gold": 32,
      "beastHp": 0,
      "beastSalt": 41558,
+     "adventurer": {
+      "health": 127,
+      "xp": 64,
+      "gold": 32,
+      "beast_health": 0,
+      "stat_upgrades_available": 1,
+      "stats": {
+       "strength": 1,
+       "dexterity": 5,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 4,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 77
+       },
+       "chest": {
+        "id": 51,
+        "xp": 77
+       },
+       "head": {
+        "id": 25,
+        "xp": 77
+       },
+       "waist": {
+        "id": 61,
+        "xp": 77
+       },
+       "foot": {
+        "id": 35,
+        "xp": 40
+       },
+       "hand": {
+        "id": 71,
+        "xp": 77
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 41558,
+      "level_salt": 218
+     },
+     "packedAdventurer": "0x1b4a256000082110a110004001007f0000000026c7142326bd269926b32689",
+     "packedBag": "0x12a4000c",
      "hpLoss": 0,
      "beastHpLoss": 17
     },
@@ -419,7 +2124,62 @@
      "hp": 88,
      "gold": 16,
      "beastHp": 0,
-     "beastSalt": 41558
+     "beastSalt": 41558,
+     "adventurer": {
+      "health": 88,
+      "xp": 82,
+      "gold": 16,
+      "beast_health": 0,
+      "stat_upgrades_available": 1,
+      "stats": {
+       "strength": 1,
+       "dexterity": 6,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 4,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 95
+       },
+       "chest": {
+        "id": 51,
+        "xp": 95
+       },
+       "head": {
+        "id": 25,
+        "xp": 95
+       },
+       "waist": {
+        "id": 61,
+        "xp": 95
+       },
+       "foot": {
+        "id": 35,
+        "xp": 58
+       },
+       "hand": {
+        "id": 37,
+        "xp": 18
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 41558,
+      "level_salt": 9784
+     },
+     "packedAdventurer": "0x4c70a256000082110c11000200148580000000009251d232fbd2f992fb32f89",
+     "packedBag": "0x26c712a4000c"
     },
     {
      "k": 25,
@@ -427,7 +2187,62 @@
      "hp": 99,
      "gold": 12,
      "beastHp": 0,
-     "beastSalt": 41558
+     "beastSalt": 41558,
+     "adventurer": {
+      "health": 99,
+      "xp": 108,
+      "gold": 12,
+      "beast_health": 0,
+      "stat_upgrades_available": 1,
+      "stats": {
+       "strength": 1,
+       "dexterity": 6,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 5,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 121
+       },
+       "chest": {
+        "id": 51,
+        "xp": 121
+       },
+       "head": {
+        "id": 25,
+        "xp": 121
+       },
+       "waist": {
+        "id": 61,
+        "xp": 121
+       },
+       "foot": {
+        "id": 35,
+        "xp": 84
+       },
+       "hand": {
+        "id": 37,
+        "xp": 44
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 41558,
+      "level_salt": 8100
+     },
+     "packedAdventurer": "0x3f48a2560000a2110c110001801b0630000000016252a233cbd3c993cb33c89",
+     "packedBag": "0x26c712a4000c"
     },
     {
      "k": 26,
@@ -435,7 +2250,62 @@
      "hp": 147,
      "gold": 8,
      "beastHp": 0,
-     "beastSalt": 41558
+     "beastSalt": 41558,
+     "adventurer": {
+      "health": 147,
+      "xp": 109,
+      "gold": 8,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 7,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 5,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 121
+       },
+       "chest": {
+        "id": 51,
+        "xp": 121
+       },
+       "head": {
+        "id": 25,
+        "xp": 121
+       },
+       "waist": {
+        "id": 61,
+        "xp": 121
+       },
+       "foot": {
+        "id": 35,
+        "xp": 84
+       },
+       "hand": {
+        "id": 37,
+        "xp": 44
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 41558,
+      "level_salt": 8100
+     },
+     "packedAdventurer": "0x3f48a2560000a2110e100001001b4930000000016252a233cbd3c993cb33c89",
+     "packedBag": "0x26c712a4000c"
     },
     {
      "k": 27,
@@ -443,7 +2313,62 @@
      "hp": 123,
      "gold": 8,
      "beastHp": 0,
-     "beastSalt": 41558
+     "beastSalt": 41558,
+     "adventurer": {
+      "health": 123,
+      "xp": 126,
+      "gold": 8,
+      "beast_health": 0,
+      "stat_upgrades_available": 1,
+      "stats": {
+       "strength": 1,
+       "dexterity": 7,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 5,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 138
+       },
+       "chest": {
+        "id": 51,
+        "xp": 138
+       },
+       "head": {
+        "id": 25,
+        "xp": 138
+       },
+       "waist": {
+        "id": 61,
+        "xp": 138
+       },
+       "foot": {
+        "id": 35,
+        "xp": 101
+       },
+       "hand": {
+        "id": 37,
+        "xp": 61
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 41558,
+      "level_salt": 15641
+     },
+     "packedAdventurer": "0x7a32a2560000a2110e110001001f87b000000001ea532a3453d451945334509",
+     "packedBag": "0x26c712a4000c"
     },
     {
      "k": 28,
@@ -451,7 +2376,62 @@
      "hp": 144,
      "gold": 5,
      "beastHp": 0,
-     "beastSalt": 41558
+     "beastSalt": 41558,
+     "adventurer": {
+      "health": 144,
+      "xp": 145,
+      "gold": 5,
+      "beast_health": 0,
+      "stat_upgrades_available": 1,
+      "stats": {
+       "strength": 1,
+       "dexterity": 7,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 6,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 157
+       },
+       "chest": {
+        "id": 51,
+        "xp": 157
+       },
+       "head": {
+        "id": 25,
+        "xp": 157
+       },
+       "waist": {
+        "id": 61,
+        "xp": 157
+       },
+       "foot": {
+        "id": 35,
+        "xp": 120
+       },
+       "hand": {
+        "id": 37,
+        "xp": 80
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 41558,
+      "level_salt": 9400
+     },
+     "packedAdventurer": "0x4970a2560000c2110e110000a0244900000000028253c234ebd4e994eb34e89",
+     "packedBag": "0x26c712a4000c"
     },
     {
      "k": 29,
@@ -459,7 +2439,62 @@
      "hp": 158,
      "gold": 3,
      "beastHp": 0,
-     "beastSalt": 41558
+     "beastSalt": 41558,
+     "adventurer": {
+      "health": 158,
+      "xp": 149,
+      "gold": 3,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 8,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 6,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 161
+       },
+       "chest": {
+        "id": 51,
+        "xp": 161
+       },
+       "head": {
+        "id": 25,
+        "xp": 161
+       },
+       "waist": {
+        "id": 61,
+        "xp": 161
+       },
+       "foot": {
+        "id": 35,
+        "xp": 124
+       },
+       "hand": {
+        "id": 37,
+        "xp": 84
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 41558,
+      "level_salt": 9400
+     },
+     "packedAdventurer": "0x4970a2560000c21110100000602549e000000002a253e2350bd509950b35089",
+     "packedBag": "0x26c712a4000c"
     },
     {
      "k": 30,
@@ -467,7 +2502,62 @@
      "hp": 160,
      "gold": 2,
      "beastHp": 0,
-     "beastSalt": 41558
+     "beastSalt": 41558,
+     "adventurer": {
+      "health": 160,
+      "xp": 150,
+      "gold": 2,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 8,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 6,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 161
+       },
+       "chest": {
+        "id": 51,
+        "xp": 161
+       },
+       "head": {
+        "id": 25,
+        "xp": 161
+       },
+       "waist": {
+        "id": 61,
+        "xp": 161
+       },
+       "foot": {
+        "id": 35,
+        "xp": 124
+       },
+       "hand": {
+        "id": 37,
+        "xp": 84
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 41558,
+      "level_salt": 9400
+     },
+     "packedAdventurer": "0x4970a2560000c2111010000040258a0000000002a253e2350bd509950b35089",
+     "packedBag": "0x26c712a4000c"
     },
     {
      "k": 31,
@@ -475,7 +2565,62 @@
      "hp": 71,
      "gold": 2,
      "beastHp": 0,
-     "beastSalt": 41558
+     "beastSalt": 41558,
+     "adventurer": {
+      "health": 71,
+      "xp": 178,
+      "gold": 2,
+      "beast_health": 0,
+      "stat_upgrades_available": 1,
+      "stats": {
+       "strength": 1,
+       "dexterity": 8,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 6,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 189
+       },
+       "chest": {
+        "id": 51,
+        "xp": 189
+       },
+       "head": {
+        "id": 25,
+        "xp": 189
+       },
+       "waist": {
+        "id": 61,
+        "xp": 189
+       },
+       "foot": {
+        "id": 35,
+        "xp": 152
+       },
+       "hand": {
+        "id": 37,
+        "xp": 112
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 41558,
+      "level_salt": 9188
+     },
+     "packedAdventurer": "0x47c8a2560000c21110110000402c8470000000038254c235ebd5e995eb35e89",
+     "packedBag": "0x26c712a4000c"
     },
     {
      "k": 32,
@@ -483,7 +2628,62 @@
      "hp": 91,
      "gold": 0,
      "beastHp": 0,
-     "beastSalt": 41558
+     "beastSalt": 41558,
+     "adventurer": {
+      "health": 91,
+      "xp": 179,
+      "gold": 0,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 8,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 7,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 189
+       },
+       "chest": {
+        "id": 51,
+        "xp": 189
+       },
+       "head": {
+        "id": 25,
+        "xp": 189
+       },
+       "waist": {
+        "id": 61,
+        "xp": 189
+       },
+       "foot": {
+        "id": 35,
+        "xp": 152
+       },
+       "hand": {
+        "id": 37,
+        "xp": 112
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 41558,
+      "level_salt": 9188
+     },
+     "packedAdventurer": "0x47c8a2560000e21110100000002cc5b0000000038254c235ebd5e995eb35e89",
+     "packedBag": "0x4626c712a4000c"
     },
     {
      "k": 33,
@@ -491,7 +2691,62 @@
      "hp": 107,
      "gold": 0,
      "beastHp": 0,
-     "beastSalt": 41558
+     "beastSalt": 41558,
+     "adventurer": {
+      "health": 107,
+      "xp": 180,
+      "gold": 0,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 8,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 7,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 189
+       },
+       "chest": {
+        "id": 51,
+        "xp": 189
+       },
+       "head": {
+        "id": 25,
+        "xp": 189
+       },
+       "waist": {
+        "id": 61,
+        "xp": 189
+       },
+       "foot": {
+        "id": 35,
+        "xp": 152
+       },
+       "hand": {
+        "id": 37,
+        "xp": 112
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 41558,
+      "level_salt": 9188
+     },
+     "packedAdventurer": "0x47c8a2560000e21110100000002d06b0000000038254c235ebd5e995eb35e89",
+     "packedBag": "0x4626c712a4000c"
     },
     {
      "k": 34,
@@ -499,7 +2754,62 @@
      "hp": 107,
      "gold": 2,
      "beastHp": 0,
-     "beastSalt": 41558
+     "beastSalt": 41558,
+     "adventurer": {
+      "health": 107,
+      "xp": 181,
+      "gold": 2,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 8,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 7,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 189
+       },
+       "chest": {
+        "id": 51,
+        "xp": 189
+       },
+       "head": {
+        "id": 25,
+        "xp": 189
+       },
+       "waist": {
+        "id": 61,
+        "xp": 189
+       },
+       "foot": {
+        "id": 35,
+        "xp": 152
+       },
+       "hand": {
+        "id": 37,
+        "xp": 112
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 41558,
+      "level_salt": 9188
+     },
+     "packedAdventurer": "0x47c8a2560000e21110100000402d46b0000000038254c235ebd5e995eb35e89",
+     "packedBag": "0x4626c712a4000c"
     },
     {
      "k": 35,
@@ -507,7 +2817,62 @@
      "hp": 127,
      "gold": 0,
      "beastHp": 0,
-     "beastSalt": 41558
+     "beastSalt": 41558,
+     "adventurer": {
+      "health": 127,
+      "xp": 182,
+      "gold": 0,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 8,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 7,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 189
+       },
+       "chest": {
+        "id": 51,
+        "xp": 189
+       },
+       "head": {
+        "id": 25,
+        "xp": 189
+       },
+       "waist": {
+        "id": 61,
+        "xp": 189
+       },
+       "foot": {
+        "id": 35,
+        "xp": 152
+       },
+       "hand": {
+        "id": 37,
+        "xp": 112
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 41558,
+      "level_salt": 9188
+     },
+     "packedAdventurer": "0x47c8a2560000e21110100000002d87f0000000038254c235ebd5e995eb35e89",
+     "packedBag": "0x42004626c712a4000c"
     },
     {
      "k": 36,
@@ -515,7 +2880,62 @@
      "hp": 127,
      "gold": 3,
      "beastHp": 0,
-     "beastSalt": 41558
+     "beastSalt": 41558,
+     "adventurer": {
+      "health": 127,
+      "xp": 183,
+      "gold": 3,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 8,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 7,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 189
+       },
+       "chest": {
+        "id": 51,
+        "xp": 189
+       },
+       "head": {
+        "id": 25,
+        "xp": 189
+       },
+       "waist": {
+        "id": 61,
+        "xp": 189
+       },
+       "foot": {
+        "id": 35,
+        "xp": 152
+       },
+       "hand": {
+        "id": 37,
+        "xp": 112
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 41558,
+      "level_salt": 9188
+     },
+     "packedAdventurer": "0x47c8a2560000e21110100000602dc7f0000000038254c235ebd5e995eb35e89",
+     "packedBag": "0x42004626c712a4000c"
     },
     {
      "k": 37,
@@ -524,6 +2944,61 @@
      "gold": 0,
      "beastHp": 92,
      "beastSalt": 111974,
+     "adventurer": {
+      "health": 143,
+      "xp": 183,
+      "gold": 0,
+      "beast_health": 92,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 8,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 7,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 189
+       },
+       "chest": {
+        "id": 51,
+        "xp": 189
+       },
+       "head": {
+        "id": 25,
+        "xp": 189
+       },
+       "waist": {
+        "id": 61,
+        "xp": 189
+       },
+       "foot": {
+        "id": 35,
+        "xp": 152
+       },
+       "hand": {
+        "id": 37,
+        "xp": 112
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 111974,
+      "level_salt": 9188
+     },
+     "packedAdventurer": "0x47c9b5660000e21110101700002dc8f0000000038254c235ebd5e995eb35e89",
+     "packedBag": "0x42004626c712a4000c",
      "encounter": {
       "name": "\"Loath Shadow\" Skinwalker",
       "id": 34,
@@ -546,6 +3021,61 @@
      "gold": 0,
      "beastHp": 92,
      "beastSalt": 111974,
+     "adventurer": {
+      "health": 95,
+      "xp": 183,
+      "gold": 0,
+      "beast_health": 92,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 8,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 7,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 189
+       },
+       "chest": {
+        "id": 51,
+        "xp": 189
+       },
+       "head": {
+        "id": 25,
+        "xp": 189
+       },
+       "waist": {
+        "id": 61,
+        "xp": 189
+       },
+       "foot": {
+        "id": 35,
+        "xp": 152
+       },
+       "hand": {
+        "id": 37,
+        "xp": 112
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 111974,
+      "level_salt": 9188
+     },
+     "packedAdventurer": "0x47c9b5660000e21110101700002dc5f0000000038254c235ebd5e995eb35e89",
+     "packedBag": "0x42004626c712a4000c",
      "hpLoss": 48,
      "beastHpLoss": 0
     },
@@ -556,6 +3086,61 @@
      "gold": 0,
      "beastHp": 0,
      "beastSalt": 111974,
+     "adventurer": {
+      "health": 95,
+      "xp": 184,
+      "gold": 0,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 8,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 7,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 189
+       },
+       "chest": {
+        "id": 51,
+        "xp": 189
+       },
+       "head": {
+        "id": 25,
+        "xp": 189
+       },
+       "waist": {
+        "id": 61,
+        "xp": 189
+       },
+       "foot": {
+        "id": 35,
+        "xp": 152
+       },
+       "hand": {
+        "id": 37,
+        "xp": 112
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 111974,
+      "level_salt": 9188
+     },
+     "packedAdventurer": "0x47c9b5660000e21110100000002e05f0000000038254c235ebd5e995eb35e89",
+     "packedBag": "0x42004626c712a4000c",
      "hpLoss": 0,
      "beastHpLoss": 92
     },
@@ -566,6 +3151,61 @@
      "gold": 0,
      "beastHp": 40,
      "beastSalt": 39050,
+     "adventurer": {
+      "health": 94,
+      "xp": 184,
+      "gold": 0,
+      "beast_health": 40,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 8,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 7,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 189
+       },
+       "chest": {
+        "id": 51,
+        "xp": 189
+       },
+       "head": {
+        "id": 25,
+        "xp": 189
+       },
+       "waist": {
+        "id": 61,
+        "xp": 189
+       },
+       "foot": {
+        "id": 35,
+        "xp": 152
+       },
+       "hand": {
+        "id": 37,
+        "xp": 112
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 39050,
+      "level_salt": 9188
+     },
+     "packedAdventurer": "0x47c8988a0000e21110100a00002e05e0000000038254c235ebd5e995eb35e89",
+     "packedBag": "0x42004626c712a4000c",
      "encounter": {
       "name": "\"Mind Shout\" Wendigo",
       "id": 10,
@@ -588,6 +3228,61 @@
      "gold": 0,
      "beastHp": 0,
      "beastSalt": 39050,
+     "adventurer": {
+      "health": 94,
+      "xp": 185,
+      "gold": 0,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 8,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 7,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 189
+       },
+       "chest": {
+        "id": 51,
+        "xp": 189
+       },
+       "head": {
+        "id": 25,
+        "xp": 189
+       },
+       "waist": {
+        "id": 61,
+        "xp": 189
+       },
+       "foot": {
+        "id": 35,
+        "xp": 152
+       },
+       "hand": {
+        "id": 37,
+        "xp": 112
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 39050,
+      "level_salt": 9188
+     },
+     "packedAdventurer": "0x47c8988a0000e21110100000002e45e0000000038254c235ebd5e995eb35e89",
+     "packedBag": "0x42004626c712a4000c",
      "hpLoss": 0,
      "beastHpLoss": 40
     },
@@ -597,7 +3292,62 @@
      "hp": 94,
      "gold": 0,
      "beastHp": 0,
-     "beastSalt": 39050
+     "beastSalt": 39050,
+     "adventurer": {
+      "health": 94,
+      "xp": 186,
+      "gold": 0,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 8,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 7,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 189
+       },
+       "chest": {
+        "id": 51,
+        "xp": 189
+       },
+       "head": {
+        "id": 25,
+        "xp": 189
+       },
+       "waist": {
+        "id": 61,
+        "xp": 189
+       },
+       "foot": {
+        "id": 35,
+        "xp": 152
+       },
+       "hand": {
+        "id": 37,
+        "xp": 112
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 39050,
+      "level_salt": 9188
+     },
+     "packedAdventurer": "0x47c8988a0000e21110100000002e85e0000000038254c235ebd5e995eb35e89",
+     "packedBag": "0x410042004626c712a4000c"
     },
     {
      "k": 43,
@@ -606,6 +3356,61 @@
      "gold": 0,
      "beastHp": 122,
      "beastSalt": 5685,
+     "adventurer": {
+      "health": 1,
+      "xp": 186,
+      "gold": 0,
+      "beast_health": 122,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 8,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 7,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 189
+       },
+       "chest": {
+        "id": 51,
+        "xp": 189
+       },
+       "head": {
+        "id": 25,
+        "xp": 189
+       },
+       "waist": {
+        "id": 61,
+        "xp": 189
+       },
+       "foot": {
+        "id": 35,
+        "xp": 152
+       },
+       "hand": {
+        "id": 37,
+        "xp": 112
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 5685,
+      "level_salt": 9188
+     },
+     "packedAdventurer": "0x47c816350000e21110101e80002e8010000000038254c235ebd5e995eb35e89",
+     "packedBag": "0x410042004626c712a4000c",
      "encounter": {
       "name": "\"Armageddon Growl\" Kelpie",
       "id": 23,
@@ -628,6 +3433,61 @@
      "gold": 0,
      "beastHp": 0,
      "beastSalt": 5685,
+     "adventurer": {
+      "health": 1,
+      "xp": 187,
+      "gold": 0,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 8,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 7,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 189
+       },
+       "chest": {
+        "id": 51,
+        "xp": 189
+       },
+       "head": {
+        "id": 25,
+        "xp": 189
+       },
+       "waist": {
+        "id": 61,
+        "xp": 189
+       },
+       "foot": {
+        "id": 35,
+        "xp": 152
+       },
+       "hand": {
+        "id": 37,
+        "xp": 112
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 5685,
+      "level_salt": 9188
+     },
+     "packedAdventurer": "0x47c816350000e21110100000002ec010000000038254c235ebd5e995eb35e89",
+     "packedBag": "0x410042004626c712a4000c",
      "hpLoss": 0,
      "beastHpLoss": 122
     },
@@ -638,6 +3498,61 @@
      "gold": 0,
      "beastHp": 64,
      "beastSalt": 37186,
+     "adventurer": {
+      "health": 0,
+      "xp": 187,
+      "gold": 0,
+      "beast_health": 64,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 8,
+       "vitality": 4,
+       "intelligence": 2,
+       "wisdom": 2,
+       "charisma": 7,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 9,
+        "xp": 189
+       },
+       "chest": {
+        "id": 51,
+        "xp": 189
+       },
+       "head": {
+        "id": 25,
+        "xp": 189
+       },
+       "waist": {
+        "id": 61,
+        "xp": 189
+       },
+       "foot": {
+        "id": 35,
+        "xp": 152
+       },
+       "hand": {
+        "id": 37,
+        "xp": 112
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 37186,
+      "level_salt": 9188
+     },
+     "packedAdventurer": "0x47c891420000e21110101000002ec000000000038254c235ebd5e995eb35e89",
+     "packedBag": "0x410042004626c712a4000c",
      "encounter": {
       "name": "\"Beast Tear\" Chimera",
       "id": 9,
@@ -666,6 +3581,61 @@
      "gold": 1,
      "beastHp": 17,
      "beastSalt": 95840,
+     "adventurer": {
+      "health": 115,
+      "xp": 0,
+      "gold": 1,
+      "beast_health": 17,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 1,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 1,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 0
+       },
+       "chest": {
+        "id": 17,
+        "xp": 0
+       },
+       "head": {
+        "id": 26,
+        "xp": 0
+       },
+       "waist": {
+        "id": 59,
+        "xp": 0
+       },
+       "foot": {
+        "id": 36,
+        "xp": 0
+       },
+       "hand": {
+        "id": 41,
+        "xp": 0
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 95840,
+      "level_salt": 2236
+     },
+     "packedAdventurer": "0x11797660000022304210044020000730000000000290024003b001a0011000c",
+     "packedBag": "0x0",
      "encounter": {
       "name": "Basilisk",
       "id": 5,
@@ -688,6 +3658,61 @@
      "gold": 2,
      "beastHp": 0,
      "beastSalt": 95840,
+     "adventurer": {
+      "health": 107,
+      "xp": 4,
+      "gold": 2,
+      "beast_health": 0,
+      "stat_upgrades_available": 1,
+      "stats": {
+       "strength": 1,
+       "dexterity": 1,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 1,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 8
+       },
+       "chest": {
+        "id": 17,
+        "xp": 8
+       },
+       "head": {
+        "id": 26,
+        "xp": 8
+       },
+       "waist": {
+        "id": 59,
+        "xp": 8
+       },
+       "foot": {
+        "id": 36,
+        "xp": 8
+       },
+       "hand": {
+        "id": 41,
+        "xp": 8
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 95840,
+      "level_salt": 8892
+     },
+     "packedAdventurer": "0x457976600000223042110000400106b0000000004290424043b041a0411040c",
+     "packedBag": "0x0",
      "hpLoss": 8,
      "beastHpLoss": 17
     },
@@ -697,7 +3722,62 @@
      "hp": 107,
      "gold": 2,
      "beastHp": 0,
-     "beastSalt": 95840
+     "beastSalt": 95840,
+     "adventurer": {
+      "health": 107,
+      "xp": 12,
+      "gold": 2,
+      "beast_health": 0,
+      "stat_upgrades_available": 1,
+      "stats": {
+       "strength": 1,
+       "dexterity": 2,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 1,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 16
+       },
+       "chest": {
+        "id": 17,
+        "xp": 16
+       },
+       "head": {
+        "id": 26,
+        "xp": 16
+       },
+       "waist": {
+        "id": 59,
+        "xp": 16
+       },
+       "foot": {
+        "id": 36,
+        "xp": 16
+       },
+       "hand": {
+        "id": 41,
+        "xp": 16
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 95840,
+      "level_salt": 8215
+     },
+     "packedAdventurer": "0x402f76600000223044110000400306b0000000008290824083b081a0811080c",
+     "packedBag": "0x0"
     },
     {
      "k": 4,
@@ -706,6 +3786,61 @@
      "gold": 2,
      "beastHp": 57,
      "beastSalt": 29321,
+     "adventurer": {
+      "health": 107,
+      "xp": 12,
+      "gold": 2,
+      "beast_health": 57,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 2,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 2,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 16
+       },
+       "chest": {
+        "id": 17,
+        "xp": 16
+       },
+       "head": {
+        "id": 26,
+        "xp": 16
+       },
+       "waist": {
+        "id": 59,
+        "xp": 16
+       },
+       "foot": {
+        "id": 36,
+        "xp": 16
+       },
+       "hand": {
+        "id": 41,
+        "xp": 16
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 29321,
+      "level_salt": 8215
+     },
+     "packedAdventurer": "0x402e72890000423044100e40400306b0000000008290824083b081a0811080c",
+     "packedBag": "0x0",
      "encounter": {
       "name": "Roc",
       "id": 38,
@@ -728,6 +3863,61 @@
      "gold": 2,
      "beastHp": 57,
      "beastSalt": 29321,
+     "adventurer": {
+      "health": 105,
+      "xp": 12,
+      "gold": 2,
+      "beast_health": 57,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 2,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 2,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 16
+       },
+       "chest": {
+        "id": 17,
+        "xp": 16
+       },
+       "head": {
+        "id": 26,
+        "xp": 16
+       },
+       "waist": {
+        "id": 59,
+        "xp": 16
+       },
+       "foot": {
+        "id": 36,
+        "xp": 16
+       },
+       "hand": {
+        "id": 41,
+        "xp": 16
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 29321,
+      "level_salt": 8215
+     },
+     "packedAdventurer": "0x402e72890000423044100e4040030690000000008290824083b081a0811080c",
+     "packedBag": "0x0",
      "hpLoss": 2,
      "beastHpLoss": 0
     },
@@ -738,6 +3928,61 @@
      "gold": 2,
      "beastHp": 0,
      "beastSalt": 29321,
+     "adventurer": {
+      "health": 105,
+      "xp": 13,
+      "gold": 2,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 2,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 2,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 16
+       },
+       "chest": {
+        "id": 17,
+        "xp": 16
+       },
+       "head": {
+        "id": 26,
+        "xp": 16
+       },
+       "waist": {
+        "id": 59,
+        "xp": 16
+       },
+       "foot": {
+        "id": 36,
+        "xp": 16
+       },
+       "hand": {
+        "id": 41,
+        "xp": 16
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 29321,
+      "level_salt": 8215
+     },
+     "packedAdventurer": "0x402e7289000042304410000040034690000000008290824083b081a0811080c",
+     "packedBag": "0x0",
      "hpLoss": 0,
      "beastHpLoss": 57
     },
@@ -748,6 +3993,61 @@
      "gold": 2,
      "beastHp": 69,
      "beastSalt": 97396,
+     "adventurer": {
+      "health": 109,
+      "xp": 14,
+      "gold": 2,
+      "beast_health": 69,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 2,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 2,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 16
+       },
+       "chest": {
+        "id": 17,
+        "xp": 16
+       },
+       "head": {
+        "id": 26,
+        "xp": 16
+       },
+       "waist": {
+        "id": 59,
+        "xp": 16
+       },
+       "foot": {
+        "id": 36,
+        "xp": 16
+       },
+       "hand": {
+        "id": 41,
+        "xp": 16
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 97396,
+      "level_salt": 8215
+     },
+     "packedAdventurer": "0x402f7c740000423044101140400386d0000000008290824083b081a0811080c",
+     "packedBag": "0x0",
      "encounter": {
       "name": "Vampire",
       "id": 15,
@@ -770,6 +4070,61 @@
      "gold": 2,
      "beastHp": 69,
      "beastSalt": 97396,
+     "adventurer": {
+      "health": 107,
+      "xp": 14,
+      "gold": 2,
+      "beast_health": 69,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 2,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 2,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 16
+       },
+       "chest": {
+        "id": 17,
+        "xp": 16
+       },
+       "head": {
+        "id": 26,
+        "xp": 16
+       },
+       "waist": {
+        "id": 59,
+        "xp": 16
+       },
+       "foot": {
+        "id": 36,
+        "xp": 16
+       },
+       "hand": {
+        "id": 41,
+        "xp": 16
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 97396,
+      "level_salt": 8215
+     },
+     "packedAdventurer": "0x402f7c740000423044101140400386b0000000008290824083b081a0811080c",
+     "packedBag": "0x0",
      "hpLoss": 2,
      "beastHpLoss": 0
     },
@@ -780,6 +4135,61 @@
      "gold": 2,
      "beastHp": 0,
      "beastSalt": 97396,
+     "adventurer": {
+      "health": 107,
+      "xp": 15,
+      "gold": 2,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 2,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 2,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 16
+       },
+       "chest": {
+        "id": 17,
+        "xp": 16
+       },
+       "head": {
+        "id": 26,
+        "xp": 16
+       },
+       "waist": {
+        "id": 59,
+        "xp": 16
+       },
+       "foot": {
+        "id": 36,
+        "xp": 16
+       },
+       "hand": {
+        "id": 41,
+        "xp": 16
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 97396,
+      "level_salt": 8215
+     },
+     "packedAdventurer": "0x402f7c7400004230441000004003c6b0000000008290824083b081a0811080c",
+     "packedBag": "0x0",
      "hpLoss": 0,
      "beastHpLoss": 69
     },
@@ -789,7 +4199,62 @@
      "hp": 107,
      "gold": 2,
      "beastHp": 0,
-     "beastSalt": 97396
+     "beastSalt": 97396,
+     "adventurer": {
+      "health": 107,
+      "xp": 16,
+      "gold": 2,
+      "beast_health": 0,
+      "stat_upgrades_available": 1,
+      "stats": {
+       "strength": 1,
+       "dexterity": 2,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 2,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 16
+       },
+       "chest": {
+        "id": 17,
+        "xp": 16
+       },
+       "head": {
+        "id": 26,
+        "xp": 16
+       },
+       "waist": {
+        "id": 59,
+        "xp": 16
+       },
+       "foot": {
+        "id": 36,
+        "xp": 16
+       },
+       "hand": {
+        "id": 41,
+        "xp": 16
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 97396,
+      "level_salt": 7124
+     },
+     "packedAdventurer": "0x37a97c740000423044110000400406b0000000008290824083b081a0811080c",
+     "packedBag": "0x54"
     },
     {
      "k": 11,
@@ -798,6 +4263,61 @@
      "gold": 2,
      "beastHp": 27,
      "beastSalt": 96592,
+     "adventurer": {
+      "health": 107,
+      "xp": 16,
+      "gold": 2,
+      "beast_health": 27,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 3,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 2,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 16
+       },
+       "chest": {
+        "id": 17,
+        "xp": 16
+       },
+       "head": {
+        "id": 26,
+        "xp": 16
+       },
+       "waist": {
+        "id": 59,
+        "xp": 16
+       },
+       "foot": {
+        "id": 36,
+        "xp": 16
+       },
+       "hand": {
+        "id": 41,
+        "xp": 16
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 96592,
+      "level_salt": 7124
+     },
+     "packedAdventurer": "0x37a9795000004230461006c0400406b0000000008290824083b081a0811080c",
+     "packedBag": "0x54",
      "encounter": {
       "name": "Hippogriff",
       "id": 41,
@@ -820,6 +4340,61 @@
      "gold": 2,
      "beastHp": 23,
      "beastSalt": 96592,
+     "adventurer": {
+      "health": 105,
+      "xp": 16,
+      "gold": 2,
+      "beast_health": 23,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 3,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 2,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 16
+       },
+       "chest": {
+        "id": 17,
+        "xp": 16
+       },
+       "head": {
+        "id": 26,
+        "xp": 16
+       },
+       "waist": {
+        "id": 59,
+        "xp": 16
+       },
+       "foot": {
+        "id": 36,
+        "xp": 16
+       },
+       "hand": {
+        "id": 41,
+        "xp": 16
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 96592,
+      "level_salt": 7124
+     },
+     "packedAdventurer": "0x37a9795000004230461005c040040690000000008290824083b081a0811080c",
+     "packedBag": "0x54",
      "hpLoss": 2,
      "beastHpLoss": 4
     },
@@ -830,6 +4405,61 @@
      "gold": 2,
      "beastHp": 19,
      "beastSalt": 96592,
+     "adventurer": {
+      "health": 103,
+      "xp": 16,
+      "gold": 2,
+      "beast_health": 19,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 3,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 2,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 16
+       },
+       "chest": {
+        "id": 17,
+        "xp": 16
+       },
+       "head": {
+        "id": 26,
+        "xp": 16
+       },
+       "waist": {
+        "id": 59,
+        "xp": 16
+       },
+       "foot": {
+        "id": 36,
+        "xp": 16
+       },
+       "hand": {
+        "id": 41,
+        "xp": 16
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 96592,
+      "level_salt": 7124
+     },
+     "packedAdventurer": "0x37a9795000004230461004c040040670000000008290824083b081a0811080c",
+     "packedBag": "0x54",
      "hpLoss": 2,
      "beastHpLoss": 4
     },
@@ -840,6 +4470,61 @@
      "gold": 2,
      "beastHp": 15,
      "beastSalt": 96592,
+     "adventurer": {
+      "health": 101,
+      "xp": 16,
+      "gold": 2,
+      "beast_health": 15,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 3,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 2,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 16
+       },
+       "chest": {
+        "id": 17,
+        "xp": 16
+       },
+       "head": {
+        "id": 26,
+        "xp": 16
+       },
+       "waist": {
+        "id": 59,
+        "xp": 16
+       },
+       "foot": {
+        "id": 36,
+        "xp": 16
+       },
+       "hand": {
+        "id": 41,
+        "xp": 16
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 96592,
+      "level_salt": 7124
+     },
+     "packedAdventurer": "0x37a9795000004230461003c040040650000000008290824083b081a0811080c",
+     "packedBag": "0x54",
      "hpLoss": 2,
      "beastHpLoss": 4
     },
@@ -850,6 +4535,61 @@
      "gold": 2,
      "beastHp": 11,
      "beastSalt": 96592,
+     "adventurer": {
+      "health": 99,
+      "xp": 16,
+      "gold": 2,
+      "beast_health": 11,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 3,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 2,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 16
+       },
+       "chest": {
+        "id": 17,
+        "xp": 16
+       },
+       "head": {
+        "id": 26,
+        "xp": 16
+       },
+       "waist": {
+        "id": 59,
+        "xp": 16
+       },
+       "foot": {
+        "id": 36,
+        "xp": 16
+       },
+       "hand": {
+        "id": 41,
+        "xp": 16
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 96592,
+      "level_salt": 7124
+     },
+     "packedAdventurer": "0x37a9795000004230461002c040040630000000008290824083b081a0811080c",
+     "packedBag": "0x54",
      "hpLoss": 2,
      "beastHpLoss": 4
     },
@@ -860,6 +4600,61 @@
      "gold": 2,
      "beastHp": 7,
      "beastSalt": 96592,
+     "adventurer": {
+      "health": 97,
+      "xp": 16,
+      "gold": 2,
+      "beast_health": 7,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 3,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 2,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 16
+       },
+       "chest": {
+        "id": 17,
+        "xp": 16
+       },
+       "head": {
+        "id": 26,
+        "xp": 16
+       },
+       "waist": {
+        "id": 59,
+        "xp": 16
+       },
+       "foot": {
+        "id": 36,
+        "xp": 16
+       },
+       "hand": {
+        "id": 41,
+        "xp": 16
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 96592,
+      "level_salt": 7124
+     },
+     "packedAdventurer": "0x37a9795000004230461001c040040610000000008290824083b081a0811080c",
+     "packedBag": "0x54",
      "hpLoss": 2,
      "beastHpLoss": 4
     },
@@ -870,6 +4665,61 @@
      "gold": 2,
      "beastHp": 3,
      "beastSalt": 96592,
+     "adventurer": {
+      "health": 95,
+      "xp": 16,
+      "gold": 2,
+      "beast_health": 3,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 3,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 2,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 16
+       },
+       "chest": {
+        "id": 17,
+        "xp": 16
+       },
+       "head": {
+        "id": 26,
+        "xp": 16
+       },
+       "waist": {
+        "id": 59,
+        "xp": 16
+       },
+       "foot": {
+        "id": 36,
+        "xp": 16
+       },
+       "hand": {
+        "id": 41,
+        "xp": 16
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 96592,
+      "level_salt": 7124
+     },
+     "packedAdventurer": "0x37a9795000004230461000c0400405f0000000008290824083b081a0811080c",
+     "packedBag": "0x54",
      "hpLoss": 2,
      "beastHpLoss": 4
     },
@@ -880,6 +4730,61 @@
      "gold": 4,
      "beastHp": 0,
      "beastSalt": 96592,
+     "adventurer": {
+      "health": 95,
+      "xp": 20,
+      "gold": 4,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 3,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 2,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 24
+       },
+       "chest": {
+        "id": 17,
+        "xp": 24
+       },
+       "head": {
+        "id": 26,
+        "xp": 24
+       },
+       "waist": {
+        "id": 59,
+        "xp": 24
+       },
+       "foot": {
+        "id": 36,
+        "xp": 24
+       },
+       "hand": {
+        "id": 41,
+        "xp": 24
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 96592,
+      "level_salt": 7124
+     },
+     "packedAdventurer": "0x37a979500000423046100000800505f000000000c290c240c3b0c1a0c110c0c",
+     "packedBag": "0x54",
      "hpLoss": 0,
      "beastHpLoss": 3
     },
@@ -889,7 +4794,62 @@
      "hp": 95,
      "gold": 4,
      "beastHp": 0,
-     "beastSalt": 96592
+     "beastSalt": 96592,
+     "adventurer": {
+      "health": 95,
+      "xp": 26,
+      "gold": 4,
+      "beast_health": 0,
+      "stat_upgrades_available": 1,
+      "stats": {
+       "strength": 1,
+       "dexterity": 3,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 2,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 30
+       },
+       "chest": {
+        "id": 17,
+        "xp": 30
+       },
+       "head": {
+        "id": 26,
+        "xp": 30
+       },
+       "waist": {
+        "id": 59,
+        "xp": 30
+       },
+       "foot": {
+        "id": 36,
+        "xp": 30
+       },
+       "hand": {
+        "id": 41,
+        "xp": 30
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 96592,
+      "level_salt": 16102
+     },
+     "packedAdventurer": "0x7dcd79500000423046110000800685f000000000f290f240f3b0f1a0f110f0c",
+     "packedBag": "0x54"
     },
     {
      "k": 20,
@@ -897,7 +4857,62 @@
      "hp": 95,
      "gold": 4,
      "beastHp": 0,
-     "beastSalt": 96592
+     "beastSalt": 96592,
+     "adventurer": {
+      "health": 95,
+      "xp": 44,
+      "gold": 4,
+      "beast_health": 0,
+      "stat_upgrades_available": 1,
+      "stats": {
+       "strength": 1,
+       "dexterity": 3,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 3,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 48
+       },
+       "chest": {
+        "id": 17,
+        "xp": 48
+       },
+       "head": {
+        "id": 26,
+        "xp": 48
+       },
+       "waist": {
+        "id": 59,
+        "xp": 48
+       },
+       "foot": {
+        "id": 36,
+        "xp": 48
+       },
+       "hand": {
+        "id": 41,
+        "xp": 48
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 96592,
+      "level_salt": 5050
+     },
+     "packedAdventurer": "0x277579500000623046110000800b05f0000000018291824183b181a1811180c",
+     "packedBag": "0x54"
     },
     {
      "k": 21,
@@ -905,7 +4920,62 @@
      "hp": 95,
      "gold": 4,
      "beastHp": 0,
-     "beastSalt": 96592
+     "beastSalt": 96592,
+     "adventurer": {
+      "health": 95,
+      "xp": 49,
+      "gold": 4,
+      "beast_health": 0,
+      "stat_upgrades_available": 1,
+      "stats": {
+       "strength": 1,
+       "dexterity": 4,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 3,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 53
+       },
+       "chest": {
+        "id": 17,
+        "xp": 53
+       },
+       "head": {
+        "id": 26,
+        "xp": 53
+       },
+       "waist": {
+        "id": 59,
+        "xp": 53
+       },
+       "foot": {
+        "id": 36,
+        "xp": 53
+       },
+       "hand": {
+        "id": 41,
+        "xp": 53
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 96592,
+      "level_salt": 13085
+     },
+     "packedAdventurer": "0x663b79500000623048110000800c45f000000001aa91aa41abb1a9a1a911a8c",
+     "packedBag": "0x54"
     },
     {
      "k": 22,
@@ -913,7 +4983,62 @@
      "hp": 95,
      "gold": 4,
      "beastHp": 0,
-     "beastSalt": 96592
+     "beastSalt": 96592,
+     "adventurer": {
+      "health": 95,
+      "xp": 57,
+      "gold": 4,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 5,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 3,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 61
+       },
+       "chest": {
+        "id": 17,
+        "xp": 61
+       },
+       "head": {
+        "id": 26,
+        "xp": 61
+       },
+       "waist": {
+        "id": 59,
+        "xp": 61
+       },
+       "foot": {
+        "id": 36,
+        "xp": 61
+       },
+       "hand": {
+        "id": 41,
+        "xp": 61
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 96592,
+      "level_salt": 13085
+     },
+     "packedAdventurer": "0x663b7950000062304a100000800e45f000000001ea91ea41ebb1e9a1e911e8c",
+     "packedBag": "0x54"
     },
     {
      "k": 23,
@@ -921,7 +5046,62 @@
      "hp": 97,
      "gold": 4,
      "beastHp": 0,
-     "beastSalt": 96592
+     "beastSalt": 96592,
+     "adventurer": {
+      "health": 97,
+      "xp": 58,
+      "gold": 4,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 5,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 3,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 61
+       },
+       "chest": {
+        "id": 17,
+        "xp": 61
+       },
+       "head": {
+        "id": 26,
+        "xp": 61
+       },
+       "waist": {
+        "id": 59,
+        "xp": 61
+       },
+       "foot": {
+        "id": 36,
+        "xp": 61
+       },
+       "hand": {
+        "id": 41,
+        "xp": 61
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 96592,
+      "level_salt": 13085
+     },
+     "packedAdventurer": "0x663b7950000062304a100000800e861000000001ea91ea41ebb1e9a1e911e8c",
+     "packedBag": "0x54"
     },
     {
      "k": 24,
@@ -930,6 +5110,61 @@
      "gold": 4,
      "beastHp": 18,
      "beastSalt": 66065,
+     "adventurer": {
+      "health": 97,
+      "xp": 62,
+      "gold": 4,
+      "beast_health": 18,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 5,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 3,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 65
+       },
+       "chest": {
+        "id": 17,
+        "xp": 65
+       },
+       "head": {
+        "id": 26,
+        "xp": 65
+       },
+       "waist": {
+        "id": 59,
+        "xp": 65
+       },
+       "foot": {
+        "id": 36,
+        "xp": 65
+       },
+       "hand": {
+        "id": 41,
+        "xp": 65
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 66065,
+      "level_salt": 13085
+     },
+     "packedAdventurer": "0x663b0211000062304a100480800f8610000000020a920a420bb209a2091208c",
+     "packedBag": "0x54",
      "encounter": {
       "name": "Hydra",
       "id": 59,
@@ -952,6 +5187,61 @@
      "gold": 4,
      "beastHp": 11,
      "beastSalt": 66065,
+     "adventurer": {
+      "health": 95,
+      "xp": 62,
+      "gold": 4,
+      "beast_health": 11,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 5,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 3,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 65
+       },
+       "chest": {
+        "id": 17,
+        "xp": 65
+       },
+       "head": {
+        "id": 26,
+        "xp": 65
+       },
+       "waist": {
+        "id": 59,
+        "xp": 65
+       },
+       "foot": {
+        "id": 36,
+        "xp": 65
+       },
+       "hand": {
+        "id": 41,
+        "xp": 65
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 66065,
+      "level_salt": 13085
+     },
+     "packedAdventurer": "0x663b0211000062304a1002c0800f85f0000000020a920a420bb209a2091208c",
+     "packedBag": "0x54",
      "hpLoss": 2,
      "beastHpLoss": 7
     },
@@ -962,6 +5252,61 @@
      "gold": 4,
      "beastHp": 4,
      "beastSalt": 66065,
+     "adventurer": {
+      "health": 93,
+      "xp": 62,
+      "gold": 4,
+      "beast_health": 4,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 5,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 3,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 65
+       },
+       "chest": {
+        "id": 17,
+        "xp": 65
+       },
+       "head": {
+        "id": 26,
+        "xp": 65
+       },
+       "waist": {
+        "id": 59,
+        "xp": 65
+       },
+       "foot": {
+        "id": 36,
+        "xp": 65
+       },
+       "hand": {
+        "id": 41,
+        "xp": 65
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 66065,
+      "level_salt": 13085
+     },
+     "packedAdventurer": "0x663b0211000062304a100100800f85d0000000020a920a420bb209a2091208c",
+     "packedBag": "0x54",
      "hpLoss": 2,
      "beastHpLoss": 7
     },
@@ -972,6 +5317,61 @@
      "gold": 7,
      "beastHp": 0,
      "beastSalt": 66065,
+     "adventurer": {
+      "health": 93,
+      "xp": 66,
+      "gold": 7,
+      "beast_health": 0,
+      "stat_upgrades_available": 1,
+      "stats": {
+       "strength": 1,
+       "dexterity": 5,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 3,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 73
+       },
+       "chest": {
+        "id": 17,
+        "xp": 73
+       },
+       "head": {
+        "id": 26,
+        "xp": 73
+       },
+       "waist": {
+        "id": 59,
+        "xp": 73
+       },
+       "foot": {
+        "id": 36,
+        "xp": 73
+       },
+       "hand": {
+        "id": 41,
+        "xp": 73
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 66065,
+      "level_salt": 4651
+     },
+     "packedAdventurer": "0x24570211000062304a110000e01085d0000000024a924a424bb249a2491248c",
+     "packedBag": "0x54",
      "hpLoss": 0,
      "beastHpLoss": 4
     },
@@ -981,7 +5381,62 @@
      "hp": 101,
      "gold": 7,
      "beastHp": 0,
-     "beastSalt": 66065
+     "beastSalt": 66065,
+     "adventurer": {
+      "health": 101,
+      "xp": 67,
+      "gold": 7,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 5,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 4,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 73
+       },
+       "chest": {
+        "id": 17,
+        "xp": 73
+       },
+       "head": {
+        "id": 26,
+        "xp": 73
+       },
+       "waist": {
+        "id": 59,
+        "xp": 73
+       },
+       "foot": {
+        "id": 36,
+        "xp": 73
+       },
+       "hand": {
+        "id": 41,
+        "xp": 73
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 66065,
+      "level_salt": 4651
+     },
+     "packedAdventurer": "0x24570211000082304a100000e010c650000000024a924a424bb249a2491248c",
+     "packedBag": "0x54"
     },
     {
      "k": 29,
@@ -989,7 +5444,62 @@
      "hp": 99,
      "gold": 7,
      "beastHp": 0,
-     "beastSalt": 66065
+     "beastSalt": 66065,
+     "adventurer": {
+      "health": 99,
+      "xp": 71,
+      "gold": 7,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 5,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 4,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 77
+       },
+       "chest": {
+        "id": 17,
+        "xp": 77
+       },
+       "head": {
+        "id": 26,
+        "xp": 77
+       },
+       "waist": {
+        "id": 59,
+        "xp": 77
+       },
+       "foot": {
+        "id": 36,
+        "xp": 77
+       },
+       "hand": {
+        "id": 41,
+        "xp": 77
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 66065,
+      "level_salt": 4651
+     },
+     "packedAdventurer": "0x24570211000082304a100000e011c630000000026a926a426bb269a2691268c",
+     "packedBag": "0x54"
     },
     {
      "k": 30,
@@ -997,7 +5507,62 @@
      "hp": 99,
      "gold": 7,
      "beastHp": 0,
-     "beastSalt": 66065
+     "beastSalt": 66065,
+     "adventurer": {
+      "health": 99,
+      "xp": 104,
+      "gold": 7,
+      "beast_health": 0,
+      "stat_upgrades_available": 2,
+      "stats": {
+       "strength": 1,
+       "dexterity": 5,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 4,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 110
+       },
+       "chest": {
+        "id": 17,
+        "xp": 110
+       },
+       "head": {
+        "id": 26,
+        "xp": 110
+       },
+       "waist": {
+        "id": 59,
+        "xp": 110
+       },
+       "foot": {
+        "id": 36,
+        "xp": 110
+       },
+       "hand": {
+        "id": 41,
+        "xp": 110
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 66065,
+      "level_salt": 1015
+     },
+     "packedAdventurer": "0x7ef0211000082304a120000e01a0630000000037293724373b371a3711370c",
+     "packedBag": "0x54"
     },
     {
      "k": 31,
@@ -1005,7 +5570,62 @@
      "hp": 115,
      "gold": 5,
      "beastHp": 0,
-     "beastSalt": 66065
+     "beastSalt": 66065,
+     "adventurer": {
+      "health": 115,
+      "xp": 105,
+      "gold": 5,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 6,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 5,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 110
+       },
+       "chest": {
+        "id": 17,
+        "xp": 110
+       },
+       "head": {
+        "id": 26,
+        "xp": 110
+       },
+       "waist": {
+        "id": 59,
+        "xp": 110
+       },
+       "foot": {
+        "id": 36,
+        "xp": 110
+       },
+       "hand": {
+        "id": 41,
+        "xp": 110
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 66065,
+      "level_salt": 1015
+     },
+     "packedAdventurer": "0x7ef02110000a2304c100000a01a4730000000037293724373b371a3711370c",
+     "packedBag": "0x54"
     },
     {
      "k": 32,
@@ -1013,7 +5633,62 @@
      "hp": 115,
      "gold": 5,
      "beastHp": 0,
-     "beastSalt": 66065
+     "beastSalt": 66065,
+     "adventurer": {
+      "health": 115,
+      "xp": 127,
+      "gold": 5,
+      "beast_health": 0,
+      "stat_upgrades_available": 1,
+      "stats": {
+       "strength": 1,
+       "dexterity": 6,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 5,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 132
+       },
+       "chest": {
+        "id": 17,
+        "xp": 132
+       },
+       "head": {
+        "id": 26,
+        "xp": 132
+       },
+       "waist": {
+        "id": 59,
+        "xp": 132
+       },
+       "foot": {
+        "id": 36,
+        "xp": 132
+       },
+       "hand": {
+        "id": 41,
+        "xp": 132
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 66065,
+      "level_salt": 12573
+     },
+     "packedAdventurer": "0x623b02110000a2304c110000a01fc730000000042294224423b421a4211420c",
+     "packedBag": "0x54"
     },
     {
      "k": 33,
@@ -1021,7 +5696,62 @@
      "hp": 115,
      "gold": 7,
      "beastHp": 0,
-     "beastSalt": 66065
+     "beastSalt": 66065,
+     "adventurer": {
+      "health": 115,
+      "xp": 128,
+      "gold": 7,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 7,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 5,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 132
+       },
+       "chest": {
+        "id": 17,
+        "xp": 132
+       },
+       "head": {
+        "id": 26,
+        "xp": 132
+       },
+       "waist": {
+        "id": 59,
+        "xp": 132
+       },
+       "foot": {
+        "id": 36,
+        "xp": 132
+       },
+       "hand": {
+        "id": 41,
+        "xp": 132
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 66065,
+      "level_salt": 12573
+     },
+     "packedAdventurer": "0x623b02110000a2304e100000e0200730000000042294224423b421a4211420c",
+     "packedBag": "0x54"
     },
     {
      "k": 34,
@@ -1029,7 +5759,62 @@
      "hp": 115,
      "gold": 7,
      "beastHp": 0,
-     "beastSalt": 66065
+     "beastSalt": 66065,
+     "adventurer": {
+      "health": 115,
+      "xp": 129,
+      "gold": 7,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 7,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 5,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 132
+       },
+       "chest": {
+        "id": 17,
+        "xp": 132
+       },
+       "head": {
+        "id": 26,
+        "xp": 132
+       },
+       "waist": {
+        "id": 59,
+        "xp": 132
+       },
+       "foot": {
+        "id": 36,
+        "xp": 132
+       },
+       "hand": {
+        "id": 41,
+        "xp": 132
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 66065,
+      "level_salt": 12573
+     },
+     "packedAdventurer": "0x623b02110000a2304e100000e0204730000000042294224423b421a4211420c",
+     "packedBag": "0x5b0054"
     },
     {
      "k": 35,
@@ -1038,6 +5823,61 @@
      "gold": 7,
      "beastHp": 52,
      "beastSalt": 72016,
+     "adventurer": {
+      "health": 94,
+      "xp": 129,
+      "gold": 7,
+      "beast_health": 52,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 7,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 5,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 132
+       },
+       "chest": {
+        "id": 17,
+        "xp": 132
+       },
+       "head": {
+        "id": 26,
+        "xp": 132
+       },
+       "waist": {
+        "id": 59,
+        "xp": 132
+       },
+       "foot": {
+        "id": 36,
+        "xp": 132
+       },
+       "hand": {
+        "id": 41,
+        "xp": 132
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 72016,
+      "level_salt": 12573
+     },
+     "packedAdventurer": "0x623b19500000a2304e100d00e02045e0000000042294224423b421a4211420c",
+     "packedBag": "0x5b0054",
      "encounter": {
       "name": "\"Torment Instrument\" Jaguar",
       "id": 43,
@@ -1060,6 +5900,61 @@
      "gold": 7,
      "beastHp": 52,
      "beastSalt": 72016,
+     "adventurer": {
+      "health": 92,
+      "xp": 129,
+      "gold": 7,
+      "beast_health": 52,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 7,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 5,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 132
+       },
+       "chest": {
+        "id": 17,
+        "xp": 132
+       },
+       "head": {
+        "id": 26,
+        "xp": 132
+       },
+       "waist": {
+        "id": 59,
+        "xp": 132
+       },
+       "foot": {
+        "id": 36,
+        "xp": 132
+       },
+       "hand": {
+        "id": 41,
+        "xp": 132
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 72016,
+      "level_salt": 12573
+     },
+     "packedAdventurer": "0x623b19500000a2304e100d00e02045c0000000042294224423b421a4211420c",
+     "packedBag": "0x5b0054",
      "hpLoss": 2,
      "beastHpLoss": 0
     },
@@ -1070,6 +5965,61 @@
      "gold": 7,
      "beastHp": 0,
      "beastSalt": 72016,
+     "adventurer": {
+      "health": 92,
+      "xp": 130,
+      "gold": 7,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 7,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 5,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 132
+       },
+       "chest": {
+        "id": 17,
+        "xp": 132
+       },
+       "head": {
+        "id": 26,
+        "xp": 132
+       },
+       "waist": {
+        "id": 59,
+        "xp": 132
+       },
+       "foot": {
+        "id": 36,
+        "xp": 132
+       },
+       "hand": {
+        "id": 41,
+        "xp": 132
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 72016,
+      "level_salt": 12573
+     },
+     "packedAdventurer": "0x623b19500000a2304e100000e02085c0000000042294224423b421a4211420c",
+     "packedBag": "0x5b0054",
      "hpLoss": 0,
      "beastHpLoss": 52
     },
@@ -1079,7 +6029,62 @@
      "hp": 101,
      "gold": 4,
      "beastHp": 0,
-     "beastSalt": 72016
+     "beastSalt": 72016,
+     "adventurer": {
+      "health": 101,
+      "xp": 140,
+      "gold": 4,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 7,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 5,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 142
+       },
+       "chest": {
+        "id": 17,
+        "xp": 142
+       },
+       "head": {
+        "id": 26,
+        "xp": 142
+       },
+       "waist": {
+        "id": 59,
+        "xp": 142
+       },
+       "foot": {
+        "id": 36,
+        "xp": 142
+       },
+       "hand": {
+        "id": 41,
+        "xp": 142
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 72016,
+      "level_salt": 12573
+     },
+     "packedAdventurer": "0x623b19500000a2304e10000080230650000000047294724473b471a4711470c",
+     "packedBag": "0x5b0054"
     },
     {
      "k": 39,
@@ -1088,6 +6093,61 @@
      "gold": 2,
      "beastHp": 153,
      "beastSalt": 45469,
+     "adventurer": {
+      "health": 114,
+      "xp": 140,
+      "gold": 2,
+      "beast_health": 153,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 7,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 5,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 142
+       },
+       "chest": {
+        "id": 17,
+        "xp": 142
+       },
+       "head": {
+        "id": 26,
+        "xp": 142
+       },
+       "waist": {
+        "id": 59,
+        "xp": 142
+       },
+       "foot": {
+        "id": 36,
+        "xp": 142
+       },
+       "hand": {
+        "id": 41,
+        "xp": 142
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 45469,
+      "level_salt": 12573
+     },
+     "packedAdventurer": "0x623ab19d0000a2304e10264040230720000000047294724473b471a4711470c",
+     "packedBag": "0x5b0054",
      "encounter": {
       "name": "\"Empyrean Shadow\" Direwolf",
       "id": 45,
@@ -1110,6 +6170,61 @@
      "gold": 2,
      "beastHp": 153,
      "beastSalt": 45469,
+     "adventurer": {
+      "health": 112,
+      "xp": 140,
+      "gold": 2,
+      "beast_health": 153,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 7,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 5,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 142
+       },
+       "chest": {
+        "id": 17,
+        "xp": 142
+       },
+       "head": {
+        "id": 26,
+        "xp": 142
+       },
+       "waist": {
+        "id": 59,
+        "xp": 142
+       },
+       "foot": {
+        "id": 36,
+        "xp": 142
+       },
+       "hand": {
+        "id": 41,
+        "xp": 142
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 45469,
+      "level_salt": 12573
+     },
+     "packedAdventurer": "0x623ab19d0000a2304e10264040230700000000047294724473b471a4711470c",
+     "packedBag": "0x5b0054",
      "hpLoss": 2,
      "beastHpLoss": 0
     },
@@ -1120,6 +6235,61 @@
      "gold": 2,
      "beastHp": 0,
      "beastSalt": 45469,
+     "adventurer": {
+      "health": 112,
+      "xp": 141,
+      "gold": 2,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 7,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 5,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 142
+       },
+       "chest": {
+        "id": 17,
+        "xp": 142
+       },
+       "head": {
+        "id": 26,
+        "xp": 142
+       },
+       "waist": {
+        "id": 59,
+        "xp": 142
+       },
+       "foot": {
+        "id": 36,
+        "xp": 142
+       },
+       "hand": {
+        "id": 41,
+        "xp": 142
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 45469,
+      "level_salt": 12573
+     },
+     "packedAdventurer": "0x623ab19d0000a2304e10000040234700000000047294724473b471a4711470c",
+     "packedBag": "0x5b0054",
      "hpLoss": 0,
      "beastHpLoss": 153
     },
@@ -1129,7 +6299,62 @@
      "hp": 115,
      "gold": 1,
      "beastHp": 0,
-     "beastSalt": 45469
+     "beastSalt": 45469,
+     "adventurer": {
+      "health": 115,
+      "xp": 145,
+      "gold": 1,
+      "beast_health": 0,
+      "stat_upgrades_available": 1,
+      "stats": {
+       "strength": 1,
+       "dexterity": 7,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 5,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 146
+       },
+       "chest": {
+        "id": 17,
+        "xp": 146
+       },
+       "head": {
+        "id": 26,
+        "xp": 146
+       },
+       "waist": {
+        "id": 59,
+        "xp": 146
+       },
+       "foot": {
+        "id": 36,
+        "xp": 146
+       },
+       "hand": {
+        "id": 41,
+        "xp": 146
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 45469,
+      "level_salt": 3386
+     },
+     "packedAdventurer": "0x1a74b19d0000a2304e11000020244730000000049294924493b491a4911490c",
+     "packedBag": "0x5b0054"
     },
     {
      "k": 43,
@@ -1137,7 +6362,62 @@
      "hp": 115,
      "gold": 1,
      "beastHp": 0,
-     "beastSalt": 45469
+     "beastSalt": 45469,
+     "adventurer": {
+      "health": 115,
+      "xp": 146,
+      "gold": 1,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 7,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 6,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 146
+       },
+       "chest": {
+        "id": 17,
+        "xp": 146
+       },
+       "head": {
+        "id": 26,
+        "xp": 146
+       },
+       "waist": {
+        "id": 59,
+        "xp": 146
+       },
+       "foot": {
+        "id": 36,
+        "xp": 146
+       },
+       "hand": {
+        "id": 41,
+        "xp": 146
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 45469,
+      "level_salt": 3386
+     },
+     "packedAdventurer": "0x1a74b19d0000c2304e10000020248730000000049294924493b491a4911490c",
+     "packedBag": "0x5b0054"
     },
     {
      "k": 44,
@@ -1145,7 +6425,62 @@
      "hp": 115,
      "gold": 1,
      "beastHp": 0,
-     "beastSalt": 45469
+     "beastSalt": 45469,
+     "adventurer": {
+      "health": 115,
+      "xp": 166,
+      "gold": 1,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 7,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 6,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 166
+       },
+       "chest": {
+        "id": 17,
+        "xp": 166
+       },
+       "head": {
+        "id": 26,
+        "xp": 166
+       },
+       "waist": {
+        "id": 59,
+        "xp": 166
+       },
+       "foot": {
+        "id": 36,
+        "xp": 166
+       },
+       "hand": {
+        "id": 41,
+        "xp": 166
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 45469,
+      "level_salt": 3386
+     },
+     "packedAdventurer": "0x1a74b19d0000c2304e10000020298730000000053295324533b531a5311530c",
+     "packedBag": "0x5b0054"
     },
     {
      "k": 45,
@@ -1153,7 +6488,62 @@
      "hp": 115,
      "gold": 1,
      "beastHp": 0,
-     "beastSalt": 45469
+     "beastSalt": 45469,
+     "adventurer": {
+      "health": 115,
+      "xp": 207,
+      "gold": 1,
+      "beast_health": 0,
+      "stat_upgrades_available": 2,
+      "stats": {
+       "strength": 1,
+       "dexterity": 7,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 6,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 207
+       },
+       "chest": {
+        "id": 17,
+        "xp": 207
+       },
+       "head": {
+        "id": 26,
+        "xp": 207
+       },
+       "waist": {
+        "id": 59,
+        "xp": 207
+       },
+       "foot": {
+        "id": 36,
+        "xp": 207
+       },
+       "hand": {
+        "id": 41,
+        "xp": 207
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 45469,
+      "level_salt": 4121
+     },
+     "packedAdventurer": "0x2032b19d0000c2304e1200002033c730000000067a967a467bb679a6791678c",
+     "packedBag": "0x5b0054"
     },
     {
      "k": 46,
@@ -1161,7 +6551,62 @@
      "hp": 115,
      "gold": 4,
      "beastHp": 0,
-     "beastSalt": 45469
+     "beastSalt": 45469,
+     "adventurer": {
+      "health": 115,
+      "xp": 208,
+      "gold": 4,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 9,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 6,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 207
+       },
+       "chest": {
+        "id": 17,
+        "xp": 207
+       },
+       "head": {
+        "id": 26,
+        "xp": 207
+       },
+       "waist": {
+        "id": 59,
+        "xp": 207
+       },
+       "foot": {
+        "id": 36,
+        "xp": 207
+       },
+       "hand": {
+        "id": 41,
+        "xp": 207
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 0,
+      "beast_salt": 45469,
+      "level_salt": 4121
+     },
+     "packedAdventurer": "0x2032b19d0000c2305210000080340730000000067a967a467bb679a6791678c",
+     "packedBag": "0x5b0054"
     },
     {
      "k": 47,
@@ -1169,7 +6614,62 @@
      "hp": 145,
      "gold": 4,
      "beastHp": 0,
-     "beastSalt": 45469
+     "beastSalt": 45469,
+     "adventurer": {
+      "health": 145,
+      "xp": 254,
+      "gold": 4,
+      "beast_health": 0,
+      "stat_upgrades_available": 1,
+      "stats": {
+       "strength": 1,
+       "dexterity": 9,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 6,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 253
+       },
+       "chest": {
+        "id": 17,
+        "xp": 253
+       },
+       "head": {
+        "id": 26,
+        "xp": 253
+       },
+       "waist": {
+        "id": 59,
+        "xp": 253
+       },
+       "foot": {
+        "id": 36,
+        "xp": 253
+       },
+       "hand": {
+        "id": 41,
+        "xp": 253
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 9489,
+      "beast_salt": 45469,
+      "level_salt": 10483
+     },
+     "packedAdventurer": "0x51e6b19d9444c23052110000803f891000000007ea97ea47ebb7e9a7e917e8c",
+     "packedBag": "0x5b0054"
     },
     {
      "k": 48,
@@ -1177,7 +6677,62 @@
      "hp": 145,
      "gold": 4,
      "beastHp": 0,
-     "beastSalt": 45469
+     "beastSalt": 45469,
+     "adventurer": {
+      "health": 145,
+      "xp": 273,
+      "gold": 4,
+      "beast_health": 0,
+      "stat_upgrades_available": 1,
+      "stats": {
+       "strength": 1,
+       "dexterity": 10,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 6,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 272
+       },
+       "chest": {
+        "id": 17,
+        "xp": 272
+       },
+       "head": {
+        "id": 26,
+        "xp": 272
+       },
+       "waist": {
+        "id": 59,
+        "xp": 272
+       },
+       "foot": {
+        "id": 36,
+        "xp": 272
+       },
+       "hand": {
+        "id": 41,
+        "xp": 272
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 9489,
+      "beast_salt": 45469,
+      "level_salt": 1061
+     },
+     "packedAdventurer": "0x84ab19d9444c2305411000080444910000000088298824883b881a8811880c",
+     "packedBag": "0x5b0054"
     },
     {
      "k": 49,
@@ -1185,7 +6740,62 @@
      "hp": 145,
      "gold": 4,
      "beastHp": 0,
-     "beastSalt": 45469
+     "beastSalt": 45469,
+     "adventurer": {
+      "health": 145,
+      "xp": 277,
+      "gold": 4,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 11,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 6,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 276
+       },
+       "chest": {
+        "id": 17,
+        "xp": 276
+       },
+       "head": {
+        "id": 26,
+        "xp": 276
+       },
+       "waist": {
+        "id": 59,
+        "xp": 276
+       },
+       "foot": {
+        "id": 36,
+        "xp": 276
+       },
+       "hand": {
+        "id": 41,
+        "xp": 276
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 9489,
+      "beast_salt": 45469,
+      "level_salt": 1061
+     },
+     "packedAdventurer": "0x84ab19d9444c230561000008045491000000008a298a248a3b8a1a8a118a0c",
+     "packedBag": "0x5b0054"
     },
     {
      "k": 50,
@@ -1193,7 +6803,62 @@
      "hp": 145,
      "gold": 4,
      "beastHp": 0,
-     "beastSalt": 45469
+     "beastSalt": 45469,
+     "adventurer": {
+      "health": 145,
+      "xp": 281,
+      "gold": 4,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 11,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 6,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 280
+       },
+       "chest": {
+        "id": 17,
+        "xp": 280
+       },
+       "head": {
+        "id": 26,
+        "xp": 280
+       },
+       "waist": {
+        "id": 59,
+        "xp": 280
+       },
+       "foot": {
+        "id": 36,
+        "xp": 280
+       },
+       "hand": {
+        "id": 41,
+        "xp": 280
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 9489,
+      "beast_salt": 45469,
+      "level_salt": 1061
+     },
+     "packedAdventurer": "0x84ab19d9444c230561000008046491000000008c298c248c3b8c1a8c118c0c",
+     "packedBag": "0x5b0054"
     },
     {
      "k": 51,
@@ -1202,6 +6867,61 @@
      "gold": 4,
      "beastHp": 14,
      "beastSalt": 71734,
+     "adventurer": {
+      "health": 144,
+      "xp": 281,
+      "gold": 4,
+      "beast_health": 14,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 11,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 6,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 280
+       },
+       "chest": {
+        "id": 17,
+        "xp": 280
+       },
+       "head": {
+        "id": 26,
+        "xp": 280
+       },
+       "waist": {
+        "id": 59,
+        "xp": 280
+       },
+       "foot": {
+        "id": 36,
+        "xp": 280
+       },
+       "hand": {
+        "id": 41,
+        "xp": 280
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 9489,
+      "beast_salt": 71734,
+      "level_salt": 1061
+     },
+     "packedAdventurer": "0x84b18369444c230561003808046490000000008c298c248c3b8c1a8c118c0c",
+     "packedBag": "0x5b0054",
      "encounter": {
       "name": "\"Glyph Sun\" Basilisk",
       "id": 5,
@@ -1224,6 +6944,61 @@
      "gold": 4,
      "beastHp": 0,
      "beastSalt": 71734,
+     "adventurer": {
+      "health": 144,
+      "xp": 282,
+      "gold": 4,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 11,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 6,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 280
+       },
+       "chest": {
+        "id": 17,
+        "xp": 280
+       },
+       "head": {
+        "id": 26,
+        "xp": 280
+       },
+       "waist": {
+        "id": 59,
+        "xp": 280
+       },
+       "foot": {
+        "id": 36,
+        "xp": 280
+       },
+       "hand": {
+        "id": 41,
+        "xp": 280
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 9489,
+      "beast_salt": 71734,
+      "level_salt": 1061
+     },
+     "packedAdventurer": "0x84b18369444c230561000008046890000000008c298c248c3b8c1a8c118c0c",
+     "packedBag": "0x5b0054",
      "hpLoss": 0,
      "beastHpLoss": 14
     },
@@ -1234,6 +7009,61 @@
      "gold": 3,
      "beastHp": 297,
      "beastSalt": 26344,
+     "adventurer": {
+      "health": 145,
+      "xp": 282,
+      "gold": 3,
+      "beast_health": 297,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 11,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 6,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 280
+       },
+       "chest": {
+        "id": 17,
+        "xp": 280
+       },
+       "head": {
+        "id": 26,
+        "xp": 280
+       },
+       "waist": {
+        "id": 59,
+        "xp": 280
+       },
+       "foot": {
+        "id": 36,
+        "xp": 280
+       },
+       "hand": {
+        "id": 41,
+        "xp": 280
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 9489,
+      "beast_salt": 26344,
+      "level_salt": 1061
+     },
+     "packedAdventurer": "0x84a66e89444c23056104a406046891000000008c298c248c3b8c1a8c118c0c",
+     "packedBag": "0x5b0054",
      "encounter": {
       "name": "Jaguar",
       "id": 43,
@@ -1256,6 +7086,61 @@
      "gold": 3,
      "beastHp": 0,
      "beastSalt": 26344,
+     "adventurer": {
+      "health": 145,
+      "xp": 283,
+      "gold": 3,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 11,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 6,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 280
+       },
+       "chest": {
+        "id": 17,
+        "xp": 280
+       },
+       "head": {
+        "id": 26,
+        "xp": 280
+       },
+       "waist": {
+        "id": 59,
+        "xp": 280
+       },
+       "foot": {
+        "id": 36,
+        "xp": 280
+       },
+       "hand": {
+        "id": 41,
+        "xp": 280
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 9489,
+      "beast_salt": 26344,
+      "level_salt": 1061
+     },
+     "packedAdventurer": "0x84a66e89444c230561000006046c91000000008c298c248c3b8c1a8c118c0c",
+     "packedBag": "0x5b0054",
      "hpLoss": 0,
      "beastHpLoss": 297
     },
@@ -1266,6 +7151,61 @@
      "gold": 3,
      "beastHp": 45,
      "beastSalt": 110861,
+     "adventurer": {
+      "health": 145,
+      "xp": 283,
+      "gold": 3,
+      "beast_health": 45,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 11,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 6,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 280
+       },
+       "chest": {
+        "id": 17,
+        "xp": 280
+       },
+       "head": {
+        "id": 26,
+        "xp": 280
+       },
+       "waist": {
+        "id": 59,
+        "xp": 280
+       },
+       "foot": {
+        "id": 36,
+        "xp": 280
+       },
+       "hand": {
+        "id": 41,
+        "xp": 280
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 9489,
+      "beast_salt": 110861,
+      "level_salt": 1061
+     },
+     "packedAdventurer": "0x84bb10d9444c23056100b406046c91000000008c298c248c3b8c1a8c118c0c",
+     "packedBag": "0x5b0054",
      "encounter": {
       "name": "\"Cataclysm Bender\" Werewolf",
       "id": 12,
@@ -1288,6 +7228,61 @@
      "gold": 3,
      "beastHp": 45,
      "beastSalt": 110861,
+     "adventurer": {
+      "health": 37,
+      "xp": 283,
+      "gold": 3,
+      "beast_health": 45,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 11,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 6,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 280
+       },
+       "chest": {
+        "id": 17,
+        "xp": 280
+       },
+       "head": {
+        "id": 26,
+        "xp": 280
+       },
+       "waist": {
+        "id": 59,
+        "xp": 280
+       },
+       "foot": {
+        "id": 36,
+        "xp": 280
+       },
+       "hand": {
+        "id": 41,
+        "xp": 280
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 9489,
+      "beast_salt": 110861,
+      "level_salt": 1061
+     },
+     "packedAdventurer": "0x84bb10d9444c23056100b406046c25000000008c298c248c3b8c1a8c118c0c",
+     "packedBag": "0x5b0054",
      "hpLoss": 108,
      "beastHpLoss": 0
     },
@@ -1298,6 +7293,61 @@
      "gold": 3,
      "beastHp": 0,
      "beastSalt": 110861,
+     "adventurer": {
+      "health": 37,
+      "xp": 284,
+      "gold": 3,
+      "beast_health": 0,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 11,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 6,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 280
+       },
+       "chest": {
+        "id": 17,
+        "xp": 280
+       },
+       "head": {
+        "id": 26,
+        "xp": 280
+       },
+       "waist": {
+        "id": 59,
+        "xp": 280
+       },
+       "foot": {
+        "id": 36,
+        "xp": 280
+       },
+       "hand": {
+        "id": 41,
+        "xp": 280
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 9489,
+      "beast_salt": 110861,
+      "level_salt": 1061
+     },
+     "packedAdventurer": "0x84bb10d9444c230561000006047025000000008c298c248c3b8c1a8c118c0c",
+     "packedBag": "0x5b0054",
      "hpLoss": 0,
      "beastHpLoss": 45
     },
@@ -1307,7 +7357,62 @@
      "hp": 37,
      "gold": 0,
      "beastHp": 0,
-     "beastSalt": 110861
+     "beastSalt": 110861,
+     "adventurer": {
+      "health": 37,
+      "xp": 305,
+      "gold": 0,
+      "beast_health": 0,
+      "stat_upgrades_available": 1,
+      "stats": {
+       "strength": 1,
+       "dexterity": 11,
+       "vitality": 1,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 6,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 301
+       },
+       "chest": {
+        "id": 17,
+        "xp": 301
+       },
+       "head": {
+        "id": 26,
+        "xp": 301
+       },
+       "waist": {
+        "id": 59,
+        "xp": 301
+       },
+       "foot": {
+        "id": 36,
+        "xp": 301
+       },
+       "hand": {
+        "id": 41,
+        "xp": 301
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 9489,
+      "beast_salt": 110861,
+      "level_salt": 5480
+     },
+     "packedAdventurer": "0x2ad1b10d9444c23056110000004c4250000000096a996a496bb969a9691968c",
+     "packedBag": "0x5b0054"
     },
     {
      "k": 59,
@@ -1316,6 +7421,61 @@
      "gold": 0,
      "beastHp": 109,
      "beastSalt": 80381,
+     "adventurer": {
+      "health": 0,
+      "xp": 305,
+      "gold": 0,
+      "beast_health": 109,
+      "stat_upgrades_available": 0,
+      "stats": {
+       "strength": 1,
+       "dexterity": 11,
+       "vitality": 2,
+       "intelligence": 6,
+       "wisdom": 2,
+       "charisma": 6,
+       "luck": 0
+      },
+      "equipment": {
+       "weapon": {
+        "id": 12,
+        "xp": 301
+       },
+       "chest": {
+        "id": 17,
+        "xp": 301
+       },
+       "head": {
+        "id": 26,
+        "xp": 301
+       },
+       "waist": {
+        "id": 59,
+        "xp": 301
+       },
+       "foot": {
+        "id": 36,
+        "xp": 301
+       },
+       "hand": {
+        "id": 41,
+        "xp": 301
+       },
+       "neck": {
+        "id": 0,
+        "xp": 0
+       },
+       "ring": {
+        "id": 0,
+        "xp": 0
+       }
+      },
+      "item_specials_salt": 9489,
+      "beast_salt": 80381,
+      "level_salt": 5480
+     },
+     "packedAdventurer": "0x2ad139fd9444c23096101b40004c4000000000096a996a496bb969a9691968c",
+     "packedBag": "0x5b0054",
      "encounter": {
       "name": "\"Dusk Instrument\" Hydra",
       "id": 59,
