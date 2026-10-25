@@ -1,9 +1,121 @@
 {
- "updated": "2026-10-25T15:31:39.053Z",
+ "updated": "2026-10-25T16:01:25.826Z",
  "mode": "mainnet",
- "running": false,
- "runId": "2026-10-25T15-31-26-455Z",
- "account": "0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452",
- "recent": [],
- "message": "no unplayed games on the account (buy/mint games in the UI)"
+ "running": true,
+ "runId": "2026-10-25T16-00-40-070Z",
+ "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
+ "recent": [
+  {
+   "n": 0,
+   "t": "2026-10-25T16:00:51.667Z",
+   "level": 21,
+   "xp": 448,
+   "hp": 98,
+   "maxHp": 220,
+   "gold": 0,
+   "phase": "explore",
+   "reason": "Explore (instant-death risk 11.4%, HP 98/220)",
+   "actions": "explore",
+   "tx": "0x7e28f4fce501335f76385345e4eb1abe719ce7ec0c13f921f89bf6d143c528f",
+   "ok": true
+  },
+  {
+   "n": 1,
+   "t": "2026-10-25T16:00:57.585Z",
+   "level": 21,
+   "xp": 448,
+   "hp": 98,
+   "maxHp": 220,
+   "gold": 0,
+   "phase": "battle",
+   "reason": "Attack \"Pain Whisper\" Rat (L62 T5, 518 HP): P(win)=88.9% P(death)=11.1%; attack value 543.6 vs flee 457.9",
+   "actions": "attack",
+   "tx": "0x23586dda0e1fbd55be519e06c53aedce97c0e776648894ce44980e99acb32fd",
+   "ok": true
+  },
+  {
+   "n": 2,
+   "t": "2026-10-25T16:01:03.574Z",
+   "level": 21,
+   "xp": 448,
+   "hp": 96,
+   "maxHp": 220,
+   "gold": 0,
+   "phase": "battle",
+   "reason": "Attack \"Pain Whisper\" Rat (L62 T5, 175 HP): P(win)=100.0% P(death)=0.0%; attack value 615.7 vs flee 474.1",
+   "actions": "attack",
+   "tx": "0x6852672faf278b614335b8fe24d9cfb4c53def3a1e08947bb1d5c581b316b2e",
+   "ok": true
+  },
+  {
+   "n": 3,
+   "t": "2026-10-25T16:01:09.453Z",
+   "level": 21,
+   "xp": 465,
+   "hp": 96,
+   "maxHp": 220,
+   "gold": 31,
+   "phase": "explore",
+   "reason": "Drink 13 potion(s); Explore (instant-death risk 3.4%, HP 220/220)",
+   "actions": "buy(13 potions) + explore",
+   "tx": "0x7bc0ea9fabab1bd807840808d2f3702be09804c7fded2f1b382c06c9944ae8",
+   "ok": true
+  },
+  {
+   "n": 4,
+   "t": "2026-10-25T16:01:15.336Z",
+   "level": 22,
+   "xp": 498,
+   "hp": 220,
+   "maxHp": 220,
+   "gold": 18,
+   "phase": "level_up",
+   "reason": "Stats +2 VIT; Equip Ornate Greaves; Explore (instant-death risk 3.0%, HP 250/250)",
+   "actions": "stats(vit+2) + equip(Ornate Greaves) + explore",
+   "tx": "0x74923d685c50cb069175127b6e36986ef05aa6099093e0e25f31649b65b46f2",
+   "ok": true
+  },
+  {
+   "n": 5,
+   "t": "2026-10-25T16:01:21.458Z",
+   "level": 23,
+   "xp": 564,
+   "hp": 250,
+   "maxHp": 250,
+   "gold": 18,
+   "phase": "level_up",
+   "reason": "Stats +1 STR +2 VIT +1 CHA; Equip Crown, Demonhide Belt; Explore (instant-death risk 2.8%, HP 280/280)",
+   "actions": "stats(str+1 vit+2 cha+1) + equip(Crown, Demonhide Belt) + explore",
+   "tx": "0x4a9a603b9f559064354ba21a70547d143b3c476fe4d0aa2eb9eb6243f5a9699",
+   "ok": true
+  }
+ ],
+ "current": {
+  "id": "904625697166532776746652061824565847215142356634039892305636398918312190465",
+  "level": 23,
+  "xp": 564,
+  "hp": 250,
+  "maxHp": 250,
+  "gold": 18,
+  "gear": [
+   "Katana T1 G20",
+   "Linen Robe T3 G20",
+   "Ornate Helm T2 G20",
+   "Wool Sash T3 G20",
+   "Ornate Greaves T2 G8",
+   "Silk Gloves T2 G14",
+   "Pendant T1 G20",
+   "Bronze Ring T3 G16"
+  ],
+  "stats": {
+   "str": 4,
+   "dex": 19,
+   "vit": 10,
+   "int": 7,
+   "wis": 8,
+   "cha": 11,
+   "luck": 36
+  },
+  "lastReason": "Stats +1 STR +2 VIT +1 CHA; Equip Crown, Demonhide Belt; Explore (instant-death risk 2.8%, HP 280/280)"
+ }
 }
