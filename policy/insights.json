@@ -1,6 +1,6 @@
 {
-  "updated": "2026-10-24T09:09:05.170Z",
-  "players": 43,
+  "updated": "2026-10-25T09:26:10.849Z",
+  "players": 42,
   "aggregate": {
     "early": {
       "players": 3,
@@ -14,14 +14,14 @@
       }
     },
     "late": {
-      "players": 40,
+      "players": 39,
       "ratios": {
-        "str": 0.178,
-        "dex": 0.645,
-        "vit": 0.788,
-        "int": 0.043,
-        "wis": 0.074,
-        "cha": 0.175
+        "str": 0.181,
+        "dex": 0.646,
+        "vit": 0.795,
+        "int": 0.042,
+        "wis": 0.069,
+        "cha": 0.172
       }
     },
     "avgLevel": 42.8,
@@ -39,7 +39,7 @@
       ],
       [
         "Ghost Wand",
-        10
+        9
       ],
       [
         "Grimoire",
