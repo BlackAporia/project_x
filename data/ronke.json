@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-25T10:18:20.001Z",
- "address": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
+ "updated": "2026-10-25T10:20:56.051Z",
+ "address": "0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452",
  "kind": "address",
  "eligible": false,
  "reason": "Ronke holders sign in with their snapshotted Ronin wallet to claim their daily games.",
@@ -34,6 +34,95 @@
    "bonusClaimed": 0,
    "games": 3
   }
+ ],
+ "extra": {
+  "openGame": {
+   "claimed": false,
+   "available": false,
+   "steps": {
+    "x_follow": {
+     "done": false,
+     "claimed": false
+    },
+    "x_reshare": {
+     "done": false,
+     "claimed": false
+    },
+    "discord": {
+     "done": false,
+     "claimed": false
+    },
+    "deposit_1": {
+     "done": false,
+     "claimed": false
+    }
+   },
+   "xReach": {
+    "minFollowers": 1000,
+    "verifiedMinFollowers": 100,
+    "orVerified": true,
+    "ok": false
+   }
+  },
+  "bogo": {
+   "available": true,
+   "limit": 30,
+   "remaining": 27,
+   "recorded": null
+  },
+  "burn": {
+   "available": true,
+   "owner": null,
+   "steps": [
+    {
+     "step": 1,
+     "usd": 1,
+     "claimed": false
+    },
+    {
+     "step": 2,
+     "usd": 2,
+     "claimed": false
+    },
+    {
+     "step": 3,
+     "usd": 3,
+     "claimed": false
+    }
+   ],
+   "next": {
+    "step": 1,
+    "usd": 1
+   }
+  },
+  "tasks": {
+   "follow_both": "todo",
+   "like_reshare": "todo",
+   "mobile_notifications": "todo",
+   "join_discord": "todo",
+   "fund_1": "todo",
+   "proving_grounds_15": "todo",
+   "share_on_x": "todo",
+   "get_super_survivor": "todo"
+  }
+ },
+ "statusKeys": [
+  "address",
+  "evm",
+  "x",
+  "currentDay",
+  "startedAt",
+  "days",
+  "tasks",
+  "depositProgress",
+  "bonusRequirements",
+  "pushSupported",
+  "launchPostId",
+  "ended",
+  "eligibility",
+  "openGame",
+  "burn",
+  "bogo"
  ],
  "claimed": [],
  "message": "status only"
