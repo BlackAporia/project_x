@@ -32,6 +32,10 @@ export class V2MainnetBackend implements Backend {
   private log: (m: string) => void;
   private enter?: () => Promise<bigint | null>;
   private entries: number;
+  private owned: bigint[];
+  private settled = false;
+  /** why verify_game cannot be sent this run (no gas, no sponsorship): later settlements are skipped */
+  private settleBlocked: string | null = null;
 
   constructor(opts: {
     chain: V2Chain;
@@ -47,7 +51,8 @@ export class V2MainnetBackend implements Backend {
     this.executor = opts.executor;
     this.dryRun = opts.dryRun || !opts.executor;
     this.account = opts.executor?.address;
-    this.queue = opts.games;
+    this.queue = [...opts.games];
+    this.owned = [...opts.games];
     this.log = opts.log ?? ((m) => console.log(m));
     this.enter = opts.enter;
     this.entries = opts.maxEntries ?? 0;
@@ -58,6 +63,13 @@ export class V2MainnetBackend implements Backend {
       const id = this.queue.shift()!;
       if (await this.chain.gameOver(id).catch(() => false)) continue;
       return id;
+    }
+    // unplayed games first, then settle the finished ones that were never verified (once per run)
+    if (!this.settled) {
+      this.settled = true;
+      const n = await this.settleFinished(this.owned).catch(() => 0);
+      if (n) this.log(`[v2] settled ${n} finished game(s) that were never verified`);
+      if (this.settleBlocked) this.log(`[v2] settlement skipped: ${this.settleBlocked}`);
     }
     if (this.enter && !this.dryRun && this.entries > 0) {
       this.entries--;
@@ -149,7 +161,7 @@ export class V2MainnetBackend implements Backend {
 
   /** Settle the score of a finished game on-chain. */
   async finish(id: bigint): Promise<string | null> {
-    if (this.dryRun || !this.executor) return null;
+    if (this.dryRun || !this.executor || this.settleBlocked) return null;
     const c = await this.ctx(id);
     if (await this.chain.isVerified(id).catch(() => false)) return null;
     // the replay needs the entropy block of the last commit: settling right after the final move reverted
@@ -162,7 +174,13 @@ export class V2MainnetBackend implements Backend {
         return tx;
       } catch (e) {
         if (await this.chain.isVerified(id).catch(() => false)) return null;
-        this.log(`[v2] verify_game failed for ${id} (attempt ${attempt + 1}/4): ${(e as Error).message.slice(0, 200)}`);
+        const msg = (e as Error).message;
+        this.log(`[v2] verify_game failed for ${id} (attempt ${attempt + 1}/4): ${msg.slice(0, 200)}`);
+        // no sponsorship and no gas on the account: retrying cannot help, and it held up the unplayed games
+        if (/needs gas|too expensive|not eligible for sponsorship/.test(msg)) {
+          this.settleBlocked = msg.slice(0, 200);
+          return null;
+        }
         await new Promise((r) => setTimeout(r, 15_000 * (attempt + 1)));
       }
     }
@@ -174,6 +192,7 @@ export class V2MainnetBackend implements Backend {
     if (this.dryRun || !this.executor) return 0;
     let n = 0;
     for (const id of ids) {
+      if (this.settleBlocked) break;
       if (await this.chain.isVerified(id).catch(() => true)) continue;
       try {
         const st = await this.readState(id);

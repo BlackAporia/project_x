@@ -175,7 +175,5 @@ async function openV2Mainnet(live: boolean, game?: string): Promise<Backend> {
       : undefined;
   if (enter) console.log(`[mainnet v2] Proving Grounds: up to ${entries} free entr${entries === 1 ? 'y' : 'ies'} when no game is left`);
   const backend = new V2MainnetBackend({ chain, executor, dryRun: !live, games, enter, maxEntries: entries });
-  const settled = await backend.settleFinished(games);
-  if (settled) console.log(`[mainnet v2] settled ${settled} finished game(s) that were never verified`);
   return backend;
 }
