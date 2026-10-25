@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-25T15:27:49.049Z",
+ "updated": "2026-10-25T15:30:08.496Z",
  "modes": {
   "mainnet": {
    "games": 28,
@@ -435,18 +435,6 @@
  },
  "runs": [
   {
-   "id": "2026-10-23T21-26-02-012Z",
-   "mode": "practice",
-   "started": "2026-10-23T21:26:02.012Z",
-   "games": 200,
-   "bestXp": 688,
-   "meanXp": 216,
-   "errors": 0,
-   "policy": "tuned-2026-10-22-g24",
-   "dungeon": "Default #0",
-   "ended": "2026-10-23T21:26:08.493Z"
-  },
-  {
    "id": "2026-10-23T23-07-21-022Z",
    "mode": "mainnet-dry",
    "started": "2026-10-23T23:07:21.022Z",
@@ -775,6 +763,16 @@
    "errors": 1,
    "policy": "tail-2026-10-25-g3",
    "ended": "2026-10-25T15:27:44.424Z"
+  },
+  {
+   "id": "2026-10-25T15-28-30-538Z",
+   "mode": "mainnet",
+   "started": "2026-10-25T15:28:30.538Z",
+   "games": 0,
+   "bestXp": 0,
+   "meanXp": 0,
+   "errors": 0,
+   "policy": "tail-2026-10-25-g3"
   }
  ],
  "policy": {
