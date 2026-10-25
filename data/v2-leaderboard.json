@@ -1,0 +1,1618 @@
+{
+ "updated": "2026-10-25T18:59:02.251Z",
+ "api": "https://api-v2-next.up.railway.app",
+ "gameCore": "0x011afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b",
+ "boards": {
+  "1": {
+   "total": 7,
+   "top": [
+    {
+     "tokenId": "0x020000000000000000000100000000000000000001c7af5a00f872e6001c3c61",
+     "owner": "0x07b32f91c0d9c8a8b4e612ff3c21f58aee2d58f5d562c2d0171bdbcf687856de",
+     "score": 55,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 16,
+     "lastActionAt": "2026-10-12T17:37:06.000Z"
+    },
+    {
+     "tokenId": "0x020000000000000000000100000000000000000001c7bcd600fa30ce000c94a1",
+     "owner": "0x01a8eff8d0d8f4a13b19d8344963fd1718602bc6cbd474e12662f0d53063a314",
+     "score": 19,
+     "gameOver": false,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 0,
+     "actionCount": 4,
+     "lastActionAt": "2026-10-15T03:05:40.000Z"
+    },
+    {
+     "tokenId": "0x020000000000000000000100000000000000000001c7ae3c00f84dc2001b2141",
+     "owner": "0x03c0f67740e3fe298a52fe75dd24b4981217406f133e0835331379731b67dc92",
+     "score": 12,
+     "gameOver": false,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 0,
+     "actionCount": 6,
+     "lastActionAt": "2026-10-12T16:00:24.000Z"
+    },
+    {
+     "tokenId": "0x020000000000000000000100000000000000000001c7bd8900fa487900148981",
+     "owner": "0x043d9847de514744a4b12cf60c6d611f2a224d29ea71b444da2000b72f0726ea",
+     "score": 12,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 5,
+     "lastActionAt": "2026-10-15T06:03:01.000Z"
+    },
+    {
+     "tokenId": "0x020000000000000000000100000000000000000001c7bd0600fa371c000a2141",
+     "owner": "0x01a8eff8d0d8f4a13b19d8344963fd1718602bc6cbd474e12662f0d53063a314",
+     "score": 5,
+     "gameOver": false,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 0,
+     "actionCount": 2,
+     "lastActionAt": "2026-10-15T03:51:09.000Z"
+    },
+    {
+     "tokenId": "0x020000000000000000000100000000000000000001c797cc00f55ca50007e3e1",
+     "owner": "0x0689701974d95364aad9c2306bc322a40a27fb775b0c97733fd0e36e900b1878",
+     "score": 1,
+     "gameOver": false,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 0,
+     "actionCount": 2,
+     "lastActionAt": "2026-10-09T14:18:37.000Z"
+    },
+    {
+     "tokenId": "0x020000000000000000000100000000000000000001c7bd8300fa47b40001d7a1",
+     "owner": "0x01a8eff8d0d8f4a13b19d8344963fd1718602bc6cbd474e12662f0d53063a314",
+     "score": 0,
+     "gameOver": false,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 0,
+     "actionCount": 1,
+     "lastActionAt": "2026-10-15T05:58:10.000Z"
+    }
+   ],
+   "ranks": {
+    "250": {
+     "score": 250,
+     "rank": 1,
+     "total": 2
+    },
+    "500": {
+     "score": 500,
+     "rank": 1,
+     "total": 2
+    },
+    "783": {
+     "score": 783,
+     "rank": 1,
+     "total": 2
+    },
+    "988": {
+     "score": 988,
+     "rank": 1,
+     "total": 2
+    }
+   }
+  },
+  "2": {
+   "total": 3,
+   "top": [
+    {
+     "tokenId": "0x0000000000000010000002000000000000ae000001c79d7800f61377000c54e1",
+     "owner": "0x077b8ed8356a7c1f0903fc4ba6e15f9b09cf437ce04f21b2cbf32dc2790183d0",
+     "score": 77,
+     "gameOver": true,
+     "settled": true,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 11,
+     "lastActionAt": "2026-10-09T13:16:24.000Z"
+    },
+    {
+     "tokenId": "0x000000000000001000000200000000000088400001c79ea600f63a0700126441",
+     "owner": "0x077b8ed8356a7c1f0903fc4ba6e15f9b09cf437ce04f21b2cbf32dc2790183d0",
+     "score": 20,
+     "gameOver": true,
+     "settled": true,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 8,
+     "lastActionAt": "2026-10-09T18:17:43.000Z"
+    },
+    {
+     "tokenId": "0x00000000000000100000020000000000007bc00001c79f0a00f64714000c9d01",
+     "owner": "0x077b8ed8356a7c1f0903fc4ba6e15f9b09cf437ce04f21b2cbf32dc2790183d0",
+     "score": 11,
+     "gameOver": true,
+     "settled": true,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 7,
+     "lastActionAt": "2026-10-09T19:57:01.000Z"
+    }
+   ],
+   "ranks": {
+    "250": {
+     "score": 250,
+     "rank": 1,
+     "total": 3
+    },
+    "500": {
+     "score": 500,
+     "rank": 1,
+     "total": 3
+    },
+    "783": {
+     "score": 783,
+     "rank": 1,
+     "total": 3
+    },
+    "988": {
+     "score": 988,
+     "rank": 1,
+     "total": 3
+    }
+   }
+  },
+  "3": {
+   "total": 5,
+   "top": [
+    {
+     "tokenId": "0x0100000000000f000000030000000001021c000001c7a98b00f7b1d8001db121",
+     "owner": "0x02785f60c27e02fccfada7bfd259c731a7a1f47ac7201ef91578aae22ea31c8e",
+     "score": 289,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 41,
+     "lastActionAt": "2026-10-11T19:57:28.000Z"
+    },
+    {
+     "tokenId": "0x01000000000013510000030000000001021c000001c7b30c00f8ed85000a5361",
+     "owner": "0x0689701974d95364aad9c2306bc322a40a27fb775b0c97733fd0e36e900b1878",
+     "score": 229,
+     "gameOver": false,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 0,
+     "actionCount": 29,
+     "lastActionAt": "2026-10-13T12:44:52.000Z"
+    },
+    {
+     "tokenId": "0x01000000000000c30000030000000001021c000001c7a86500f78b0e0006d281",
+     "owner": "0x0750ab5bf1a7437a2ce23081b63c1b1b05797d5460ccdd042c15cea388922598",
+     "score": 160,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 31,
+     "lastActionAt": "2026-10-11T12:29:16.000Z"
+    },
+    {
+     "tokenId": "0x01000000000001fc0000030000000001021c000001c7ab2f00f7e9f6001d3261",
+     "owner": "0x05746062ecc203ebbde5940fe454283cc5811f44002165e9b33f3dc991057e5e",
+     "score": 9,
+     "gameOver": false,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 0,
+     "actionCount": 2,
+     "lastActionAt": "2026-10-11T23:57:37.000Z"
+    },
+    {
+     "tokenId": "0x01000000000013510000030000000001021c000001c79e1300f6271d0008d6e1",
+     "owner": "0x0689701974d95364aad9c2306bc322a40a27fb775b0c97733fd0e36e900b1878",
+     "score": 8,
+     "gameOver": false,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 0,
+     "actionCount": 3,
+     "lastActionAt": "2026-10-09T15:48:55.000Z"
+    }
+   ],
+   "ranks": {
+    "250": {
+     "score": 250,
+     "rank": 2,
+     "total": 2
+    },
+    "500": {
+     "score": 500,
+     "rank": 1,
+     "total": 2
+    },
+    "783": {
+     "score": 783,
+     "rank": 1,
+     "total": 2
+    },
+    "988": {
+     "score": 988,
+     "rank": 1,
+     "total": 2
+    }
+   }
+  },
+  "4": {
+   "total": 1,
+   "top": [
+    {
+     "tokenId": "0x0000000000000003000004000000000000a4400001c7aff600f88768001ab8e1",
+     "owner": "0x077b8ed8356a7c1f0903fc4ba6e15f9b09cf437ce04f21b2cbf32dc2790183d0",
+     "score": 11,
+     "gameOver": true,
+     "settled": true,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 7,
+     "lastActionAt": "2026-10-13T11:41:55.000Z"
+    }
+   ],
+   "ranks": {
+    "250": {
+     "score": 250,
+     "rank": 1,
+     "total": 1
+    },
+    "500": {
+     "score": 500,
+     "rank": 1,
+     "total": 1
+    },
+    "783": {
+     "score": 783,
+     "rank": 1,
+     "total": 1
+    },
+    "988": {
+     "score": 988,
+     "rank": 1,
+     "total": 1
+    }
+   }
+  },
+  "5": {
+   "total": 14,
+   "top": [
+    {
+     "tokenId": "0x01000000000017e400000500000000010000000001c7c75400fb945600070361",
+     "owner": "0x01c9f001de664f0cd5b9e22fbb013865c2ca68c75c3ecc6d627b30ac6e2f8cd2",
+     "score": 1298,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 202,
+     "lastActionAt": "2026-10-17T02:07:43.000Z"
+    },
+    {
+     "tokenId": "0x0100000000001f0d00000500000000010000000001c7b6df00f96b49000d3fc1",
+     "owner": "0x01c9f001de664f0cd5b9e22fbb013865c2ca68c75c3ecc6d627b30ac6e2f8cd2",
+     "score": 1210,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 175,
+     "lastActionAt": "2026-10-20T23:15:49.000Z"
+    },
+    {
+     "tokenId": "0x0100000000001f0d00000500000000010000000001c7b6dd00f96b0c001d1681",
+     "owner": "0x035641a1cdd8680a51ec9db2d4e60440644efd2200b94d66c750c820354b6c23",
+     "score": 395,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 53,
+     "lastActionAt": "2026-10-20T22:06:19.000Z"
+    },
+    {
+     "tokenId": "0x01000000000017e400000500000000010000000001c7dcf200fe815200121a81",
+     "owner": "0x035641a1cdd8680a51ec9db2d4e60440644efd2200b94d66c750c820354b6c23",
+     "score": 344,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 71,
+     "lastActionAt": "2026-10-20T20:20:23.000Z"
+    },
+    {
+     "tokenId": "0x0100000000001f0d00000500000000010000000001c7b6de00f96b1e00146241",
+     "owner": "0x01c9f001de664f0cd5b9e22fbb013865c2ca68c75c3ecc6d627b30ac6e2f8cd2",
+     "score": 150,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 27,
+     "lastActionAt": "2026-10-20T22:30:39.000Z"
+    },
+    {
+     "tokenId": "0x01000000000017e400000500000000010000000001c7c74a00fb92fa000da901",
+     "owner": "0x01c9f001de664f0cd5b9e22fbb013865c2ca68c75c3ecc6d627b30ac6e2f8cd2",
+     "score": 149,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 33,
+     "lastActionAt": "2026-10-16T23:46:45.000Z"
+    },
+    {
+     "tokenId": "0x010000000000160900000500000000010000000001c7dc9f00fe76100000bcc1",
+     "owner": "0x01a8eff8d0d8f4a13b19d8344963fd1718602bc6cbd474e12662f0d53063a314",
+     "score": 78,
+     "gameOver": false,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 0,
+     "actionCount": 17,
+     "lastActionAt": "2026-10-20T18:44:35.000Z"
+    },
+    {
+     "tokenId": "0x0100000000001ec400000500000000010000000001c7b6df00f96b41000b3561",
+     "owner": "0x03c0f67740e3fe298a52fe75dd24b4981217406f133e0835331379731b67dc92",
+     "score": 36,
+     "gameOver": false,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 0,
+     "actionCount": 8,
+     "lastActionAt": "2026-10-14T20:08:42.000Z"
+    },
+    {
+     "tokenId": "0x010000000000135100000500000000010000000001c7bf6e00fa87bd000aaea1",
+     "owner": "0x0689701974d95364aad9c2306bc322a40a27fb775b0c97733fd0e36e900b1878",
+     "score": 35,
+     "gameOver": false,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 0,
+     "actionCount": 8,
+     "lastActionAt": "2026-10-15T14:16:57.000Z"
+    },
+    {
+     "tokenId": "0x010000000000160900000500000000010000000001c7bb2500f9f864001f9121",
+     "owner": "0x01a8eff8d0d8f4a13b19d8344963fd1718602bc6cbd474e12662f0d53063a314",
+     "score": 27,
+     "gameOver": false,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 0,
+     "actionCount": 8,
+     "lastActionAt": "2026-10-14T19:57:17.000Z"
+    },
+    {
+     "tokenId": "0x010000000000160900000500000000010000000001c7db2b00fe45bb001c8861",
+     "owner": "0x01a8eff8d0d8f4a13b19d8344963fd1718602bc6cbd474e12662f0d53063a314",
+     "score": 25,
+     "gameOver": false,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 0,
+     "actionCount": 5,
+     "lastActionAt": "2026-10-20T12:28:12.000Z"
+    },
+    {
+     "tokenId": "0x010000000000160900000500000000010000000001c7b76900f97da20013fae1",
+     "owner": "0x01a8eff8d0d8f4a13b19d8344963fd1718602bc6cbd474e12662f0d53063a314",
+     "score": 17,
+     "gameOver": false,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 0,
+     "actionCount": 3,
+     "lastActionAt": "2026-10-14T03:54:43.000Z"
+    },
+    {
+     "tokenId": "0x010000000000135100000500000000010000000001c7b92300f9b7960006d341",
+     "owner": "0x058239a361dc46964dd34abe922d07f12a1aaed1a272bbd54b33b1e7a8b77563",
+     "score": 11,
+     "gameOver": false,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 0,
+     "actionCount": 4,
+     "lastActionAt": "2026-10-14T11:17:09.000Z"
+    },
+    {
+     "tokenId": "0x0100000000000f0000000500000000010000000001c7bd8800fa48470015c0a1",
+     "owner": "0x043d9847de514744a4b12cf60c6d611f2a224d29ea71b444da2000b72f0726ea",
+     "score": 4,
+     "gameOver": false,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 0,
+     "actionCount": 1,
+     "lastActionAt": "2026-10-15T06:00:33.000Z"
+    }
+   ],
+   "ranks": {
+    "250": {
+     "score": 250,
+     "rank": 5,
+     "total": 6
+    },
+    "500": {
+     "score": 500,
+     "rank": 3,
+     "total": 6
+    },
+    "783": {
+     "score": 783,
+     "rank": 3,
+     "total": 6
+    },
+    "988": {
+     "score": 988,
+     "rank": 3,
+     "total": 6
+    }
+   }
+  },
+  "6": {
+   "total": 9,
+   "top": [
+    {
+     "tokenId": "0x000000000000000000000600000000020000000001c7f8c501025da600156be1",
+     "owner": "0x04ebbee02cd68cbdee16b4d60932264cb195341d5adb82870a5d233b980bb622",
+     "score": 279,
+     "gameOver": true,
+     "settled": true,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 42,
+     "lastActionAt": "2026-10-25T18:56:46.000Z"
+    },
+    {
+     "tokenId": "0x000000000000000000000600000000020708000001c7da1c00fe20fc00137201",
+     "owner": "0x0689701974d95364aad9c2306bc322a40a27fb775b0c97733fd0e36e900b1878",
+     "score": 188,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 44,
+     "lastActionAt": "2026-10-20T08:07:09.000Z"
+    },
+    {
+     "tokenId": "0x000000000000000000000600000000020708000001c7d9f300fe1b95001724a1",
+     "owner": "0x0689701974d95364aad9c2306bc322a40a27fb775b0c97733fd0e36e900b1878",
+     "score": 164,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 21,
+     "lastActionAt": "2026-10-20T07:51:56.000Z"
+    },
+    {
+     "tokenId": "0x000000000000000000000600000000020708000001c7c06e00faa8d4000009c1",
+     "owner": "0x0689701974d95364aad9c2306bc322a40a27fb775b0c97733fd0e36e900b1878",
+     "score": 113,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 25,
+     "lastActionAt": "2026-10-15T19:31:21.000Z"
+    },
+    {
+     "tokenId": "0x000000000000000000000600000000020708000001c7da2700fe225c00133ce1",
+     "owner": "0x0689701974d95364aad9c2306bc322a40a27fb775b0c97733fd0e36e900b1878",
+     "score": 102,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 23,
+     "lastActionAt": "2026-10-20T08:11:28.000Z"
+    },
+    {
+     "tokenId": "0x000000000000000000000600000000020708000001c7d9ef00fe1af8000bbb41",
+     "owner": "0x0689701974d95364aad9c2306bc322a40a27fb775b0c97733fd0e36e900b1878",
+     "score": 96,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 16,
+     "lastActionAt": "2026-10-20T07:15:03.000Z"
+    },
+    {
+     "tokenId": "0x000000000000000000000600000000020708000001c7da1800fe206b0014d241",
+     "owner": "0x0689701974d95364aad9c2306bc322a40a27fb775b0c97733fd0e36e900b1878",
+     "score": 64,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 16,
+     "lastActionAt": "2026-10-20T07:56:15.000Z"
+    },
+    {
+     "tokenId": "0x000000000000000000000600000000020000000001c7db2e00fe462800114e41",
+     "owner": "0x0689701974d95364aad9c2306bc322a40a27fb775b0c97733fd0e36e900b1878",
+     "score": 33,
+     "gameOver": false,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 0,
+     "actionCount": 8,
+     "lastActionAt": "2026-10-20T12:32:31.000Z"
+    },
+    {
+     "tokenId": "0x000000000000000000000600000000020708000001c7c12900fac20800093b01",
+     "owner": "0x0689701974d95364aad9c2306bc322a40a27fb775b0c97733fd0e36e900b1878",
+     "score": 29,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 12,
+     "lastActionAt": "2026-10-15T21:31:47.000Z"
+    }
+   ],
+   "ranks": {
+    "250": {
+     "score": 250,
+     "rank": 2,
+     "total": 8
+    },
+    "500": {
+     "score": 500,
+     "rank": 1,
+     "total": 8
+    },
+    "783": {
+     "score": 783,
+     "rank": 1,
+     "total": 8
+    },
+    "988": {
+     "score": 988,
+     "rank": 1,
+     "total": 8
+    }
+   }
+  },
+  "7": {
+   "total": 1,
+   "top": [
+    {
+     "tokenId": "0x0600000000000000000007000000000304eba00001c7ccae00fc51100011d0a1",
+     "owner": "0x07b7598d4556649e0e9d0c9d8c7bed5628e29db5db669afa2eb84394a9bdd32e",
+     "score": 1,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 2,
+     "actionCount": 1,
+     "lastActionAt": "2026-10-17T22:40:27.000Z"
+    }
+   ],
+   "ranks": {
+    "250": {
+     "score": 250,
+     "rank": 1,
+     "total": 1
+    },
+    "500": {
+     "score": 500,
+     "rank": 1,
+     "total": 1
+    },
+    "783": {
+     "score": 783,
+     "rank": 1,
+     "total": 1
+    },
+    "988": {
+     "score": 988,
+     "rank": 1,
+     "total": 1
+    }
+   }
+  },
+  "8": {
+   "total": 1,
+   "top": [
+    {
+     "tokenId": "0x000000000000000000000800000000000000000001c7cd6400fc69fa00066501",
+     "owner": "0x0116e9632900bb2360af0bb541c3d358293107d7695c55b2bd00ab67dce9299b",
+     "score": 4,
+     "gameOver": true,
+     "settled": true,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 4,
+     "lastActionAt": "2026-10-18T01:41:14.000Z"
+    }
+   ],
+   "ranks": {
+    "250": {
+     "score": 250,
+     "rank": 1,
+     "total": 1
+    },
+    "500": {
+     "score": 500,
+     "rank": 1,
+     "total": 1
+    },
+    "783": {
+     "score": 783,
+     "rank": 1,
+     "total": 1
+    },
+    "988": {
+     "score": 988,
+     "rank": 1,
+     "total": 1
+    }
+   }
+  },
+  "9": {
+   "total": 24,
+   "top": [
+    {
+     "tokenId": "0x0600000000000000000009000000000703aac00001c7e24a00ff38bb00111aa1",
+     "owner": "0x05a534fb9390653a240d31f00ce0fd96816edc0eb182e8146675c59f1f5b6c96",
+     "score": 371,
+     "gameOver": false,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 0,
+     "actionCount": 42,
+     "lastActionAt": "2026-10-21T19:04:27.000Z"
+    },
+    {
+     "tokenId": "0x0600000000000000000009000000000703a5400001c7e27600ff3e91000736c1",
+     "owner": "0x059a6fd673a4eccf9d437fbc7c17fe9dbeb64c7eacd3a2f09ccbb7c53f3f2387",
+     "score": 257,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 35,
+     "lastActionAt": "2026-10-21T22:06:50.000Z"
+    },
+    {
+     "tokenId": "0x06000000000000000000090000000007046a400001c7dc4e00fe6b28000b2281",
+     "owner": "0x05f4fcfb149bc0b62b141fb547d39371647545b7583fd13c8954e22a645f31d9",
+     "score": 128,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 27,
+     "lastActionAt": "2026-10-21T09:06:34.000Z"
+    },
+    {
+     "tokenId": "0x06000000000000000000090000000007044f200001c7dd2700fe88830073b281",
+     "owner": "0x036d553f63fc9b3bdc5d0cd3ceb7a83a4b36a2b76c8f097914a2a49f093d7f96",
+     "score": 111,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 14,
+     "lastActionAt": "2026-10-20T23:22:38.000Z"
+    },
+    {
+     "tokenId": "0x06000000000000000000090000000007044f200001c7dd2700fe88830093b281",
+     "owner": "0x036d553f63fc9b3bdc5d0cd3ceb7a83a4b36a2b76c8f097914a2a49f093d7f96",
+     "score": 108,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 12,
+     "lastActionAt": "2026-10-21T09:03:36.000Z"
+    },
+    {
+     "tokenId": "0x06000000000000000000090000000007046a400001c7dc4e00fe6b28002b2281",
+     "owner": "0x05f4fcfb149bc0b62b141fb547d39371647545b7583fd13c8954e22a645f31d9",
+     "score": 69,
+     "gameOver": false,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 0,
+     "actionCount": 17,
+     "lastActionAt": "2026-10-21T09:12:45.000Z"
+    },
+    {
+     "tokenId": "0x0600000000000000000009000000000703a5400001c7e27600ff3e91004736c1",
+     "owner": "0x059a6fd673a4eccf9d437fbc7c17fe9dbeb64c7eacd3a2f09ccbb7c53f3f2387",
+     "score": 68,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 23,
+     "lastActionAt": "2026-10-21T21:56:03.000Z"
+    },
+    {
+     "tokenId": "0x06000000000000000000090000000007044f200001c7dd2700fe88830053b281",
+     "owner": "0x036d553f63fc9b3bdc5d0cd3ceb7a83a4b36a2b76c8f097914a2a49f093d7f96",
+     "score": 57,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 9,
+     "lastActionAt": "2026-10-20T22:51:54.000Z"
+    },
+    {
+     "tokenId": "0x0600000000000000000009000000000703cee00001c7e12900ff11a200086141",
+     "owner": "0x0689701974d95364aad9c2306bc322a40a27fb775b0c97733fd0e36e900b1878",
+     "score": 56,
+     "gameOver": false,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 0,
+     "actionCount": 11,
+     "lastActionAt": "2026-10-21T14:06:37.000Z"
+    },
+    {
+     "tokenId": "0x06000000000000000000090000000007044f200001c7dd2700fe88830013b281",
+     "owner": "0x036d553f63fc9b3bdc5d0cd3ceb7a83a4b36a2b76c8f097914a2a49f093d7f96",
+     "score": 41,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 13,
+     "lastActionAt": "2026-10-20T23:32:32.000Z"
+    },
+    {
+     "tokenId": "0x060000000000000000000900000000070364200001c7e47f00ff85db000763c1",
+     "owner": "0x00dc84f990f610141b5eae680214f06bf01bc1c48e3cca6743528293a2d9c0db",
+     "score": 29,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 11,
+     "lastActionAt": "2026-10-22T04:17:37.000Z"
+    },
+    {
+     "tokenId": "0x0600000000000000000009000000000703a5400001c7e27600ff3e91006736c1",
+     "owner": "0x059a6fd673a4eccf9d437fbc7c17fe9dbeb64c7eacd3a2f09ccbb7c53f3f2387",
+     "score": 22,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 5,
+     "lastActionAt": "2026-10-21T21:49:05.000Z"
+    },
+    {
+     "tokenId": "0x0600000000000000000009000000000703a5400001c7e27600ff3e91008736c1",
+     "owner": "0x059a6fd673a4eccf9d437fbc7c17fe9dbeb64c7eacd3a2f09ccbb7c53f3f2387",
+     "score": 22,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 7,
+     "lastActionAt": "2026-10-21T21:52:46.000Z"
+    },
+    {
+     "tokenId": "0x060000000000000000000900000000070399c00001c7e2d200ff4b2100152b61",
+     "owner": "0x077b8ed8356a7c1f0903fc4ba6e15f9b09cf437ce04f21b2cbf32dc2790183d0",
+     "score": 20,
+     "gameOver": false,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 0,
+     "actionCount": 3,
+     "lastActionAt": "2026-10-21T21:10:48.000Z"
+    },
+    {
+     "tokenId": "0x0600000000000000000009000000000703a5400001c7e27600ff3e91002736c1",
+     "owner": "0x059a6fd673a4eccf9d437fbc7c17fe9dbeb64c7eacd3a2f09ccbb7c53f3f2387",
+     "score": 15,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 5,
+     "lastActionAt": "2026-10-21T21:51:05.000Z"
+    },
+    {
+     "tokenId": "0x060000000000000000000900000000070385600001c7e37500ff61ba001cc521",
+     "owner": "0x040372f31a574cf205ef2e9eeff66f6e09544290b118b1180babb3d05581afca",
+     "score": 11,
+     "gameOver": false,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 0,
+     "actionCount": 3,
+     "lastActionAt": "2026-10-21T23:51:20.000Z"
+    },
+    {
+     "tokenId": "0x0600000000000000000009000000000703e9000001c7e05800fef505000efee1",
+     "owner": "0x03a9183137b77391d242dd36c4a8426b1443992afcd1f2417e44f33c23ec61dd",
+     "score": 9,
+     "gameOver": false,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 0,
+     "actionCount": 2,
+     "lastActionAt": "2026-10-21T10:34:50.000Z"
+    },
+    {
+     "tokenId": "0x06000000000000000000090000000007044f200001c7dd2700fe88830033b281",
+     "owner": "0x036d553f63fc9b3bdc5d0cd3ceb7a83a4b36a2b76c8f097914a2a49f093d7f96",
+     "score": 7,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 3,
+     "lastActionAt": "2026-10-21T08:47:53.000Z"
+    },
+    {
+     "tokenId": "0x060000000000000000000900000000070374400001c7e3fe00ff7431000b7081",
+     "owner": "0x0459fdbca240036fcccdaacc0b233aaa599a165988de3f0478bea056a48f2b00",
+     "score": 6,
+     "gameOver": false,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 0,
+     "actionCount": 1,
+     "lastActionAt": "2026-10-22T02:08:54.000Z"
+    },
+    {
+     "tokenId": "0x060000000000000000000900000000070385600001c7e37500ff61ba003cc521",
+     "owner": "0x040372f31a574cf205ef2e9eeff66f6e09544290b118b1180babb3d05581afca",
+     "score": 6,
+     "gameOver": false,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 0,
+     "actionCount": 1,
+     "lastActionAt": "2026-10-21T23:53:04.000Z"
+    },
+    {
+     "tokenId": "0x0600000000000000000009000000000703eac00001c7e04a00fef3350006c201",
+     "owner": "0x036d553f63fc9b3bdc5d0cd3ceb7a83a4b36a2b76c8f097914a2a49f093d7f96",
+     "score": 5,
+     "gameOver": false,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 0,
+     "actionCount": 1,
+     "lastActionAt": "2026-10-21T10:19:06.000Z"
+    },
+    {
+     "tokenId": "0x06000000000000000000090000000007036f800001c7e42400ff795900075f81",
+     "owner": "0x07a87a0766a14fb3f9abecbc0c6291db70dc077d63ab6cbb13dcbc1801d162fd",
+     "score": 4,
+     "gameOver": false,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 0,
+     "actionCount": 2,
+     "lastActionAt": "2026-10-22T02:52:55.000Z"
+    },
+    {
+     "tokenId": "0x06000000000000000000090000000007036f800001c7e42400ff795900275f81",
+     "owner": "0x07a87a0766a14fb3f9abecbc0c6291db70dc077d63ab6cbb13dcbc1801d162fd",
+     "score": 4,
+     "gameOver": false,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 0,
+     "actionCount": 2,
+     "lastActionAt": "2026-10-22T03:18:34.000Z"
+    },
+    {
+     "tokenId": "0x06000000000000000000090000000007036f800001c7e42400ff795900475f81",
+     "owner": "0x07a87a0766a14fb3f9abecbc0c6291db70dc077d63ab6cbb13dcbc1801d162fd",
+     "score": 1,
+     "gameOver": false,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 0,
+     "actionCount": 1,
+     "lastActionAt": "2026-10-22T03:36:28.000Z"
+    }
+   ],
+   "ranks": {
+    "250": {
+     "score": 250,
+     "rank": 2,
+     "total": 12
+    },
+    "500": {
+     "score": 500,
+     "rank": 1,
+     "total": 12
+    },
+    "783": {
+     "score": 783,
+     "rank": 1,
+     "total": 12
+    },
+    "988": {
+     "score": 988,
+     "rank": 1,
+     "total": 12
+    }
+   }
+  },
+  "10": {
+   "total": 392,
+   "top": [
+    {
+     "tokenId": "0x020000000000000000000a00000000000000000001c7ea0d01004b5b00150b01",
+     "owner": "0x007540b6c345dd20f30d8eef5979fe4e0e34fc221046cf30a8dc94451fd71f3a",
+     "score": 1637,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 214,
+     "lastActionAt": "2026-10-23T18:40:11.000Z"
+    },
+    {
+     "tokenId": "0x020000000000000000000a00000000000000000001c7ed290100bb39000296c1",
+     "owner": "0x0729956262c2bc64d68c3f4880fdd0c40a146732ffd7318bd7e0c0c10ae8feb9",
+     "score": 1570,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 143,
+     "lastActionAt": "2026-10-23T18:33:55.000Z"
+    },
+    {
+     "tokenId": "0x020000000000000000000a00000000000000000001c7e76200ffeb8100176521",
+     "owner": "0x04fc6bcea9b03092cd953b90c921f7aef50020ffaed1cb729bd3210396b57afa",
+     "score": 1083,
+     "gameOver": false,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 0,
+     "actionCount": 110,
+     "lastActionAt": "2026-10-22T17:13:42.000Z"
+    },
+    {
+     "tokenId": "0x020000000000000000000a00000000000000000001c7e73000ffe46e0002ce41",
+     "owner": "0x003b1e83f8662f277b86a9baa13f3b78c04aafe742e149c3e0a50d6027ebb37f",
+     "score": 1014,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 102,
+     "lastActionAt": "2026-10-22T16:55:20.000Z"
+    },
+    {
+     "tokenId": "0x020000000000000000000a00000000000000000001c7e80d0100038700174741",
+     "owner": "0x06013c2915ae97d21f8eb88ee03fa72d9a4803c1ed258935d87bc93f260b0196",
+     "score": 1014,
+     "gameOver": false,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 0,
+     "actionCount": 116,
+     "lastActionAt": "2026-10-22T20:06:41.000Z"
+    },
+    {
+     "tokenId": "0x020000000000000000000a00000000000000000001c7ea8b01005d1a00091981",
+     "owner": "0x040d1751c1a470b6ffa3136a9e51eeaa2f15707d5e087b36cbe1f3a02b96f981",
+     "score": 995,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 159,
+     "lastActionAt": "2026-10-23T08:14:03.000Z"
+    },
+    {
+     "tokenId": "0x020000000000000000000a00000000000000000001c7f7c301023942000ab721",
+     "owner": "0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
+     "score": 988,
+     "gameOver": true,
+     "settled": true,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 131,
+     "lastActionAt": "2026-10-25T14:38:47.000Z"
+    },
+    {
+     "tokenId": "0x020000000000000000000a00000000000000000001c7f7b2010236c300120941",
+     "owner": "0x04ca31f839b32ffd48a958693c4b22b02916142c3bea8d62cd59ffcf94f21b32",
+     "score": 987,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 102,
+     "lastActionAt": "2026-10-25T14:46:23.000Z"
+    },
+    {
+     "tokenId": "0x020000000000000000000a00000000000000000001c7f19601015a960008fd61",
+     "owner": "0x011a38b6ac19b58545cfc10d72cde8c7dbfd9346670cbbd410026ff1ef3f1e76",
+     "score": 963,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 89,
+     "lastActionAt": "2026-10-24T12:24:04.000Z"
+    },
+    {
+     "tokenId": "0x020000000000000000000a00000000000000000001c7ea73010059b0000d6481",
+     "owner": "0x07cc8f090c34ab297bbc5ce87a1808c5945cf1a0d298cfb1bdf5252a009d4a3c",
+     "score": 869,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 103,
+     "lastActionAt": "2026-10-23T05:54:21.000Z"
+    },
+    {
+     "tokenId": "0x020000000000000000000a00000000000000000001c7f39b0101a34400002c61",
+     "owner": "0x053387790ea7e36ad8e848f28a58a9f9b60e934e78cc46a835ba7386df25d8b5",
+     "score": 845,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 111,
+     "lastActionAt": "2026-10-24T21:31:34.000Z"
+    },
+    {
+     "tokenId": "0x020000000000000000000a00000000000000000001c7ea3a010051b2001df641",
+     "owner": "0x07cc8f090c34ab297bbc5ce87a1808c5945cf1a0d298cfb1bdf5252a009d4a3c",
+     "score": 824,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 106,
+     "lastActionAt": "2026-10-23T05:02:38.000Z"
+    },
+    {
+     "tokenId": "0x020000000000000000000a00000000000000000001c7ea0b01004b3000026c21",
+     "owner": "0x05960dbe5371de91d15babb3a362c7d4e39fbcd094994f6c8581e17c951b50ee",
+     "score": 798,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 81,
+     "lastActionAt": "2026-10-23T04:08:38.000Z"
+    },
+    {
+     "tokenId": "0x020000000000000000000a00000000000000000001c7f17c010156e700133741",
+     "owner": "0x011a38b6ac19b58545cfc10d72cde8c7dbfd9346670cbbd410026ff1ef3f1e76",
+     "score": 790,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 82,
+     "lastActionAt": "2026-10-24T11:55:54.000Z"
+    },
+    {
+     "tokenId": "0x020000000000000000000a00000000000000000001c7f7ee01023f370014e201",
+     "owner": "0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
+     "score": 783,
+     "gameOver": true,
+     "settled": true,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 131,
+     "lastActionAt": "2026-10-25T16:05:40.000Z"
+    },
+    {
+     "tokenId": "0x020000000000000000000a00000000000000000001c7f73601022557001ec241",
+     "owner": "0x053387790ea7e36ad8e848f28a58a9f9b60e934e78cc46a835ba7386df25d8b5",
+     "score": 742,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 56,
+     "lastActionAt": "2026-10-25T12:24:04.000Z"
+    },
+    {
+     "tokenId": "0x020000000000000000000a00000000000000000001c7f832010248e00016ef81",
+     "owner": "0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
+     "score": 727,
+     "gameOver": true,
+     "settled": true,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 146,
+     "lastActionAt": "2026-10-25T16:32:12.000Z"
+    },
+    {
+     "tokenId": "0x020000000000000000000a00000000000000000001c7f5590101e1fc000322c1",
+     "owner": "0x04ca31f839b32ffd48a958693c4b22b02916142c3bea8d62cd59ffcf94f21b32",
+     "score": 708,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 62,
+     "lastActionAt": "2026-10-25T04:24:04.000Z"
+    },
+    {
+     "tokenId": "0x020000000000000000000a00000000000000000001c7ed8f0100c996001719c1",
+     "owner": "0x07902b1ca336973df3345a5718fd4f24d5bbdf120c4232723644e5e1ceb75ef0",
+     "score": 705,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 124,
+     "lastActionAt": "2026-10-23T19:43:51.000Z"
+    },
+    {
+     "tokenId": "0x020000000000000000000a00000000000000000001c7f56c0101e4bd0004bbc1",
+     "owner": "0x04ca31f839b32ffd48a958693c4b22b02916142c3bea8d62cd59ffcf94f21b32",
+     "score": 701,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 71,
+     "lastActionAt": "2026-10-25T04:50:21.000Z"
+    },
+    {
+     "tokenId": "0x020000000000000000000a00000000000000000001c7e7a900fff56e00132681",
+     "owner": "0x06013c2915ae97d21f8eb88ee03fa72d9a4803c1ed258935d87bc93f260b0196",
+     "score": 697,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 78,
+     "lastActionAt": "2026-10-22T18:26:27.000Z"
+    },
+    {
+     "tokenId": "0x020000000000000000000a00000000000000000001c7f64e010204a80006b2e1",
+     "owner": "0x061d598f806fac13da93722bc893383eb77ba509d2fcef7cba9853abc5b7bb4c",
+     "score": 666,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 78,
+     "lastActionAt": "2026-10-25T08:46:09.000Z"
+    },
+    {
+     "tokenId": "0x020000000000000000000a00000000000000000001c7eaf001006b59000367a1",
+     "owner": "0x058e6cacec273b5e7bbac125066186ae32d71b804acef860a9108f8e299a54eb",
+     "score": 639,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 70,
+     "lastActionAt": "2026-10-23T08:04:37.000Z"
+    },
+    {
+     "tokenId": "0x020000000000000000000a00000000000000000001c7e99801003ae9000a7841",
+     "owner": "0x030be6e438b2d0a1b18045bdf83b91f45fa9eb2f0c49d8835c99ed1a1a482462",
+     "score": 616,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 71,
+     "lastActionAt": "2026-10-23T02:14:29.000Z"
+    },
+    {
+     "tokenId": "0x020000000000000000000a00000000000000000001c7f334010194c100079301",
+     "owner": "0x05e1eb256e4a1486f79d0e6cb419e63288f41c38924abb8e4371b936db661942",
+     "score": 615,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 70,
+     "lastActionAt": "2026-10-24T19:19:48.000Z"
+    }
+   ],
+   "ranks": {
+    "250": {
+     "score": 250,
+     "rank": 95,
+     "total": 380
+    },
+    "500": {
+     "score": 500,
+     "rank": 34,
+     "total": 380
+    },
+    "783": {
+     "score": 783,
+     "rank": 13,
+     "total": 380
+    },
+    "988": {
+     "score": 988,
+     "rank": 5,
+     "total": 380
+    }
+   }
+  },
+  "11": {
+   "total": 2,
+   "top": [
+    {
+     "tokenId": "0x000000000000000000000b00000000000000000001c7e17a00ff1c750016e161",
+     "owner": "0x048677bd8b4e9a2c04c613402327d3a298e586e4a256c8760427e2a68e5ae941",
+     "score": 231,
+     "gameOver": true,
+     "settled": true,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 52,
+     "lastActionAt": "2026-10-21T15:33:39.000Z"
+    },
+    {
+     "tokenId": "0x000000000000000000000b00000000000000000001c7e14100ff14c7001d1ae1",
+     "owner": "0x048677bd8b4e9a2c04c613402327d3a298e586e4a256c8760427e2a68e5ae941",
+     "score": 200,
+     "gameOver": true,
+     "settled": true,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 25,
+     "lastActionAt": "2026-10-21T14:37:31.000Z"
+    }
+   ],
+   "ranks": {
+    "250": {
+     "score": 250,
+     "rank": 1,
+     "total": 2
+    },
+    "500": {
+     "score": 500,
+     "rank": 1,
+     "total": 2
+    },
+    "783": {
+     "score": 783,
+     "rank": 1,
+     "total": 2
+    },
+    "988": {
+     "score": 988,
+     "rank": 1,
+     "total": 2
+    }
+   }
+  },
+  "12": {
+   "total": 1716,
+   "top": [
+    {
+     "tokenId": "0x060000000000000000000c00000000050205600001c7e7b900fff7a300006d41",
+     "owner": "0x0390f9a89ae042ac48be50bcf0974463fa79318449db9f5355502210b488d665",
+     "score": 2214,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 242,
+     "lastActionAt": "2026-10-22T18:56:49.000Z"
+    },
+    {
+     "tokenId": "0x060000000000000000000c0000000004021b400001c7e70a00ffdf1c0011bc41",
+     "owner": "0x04084713b498e0c10e06e239bd19276d2642ca582b22baf1c215f5c515cde950",
+     "score": 1935,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 169,
+     "lastActionAt": "2026-10-22T16:31:42.000Z"
+    },
+    {
+     "tokenId": "0x060000000000000000000c0000000005020c000001c7e78400fff04e00164f21",
+     "owner": "0x0673441e27f0e41a42ba50b17d95dce4dd033fa162afdced67cac43bd22015a8",
+     "score": 1684,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 151,
+     "lastActionAt": "2026-10-22T17:50:32.000Z"
+    },
+    {
+     "tokenId": "0x060000000000000000000c0000000005013c600001c7ee010100d99d0038e721",
+     "owner": "0x063ddda6bc4d89a93b1800a85a60c0b5261f6e19b21128b4773e92954d176eb6",
+     "score": 1643,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 144,
+     "lastActionAt": "2026-10-23T22:08:11.000Z"
+    },
+    {
+     "tokenId": "0x060000000000000000000c00000000050090400001c7f36201019b5a001cdee1",
+     "owner": "0x04a1d6de49dd1523a51eaa4ea5e6051ccf69cf00eec1ee31ab2a68c8c9c9c9c9",
+     "score": 1626,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 180,
+     "lastActionAt": "2026-10-24T20:20:15.000Z"
+    },
+    {
+     "tokenId": "0x060000000000000000000c00000000050082800001c7f3d00101aacb001cafc1",
+     "owner": "0x02f084e72ee7c78a86bb20efe470dc56d23a763bab1f4b124114b57202feefad",
+     "score": 1620,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 139,
+     "lastActionAt": "2026-10-24T22:09:27.000Z"
+    },
+    {
+     "tokenId": "0x060000000000000000000c00000000050212a00001c7e74f00ffe8db0011e541",
+     "owner": "0x059748c926521dfdac24f3b96c35e2ed7b9d1107db974d3eec957fe2fdacc930",
+     "score": 1611,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 119,
+     "lastActionAt": "2026-10-22T18:16:45.000Z"
+    },
+    {
+     "tokenId": "0x060000000000000000000c00000000070166000001c7ecb40100aaec006baf81",
+     "owner": "0x074cb047813572226c2ce68ce6795daf1f9fb0fad52e079e036170248926efb0",
+     "score": 1602,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 196,
+     "lastActionAt": "2026-10-24T07:37:38.000Z"
+    },
+    {
+     "tokenId": "0x060000000000000000000c0000000004001c000001c7f70401021e3d004221c1",
+     "owner": "0x05f19bb6040f4ac776f59327ffd94cbce87f21e98500c8f95e7ef0cd2b9dc0c7",
+     "score": 1601,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 193,
+     "lastActionAt": "2026-10-25T12:48:41.000Z"
+    },
+    {
+     "tokenId": "0x060000000000000000000c000000000500b3e00001c7f24501017329001c5741",
+     "owner": "0x0660c6d0ebad3e2b5768beca7c611724d597976503d57af994d60642406ac491",
+     "score": 1601,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 137,
+     "lastActionAt": "2026-10-25T13:24:17.000Z"
+    },
+    {
+     "tokenId": "0x060000000000000000000c00000000050159c00001c7ed160100b8a70026c7c1",
+     "owner": "0x05692519a985d89831c2068202f7f5b523daed27482418852a1745860b56fde1",
+     "score": 1591,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 145,
+     "lastActionAt": "2026-10-23T18:02:15.000Z"
+    },
+    {
+     "tokenId": "0x060000000000000000000c00000000050207800001c7e7a800fff5480008dde1",
+     "owner": "0x02839481f3754f6ae9d45107178ebd497898e358c3f846f73189fcafa44e2af7",
+     "score": 1580,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 170,
+     "lastActionAt": "2026-10-22T18:24:48.000Z"
+    },
+    {
+     "tokenId": "0x060000000000000000000c00000000070167e00001c7eca50100a8b90022f9a1",
+     "owner": "0x02aee82483aa8b3e943f1c905036a5a87376048abaaa09629bbcdaa5fa42c0a3",
+     "score": 1522,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 134,
+     "lastActionAt": "2026-10-24T08:31:16.000Z"
+    },
+    {
+     "tokenId": "0x060000000000000000000c00000000040217600001c7e72900ffe38800202861",
+     "owner": "0x00253407431f728299895516804ae67f581880154bd988a2f20e51c9911f60f1",
+     "score": 1518,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 170,
+     "lastActionAt": "2026-10-22T18:28:37.000Z"
+    },
+    {
+     "tokenId": "0x060000000000000000000c00000000070138c00001c7ee1e0100ddc7009362e1",
+     "owner": "0x05bd18cabd8efb4cca7c820302e589481f999d4cf054df1936383bc567fcfc1f",
+     "score": 1501,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 133,
+     "lastActionAt": "2026-10-24T02:05:23.000Z"
+    },
+    {
+     "tokenId": "0x060000000000000000000c00000000050215a00001c7e73700ffe57e001e7821",
+     "owner": "0x040e2c6deeec5d1fcf76bc7a57ae6439ddf16bbf422721de5f0fbd22d52162db",
+     "score": 1500,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 192,
+     "lastActionAt": "2026-10-22T17:10:08.000Z"
+    },
+    {
+     "tokenId": "0x060000000000000000000c00000000070168000001c7eca40100a89e007b1281",
+     "owner": "0x010e303b3310d9190ebe0646aa9f782876a9b8e7127ed4c1271343dc72abaf69",
+     "score": 1482,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 167,
+     "lastActionAt": "2026-10-24T00:10:30.000Z"
+    },
+    {
+     "tokenId": "0x060000000000000000000c00000000050188800001c7eba00100840b001f0e81",
+     "owner": "0x01ff8d209273b33c1e7d3d3458b67032d17c35ad04e2ffe51abf47aa41c05b84",
+     "score": 1453,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 148,
+     "lastActionAt": "2026-10-24T19:44:24.000Z"
+    },
+    {
+     "tokenId": "0x060000000000000000000c00000000070162e00001c7eccd0100ae5f008f35e1",
+     "owner": "0x002730428089fbf8900a2c5434773152035b6ce45fb2eb96aed0a0e9c71c8e91",
+     "score": 1444,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 123,
+     "lastActionAt": "2026-10-24T13:14:55.000Z"
+    },
+    {
+     "tokenId": "0x060000000000000000000c0000000005021c400001c7e70200ffde0f00103c21",
+     "owner": "0x0660c6d0ebad3e2b5768beca7c611724d597976503d57af994d60642406ac491",
+     "score": 1439,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 113,
+     "lastActionAt": "2026-10-22T19:12:09.000Z"
+    },
+    {
+     "tokenId": "0x060000000000000000000c0000000007020d200001c7e77b00ffef0200121b81",
+     "owner": "0x00956a70d9f00264fe034174396cb9ab1f0b17ac72b8317e2c460c056adff1e1",
+     "score": 1374,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 130,
+     "lastActionAt": "2026-10-22T17:39:17.000Z"
+    },
+    {
+     "tokenId": "0x060000000000000000000c000000000700b3600001c7f249010173c5003a67c1",
+     "owner": "0x05e1eb256e4a1486f79d0e6cb419e63288f41c38924abb8e4371b936db661942",
+     "score": 1372,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 108,
+     "lastActionAt": "2026-10-24T16:09:47.000Z"
+    },
+    {
+     "tokenId": "0x060000000000000000000c000000000400b3a00001c7f2470101736e005a45e1",
+     "owner": "0x00253407431f728299895516804ae67f581880154bd988a2f20e51c9911f60f1",
+     "score": 1371,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 161,
+     "lastActionAt": "2026-10-24T16:55:17.000Z"
+    },
+    {
+     "tokenId": "0x060000000000000000000c0000000007013f400001c7edea0100d67100901f81",
+     "owner": "0x00956a70d9f00264fe034174396cb9ab1f0b17ac72b8317e2c460c056adff1e1",
+     "score": 1371,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 122,
+     "lastActionAt": "2026-10-25T13:47:53.000Z"
+    },
+    {
+     "tokenId": "0x060000000000000000000c0000000005014e000001c7ed740100c5cc0087c4e1",
+     "owner": "0x01441b6c8809000b11adacd26d7c921e0fa94d65739bde4ec670c3fb38eaa25f",
+     "score": 1334,
+     "gameOver": true,
+     "settled": false,
+     "stuck": false,
+     "terminalReason": 1,
+     "actionCount": 125,
+     "lastActionAt": "2026-10-23T20:06:32.000Z"
+    }
+   ],
+   "ranks": {
+    "250": {
+     "score": 250,
+     "rank": 723,
+     "total": 1684
+    },
+    "500": {
+     "score": 500,
+     "rank": 356,
+     "total": 1684
+    },
+    "783": {
+     "score": 783,
+     "rank": 175,
+     "total": 1684
+    },
+    "988": {
+     "score": 988,
+     "rank": 104,
+     "total": 1684
+    }
+   }
+  }
+ }
+}
