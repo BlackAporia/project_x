@@ -82,8 +82,9 @@
     "rpcUrls": [
       "https://api.cartridge.gg/x/starknet/mainnet",
       "https://api.cartridge.gg/x/starknet/mainnet/rpc/v0_9",
-      "https://starknet-mainnet.public.blastapi.io/rpc/v0_9",
-      "https://rpc.starknet.lava.build"
+      "https://rpc.starknet.lava.build",
+      "https://starknet.drpc.org",
+      "https://starknet-mainnet.public.zan.top/rpc/v0_9"
     ],
     "selectors": {
       "get_session_epoch": "0x2286994281fb1102092fd26ee4e2d7f95fec51defce01860bbc5d4d857c2553",

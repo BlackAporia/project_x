@@ -10,8 +10,9 @@ export const MAINNET = {
   rpcUrls: list('STARKNET_RPC_URLS', [
     'https://api.cartridge.gg/x/starknet/mainnet/rpc/v0_9',
     'https://api.cartridge.gg/x/starknet/mainnet',
-    'https://starknet-mainnet.public.blastapi.io/rpc/v0_9',
     'https://rpc.starknet.lava.build',
+    'https://starknet.drpc.org',
+    'https://starknet-mainnet.public.zan.top/rpc/v0_9',
   ]),
   /** Cartridge RPC: also serves cartridge_addExecuteOutsideTransaction (paymaster + VRF wrapping) */
   cartridgeRpc: env('CARTRIDGE_RPC_URL', 'https://api.cartridge.gg/x/starknet/mainnet'),

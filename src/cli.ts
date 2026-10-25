@@ -150,7 +150,7 @@ async function main(): Promise<void> {
     }
     case 'play': {
       const { runPlayCommand } = await import('./commands/play.ts');
-      await runPlayCommand({
+      await reportPlayFailure(str(values.data, process.env.BOT_DATA_DIR ?? 'site/data'), runPlayCommand({
         mode: str(values.mode, process.env.BOT_MODE ?? 'practice') as 'practice' | 'practice-slot' | 'mainnet' | 'sim',
         minutes: num(values.minutes, Number(process.env.BOT_MINUTES ?? 20)),
         maxGames: num(values['max-games'], Number(process.env.BOT_MAX_GAMES ?? 50)),
@@ -161,7 +161,7 @@ async function main(): Promise<void> {
         frontend: str(values.frontend, '') || undefined,
         settingsId: values['settings-id'] !== undefined ? num(values['settings-id'], NaN) : process.env.PRACTICE_SETTINGS_ID ? Number(process.env.PRACTICE_SETTINGS_ID) : undefined,
         game: str(values.game, '') || undefined,
-      });
+      }), str(values.mode, process.env.BOT_MODE ?? 'practice'));
       break;
     }
     case 'discover': {
@@ -293,3 +293,15 @@ main().then(
     process.exit(1);
   },
 );
+
+/** A run that dies before playing (e.g. no RPC reachable) still tells the website why. */
+async function reportPlayFailure(dataDir: string, run: Promise<unknown>, mode: string): Promise<void> {
+  try {
+    await run;
+  } catch (e) {
+    const { DataStore } = await import('./runner/datastore.ts');
+    const msg = (e as Error).message.replace(/\s+/g, ' ');
+    new DataStore(dataDir).writeStatus({ updated: new Date().toISOString(), mode, running: false, runId: '', recent: [], message: `error: ${msg}`.slice(0, 400) });
+    throw e;
+  }
+}

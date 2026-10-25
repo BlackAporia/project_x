@@ -952,6 +952,11 @@ async function renderMonitor(runs) {
         )
         .join('')}</div>`;
     } else if (running && !played.length) result = '<p class="muted small">Результати з’являться після першої зіграної гри.</p>';
+    // a run that died before playing (no RPC, bad session...) leaves its error in status.json
+    const st = await window.botData?.load('status.json').catch(() => undefined);
+    if (st?.message?.startsWith('error:') && new Date(st.updated).getTime() >= since) {
+      result += `<p class="bad small">✗ Бот зупинився з помилкою: ${esc(st.message.slice(7, 300))}</p>`;
+    }
   }
   host.innerHTML = `
     <div class="mon-head">
