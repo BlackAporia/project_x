@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-24T09:09:05.170Z",
+ "updated": "2026-10-25T09:26:10.849Z",
  "source": "top 40 + 10 live games (Denshokan) read on-chain",
- "players": 43,
+ "players": 42,
  "aggregate": {
   "early": {
    "players": 3,
@@ -15,14 +15,14 @@
    }
   },
   "late": {
-   "players": 40,
+   "players": 39,
    "ratios": {
-    "str": 0.178,
-    "dex": 0.645,
-    "vit": 0.788,
-    "int": 0.043,
-    "wis": 0.074,
-    "cha": 0.175
+    "str": 0.181,
+    "dex": 0.646,
+    "vit": 0.795,
+    "int": 0.042,
+    "wis": 0.069,
+    "cha": 0.172
    }
   },
   "avgLevel": 42.8,
@@ -40,7 +40,7 @@
    ],
    [
     "Ghost Wand",
-    10
+    9
    ],
    [
     "Grimoire",
@@ -3007,35 +3007,35 @@
    "bagItems": 11
   },
   {
-   "tokenId": "2713877091499598330239949450874152723228615398043232715677760470221589294977",
+   "tokenId": "2713877091499598330239949450874152723227680784608696473267936669537743399841",
    "player": "v2 settings #7",
-   "xp": 1602,
-   "level": 40,
+   "xp": 1195,
+   "level": 34,
    "alive": false,
    "stats": {
-    "str": 5,
-    "dex": 34,
-    "vit": 22,
-    "int": 4,
-    "wis": 13,
-    "cha": 18,
-    "luck": 62
+    "str": 4,
+    "dex": 29,
+    "vit": 24,
+    "int": 5,
+    "wis": 12,
+    "cha": 26,
+    "luck": 79
    },
    "perLevel": {
-    "str": 0.05,
-    "dex": 0.775,
-    "vit": 0.4,
-    "int": 0.1,
-    "wis": 0.15,
-    "cha": 0.3
+    "str": 0.059,
+    "dex": 0.765,
+    "vit": 0.529,
+    "int": 0.118,
+    "wis": 0.118,
+    "cha": 0.324
    },
-   "gold": 354,
+   "gold": 326,
    "gear": [
     {
      "slot": "Weapon",
      "name": "Katana",
      "tier": 1,
-     "greatness": 16
+     "greatness": 9
     },
     {
      "slot": "Chest",
@@ -3045,9 +3045,9 @@
     },
     {
      "slot": "Head",
-     "name": "Demon Crown",
+     "name": "Ancient Helm",
      "tier": 1,
-     "greatness": 12
+     "greatness": 15
     },
     {
      "slot": "Waist",
@@ -3059,13 +3059,13 @@
      "slot": "Foot",
      "name": "Holy Greaves",
      "tier": 1,
-     "greatness": 20
+     "greatness": 18
     },
     {
      "slot": "Hand",
      "name": "Holy Gauntlets",
      "tier": 1,
-     "greatness": 20
+     "greatness": 17
     },
     {
      "slot": "Neck",
@@ -3082,83 +3082,6 @@
    ],
    "armorFilled": 5,
    "bagItems": 12
-  },
-  {
-   "tokenId": "2713877091499598330239949450874152723228625782636949785037869623500865213057",
-   "player": "v2 settings #7",
-   "xp": 1482,
-   "level": 38,
-   "alive": false,
-   "stats": {
-    "str": 5,
-    "dex": 25,
-    "vit": 36,
-    "int": 8,
-    "wis": 14,
-    "cha": 25,
-    "luck": 80
-   },
-   "perLevel": {
-    "str": 0.053,
-    "dex": 0.553,
-    "vit": 0.632,
-    "int": 0.105,
-    "wis": 0.237,
-    "cha": 0.342
-   },
-   "gold": 290,
-   "gear": [
-    {
-     "slot": "Weapon",
-     "name": "Ghost Wand",
-     "tier": 1,
-     "greatness": 15
-    },
-    {
-     "slot": "Chest",
-     "name": "Holy Chestplate",
-     "tier": 1,
-     "greatness": 19
-    },
-    {
-     "slot": "Head",
-     "name": "Ancient Helm",
-     "tier": 1,
-     "greatness": 19
-    },
-    {
-     "slot": "Waist",
-     "name": "War Belt",
-     "tier": 2,
-     "greatness": 20
-    },
-    {
-     "slot": "Foot",
-     "name": "Holy Greaves",
-     "tier": 1,
-     "greatness": 12
-    },
-    {
-     "slot": "Hand",
-     "name": "Dragonskin Gloves",
-     "tier": 2,
-     "greatness": 20
-    },
-    {
-     "slot": "Neck",
-     "name": "Pendant",
-     "tier": 1,
-     "greatness": 20
-    },
-    {
-     "slot": "Ring",
-     "name": "Titanium Ring",
-     "tier": 1,
-     "greatness": 20
-    }
-   ],
-   "armorFilled": 5,
-   "bagItems": 13
   },
   {
    "tokenId": "141108360855866449695477698527605505025917848963696372577158113739669505",
