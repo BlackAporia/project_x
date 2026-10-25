@@ -25,6 +25,7 @@ const COMMANDS: Record<string, string> = {
   ronke: 'Ronke Casino daily free games: status for the bot account, --claim to claim today\'s games',
   reach: 'Probability of reaching deep levels (multilevel splitting) for one or more policies (--policy a.json,b.json)',
   contract: 'Inspect live mainnet contracts: ABI and view calls (--address 0x.. --call name:arg,arg)',
+  'v2-verify': 'Dry-run verify_game for games (--game id,id) and print why settlement would revert',
   'v2-beasts': 'Check the bot\'s beast derivation and damage against real V2 games, packet by packet (--game id)',
   frontend: 'List the dungeons lootsurvivor.io offers now (new ones highlighted); writes data/frontend/dungeons.json',
 };
@@ -252,6 +253,11 @@ async function main(): Promise<void> {
       const { runContractCommand } = await import('./commands/contract.ts');
       const list = (v: unknown) => (Array.isArray(v) ? v : typeof v === 'string' ? [v] : []).flatMap((x) => String(x).split(/\s+/)).filter(Boolean);
       await runContractCommand({ addresses: list(values.address), calls: list(values.call), dataDir: str(values.data, process.env.BOT_DATA_DIR ?? 'site/data') });
+      break;
+    }
+    case 'v2-verify': {
+      const { runV2VerifyCheck } = await import('./commands/v2-beasts.ts');
+      await runV2VerifyCheck({ games: typeof values.game === 'string' ? values.game.split(',') : [] });
       break;
     }
     case 'v2-beasts': {

@@ -85,3 +85,23 @@ export async function runV2BeastsCommand(opts: { games: string[]; dataDir: strin
   for (const [k, v] of tally) console.log(`  ${k.padEnd(8)} ${v.ok}/${v.n}`);
   new DataStore(opts.dataDir).writeJson('v2-beasts.json', { updated: new Date().toISOString(), tally: Object.fromEntries(tally), games: out });
 }
+
+/** Dry-run verify_game for games (starknet_call executes it without a transaction) to see why settlement reverts. */
+export async function runV2VerifyCheck(opts: { games: string[] }): Promise<void> {
+  const { provider } = await connectProvider(MAINNET.rpcUrls);
+  const chain = new V2Chain(provider, MAINNET.gameCoreV2);
+  for (const g of opts.games) {
+    const id = BigInt(g);
+    const t = await chain.transcript(id);
+    const hex = (v: bigint) => '0x' + v.toString(16);
+    const calldata = [hex(id), hex(BigInt(t.packets.length)), ...t.packets.map(hex), hex(BigInt(t.blocks.length)), ...t.blocks.map(hex)];
+    try {
+      const r = await provider.callContract({ contractAddress: MAINNET.gameCoreV2, entrypoint: 'verify_game', calldata });
+      console.log(`game ${g}: verify_game would succeed (${t.packets.length} packets) -> [${r.join(', ')}]`);
+    } catch (e) {
+      const m = (e as Error).message;
+      const reason = /\('([^']+)'\)/.exec(m)?.[1] ?? m.slice(-400);
+      console.log(`game ${g}: verify_game reverts (${t.packets.length} packets): ${reason}`);
+    }
+  }
+}
