@@ -1,52 +1,10 @@
 {
- "updated": "2026-10-25T17:40:44.150Z",
+ "updated": "2026-10-25T17:41:50.046Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-10-25T17-07-31-064Z",
  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "recent": [
-  {
-   "n": 38,
-   "t": "2026-10-25T17:37:38.696Z",
-   "level": 7,
-   "xp": 62,
-   "hp": 73,
-   "maxHp": 160,
-   "gold": 11,
-   "phase": "battle",
-   "reason": "Attack Phoenix (L4 T3, 64 HP): P(win)=100.0% P(death)=0.0%; attack value 173.0 vs flee 166.7",
-   "actions": "attack",
-   "tx": "0x33fe1d64f203f4d438c14b365329ec90a5d13d59a6dd3eecf720ba4832f68ef",
-   "ok": true
-  },
-  {
-   "n": 39,
-   "t": "2026-10-25T17:37:44.739Z",
-   "level": 7,
-   "xp": 62,
-   "hp": 71,
-   "maxHp": 160,
-   "gold": 11,
-   "phase": "battle",
-   "reason": "Attack Phoenix (L4 T3, 60 HP): P(win)=100.0% P(death)=0.0%; attack value 173.0 vs flee 166.7",
-   "actions": "attack",
-   "tx": "0x2d8b8ca72465c6ddc21fbd57a8520fca853f0ad0a45f00533b95027ce6aad1a",
-   "ok": true
-  },
-  {
-   "n": 40,
-   "t": "2026-10-25T17:37:48.910Z",
-   "level": 7,
-   "xp": 62,
-   "hp": 69,
-   "maxHp": 160,
-   "gold": 11,
-   "phase": "battle",
-   "reason": "Attack Phoenix (L4 T3, 56 HP): P(win)=100.0% P(death)=0.0%; attack value 173.0 vs flee 165.7",
-   "actions": "attack",
-   "tx": "0x61280acd708a3838e234d43d682faf92bc23abd4bdb770eef4b1e3e6e8b10d1",
-   "ok": true
-  },
   {
    "n": 41,
    "t": "2026-10-25T17:37:52.800Z",
@@ -564,13 +522,55 @@
    "actions": "explore",
    "tx": "0x4560496555d3960c2c91a3f07c7c38faa39383809dc7bb3d90bf797d0f45fd5",
    "ok": true
+  },
+  {
+   "n": 78,
+   "t": "2026-10-25T17:40:44.151Z",
+   "level": 14,
+   "xp": 217,
+   "hp": 174,
+   "maxHp": 175,
+   "gold": 6,
+   "phase": "battle",
+   "reason": "Attack \"Armageddon Root\" Juggernaut (L30 T5, 153 HP): P(win)=100.0% P(death)=0.0%; attack value 421.3 vs flee 337.2",
+   "actions": "attack",
+   "tx": "0x1b9460a20b3fa2786b2999931c6fee6b34388d5b6b1770b0763a16a6850f15c",
+   "ok": true
+  },
+  {
+   "n": 79,
+   "t": "2026-10-25T17:40:53.742Z",
+   "level": 14,
+   "xp": 217,
+   "hp": 160,
+   "maxHp": 175,
+   "gold": 6,
+   "phase": "battle",
+   "reason": "Attack \"Armageddon Root\" Juggernaut (L30 T5, 141 HP): P(win)=100.0% P(death)=0.0%; attack value 419.4 vs flee 335.8",
+   "actions": "attack",
+   "tx": "0x4dd35652c129c57a5b311b3a09de21a3bb24156a3b34644d56b785bb9776b6f",
+   "ok": true
+  },
+  {
+   "n": 80,
+   "t": "2026-10-25T17:40:59.443Z",
+   "level": 14,
+   "xp": 217,
+   "hp": 158,
+   "maxHp": 175,
+   "gold": 6,
+   "phase": "battle",
+   "reason": "Attack \"Armageddon Root\" Juggernaut (L30 T5, 129 HP): P(win)=100.0% P(death)=0.0%; attack value 419.4 vs flee 335.8",
+   "actions": "attack",
+   "tx": "0x6b65e9d26c87ddf5e4b602f07d74bd892451401c1e1ef010db5a9ec1a647ef3",
+   "ok": true
   }
  ],
  "current": {
   "id": "904625697166532776746652061824565847215142356634039894961967567849136465313",
   "level": 14,
   "xp": 217,
-  "hp": 175,
+  "hp": 158,
   "maxHp": 175,
   "gold": 6,
   "gear": [
@@ -592,6 +592,7 @@
    "cha": 7,
    "luck": 8
   },
-  "lastReason": "Explore (instant-death risk 0.9%, HP 175/175)"
+  "beast": "\"Armageddon Root\" Juggernaut",
+  "lastReason": "Attack \"Armageddon Root\" Juggernaut (L30 T5, 129 HP): P(win)=100.0% P(death)=0.0%; attack value 419.4 vs flee 335.8"
  }
 }
