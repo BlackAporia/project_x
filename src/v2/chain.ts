@@ -80,7 +80,7 @@ export class V2Chain {
     return out;
   }
 
-  private async mintBlock(gameId: bigint): Promise<number> {
+  async mintBlock(gameId: bigint): Promise<number> {
     if (!this.mintBlocks.has(gameId)) {
       let b = 0;
       try {

@@ -54,13 +54,25 @@ export async function runV2BeastsCommand(opts: { games: string[]; dataDir: strin
       steps.push(step);
       prev = adv;
     }
+    // ground truth for proofs: the provable replay lists effects (kind, id), e.g. the beasts met and killed
+    let effects: Array<{ kind: number; id: string }> = [];
+    try {
+      const mint = await chain.mintBlock(id);
+      const mintHash = (await chain.blockHash(BigInt(mint))) ?? 0n;
+      const r = await chain.call('replay_provable_transcript', [id, t.packets.length, ...t.packets, t.blocks.length, ...t.blocks, hashes.length, ...hashes, mintHash]);
+      const n = Number(r[9] ?? 0n);
+      for (let i = 0; i < n; i++) effects.push({ kind: Number(r[10 + 2 * i]), id: '0x' + r[11 + 2 * i].toString(16) });
+      console.log(`  provable replay: matches=${r[2]} applied=${r[6]} ruleset=0x${r[7].toString(16)} effects=${n}: ${effects.map((e) => `${e.kind}:${e.id}`).join(' ').slice(0, 1500)}`);
+    } catch (e) {
+      console.log(`  provable replay failed: ${(e as Error).message.slice(0, 300)}`);
+    }
     const enc = steps.filter((s) => s.encounter);
     console.log(`game ${g}: ${t.packets.length} packets, ${enc.length} encounters`);
     for (const s of enc) {
       const e = s.encounter as { name: string; tier: number; level: number; derivedHealth: number } | null;
       console.log(`  k=${s.k} xp=${s.xp} hp=${s.hp}: chain beast HP ${s.beastHp}, derived ${e ? `${e.name} T${e.tier} L${e.level} HP ${e.derivedHealth}` : '-'} ${JSON.stringify(s.matches)}`);
     }
-    out.push({ game: g, packets: t.packets.length, steps });
+    out.push({ game: g, packets: t.packets.length, effects, steps });
   }
   console.log('derivation matches by game-id encoding:');
   for (const [k, v] of tally) console.log(`  ${k.padEnd(8)} ${v.ok}/${v.n}`);
