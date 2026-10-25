@@ -151,13 +151,38 @@ export class V2MainnetBackend implements Backend {
   async finish(id: bigint): Promise<string | null> {
     if (this.dryRun || !this.executor) return null;
     const c = await this.ctx(id);
-    try {
-      const tx = await this.chain.verify(this.executor, c.transcript);
-      this.log(`[v2] game ${id} verified (${tx})`);
-      return tx;
-    } catch (e) {
-      this.log(`[v2] verify_game failed for ${id}: ${(e as Error).message.slice(0, 200)}`);
-      return null;
+    if (await this.chain.isVerified(id).catch(() => false)) return null;
+    // the replay needs the entropy block of the last commit: settling right after the final move reverted
+    // ("unripe"), which left every finished game unverified (not on the leaderboard)
+    for (let attempt = 0; attempt < 4; attempt++) {
+      try {
+        await this.chain.waitReady(c.transcript);
+        const tx = await this.chain.verify(this.executor, c.transcript);
+        this.log(`[v2] game ${id} verified (${tx})`);
+        return tx;
+      } catch (e) {
+        if (await this.chain.isVerified(id).catch(() => false)) return null;
+        this.log(`[v2] verify_game failed for ${id} (attempt ${attempt + 1}/4): ${(e as Error).message.slice(0, 200)}`);
+        await new Promise((r) => setTimeout(r, 15_000 * (attempt + 1)));
+      }
     }
+    return null;
+  }
+
+  /** Finished (dead) games that were never settled: verify them so their scores count. */
+  async settleFinished(ids: bigint[]): Promise<number> {
+    if (this.dryRun || !this.executor) return 0;
+    let n = 0;
+    for (const id of ids) {
+      if (await this.chain.isVerified(id).catch(() => true)) continue;
+      try {
+        const st = await this.readState(id);
+        if (!st.started || st.adventurer.health > 0) continue;
+      } catch {
+        continue;
+      }
+      if (await this.finish(id)) n++;
+    }
+    return n;
   }
 }

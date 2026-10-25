@@ -56,6 +56,10 @@ export class V2Chain {
     return (await this.call('get_commitment', [gameId]))[0];
   }
 
+  async isVerified(gameId: bigint): Promise<boolean> {
+    return (await this.call('is_verified', [gameId]))[0] === 1n;
+  }
+
   async gameOver(gameId: bigint): Promise<boolean> {
     return (await this.call('game_over', [gameId]))[0] === 1n;
   }
