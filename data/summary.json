@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-25T14:10:33.533Z",
+ "updated": "2026-10-25T14:18:54.955Z",
  "modes": {
   "mainnet": {
    "games": 19,
@@ -427,17 +427,6 @@
  },
  "runs": [
   {
-   "id": "2026-10-23T15-49-15-081Z",
-   "mode": "mainnet-dry",
-   "started": "2026-10-23T15:49:15.081Z",
-   "games": 0,
-   "bestXp": 0,
-   "meanXp": 0,
-   "errors": 0,
-   "policy": "tuned-2026-10-22-g24",
-   "ended": "2026-10-23T15:49:15.842Z"
-  },
-  {
    "id": "2026-10-23T17-08-16-370Z",
    "mode": "practice",
    "started": "2026-10-23T17:08:16.370Z",
@@ -761,12 +750,24 @@
    "id": "2026-10-25T14-07-15-459Z",
    "mode": "mainnet",
    "started": "2026-10-25T14:07:15.459Z",
-   "games": 6,
-   "bestXp": 606,
-   "meanXp": 197,
+   "games": 1,
+   "bestXp": 106,
+   "meanXp": 106,
    "errors": 0,
    "policy": "tail-2026-10-25-g3",
-   "ended": "2026-10-25T14:10:32.294Z"
+   "ended": "2026-10-25T14:10:32.294Z",
+   "note": "5 old finished games were re-counted; corrected"
+  },
+  {
+   "id": "2026-10-25T14-17-44-454Z",
+   "mode": "mainnet",
+   "started": "2026-10-25T14:17:44.454Z",
+   "games": 0,
+   "bestXp": 0,
+   "meanXp": 0,
+   "errors": 0,
+   "policy": "tail-2026-10-25-g3",
+   "ended": "2026-10-25T14:18:50.261Z"
   }
  ],
  "policy": {

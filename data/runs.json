@@ -386,6 +386,7 @@
   "bestXp": 0,
   "meanXp": 0,
   "errors": 0,
-  "policy": "tail-2026-10-25-g3"
+  "policy": "tail-2026-10-25-g3",
+  "ended": "2026-10-25T14:18:50.261Z"
  }
 ]
