@@ -72,9 +72,13 @@ export function toActions(ins: Instruction[]): { actions: Action[]; kind: Kind }
         buy ??= { potions: 0, items: [] };
         buy.potions += i.quantity;
         break;
-      case 'equip_item':
-        actions.push({ type: 'equip', items: [i.itemId] });
+      case 'equip_item': {
+        // consecutive equips are one engine action: in battle the core answers the whole swap with one beast attack
+        const last = actions[actions.length - 1];
+        if (last?.type === 'equip') last.items.push(i.itemId);
+        else actions.push({ type: 'equip', items: [i.itemId] });
         break;
+      }
       case 'drop_item':
         actions.push({ type: 'drop', items: [i.itemId] });
         break;

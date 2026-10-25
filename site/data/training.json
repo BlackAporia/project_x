@@ -328,5 +328,16 @@
   "max": 1672,
   "games": 800,
   "source": "cmaes"
+ },
+ {
+  "date": "2026-10-25T18:32:12.986Z",
+  "generation": 4,
+  "objective": "blend",
+  "fitness": 460.66937499999995,
+  "mean": 260.85125,
+  "p90": 557,
+  "max": 1383,
+  "games": 800,
+  "source": "cmaes"
  }
 ]
