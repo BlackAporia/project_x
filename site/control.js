@@ -554,6 +554,8 @@ async function renderRonke() {
       <dt>Акаунт</dt><dd>${esc(short(r.address))} (${esc(r.kind)})</dd>
       <dt>Право на ігри</dt><dd>${r.error ? `<span class="bad">${esc(r.error)}</span>` : r.eligible ? `<span class="ok">так</span>${r.dailyGames ? ` · ${r.dailyGames} ігор на день` : ''}` : `<span class="bad">ні</span> — ${esc(r.reason ?? (r.needsWallet ? 'Ronin-гаманець не прив’язаний' : ''))}`}</dd>
       <dt>Дні</dt><dd>${days || '–'}</dd>
+      ${r.needsWallet ? `<dt>Що зробити</dt><dd>Ігри Ronke дають лише акаунту з прив’язаним Ronin‑гаманцем зі снапшоту (Ronke score 1+ або 100+ RON). На <a href="https://lootsurvivor.io/ronkeverse" target="_blank" rel="noopener">lootsurvivor.io/ronkeverse</a> увійдіть тим акаунтом, яким грає бот, і натисніть <b>Link wallet</b>.</dd>` : ''}
+      ${r.extra?.tasks ? `<dt>Завдання</dt><dd>${Object.entries(r.extra.tasks).map(([k, v]) => `<span class="badge ${v === 'done' || v === 'claimed' ? 'ok' : 'muted'}">${esc(k)}: ${esc(v)}</span>`).join(' ')}</dd>` : ''}
       <dt>Останнє</dt><dd>${esc(r.message ?? '')}${r.claimed?.length ? ` → ігри ${r.claimed.map(esc).join(', ')}` : ''} <span class="muted small">${new Date(r.updated).toLocaleString('uk-UA')}</span></dd>
     </dl>${sw}`;
 }
