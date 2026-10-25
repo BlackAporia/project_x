@@ -125,7 +125,7 @@ export class DataStore {
   writeGameLog(mode: string, id: string, rec: GameRecord, log: DecisionLog[]): void {
     writeFileSync(join(this.dir, 'games', `${mode}-${id}.json`), JSON.stringify({ game: rec, log }) + '\n');
     // keep only the most recent logs (plus the best few) so the repository stays small
-    const files = readdirSync(join(this.dir, 'games')).filter((f) => f.endsWith('.json'));
+    const files = readdirSync(join(this.dir, 'games')).filter((f) => f.endsWith('.json') && !f.startsWith('mainnet-'));
     if (files.length <= MAX_LOGS) return;
     const games = this.games();
     const best = new Set(
@@ -136,7 +136,8 @@ export class DataStore {
         .map((g) => `${g.mode}-${g.id}.json`),
     );
     const recent = new Set(games.slice(-MAX_LOGS + 15).map((g) => `${g.mode}-${g.id}.json`));
-    for (const f of files) if (!best.has(f) && !recent.has(f)) rmSync(join(this.dir, 'games', f), { force: true });
+    // mainnet logs are few and are the only record of how real games went: never pruned
+    for (const f of files) if (!f.startsWith('mainnet-') && !best.has(f) && !recent.has(f)) rmSync(join(this.dir, 'games', f), { force: true });
   }
 
   runs(): RunRecord[] {
