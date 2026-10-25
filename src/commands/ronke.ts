@@ -39,6 +39,12 @@ export async function runRonkeCommand(opts: { dataDir: string; claim: boolean; a
       out.currentDay = s.currentDay;
       out.ended = s.ended;
       out.days = [1, 2, 3].map((d) => ({ day: d, state: dayState(s, d), ...(s.days?.[d] ?? s.days?.[String(d)] ?? {}) }));
+      // other ways to get Ronke games: open steps (no holder wallet), Super Survivor BOGOF, burn steps, tasks
+      const pick = (k: string) => (s as Record<string, unknown>)[k];
+      out.extra = Object.fromEntries(['openGame', 'open', 'bogo', 'burn', 'tasks', 'quests', 'superSurvivor', 'discord', 'deposit'].filter((k) => pick(k) !== undefined).map((k) => [k, pick(k)]));
+      out.statusKeys = Object.keys(s);
+      console.log(`[ronke] eligible=${out.eligible} day ${s.currentDay}${s.ended ? ' (ended)' : ''}; status keys: ${Object.keys(s).join(', ')}`);
+      for (const [k, v] of Object.entries(out.extra as Record<string, unknown>)) console.log(`[ronke]   ${k}: ${JSON.stringify(v).slice(0, 300)}`);
     }
     out.claimed = r.claimed;
     out.message = r.message;
