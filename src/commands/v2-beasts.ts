@@ -30,7 +30,7 @@ export async function runV2BeastsCommand(opts: { games: string[]; dataDir: strin
     for (let k = 1; k <= n; k++) {
       const r = await chain.call('replay_transcript', [id, k, ...t.packets.slice(0, k), k, ...t.blocks.slice(0, k), k, ...hashes.slice(0, k), k]);
       const adv = unpackAdventurer(r[3]);
-      const step: Record<string, unknown> = { k, xp: adv.xp, hp: adv.health, gold: adv.gold, beastHp: adv.beast_health, beastSalt: adv.beast_salt };
+      const step: Record<string, unknown> = { k, xp: adv.xp, hp: adv.health, gold: adv.gold, beastHp: adv.beast_health, beastSalt: adv.beast_salt, adventurer: adv, packedAdventurer: '0x' + r[3].toString(16), packedBag: '0x' + r[4].toString(16) };
       const fresh = adv.beast_health > 0 && (!prev || prev.beast_health === 0 || prev.beast_salt !== adv.beast_salt);
       if (fresh) {
         const matches: Record<string, boolean> = {};
