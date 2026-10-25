@@ -6,7 +6,7 @@
 import { poseidonSmall } from '@scure/starknet';
 import { poseidon } from '../game/rng.ts';
 import type { Action, Beast } from '../game/types.ts';
-import { beastTier, beastType } from '../game/beast.ts';
+import { TYPE } from '../game/constants.ts';
 
 export const OP = { EXPLORE: 1, ATTACK: 2, FLEE: 3, UPGRADE_STAT: 4, BUY_ITEM: 5, EQUIP_ITEM: 6, DROP_ITEM: 7, SURRENDER: 8, BUY_POTIONS: 9 } as const;
 export const BEAST_DEATH = { ALLOW_KILL: 0, STOP_BEFORE_GUARANTEED_KILL: 1, STOP_BEFORE_POSSIBLE_KILL: 2 } as const;
@@ -180,7 +180,21 @@ export function unpackBag(packed: bigint): V2Item[] {
 
 const levelOf = (xp: number) => (xp === 0 ? 1 : Math.floor(Math.sqrt(xp)));
 
-/** Current beast of an adventurer in battle (client: In(xp, Pn(beast_salt, gameId, xp))). */
+/**
+ * Beast tier and type on the V2 core. The id is derived like the client does (rnd1 % 75 + 1), but the chain maps it
+ * differently from the V1 table (blocks of five per tier): tier cycles with the id and the type changes every five
+ * ids. Measured on real games (kill XP and every beast hit of 13 games, 50/50 encounters):
+ *   tier = (id - 1) % 5 + 1,  type = floor((id - 1) / 5) % 3  (Magic/Cloth, Blade/Hide, Bludgeon/Metal)
+ */
+export function v2BeastTier(id: number): number {
+  return ((id - 1) % 5) + 1;
+}
+
+export function v2BeastType(id: number): number {
+  return [TYPE.MagicCloth, TYPE.BladeHide, TYPE.BludgeonMetal][Math.floor((id - 1) / 5) % 3];
+}
+
+/** Current beast of an adventurer in battle: id, level and health as the client derives them (In(xp, Pn(beast_salt, gameId, xp))), tier and type as the V2 core maps the id. */
 export function currentBeastV2(adv: V2Adventurer, gameId: bigint): Beast | null {
   if (adv.beast_health <= 0) return null;
   const seed = poseidon([BigInt(adv.beast_salt), gameId, BigInt(adv.xp)]) % (1n << 64n);
@@ -205,8 +219,8 @@ export function currentBeastV2(adv: V2Adventurer, gameId: bigint): Beast | null 
     id,
     startingHealth: Number(hp > 1023n ? 1023n : hp),
     spec: {
-      tier: beastTier(id),
-      type: beastType(id),
+      tier: v2BeastTier(id),
+      type: v2BeastType(id),
       level: lvl,
       specials: {
         special1: 0,
