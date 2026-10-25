@@ -396,8 +396,8 @@
   "games": 7,
   "bestXp": 988,
   "meanXp": 402,
-  "errors": 0,
+  "errors": 1,
   "policy": "tail-2026-10-25-g3",
-  "ended": "2026-10-25T15:10:13.284Z"
+  "ended": "2026-10-25T15:16:42.349Z"
  }
 ]
