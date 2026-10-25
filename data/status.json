@@ -1,52 +1,10 @@
 {
- "updated": "2026-10-25T16:05:27.877Z",
+ "updated": "2026-10-25T16:05:46.025Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-10-25T16-00-40-070Z",
  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "recent": [
-  {
-   "n": 11,
-   "t": "2026-10-25T16:01:54.126Z",
-   "level": 24,
-   "xp": 594,
-   "hp": 276,
-   "maxHp": 280,
-   "gold": 10,
-   "phase": "battle",
-   "reason": "Attack \"Loath Instrument\" Juggernaut (L44 T5, 269 HP): P(win)=100.0% P(death)=0.0%; attack value 561.8 vs flee 526.3",
-   "actions": "attack",
-   "tx": "0x541c4d73f8659bce46a952f49a00c5485f47a6814ac1a2c43e820862cc1d24",
-   "ok": true
-  },
-  {
-   "n": 12,
-   "t": "2026-10-25T16:01:58.459Z",
-   "level": 24,
-   "xp": 594,
-   "hp": 274,
-   "maxHp": 280,
-   "gold": 10,
-   "phase": "battle",
-   "reason": "Attack \"Loath Instrument\" Juggernaut (L44 T5, 218 HP): P(win)=100.0% P(death)=0.0%; attack value 561.6 vs flee 526.2",
-   "actions": "attack",
-   "tx": "0x63bdd84cf2863cff1bfbb899f668032aba6077cf3154a5ff27837abdcc023ee",
-   "ok": true
-  },
-  {
-   "n": 13,
-   "t": "2026-10-25T16:02:04.424Z",
-   "level": 24,
-   "xp": 594,
-   "hp": 272,
-   "maxHp": 280,
-   "gold": 10,
-   "phase": "battle",
-   "reason": "Attack \"Loath Instrument\" Juggernaut (L44 T5, 167 HP): P(win)=100.0% P(death)=0.0%; attack value 561.4 vs flee 526.2",
-   "actions": "attack",
-   "tx": "0x394036c8e0ded16df7d714004062d72b425f633dbca2057ebc73363ebb99fd5",
-   "ok": true
-  },
   {
    "n": 14,
    "t": "2026-10-25T16:02:10.244Z",
@@ -564,13 +522,55 @@
    "actions": "drop(Silk Gloves) + explore",
    "tx": "0x14c2fa4a4d7b6f2e61c8c526f7b2d7b20e8fbb8fbba7c656bf527b6321e7d6",
    "ok": true
+  },
+  {
+   "n": 51,
+   "t": "2026-10-25T16:05:27.878Z",
+   "level": 27,
+   "xp": 781,
+   "hp": 139,
+   "maxHp": 295,
+   "gold": 0,
+   "phase": "battle",
+   "reason": "Flee from \"Foe Growl\" Ogre (L68 T3): P(escape)=86.5% P(death)=13.5%; flee value 296.1 vs attack 135.9",
+   "actions": "flee",
+   "tx": "0x3857ce9b3fe9206e1cc0e4b69ecdb99fccd5c89e001cbd31d957541e43c66ed",
+   "ok": true
+  },
+  {
+   "n": 52,
+   "t": "2026-10-25T16:05:33.985Z",
+   "level": 27,
+   "xp": 782,
+   "hp": 139,
+   "maxHp": 295,
+   "gold": 0,
+   "phase": "explore",
+   "reason": "Explore (instant-death risk 13.7%, HP 139/295)",
+   "actions": "explore",
+   "tx": "0x310ffb65b27f04f98326a399902e1b5c9519f2aa32d46c54dd6719330e2d1e0",
+   "ok": true
+  },
+  {
+   "n": 53,
+   "t": "2026-10-25T16:05:40.069Z",
+   "level": 27,
+   "xp": 783,
+   "hp": 185,
+   "maxHp": 295,
+   "gold": 0,
+   "phase": "explore",
+   "reason": "Explore (instant-death risk 9.6%, HP 185/295)",
+   "actions": "explore",
+   "tx": "0x66fdab8fc702fe27c4dbac286b5687762dc363b463364641581e275ba9b24c1",
+   "ok": true
   }
  ],
  "current": {
   "id": "904625697166532776746652061824565847215142356634039892305636398918312190465",
   "level": 27,
-  "xp": 781,
-  "hp": 166,
+  "xp": 783,
+  "hp": 185,
   "maxHp": 295,
   "gold": 0,
   "gear": [
@@ -592,6 +592,6 @@
    "cha": 14,
    "luck": 40
   },
-  "lastReason": "Drop Silk Gloves; Explore (instant-death risk 11.0%, HP 166/295)"
+  "lastReason": "Explore (instant-death risk 9.6%, HP 185/295)"
  }
 }

@@ -425,10 +425,11 @@
   "id": "2026-10-25T16-00-40-070Z",
   "mode": "mainnet",
   "started": "2026-10-25T16:00:40.070Z",
-  "games": 0,
-  "bestXp": 0,
-  "meanXp": 0,
+  "games": 1,
+  "bestXp": 783,
+  "meanXp": 783,
   "errors": 0,
-  "policy": "tail-2026-10-25-g3"
+  "policy": "tail-2026-10-25-g3",
+  "ended": "2026-10-25T16:06:07.469Z"
  }
 ]
