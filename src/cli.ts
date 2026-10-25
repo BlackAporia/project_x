@@ -27,6 +27,7 @@ const COMMANDS: Record<string, string> = {
   contract: 'Inspect live mainnet contracts: ABI and view calls (--address 0x.. --call name:arg,arg)',
   'v2-verify': 'Dry-run verify_game for games (--game id,id) and print why settlement would revert',
   'v2-beasts': 'Check the bot\'s beast derivation and damage against real V2 games, packet by packet (--game id)',
+  'v2-leaderboard': 'Leaderboards of the V2 dungeons from the lootsurvivor.io API (--ids 0-15 minter ids, --levels scores to rank)',
   'v2-audit': 'Audit the engine against real V2 games: replay each packet on chain and compare with engine draws (--address owner --game id --draws n)',
   frontend: 'List the dungeons lootsurvivor.io offers now (new ones highlighted); writes data/frontend/dungeons.json',
 };
@@ -260,6 +261,13 @@ async function main(): Promise<void> {
     case 'v2-verify': {
       const { runV2VerifyCheck } = await import('./commands/v2-beasts.ts');
       await runV2VerifyCheck({ games: typeof values.game === 'string' ? values.game.split(',') : [] });
+      break;
+    }
+    case 'v2-leaderboard': {
+      const { runV2LeaderboardCommand } = await import('./commands/v2-leaderboard.ts');
+      const ids = str(values.ids, '0-15');
+      const minters = ids.includes('-') ? Array.from({ length: Number(ids.split('-')[1]) - Number(ids.split('-')[0]) + 1 }, (_, i) => Number(ids.split('-')[0]) + i) : ids.split(',').map(Number);
+      await runV2LeaderboardCommand({ minters, scores: str(values.levels, '988,500,250').split(',').map(Number), dataDir: str(values.data, process.env.BOT_DATA_DIR ?? 'site/data') });
       break;
     }
     case 'v2-audit': {
