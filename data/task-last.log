@@ -1,5 +1,17 @@
-== bot frontend --call leaderboard
+== bot frontend --call leaderboard --call Leaderboard --call topScores --call proving-grounds
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts frontend --call leaderboard
+> node --import tsx src/cli.ts frontend --call leaderboard --call Leaderboard --call topScores --call proving-grounds
 
+downloaded 338 files, 15.6 MB into /tmp/lsfront-1792954500412
+33 snippet(s) for leaderboard, Leaderboard, topScores, proving-grounds -> frontend/snippets.json
+8 dungeon configs on lootsurvivor.io
+  trials                   Trials                     online       Free
+  beastmode                Beast Mode                 online       1 Ticket settings=fA minter=pA @dA.dungeon
+  ronke-casino             Ronke Casino               Xt?`online`:`coming_soon Free · 3 days settings=Zt minter=Yt sponsored @un
+  lootbag                  Loot Bag                   online       Loot Bag settings=Xa minter=zi @Mi.lootDungeon
+  norwich-games-festival   Norwich Games Festival     online       Free @0x04253e24220629b737512a24cb3172fc381db7be7a697d5af358ff21ef1172be
+  blockhash                Blockhash                  closed       Free settings=0 minter=Ps @Gs.commitVerify
+  proving-grounds          Proving Grounds            gi?`online`:`coming_soon Free minter=Xi @pa
+  unknown                  Unknown Dungeon            offline       @0x04253e24220629b737512a24cb3172fc381db7be7a697d5af358ff21ef1172be
+Ronke dungeons: ronke-casino (Ronke Casino)

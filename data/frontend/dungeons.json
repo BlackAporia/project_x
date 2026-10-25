@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-25T11:47:45.232Z",
+ "updated": "2026-10-25T18:55:57.652Z",
  "new": [],
  "dungeons": [
   {
@@ -11,7 +11,7 @@
     "entryCost": "Free",
     "difficulty": "Easy"
    },
-   "raw": "trials:{id:`trials`,name:`Trials`,tagline:`Face the trials`,cardImage:`/images/dungeons/trials.png`,accentColor:`#e65100`,status:`online`,hideController:!0,entryCost:`Free`,difficulty:`Easy`,hideLeaderboard:!0,hideLivePlayers:!0,tags:[`Practice`],overview:Mbe}"
+   "raw": "trials:{id:`trials`,name:`Trials`,tagline:`Face the trials`,cardImage:`/images/dungeons/trials.png`,accentColor:`#e65100`,status:`online`,hideController:!0,entryCost:`Free`,difficulty:`Easy`,hideLeaderboard:!0,hideLivePlayers:!0,tags:[`Practice`],overview:Nbe}"
   },
   {
    "id": "beastmode",
@@ -19,9 +19,9 @@
    "fields": {
     "status": "online",
     "tagline": "Hunt and collect beasts",
-    "address": "uA.dungeon",
-    "settingsId": "dA",
-    "v2MinterId": "fA",
+    "address": "dA.dungeon",
+    "settingsId": "fA",
+    "v2MinterId": "pA",
     "entryCost": "1 Ticket",
     "difficulty": "Medium",
     "mainButtonText": "Enter Dungeon",
@@ -30,20 +30,20 @@
     "protocol": "commit-reveal",
     "reward": "Beasts"
    },
-   "raw": "beastmode:{id:`beastmode`,name:`Beast Mode`,tagline:`Hunt and collect beasts`,cardImage:`/images/dungeons/beast_mode.png`,accentColor:`#4caf50`,address:uA.dungeon,status:`online`,ticketAddress:uA.ticket,protocol:`commit-reveal`,commitReveal:!0,dataStack:`v2`,v2GameCore:uA.gameCore,v2MinterId:fA,tokenLayout:`packet`,settingsId:dA,settingsFromChain:!0,entryCost:`1 Ticket`,difficulty:`Medium`,tags:[`Collectables`,`Endless`],reward:`Beasts`,showInOverview:!1,beastModeClaims:!0,collectableClaim:`end-of-run`,rewards:nY,overview:$J,leaderboard:vY,StatsProvider:qJ},greed:{id:`greed`,minter_id:9,restricted:!0,routerEntrypoints:[`buy_greed_game`],name:`Greed Run`,tagline:`Survive, Collect, Escape`,cardImage:`/images/dungeons/greed.png`,accentColor:`#9c27b0`,address:`0x046db77f066f1bec5ae53d2cf3686a262f308eb904e6b426251bcdf3a6bf34f0`,status:`online`,entryFeeTokenAddress:`0x042DD777885AD2C116be96d4D634abC90A26A790ffB5871E037Dd5Ae7d2Ec86B`,entryFeeAmount:`10000000000000000000`,entryCost:`10 $SURVIVOR`,difficulty:`Hard`,tags:[`Endless`],reward:`$SURVIVOR`,settingsId:1,includePractice:!0,surrenderAllowed:!0,legacyBuyGame:!0,overview:Ome},greed_v2:{id:`greed_v2`,minter_id:40,restricted:!0,exitEntrypoints:[`request_withdrawal`,`withdraw_txsh`,`claim_withdrawal`,`claim_strk`,`exchange_credits`],name:`Greed Run v2`,tagline:`Yield-powered greed`,cardImage:`/images/dungeons/hyper_greed.png`,accentColor:`#21f3d0`,address:`0x012ac35cf5112dd1bacd2f1e7342eb5951566262ab52c3c7dddd2b9a77840741`,status:`"
+   "raw": "beastmode:{id:`beastmode`,name:`Beast Mode`,tagline:`Hunt and collect beasts`,cardImage:`/images/dungeons/beast_mode.png`,accentColor:`#4caf50`,address:dA.dungeon,status:`online`,ticketAddress:dA.ticket,protocol:`commit-reveal`,commitReveal:!0,dataStack:`v2`,v2GameCore:dA.gameCore,v2MinterId:pA,tokenLayout:`packet`,settingsId:fA,settingsFromChain:!0,entryCost:`1 Ticket`,difficulty:`Medium`,tags:[`Collectables`,`Endless`],reward:`Beasts`,showInOverview:!1,beastModeClaims:!0,collectableClaim:`end-of-run`,rewards:rY,overview:eY,leaderboard:yY,StatsProvider:JJ},greed:{id:`greed`,minter_id:9,restricted:!0,routerEntrypoints:[`buy_greed_game`],name:`Greed Run`,tagline:`Survive, Collect, Escape`,cardImage:`/images/dungeons/greed.png`,accentColor:`#9c27b0`,address:`0x046db77f066f1bec5ae53d2cf3686a262f308eb904e6b426251bcdf3a6bf34f0`,status:`online`,entryFeeTokenAddress:`0x042DD777885AD2C116be96d4D634abC90A26A790ffB5871E037Dd5Ae7d2Ec86B`,entryFeeAmount:`10000000000000000000`,entryCost:`10 $SURVIVOR`,difficulty:`Hard`,tags:[`Endless`],reward:`$SURVIVOR`,settingsId:1,includePractice:!0,surrenderAllowed:!0,legacyBuyGame:!0,overview:kme},greed_v2:{id:`greed_v2`,minter_id:40,restricted:!0,exitEntrypoints:[`request_withdrawal`,`withdraw_txsh`,`claim_withdrawal`,`claim_strk`,`exchange_credits`],name:`Greed Run v2`,tagline:`Yield-powered greed`,cardImage:`/images/dungeons/hyper_greed.png`,accentColor:`#21f3d0`,address:`0x012ac35cf5112dd1bacd2f1e7342eb5951566262ab52c3c7dddd2b9a77840741`,status:`"
   },
   {
    "id": "ronke-casino",
    "name": "Ronke Casino",
    "fields": {
-    "status": "Yt?`online`:`coming_soon",
+    "status": "Xt?`online`:`coming_soon",
     "tagline": "3 days of free games",
-    "address": "ln",
-    "settingsId": "Xt",
-    "v2MinterId": "en",
+    "address": "un",
+    "settingsId": "Zt",
+    "v2MinterId": "Yt",
     "entryCost": "Free · 3 days",
     "difficulty": "Medium",
-    "entryNote": "Verify with zkPassport, then claim on the promotions page — each game is minted to your wallet on request.",
+    "entryNote": "Ronkeverse has ended — entries are closed.",
     "sponsoredMoves": "true",
     "commitReveal": "true",
     "restricted": "true",
@@ -51,7 +51,7 @@
     "reward": "$5,000",
     "hideEnterButton": "true"
    },
-   "raw": "[Qt]:{id:Qt,name:`Ronke Casino`,restricted:!0,shareTitle:`Ronke Casino`,tagline:`3 days of free games`,cardImage:`/images/promotions/ronkeverse/hero.webp`,bannerImage:`/images/promotions/ronkeverse/hero.webp`,accentColor:`#3d5af1`,address:ln,commitReveal:!0,hideGas:!0,sponsoredMoves:!0,deferVerification:!0,protocol:`commit-reveal`,tokenLayout:`packet`,dataStack:`v2`,v2GameCore:Gs.gameCore,v2MinterId:en,settingsId:Xt??0,settingsVariants:[{id:7,label:`Ronke 800+`},{id:6,label:`Ronke 300+`},{id:5,label:`Holder`},{id:4,label:`Survivor & FOMO`}],themeId:`ronkeverse-casino`,status:Yt?`online`:`coming_soon`,communityId:`ronkeverse`,hideEnterButton:!0,entryCta:IJ,entryCost:`Free · 3 days`,difficulty:`Medium`,tags:[`Community`,`Objective`],reward:`$5,000`,overview:BJ,leaderboard:A_e,StatsProvider:zJ,wantedBeasts:SA,hideAnalytics:!0,showInOverview:!0},karats:{id:`karats`,minter_id:43,name:`Karats`,tagline:`Verify with zkPassport · 3 free games a day`,cardImage:`/images/dungeons/karat.png`,accentColor:`#26c6da`,address:`0x0337e25669f6cc7b81a507ebe0d908249cacad9b6e2c0fa43fecb6b6b04b109e`,status:`online`,entryCost:`Free`,difficulty:`Easy`,tags:[`Free`,`Collectables`],settingsId:3,reward:`KARAT`,hideEnterButton:!0,entryNote:`Verify with zkPassport, then claim on the promotions page — each game is minted to your wallet on request.`,entryPath:`/promotions/karats`,playAgainPath:`/promotions/karats`,overview:ahe}"
+   "raw": "[$t]:{id:$t,name:`Ronke Casino`,restricted:!0,shareTitle:`Ronke Casino`,tagline:`3 days of free games`,cardImage:`/images/promotions/ronkeverse/hero.webp`,bannerImage:`/images/promotions/ronkeverse/hero.webp`,accentColor:`#3d5af1`,address:un,commitReveal:!0,hideGas:!0,sponsoredMoves:!0,deferVerification:!0,protocol:`commit-reveal`,tokenLayout:`packet`,dataStack:`v2`,v2GameCore:Gs.gameCore,v2MinterId:Yt,settingsId:Zt??0,settingsVariants:[{id:7,label:`Ronke 800+`},{id:6,label:`Ronke 300+`},{id:5,label:`Holder`},{id:4,label:`Survivor & FOMO`}],themeId:`ronkeverse-casino`,status:Xt?`online`:`coming_soon`,entryDeadline:tn,entryNote:`Ronkeverse has ended — entries are closed.`,listWhenClosed:!0,communityId:`ronkeverse`,hideEnterButton:!0,entryCta:LJ,entryCost:`Free · 3 days`,difficulty:`Medium`,tags:[`Community`,`Objective`],reward:`$5,000`,overview:VJ,leaderboard:j_e,StatsProvider:BJ,wantedBeasts:CA,hideAnalytics:!0,showInOverview:!0},karats:{id:`karats`,minter_id:43,name:`Karats`,tagline:`Verify with zkPassport · 3 free games a day`,cardImage:`/images/dungeons/karat.png`,accentColor:`#26c6da`,address:`0x0337e25669f6cc7b81a507ebe0d908249cacad9b6e2c0fa43fecb6b6b04b109e`,status:`online`,entryCost:`Free`,difficulty:`Easy`,tags:[`Free`,`Collectables`],settingsId:3,reward:`KARAT`,hideEnterButton:!0,entryNote:`Verify with zkPassport, then claim on the promotions page — each game is minted to your wallet on request.`,entryPath:`/promotions/karats`,playAgainPath:`/promotions/karats`,overv"
   },
   {
    "id": "lootbag",
@@ -59,9 +59,9 @@
    "fields": {
     "status": "online",
     "tagline": "Fight for your share",
-    "address": "ji.lootDungeon",
-    "settingsId": "Ya",
-    "v2MinterId": "Ri",
+    "address": "Mi.lootDungeon",
+    "settingsId": "Xa",
+    "v2MinterId": "zi",
     "entryCost": "Loot Bag",
     "difficulty": "Easy",
     "mainButtonText": "Enter with a Loot Bag",
@@ -70,7 +70,7 @@
     "protocol": "commit-reveal",
     "reward": "$SURVIVOR"
    },
-   "raw": "lootbag:{id:`lootbag`,name:`Loot Bag`,tagline:`Fight for your share`,cardImage:`/images/dungeons/lootbag.png`,accentColor:`#d4a017`,address:ji.lootDungeon,status:`online`,protocol:`commit-reveal`,commitReveal:!0,dataStack:`v2`,v2GameCore:ji.gameCore,v2MinterId:Ri,tokenLayout:`packet`,settingsId:Ya,settingsFromChain:!0,entryCost:`Loot Bag`,difficulty:`Easy`,tags:[`Endless`],mainButtonText:`Enter with a Loot Bag`,entryNote:`Hold a Loot bag in an Ethereum wallet. The bag you enter with is the gear you start with.`,includePractice:!1,reward:`$SURVIVOR`,showInOverview:!1,overview:she,leaderboard:vY,themeId:`loot-bag`,beasts:yge,market:v_e,collectableClaim:`immediate`},tournaments:{id:`tournaments`,legacy_minter_ids:[48,38,2],name:`Tournaments`,tagline:`Compete for rewards`,cardImage:`/images/dungeons/tournaments.png`,accentColor:`#e65100`,address:Kp.budokanAddress,dataStack:`v2`,v2GameCore:Gs.gameCore,v2MinterId:Kp.minterId,tokenLayout:`packet`,status:Kp.ready?`online`:`coming_soon`,hideAnalytics:!0,hideLiveSidebar:!0,entryCost:``,difficulty:`Hard`,tags:[`PvP`],reward:`Prizes`,overview:kbe,hideLeaderboard:!0,myGames:bye,bracket:(0,q.lazy)(()=>gs(()=>import(`./TournamentsBracketPage-BKsW5fMW.js`),__vite__mapDeps([49,2,10,30,50,35,33,36,37,4,38,31,32,44,17,6,1,3,7,8,51,52,53,54,55,19,14,15,56,57,40,12,13,58,59,34,39,41,42,43,60])))}"
+   "raw": "lootbag:{id:`lootbag`,name:`Loot Bag`,tagline:`Fight for your share`,cardImage:`/images/dungeons/lootbag.png`,accentColor:`#d4a017`,address:Mi.lootDungeon,status:`online`,protocol:`commit-reveal`,commitReveal:!0,dataStack:`v2`,v2GameCore:Mi.gameCore,v2MinterId:zi,tokenLayout:`packet`,settingsId:Xa,settingsFromChain:!0,entryCost:`Loot Bag`,difficulty:`Easy`,tags:[`Endless`],mainButtonText:`Enter with a Loot Bag`,entryNote:`Hold a Loot bag in an Ethereum wallet. The bag you enter with is the gear you start with.`,includePractice:!1,reward:`$SURVIVOR`,showInOverview:!1,overview:che,leaderboard:yY,themeId:`loot-bag`,beasts:bge,market:y_e,collectableClaim:`immediate`},tournaments:{id:`tournaments`,legacy_minter_ids:[48,38,2],name:`Tournaments`,tagline:`Compete for rewards`,cardImage:`/images/dungeons/tournaments.png`,accentColor:`#e65100`,address:Gp.budokanAddress,dataStack:`v2`,v2GameCore:Gs.gameCore,v2MinterId:Gp.minterId,tokenLayout:`packet`,status:Gp.ready?`online`:`coming_soon`,hideAnalytics:!0,hideLiveSidebar:!0,entryCost:``,difficulty:`Hard`,tags:[`PvP`],reward:`Prizes`,overview:Abe,hideLeaderboard:!0,myGames:xye,bracket:(0,q.lazy)(()=>_s(()=>import(`./TournamentsBracketPage-BcfvORmw.js`),__vite__mapDeps([49,2,10,30,50,35,33,36,37,4,38,31,32,44,17,6,1,3,7,8,51,52,53,54,55,19,14,15,56,57,40,12,13,58,59,34,39,41,42,43,60])))}"
   },
   {
    "id": "norwich-games-festival",
@@ -85,7 +85,7 @@
     "reward": "Tiddy Mun Beast",
     "hideEnterButton": "true"
    },
-   "raw": "\"norwich-games-festival\":{id:`norwich-games-festival`,name:`Norwich Games Festival`,tagline:`Free entries from your QR leaflet`,cardImage:`/images/dungeons/norwich.png`,accentColor:`#80ff00`,status:`online`,showInOverview:!1,entryCost:`Free`,difficulty:`Easy`,tags:[`Free`,`Collectables`],reward:`Tiddy Mun Beast`,minter_id:29,address:`0x04253e24220629b737512a24cb3172fc381db7be7a697d5af358ff21ef1172be`,hideAnalytics:!0,hideLivePlayers:!0,hideEnterButton:!0,entryNote:`Scan a leaflet at the festival to enter.`,overview:x_e},\"black-shuck-festival\":{id:`black-shuck-festival`,minter_id:46,name:`Black Shuck Festival`,tagline:`Slay the hunt, claim the hound`,cardImage:`/images/dungeons/black-shuck.png`,accentColor:`#ff2d2d`,address:s5,status:`closed`,entryCost:`Free`,difficulty:`Easy`,tags:[`Free`,`Collectables`],reward:`Black Shuck Beast`,hideAnalytics:!0,hideLivePlayers:!0,hideEnterButton:!0,entryNote:`The festival has ended — entries are closed.`,overview:cY}"
+   "raw": "\"norwich-games-festival\":{id:`norwich-games-festival`,name:`Norwich Games Festival`,tagline:`Free entries from your QR leaflet`,cardImage:`/images/dungeons/norwich.png`,accentColor:`#80ff00`,status:`online`,showInOverview:!1,entryCost:`Free`,difficulty:`Easy`,tags:[`Free`,`Collectables`],reward:`Tiddy Mun Beast`,minter_id:29,address:`0x04253e24220629b737512a24cb3172fc381db7be7a697d5af358ff21ef1172be`,hideAnalytics:!0,hideLivePlayers:!0,hideEnterButton:!0,entryNote:`Scan a leaflet at the festival to enter.`,overview:S_e},\"black-shuck-festival\":{id:`black-shuck-festival`,minter_id:46,name:`Black Shuck Festival`,tagline:`Slay the hunt, claim the hound`,cardImage:`/images/dungeons/black-shuck.png`,accentColor:`#ff2d2d`,address:s5,status:`closed`,entryCost:`Free`,difficulty:`Easy`,tags:[`Free`,`Collectables`],reward:`Black Shuck Beast`,hideAnalytics:!0,hideLivePlayers:!0,hideEnterButton:!0,entryNote:`The festival has ended — entries are closed.`,overview:lY}"
   },
   {
    "id": "blockhash",
@@ -95,7 +95,7 @@
     "tagline": "Commit, reveal, verify",
     "address": "Gs.commitVerify",
     "settingsId": "0",
-    "v2MinterId": "Ns",
+    "v2MinterId": "Ps",
     "entryCost": "Free",
     "difficulty": "Medium",
     "mainButtonText": "Claim Daily Games",
@@ -103,25 +103,25 @@
     "commitReveal": "true",
     "protocol": "commit-reveal"
    },
-   "raw": "blockhash:{id:`blockhash`,name:`Blockhash`,tagline:`Commit, reveal, verify`,cardImage:`/images/dungeons/blockhash.png`,accentColor:`#7cc4ff`,address:Gs.commitVerify,status:`closed`,commitReveal:!0,protocol:`commit-reveal`,dataStack:`v2`,v2GameCore:Gs.gameCore,v2MinterId:Ns,tokenLayout:`packet`,settingsId:0,entryCost:`Free`,difficulty:`Medium`,tags:[`Free`],mainButtonText:`Claim Daily Games`,entryNote:`Entry is a daily claim against a fixed snapshot of eligible wallets.`,showInOverview:!0,overview:SY,leaderboard:vY}"
+   "raw": "blockhash:{id:`blockhash`,name:`Blockhash`,tagline:`Commit, reveal, verify`,cardImage:`/images/dungeons/blockhash.png`,accentColor:`#7cc4ff`,address:Gs.commitVerify,status:`closed`,commitReveal:!0,protocol:`commit-reveal`,dataStack:`v2`,v2GameCore:Gs.gameCore,v2MinterId:Ps,tokenLayout:`packet`,settingsId:0,entryCost:`Free`,difficulty:`Medium`,tags:[`Free`],mainButtonText:`Claim Daily Games`,entryNote:`Entry is a daily claim against a fixed snapshot of eligible wallets.`,showInOverview:!0,overview:CY,leaderboard:yY}"
   },
   {
    "id": "proving-grounds",
    "name": "Proving Grounds",
    "fields": {
-    "status": "hi?`online`:`coming_soon",
+    "status": "gi?`online`:`coming_soon",
     "tagline": "Become a Super Survivor",
-    "address": "fa",
-    "v2MinterId": "Yi",
+    "address": "pa",
+    "v2MinterId": "Xi",
     "entryCost": "Free",
     "difficulty": "Medium",
-    "mainButtonText": "hi?`Enter Dungeon`:`Coming Soon",
+    "mainButtonText": "gi?`Enter Dungeon`:`Coming Soon",
     "freeEntry": "true",
     "commitReveal": "true",
     "protocol": "commit-reveal",
     "reward": "Super Survivor Role"
    },
-   "raw": "\"proving-grounds\":{id:`proving-grounds`,name:`Proving Grounds`,tagline:`Become a Super Survivor`,cardImage:`/images/dungeons/proving-grounds.png`,accentColor:`#d0c98d`,address:fa,status:hi?`online`:`coming_soon`,mainButtonText:hi?`Enter Dungeon`:`Coming Soon`,freeEntry:!0,commitReveal:!0,protocol:`commit-reveal`,dataStack:`v2`,v2GameCore:Gs.gameCore,v2MinterId:Yi,tokenLayout:`packet`,entryCost:`Free`,difficulty:`Medium`,tags:[`Free`],reward:`Super Survivor Role`,showInOverview:!0,overview:T_e,leaderboard:vY}"
+   "raw": "\"proving-grounds\":{id:`proving-grounds`,name:`Proving Grounds`,tagline:`Become a Super Survivor`,cardImage:`/images/dungeons/proving-grounds.png`,accentColor:`#d0c98d`,address:pa,status:gi?`online`:`coming_soon`,mainButtonText:gi?`Enter Dungeon`:`Coming Soon`,freeEntry:!0,commitReveal:!0,protocol:`commit-reveal`,dataStack:`v2`,v2GameCore:Gs.gameCore,v2MinterId:Xi,tokenLayout:`packet`,entryCost:`Free`,difficulty:`Medium`,tags:[`Free`],reward:`Super Survivor Role`,showInOverview:!0,overview:E_e,leaderboard:yY}"
   },
   {
    "id": "unknown",
@@ -135,7 +135,7 @@
     "restricted": "e.restricted",
     "reward": ""
    },
-   "raw": "unknown:{id:`unknown`,name:`Unknown Dungeon`,tagline:`You are in uncharted territory`,cardImage:`/images/dungeons/trials.png`,accentColor:`#e65100`,status:`offline`,hideAnalytics:!0,hideLeaderboard:!0,hideLivePlayers:!0,entryCost:``,difficulty:`Hard`,showInOverview:!1,tags:[],reward:``}};for(let[e,t]of Object.entries(l5))t.entryDisabledReason=Vc(e);var oxe=[{address:`0x04253e24220629b737512a24cb3172fc381db7be7a697d5af358ff21ef1172be`,minLevel:17},{address:`0x04f556c206b992b988af0301e31069884e8e83e83fe00e1ea107ebc630200269`,minLevel:10}],sxe=[`Active`,`Closed`];Ze(Object.values(l5).filter(e=>e.id!==`unknown`).map(e=>{let t=Nc(Ac.SN_MAIN).gameContracts,n=[e.minter_id,...e.legacy_minter_ids??[]].filter(e=>e!==void 0),r=Nc(Ac.SN_MAIN).dungeonEntry;return{id:e.id,restricted:e.restricted===!0,contracts:[e.address,e.commitContract],exits:e.exitEntrypoints,routes:e.address?[{address:r,entrypoint:`buy_game`,dungeonArg:0},{address:r,entrypoint:`buy_wager_game`,dungeonArg:0},...(e.routerEntrypoints??[]).map(e=>({address:r,entrypoint:e}))]:[],games:[...e.v2GameCore&&e.v2MinterId!==void 0?[{address:e.v2GameCore,layout:e.tokenLayout??`packet`,minterIds:[e.v2MinterId]}]:[],...n.length>0?[{address:t.GameCore,layout:`legacy`,minterIds:n},{address:t.Denshokan,layout:`legacy`,minterIds:n}]:[]]}}));var cxe={lootsurvivor:`beastmode`};function lxe(e){return e===null?null:cxe[e]??e}function uxe(e){let t=Object.values(l5).filter(e=>e.showInOverview!==!1),n=e?.filter??`Active`,r=Date.now()/1e3,i=e=>r"
+   "raw": "unknown:{id:`unknown`,name:`Unknown Dungeon`,tagline:`You are in uncharted territory`,cardImage:`/images/dungeons/trials.png`,accentColor:`#e65100`,status:`offline`,hideAnalytics:!0,hideLeaderboard:!0,hideLivePlayers:!0,entryCost:``,difficulty:`Hard`,showInOverview:!1,tags:[],reward:``}};for(let[e,t]of Object.entries(l5))t.entryDisabledReason=Bc(e);var cxe=[{address:`0x04253e24220629b737512a24cb3172fc381db7be7a697d5af358ff21ef1172be`,minLevel:17},{address:`0x04f556c206b992b988af0301e31069884e8e83e83fe00e1ea107ebc630200269`,minLevel:10}],lxe=[`Active`,`Closed`];Ze(Object.values(l5).filter(e=>e.id!==`unknown`).map(e=>{let t=Mc(kc.SN_MAIN).gameContracts,n=[e.minter_id,...e.legacy_minter_ids??[]].filter(e=>e!==void 0),r=Mc(kc.SN_MAIN).dungeonEntry;return{id:e.id,restricted:e.restricted===!0,contracts:[e.address,e.commitContract],exits:e.exitEntrypoints,routes:e.address?[{address:r,entrypoint:`buy_game`,dungeonArg:0},{address:r,entrypoint:`buy_wager_game`,dungeonArg:0},...(e.routerEntrypoints??[]).map(e=>({address:r,entrypoint:e}))]:[],games:[...e.v2GameCore&&e.v2MinterId!==void 0?[{address:e.v2GameCore,layout:e.tokenLayout??`packet`,minterIds:[e.v2MinterId]}]:[],...n.length>0?[{address:t.GameCore,layout:`legacy`,minterIds:n},{address:t.Denshokan,layout:`legacy`,minterIds:n}]:[]]}}));var uxe={lootsurvivor:`beastmode`};function dxe(e){return e===null?null:uxe[e]??e}function fxe(e){let t=Object.values(l5).filter(e=>e.showInOverview!==!1),n=e?.filter??`Active`,r=Date.now()/1e3,i=e=>r"
   }
  ],
  "ronkeStrings": [
@@ -151,15 +151,15 @@
   "&dungeon=ronkeverse",
   "Ronke Casino bounty card: preview",
   "${window.location.origin}/ronkeverse",
-  "/play?id=${a(e)}&dungeon=ronkeverse",
+  "/play?id=${f(e)}&dungeon=ronkeverse",
   "/ronkeverse?tab=mygames",
   "ronke_player",
-  ",follows:{lootSurvivor:!0,ronke:!0}}),e=u(e,{type:",
+  ",follows:{lootSurvivor:!0,ronke:!0}}),e=v(e,{type:",
   "/ronkeverse",
   "/connect/preview/ronkeverse",
   "url('/images/themes/ronkeverse-casino/scenes/gameover.webp')",
   "https://lootsurvivor.io/ronkeverse",
-  ")],A=()=>{},j={ronke:59617,burns:40,wallets:28,usd:62.7},ve={ronke:1042,burns:1,wallets:1,usd:1},ye={ronke:1284550,burns:812,wallets:431,usd:1352.48},be={...j,usd:null};function M({summary:e,calendarStart:t}){let n={px:3.5,py:{xs:1.5,sm:1},minHeight:{xs:48,sm:",
+  ")],j=()=>{},M={ronke:59617,burns:40,wallets:28,usd:62.7},_e={ronke:1042,burns:1,wallets:1,usd:1},ve={ronke:1284550,burns:812,wallets:431,usd:1352.48},ye={...M,usd:null};function N({summary:e,calendarStart:t}){let n={px:3.5,py:{xs:1.5,sm:1},minHeight:{xs:48,sm:",
   "Ronkeverse Overview notices",
   "0x0preview000000000000000000000000000000000000000000000000000000ronke",
   "ronke_enjoyer",
