@@ -1,52 +1,10 @@
 {
- "updated": "2026-10-25T14:52:08.456Z",
+ "updated": "2026-10-25T14:52:28.784Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-10-25T14-19-36-533Z",
  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "recent": [
-  {
-   "n": 65,
-   "t": "2026-10-25T14:48:31.915Z",
-   "level": 16,
-   "xp": 270,
-   "hp": 185,
-   "maxHp": 190,
-   "gold": 15,
-   "phase": "battle",
-   "reason": "Attack \"Armageddon Moon\" Satori (L30 T4, 70 HP): P(win)=100.0% P(death)=0.0%; attack value 564.3 vs flee 469.0",
-   "actions": "attack",
-   "tx": "0x6f4071c0212758477cbf6517b9cfd30e2e7229d269aca786b0df49a88130e4b",
-   "ok": true
-  },
-  {
-   "n": 66,
-   "t": "2026-10-25T14:48:37.772Z",
-   "level": 16,
-   "xp": 270,
-   "hp": 125,
-   "maxHp": 190,
-   "gold": 15,
-   "phase": "battle",
-   "reason": "Attack \"Armageddon Moon\" Satori (L30 T4, 22 HP): P(win)=100.0% P(death)=0.0%; attack value 558.0 vs flee 458.1",
-   "actions": "attack",
-   "tx": "0x49b35669924fbf5e6dd44ba7a3679551483680bbd7994cad2f679801e32f6bf",
-   "ok": true
-  },
-  {
-   "n": 67,
-   "t": "2026-10-25T14:48:45.715Z",
-   "level": 17,
-   "xp": 290,
-   "hp": 125,
-   "maxHp": 190,
-   "gold": 45,
-   "phase": "level_up",
-   "reason": "Stats +1 DEX; Buy Bronze Ring, Pendant (bag), Amulet (bag); Drink 7 potion(s); Explore (instant-death risk 1.2%, HP 190/190)",
-   "actions": "stats(dex+1) + buy(7 potions, Bronze Ring, Pendant, Amulet) + explore",
-   "tx": "0x278aaff6f8eaf33dad4adcf9bf1ccfe61dae868f45a394be3da86387049b04b",
-   "ok": true
-  },
   {
    "n": 68,
    "t": "2026-10-25T14:48:52.040Z",
@@ -564,34 +522,76 @@
    "actions": "stats(dex+1) + equip(Katana) + buy(1 potion) + explore",
    "tx": "0x2e5971c7d760545203af28d22892da050f7660fc95a4e8e73c2622a65e8279c",
    "ok": true
+  },
+  {
+   "n": 105,
+   "t": "2026-10-25T14:52:08.459Z",
+   "level": 23,
+   "xp": 567,
+   "hp": 223,
+   "maxHp": 310,
+   "gold": 116,
+   "phase": "explore",
+   "reason": "Drink 9 potion(s); Explore (instant-death risk 2.1%, HP 310/310)",
+   "actions": "buy(9 potions) + explore",
+   "tx": "0x3fbb669df6415fbe9fb04076d5ed2a99428d9527c55bb35b09332e3e83a5d74",
+   "ok": true
+  },
+  {
+   "n": 106,
+   "t": "2026-10-25T14:52:14.168Z",
+   "level": 23,
+   "xp": 568,
+   "hp": 310,
+   "maxHp": 310,
+   "gold": 117,
+   "phase": "explore",
+   "reason": "Explore (instant-death risk 2.1%, HP 310/310)",
+   "actions": "explore",
+   "tx": "0x74a2474bb22ee6fb46b66d223c8dd451d0e1ac7aa077b776e2da26e0f280a9e",
+   "ok": true
+  },
+  {
+   "n": 107,
+   "t": "2026-10-25T14:52:23.173Z",
+   "level": 23,
+   "xp": 569,
+   "hp": 310,
+   "maxHp": 310,
+   "gold": 121,
+   "phase": "explore",
+   "reason": "Explore (instant-death risk 2.1%, HP 310/310)",
+   "actions": "explore",
+   "tx": "0x7f80ab58cc476a2e8d936fef760dc022ed55a03c782a3fdd766f7963e2a48d3",
+   "ok": true
   }
  ],
  "current": {
   "id": "904625697166532776746652061824565847215142356634039891789127560563772411553",
   "level": 23,
-  "xp": 545,
-  "hp": 307,
+  "xp": 569,
+  "hp": 310,
   "maxHp": 310,
-  "gold": 117,
+  "gold": 121,
   "gear": [
-   "Warhammer T1 G20",
-   "Holy Chestplate T1 G11",
-   "Ancient Helm T1 G15",
-   "Demonhide Belt T1 G5",
-   "Demonhide Boots T1 G11",
-   "Holy Gauntlets T1 G18",
-   "Pendant T1 G13",
-   "Bronze Ring T3 G18"
+   "Katana T1 G11",
+   "Holy Chestplate T1 G12",
+   "Ancient Helm T1 G16",
+   "Demonhide Belt T1 G7",
+   "Demonhide Boots T1 G12",
+   "Holy Gauntlets T1 G19",
+   "Pendant T1 G14",
+   "Bronze Ring T3 G19"
   ],
   "stats": {
    "str": 6,
-   "dex": 16,
+   "dex": 17,
    "vit": 14,
-   "int": 5,
+   "int": 4,
    "wis": 2,
    "cha": 17,
-   "luck": 52
+   "luck": 54
   },
-  "lastReason": "Stats +1 DEX; Equip Katana; Drink 1 potion(s); Explore (instant-death risk 2.0%, HP 310/310)"
+  "lastReason": "Explore (instant-death risk 2.1%, HP 310/310)"
  }
 }
