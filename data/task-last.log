@@ -1,9 +1,10 @@
-== bot frontend
+== bot frontend --call .linkEvm( --call connections/evm/link --call evmLink --call /ronkeverse/open --call openGame
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts frontend
+> node --import tsx src/cli.ts frontend --call .linkEvm( --call connections/evm/link --call evmLink --call /ronkeverse/open --call openGame
 
-downloaded 338 files, 15.6 MB into /tmp/lsfront-1792923201636
+downloaded 338 files, 15.6 MB into /tmp/lsfront-1792923449697
+10 snippet(s) for .linkEvm(, connections/evm/link, evmLink, /ronkeverse/open, openGame -> frontend/snippets.json
 8 dungeon configs on lootsurvivor.io
   trials                   Trials                     online       Free
   beastmode                Beast Mode                 online       1 Ticket settings=dA minter=fA @uA.dungeon
@@ -14,10 +15,10 @@ downloaded 338 files, 15.6 MB into /tmp/lsfront-1792923201636
   proving-grounds          Proving Grounds            hi?`online`:`coming_soon Free minter=Yi @fa
   unknown                  Unknown Dungeon            offline       @0x04253e24220629b737512a24cb3172fc381db7be7a697d5af358ff21ef1172be
 Ronke dungeons: ronke-casino (Ronke Casino)
-== bot ronke --address 0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452
+== bot ronke --address 0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts ronke --address 0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452
+> node --import tsx src/cli.ts ronke --address 0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82
 
-[ronke] account 0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452 (address)
+[ronke] account 0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82 (address)
 [ronke] status only
