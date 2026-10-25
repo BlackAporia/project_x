@@ -27,6 +27,7 @@ const COMMANDS: Record<string, string> = {
   contract: 'Inspect live mainnet contracts: ABI and view calls (--address 0x.. --call name:arg,arg)',
   'v2-verify': 'Dry-run verify_game for games (--game id,id) and print why settlement would revert',
   'v2-beasts': 'Check the bot\'s beast derivation and damage against real V2 games, packet by packet (--game id)',
+  'v2-audit': 'Audit the engine against real V2 games: replay each packet on chain and compare with engine draws (--address owner --game id --draws n)',
   frontend: 'List the dungeons lootsurvivor.io offers now (new ones highlighted); writes data/frontend/dungeons.json',
 };
 
@@ -93,6 +94,7 @@ async function main(): Promise<void> {
       levels: { type: 'string' },
       effort: { type: 'string' },
       claim: { type: 'boolean' },
+      draws: { type: 'string' },
       address: { type: 'string', multiple: true },
       call: { type: 'string', multiple: true },
     },
@@ -258,6 +260,17 @@ async function main(): Promise<void> {
     case 'v2-verify': {
       const { runV2VerifyCheck } = await import('./commands/v2-beasts.ts');
       await runV2VerifyCheck({ games: typeof values.game === 'string' ? values.game.split(',') : [] });
+      break;
+    }
+    case 'v2-audit': {
+      const { runV2AuditCommand } = await import('./commands/v2-audit.ts');
+      await runV2AuditCommand({
+        games: typeof values.game === 'string' ? values.game.split(',').filter(Boolean) : [],
+        owners: (Array.isArray(values.address) ? values.address : values.address ? [values.address] : []).map(String),
+        draws: num(values.draws, 300),
+        maxGames: num(values['max-games'], 400),
+        dataDir: str(values.data, process.env.BOT_DATA_DIR ?? 'site/data'),
+      });
       break;
     }
     case 'v2-beasts': {

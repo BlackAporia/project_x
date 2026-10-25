@@ -8,7 +8,22 @@ import { dungeonEngineSettings, loadSnapshot } from '../game/dungeons.ts';
 import type { Backend, SettleResult } from '../runner/play.ts';
 import { V2Chain, type Transcript } from './chain.ts';
 import { specialsSeed } from './backend.ts';
-import { actionsToInstructions, currentBeastV2, marketItemsV2, packetize, type MarketConfig } from './protocol.ts';
+import { actionsToInstructions, currentBeastV2, marketItemsV2, packetize, type MarketConfig, type V2Adventurer, type V2Item } from './protocol.ts';
+
+/** Authoritative chain state (replay_transcript) -> engine GameState, as the bot sees it. */
+export function chainToEngineState(id: bigint, a: V2Adventurer, bagItems: V2Item[], terminal: boolean, settings: Settings, market: MarketConfig | null): GameState {
+  const s = newGameState(id, settings);
+  const adv = decodeAdventurer(a);
+  adv.itemSpecialsSeed = specialsSeed(a.item_specials_salt, id.toString());
+  const bag: Item[] = bagItems.map((b) => ({ id: b.id, xp: b.xp }));
+  s.adventurer = adv;
+  s.bag = bag;
+  s.started = true;
+  s.market = market ? marketItemsV2(a.level_salt, id, market) : Array.from({ length: 101 }, (_, i) => i + 1);
+  s.beast = currentBeastV2(a, id);
+  if (terminal && adv.health > 0) adv.health = 0; // surrendered / finished
+  return s;
+}
 
 interface GameCtx {
   transcript: Transcript;
@@ -136,17 +151,7 @@ export class V2MainnetBackend implements Backend {
       const s0 = newGameState(id, c.settings);
       return startGame(s0, 46, new FastRandom(Number(id % 1000003n))).state;
     }
-    const s = newGameState(id, c.settings);
-    const adv = decodeAdventurer(st.adventurer);
-    adv.itemSpecialsSeed = specialsSeed(st.adventurer.item_specials_salt, id.toString());
-    const bag: Item[] = st.bag.map((b) => ({ id: b.id, xp: b.xp }));
-    s.adventurer = adv;
-    s.bag = bag;
-    s.started = true;
-    s.market = c.market ? marketItemsV2(st.adventurer.level_salt, id, c.market) : Array.from({ length: 101 }, (_, i) => i + 1);
-    s.beast = currentBeastV2(st.adventurer, id);
-    if (st.terminal && adv.health > 0) adv.health = 0; // surrendered / finished
-    return s;
+    return chainToEngineState(id, st.adventurer, st.bag, st.terminal, c.settings, c.market);
   }
 
   async execute(id: bigint, actions: Action[]): Promise<{ sent: Action[]; txs: string[]; reverted?: string }> {

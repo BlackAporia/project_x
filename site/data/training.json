@@ -306,5 +306,27 @@
   "max": 0,
   "games": 400,
   "source": "tail"
+ },
+ {
+  "date": "2026-10-25T17:14:15.695Z",
+  "generation": 4,
+  "objective": "blend",
+  "fitness": 454.115,
+  "mean": 249.22375,
+  "p90": 539,
+  "max": 1583,
+  "games": 800,
+  "source": "cmaes"
+ },
+ {
+  "date": "2026-10-25T17:16:06.407Z",
+  "generation": 8,
+  "objective": "blend",
+  "fitness": 487.46625,
+  "mean": 269.11375,
+  "p90": 586,
+  "max": 1672,
+  "games": 800,
+  "source": "cmaes"
  }
 ]
