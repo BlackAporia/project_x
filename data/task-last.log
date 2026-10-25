@@ -1,10 +1,10 @@
-== bot frontend --call leaderboard --call Leaderboard --call topScores --call proving-grounds
+== bot frontend --call https://api --call https://indexer --call dataStack --call proving-grounds
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts frontend --call leaderboard --call Leaderboard --call topScores --call proving-grounds
+> node --import tsx src/cli.ts frontend --call https://api --call https://indexer --call dataStack --call proving-grounds
 
-downloaded 338 files, 15.6 MB into /tmp/lsfront-1792954500412
-33 snippet(s) for leaderboard, Leaderboard, topScores, proving-grounds -> frontend/snippets.json
+downloaded 338 files, 15.6 MB into /tmp/lsfront-1792954603536
+62 snippet(s) for https://api, https://indexer, dataStack, proving-grounds -> frontend/snippets.json
 8 dungeon configs on lootsurvivor.io
   trials                   Trials                     online       Free
   beastmode                Beast Mode                 online       1 Ticket settings=fA minter=pA @dA.dungeon
