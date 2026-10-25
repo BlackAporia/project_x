@@ -1,0 +1,1881 @@
+{
+ "address": "0x011afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b",
+ "updated": "2026-10-25T11:59:45.358Z",
+ "classHash": "0x011fd12ac33848a5399e04dc25d817214a43f5f1b12337c8b83ae253db3bc2a4",
+ "functions": [
+  {
+   "name": "commit_actions",
+   "inputs": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252"
+    },
+    {
+     "name": "expected_chain",
+     "type": "core::felt252"
+    },
+    {
+     "name": "encoded_actions",
+     "type": "core::array::Span::<core::felt252>"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "commit_actions_unchecked",
+   "inputs": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252"
+    },
+    {
+     "name": "expected_chain",
+     "type": "core::felt252"
+    },
+    {
+     "name": "encoded_actions",
+     "type": "core::array::Span::<core::felt252>"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "get_commitment",
+   "inputs": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::felt252"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "initialize_game",
+   "inputs": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252"
+    },
+    {
+     "name": "packed_adventurer",
+     "type": "core::felt252"
+    },
+    {
+     "name": "packed_bag",
+     "type": "core::felt252"
+    },
+    {
+     "name": "specials_override",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "get_start_override",
+   "inputs": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "(core::felt252, core::felt252, core::felt252)"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "verify_game",
+   "inputs": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252"
+    },
+    {
+     "name": "actions",
+     "type": "core::array::Span::<core::felt252>"
+    },
+    {
+     "name": "blocks",
+     "type": "core::array::Span::<core::integer::u64>"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "verify_actions",
+   "inputs": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252"
+    },
+    {
+     "name": "attempt_nonce",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "actions",
+     "type": "core::array::Span::<core::felt252>"
+    },
+    {
+     "name": "blocks",
+     "type": "core::array::Span::<core::integer::u64>"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "apply_actions",
+   "inputs": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252"
+    },
+    {
+     "name": "attempt_nonce",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "actions",
+     "type": "core::array::Span::<core::felt252>"
+    },
+    {
+     "name": "blocks",
+     "type": "core::array::Span::<core::integer::u64>"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "verify_games_with_proof",
+   "inputs": [
+    {
+     "name": "results",
+     "type": "core::array::Span::<death_mountain::commit_reveal::proof::ProofResult>"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "direct_replay_started",
+   "inputs": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "is_verified",
+   "inputs": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_replay_checkpoint",
+   "inputs": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "death_mountain::systems::settlement::ReplayCheckpoint"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_progress",
+   "inputs": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252"
+    },
+    {
+     "name": "initiator",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "attempt_nonce",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "death_mountain::systems::settlement::SettleProgress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "replay_transcript",
+   "inputs": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252"
+    },
+    {
+     "name": "actions",
+     "type": "core::array::Span::<core::felt252>"
+    },
+    {
+     "name": "blocks",
+     "type": "core::array::Span::<core::integer::u64>"
+    },
+    {
+     "name": "hashes",
+     "type": "core::array::Span::<core::felt252>"
+    },
+    {
+     "name": "committed_len",
+     "type": "core::integer::u32"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "death_mountain::systems::settlement::ChainCheck"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "replay_provable_transcript",
+   "inputs": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252"
+    },
+    {
+     "name": "actions",
+     "type": "core::array::Span::<core::felt252>"
+    },
+    {
+     "name": "blocks",
+     "type": "core::array::Span::<core::integer::u64>"
+    },
+    {
+     "name": "claimed_block_hashes",
+     "type": "core::array::Span::<core::felt252>"
+    },
+    {
+     "name": "mint_hash",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "death_mountain::systems::replay::ProvableReplay"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "set_proof_config",
+   "inputs": [
+    {
+     "name": "config",
+     "type": "death_mountain::commit_reveal::proof::ProofConfig"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "get_proof_config",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "death_mountain::commit_reveal::proof::ProofConfig"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_entropy_block_offset",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u64"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "set_entropy_block_offset",
+   "inputs": [
+    {
+     "name": "offset",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "add_settings",
+   "inputs": [
+    {
+     "name": "name",
+     "type": "core::felt252"
+    },
+    {
+     "name": "description",
+     "type": "core::byte_array::ByteArray"
+    },
+    {
+     "name": "settings",
+     "type": "death_mountain::models::settings::GameSettings"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u32"
+    }
+   ],
+   "state": "external"
+  },
+  {
+   "name": "get_settings",
+   "inputs": [
+    {
+     "name": "settings_id",
+     "type": "core::integer::u32"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "death_mountain::models::settings::GameSettings"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_action_settings",
+   "inputs": [
+    {
+     "name": "settings_id",
+     "type": "core::integer::u32"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "death_mountain::models::settings::ActionSettings"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "create_objective",
+   "inputs": [
+    {
+     "name": "name",
+     "type": "core::byte_array::ByteArray"
+    },
+    {
+     "name": "description",
+     "type": "core::byte_array::ByteArray"
+    },
+    {
+     "name": "score_threshold",
+     "type": "core::integer::u32"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u32"
+    }
+   ],
+   "state": "external"
+  },
+  {
+   "name": "load_assets",
+   "inputs": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "(death_mountain::models::adventurer::Adventurer, death_mountain::models::bag::Bag)"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_adventurer",
+   "inputs": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "death_mountain::models::adventurer::Adventurer"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_bag",
+   "inputs": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "death_mountain::models::bag::Bag"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_packed_state",
+   "inputs": [
+    {
+     "name": "adventurer_id",
+     "type": "core::array::Span::<core::felt252>"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::array::Span::<(core::felt252, core::felt252)>"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_slain_beast",
+   "inputs": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252"
+    },
+    {
+     "name": "encounter_xp",
+     "type": "core::integer::u16"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::option::Option::<death_mountain::models::beast::RecordedKill>"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_slain_adventurer",
+   "inputs": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::option::Option::<death_mountain::models::beast::RecordedKill>"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "register_enumeration_interface",
+   "inputs": [],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "get_combat_class",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::class_hash::ClassHash"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_exploration_class",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::class_hash::ClassHash"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_market_class",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::class_hash::ClassHash"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_inventory_class",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::class_hash::ClassHash"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_stat_upgrades_class",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::class_hash::ClassHash"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_settlement_class",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::class_hash::ClassHash"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_replay_class",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::class_hash::ClassHash"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_settings_class",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::class_hash::ClassHash"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_metadata_class",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::class_hash::ClassHash"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "set_combat_class",
+   "inputs": [
+    {
+     "name": "class_hash",
+     "type": "core::starknet::class_hash::ClassHash"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "set_exploration_class",
+   "inputs": [
+    {
+     "name": "class_hash",
+     "type": "core::starknet::class_hash::ClassHash"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "set_market_class",
+   "inputs": [
+    {
+     "name": "class_hash",
+     "type": "core::starknet::class_hash::ClassHash"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "set_inventory_class",
+   "inputs": [
+    {
+     "name": "class_hash",
+     "type": "core::starknet::class_hash::ClassHash"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "set_stat_upgrades_class",
+   "inputs": [
+    {
+     "name": "class_hash",
+     "type": "core::starknet::class_hash::ClassHash"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "set_settlement_class",
+   "inputs": [
+    {
+     "name": "class_hash",
+     "type": "core::starknet::class_hash::ClassHash"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "set_replay_class",
+   "inputs": [
+    {
+     "name": "class_hash",
+     "type": "core::starknet::class_hash::ClassHash"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "set_settings_class",
+   "inputs": [
+    {
+     "name": "class_hash",
+     "type": "core::starknet::class_hash::ClassHash"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "set_metadata_class",
+   "inputs": [
+    {
+     "name": "class_hash",
+     "type": "core::starknet::class_hash::ClassHash"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "get_renderer_address",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "set_renderer_address",
+   "inputs": [
+    {
+     "name": "address",
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "minted_by_address",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "initialize_game_token_metadata",
+   "inputs": [],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "token_address",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "settings_address",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "objectives_address",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "score",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u64"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "game_over",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "new_game",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "score_batch",
+   "inputs": [
+    {
+     "name": "token_ids",
+     "type": "core::array::Span::<core::felt252>"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::array::Array::<core::integer::u64>"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "game_over_batch",
+   "inputs": [
+    {
+     "name": "token_ids",
+     "type": "core::array::Span::<core::felt252>"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::array::Array::<core::bool>"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "settings_exist",
+   "inputs": [
+    {
+     "name": "settings_id",
+     "type": "core::integer::u32"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "settings_exist_batch",
+   "inputs": [
+    {
+     "name": "settings_ids",
+     "type": "core::array::Span::<core::integer::u32>"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::array::Array::<core::bool>"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "settings_count",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u32"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "settings_details",
+   "inputs": [
+    {
+     "name": "settings_id",
+     "type": "core::integer::u32"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "game_components_interfaces::structs::minigame::GameSettingDetails"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "settings_details_batch",
+   "inputs": [
+    {
+     "name": "settings_ids",
+     "type": "core::array::Span::<core::integer::u32>"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::array::Array::<game_components_interfaces::structs::minigame::GameSettingDetails>"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "objective_exists",
+   "inputs": [
+    {
+     "name": "objective_id",
+     "type": "core::integer::u32"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "completed_objective",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    },
+    {
+     "name": "objective_id",
+     "type": "core::integer::u32"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "objective_exists_batch",
+   "inputs": [
+    {
+     "name": "objective_ids",
+     "type": "core::array::Span::<core::integer::u32>"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::array::Array::<core::bool>"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "objectives_count",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u32"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "objectives_details",
+   "inputs": [
+    {
+     "name": "objective_id",
+     "type": "core::integer::u32"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "game_components_interfaces::structs::minigame::GameObjectiveDetails"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "objectives_details_batch",
+   "inputs": [
+    {
+     "name": "objective_ids",
+     "type": "core::array::Span::<core::integer::u32>"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::array::Array::<game_components_interfaces::structs::minigame::GameObjectiveDetails>"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "upgrade",
+   "inputs": [
+    {
+     "name": "new_class_hash",
+     "type": "core::starknet::class_hash::ClassHash"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "balance_of",
+   "inputs": [
+    {
+     "name": "account",
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u256"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "owner_of",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::integer::u256"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "safe_transfer_from",
+   "inputs": [
+    {
+     "name": "from",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "to",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "token_id",
+     "type": "core::integer::u256"
+    },
+    {
+     "name": "data",
+     "type": "core::array::Span::<core::felt252>"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "transfer_from",
+   "inputs": [
+    {
+     "name": "from",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "to",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "token_id",
+     "type": "core::integer::u256"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "approve",
+   "inputs": [
+    {
+     "name": "to",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "token_id",
+     "type": "core::integer::u256"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "set_approval_for_all",
+   "inputs": [
+    {
+     "name": "operator",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "approved",
+     "type": "core::bool"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "get_approved",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::integer::u256"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "is_approved_for_all",
+   "inputs": [
+    {
+     "name": "owner",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "operator",
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "supports_interface",
+   "inputs": [
+    {
+     "name": "interface_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "name",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::byte_array::ByteArray"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "symbol",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::byte_array::ByteArray"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "token_uri",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::integer::u256"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::byte_array::ByteArray"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "balanceOf",
+   "inputs": [
+    {
+     "name": "account",
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u256"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "ownerOf",
+   "inputs": [
+    {
+     "name": "tokenId",
+     "type": "core::integer::u256"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "safeTransferFrom",
+   "inputs": [
+    {
+     "name": "from",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "to",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "tokenId",
+     "type": "core::integer::u256"
+    },
+    {
+     "name": "data",
+     "type": "core::array::Span::<core::felt252>"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "transferFrom",
+   "inputs": [
+    {
+     "name": "from",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "to",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "tokenId",
+     "type": "core::integer::u256"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "setApprovalForAll",
+   "inputs": [
+    {
+     "name": "operator",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "approved",
+     "type": "core::bool"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "getApproved",
+   "inputs": [
+    {
+     "name": "tokenId",
+     "type": "core::integer::u256"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "isApprovedForAll",
+   "inputs": [
+    {
+     "name": "owner",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "operator",
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "tokenURI",
+   "inputs": [
+    {
+     "name": "tokenId",
+     "type": "core::integer::u256"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::byte_array::ByteArray"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "token_of_owner_by_index",
+   "inputs": [
+    {
+     "name": "owner",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "index",
+     "type": "core::integer::u256"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u256"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "start",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u64"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "end",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u64"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "minted_at",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u64"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "schema_version",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u8"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "is_soulbound",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "paymaster",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "tx_hash",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u16"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "mint_nonce",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u16"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "minted_at_block_number",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u32"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "minted_at_timestamp",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u64"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "start_delay",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u64"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "play_duration",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u64"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "settings_id",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u32"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "objective_id",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u32"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "minted_by",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u32"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "minter_data",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u128"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "lifecycle",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "game_token::structs::Lifecycle"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "is_lifecycle_open",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "minter_address_by_token_id",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "minter_address_by_id",
+   "inputs": [
+    {
+     "name": "minter_id",
+     "type": "core::integer::u32"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "token_data",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "game_token::structs::GameTokenData"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "mint",
+   "inputs": [
+    {
+     "name": "recipient_address",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "params",
+     "type": "game_token::structs::MintParams"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::felt252"
+    }
+   ],
+   "state": "external"
+  },
+  {
+   "name": "mint_batch",
+   "inputs": [
+    {
+     "name": "recipient_addresses",
+     "type": "core::array::Span::<core::starknet::contract_address::ContractAddress>"
+    },
+    {
+     "name": "params",
+     "type": "game_token::structs::MintParams"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::array::Span::<core::felt252>"
+    }
+   ],
+   "state": "external"
+  },
+  {
+   "name": "royalty_info",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::integer::u256"
+    },
+    {
+     "name": "sale_price",
+     "type": "core::integer::u256"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "(core::starknet::contract_address::ContractAddress, core::integer::u256)"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "default_royalty",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "(core::starknet::contract_address::ContractAddress, core::integer::u128, core::integer::u128)"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "token_royalty",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::integer::u256"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "(core::starknet::contract_address::ContractAddress, core::integer::u128, core::integer::u128)"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "set_default_royalty",
+   "inputs": [
+    {
+     "name": "receiver",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "fee_numerator",
+     "type": "core::integer::u128"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "delete_default_royalty",
+   "inputs": [],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "set_token_royalty",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::integer::u256"
+    },
+    {
+     "name": "receiver",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "fee_numerator",
+     "type": "core::integer::u128"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "reset_token_royalty",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::integer::u256"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "owner",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "transfer_ownership",
+   "inputs": [
+    {
+     "name": "new_owner",
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "renounce_ownership",
+   "inputs": [],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "transferOwnership",
+   "inputs": [
+    {
+     "name": "newOwner",
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "renounceOwnership",
+   "inputs": [],
+   "outputs": [],
+   "state": "external"
+  }
+ ],
+ "calls": {
+  "is_verified:904625697166532776746652061824565847215142356634039857367502830056349459713": [
+   "0x0"
+  ],
+  "is_verified:904625697166532776746652061824565847215142356634039857385949574314741349409": [
+   "0x0"
+  ],
+  "direct_replay_started:904625697166532776746652061824565847215142356634039857385949574314741349409": [
+   "0x0"
+  ],
+  "get_replay_checkpoint:904625697166532776746652061824565847215142356634039857385949574314741349409": [
+   "0x64d0262cbfd9ac52e452b35a4b812c27162b8752801399dd8807a93d41a825a",
+   "0x0",
+   "0x0",
+   "0x0"
+  ],
+  "game_over:904625697166532776746652061824565847215142356634039857385949574314741349409": [
+   "0x0"
+  ]
+ }
+}
