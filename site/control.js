@@ -881,6 +881,23 @@ function stepName(n) {
   return STEP_LABEL[n] ?? n.replace(/^Run /, '');
 }
 
+const DEATH_UK = { obstacle: 'пастка', beast: 'звір', 'too many failed transactions': 'забагато невдалих транзакцій' };
+
+/** One finished mainnet game: how it ended and whether it counts (verify_game). */
+function gameResult(g) {
+  const cause = DEATH_UK[g.deathCause] ?? (g.deathCause?.startsWith('ambush by') ? `засідка: ${g.deathCause.slice(10)}` : g.deathCause);
+  const end = g.status === 'dead' ? `загинув на рівні <b>${g.level}</b>${cause ? ` (${esc(cause)})` : ''}` : g.status === 'in_progress' ? 'грає' : esc(g.status);
+  const gas = /needs gas|too expensive/.test(g.settleNote ?? '');
+  const settle =
+    g.settled === 'verified'
+      ? '<span class="ok-text">✓ зарахована в лідерборд</span>'
+      : g.settled === 'unverified'
+        ? `<span class="warn-text">⚠ не зарахована в лідерборд</span> <span class="muted small">— ${gas ? 'на Game Account немає STRK, щоб закрити гру (verify_game); поповніть STRK і бот закриє її в наступному запуску' : esc(g.settleNote ?? 'verify_game не пройшов')}</span>`
+        : '';
+  return `<div class="mon-game"><div><b>${Number(g.xp).toLocaleString("uk-UA")} XP</b> · ${end} · ${g.decisions} ходів, ${g.beastsKilled} звірів убито
+    <span class="muted small">· ${esc(g.dungeon ?? '')} · гра …${esc(String(g.id).slice(-7))}</span></div>${settle ? `<div>${settle}</div>` : ''}</div>`;
+}
+
 async function renderMonitor(runs) {
   const host = $('#monitor');
   if (!host) return;
@@ -923,15 +940,18 @@ async function renderMonitor(runs) {
     const list = Array.isArray(d) ? d : d?.runs ?? [];
     const since = new Date(run.run_started_at ?? run.created_at).getTime() - 60_000;
     const mine = list.filter((x) => new Date(x.started).getTime() >= since);
+    const gl = await window.botData?.load('games.json').catch(() => undefined);
+    const played = (Array.isArray(gl) ? gl : []).filter((g) => g.mode === 'mainnet' && g.status !== 'dry_run' && new Date(g.started).getTime() >= since);
+    if (played.length) result += `<div class="mon-games">${played.map(gameResult).join('')}</div>`;
     if (mine.length) {
-      result = `<div class="mon-results">${mine
+      result += `<div class="mon-results">${mine
         .map(
           (x) => `<div class="mon-result"><span class="badge ${x.mode.startsWith('mainnet') ? 'run' : 'muted'}">${esc(x.mode === 'mainnet' ? 'Mainnet' : x.mode === 'mainnet-dry' ? 'Mainnet (dry run)' : 'Тренування')}</span>
             <b>${x.games}</b> ігор · найкраща <b>${x.bestXp}</b> XP · середня ${x.meanXp}${x.errors ? ` · <span class="bad">${x.errors} помилок</span>` : ''}${x.ended ? '' : ' · <span class="run">триває</span>'}
             ${x.ended && x.games === 0 && x.mode.startsWith('mainnet') ? '<span class="muted small">— на акаунті бота не знайшлося незіграних ігор (ігри Ronke потребують сесії Game Account; для нових ігор — Proving Grounds)</span>' : ''}</div>`,
         )
         .join('')}</div>`;
-    } else if (running) result = '<p class="muted small">Результати з’являться після першої зіграної гри.</p>';
+    } else if (running && !played.length) result = '<p class="muted small">Результати з’являться після першої зіграної гри.</p>';
   }
   host.innerHTML = `
     <div class="mon-head">

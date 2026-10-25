@@ -10,6 +10,13 @@ import type { PolicyParams } from '../ai/params.ts';
 import type { GameClient, Executor } from '../chain/client.ts';
 import { DataStore, type DecisionLog, type GameRecord, type LiveStatus, type RunRecord } from './datastore.ts';
 
+export interface SettleResult {
+  verified: boolean;
+  tx?: string;
+  /** why it is not verified (e.g. no gas on the account) */
+  note?: string;
+}
+
 export interface Backend {
   mode: 'practice' | 'mainnet' | 'sim';
   account?: string;
@@ -23,8 +30,8 @@ export interface Backend {
   readState(id: bigint): Promise<GameState>;
   /** returns tx hashes and the actions actually sent (a decision can be cut after its first random action) */
   execute(id: bigint, actions: Action[], state: GameState): Promise<{ sent: Action[]; txs: string[]; reverted?: string; events?: GameEvent[] }>;
-  /** optional: settle a finished game (V2 verify_game) */
-  finish?(id: bigint): Promise<string | null>;
+  /** optional: settle a finished game (V2 verify_game); null when there is nothing to settle */
+  finish?(id: bigint): Promise<SettleResult | null>;
 }
 
 export function describeAction(a: Action): string {
@@ -411,7 +418,13 @@ async function playGame(
 
   if (state.started && isDead(state)) {
     rec.status = 'dead';
-    if (backend.finish && !backend.dryRun) await backend.finish(id);
+    if (backend.finish && !backend.dryRun) {
+      const r = await backend.finish(id);
+      if (r) {
+        rec.settled = r.verified ? 'verified' : 'unverified';
+        if (r.note) rec.settleNote = r.note.slice(0, 200);
+      }
+    }
   }
   rec.xp = state.adventurer.xp;
   rec.level = level(state.adventurer);

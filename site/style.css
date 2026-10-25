@@ -268,3 +268,7 @@ a.btn { text-decoration: none; display: inline-block; }
 .tabs { padding: 0 24px; border-bottom: 1px solid var(--border); }
 @media (max-width: 700px) { .tabs { padding: 0 16px; } .tabs button { padding: 10px 10px; } }
 .tab-dot[hidden] { display: none; }
+.mon-games { display: grid; gap: 8px; margin-top: 10px; }
+.mon-game { padding: 10px 12px; border: 1px solid var(--border, #333); border-radius: 10px; font-size: 14px; display: grid; gap: 4px; }
+.ok-text { color: var(--good); }
+.warn-text { color: var(--warning); }

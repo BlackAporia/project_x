@@ -5,7 +5,7 @@ import type { Action, GameState, Item, Settings } from '../game/types.ts';
 import { decodeAdventurer } from '../chain/state.ts';
 import type { Executor } from '../chain/client.ts';
 import { dungeonEngineSettings, loadSnapshot } from '../game/dungeons.ts';
-import type { Backend } from '../runner/play.ts';
+import type { Backend, SettleResult } from '../runner/play.ts';
 import { V2Chain, type Transcript } from './chain.ts';
 import { specialsSeed } from './backend.ts';
 import { actionsToInstructions, currentBeastV2, marketItemsV2, packetize, type MarketConfig } from './protocol.ts';
@@ -163,10 +163,11 @@ export class V2MainnetBackend implements Backend {
   }
 
   /** Settle the score of a finished game on-chain. */
-  async finish(id: bigint): Promise<string | null> {
-    if (this.dryRun || !this.executor || this.settleBlocked) return null;
+  async finish(id: bigint): Promise<SettleResult | null> {
+    if (this.dryRun || !this.executor) return null;
+    if (await this.chain.isVerified(id).catch(() => false)) return { verified: true };
+    if (this.settleBlocked) return { verified: false, note: this.settleBlocked };
     const c = await this.ctx(id);
-    if (await this.chain.isVerified(id).catch(() => false)) return null;
     // the replay needs the entropy block of the last commit: settling right after the final move reverted
     // ("unripe"), which left every finished game unverified (not on the leaderboard)
     for (let attempt = 0; attempt < 4; attempt++) {
@@ -174,20 +175,20 @@ export class V2MainnetBackend implements Backend {
         await this.chain.waitReady(c.transcript);
         const tx = await this.chain.verify(this.executor, c.transcript);
         this.log(`[v2] game ${id} verified (${tx})`);
-        return tx;
+        return { verified: true, tx };
       } catch (e) {
-        if (await this.chain.isVerified(id).catch(() => false)) return null;
+        if (await this.chain.isVerified(id).catch(() => false)) return { verified: true };
         const msg = (e as Error).message;
         this.log(`[v2] verify_game failed for ${id} (attempt ${attempt + 1}/4): ${msg.slice(0, 200)}`);
         // no sponsorship and no gas on the account: retrying cannot help, and it held up the unplayed games
         if (/needs gas|too expensive|not eligible for sponsorship/.test(msg)) {
           this.settleBlocked = msg.slice(0, 200);
-          return null;
+          return { verified: false, note: this.settleBlocked };
         }
         await new Promise((r) => setTimeout(r, 15_000 * (attempt + 1)));
       }
     }
-    return null;
+    return { verified: false, note: 'verify_game failed 4 times' };
   }
 
   /** Finished (dead) games that were never settled: verify them so their scores count. */
@@ -203,7 +204,7 @@ export class V2MainnetBackend implements Backend {
       } catch {
         continue;
       }
-      if (await this.finish(id)) n++;
+      if ((await this.finish(id))?.tx) n++;
     }
     return n;
   }

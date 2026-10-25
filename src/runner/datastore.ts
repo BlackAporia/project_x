@@ -30,6 +30,9 @@ export interface GameRecord {
   predictionMismatches?: number;
   status: 'dead' | 'abandoned' | 'error' | 'in_progress' | 'dry_run';
   rank?: number;
+  /** V2 mainnet: whether the finished game was settled (verify_game), i.e. counts on the leaderboard */
+  settled?: 'verified' | 'unverified';
+  settleNote?: string;
 }
 
 export interface DecisionLog {

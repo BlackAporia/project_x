@@ -252,6 +252,12 @@ function renderKpis() {
   ].join('');
 }
 
+const MSG_UK = {
+  'no unplayed games on the account (buy/mint games in the UI)': 'Усі ігри на акаунті зіграні. Нова гра — «Proving Grounds» (безкоштовно, газ ваш) або купити в lootsurvivor.io. Результат — у блоці «Зараз».',
+  'looking for unplayed games on the account': 'Шукаю незіграні ігри на акаунті…',
+  'no more games': 'Ігри закінчились.',
+};
+
 function renderLive(status) {
   const c = status?.current;
   const host = $('#live');
@@ -259,7 +265,7 @@ function renderLive(status) {
   if (stale) {
     host.innerHTML = '<p class="muted">Запуск іде, бот ще не надіслав перших даних — вони оновлюються щохвилини.</p>';
   } else if (!c || !status.running) {
-    host.innerHTML = `<p class="muted">Немає активної гри.${status?.message ? `<br>${esc(status.message)}${status.account ? ` <span class="small">· акаунт ${esc(short(status.account))}</span>` : ''} <span class="small">· ${ago(status.updated)}</span>` : ''}</p>`;
+    host.innerHTML = `<p class="muted">Немає активної гри.${status?.message ? `<br>${esc(MSG_UK[status.message] ?? status.message)}${status.account ? ` <span class="small">· акаунт ${esc(short(status.account))}</span>` : ''} <span class="small">· ${ago(status.updated)}</span>` : ''}</p>`;
   } else {
     const hpPct = c.maxHp ? Math.round((c.hp / c.maxHp) * 100) : 0;
     const slots = ['Зброя', 'Груди', 'Голова', 'Пояс', 'Ноги', 'Руки', 'Шия', 'Кільце'];
