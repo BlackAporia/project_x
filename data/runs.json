@@ -539,11 +539,11 @@
   "id": "2026-10-26T11-41-07-266Z",
   "mode": "mainnet",
   "started": "2026-10-26T11:41:07.266Z",
-  "games": 12,
-  "bestXp": 472,
-  "meanXp": 238,
+  "games": 13,
+  "bestXp": 928,
+  "meanXp": 291,
   "errors": 0,
   "policy": "tail-pg-2026-10-25",
-  "ended": "2026-10-26T12:55:53.674Z"
+  "ended": "2026-10-26T13:07:21.200Z"
  }
 ]

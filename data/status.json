@@ -1,52 +1,10 @@
 {
- "updated": "2026-10-26T13:06:40.668Z",
+ "updated": "2026-10-26T13:06:57.804Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-10-26T11-41-07-266Z",
  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "recent": [
-  {
-   "n": 74,
-   "t": "2026-10-26T13:02:57.259Z",
-   "level": 21,
-   "xp": 442,
-   "hp": 271,
-   "maxHp": 280,
-   "gold": 48,
-   "phase": "level_up",
-   "reason": "Stats +1 CHA; Drink 1 potion(s); Explore (instant-death risk 1.6%, battle-death risk 1.3%, HP 280/280)",
-   "actions": "stats(cha+1) + buy(1 potion) + explore",
-   "tx": "0x77531768d50167ecc3e84cf2fe00ff9a31b69b0dd367149df512c9d58a2c55a",
-   "ok": true
-  },
-  {
-   "n": 75,
-   "t": "2026-10-26T13:03:02.071Z",
-   "level": 21,
-   "xp": 443,
-   "hp": 280,
-   "maxHp": 280,
-   "gold": 60,
-   "phase": "explore",
-   "reason": "Explore (instant-death risk 1.6%, battle-death risk 1.3%, HP 280/280)",
-   "actions": "explore",
-   "tx": "0x31cd0eb3ecbb15b53d1874f1cb1df6c13b6a8c9ba6ae69e41f297fb697f6574",
-   "ok": true
-  },
-  {
-   "n": 76,
-   "t": "2026-10-26T13:03:08.580Z",
-   "level": 21,
-   "xp": 444,
-   "hp": 280,
-   "maxHp": 280,
-   "gold": 74,
-   "phase": "explore",
-   "reason": "Explore (instant-death risk 1.6%, battle-death risk 1.3%, HP 280/280)",
-   "actions": "explore",
-   "tx": "0x1757f7a3c62b201bb1bbf6e8e8845fd814d3d009956d5d92089c26f35b872f7",
-   "ok": true
-  },
   {
    "n": 77,
    "t": "2026-10-26T13:03:14.771Z",
@@ -564,18 +522,60 @@
    "actions": "stats(vit+1) + equip(Ornate Chestplate) + buy(16 potions) + explore",
    "tx": "0x5fe5e2d8d319011ce0334f33c3c3d81487e207a75f2fe5296cb86bffffef539",
    "ok": true
+  },
+  {
+   "n": 114,
+   "t": "2026-10-26T13:06:40.687Z",
+   "level": 30,
+   "xp": 926,
+   "hp": 459,
+   "maxHp": 460,
+   "gold": 163,
+   "phase": "battle",
+   "reason": "Flee from \"Rapture Growl\" Pegasus (L85 T5): P(escape)=100.0% P(death)=<0.1%; flee value 476.7 vs attack 471.5",
+   "actions": "flee",
+   "tx": "0x793cb112c468117bcf3a5b333a25f09ffe72cf37c1ccca639b05621f96b8e68",
+   "ok": true
+  },
+  {
+   "n": 115,
+   "t": "2026-10-26T13:06:45.416Z",
+   "level": 30,
+   "xp": 927,
+   "hp": 459,
+   "maxHp": 460,
+   "gold": 163,
+   "phase": "explore",
+   "reason": "Drop Divine Robe; Buy Divine Robe; Drink 1 potion(s); Explore (instant-death risk 2.3%, battle-death risk 0.7%, HP 460/460)",
+   "actions": "drop(Divine Robe) + buy(1 potion, Divine Robe) + explore",
+   "tx": "0x19f1cae52e445bf40ceef27f6213a26ba87838368a535ba4af130bb73469688",
+   "ok": true
+  },
+  {
+   "n": 116,
+   "t": "2026-10-26T13:06:51.808Z",
+   "level": 30,
+   "xp": 928,
+   "hp": 460,
+   "maxHp": 460,
+   "gold": 158,
+   "phase": "explore",
+   "reason": "Explore (instant-death risk 2.3%, battle-death risk 0.7%, HP 460/460)",
+   "actions": "explore",
+   "tx": "0x64527047cf70749a03ac2c4a4d71f48c1d99f593b5ddccbc6521e84d4fe9dd2",
+   "ok": true
   }
  ],
  "current": {
   "id": "904625697166532776746652061824565847215142356634039916378637617612689645729",
   "level": 30,
-  "xp": 926,
-  "hp": 294,
-  "maxHp": 445,
-  "gold": 179,
+  "xp": 928,
+  "hp": 460,
+  "maxHp": 460,
+  "gold": 158,
   "gear": [
    "Ghost Wand T1 G20",
-   "Divine Robe T1 G20",
+   "Divine Robe T1 G1",
    "Demon Crown T1 G17",
    "Demonhide Belt T1 G18",
    "Silk Slippers T2 G15",
@@ -586,12 +586,12 @@
   "stats": {
    "str": 9,
    "dex": 27,
-   "vit": 23,
-   "int": 9,
+   "vit": 24,
+   "int": 6,
    "wis": 5,
    "cha": 16,
    "luck": 57
   },
-  "lastReason": "Stats +1 VIT; Equip Ornate Chestplate; Drink 16 potion(s); Explore (instant-death risk 2.3%, battle-death risk 0.7%, HP 460/460)"
+  "lastReason": "Explore (instant-death risk 2.3%, battle-death risk 0.7%, HP 460/460)"
  }
 }
