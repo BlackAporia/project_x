@@ -1,52 +1,10 @@
 {
- "updated": "2026-10-26T13:31:25.566Z",
+ "updated": "2026-10-26T13:31:41.901Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-10-26T11-41-07-266Z",
  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "recent": [
-  {
-   "n": 109,
-   "t": "2026-10-26T13:26:39.009Z",
-   "level": 22,
-   "xp": 496,
-   "hp": 301,
-   "maxHp": 310,
-   "gold": 6,
-   "phase": "battle",
-   "reason": "Swap gear vs \"Corpse Glow\" Basilisk: Holy Chestplate, Hard Leather Belt (value 591.3 > 581.9)",
-   "actions": "equip(Holy Chestplate, Hard Leather Belt)",
-   "tx": "0x4f91c84054d555289248ff5740ed297c7a2bb29f153894b84822e8f5aabf8ab",
-   "ok": true
-  },
-  {
-   "n": 110,
-   "t": "2026-10-26T13:26:43.585Z",
-   "level": 22,
-   "xp": 496,
-   "hp": 299,
-   "maxHp": 310,
-   "gold": 6,
-   "phase": "battle",
-   "reason": "Flee from \"Corpse Glow\" Basilisk (L20 T5): P(escape)=100.0% P(death)=<0.1%; flee value 591.6 vs attack 591.0",
-   "actions": "flee",
-   "tx": "0x610ffe995f68f0a202d93a8d28019d82a47e78e5e7ef3f59067cdda7aa6cf3b",
-   "ok": true
-  },
-  {
-   "n": 111,
-   "t": "2026-10-26T13:26:50.104Z",
-   "level": 22,
-   "xp": 497,
-   "hp": 299,
-   "maxHp": 310,
-   "gold": 6,
-   "phase": "explore",
-   "reason": "Equip Robe, Linen Sash; Drink 2 potion(s); Explore (instant-death risk 2.3%, battle-death risk 3.8%, HP 310/310)",
-   "actions": "equip(Robe, Linen Sash) + buy(2 potions) + explore",
-   "tx": "0x2de21265ede5c8fef3b656e754906a3cebdd453cca43e8d908823d814bf41ee",
-   "ok": true
-  },
   {
    "n": 112,
    "t": "2026-10-26T13:26:56.453Z",
@@ -564,15 +522,57 @@
    "actions": "stats(dex+1) + buy(5 potions) + explore",
    "tx": "0x29c84310efd7ff072ebfe51056799f560c1384ef0aea3bf946c80fb364cf35",
    "ok": true
+  },
+  {
+   "n": 36,
+   "t": "2026-10-26T13:31:25.567Z",
+   "level": 13,
+   "xp": 177,
+   "hp": 84,
+   "maxHp": 130,
+   "gold": 9,
+   "phase": "battle",
+   "reason": "Flee from \"Onslaught Grasp\" Gorgon (L33 T1): P(escape)=83.1% P(death)=16.9%; flee value 230.0 vs attack 68.5",
+   "actions": "flee",
+   "tx": "0x59a044438b6f22fdc0570cdd069abb8bdb01ce2b416cb0a46b407d8152f0ed4",
+   "ok": true
+  },
+  {
+   "n": 37,
+   "t": "2026-10-26T13:31:31.455Z",
+   "level": 13,
+   "xp": 178,
+   "hp": 84,
+   "maxHp": 130,
+   "gold": 9,
+   "phase": "explore",
+   "reason": "Drink 5 potion(s); Explore (instant-death risk 1.9%, battle-death risk 1.3%, HP 130/130)",
+   "actions": "buy(5 potions) + explore",
+   "tx": "0x6ef12450a3ccda1369f8b5f54de6616960b43bcf38a56c2babaaa48b47b8fb0",
+   "ok": true
+  },
+  {
+   "n": 38,
+   "t": "2026-10-26T13:31:37.483Z",
+   "level": 13,
+   "xp": 178,
+   "hp": 52,
+   "maxHp": 130,
+   "gold": 4,
+   "phase": "battle",
+   "reason": "Flee from \"Behemoth Peak\" Nemeanlion (L21 T1): P(escape)=83.1% P(death)=16.9%; flee value 210.4 vs attack 57.8",
+   "actions": "flee",
+   "tx": "0x7d890ebd7a081bf045c910042f946142403a87739488b81c3a2fddb054014f1",
+   "ok": true
   }
  ],
  "current": {
   "id": "904625697166532776746652061824565847215142356634039916968933432854772863905",
   "level": 13,
-  "xp": 177,
-  "hp": 81,
+  "xp": 178,
+  "hp": 52,
   "maxHp": 130,
-  "gold": 14,
+  "gold": 4,
   "gear": [
    "Grimoire T1 G7",
    "Ring Mail T5 G12",
@@ -585,13 +585,14 @@
   ],
   "stats": {
    "str": 1,
-   "dex": 9,
+   "dex": 10,
    "vit": 2,
    "int": 3,
    "wis": 1,
    "cha": 7,
    "luck": 2
   },
-  "lastReason": "Stats +1 DEX; Drink 5 potion(s); Explore (instant-death risk 1.9%, battle-death risk 1.3%, HP 130/130)"
+  "beast": "\"Behemoth Peak\" Nemeanlion",
+  "lastReason": "Flee from \"Behemoth Peak\" Nemeanlion (L21 T1): P(escape)=83.1% P(death)=16.9%; flee value 210.4 vs attack 57.8"
  }
 }
