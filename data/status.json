@@ -1,38 +1,10 @@
 {
- "updated": "2026-10-26T16:50:11.952Z",
+ "updated": "2026-10-26T16:53:14.913Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-10-26T16-16-54-759Z",
  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "recent": [
-  {
-   "n": 0,
-   "t": "2026-10-26T16:17:09.807Z",
-   "level": 17,
-   "xp": 303,
-   "hp": 235,
-   "maxHp": 235,
-   "gold": 26,
-   "phase": "battle",
-   "reason": "Flee from Kraken (L14 T1): P(escape)=100.0% P(death)=<0.1%; flee value 532.7 vs attack 526.3",
-   "actions": "flee",
-   "ok": false,
-   "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 112949066386216 }, l2_gas: { max_amount: 2310240, max_price_per_unit: 28530053817 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 295051116919 } }) exceed balance (54454874731645552).]"
-  },
-  {
-   "n": 1,
-   "t": "2026-10-26T16:17:20.710Z",
-   "level": 17,
-   "xp": 303,
-   "hp": 235,
-   "maxHp": 235,
-   "gold": 26,
-   "phase": "battle",
-   "reason": "Flee from Kraken (L14 T1): P(escape)=100.0% P(death)=<0.1%; flee value 532.7 vs attack 526.3",
-   "actions": "flee",
-   "ok": false,
-   "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 113064571938733 }, l2_gas: { max_amount: 2310240, max_price_per_unit: 28530053817 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 295382066664 } }) exceed balance (54454874731645552).]"
-  },
   {
    "n": 2,
    "t": "2026-10-26T16:17:41.938Z",
@@ -550,6 +522,48 @@
    "actions": "flee",
    "ok": false,
    "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 105707398497595 }, l2_gas: { max_amount: 2310240, max_price_per_unit: 29010657460 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 228859216083 } }) exceed balance (54454874731645552).]"
+  },
+  {
+   "n": 3,
+   "t": "2026-10-26T16:50:11.958Z",
+   "level": 17,
+   "xp": 303,
+   "hp": 235,
+   "maxHp": 235,
+   "gold": 26,
+   "phase": "battle",
+   "reason": "Flee from Kraken (L14 T1): P(escape)=100.0% P(death)=<0.1%; flee value 532.7 vs attack 526.3",
+   "actions": "flee",
+   "ok": false,
+   "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 105374371912804 }, l2_gas: { max_amount: 2310240, max_price_per_unit: 29010657460 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 226128026518 } }) exceed balance (54454874731645552).]"
+  },
+  {
+   "n": 4,
+   "t": "2026-10-26T16:51:13.049Z",
+   "level": 17,
+   "xp": 303,
+   "hp": 235,
+   "maxHp": 235,
+   "gold": 26,
+   "phase": "battle",
+   "reason": "Flee from Kraken (L14 T1): P(escape)=100.0% P(death)=<0.1%; flee value 532.7 vs attack 526.3",
+   "actions": "flee",
+   "ok": false,
+   "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 104865273416206 }, l2_gas: { max_amount: 2310240, max_price_per_unit: 29002575076 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 222345267474 } }) exceed balance (54454874731645552).]"
+  },
+  {
+   "n": 5,
+   "t": "2026-10-26T16:52:13.922Z",
+   "level": 17,
+   "xp": 303,
+   "hp": 235,
+   "maxHp": 235,
+   "gold": 26,
+   "phase": "battle",
+   "reason": "Flee from Kraken (L14 T1): P(escape)=100.0% P(death)=<0.1%; flee value 532.7 vs attack 526.3",
+   "actions": "flee",
+   "ok": false,
+   "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 104497913562372 }, l2_gas: { max_amount: 2310240, max_price_per_unit: 29002575076 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 218606114389 } }) exceed balance (54454874731645552).]"
   }
  ],
  "current": {
