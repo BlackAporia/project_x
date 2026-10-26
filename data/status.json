@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-26T16:27:33.783Z",
+ "updated": "2026-10-26T16:28:57.560Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-10-26T16-16-54-759Z",
@@ -172,35 +172,77 @@
    "actions": "flee",
    "ok": false,
    "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 112294649922625 }, l2_gas: { max_amount: 2310240, max_price_per_unit: 28740086847 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 288526855467 } }) exceed balance (54454874731645552).]"
+  },
+  {
+   "n": 0,
+   "t": "2026-10-26T16:27:44.591Z",
+   "level": 21,
+   "xp": 456,
+   "hp": 236,
+   "maxHp": 310,
+   "gold": 24,
+   "phase": "battle",
+   "reason": "Flee from \"Dread Tear\" Cyclops (L31 T4): P(escape)=89.3% P(death)=10.7%; flee value 532.5 vs attack 399.2",
+   "actions": "flee",
+   "ok": false,
+   "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 112224035882622 }, l2_gas: { max_amount: 2310240, max_price_per_unit: 28740086847 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 287747106523 } }) exceed balance (54454874731645552).]"
+  },
+  {
+   "n": 1,
+   "t": "2026-10-26T16:27:55.395Z",
+   "level": 21,
+   "xp": 456,
+   "hp": 236,
+   "maxHp": 310,
+   "gold": 24,
+   "phase": "battle",
+   "reason": "Flee from \"Dread Tear\" Cyclops (L31 T4): P(escape)=89.3% P(death)=10.7%; flee value 532.5 vs attack 399.2",
+   "actions": "flee",
+   "ok": false,
+   "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 112095512665813 }, l2_gas: { max_amount: 2310240, max_price_per_unit: 28740086847 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 287425110409 } }) exceed balance (54454874731645552).]"
+  },
+  {
+   "n": 2,
+   "t": "2026-10-26T16:28:16.626Z",
+   "level": 21,
+   "xp": 456,
+   "hp": 236,
+   "maxHp": 310,
+   "gold": 24,
+   "phase": "battle",
+   "reason": "Flee from \"Dread Tear\" Cyclops (L31 T4): P(escape)=89.3% P(death)=10.7%; flee value 532.5 vs attack 399.2",
+   "actions": "flee",
+   "ok": false,
+   "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 112177932185875 }, l2_gas: { max_amount: 2310240, max_price_per_unit: 28740086847 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 287575958473 } }) exceed balance (54454874731645552).]"
   }
  ],
  "current": {
-  "id": "904625697166532776746652061824565847215142356634039918610693669180293810049",
-  "level": 17,
-  "xp": 303,
-  "hp": 235,
-  "maxHp": 235,
-  "gold": 26,
+  "id": "904625697166532776746652061824565847215142356634039918905841576915152362209",
+  "level": 21,
+  "xp": 456,
+  "hp": 236,
+  "maxHp": 310,
+  "gold": 24,
   "gear": [
-   "Ghost Wand T1 G19",
-   "Silk Robe T2 G18",
-   "DragonsCrown T2 G17",
-   "Mesh Belt T4 G19",
-   "Hard Leather Boots T4 G19",
-   "Wool Gloves T3 G17",
-   "Pendant T1 G10",
-   "Bronze Ring T3 G15"
+   "Katana T1 G20",
+   "Robe T4 G10",
+   "Helm T5 G10",
+   "Sash T5 G10",
+   "Heavy Boots T5 G20",
+   "Heavy Gloves T5 G20",
+   "-",
+   "Silver Ring T2 G5"
   ],
   "stats": {
-   "str": 1,
-   "dex": 15,
-   "vit": 9,
-   "int": 8,
-   "wis": 6,
+   "str": 3,
+   "dex": 14,
+   "vit": 14,
+   "int": 3,
+   "wis": 5,
    "cha": 10,
-   "luck": 26
+   "luck": 11
   },
-  "beast": "Kraken",
-  "lastReason": "Flee from Kraken (L14 T1): P(escape)=100.0% P(death)=<0.1%; flee value 532.7 vs attack 526.3"
+  "beast": "\"Dread Tear\" Cyclops",
+  "lastReason": "Flee from \"Dread Tear\" Cyclops (L31 T4): P(escape)=89.3% P(death)=10.7%; flee value 532.5 vs attack 399.2"
  }
 }
