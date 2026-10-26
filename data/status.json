@@ -1,52 +1,10 @@
 {
- "updated": "2026-10-26T14:32:04.057Z",
+ "updated": "2026-10-26T14:33:02.159Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-10-26T11-41-07-266Z",
  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "recent": [
-  {
-   "n": 58,
-   "t": "2026-10-26T14:28:09.673Z",
-   "level": 13,
-   "xp": 180,
-   "hp": 106,
-   "maxHp": 115,
-   "gold": 17,
-   "phase": "explore",
-   "reason": "Drink 1 potion(s); Explore (instant-death risk 2.4%, battle-death risk 1.5%, HP 115/115)",
-   "actions": "buy(1 potion) + explore",
-   "tx": "0x2ab50039c5bf409a9e2de0c2da4a32df9541df89fa3c76a8467e64fbf33e2c8",
-   "ok": true
-  },
-  {
-   "n": 59,
-   "t": "2026-10-26T14:28:16.772Z",
-   "level": 13,
-   "xp": 181,
-   "hp": 115,
-   "maxHp": 115,
-   "gold": 20,
-   "phase": "explore",
-   "reason": "Explore (instant-death risk 2.4%, battle-death risk 1.5%, HP 115/115)",
-   "actions": "explore",
-   "tx": "0x1cbe112b5e03834ba1fe5c30fc5c10e04a5ce817941d5ea355e576bd87153a0",
-   "ok": true
-  },
-  {
-   "n": 60,
-   "t": "2026-10-26T14:28:23.160Z",
-   "level": 13,
-   "xp": 181,
-   "hp": 74,
-   "maxHp": 115,
-   "gold": 20,
-   "phase": "battle",
-   "reason": "Flee from Gorgon (L18 T1): P(escape)=89.9% P(death)=10.1%; flee value 247.3 vs attack 150.7",
-   "actions": "flee",
-   "tx": "0xaf8965598cc5cbd3dc191d3340a368928871c5e5728172d92e32f692a67406",
-   "ok": true
-  },
   {
    "n": 61,
    "t": "2026-10-26T14:28:29.371Z",
@@ -564,34 +522,76 @@
    "actions": "explore",
    "tx": "0xa48d4b3e885da3aba6322ffda2541e524951a3544833d702173de2986e91dc",
    "ok": true
+  },
+  {
+   "n": 0,
+   "t": "2026-10-26T14:32:45.270Z",
+   "level": 1,
+   "xp": 0,
+   "hp": 130,
+   "maxHp": 130,
+   "gold": 40,
+   "phase": "explore",
+   "reason": "Buy Grimoire, Gloves, Hood, Shirt, Chain Boots, Sash; Explore until beast (instant-death risk 0.0%, battle-death risk <0.1%, HP 130/130)",
+   "actions": "buy(Grimoire, Gloves, Hood, Shirt, Chain Boots, Sash) + explore(till beast)",
+   "tx": "0x794332c2819af6f4b15cf8f22fd417210def226d18ff8de3d4043b4e3814d89",
+   "ok": true
+  },
+  {
+   "n": 1,
+   "t": "2026-10-26T14:32:51.384Z",
+   "level": 2,
+   "xp": 4,
+   "hp": 130,
+   "maxHp": 130,
+   "gold": 5,
+   "phase": "level_up",
+   "reason": "Stats +1 VIT; Explore until beast (instant-death risk 0.0%, battle-death risk 0.0%, HP 145/145)",
+   "actions": "stats(vit+1) + explore(till beast)",
+   "tx": "0xdb8c853a86726d46bb1570b6e76211056f284fd04fec55bc102d20665464d4",
+   "ok": true
+  },
+  {
+   "n": 2,
+   "t": "2026-10-26T14:32:55.536Z",
+   "level": 4,
+   "xp": 18,
+   "hp": 145,
+   "maxHp": 145,
+   "gold": 5,
+   "phase": "level_up",
+   "reason": "Stats +1 DEX +1 CHA; Explore until beast (instant-death risk 0.0%, battle-death risk <0.1%, HP 145/145)",
+   "actions": "stats(dex+1 cha+1) + explore(till beast)",
+   "tx": "0x30b4d4d53773440e02a5b8ce742c1cc76c08ce4dec243b05a6d4a6bba267af2",
+   "ok": true
   }
  ],
  "current": {
-  "id": "904625697166532776746652061824565847215142356634039917983504365378473515297",
-  "level": 17,
-  "xp": 323,
-  "hp": 17,
-  "maxHp": 175,
-  "gold": 0,
+  "id": "904625697166532776746652061824565847215142356634039918167971807687527573345",
+  "level": 4,
+  "xp": 18,
+  "hp": 145,
+  "maxHp": 145,
+  "gold": 5,
   "gear": [
-   "Mace T4 G18",
-   "Divine Robe T1 G18",
-   "Linen Hood T4 G17",
-   "Hard Leather Belt T4 G18",
-   "Hard Leather Boots T4 G17",
-   "Ornate Gauntlets T2 G12",
+   "Grimoire T1 G3",
+   "Shirt T5 G3",
+   "Hood T5 G3",
+   "Sash T5 G3",
+   "Chain Boots T4 G3",
+   "Gloves T5 G3",
    "-",
-   "Bronze Ring T3 G11"
+   "-"
   ],
   "stats": {
-   "str": 6,
-   "dex": 15,
-   "vit": 5,
-   "int": 5,
-   "wis": 4,
-   "cha": 8,
-   "luck": 12
+   "str": 1,
+   "dex": 2,
+   "vit": 3,
+   "int": 4,
+   "wis": 2,
+   "cha": 1,
+   "luck": 2
   },
-  "lastReason": "Explore (instant-death risk 21.4%, battle-death risk 3.6%, HP 17/175)"
+  "lastReason": "Stats +1 DEX +1 CHA; Explore until beast (instant-death risk 0.0%, battle-death risk <0.1%, HP 145/145)"
  }
 }
