@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-26T17:08:42.776Z",
+ "updated": "2026-10-26T17:12:31.694Z",
  "mode": "mainnet",
- "running": true,
+ "running": false,
  "runId": "2026-10-26T17-07-08-825Z",
  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "recent": [
@@ -62,32 +62,5 @@
    "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 100195555314259 }, l2_gas: { max_amount: 2310240, max_price_per_unit: 28720164208 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 179926119168 } }) exceed balance (54454874731645552).]"
   }
  ],
- "current": {
-  "id": "904625697166532776746652061824565847215142356634039919809732044077473389441",
-  "level": 15,
-  "xp": 228,
-  "hp": 148,
-  "maxHp": 175,
-  "gold": 15,
-  "gear": [
-   "Katana T1 G16",
-   "Demon Husk T1 G7",
-   "Hood T5 G16",
-   "Silk Sash T2 G14",
-   "Chain Boots T4 G16",
-   "Studded Leather Gloves T3 G14",
-   "-",
-   "-"
-  ],
-  "stats": {
-   "str": 2,
-   "dex": 10,
-   "vit": 5,
-   "int": 6,
-   "wis": 5,
-   "cha": 6,
-   "luck": 2
-  },
-  "lastReason": "Stats +1 DEX; Drink 3 potion(s); Explore (instant-death risk 1.0%, battle-death risk 1.4%, HP 175/175)"
- }
+ "message": "no unplayed games on the account (buy/mint games in the UI)"
 }

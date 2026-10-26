@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-26T17:02:56.579Z",
+ "updated": "2026-10-26T17:12:35.457Z",
  "modes": {
   "mainnet": {
    "games": 94,
@@ -12,7 +12,7 @@
    "p90": 498,
    "last20Mean": 209,
    "transactions": 5486,
-   "reverts": 79,
+   "reverts": 47,
    "predictionAccuracy": null,
    "deathCauses": [
     [
@@ -446,18 +446,6 @@
  },
  "runs": [
   {
-   "id": "2026-10-24T15-58-03-441Z",
-   "mode": "practice",
-   "started": "2026-10-24T15:58:03.441Z",
-   "games": 200,
-   "bestXp": 1190,
-   "meanXp": 411,
-   "errors": 0,
-   "policy": "tuned-2026-10-22-g24",
-   "dungeon": "Ronkeverse Large #7",
-   "ended": "2026-10-24T15:58:21.523Z"
-  },
-  {
    "id": "2026-10-24T18-12-41-891Z",
    "mode": "mainnet-dry",
    "started": "2026-10-24T18:12:41.891Z",
@@ -785,6 +773,17 @@
    "errors": 4,
    "policy": "tail-pg-2026-10-25",
    "ended": "2026-10-26T16:59:25.534Z"
+  },
+  {
+   "id": "2026-10-26T17-07-08-825Z",
+   "mode": "mainnet",
+   "started": "2026-10-26T17:07:08.825Z",
+   "games": 0,
+   "bestXp": 0,
+   "meanXp": 0,
+   "errors": 3,
+   "policy": "tail-pg-2026-10-25",
+   "ended": "2026-10-26T17:12:31.695Z"
   }
  ],
  "policy": {
