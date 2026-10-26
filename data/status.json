@@ -1,52 +1,10 @@
 {
- "updated": "2026-10-26T16:53:14.913Z",
+ "updated": "2026-10-26T16:56:19.759Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-10-26T16-16-54-759Z",
  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "recent": [
-  {
-   "n": 2,
-   "t": "2026-10-26T16:17:41.938Z",
-   "level": 17,
-   "xp": 303,
-   "hp": 235,
-   "maxHp": 235,
-   "gold": 26,
-   "phase": "battle",
-   "reason": "Flee from Kraken (L14 T1): P(escape)=100.0% P(death)=<0.1%; flee value 532.7 vs attack 526.3",
-   "actions": "flee",
-   "ok": false,
-   "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 112977545984694 }, l2_gas: { max_amount: 2310240, max_price_per_unit: 28530053817 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 295258010626 } }) exceed balance (54454874731645552).]"
-  },
-  {
-   "n": 3,
-   "t": "2026-10-26T16:18:23.066Z",
-   "level": 17,
-   "xp": 303,
-   "hp": 235,
-   "maxHp": 235,
-   "gold": 26,
-   "phase": "battle",
-   "reason": "Flee from Kraken (L14 T1): P(escape)=100.0% P(death)=<0.1%; flee value 532.7 vs attack 526.3",
-   "actions": "flee",
-   "ok": false,
-   "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 113088389763480 }, l2_gas: { max_amount: 2310240, max_price_per_unit: 28530053817 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 295690129728 } }) exceed balance (54454874731645552).]"
-  },
-  {
-   "n": 4,
-   "t": "2026-10-26T16:19:24.564Z",
-   "level": 17,
-   "xp": 303,
-   "hp": 235,
-   "maxHp": 235,
-   "gold": 26,
-   "phase": "battle",
-   "reason": "Flee from Kraken (L14 T1): P(escape)=100.0% P(death)=<0.1%; flee value 532.7 vs attack 526.3",
-   "actions": "flee",
-   "ok": false,
-   "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 113330674329544 }, l2_gas: { max_amount: 2310240, max_price_per_unit: 28530053817 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 296187174850 } }) exceed balance (54454874731645552).]"
-  },
   {
    "n": 5,
    "t": "2026-10-26T16:20:25.973Z",
@@ -564,6 +522,48 @@
    "actions": "flee",
    "ok": false,
    "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 104497913562372 }, l2_gas: { max_amount: 2310240, max_price_per_unit: 29002575076 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 218606114389 } }) exceed balance (54454874731645552).]"
+  },
+  {
+   "n": 6,
+   "t": "2026-10-26T16:53:14.920Z",
+   "level": 17,
+   "xp": 303,
+   "hp": 235,
+   "maxHp": 235,
+   "gold": 26,
+   "phase": "battle",
+   "reason": "Flee from Kraken (L14 T1): P(escape)=100.0% P(death)=<0.1%; flee value 532.7 vs attack 526.3",
+   "actions": "flee",
+   "ok": false,
+   "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 103889775681018 }, l2_gas: { max_amount: 2310240, max_price_per_unit: 29002575076 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 214469431642 } }) exceed balance (54454874731645552).]"
+  },
+  {
+   "n": 7,
+   "t": "2026-10-26T16:54:16.472Z",
+   "level": 17,
+   "xp": 303,
+   "hp": 235,
+   "maxHp": 235,
+   "gold": 26,
+   "phase": "battle",
+   "reason": "Flee from Kraken (L14 T1): P(escape)=100.0% P(death)=<0.1%; flee value 532.7 vs attack 526.3",
+   "actions": "flee",
+   "ok": false,
+   "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 103065589994103 }, l2_gas: { max_amount: 2310240, max_price_per_unit: 29002575076 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 209727704089 } }) exceed balance (54454874731645552).]"
+  },
+  {
+   "n": 8,
+   "t": "2026-10-26T16:55:18.464Z",
+   "level": 17,
+   "xp": 303,
+   "hp": 235,
+   "maxHp": 235,
+   "gold": 26,
+   "phase": "battle",
+   "reason": "Flee from Kraken (L14 T1): P(escape)=100.0% P(death)=<0.1%; flee value 532.7 vs attack 526.3",
+   "actions": "flee",
+   "ok": false,
+   "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 102684375801471 }, l2_gas: { max_amount: 2310240, max_price_per_unit: 29002575076 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 206075481009 } }) exceed balance (54454874731645552).]"
   }
  ],
  "current": {
