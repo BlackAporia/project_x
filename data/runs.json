@@ -572,10 +572,11 @@
   "id": "2026-10-26T17-35-16-127Z",
   "mode": "mainnet",
   "started": "2026-10-26T17:35:16.127Z",
-  "games": 0,
-  "bestXp": 0,
-  "meanXp": 0,
+  "games": 1,
+  "bestXp": 553,
+  "meanXp": 553,
   "errors": 0,
-  "policy": "tail-pg-2026-10-25"
+  "policy": "tail-pg-2026-10-25",
+  "ended": "2026-10-26T17:39:25.481Z"
  }
 ]
