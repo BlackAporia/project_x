@@ -1,66 +1,10 @@
 {
- "updated": "2026-10-26T11:47:58.237Z",
+ "updated": "2026-10-26T11:48:20.910Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-10-26T11-41-07-266Z",
  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "recent": [
-  {
-   "n": 29,
-   "t": "2026-10-26T11:44:17.806Z",
-   "level": 10,
-   "xp": 114,
-   "hp": 130,
-   "maxHp": 145,
-   "gold": 7,
-   "phase": "battle",
-   "reason": "Attack Skinwalker (L11 T4, 138 HP): P(win)=99.9% P(death)=<0.1%; attack value 215.5 vs flee 174.3",
-   "actions": "attack",
-   "tx": "0x6d071c3095cda2830b35acdacdcdbfc65c2e319723aaa403f6ee2bd12c07e44",
-   "ok": true
-  },
-  {
-   "n": 30,
-   "t": "2026-10-26T11:44:23.906Z",
-   "level": 10,
-   "xp": 114,
-   "hp": 128,
-   "maxHp": 145,
-   "gold": 7,
-   "phase": "battle",
-   "reason": "Attack Skinwalker (L11 T4, 105 HP): P(win)=100.0% P(death)=<0.1%; attack value 216.3 vs flee 174.5",
-   "actions": "attack",
-   "tx": "0x192a6a96f42f373c1963822a382968f54db1323ef0252d233079595c697c9f0",
-   "ok": true
-  },
-  {
-   "n": 31,
-   "t": "2026-10-26T11:44:28.906Z",
-   "level": 10,
-   "xp": 114,
-   "hp": 126,
-   "maxHp": 145,
-   "gold": 7,
-   "phase": "battle",
-   "reason": "Attack Skinwalker (L11 T4, 72 HP): P(win)=100.0% P(death)=0.0%; attack value 217.0 vs flee 174.8",
-   "actions": "attack",
-   "tx": "0x1b65f06d77d7d2c9ad78220a31834715cc3ade9ad7fe704ecfd5432f508325b",
-   "ok": true
-  },
-  {
-   "n": 32,
-   "t": "2026-10-26T11:44:34.757Z",
-   "level": 10,
-   "xp": 114,
-   "hp": 124,
-   "maxHp": 145,
-   "gold": 7,
-   "phase": "battle",
-   "reason": "Attack Skinwalker (L11 T4, 39 HP): P(win)=100.0% P(death)=0.0%; attack value 217.6 vs flee 174.0",
-   "actions": "attack",
-   "tx": "0x7c4ddacb60733ec3ae972a31df831367c505fa4d9630778908e96b687183c0b",
-   "ok": true
-  },
   {
    "n": 33,
    "t": "2026-10-26T11:44:40.698Z",
@@ -564,34 +508,91 @@
    "actions": "explore",
    "tx": "0x7a15f494d5f08d11aa099d851985e8b1d88ccc550ff4e2caced8ebfa6d3393",
    "ok": true
+  },
+  {
+   "n": 69,
+   "t": "2026-10-26T11:47:58.241Z",
+   "level": 16,
+   "xp": 285,
+   "hp": 160,
+   "maxHp": 160,
+   "gold": 12,
+   "phase": "explore",
+   "reason": "Explore (instant-death risk 1.8%, battle-death risk 1.5%, HP 160/160)",
+   "actions": "explore",
+   "tx": "0x644e8abe971aefe53f6597e14cfc24471e5e68ca91f674761756d4dbf23f6cb",
+   "ok": true
+  },
+  {
+   "n": 70,
+   "t": "2026-10-26T11:48:03.135Z",
+   "level": 17,
+   "xp": 297,
+   "hp": 158,
+   "maxHp": 160,
+   "gold": 12,
+   "phase": "level_up",
+   "reason": "Stats +1 DEX; Drink 1 potion(s); Explore (instant-death risk 2.2%, battle-death risk 1.6%, HP 160/160)",
+   "actions": "stats(dex+1) + buy(1 potion) + explore",
+   "tx": "0x5e4139da1d7695daa1d739363d45bdb4caacd5614f039d0dddbbaa6a654b1d6",
+   "ok": true
+  },
+  {
+   "n": 71,
+   "t": "2026-10-26T11:48:09.035Z",
+   "level": 17,
+   "xp": 297,
+   "hp": 131,
+   "maxHp": 160,
+   "gold": 11,
+   "phase": "battle",
+   "reason": "Flee from \"Shimmering Bender\" Ammit (L50 T2): P(escape)=89.0% P(death)=11.0%; flee value 456.5 vs attack 270.3",
+   "actions": "flee",
+   "tx": "0x7a70fa9004d96ad747ec1f6526d7b2b773de771edd74190c3ee8d73b33b49cc",
+   "ok": true
+  },
+  {
+   "n": 72,
+   "t": "2026-10-26T11:48:14.957Z",
+   "level": 17,
+   "xp": 297,
+   "hp": 49,
+   "maxHp": 160,
+   "gold": 11,
+   "phase": "battle",
+   "reason": "Flee from \"Shimmering Bender\" Ammit (L50 T2): P(escape)=79.2% P(death)=20.8%; flee value 396.4 vs attack 57.9",
+   "actions": "flee",
+   "tx": "0x5d9ac6ec9ce0bd98fe249203ff5f1acb96509eb8c92ca44f565080830d130d5",
+   "ok": true
   }
  ],
  "current": {
   "id": "904625697166532776746652061824565847215142356634039915013578544613310844417",
-  "level": 16,
-  "xp": 280,
-  "hp": 160,
+  "level": 17,
+  "xp": 297,
+  "hp": 49,
   "maxHp": 160,
-  "gold": 12,
+  "gold": 11,
   "gear": [
-   "Ghost Wand T1 G17",
-   "Studded Leather Armor T3 G17",
-   "Cap T5 G17",
-   "Leather Belt T5 G17",
-   "Heavy Boots T5 G17",
-   "Leather Gloves T5 G17",
+   "Ghost Wand T1 G18",
+   "Studded Leather Armor T3 G18",
+   "Cap T5 G18",
+   "Leather Belt T5 G18",
+   "Heavy Boots T5 G18",
+   "Leather Gloves T5 G18",
    "-",
-   "Silver Ring T2 G6"
+   "Silver Ring T2 G7"
   ],
   "stats": {
    "str": 8,
-   "dex": 12,
+   "dex": 13,
    "vit": 4,
    "int": 6,
    "wis": 7,
    "cha": 8,
-   "luck": 13
+   "luck": 15
   },
-  "lastReason": "Explore (instant-death risk 1.8%, battle-death risk 1.5%, HP 160/160)"
+  "beast": "\"Shimmering Bender\" Ammit",
+  "lastReason": "Flee from \"Shimmering Bender\" Ammit (L50 T2): P(escape)=79.2% P(death)=20.8%; flee value 396.4 vs attack 57.9"
  }
 }
