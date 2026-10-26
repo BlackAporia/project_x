@@ -1,38 +1,10 @@
 {
- "updated": "2026-10-26T15:54:13.872Z",
+ "updated": "2026-10-26T15:54:25.671Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-10-26T11-41-07-266Z",
  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "recent": [
-  {
-   "n": 176,
-   "t": "2026-10-26T15:50:23.826Z",
-   "level": 21,
-   "xp": 448,
-   "hp": 235,
-   "maxHp": 235,
-   "gold": 13,
-   "phase": "level_up",
-   "reason": "Stats +3 DEX +1 VIT; Equip Linen Hood, Gloves; Explore (instant-death risk 3.6%, battle-death risk 2.0%, HP 250/250)",
-   "actions": "stats(dex+3 vit+1) + equip(Linen Hood, Gloves) + explore",
-   "tx": "0x1450cf50c73d4392b41bbac24e6f0abb15baab48f1f5bdda7f8fe31d4f6cfc9",
-   "ok": true
-  },
-  {
-   "n": 177,
-   "t": "2026-10-26T15:50:28.325Z",
-   "level": 21,
-   "xp": 473,
-   "hp": 227,
-   "maxHp": 250,
-   "gold": 13,
-   "phase": "explore",
-   "reason": "Drink 3 potion(s); Explore (instant-death risk 3.5%, battle-death risk 1.9%, HP 250/250)",
-   "actions": "buy(3 potions) + explore",
-   "tx": "0x61e42e44f5c89aa2b89cfba58015c24d9cd75d850f88ff4734f7069695e530b",
-   "ok": true
-  },
   {
    "n": 178,
    "t": "2026-10-26T15:50:34.414Z",
@@ -564,23 +536,51 @@
    "actions": "explore",
    "tx": "0x6f55b9911d7e1e3e5dcaaeb0cbdcb2284f3236d3722f727cffb672c0e96d3b0",
    "ok": true
+  },
+  {
+   "n": 216,
+   "t": "2026-10-26T15:54:13.873Z",
+   "level": 23,
+   "xp": 566,
+   "hp": 295,
+   "maxHp": 295,
+   "gold": 20,
+   "phase": "explore",
+   "reason": "Explore (instant-death risk 2.9%, battle-death risk 1.5%, HP 295/295)",
+   "actions": "explore",
+   "tx": "0x219c02ffbbdbe5f2959c458e7b48a0bdedff1f5e98dfb489c6949f481737c4b",
+   "ok": true
+  },
+  {
+   "n": 217,
+   "t": "2026-10-26T15:54:20.374Z",
+   "level": 24,
+   "xp": 595,
+   "hp": 275,
+   "maxHp": 295,
+   "gold": 20,
+   "phase": "level_up",
+   "reason": "Stats +1 VIT; Drink 2 potion(s); Explore (instant-death risk 2.8%, battle-death risk 1.9%, HP 310/310)",
+   "actions": "stats(vit+1) + buy(2 potions) + explore",
+   "tx": "0xe97f32159c0edc63a1a9dc3c73de141d74b138dd94e71321355bfd791db01f",
+   "ok": true
   }
  ],
  "current": {
   "id": "904625697166532776746652061824565847215142356634039919293223205611264478401",
-  "level": 23,
-  "xp": 565,
-  "hp": 295,
+  "level": 24,
+  "xp": 595,
+  "hp": 275,
   "maxHp": 295,
-  "gold": 8,
+  "gold": 20,
   "gear": [
-   "Warhammer T1 G15",
-   "Linen Robe T3 G6",
-   "Crown T1 G6",
-   "Dragonskin Belt T2 G13",
-   "Shoes T5 G13",
-   "Dragonskin Gloves T2 G6",
-   "Necklace T1 G7",
+   "Warhammer T1 G16",
+   "Linen Robe T3 G8",
+   "Crown T1 G8",
+   "Dragonskin Belt T2 G14",
+   "Shoes T5 G14",
+   "Dragonskin Gloves T2 G8",
+   "Necklace T1 G8",
    "Bronze Ring T3 G20"
   ],
   "stats": {
@@ -590,8 +590,8 @@
    "int": 2,
    "wis": 3,
    "cha": 12,
-   "luck": 27
+   "luck": 28
   },
-  "lastReason": "Explore (instant-death risk 2.9%, battle-death risk 1.5%, HP 295/295)"
+  "lastReason": "Stats +1 VIT; Drink 2 potion(s); Explore (instant-death risk 2.8%, battle-death risk 1.9%, HP 310/310)"
  }
 }
