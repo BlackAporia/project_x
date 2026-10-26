@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-26T17:56:12.680Z",
+ "updated": "2026-10-26T17:56:52.063Z",
  "mode": "mainnet",
- "running": true,
+ "running": false,
  "runId": "2026-10-26T17-35-16-127Z",
  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "recent": [
@@ -566,33 +566,5 @@
    "ok": true
   }
  ],
- "current": {
-  "id": "904625697166532776746652061824565847215142356634039919809732044077473389441",
-  "level": 34,
-  "xp": 1204,
-  "hp": 60,
-  "maxHp": 535,
-  "gold": 413,
-  "gear": [
-   "Katana T1 G20",
-   "Holy Chestplate T1 G17",
-   "Demon Crown T1 G20",
-   "War Belt T2 G20",
-   "Holy Greaves T1 G20",
-   "Holy Gauntlets T1 G20",
-   "Necklace T1 G20",
-   "Silver Ring T2 G16"
-  ],
-  "stats": {
-   "str": 9,
-   "dex": 28,
-   "vit": 29,
-   "int": 8,
-   "wis": 7,
-   "cha": 17,
-   "luck": 112
-  },
-  "beast": "\"Bramble Song\" Lich",
-  "lastReason": "Flee from \"Bramble Song\" Lich (L58 T3): P(escape)=95.7% P(death)=4.3%; flee value 393.1 vs attack 310.6"
- }
+ "message": "no unplayed games on the account (buy/mint games in the UI)"
 }
