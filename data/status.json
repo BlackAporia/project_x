@@ -1,8 +1,8 @@
 {
- "updated": "2026-10-25T23:18:37.851Z",
+ "updated": "2026-10-26T04:48:33.041Z",
  "mode": "mainnet-dry",
  "running": false,
- "runId": "2026-10-25T23-18-29-207Z",
+ "runId": "2026-10-26T04-48-22-253Z",
  "account": "0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452",
  "recent": [],
  "message": "no unplayed games on the account (buy/mint games in the UI)"
