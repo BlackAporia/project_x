@@ -105,3 +105,55 @@ export async function runV2VerifyCheck(opts: { games: string[] }): Promise<void>
     }
   }
 }
+
+/**
+ * Why does the core reject the bot's next move in a game? Reads the game, asks the policy for its decision and
+ * dry-runs it: replay_transcript with the decision's packets appended (latest block as their entropy) shows whether
+ * the core can apply them, and a commit_actions call (no account) shows the core's own revert reason.
+ */
+export async function runV2DryRunCommand(opts: { games: string[] }): Promise<void> {
+  const { loadParams } = await import('../ai/params.ts');
+  const { Policy } = await import('../ai/policy.ts');
+  const { V2MainnetBackend } = await import('../v2/mainnet-backend.ts');
+  const { actionsToInstructions, packetize, decodePacket } = await import('../v2/protocol.ts');
+  const { provider } = await connectProvider(MAINNET.rpcUrls);
+  const chain = new V2Chain(provider, MAINNET.gameCoreV2);
+  const offset = await chain.entropyOffset();
+  const policy = new Policy(loadParams());
+  const hex = (v: bigint) => '0x' + v.toString(16);
+  const reason = (e: unknown) => {
+    const m = (e as Error).message;
+    return (/\('([^']+)'\)/.exec(m)?.[1] ?? m.replace(/\s+/g, ' ')).slice(-500);
+  };
+  for (const g of opts.games) {
+    const id = BigInt(g);
+    const backend = new V2MainnetBackend({ chain, executor: null, dryRun: true, games: [id] });
+    const s = await backend.readState(id);
+    const a = s.adventurer;
+    const d = policy.decide(s);
+    const t = await chain.transcript(id);
+    const packets = packetize(actionsToInstructions(d.actions));
+    console.log(`game ${g}: L${Math.floor(Math.sqrt(a.xp))} xp ${a.xp} hp ${a.health} gold ${a.gold} beastHp ${a.beastHealth} stat points ${a.statUpgrades} stats ${JSON.stringify(a.stats)} | ${t.packets.length} packets`);
+    console.log(`  decision: ${d.reason}`);
+    console.log(`  packets: ${packets.map((p) => JSON.stringify(decodePacket(p))).join(' | ')}`);
+    const latest = BigInt(await chain.latestBlock()) - offset - 1n;
+    const hashes: bigint[] = [];
+    for (const b of t.blocks) hashes.push((await chain.blockHash(b + offset)) ?? 0n);
+    const hLatest = (await chain.blockHash(latest + offset)) ?? 0n;
+    const P = [...t.packets, ...packets];
+    const B = [...t.blocks, ...packets.map(() => latest)];
+    const H = [...hashes, ...packets.map(() => hLatest)];
+    try {
+      const r = await chain.call('replay_transcript', [id, P.length, ...P, B.length, ...B, H.length, ...H, P.length]);
+      console.log(`  replay with the move appended: OK (terminal=${r[5]}, applied=${r[2] ?? '?'})`);
+    } catch (e) {
+      console.log(`  replay with the move appended REVERTS: ${reason(e)}`);
+    }
+    try {
+      await provider.callContract({ contractAddress: MAINNET.gameCoreV2, entrypoint: 'commit_actions', calldata: [hex(id), hex(t.rolling), hex(BigInt(packets.length)), ...packets.map(hex)] });
+      console.log('  commit_actions (no account): would succeed');
+    } catch (e) {
+      console.log(`  commit_actions (no account) reverts: ${reason(e)}`);
+    }
+  }
+}
