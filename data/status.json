@@ -1,9 +1,79 @@
 {
- "updated": "2026-10-26T04:48:33.041Z",
- "mode": "mainnet-dry",
- "running": false,
- "runId": "2026-10-26T04-48-22-253Z",
- "account": "0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452",
- "recent": [],
- "message": "no unplayed games on the account (buy/mint games in the UI)"
+ "updated": "2026-10-26T11:41:58.694Z",
+ "mode": "mainnet",
+ "running": true,
+ "runId": "2026-10-26T11-41-07-266Z",
+ "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
+ "recent": [
+  {
+   "n": 0,
+   "t": "2026-10-26T11:41:42.295Z",
+   "level": 1,
+   "xp": 0,
+   "hp": 115,
+   "maxHp": 115,
+   "gold": 40,
+   "phase": "explore",
+   "reason": "Buy Ghost Wand, Heavy Boots, Leather Gloves, Studded Leather Armor, Leather Belt, Cap; Explore until beast (instant-death risk 0.0%, battle-death risk 0.2%, HP 115/115)",
+   "actions": "buy(Ghost Wand, Heavy Boots, Leather Gloves, Studded Leather Armor, Leather Belt, Cap) + explore(till beast)",
+   "tx": "0x3f6bb353395e3f622da4606f24b0bb7201b46ab51675635ec5001d8155ea4a",
+   "ok": true
+  },
+  {
+   "n": 1,
+   "t": "2026-10-26T11:41:48.651Z",
+   "level": 2,
+   "xp": 4,
+   "hp": 115,
+   "maxHp": 115,
+   "gold": 4,
+   "phase": "level_up",
+   "reason": "Stats +1 VIT; Explore until beast (instant-death risk 0.0%, battle-death risk 0.0%, HP 130/130)",
+   "actions": "stats(vit+1) + explore(till beast)",
+   "tx": "0x684449951d2eb4faf01126ecdd8cfcaaa38d9d5a79bdd1ae75dd85f9ec11522",
+   "ok": true
+  },
+  {
+   "n": 2,
+   "t": "2026-10-26T11:41:54.601Z",
+   "level": 3,
+   "xp": 12,
+   "hp": 130,
+   "maxHp": 130,
+   "gold": 4,
+   "phase": "level_up",
+   "reason": "Stats +1 VIT; Explore until beast (instant-death risk 0.0%, battle-death risk 0.0%, HP 145/145)",
+   "actions": "stats(vit+1) + explore(till beast)",
+   "tx": "0x1811b094e4f6c99832d29474dd92ddb2635b36f9eb44e52f3962b9b06dbf105",
+   "ok": true
+  }
+ ],
+ "current": {
+  "id": "904625697166532776746652061824565847215142356634039915013578544613310844417",
+  "level": 3,
+  "xp": 12,
+  "hp": 130,
+  "maxHp": 130,
+  "gold": 4,
+  "gear": [
+   "Ghost Wand T1 G3",
+   "Studded Leather Armor T3 G3",
+   "Cap T5 G3",
+   "Leather Belt T5 G3",
+   "Heavy Boots T5 G3",
+   "Leather Gloves T5 G3",
+   "-",
+   "-"
+  ],
+  "stats": {
+   "str": 1,
+   "dex": 3,
+   "vit": 2,
+   "int": 4,
+   "wis": 1,
+   "cha": 2,
+   "luck": 2
+  },
+  "lastReason": "Stats +1 VIT; Explore until beast (instant-death risk 0.0%, battle-death risk 0.0%, HP 145/145)"
+ }
 }
