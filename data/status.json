@@ -1,52 +1,10 @@
 {
- "updated": "2026-10-26T13:16:00.383Z",
+ "updated": "2026-10-26T13:17:00.683Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-10-26T11-41-07-266Z",
  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "recent": [
-  {
-   "n": 51,
-   "t": "2026-10-26T13:12:23.881Z",
-   "level": 15,
-   "xp": 245,
-   "hp": 205,
-   "maxHp": 205,
-   "gold": 18,
-   "phase": "explore",
-   "reason": "Explore (instant-death risk 0.8%, battle-death risk 0.8%, HP 205/205)",
-   "actions": "explore",
-   "tx": "0x1e9a8cb60800e46d6a4bc444d5ebeb740780dc1b0a3afb581cf15700f9e13a2",
-   "ok": true
-  },
-  {
-   "n": 52,
-   "t": "2026-10-26T13:12:28.403Z",
-   "level": 15,
-   "xp": 245,
-   "hp": 105,
-   "maxHp": 205,
-   "gold": 18,
-   "phase": "battle",
-   "reason": "Flee from \"Skull Song\" Wolf (L28 T2): P(escape)=90.0% P(death)=10.0%; flee value 355.5 vs attack 198.4",
-   "actions": "flee",
-   "tx": "0x32b468e6e3f154353e2ec7d5eb681ccdfa9ec0f706f293941c35e8aef2b3e99",
-   "ok": true
-  },
-  {
-   "n": 53,
-   "t": "2026-10-26T13:12:34.357Z",
-   "level": 15,
-   "xp": 246,
-   "hp": 105,
-   "maxHp": 205,
-   "gold": 18,
-   "phase": "explore",
-   "reason": "Drink 10 potion(s); Explore (instant-death risk 0.8%, battle-death risk 0.8%, HP 205/205)",
-   "actions": "buy(10 potions) + explore",
-   "tx": "0x7f5007ae32b8ba6cb7010e6f73c6e3a5f971e06e6cc8935a13fa35c73cd36a9",
-   "ok": true
-  },
   {
    "n": 54,
    "t": "2026-10-26T13:12:40.976Z",
@@ -564,34 +522,76 @@
    "actions": "explore",
    "tx": "0x62752cad76e005f4e33ef57ff0ee0feeaeec9ec2f792b39bc0541444ae77697",
    "ok": true
+  },
+  {
+   "n": 0,
+   "t": "2026-10-26T13:16:43.776Z",
+   "level": 1,
+   "xp": 0,
+   "hp": 115,
+   "maxHp": 115,
+   "gold": 40,
+   "phase": "explore",
+   "reason": "Buy Holy Chestplate, Helm, Hard Leather Belt, Wool Gloves, Heavy Boots; Explore until beast (instant-death risk 0.0%, battle-death risk <0.1%, HP 115/115)",
+   "actions": "buy(Holy Chestplate, Helm, Hard Leather Belt, Wool Gloves, Heavy Boots) + explore(till beast)",
+   "tx": "0x283ae319f337fabaa4167c75e6f6f08ab91bb3314f0adafd926ce334d5792be",
+   "ok": true
+  },
+  {
+   "n": 1,
+   "t": "2026-10-26T13:16:48.266Z",
+   "level": 2,
+   "xp": 5,
+   "hp": 115,
+   "maxHp": 115,
+   "gold": 13,
+   "phase": "level_up",
+   "reason": "Stats +1 STR; Explore until beast (instant-death risk 0.0%, battle-death risk 0.0%, HP 115/115)",
+   "actions": "stats(str+1) + explore(till beast)",
+   "tx": "0x6c8d7463dc79f4adedbb8c8beac27acb7dfbc3702b2d83c07cc6da590b82a17",
+   "ok": true
+  },
+  {
+   "n": 2,
+   "t": "2026-10-26T13:16:54.356Z",
+   "level": 3,
+   "xp": 9,
+   "hp": 115,
+   "maxHp": 115,
+   "gold": 13,
+   "phase": "level_up",
+   "reason": "Stats +1 DEX; Explore until beast (instant-death risk 0.0%, battle-death risk 0.0%, HP 115/115)",
+   "actions": "stats(dex+1) + explore(till beast)",
+   "tx": "0xc3f4095bde12e944de6691f8e2071542d9f932b1d33d39e598c5ed9bee9d4",
+   "ok": true
   }
  ],
  "current": {
-  "id": "904625697166532776746652061824565847215142356634039916599998548275321382529",
-  "level": 25,
-  "xp": 641,
-  "hp": 445,
-  "maxHp": 445,
-  "gold": 76,
+  "id": "904625697166532776746652061824565847215142356634039916766019246330276684641",
+  "level": 3,
+  "xp": 9,
+  "hp": 115,
+  "maxHp": 115,
+  "gold": 13,
   "gear": [
-   "Katana T1 G14",
-   "Ornate Chestplate T2 G14",
-   "Demon Crown T1 G9",
-   "Brightsilk Sash T1 G6",
-   "Ornate Greaves T2 G1",
-   "DemonsHands T1 G12",
-   "Amulet T1 G6",
-   "Silver Ring T2 G19"
+   "Wand T5 G2",
+   "Holy Chestplate T1 G2",
+   "Helm T5 G2",
+   "Hard Leather Belt T4 G2",
+   "Heavy Boots T5 G2",
+   "Wool Gloves T3 G2",
+   "-",
+   "-"
   ],
   "stats": {
-   "str": 2,
-   "dex": 20,
-   "vit": 23,
-   "int": 1,
-   "wis": 1,
-   "cha": 13,
-   "luck": 67
+   "str": 1,
+   "dex": 2,
+   "vit": 1,
+   "int": 2,
+   "wis": 2,
+   "cha": 5,
+   "luck": 2
   },
-  "lastReason": "Explore (instant-death risk 1.1%, battle-death risk 1.0%, HP 445/445)"
+  "lastReason": "Stats +1 DEX; Explore until beast (instant-death risk 0.0%, battle-death risk 0.0%, HP 115/115)"
  }
 }
