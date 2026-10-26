@@ -1,38 +1,10 @@
 {
- "updated": "2026-10-26T13:49:53.723Z",
+ "updated": "2026-10-26T13:50:02.757Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-10-26T11-41-07-266Z",
  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "recent": [
-  {
-   "n": 20,
-   "t": "2026-10-26T13:45:57.678Z",
-   "level": 6,
-   "xp": 41,
-   "hp": 114,
-   "maxHp": 145,
-   "gold": 15,
-   "phase": "battle",
-   "reason": "Attack Cyclops (L1 T4, 104 HP): P(win)=2.4% P(death)=0.0%; attack value 177.2 vs flee 177.2",
-   "actions": "attack",
-   "tx": "0x649183cfb25c6df4675af9d709b5d2bc31dac090081e213972df35f8c4d560",
-   "ok": true
-  },
-  {
-   "n": 21,
-   "t": "2026-10-26T13:46:04.183Z",
-   "level": 6,
-   "xp": 41,
-   "hp": 112,
-   "maxHp": 145,
-   "gold": 15,
-   "phase": "battle",
-   "reason": "Flee from Cyclops (L1 T4): P(escape)=99.9% P(death)=0.0%; flee value 177.2 vs attack 177.2",
-   "actions": "flee",
-   "tx": "0x1ea89fa48097518383053a66899e917302246e02305b967cf4e7c90ed83781f",
-   "ok": true
-  },
   {
    "n": 22,
    "t": "2026-10-26T13:46:10.468Z",
@@ -564,34 +536,62 @@
    "actions": "stats(dex+1) + explore",
    "tx": "0x36fb70578b603a167bc0d83833ea07352f6b372168115cff30bfc0e1b80a6fb",
    "ok": true
+  },
+  {
+   "n": 60,
+   "t": "2026-10-26T13:49:53.726Z",
+   "level": 11,
+   "xp": 135,
+   "hp": 28,
+   "maxHp": 145,
+   "gold": 0,
+   "phase": "level_up",
+   "reason": "Stats +1 DEX; Explore (instant-death risk 18.0%, battle-death risk 5.5%, HP 28/145)",
+   "actions": "stats(dex+1) + explore",
+   "tx": "0x29118466352b3f9f72f86dee8e98cdb7601638c3d9e5faed659e8dae2a1ba31",
+   "ok": true
+  },
+  {
+   "n": 61,
+   "t": "2026-10-26T13:49:58.256Z",
+   "level": 11,
+   "xp": 139,
+   "hp": 26,
+   "maxHp": 145,
+   "gold": 0,
+   "phase": "explore",
+   "reason": "Explore (instant-death risk 19.4%, battle-death risk 5.5%, HP 26/145)",
+   "actions": "explore",
+   "tx": "0x24e600d7edd8898222e897cbc98634d755117b4d78cb54a4aba5127c2360da5",
+   "ok": true
   }
  ],
  "current": {
   "id": "904625697166532776746652061824565847215142356634039917264081340555272760449",
-  "level": 10,
-  "xp": 108,
-  "hp": 39,
+  "level": 11,
+  "xp": 139,
+  "hp": 26,
   "maxHp": 145,
   "gold": 0,
   "gear": [
-   "Maul T3 G9",
-   "Robe T4 G8",
-   "Demon Crown T1 G11",
-   "Sash T5 G11",
-   "Leather Boots T5 G11",
-   "Gloves T5 G11",
+   "Maul T3 G10",
+   "Robe T4 G10",
+   "Demon Crown T1 G12",
+   "Sash T5 G12",
+   "Leather Boots T5 G12",
+   "Gloves T5 G12",
    "-",
    "-"
   ],
   "stats": {
    "str": 1,
-   "dex": 7,
+   "dex": 9,
    "vit": 3,
    "int": 1,
    "wis": 2,
    "cha": 6,
    "luck": 2
   },
-  "lastReason": "Stats +1 DEX; Explore (instant-death risk 12.2%, battle-death risk 3.5%, HP 39/145)"
+  "lastReason": "Explore (instant-death risk 19.4%, battle-death risk 5.5%, HP 26/145)"
  }
 }
