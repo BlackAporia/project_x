@@ -227,7 +227,7 @@ export async function playLoop(opts: PlayOptions): Promise<RunRecord> {
     }
     if (rec.status === 'error') {
       run.errors++;
-      if (backend.requeue && !requeued.has(id)) {
+      if (backend.requeue && !requeued.has(id) && !/no STRK/.test(rec.deathCause)) {
         requeued.add(id);
         backend.requeue(id);
         log(`[${backend.mode}] game ${id} stopped on errors while alive: it will be retried later in this run`);
@@ -355,6 +355,14 @@ async function playGame(
       rec.reverts++;
       consecutiveErrors++;
       ctx.log(`  ! ${entry.actions}: ${entry.error}`);
+      if (noFunds(result.reverted)) {
+        rec.status = 'error';
+        rec.deathCause = 'account has no STRK for a move the paymaster refused';
+        decisions.push(entry);
+        pushRecent(ctx.recent, entry);
+        ctx.flush();
+        break;
+      }
       // an RPC hiccup is not a lost game: back off instead of abandoning a live adventurer
       if (transientError(result.reverted)) {
         transientErrors++;
@@ -462,7 +470,10 @@ async function playGame(
 
 // RPC hiccups, and Cartridge refusing to prepare a game's transaction (seen in bursts on single games, answered in
 // under a second with no transaction sent): wait and retry for minutes instead of dropping a live adventurer
+// the account cannot pay a move the paymaster refused: waiting does not help until someone deposits STRK
+const noFunds = (m: string) => /exceed balance|insufficient (fee token )?balance|needs gas/i.test(m);
 const transientError = (m: string) =>
+  !noFunds(m) &&
   /RPC: |fetch failed|timeout|timed out|ECONN|rate limit|429|50[234]|socket hang up|network|Validation failure|Transaction execution error/i.test(m);
 
 function pushRecent(list: DecisionLog[], e: DecisionLog): void {
