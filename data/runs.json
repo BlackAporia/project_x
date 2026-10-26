@@ -553,8 +553,8 @@
   "games": 0,
   "bestXp": 0,
   "meanXp": 0,
-  "errors": 3,
+  "errors": 4,
   "policy": "tail-pg-2026-10-25",
-  "ended": "2026-10-26T16:48:58.258Z"
+  "ended": "2026-10-26T16:59:25.534Z"
  }
 ]
