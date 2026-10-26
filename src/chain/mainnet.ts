@@ -102,7 +102,18 @@ export class SessionExecutor implements Executor {
   async execute(calls: Call[]): Promise<{ transaction_hash: string }> {
     // executeFromOutside through the Cartridge paymaster (VRF proofs are attached by Cartridge); falls back to a
     // normal invoke paid by the account. No retry here: a resend could double-play an action.
-    return this.account.execute(calls);
+    try {
+      return await this.account.execute(calls);
+    } catch (e) {
+      // Cartridge answers with a bare "Validation failure" / "Transaction execution error": keep whatever detail the
+      // error carries (RPC error data, revert reason) so a stuck game can be diagnosed from the run log
+      const err = e as Error & { baseError?: unknown; data?: unknown; cause?: unknown; code?: unknown };
+      const extra = [err.code, err.baseError, err.data, (err.cause as Error | undefined)?.message]
+        .filter((x) => x !== undefined && x !== null)
+        .map((x) => (typeof x === 'string' ? x : JSON.stringify(x)))
+        .join(' | ');
+      throw new Error(`${err.message}${extra ? ` [${extra.slice(0, 900)}]` : ''}`);
+    }
   }
 }
 

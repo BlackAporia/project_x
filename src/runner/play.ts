@@ -351,7 +351,7 @@ async function playGame(
     entry.tx = result.txs[result.txs.length - 1];
     entry.ok = !result.reverted;
     if (result.reverted) {
-      entry.error = result.reverted.slice(0, 300);
+      entry.error = result.reverted.slice(0, 1000);
       rec.reverts++;
       consecutiveErrors++;
       ctx.log(`  ! ${entry.actions}: ${entry.error}`);
@@ -460,7 +460,10 @@ async function playGame(
   return rec;
 }
 
-const transientError = (m: string) => /RPC: |fetch failed|timeout|timed out|ECONN|rate limit|429|50[234]|socket hang up|network/i.test(m);
+// RPC hiccups, and Cartridge refusing to prepare a game's transaction (seen in bursts on single games, answered in
+// under a second with no transaction sent): wait and retry for minutes instead of dropping a live adventurer
+const transientError = (m: string) =>
+  /RPC: |fetch failed|timeout|timed out|ECONN|rate limit|429|50[234]|socket hang up|network|Validation failure|Transaction execution error/i.test(m);
 
 function pushRecent(list: DecisionLog[], e: DecisionLog): void {
   list.push(e);
