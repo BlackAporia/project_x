@@ -1,12 +1,20 @@
-== bot leaderboard
+== bot v2-dryrun --game 904625697166532776746652061824565847215142356634039918610693669180293810049,904625697166532776746652061824565847215142356634039918905841576915152362209,904625697166532776746652061824565847215142356634039919809732044077473389441
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts leaderboard
+> node --import tsx src/cli.ts v2-dryrun --game 904625697166532776746652061824565847215142356634039918610693669180293810049,904625697166532776746652061824565847215142356634039918905841576915152362209,904625697166532776746652061824565847215142356634039919809732044077473389441
 
-leaderboard (Proving Grounds, 392 games): top 1637 xp, bot best #7 (988 xp), bot places 7, 15, 17, 27, 36, 49, 54, 63, 79, 81, 94
-== bot site
-
-> loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts site
-
-summary written to site/data/summary.json
+game 904625697166532776746652061824565847215142356634039918610693669180293810049: L17 xp 303 hp 235 gold 26 beastHp 151 stat points 0 stats {"str":1,"dex":10,"vit":6,"int":3,"wis":2,"cha":6,"luck":0} | 95 packets
+  decision: Flee from Kraken (L14 T1): P(escape)=100.0% P(death)=<0.1%; flee value 532.7 vs attack 526.3
+  packets: [{"type":"flee","tillHealth":1023}]
+  replay with the move appended: OK (terminal=0, applied=0)
+  commit_actions (no account) reverts: NOT_OWNER
+game 904625697166532776746652061824565847215142356634039918905841576915152362209: L21 xp 456 hp 236 gold 24 beastHp 428 stat points 0 stats {"str":1,"dex":12,"vit":10,"int":3,"wis":3,"cha":9,"luck":0} | 82 packets
+  decision: Flee from "Dread Tear" Cyclops (L31 T4): P(escape)=89.3% P(death)=10.7%; flee value 532.5 vs attack 399.2
+  packets: [{"type":"flee","tillHealth":1023}]
+  replay with the move appended: OK (terminal=1, applied=0)
+  commit_actions (no account) reverts: NOT_OWNER
+game 904625697166532776746652061824565847215142356634039919809732044077473389441: L15 xp 228 hp 148 gold 15 beastHp 0 stat points 1 stats {"str":2,"dex":10,"vit":5,"int":1,"wis":1,"cha":6,"luck":0} | 50 packets
+  decision: Stats +1 DEX; Drink 3 potion(s); Explore (instant-death risk 1.0%, battle-death risk 1.4%, HP 175/175)
+  packets: [{"type":"upgrade_stat","statId":1,"amount":1},{"type":"buy_potions","quantity":3},{"type":"explore","tillDamage":0,"tillGold":false}]
+  replay with the move appended: OK (terminal=0, applied=0)
+  commit_actions (no account) reverts: NOT_OWNER
