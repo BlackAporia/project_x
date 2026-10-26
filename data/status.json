@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-26T16:21:26.865Z",
+ "updated": "2026-10-26T16:24:30.356Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-10-26T16-16-54-759Z",
@@ -88,6 +88,48 @@
    "actions": "flee",
    "ok": false,
    "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 112985714369793 }, l2_gas: { max_amount: 2310240, max_price_per_unit: 28803131685 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 295068335118 } }) exceed balance (54454874731645552).]"
+  },
+  {
+   "n": 6,
+   "t": "2026-10-26T16:21:26.871Z",
+   "level": 17,
+   "xp": 303,
+   "hp": 235,
+   "maxHp": 235,
+   "gold": 26,
+   "phase": "battle",
+   "reason": "Flee from Kraken (L14 T1): P(escape)=100.0% P(death)=<0.1%; flee value 532.7 vs attack 526.3",
+   "actions": "flee",
+   "ok": false,
+   "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 112897040276088 }, l2_gas: { max_amount: 2310240, max_price_per_unit: 28803131685 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 294080281038 } }) exceed balance (54454874731645552).]"
+  },
+  {
+   "n": 7,
+   "t": "2026-10-26T16:22:28.167Z",
+   "level": 17,
+   "xp": 303,
+   "hp": 235,
+   "maxHp": 235,
+   "gold": 26,
+   "phase": "battle",
+   "reason": "Flee from Kraken (L14 T1): P(escape)=100.0% P(death)=<0.1%; flee value 532.7 vs attack 526.3",
+   "actions": "flee",
+   "ok": false,
+   "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 112962564547695 }, l2_gas: { max_amount: 2310240, max_price_per_unit: 28729384218 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 293542015216 } }) exceed balance (54454874731645552).]"
+  },
+  {
+   "n": 8,
+   "t": "2026-10-26T16:23:29.073Z",
+   "level": 17,
+   "xp": 303,
+   "hp": 235,
+   "maxHp": 235,
+   "gold": 26,
+   "phase": "battle",
+   "reason": "Flee from Kraken (L14 T1): P(escape)=100.0% P(death)=<0.1%; flee value 532.7 vs attack 526.3",
+   "actions": "flee",
+   "ok": false,
+   "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 112677873570222 }, l2_gas: { max_amount: 2310240, max_price_per_unit: 28729384218 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 291708681369 } }) exceed balance (54454874731645552).]"
   }
  ],
  "current": {
