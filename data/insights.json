@@ -1,83 +1,91 @@
 {
- "updated": "2026-10-25T09:26:10.849Z",
+ "updated": "2026-10-26T10:43:35.145Z",
  "source": "top 40 + 10 live games (Denshokan) read on-chain",
- "players": 42,
+ "players": 81,
  "aggregate": {
   "early": {
-   "players": 3,
+   "players": 17,
    "ratios": {
-    "str": 0.199,
-    "dex": 0.56,
-    "vit": 0.557,
-    "int": 0.08,
-    "wis": 0.278,
-    "cha": 0.518
+    "str": 0.282,
+    "dex": 0.694,
+    "vit": 0.339,
+    "int": 0.365,
+    "wis": 0.233,
+    "cha": 0.587
    }
   },
   "late": {
-   "players": 39,
+   "players": 64,
    "ratios": {
-    "str": 0.181,
-    "dex": 0.646,
-    "vit": 0.795,
-    "int": 0.042,
-    "wis": 0.069,
-    "cha": 0.172
+    "str": 0.171,
+    "dex": 0.64,
+    "vit": 0.704,
+    "int": 0.054,
+    "wis": 0.079,
+    "cha": 0.221
    }
   },
-  "avgLevel": 42.8,
-  "avgArmorFilled": 4.88,
-  "avgGearTier": 1.2,
-  "jewelryShare": 0.95,
+  "avgLevel": 28.5,
+  "avgArmorFilled": 4.9,
+  "avgGearTier": 2,
+  "jewelryShare": 0.68,
   "weaponTypes": [
    [
     "Warhammer",
+    21
+   ],
+   [
+    "Ghost Wand",
     17
    ],
    [
     "Katana",
-    11
-   ],
-   [
-    "Ghost Wand",
-    9
+    16
    ],
    [
     "Grimoire",
-    3
-   ],
-   [
-    "Chronicle",
-    1
+    12
    ],
    [
     "Wand",
-    1
+    6
+   ],
+   [
+    "Quarterstaff",
+    2
+   ],
+   [
+    "Long Sword",
+    2
+   ],
+   [
+    "Mace",
+    2
    ]
   ]
  },
  "botTargets": {
   "early": {
-   "cha": 0.9400724370081446,
-   "dex": 1.149175589014733,
+   "cha": 0.9318165059788341,
+   "dex": 1.1230383152588543,
    "int": 0.3377095373094443,
    "wis": 0.309801143402319,
    "str": 0.09368980805712972
   },
   "late": {
-   "cha": 0.5,
-   "dex": 0.7,
-   "int": 0,
-   "wis": 0,
-   "str": 0.2
+   "cha": 0.5241328547191313,
+   "dex": 0.8253261938786447,
+   "int": 0.020454129729662835,
+   "wis": 0.0888082900870968,
+   "str": 0.10979172916514651
   }
  },
  "imitation": {
-  "str": 0.199,
-  "dex": 0.56,
-  "int": 0.08,
-  "wis": 0.278,
-  "cha": 0.518
+  "str": 0.282,
+  "dex": 0.694,
+  "int": 0.365,
+  "wis": 0.233,
+  "cha": 0.587
  },
  "builds": [
   {
@@ -3007,35 +3015,112 @@
    "bagItems": 11
   },
   {
-   "tokenId": "2713877091499598330239949450874152723227680784608696473267936669537743399841",
-   "player": "v2 settings #7",
-   "xp": 1195,
-   "level": 34,
+   "tokenId": "904625697166532776746652061824565847215142356634039909479555276067554039521",
+   "player": "v2 settings #0",
+   "xp": 1100,
+   "level": 33,
    "alive": false,
    "stats": {
-    "str": 4,
-    "dex": 29,
-    "vit": 24,
-    "int": 5,
-    "wis": 12,
-    "cha": 26,
-    "luck": 79
+    "str": 1,
+    "dex": 28,
+    "vit": 26,
+    "int": 4,
+    "wis": 6,
+    "cha": 20,
+    "luck": 88
    },
    "perLevel": {
-    "str": 0.059,
-    "dex": 0.765,
-    "vit": 0.529,
-    "int": 0.118,
-    "wis": 0.118,
-    "cha": 0.324
+    "str": 0,
+    "dex": 0.818,
+    "vit": 0.455,
+    "int": 0.091,
+    "wis": 0.091,
+    "cha": 0.303
    },
-   "gold": 326,
+   "gold": 60,
    "gear": [
     {
      "slot": "Weapon",
-     "name": "Katana",
+     "name": "Ghost Wand",
+     "tier": 1,
+     "greatness": 1
+    },
+    {
+     "slot": "Chest",
+     "name": "Leather Armor",
+     "tier": 5,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Crown",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Brightsilk Sash",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Foot",
+     "name": "Divine Slippers",
+     "tier": 1,
+     "greatness": 1
+    },
+    {
+     "slot": "Hand",
+     "name": "Holy Gauntlets",
+     "tier": 1,
+     "greatness": 15
+    },
+    {
+     "slot": "Neck",
+     "name": "Amulet",
+     "tier": 1,
+     "greatness": 18
+    },
+    {
+     "slot": "Ring",
+     "name": "Platinum Ring",
      "tier": 1,
      "greatness": 9
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 14
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039909387321554792768675777",
+   "player": "v2 settings #0",
+   "xp": 944,
+   "level": 30,
+   "alive": false,
+   "stats": {
+    "str": 9,
+    "dex": 20,
+    "vit": 22,
+    "int": 2,
+    "wis": 9,
+    "cha": 12,
+    "luck": 58
+   },
+   "perLevel": {
+    "str": 0.133,
+    "dex": 0.467,
+    "vit": 0.6,
+    "int": 0.067,
+    "wis": 0.1,
+    "cha": 0.267
+   },
+   "gold": 70,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Ghost Wand",
+     "tier": 1,
+     "greatness": 20
     },
     {
      "slot": "Chest",
@@ -3045,9 +3130,9 @@
     },
     {
      "slot": "Head",
-     "name": "Ancient Helm",
+     "name": "Crown",
      "tier": 1,
-     "greatness": 15
+     "greatness": 20
     },
     {
      "slot": "Waist",
@@ -3059,13 +3144,13 @@
      "slot": "Foot",
      "name": "Holy Greaves",
      "tier": 1,
-     "greatness": 18
+     "greatness": 20
     },
     {
      "slot": "Hand",
-     "name": "Holy Gauntlets",
+     "name": "DemonsHands",
      "tier": 1,
-     "greatness": 17
+     "greatness": 20
     },
     {
      "slot": "Neck",
@@ -3081,7 +3166,1214 @@
     }
    ],
    "armorFilled": 5,
+   "bagItems": 10
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039893560015006552015957889",
+   "player": "v2 settings #0",
+   "xp": 727,
+   "level": 26,
+   "alive": false,
+   "stats": {
+    "str": 4,
+    "dex": 18,
+    "vit": 15,
+    "int": 5,
+    "wis": 4,
+    "cha": 28,
+    "luck": 40
+   },
+   "perLevel": {
+    "str": 0.115,
+    "dex": 0.654,
+    "vit": 0.308,
+    "int": 0.077,
+    "wis": 0.115,
+    "cha": 0.462
+   },
+   "gold": 0,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Grave Wand",
+     "tier": 2,
+     "greatness": 15
+    },
+    {
+     "slot": "Chest",
+     "name": "Demon Husk",
+     "tier": 1,
+     "greatness": 12
+    },
+    {
+     "slot": "Head",
+     "name": "Crown",
+     "tier": 1,
+     "greatness": 10
+    },
+    {
+     "slot": "Waist",
+     "name": "Leather Belt",
+     "tier": 5,
+     "greatness": 11
+    },
+    {
+     "slot": "Foot",
+     "name": "Holy Greaves",
+     "tier": 1,
+     "greatness": 18
+    },
+    {
+     "slot": "Hand",
+     "name": "DemonsHands",
+     "tier": 1,
+     "greatness": 10
+    },
+    {
+     "slot": "Neck",
+     "name": "Amulet",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Ring",
+     "name": "Bronze Ring",
+     "tier": 3,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 13
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039899130931763597378405153",
+   "player": "v2 settings #0",
+   "xp": 594,
+   "level": 24,
+   "alive": false,
+   "stats": {
+    "str": 5,
+    "dex": 16,
+    "vit": 14,
+    "int": 4,
+    "wis": 3,
+    "cha": 24,
+    "luck": 38
+   },
+   "perLevel": {
+    "str": 0.125,
+    "dex": 0.667,
+    "vit": 0.417,
+    "int": 0.042,
+    "wis": 0.083,
+    "cha": 0.375
+   },
+   "gold": 16,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Quarterstaff",
+     "tier": 2,
+     "greatness": 11
+    },
+    {
+     "slot": "Chest",
+     "name": "Silk Robe",
+     "tier": 2,
+     "greatness": 15
+    },
+    {
+     "slot": "Head",
+     "name": "Cap",
+     "tier": 5,
+     "greatness": 14
+    },
+    {
+     "slot": "Waist",
+     "name": "Brightsilk Sash",
+     "tier": 1,
+     "greatness": 15
+    },
+    {
+     "slot": "Foot",
+     "name": "Holy Greaves",
+     "tier": 1,
+     "greatness": 14
+    },
+    {
+     "slot": "Hand",
+     "name": "Leather Gloves",
+     "tier": 5,
+     "greatness": 16
+    },
+    {
+     "slot": "Neck",
+     "name": "Amulet",
+     "tier": 1,
+     "greatness": 18
+    },
+    {
+     "slot": "Ring",
+     "name": "Bronze Ring",
+     "tier": 3,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 9
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039898706656646410251747553",
+   "player": "v2 settings #0",
+   "xp": 582,
+   "level": 24,
+   "alive": false,
+   "stats": {
+    "str": 4,
+    "dex": 15,
+    "vit": 14,
+    "int": 3,
+    "wis": 2,
+    "cha": 17,
+    "luck": 2
+   },
+   "perLevel": {
+    "str": 0.042,
+    "dex": 0.625,
+    "vit": 0.5,
+    "int": 0.083,
+    "wis": 0.083,
+    "cha": 0.333
+   },
+   "gold": 38,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Warhammer",
+     "tier": 1,
+     "greatness": 16
+    },
+    {
+     "slot": "Chest",
+     "name": "Ornate Chestplate",
+     "tier": 2,
+     "greatness": 1
+    },
+    {
+     "slot": "Head",
+     "name": "Ornate Helm",
+     "tier": 2,
+     "greatness": 12
+    },
+    {
+     "slot": "Waist",
+     "name": "Silk Sash",
+     "tier": 2,
+     "greatness": 13
+    },
+    {
+     "slot": "Foot",
+     "name": "Linen Shoes",
+     "tier": 4,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Silk Gloves",
+     "tier": 2,
+     "greatness": 7
+    },
+    {
+     "slot": "Ring",
+     "name": "Bronze Ring",
+     "tier": 3,
+     "greatness": 1
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 10
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039898946464321322685629025",
+   "player": "v2 settings #0",
+   "xp": 468,
+   "level": 21,
+   "alive": false,
+   "stats": {
+    "str": 5,
+    "dex": 13,
+    "vit": 10,
+    "int": 2,
+    "wis": 7,
+    "cha": 12,
+    "luck": 19
+   },
+   "perLevel": {
+    "str": 0.19,
+    "dex": 0.571,
+    "vit": 0.381,
+    "int": 0,
+    "wis": 0.143,
+    "cha": 0.381
+   },
+   "gold": 14,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Katana",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Holy Chestplate",
+     "tier": 1,
+     "greatness": 16
+    },
+    {
+     "slot": "Head",
+     "name": "Demon Crown",
+     "tier": 1,
+     "greatness": 13
+    },
+    {
+     "slot": "Waist",
+     "name": "Demonhide Belt",
+     "tier": 1,
+     "greatness": 7
+    },
+    {
+     "slot": "Foot",
+     "name": "Studded Leather Boots",
+     "tier": 3,
+     "greatness": 14
+    },
+    {
+     "slot": "Hand",
+     "name": "Silk Gloves",
+     "tier": 2,
+     "greatness": 7
+    },
+    {
+     "slot": "Ring",
+     "name": "Bronze Ring",
+     "tier": 3,
+     "greatness": 16
+    }
+   ],
+   "armorFilled": 5,
    "bagItems": 12
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039894611479427528077415617",
+   "player": "v2 settings #0",
+   "xp": 428,
+   "level": 20,
+   "alive": false,
+   "stats": {
+    "str": 7,
+    "dex": 15,
+    "vit": 11,
+    "int": 6,
+    "wis": 3,
+    "cha": 13,
+    "luck": 44
+   },
+   "perLevel": {
+    "str": 0.2,
+    "dex": 0.65,
+    "vit": 0.25,
+    "int": 0.1,
+    "wis": 0.15,
+    "cha": 0.3
+   },
+   "gold": 35,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Grimoire",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Divine Robe",
+     "tier": 1,
+     "greatness": 15
+    },
+    {
+     "slot": "Head",
+     "name": "Silk Hood",
+     "tier": 3,
+     "greatness": 15
+    },
+    {
+     "slot": "Waist",
+     "name": "Brightsilk Sash",
+     "tier": 1,
+     "greatness": 14
+    },
+    {
+     "slot": "Foot",
+     "name": "Wool Shoes",
+     "tier": 3,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "Silk Gloves",
+     "tier": 2,
+     "greatness": 15
+    },
+    {
+     "slot": "Neck",
+     "name": "Pendant",
+     "tier": 1,
+     "greatness": 14
+    },
+    {
+     "slot": "Ring",
+     "name": "Silver Ring",
+     "tier": 2,
+     "greatness": 14
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 12
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039894961967567849136465313",
+   "player": "v2 settings #0",
+   "xp": 400,
+   "level": 20,
+   "alive": false,
+   "stats": {
+    "str": 3,
+    "dex": 10,
+    "vit": 12,
+    "int": 7,
+    "wis": 4,
+    "cha": 18,
+    "luck": 32
+   },
+   "perLevel": {
+    "str": 0.1,
+    "dex": 0.5,
+    "vit": 0.5,
+    "int": 0.1,
+    "wis": 0.1,
+    "cha": 0.5
+   },
+   "gold": 28,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Katana",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Shirt",
+     "tier": 5,
+     "greatness": 9
+    },
+    {
+     "slot": "Head",
+     "name": "Demon Crown",
+     "tier": 1,
+     "greatness": 9
+    },
+    {
+     "slot": "Waist",
+     "name": "Brightsilk Sash",
+     "tier": 1,
+     "greatness": 9
+    },
+    {
+     "slot": "Foot",
+     "name": "Dragonskin Boots",
+     "tier": 2,
+     "greatness": 1
+    },
+    {
+     "slot": "Hand",
+     "name": "Divine Gloves",
+     "tier": 1,
+     "greatness": 17
+    },
+    {
+     "slot": "Neck",
+     "name": "Necklace",
+     "tier": 1,
+     "greatness": 14
+    },
+    {
+     "slot": "Ring",
+     "name": "Bronze Ring",
+     "tier": 3,
+     "greatness": 17
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 8
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039907265945968539300907585",
+   "player": "v2 settings #0",
+   "xp": 324,
+   "level": 18,
+   "alive": false,
+   "stats": {
+    "str": 1,
+    "dex": 14,
+    "vit": 9,
+    "int": 4,
+    "wis": 1,
+    "cha": 10,
+    "luck": 27
+   },
+   "perLevel": {
+    "str": 0.056,
+    "dex": 0.667,
+    "vit": 0.278,
+    "int": 0.222,
+    "wis": 0.056,
+    "cha": 0.333
+   },
+   "gold": 26,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Ghost Wand",
+     "tier": 1,
+     "greatness": 19
+    },
+    {
+     "slot": "Chest",
+     "name": "Divine Robe",
+     "tier": 1,
+     "greatness": 14
+    },
+    {
+     "slot": "Head",
+     "name": "Crown",
+     "tier": 1,
+     "greatness": 2
+    },
+    {
+     "slot": "Waist",
+     "name": "Brightsilk Sash",
+     "tier": 1,
+     "greatness": 11
+    },
+    {
+     "slot": "Foot",
+     "name": "Divine Slippers",
+     "tier": 1,
+     "greatness": 10
+    },
+    {
+     "slot": "Hand",
+     "name": "DemonsHands",
+     "tier": 1,
+     "greatness": 11
+    },
+    {
+     "slot": "Neck",
+     "name": "Necklace",
+     "tier": 1,
+     "greatness": 11
+    },
+    {
+     "slot": "Ring",
+     "name": "Platinum Ring",
+     "tier": 1,
+     "greatness": 16
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 7
+  },
+  {
+   "tokenId": "452312848583315676176152287129640562566404571834932954093592814230528400449",
+   "player": "v2 settings #1",
+   "xp": 302,
+   "level": 17,
+   "alive": false,
+   "stats": {
+    "str": 5,
+    "dex": 15,
+    "vit": 7,
+    "int": 6,
+    "wis": 6,
+    "cha": 10,
+    "luck": 51
+   },
+   "perLevel": {
+    "str": 0,
+    "dex": 0.588,
+    "vit": 0.118,
+    "int": 0.118,
+    "wis": 0.059,
+    "cha": 0.412
+   },
+   "gold": 124,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Katana",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Chest",
+     "name": "Ornate Chestplate",
+     "tier": 2,
+     "greatness": 20
+    },
+    {
+     "slot": "Head",
+     "name": "Ornate Helm",
+     "tier": 2,
+     "greatness": 20
+    },
+    {
+     "slot": "Waist",
+     "name": "Demonhide Belt",
+     "tier": 1,
+     "greatness": 19
+    },
+    {
+     "slot": "Foot",
+     "name": "Demonhide Boots",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Hand",
+     "name": "DemonsHands",
+     "tier": 1,
+     "greatness": 20
+    },
+    {
+     "slot": "Neck",
+     "name": "Pendant",
+     "tier": 1,
+     "greatness": 18
+    },
+    {
+     "slot": "Ring",
+     "name": "Gold Ring",
+     "tier": 1,
+     "greatness": 20
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 10
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039893393994308424046499393",
+   "player": "v2 settings #0",
+   "xp": 292,
+   "level": 17,
+   "alive": false,
+   "stats": {
+    "str": 3,
+    "dex": 13,
+    "vit": 9,
+    "int": 2,
+    "wis": 5,
+    "cha": 8,
+    "luck": 2
+   },
+   "perLevel": {
+    "str": 0.059,
+    "dex": 0.647,
+    "vit": 0.235,
+    "int": 0.118,
+    "wis": 0.118,
+    "cha": 0.471
+   },
+   "gold": 0,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Grimoire",
+     "tier": 1,
+     "greatness": 18
+    },
+    {
+     "slot": "Chest",
+     "name": "Leather Armor",
+     "tier": 5,
+     "greatness": 18
+    },
+    {
+     "slot": "Head",
+     "name": "Demon Crown",
+     "tier": 1,
+     "greatness": 18
+    },
+    {
+     "slot": "Waist",
+     "name": "Plated Belt",
+     "tier": 3,
+     "greatness": 13
+    },
+    {
+     "slot": "Foot",
+     "name": "Leather Boots",
+     "tier": 5,
+     "greatness": 18
+    },
+    {
+     "slot": "Hand",
+     "name": "Silk Gloves",
+     "tier": 2,
+     "greatness": 12
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 4
+  },
+  {
+   "tokenId": "2244866514940947447094702331215166361120354747116513",
+   "player": "v2 settings #2",
+   "xp": 279,
+   "level": 16,
+   "alive": false,
+   "stats": {
+    "str": 3,
+    "dex": 10,
+    "vit": 7,
+    "int": 7,
+    "wis": 3,
+    "cha": 15,
+    "luck": 28
+   },
+   "perLevel": {
+    "str": 0.125,
+    "dex": 0.438,
+    "vit": 0.313,
+    "int": 0.188,
+    "wis": 0.188,
+    "cha": 0.438
+   },
+   "gold": 17,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Ghost Wand",
+     "tier": 1,
+     "greatness": 18
+    },
+    {
+     "slot": "Chest",
+     "name": "Shirt",
+     "tier": 5,
+     "greatness": 18
+    },
+    {
+     "slot": "Head",
+     "name": "Linen Hood",
+     "tier": 4,
+     "greatness": 18
+    },
+    {
+     "slot": "Waist",
+     "name": "Sash",
+     "tier": 5,
+     "greatness": 18
+    },
+    {
+     "slot": "Foot",
+     "name": "Shoes",
+     "tier": 5,
+     "greatness": 18
+    },
+    {
+     "slot": "Hand",
+     "name": "Gloves",
+     "tier": 5,
+     "greatness": 18
+    },
+    {
+     "slot": "Neck",
+     "name": "Amulet",
+     "tier": 1,
+     "greatness": 1
+    },
+    {
+     "slot": "Ring",
+     "name": "Silver Ring",
+     "tier": 2,
+     "greatness": 13
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 6
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039898263934784870240563873",
+   "player": "v2 settings #0",
+   "xp": 243,
+   "level": 15,
+   "alive": false,
+   "stats": {
+    "str": 5,
+    "dex": 11,
+    "vit": 4,
+    "int": 8,
+    "wis": 2,
+    "cha": 11,
+    "luck": 2
+   },
+   "perLevel": {
+    "str": 0.133,
+    "dex": 0.667,
+    "vit": 0.2,
+    "int": 0.267,
+    "wis": 0,
+    "cha": 0.467
+   },
+   "gold": 0,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Warhammer",
+     "tier": 1,
+     "greatness": 15
+    },
+    {
+     "slot": "Chest",
+     "name": "Chain Mail",
+     "tier": 4,
+     "greatness": 15
+    },
+    {
+     "slot": "Head",
+     "name": "Linen Hood",
+     "tier": 4,
+     "greatness": 13
+    },
+    {
+     "slot": "Waist",
+     "name": "Linen Sash",
+     "tier": 4,
+     "greatness": 15
+    },
+    {
+     "slot": "Foot",
+     "name": "Shoes",
+     "tier": 5,
+     "greatness": 15
+    },
+    {
+     "slot": "Hand",
+     "name": "Silk Gloves",
+     "tier": 2,
+     "greatness": 15
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 3
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039894869733846780509486785",
+   "player": "v2 settings #0",
+   "xp": 232,
+   "level": 15,
+   "alive": false,
+   "stats": {
+    "str": 4,
+    "dex": 13,
+    "vit": 7,
+    "int": 3,
+    "wis": 4,
+    "cha": 7,
+    "luck": 2
+   },
+   "perLevel": {
+    "str": 0.133,
+    "dex": 0.667,
+    "vit": 0.267,
+    "int": 0.2,
+    "wis": 0.067,
+    "cha": 0.4
+   },
+   "gold": 0,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Katana",
+     "tier": 1,
+     "greatness": 15
+    },
+    {
+     "slot": "Chest",
+     "name": "Ring Mail",
+     "tier": 5,
+     "greatness": 15
+    },
+    {
+     "slot": "Head",
+     "name": "Silk Hood",
+     "tier": 3,
+     "greatness": 15
+    },
+    {
+     "slot": "Waist",
+     "name": "Heavy Belt",
+     "tier": 5,
+     "greatness": 13
+    },
+    {
+     "slot": "Foot",
+     "name": "Leather Boots",
+     "tier": 5,
+     "greatness": 15
+    },
+    {
+     "slot": "Hand",
+     "name": "Studded Leather Gloves",
+     "tier": 3,
+     "greatness": 8
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 3
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039894463905473744401374113",
+   "player": "v2 settings #0",
+   "xp": 226,
+   "level": 15,
+   "alive": false,
+   "stats": {
+    "str": 2,
+    "dex": 11,
+    "vit": 8,
+    "int": 5,
+    "wis": 5,
+    "cha": 7,
+    "luck": 2
+   },
+   "perLevel": {
+    "str": 0.067,
+    "dex": 0.667,
+    "vit": 0.4,
+    "int": 0.067,
+    "wis": 0.133,
+    "cha": 0.4
+   },
+   "gold": 17,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Quarterstaff",
+     "tier": 2,
+     "greatness": 13
+    },
+    {
+     "slot": "Chest",
+     "name": "Studded Leather Armor",
+     "tier": 3,
+     "greatness": 16
+    },
+    {
+     "slot": "Head",
+     "name": "Crown",
+     "tier": 1,
+     "greatness": 16
+    },
+    {
+     "slot": "Waist",
+     "name": "Studded Leather Belt",
+     "tier": 3,
+     "greatness": 10
+    },
+    {
+     "slot": "Foot",
+     "name": "Linen Shoes",
+     "tier": 4,
+     "greatness": 16
+    },
+    {
+     "slot": "Hand",
+     "name": "Gloves",
+     "tier": 5,
+     "greatness": 16
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 3
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039909055280158734396279841",
+   "player": "v2 settings #0",
+   "xp": 222,
+   "level": 14,
+   "alive": false,
+   "stats": {
+    "str": 1,
+    "dex": 8,
+    "vit": 3,
+    "int": 4,
+    "wis": 3,
+    "cha": 6,
+    "luck": 2
+   },
+   "perLevel": {
+    "str": 0.071,
+    "dex": 0.571,
+    "vit": 0.214,
+    "int": 0.286,
+    "wis": 0.214,
+    "cha": 0.429
+   },
+   "gold": 5,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Warhammer",
+     "tier": 1,
+     "greatness": 14
+    },
+    {
+     "slot": "Chest",
+     "name": "Plate Mail",
+     "tier": 3,
+     "greatness": 14
+    },
+    {
+     "slot": "Head",
+     "name": "Hood",
+     "tier": 5,
+     "greatness": 14
+    },
+    {
+     "slot": "Waist",
+     "name": "Sash",
+     "tier": 5,
+     "greatness": 14
+    },
+    {
+     "slot": "Foot",
+     "name": "Shoes",
+     "tier": 5,
+     "greatness": 14
+    },
+    {
+     "slot": "Hand",
+     "name": "Hard Leather Gloves",
+     "tier": 4,
+     "greatness": 14
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 0
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039895257115475528161451873",
+   "player": "v2 settings #0",
+   "xp": 198,
+   "level": 14,
+   "alive": false,
+   "stats": {
+    "str": 1,
+    "dex": 10,
+    "vit": 0,
+    "int": 2,
+    "wis": 4,
+    "cha": 8,
+    "luck": 2
+   },
+   "perLevel": {
+    "str": 0.071,
+    "dex": 0.714,
+    "vit": 0,
+    "int": 0.143,
+    "wis": 0.286,
+    "cha": 0.571
+   },
+   "gold": 0,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Wand",
+     "tier": 5,
+     "greatness": 14
+    },
+    {
+     "slot": "Chest",
+     "name": "Robe",
+     "tier": 4,
+     "greatness": 14
+    },
+    {
+     "slot": "Head",
+     "name": "Demon Crown",
+     "tier": 1,
+     "greatness": 14
+    },
+    {
+     "slot": "Waist",
+     "name": "Brightsilk Sash",
+     "tier": 1,
+     "greatness": 14
+    },
+    {
+     "slot": "Foot",
+     "name": "Chain Boots",
+     "tier": 4,
+     "greatness": 14
+    },
+    {
+     "slot": "Hand",
+     "name": "Heavy Gloves",
+     "tier": 5,
+     "greatness": 14
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 1
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039893892056402576027026721",
+   "player": "v2 settings #0",
+   "xp": 172,
+   "level": 13,
+   "alive": false,
+   "stats": {
+    "str": 2,
+    "dex": 9,
+    "vit": 4,
+    "int": 1,
+    "wis": 1,
+    "cha": 7,
+    "luck": 2
+   },
+   "perLevel": {
+    "str": 0.154,
+    "dex": 0.692,
+    "vit": 0.308,
+    "int": 0.077,
+    "wis": 0.077,
+    "cha": 0.538
+   },
+   "gold": 0,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Wand",
+     "tier": 5,
+     "greatness": 13
+    },
+    {
+     "slot": "Chest",
+     "name": "Demon Husk",
+     "tier": 1,
+     "greatness": 13
+    },
+    {
+     "slot": "Head",
+     "name": "Cap",
+     "tier": 5,
+     "greatness": 13
+    },
+    {
+     "slot": "Waist",
+     "name": "Mesh Belt",
+     "tier": 4,
+     "greatness": 13
+    },
+    {
+     "slot": "Foot",
+     "name": "Shoes",
+     "tier": 5,
+     "greatness": 13
+    },
+    {
+     "slot": "Hand",
+     "name": "Chain Gloves",
+     "tier": 4,
+     "greatness": 13
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 1
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039895515369894711872765441",
+   "player": "v2 settings #0",
+   "xp": 158,
+   "level": 12,
+   "alive": false,
+   "stats": {
+    "str": 3,
+    "dex": 7,
+    "vit": 3,
+    "int": 1,
+    "wis": 3,
+    "cha": 6,
+    "luck": 8
+   },
+   "perLevel": {
+    "str": 0.25,
+    "dex": 0.583,
+    "vit": 0.25,
+    "int": 0.083,
+    "wis": 0.25,
+    "cha": 0.5
+   },
+   "gold": 19,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Grimoire",
+     "tier": 1,
+     "greatness": 14
+    },
+    {
+     "slot": "Chest",
+     "name": "Demon Husk",
+     "tier": 1,
+     "greatness": 14
+    },
+    {
+     "slot": "Head",
+     "name": "Hood",
+     "tier": 5,
+     "greatness": 14
+    },
+    {
+     "slot": "Waist",
+     "name": "Brightsilk Sash",
+     "tier": 1,
+     "greatness": 1
+    },
+    {
+     "slot": "Foot",
+     "name": "Leather Boots",
+     "tier": 5,
+     "greatness": 14
+    },
+    {
+     "slot": "Hand",
+     "name": "DemonsHands",
+     "tier": 1,
+     "greatness": 8
+    },
+    {
+     "slot": "Ring",
+     "name": "Bronze Ring",
+     "tier": 3,
+     "greatness": 7
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 3
   },
   {
    "tokenId": "141108360855866449695477698527605505025917848963696372577158113739669505",
@@ -3147,6 +4439,349 @@
    ],
    "armorFilled": 5,
    "bagItems": 2
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039898448402227166408066913",
+   "player": "v2 settings #0",
+   "xp": 154,
+   "level": 12,
+   "alive": false,
+   "stats": {
+    "str": 1,
+    "dex": 8,
+    "vit": 4,
+    "int": 1,
+    "wis": 2,
+    "cha": 7,
+    "luck": 2
+   },
+   "perLevel": {
+    "str": 0.083,
+    "dex": 0.667,
+    "vit": 0.333,
+    "int": 0.083,
+    "wis": 0.167,
+    "cha": 0.583
+   },
+   "gold": 0,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Wand",
+     "tier": 5,
+     "greatness": 12
+    },
+    {
+     "slot": "Chest",
+     "name": "Robe",
+     "tier": 4,
+     "greatness": 12
+    },
+    {
+     "slot": "Head",
+     "name": "Leather Cap",
+     "tier": 4,
+     "greatness": 12
+    },
+    {
+     "slot": "Waist",
+     "name": "Sash",
+     "tier": 5,
+     "greatness": 12
+    },
+    {
+     "slot": "Foot",
+     "name": "Wool Shoes",
+     "tier": 3,
+     "greatness": 12
+    },
+    {
+     "slot": "Hand",
+     "name": "Divine Gloves",
+     "tier": 1,
+     "greatness": 12
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 1
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039898171701063797318156449",
+   "player": "v2 settings #0",
+   "xp": 154,
+   "level": 12,
+   "alive": false,
+   "stats": {
+    "str": 5,
+    "dex": 8,
+    "vit": 1,
+    "int": 2,
+    "wis": 1,
+    "cha": 6,
+    "luck": 8
+   },
+   "perLevel": {
+    "str": 0.417,
+    "dex": 0.667,
+    "vit": 0.083,
+    "int": 0.167,
+    "wis": 0.083,
+    "cha": 0.5
+   },
+   "gold": 13,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Ghost Wand",
+     "tier": 1,
+     "greatness": 14
+    },
+    {
+     "slot": "Chest",
+     "name": "Robe",
+     "tier": 4,
+     "greatness": 14
+    },
+    {
+     "slot": "Head",
+     "name": "War Cap",
+     "tier": 3,
+     "greatness": 14
+    },
+    {
+     "slot": "Waist",
+     "name": "Wool Sash",
+     "tier": 3,
+     "greatness": 6
+    },
+    {
+     "slot": "Foot",
+     "name": "Hard Leather Boots",
+     "tier": 4,
+     "greatness": 14
+    },
+    {
+     "slot": "Hand",
+     "name": "Chain Gloves",
+     "tier": 4,
+     "greatness": 13
+    },
+    {
+     "slot": "Ring",
+     "name": "Platinum Ring",
+     "tier": 1,
+     "greatness": 7
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 3
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039899075591530972523878369",
+   "player": "v2 settings #0",
+   "xp": 154,
+   "level": 12,
+   "alive": false,
+   "stats": {
+    "str": 3,
+    "dex": 9,
+    "vit": 2,
+    "int": 1,
+    "wis": 1,
+    "cha": 7,
+    "luck": 14
+   },
+   "perLevel": {
+    "str": 0.25,
+    "dex": 0.75,
+    "vit": 0.167,
+    "int": 0.083,
+    "wis": 0.083,
+    "cha": 0.583
+   },
+   "gold": 12,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Katana",
+     "tier": 1,
+     "greatness": 14
+    },
+    {
+     "slot": "Chest",
+     "name": "Hard Leather Armor",
+     "tier": 4,
+     "greatness": 14
+    },
+    {
+     "slot": "Head",
+     "name": "DragonsCrown",
+     "tier": 2,
+     "greatness": 13
+    },
+    {
+     "slot": "Waist",
+     "name": "Linen Sash",
+     "tier": 4,
+     "greatness": 13
+    },
+    {
+     "slot": "Foot",
+     "name": "Chain Boots",
+     "tier": 4,
+     "greatness": 14
+    },
+    {
+     "slot": "Hand",
+     "name": "Linen Gloves",
+     "tier": 4,
+     "greatness": 14
+    },
+    {
+     "slot": "Neck",
+     "name": "Pendant",
+     "tier": 1,
+     "greatness": 3
+    },
+    {
+     "slot": "Ring",
+     "name": "Bronze Ring",
+     "tier": 3,
+     "greatness": 9
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 7
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039898577529436837722422817",
+   "player": "v2 settings #0",
+   "xp": 153,
+   "level": 12,
+   "alive": false,
+   "stats": {
+    "str": 3,
+    "dex": 8,
+    "vit": 3,
+    "int": 1,
+    "wis": 1,
+    "cha": 7,
+    "luck": 2
+   },
+   "perLevel": {
+    "str": 0.25,
+    "dex": 0.667,
+    "vit": 0.25,
+    "int": 0.083,
+    "wis": 0.083,
+    "cha": 0.583
+   },
+   "gold": 0,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Mace",
+     "tier": 4,
+     "greatness": 11
+    },
+    {
+     "slot": "Chest",
+     "name": "Linen Robe",
+     "tier": 3,
+     "greatness": 11
+    },
+    {
+     "slot": "Head",
+     "name": "Demon Crown",
+     "tier": 1,
+     "greatness": 12
+    },
+    {
+     "slot": "Waist",
+     "name": "Wool Sash",
+     "tier": 3,
+     "greatness": 9
+    },
+    {
+     "slot": "Foot",
+     "name": "Heavy Boots",
+     "tier": 5,
+     "greatness": 12
+    },
+    {
+     "slot": "Hand",
+     "name": "Linen Gloves",
+     "tier": 4,
+     "greatness": 12
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 4
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039909184407368388529246689",
+   "player": "v2 settings #0",
+   "xp": 149,
+   "level": 12,
+   "alive": false,
+   "stats": {
+    "str": 3,
+    "dex": 6,
+    "vit": 6,
+    "int": 1,
+    "wis": 1,
+    "cha": 6,
+    "luck": 2
+   },
+   "perLevel": {
+    "str": 0.25,
+    "dex": 0.5,
+    "vit": 0.5,
+    "int": 0.083,
+    "wis": 0.083,
+    "cha": 0.5
+   },
+   "gold": 0,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Bone Wand",
+     "tier": 3,
+     "greatness": 12
+    },
+    {
+     "slot": "Chest",
+     "name": "Holy Chestplate",
+     "tier": 1,
+     "greatness": 12
+    },
+    {
+     "slot": "Head",
+     "name": "Linen Hood",
+     "tier": 4,
+     "greatness": 12
+    },
+    {
+     "slot": "Waist",
+     "name": "Plated Belt",
+     "tier": 3,
+     "greatness": 12
+    },
+    {
+     "slot": "Foot",
+     "name": "Wool Shoes",
+     "tier": 3,
+     "greatness": 10
+    },
+    {
+     "slot": "Hand",
+     "name": "Heavy Gloves",
+     "tier": 5,
+     "greatness": 12
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 0
   },
   {
    "tokenId": "384179240006896617074613669376145646535432602977534446806010892910593",
@@ -3218,6 +4853,1046 @@
    ],
    "armorFilled": 5,
    "bagItems": 3
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039898651316413639366078113",
+   "player": "v2 settings #0",
+   "xp": 112,
+   "level": 10,
+   "alive": false,
+   "stats": {
+    "str": 2,
+    "dex": 6,
+    "vit": 3,
+    "int": 1,
+    "wis": 4,
+    "cha": 5,
+    "luck": 2
+   },
+   "perLevel": {
+    "str": 0.2,
+    "dex": 0.6,
+    "vit": 0.3,
+    "int": 0.1,
+    "wis": 0.4,
+    "cha": 0.5
+   },
+   "gold": 0,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Grimoire",
+     "tier": 1,
+     "greatness": 10
+    },
+    {
+     "slot": "Chest",
+     "name": "Hard Leather Armor",
+     "tier": 4,
+     "greatness": 10
+    },
+    {
+     "slot": "Head",
+     "name": "Cap",
+     "tier": 5,
+     "greatness": 10
+    },
+    {
+     "slot": "Waist",
+     "name": "Sash",
+     "tier": 5,
+     "greatness": 9
+    },
+    {
+     "slot": "Foot",
+     "name": "Shoes",
+     "tier": 5,
+     "greatness": 10
+    },
+    {
+     "slot": "Hand",
+     "name": "Chain Gloves",
+     "tier": 4,
+     "greatness": 10
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 2
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039895386242685225243533185",
+   "player": "v2 settings #0",
+   "xp": 111,
+   "level": 10,
+   "alive": false,
+   "stats": {
+    "str": 1,
+    "dex": 8,
+    "vit": 3,
+    "int": 2,
+    "wis": 0,
+    "cha": 7,
+    "luck": 2
+   },
+   "perLevel": {
+    "str": 0.1,
+    "dex": 0.8,
+    "vit": 0.3,
+    "int": 0.2,
+    "wis": 0,
+    "cha": 0.7
+   },
+   "gold": 16,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Ghost Wand",
+     "tier": 1,
+     "greatness": 11
+    },
+    {
+     "slot": "Chest",
+     "name": "Studded Leather Armor",
+     "tier": 3,
+     "greatness": 8
+    },
+    {
+     "slot": "Head",
+     "name": "War Cap",
+     "tier": 3,
+     "greatness": 11
+    },
+    {
+     "slot": "Waist",
+     "name": "Leather Belt",
+     "tier": 5,
+     "greatness": 11
+    },
+    {
+     "slot": "Foot",
+     "name": "Chain Boots",
+     "tier": 4,
+     "greatness": 7
+    },
+    {
+     "slot": "Hand",
+     "name": "Gauntlets",
+     "tier": 3,
+     "greatness": 11
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 4
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039894131864077544294888001",
+   "player": "v2 settings #0",
+   "xp": 104,
+   "level": 10,
+   "alive": false,
+   "stats": {
+    "str": 1,
+    "dex": 7,
+    "vit": 1,
+    "int": 5,
+    "wis": 1,
+    "cha": 6,
+    "luck": 2
+   },
+   "perLevel": {
+    "str": 0.1,
+    "dex": 0.7,
+    "vit": 0.1,
+    "int": 0.5,
+    "wis": 0.1,
+    "cha": 0.6
+   },
+   "gold": 16,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Grimoire",
+     "tier": 1,
+     "greatness": 11
+    },
+    {
+     "slot": "Chest",
+     "name": "Silk Robe",
+     "tier": 2,
+     "greatness": 6
+    },
+    {
+     "slot": "Head",
+     "name": "Leather Cap",
+     "tier": 4,
+     "greatness": 11
+    },
+    {
+     "slot": "Waist",
+     "name": "Studded Leather Belt",
+     "tier": 3,
+     "greatness": 11
+    },
+    {
+     "slot": "Foot",
+     "name": "Chain Boots",
+     "tier": 4,
+     "greatness": 9
+    },
+    {
+     "slot": "Hand",
+     "name": "Gloves",
+     "tier": 5,
+     "greatness": 11
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 4
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039898374615250205850190273",
+   "player": "v2 settings #0",
+   "xp": 101,
+   "level": 10,
+   "alive": false,
+   "stats": {
+    "str": 2,
+    "dex": 6,
+    "vit": 3,
+    "int": 5,
+    "wis": 0,
+    "cha": 5,
+    "luck": 2
+   },
+   "perLevel": {
+    "str": 0.2,
+    "dex": 0.6,
+    "vit": 0.3,
+    "int": 0.5,
+    "wis": 0,
+    "cha": 0.5
+   },
+   "gold": 17,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Mace",
+     "tier": 4,
+     "greatness": 7
+    },
+    {
+     "slot": "Chest",
+     "name": "Ring Mail",
+     "tier": 5,
+     "greatness": 10
+    },
+    {
+     "slot": "Head",
+     "name": "Cap",
+     "tier": 5,
+     "greatness": 10
+    },
+    {
+     "slot": "Waist",
+     "name": "Linen Sash",
+     "tier": 4,
+     "greatness": 10
+    },
+    {
+     "slot": "Foot",
+     "name": "Demonhide Boots",
+     "tier": 1,
+     "greatness": 10
+    },
+    {
+     "slot": "Hand",
+     "name": "Heavy Gloves",
+     "tier": 5,
+     "greatness": 10
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 1
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039893818269425744317762497",
+   "player": "v2 settings #0",
+   "xp": 98,
+   "level": 9,
+   "alive": false,
+   "stats": {
+    "str": 2,
+    "dex": 6,
+    "vit": 4,
+    "int": 3,
+    "wis": 1,
+    "cha": 4,
+    "luck": 2
+   },
+   "perLevel": {
+    "str": 0.222,
+    "dex": 0.667,
+    "vit": 0.444,
+    "int": 0.333,
+    "wis": 0.111,
+    "cha": 0.444
+   },
+   "gold": 14,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Grimoire",
+     "tier": 1,
+     "greatness": 10
+    },
+    {
+     "slot": "Chest",
+     "name": "Chain Mail",
+     "tier": 4,
+     "greatness": 7
+    },
+    {
+     "slot": "Head",
+     "name": "Hood",
+     "tier": 5,
+     "greatness": 10
+    },
+    {
+     "slot": "Waist",
+     "name": "Sash",
+     "tier": 5,
+     "greatness": 10
+    },
+    {
+     "slot": "Foot",
+     "name": "Heavy Boots",
+     "tier": 5,
+     "greatness": 10
+    },
+    {
+     "slot": "Hand",
+     "name": "Hard Leather Gloves",
+     "tier": 4,
+     "greatness": 10
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 3
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039893338654075726175833793",
+   "player": "v2 settings #0",
+   "xp": 75,
+   "level": 8,
+   "alive": false,
+   "stats": {
+    "str": 3,
+    "dex": 6,
+    "vit": 3,
+    "int": 1,
+    "wis": 1,
+    "cha": 5,
+    "luck": 2
+   },
+   "perLevel": {
+    "str": 0.375,
+    "dex": 0.75,
+    "vit": 0.375,
+    "int": 0.125,
+    "wis": 0.125,
+    "cha": 0.625
+   },
+   "gold": 10,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Grimoire",
+     "tier": 1,
+     "greatness": 9
+    },
+    {
+     "slot": "Chest",
+     "name": "Shirt",
+     "tier": 5,
+     "greatness": 9
+    },
+    {
+     "slot": "Head",
+     "name": "Hood",
+     "tier": 5,
+     "greatness": 9
+    },
+    {
+     "slot": "Waist",
+     "name": "Leather Belt",
+     "tier": 5,
+     "greatness": 9
+    },
+    {
+     "slot": "Foot",
+     "name": "Heavy Boots",
+     "tier": 5,
+     "greatness": 9
+    },
+    {
+     "slot": "Hand",
+     "name": "Hard Leather Gloves",
+     "tier": 4,
+     "greatness": 9
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 1
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039907155265503203688827969",
+   "player": "v2 settings #0",
+   "xp": 71,
+   "level": 8,
+   "alive": false,
+   "stats": {
+    "str": 2,
+    "dex": 6,
+    "vit": 2,
+    "int": 3,
+    "wis": 3,
+    "cha": 3,
+    "luck": 2
+   },
+   "perLevel": {
+    "str": 0.25,
+    "dex": 0.75,
+    "vit": 0.25,
+    "int": 0.375,
+    "wis": 0.375,
+    "cha": 0.375
+   },
+   "gold": 10,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Ghost Wand",
+     "tier": 1,
+     "greatness": 9
+    },
+    {
+     "slot": "Chest",
+     "name": "Chain Mail",
+     "tier": 4,
+     "greatness": 9
+    },
+    {
+     "slot": "Head",
+     "name": "Demon Crown",
+     "tier": 1,
+     "greatness": 3
+    },
+    {
+     "slot": "Waist",
+     "name": "Heavy Belt",
+     "tier": 5,
+     "greatness": 9
+    },
+    {
+     "slot": "Foot",
+     "name": "Hard Leather Boots",
+     "tier": 4,
+     "greatness": 9
+    },
+    {
+     "slot": "Hand",
+     "name": "Gloves",
+     "tier": 5,
+     "greatness": 9
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 0
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039908963046437566984423489",
+   "player": "v2 settings #0",
+   "xp": 60,
+   "level": 7,
+   "alive": false,
+   "stats": {
+    "str": 2,
+    "dex": 6,
+    "vit": 2,
+    "int": 2,
+    "wis": 3,
+    "cha": 3,
+    "luck": 2
+   },
+   "perLevel": {
+    "str": 0.286,
+    "dex": 0.857,
+    "vit": 0.286,
+    "int": 0.286,
+    "wis": 0.429,
+    "cha": 0.429
+   },
+   "gold": 8,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Long Sword",
+     "tier": 4,
+     "greatness": 6
+    },
+    {
+     "slot": "Chest",
+     "name": "Robe",
+     "tier": 4,
+     "greatness": 6
+    },
+    {
+     "slot": "Head",
+     "name": "Leather Cap",
+     "tier": 4,
+     "greatness": 6
+    },
+    {
+     "slot": "Waist",
+     "name": "Plated Belt",
+     "tier": 3,
+     "greatness": 5
+    },
+    {
+     "slot": "Foot",
+     "name": "Linen Shoes",
+     "tier": 4,
+     "greatness": 6
+    },
+    {
+     "slot": "Hand",
+     "name": "Chain Gloves",
+     "tier": 4,
+     "greatness": 6
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 0
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039895902751523579782765953",
+   "player": "v2 settings #0",
+   "xp": 56,
+   "level": 7,
+   "alive": false,
+   "stats": {
+    "str": 4,
+    "dex": 5,
+    "vit": 1,
+    "int": 4,
+    "wis": 1,
+    "cha": 3,
+    "luck": 5
+   },
+   "perLevel": {
+    "str": 0.571,
+    "dex": 0.714,
+    "vit": 0.143,
+    "int": 0.571,
+    "wis": 0.143,
+    "cha": 0.429
+   },
+   "gold": 0,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Grimoire",
+     "tier": 1,
+     "greatness": 7
+    },
+    {
+     "slot": "Chest",
+     "name": "Shirt",
+     "tier": 5,
+     "greatness": 8
+    },
+    {
+     "slot": "Head",
+     "name": "Hood",
+     "tier": 5,
+     "greatness": 7
+    },
+    {
+     "slot": "Waist",
+     "name": "Sash",
+     "tier": 5,
+     "greatness": 7
+    },
+    {
+     "slot": "Foot",
+     "name": "Shoes",
+     "tier": 5,
+     "greatness": 8
+    },
+    {
+     "slot": "Hand",
+     "name": "Linen Gloves",
+     "tier": 4,
+     "greatness": 7
+    },
+    {
+     "slot": "Neck",
+     "name": "Amulet",
+     "tier": 1,
+     "greatness": 4
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 7
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039894058077100764126979393",
+   "player": "v2 settings #0",
+   "xp": 49,
+   "level": 7,
+   "alive": false,
+   "stats": {
+    "str": 3,
+    "dex": 5,
+    "vit": 2,
+    "int": 2,
+    "wis": 2,
+    "cha": 4,
+    "luck": 2
+   },
+   "perLevel": {
+    "str": 0.429,
+    "dex": 0.714,
+    "vit": 0.286,
+    "int": 0.286,
+    "wis": 0.286,
+    "cha": 0.571
+   },
+   "gold": 13,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Grimoire",
+     "tier": 1,
+     "greatness": 7
+    },
+    {
+     "slot": "Chest",
+     "name": "Robe",
+     "tier": 4,
+     "greatness": 7
+    },
+    {
+     "slot": "Head",
+     "name": "Cap",
+     "tier": 5,
+     "greatness": 5
+    },
+    {
+     "slot": "Waist",
+     "name": "Wool Sash",
+     "tier": 3,
+     "greatness": 7
+    },
+    {
+     "slot": "Foot",
+     "name": "Shoes",
+     "tier": 5,
+     "greatness": 6
+    },
+    {
+     "slot": "Hand",
+     "name": "Gloves",
+     "tier": 5,
+     "greatness": 7
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 1
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039907542647131977109852705",
+   "player": "v2 settings #0",
+   "xp": 48,
+   "level": 6,
+   "alive": false,
+   "stats": {
+    "str": 0,
+    "dex": 4,
+    "vit": 2,
+    "int": 6,
+    "wis": 2,
+    "cha": 3,
+    "luck": 2
+   },
+   "perLevel": {
+    "str": 0,
+    "dex": 0.667,
+    "vit": 0.333,
+    "int": 1,
+    "wis": 0.333,
+    "cha": 0.5
+   },
+   "gold": 1,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Warhammer",
+     "tier": 1,
+     "greatness": 6
+    },
+    {
+     "slot": "Chest",
+     "name": "Chain Mail",
+     "tier": 4,
+     "greatness": 6
+    },
+    {
+     "slot": "Head",
+     "name": "Cap",
+     "tier": 5,
+     "greatness": 6
+    },
+    {
+     "slot": "Waist",
+     "name": "Studded Leather Belt",
+     "tier": 3,
+     "greatness": 6
+    },
+    {
+     "slot": "Foot",
+     "name": "Chain Boots",
+     "tier": 4,
+     "greatness": 4
+    },
+    {
+     "slot": "Hand",
+     "name": "Heavy Gloves",
+     "tier": 5,
+     "greatness": 6
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 0
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039894759053381462079103969",
+   "player": "v2 settings #0",
+   "xp": 47,
+   "level": 6,
+   "alive": false,
+   "stats": {
+    "str": 3,
+    "dex": 4,
+    "vit": 3,
+    "int": 3,
+    "wis": 0,
+    "cha": 4,
+    "luck": 2
+   },
+   "perLevel": {
+    "str": 0.5,
+    "dex": 0.667,
+    "vit": 0.5,
+    "int": 0.5,
+    "wis": 0,
+    "cha": 0.667
+   },
+   "gold": 14,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Long Sword",
+     "tier": 4,
+     "greatness": 6
+    },
+    {
+     "slot": "Chest",
+     "name": "Leather Armor",
+     "tier": 5,
+     "greatness": 7
+    },
+    {
+     "slot": "Head",
+     "name": "Cap",
+     "tier": 5,
+     "greatness": 7
+    },
+    {
+     "slot": "Waist",
+     "name": "Sash",
+     "tier": 5,
+     "greatness": 7
+    },
+    {
+     "slot": "Foot",
+     "name": "Divine Slippers",
+     "tier": 1,
+     "greatness": 7
+    },
+    {
+     "slot": "Hand",
+     "name": "Gloves",
+     "tier": 5,
+     "greatness": 7
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 1
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039895441582917888753601633",
+   "player": "v2 settings #0",
+   "xp": 41,
+   "level": 6,
+   "alive": false,
+   "stats": {
+    "str": 2,
+    "dex": 5,
+    "vit": 2,
+    "int": 3,
+    "wis": 1,
+    "cha": 4,
+    "luck": 2
+   },
+   "perLevel": {
+    "str": 0.333,
+    "dex": 0.833,
+    "vit": 0.333,
+    "int": 0.5,
+    "wis": 0.167,
+    "cha": 0.667
+   },
+   "gold": 6,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Ghost Wand",
+     "tier": 1,
+     "greatness": 6
+    },
+    {
+     "slot": "Chest",
+     "name": "Holy Chestplate",
+     "tier": 1,
+     "greatness": 6
+    },
+    {
+     "slot": "Head",
+     "name": "Hood",
+     "tier": 5,
+     "greatness": 6
+    },
+    {
+     "slot": "Waist",
+     "name": "Heavy Belt",
+     "tier": 5,
+     "greatness": 6
+    },
+    {
+     "slot": "Foot",
+     "name": "Leather Boots",
+     "tier": 5,
+     "greatness": 6
+    },
+    {
+     "slot": "Hand",
+     "name": "Leather Gloves",
+     "tier": 5,
+     "greatness": 6
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 3
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039894168757566112622239169",
+   "player": "v2 settings #0",
+   "xp": 41,
+   "level": 6,
+   "alive": false,
+   "stats": {
+    "str": 4,
+    "dex": 4,
+    "vit": 4,
+    "int": 1,
+    "wis": 0,
+    "cha": 4,
+    "luck": 2
+   },
+   "perLevel": {
+    "str": 0.667,
+    "dex": 0.667,
+    "vit": 0.667,
+    "int": 0.167,
+    "wis": 0,
+    "cha": 0.667
+   },
+   "gold": 12,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Wand",
+     "tier": 5,
+     "greatness": 6
+    },
+    {
+     "slot": "Chest",
+     "name": "Divine Robe",
+     "tier": 1,
+     "greatness": 6
+    },
+    {
+     "slot": "Head",
+     "name": "Full Helm",
+     "tier": 4,
+     "greatness": 6
+    },
+    {
+     "slot": "Waist",
+     "name": "Heavy Belt",
+     "tier": 5,
+     "greatness": 5
+    },
+    {
+     "slot": "Foot",
+     "name": "Shoes",
+     "tier": 5,
+     "greatness": 6
+    },
+    {
+     "slot": "Hand",
+     "name": "Linen Gloves",
+     "tier": 4,
+     "greatness": 6
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 1
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039894574585939092895864257",
+   "player": "v2 settings #0",
+   "xp": 40,
+   "level": 6,
+   "alive": false,
+   "stats": {
+    "str": 1,
+    "dex": 4,
+    "vit": 3,
+    "int": 2,
+    "wis": 3,
+    "cha": 4,
+    "luck": 2
+   },
+   "perLevel": {
+    "str": 0.167,
+    "dex": 0.667,
+    "vit": 0.5,
+    "int": 0.333,
+    "wis": 0.5,
+    "cha": 0.667
+   },
+   "gold": 15,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Katana",
+     "tier": 1,
+     "greatness": 6
+    },
+    {
+     "slot": "Chest",
+     "name": "Ring Mail",
+     "tier": 5,
+     "greatness": 6
+    },
+    {
+     "slot": "Head",
+     "name": "Leather Cap",
+     "tier": 4,
+     "greatness": 3
+    },
+    {
+     "slot": "Waist",
+     "name": "Heavy Belt",
+     "tier": 5,
+     "greatness": 6
+    },
+    {
+     "slot": "Foot",
+     "name": "Heavy Boots",
+     "tier": 5,
+     "greatness": 6
+    },
+    {
+     "slot": "Hand",
+     "name": "Heavy Gloves",
+     "tier": 5,
+     "greatness": 6
+    }
+   ],
+   "armorFilled": 5,
+   "bagItems": 2
+  },
+  {
+   "tokenId": "904625697166532776746652061824565847215142356634039893965843379545175529153",
+   "player": "v2 settings #0",
+   "xp": 39,
+   "level": 6,
+   "alive": false,
+   "stats": {
+    "str": 2,
+    "dex": 3,
+    "vit": 0,
+    "int": 1,
+    "wis": 5,
+    "cha": 6,
+    "luck": 10
+   },
+   "perLevel": {
+    "str": 0.333,
+    "dex": 0.5,
+    "vit": 0,
+    "int": 0.167,
+    "wis": 0.833,
+    "cha": 1
+   },
+   "gold": 12,
+   "gear": [
+    {
+     "slot": "Weapon",
+     "name": "Wand",
+     "tier": 5,
+     "greatness": 7
+    },
+    {
+     "slot": "Chest",
+     "name": "Chain Mail",
+     "tier": 4,
+     "greatness": 5
+    },
+    {
+     "slot": "Head",
+     "name": "Great Helm",
+     "tier": 3,
+     "greatness": 1
+    },
+    {
+     "slot": "Neck",
+     "name": "Amulet",
+     "tier": 1,
+     "greatness": 5
+    },
+    {
+     "slot": "Ring",
+     "name": "Platinum Ring",
+     "tier": 1,
+     "greatness": 5
+    }
+   ],
+   "armorFilled": 2,
+   "bagItems": 0
   },
   {
    "tokenId": "144488464169263490719948662306273906639652090933863845539187972374529",
