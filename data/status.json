@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-26T16:45:55.164Z",
+ "updated": "2026-10-26T16:48:58.244Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-10-26T16-16-54-759Z",
@@ -466,6 +466,48 @@
    "actions": "stats(dex+1) + buy(3 potions) + explore",
    "ok": false,
    "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 108055429606953 }, l2_gas: { max_amount: 2310240, max_price_per_unit: 28828356619 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 247560517386 } }) exceed balance (54454874731645552).]"
+  },
+  {
+   "n": 9,
+   "t": "2026-10-26T16:45:55.165Z",
+   "level": 15,
+   "xp": 228,
+   "hp": 148,
+   "maxHp": 175,
+   "gold": 15,
+   "phase": "level_up",
+   "reason": "Stats +1 DEX; Drink 3 potion(s); Explore (instant-death risk 1.0%, battle-death risk 1.4%, HP 175/175)",
+   "actions": "stats(dex+1) + buy(3 potions) + explore",
+   "ok": false,
+   "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 107683370658496 }, l2_gas: { max_amount: 2310240, max_price_per_unit: 29010657460 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 244509778407 } }) exceed balance (54454874731645552).]"
+  },
+  {
+   "n": 10,
+   "t": "2026-10-26T16:46:56.061Z",
+   "level": 15,
+   "xp": 228,
+   "hp": 148,
+   "maxHp": 175,
+   "gold": 15,
+   "phase": "level_up",
+   "reason": "Stats +1 DEX; Drink 3 potion(s); Explore (instant-death risk 1.0%, battle-death risk 1.4%, HP 175/175)",
+   "actions": "stats(dex+1) + buy(3 potions) + explore",
+   "ok": false,
+   "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 107148403543837 }, l2_gas: { max_amount: 2310240, max_price_per_unit: 29010657460 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 240094227906 } }) exceed balance (54454874731645552).]"
+  },
+  {
+   "n": 11,
+   "t": "2026-10-26T16:47:57.149Z",
+   "level": 15,
+   "xp": 228,
+   "hp": 148,
+   "maxHp": 175,
+   "gold": 15,
+   "phase": "level_up",
+   "reason": "Stats +1 DEX; Drink 3 potion(s); Explore (instant-death risk 1.0%, battle-death risk 1.4%, HP 175/175)",
+   "actions": "stats(dex+1) + buy(3 potions) + explore",
+   "ok": false,
+   "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 106531246902301 }, l2_gas: { max_amount: 2310240, max_price_per_unit: 29010657460 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 235755741057 } }) exceed balance (54454874731645552).]"
   }
  ],
  "current": {
