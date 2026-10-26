@@ -542,8 +542,8 @@
   "games": 29,
   "bestXp": 928,
   "meanXp": 273,
-  "errors": 0,
+  "errors": 2,
   "policy": "tail-pg-2026-10-25",
-  "ended": "2026-10-26T14:56:27.802Z"
+  "ended": "2026-10-26T15:05:55.570Z"
  }
 ]
