@@ -1,52 +1,10 @@
 {
- "updated": "2026-10-26T12:55:32.958Z",
+ "updated": "2026-10-26T12:56:30.880Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-10-26T11-41-07-266Z",
  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "recent": [
-  {
-   "n": 36,
-   "t": "2026-10-26T12:51:48.509Z",
-   "level": 10,
-   "xp": 108,
-   "hp": 135,
-   "maxHp": 145,
-   "gold": 28,
-   "phase": "level_up",
-   "reason": "Stats +1 DEX; Buy Silver Ring; Drink 1 potion(s); Explore (instant-death risk 0.4%, battle-death risk 1.1%, HP 145/145)",
-   "actions": "stats(dex+1) + buy(1 potion, Silver Ring) + explore",
-   "tx": "0x109009f0b769fdbbbc4bed020368466f10676c63d0c17d895c097f2608e24d0",
-   "ok": true
-  },
-  {
-   "n": 37,
-   "t": "2026-10-26T12:51:54.474Z",
-   "level": 10,
-   "xp": 108,
-   "hp": 144,
-   "maxHp": 145,
-   "gold": 16,
-   "phase": "battle",
-   "reason": "Attack Rat (L14 T5, 75 HP): P(win)=100.0% P(death)=0.0%; attack value 174.0 vs flee 163.2",
-   "actions": "attack",
-   "tx": "0x2fa37cf689b69abfbd46e1a30de7fe1adb49b30480178d5acaff9508dfb1e97",
-   "ok": true
-  },
-  {
-   "n": 38,
-   "t": "2026-10-26T12:52:01.281Z",
-   "level": 10,
-   "xp": 108,
-   "hp": 142,
-   "maxHp": 145,
-   "gold": 16,
-   "phase": "battle",
-   "reason": "Attack Rat (L14 T5, 17 HP): P(win)=100.0% P(death)=0.0%; attack value 174.4 vs flee 163.2",
-   "actions": "attack",
-   "tx": "0x36fafcd26c05849cd0e229d9242cf3c06e40731e358047df78d5334cd2bcd7a",
-   "ok": true
-  },
   {
    "n": 39,
    "t": "2026-10-26T12:52:05.781Z",
@@ -564,35 +522,76 @@
    "actions": "flee",
    "tx": "0x678b0440669b671065e7fae7b817ff5c81ad723f66089516c96af323da9858e",
    "ok": true
+  },
+  {
+   "n": 0,
+   "t": "2026-10-26T12:56:14.268Z",
+   "level": 1,
+   "xp": 0,
+   "hp": 145,
+   "maxHp": 145,
+   "gold": 40,
+   "phase": "explore",
+   "reason": "Buy Ghost Wand, Shoes, Leather Armor, Helm, Heavy Belt; Explore until beast (instant-death risk 0.0%, battle-death risk <0.1%, HP 145/145)",
+   "actions": "buy(Ghost Wand, Shoes, Leather Armor, Helm, Heavy Belt) + explore(till beast)",
+   "tx": "0x59b93849a81e4b80d5b24b5c9af79eff86bb71ff519ce3783193e06a378bc8b",
+   "ok": true
+  },
+  {
+   "n": 1,
+   "t": "2026-10-26T12:56:19.981Z",
+   "level": 1,
+   "xp": 0,
+   "hp": 145,
+   "maxHp": 145,
+   "gold": 4,
+   "phase": "battle",
+   "reason": "Attack Cyclops (L3 T4, 27 HP): P(win)=100.0% P(death)=0.0%; attack value 215.2 vs flee -1.0",
+   "actions": "attack(to death)",
+   "tx": "0x210cb81ce0b510438f75663e4cef9a75d5560ffaf38bde31c46e9653d9fa901",
+   "ok": true
+  },
+  {
+   "n": 2,
+   "t": "2026-10-26T12:56:24.768Z",
+   "level": 2,
+   "xp": 4,
+   "hp": 121,
+   "maxHp": 145,
+   "gold": 7,
+   "phase": "level_up",
+   "reason": "Stats +1 CHA; Buy Heavy Gloves; Explore until beast (instant-death risk 0.0%, battle-death risk 0.2%, HP 121/145)",
+   "actions": "stats(cha+1) + buy(Heavy Gloves) + explore(till beast)",
+   "tx": "0x1eec01c7b5685856460dbb421460ab005f9499fa57a372053047dd4a2e0c35",
+   "ok": true
   }
  ],
  "current": {
-  "id": "904625697166532776746652061824565847215142356634039916249510407902722181601",
-  "level": 20,
-  "xp": 430,
-  "hp": 8,
-  "maxHp": 325,
-  "gold": 37,
+  "id": "904625697166532776746652061824565847215142356634039916378637617612689645729",
+  "level": 2,
+  "xp": 4,
+  "hp": 121,
+  "maxHp": 145,
+  "gold": 7,
   "gear": [
-   "Ghost Wand T1 G20",
-   "Demon Husk T1 G6",
-   "Cap T5 G12",
-   "War Belt T2 G6",
-   "Hard Leather Boots T4 G20",
-   "Dragonskin Gloves T2 G11",
-   "Necklace T1 G6",
-   "Platinum Ring T1 G1"
+   "Ghost Wand T1 G2",
+   "Leather Armor T5 G2",
+   "Helm T5 G2",
+   "Heavy Belt T5 G2",
+   "Shoes T5 G2",
+   "-",
+   "-",
+   "-"
   ],
   "stats": {
-   "str": 6,
-   "dex": 13,
-   "vit": 15,
-   "int": 2,
-   "wis": 2,
-   "cha": 9,
-   "luck": 27
+   "str": 4,
+   "dex": 1,
+   "vit": 3,
+   "int": 3,
+   "wis": 1,
+   "cha": 0,
+   "luck": 2
   },
-  "beast": "\"Morbid Bite\" Colossus",
-  "lastReason": "Flee from \"Morbid Bite\" Colossus (L33 T2): P(escape)=64.8% P(death)=35.2%; flee value 317.6 vs attack 0.0"
+  "lastReason": "Stats +1 CHA; Buy Heavy Gloves; Explore until beast (instant-death risk 0.0%, battle-death risk 0.2%, HP 121/145)"
  }
 }
