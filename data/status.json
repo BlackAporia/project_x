@@ -1,52 +1,10 @@
 {
- "updated": "2026-10-26T12:35:06.264Z",
+ "updated": "2026-10-26T12:35:24.289Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-10-26T11-41-07-266Z",
  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "recent": [
-  {
-   "n": 53,
-   "t": "2026-10-26T12:31:25.921Z",
-   "level": 6,
-   "xp": 44,
-   "hp": 144,
-   "maxHp": 145,
-   "gold": 0,
-   "phase": "battle",
-   "reason": "Attack Gnome (L8 T5, 43 HP): P(win)=100.0% P(death)=0.0%; attack value 187.3 vs flee 184.3",
-   "actions": "attack",
-   "tx": "0x754a2c44766593802324ed2d900bd37b9af63e507b54bc8a2383ce04cff893f",
-   "ok": true
-  },
-  {
-   "n": 54,
-   "t": "2026-10-26T12:31:30.687Z",
-   "level": 6,
-   "xp": 44,
-   "hp": 142,
-   "maxHp": 145,
-   "gold": 0,
-   "phase": "battle",
-   "reason": "Attack Gnome (L8 T5, 39 HP): P(win)=100.0% P(death)=0.0%; attack value 187.3 vs flee 184.1",
-   "actions": "attack",
-   "tx": "0x1e610050020b840599219c48da1aeec0941e1e0bec197ca8a46c3832f361dc1",
-   "ok": true
-  },
-  {
-   "n": 55,
-   "t": "2026-10-26T12:31:37.464Z",
-   "level": 6,
-   "xp": 44,
-   "hp": 140,
-   "maxHp": 145,
-   "gold": 0,
-   "phase": "battle",
-   "reason": "Attack Gnome (L8 T5, 35 HP): P(win)=100.0% P(death)=0.0%; attack value 187.3 vs flee 183.9",
-   "actions": "attack",
-   "tx": "0x1e9ec26310cde4e78cbfa8764e5ed57c1fd1be92dd622869f7988b7c353fb1",
-   "ok": true
-  },
   {
    "n": 56,
    "t": "2026-10-26T12:31:43.969Z",
@@ -564,35 +522,76 @@
    "actions": "flee",
    "tx": "0x4eba657d252d90277ea26153361a3350835940c0f5475bfc0c8d6797af5c247",
    "ok": true
+  },
+  {
+   "n": 93,
+   "t": "2026-10-26T12:35:06.265Z",
+   "level": 10,
+   "xp": 117,
+   "hp": 63,
+   "maxHp": 145,
+   "gold": 0,
+   "phase": "explore",
+   "reason": "Explore (instant-death risk 5.6%, battle-death risk 4.9%, HP 63/145)",
+   "actions": "explore",
+   "tx": "0x47f88b3985bf42e63fcb7395af223325014345ce0262909aa48c255bd388c9d",
+   "ok": true
+  },
+  {
+   "n": 94,
+   "t": "2026-10-26T12:35:14.066Z",
+   "level": 12,
+   "xp": 145,
+   "hp": 32,
+   "maxHp": 145,
+   "gold": 0,
+   "phase": "level_up",
+   "reason": "Stats +1 DEX +1 CHA; Explore (instant-death risk 16.6%, battle-death risk 10.4%, HP 32/145)",
+   "actions": "stats(dex+1 cha+1) + explore",
+   "tx": "0x772849c06211e06fa06d2a9233e933cb20c7974a7e967e46d4d2fe8306408bd",
+   "ok": true
+  },
+  {
+   "n": 95,
+   "t": "2026-10-26T12:35:18.368Z",
+   "level": 14,
+   "xp": 199,
+   "hp": 32,
+   "maxHp": 145,
+   "gold": 0,
+   "phase": "level_up",
+   "reason": "Stats +2 DEX; Explore (instant-death risk 19.4%, battle-death risk 11.1%, HP 32/145)",
+   "actions": "stats(dex+2) + explore",
+   "tx": "0x2b8770b81ae46d716bf38cd547c8d6e347464527fb87b80c872a34947388395",
+   "ok": true
   }
  ],
  "current": {
   "id": "904625697166532776746652061824565847215142356634039915843682034875201852257",
-  "level": 10,
-  "xp": 116,
-  "hp": 63,
+  "level": 14,
+  "xp": 199,
+  "hp": 32,
   "maxHp": 145,
   "gold": 0,
   "gear": [
-   "Wand T5 G11",
-   "Leather Armor T5 G11",
-   "Cap T5 G11",
-   "Mesh Belt T4 G11",
-   "Chain Boots T4 G8",
-   "Divine Gloves T1 G11",
+   "Wand T5 G14",
+   "Leather Armor T5 G14",
+   "Cap T5 G14",
+   "Mesh Belt T4 G14",
+   "Chain Boots T4 G12",
+   "Divine Gloves T1 G14",
    "-",
    "-"
   ],
   "stats": {
    "str": 4,
-   "dex": 6,
+   "dex": 7,
    "vit": 3,
    "int": 2,
    "wis": 2,
-   "cha": 4,
+   "cha": 5,
    "luck": 2
   },
-  "beast": "Hippogriff",
-  "lastReason": "Flee from Hippogriff (L16 T1): P(escape)=70.0% P(death)=30.0%; flee value 88.8 vs attack 24.7"
+  "lastReason": "Stats +2 DEX; Explore (instant-death risk 19.4%, battle-death risk 11.1%, HP 32/145)"
  }
 }
