@@ -1,5 +1,5 @@
 {
- "updated": "2026-10-26T16:32:01.567Z",
+ "updated": "2026-10-26T16:35:04.859Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-10-26T16-16-54-759Z",
@@ -256,6 +256,48 @@
    "actions": "flee",
    "ok": false,
    "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 112292393598093 }, l2_gas: { max_amount: 2310240, max_price_per_unit: 28667501932 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 285313913445 } }) exceed balance (54454874731645552).]"
+  },
+  {
+   "n": 6,
+   "t": "2026-10-26T16:32:01.568Z",
+   "level": 21,
+   "xp": 456,
+   "hp": 236,
+   "maxHp": 310,
+   "gold": 24,
+   "phase": "battle",
+   "reason": "Flee from \"Dread Tear\" Cyclops (L31 T4): P(escape)=89.3% P(death)=10.7%; flee value 532.5 vs attack 399.2",
+   "actions": "flee",
+   "ok": false,
+   "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 111963501793254 }, l2_gas: { max_amount: 2310240, max_price_per_unit: 28667501932 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 283455330349 } }) exceed balance (54454874731645552).]"
+  },
+  {
+   "n": 7,
+   "t": "2026-10-26T16:33:02.992Z",
+   "level": 21,
+   "xp": 456,
+   "hp": 236,
+   "maxHp": 310,
+   "gold": 24,
+   "phase": "battle",
+   "reason": "Flee from \"Dread Tear\" Cyclops (L31 T4): P(escape)=89.3% P(death)=10.7%; flee value 532.5 vs attack 399.2",
+   "actions": "flee",
+   "ok": false,
+   "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 111933587312634 }, l2_gas: { max_amount: 2310240, max_price_per_unit: 28667501932 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 282452627701 } }) exceed balance (54454874731645552).]"
+  },
+  {
+   "n": 8,
+   "t": "2026-10-26T16:34:03.856Z",
+   "level": 21,
+   "xp": 456,
+   "hp": 236,
+   "maxHp": 310,
+   "gold": 24,
+   "phase": "battle",
+   "reason": "Flee from \"Dread Tear\" Cyclops (L31 T4): P(escape)=89.3% P(death)=10.7%; flee value 532.5 vs attack 399.2",
+   "actions": "flee",
+   "ok": false,
+   "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 111491187194553 }, l2_gas: { max_amount: 2310240, max_price_per_unit: 28667501932 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 280312073835 } }) exceed balance (54454874731645552).]"
   }
  ],
  "current": {
