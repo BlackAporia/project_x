@@ -1,52 +1,10 @@
 {
- "updated": "2026-10-26T14:46:23.760Z",
+ "updated": "2026-10-26T14:47:28.686Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-10-26T11-41-07-266Z",
  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "recent": [
-  {
-   "n": 15,
-   "t": "2026-10-26T14:42:47.294Z",
-   "level": 6,
-   "xp": 37,
-   "hp": 94,
-   "maxHp": 100,
-   "gold": 14,
-   "phase": "battle",
-   "reason": "Flee from Banshee (L9 T3): P(escape)=99.7% P(death)=0.3%; flee value 178.6 vs attack 175.4",
-   "actions": "flee",
-   "tx": "0xda0badcdec6fbfd7a2a85dc3b6a01301cfa1a5ad587b53bdc58be819e23e84",
-   "ok": true
-  },
-  {
-   "n": 16,
-   "t": "2026-10-26T14:42:51.537Z",
-   "level": 6,
-   "xp": 37,
-   "hp": 85,
-   "maxHp": 100,
-   "gold": 14,
-   "phase": "battle",
-   "reason": "Flee from Banshee (L9 T3): P(escape)=99.5% P(death)=0.5%; flee value 176.9 vs attack 173.1",
-   "actions": "flee",
-   "tx": "0x34a042940572a364d0f0d498589846fa2a62de4fb2772246a9f9023bf0c4d",
-   "ok": true
-  },
-  {
-   "n": 17,
-   "t": "2026-10-26T14:42:57.769Z",
-   "level": 6,
-   "xp": 38,
-   "hp": 85,
-   "maxHp": 100,
-   "gold": 14,
-   "phase": "explore",
-   "reason": "Drink 2 potion(s); Explore until beast (instant-death risk 0.1%, battle-death risk 1.0%, HP 100/100)",
-   "actions": "buy(2 potions) + explore(till beast)",
-   "tx": "0xbac1e59764249d6072448da2009d7ab1f510d17f7bfa7e263703cb7b06f734",
-   "ok": true
-  },
   {
    "n": 18,
    "t": "2026-10-26T14:43:02.000Z",
@@ -564,34 +522,77 @@
    "actions": "buy(1 potion) + explore",
    "tx": "0x150f9655fc6c871224c39b113807135e34b57fc80840875c9660b2b2bb937d9",
    "ok": true
+  },
+  {
+   "n": 0,
+   "t": "2026-10-26T14:47:09.278Z",
+   "level": 1,
+   "xp": 0,
+   "hp": 115,
+   "maxHp": 115,
+   "gold": 40,
+   "phase": "explore",
+   "reason": "Buy Ghost Wand, Leather Armor, Hard Leather Gloves, Linen Hood, Hard Leather Belt, Leather Boots; Explore until beast (instant-death risk 0.0%, battle-death risk <0.1%, HP 115/115)",
+   "actions": "buy(Ghost Wand, Leather Armor, Hard Leather Gloves, Linen Hood, Hard Leather Belt, Leather Boots) + explore(till beast)",
+   "tx": "0x274c4480b42ba5faf85371033d1b2aa4edb0d14e2b340b3e2fced988bffbe30",
+   "ok": true
+  },
+  {
+   "n": 1,
+   "t": "2026-10-26T14:47:16.870Z",
+   "level": 2,
+   "xp": 4,
+   "hp": 113,
+   "maxHp": 115,
+   "gold": 6,
+   "phase": "level_up",
+   "reason": "Stats +1 VIT; Explore until beast (instant-death risk 0.0%, battle-death risk 0.0%, HP 128/130)",
+   "actions": "stats(vit+1) + explore(till beast)",
+   "tx": "0x488e873c70dc0c26ec48621d9b12513623348e2b0b3d451fdc2f94b75752ae6",
+   "ok": true
+  },
+  {
+   "n": 2,
+   "t": "2026-10-26T14:47:22.690Z",
+   "level": 2,
+   "xp": 4,
+   "hp": 128,
+   "maxHp": 130,
+   "gold": 6,
+   "phase": "battle",
+   "reason": "Attack Basilisk (L3 T5, 46 HP): P(win)=100.0% P(death)=0.0%; attack value 212.0 vs flee 207.6",
+   "actions": "attack",
+   "tx": "0x3084b849298b5a40442f1b31aaadfe704973b5a676301b08839ad75f36f655e",
+   "ok": true
   }
  ],
  "current": {
-  "id": "904625697166532776746652061824565847215142356634039918333992505708122977153",
-  "level": 11,
-  "xp": 140,
-  "hp": 79,
-  "maxHp": 100,
-  "gold": 4,
+  "id": "904625697166532776746652061824565847215142356634039918426226226944253956801",
+  "level": 2,
+  "xp": 4,
+  "hp": 128,
+  "maxHp": 130,
+  "gold": 6,
   "gear": [
-   "Katana T1 G11",
-   "Robe T4 G11",
-   "Full Helm T4 G10",
-   "Hard Leather Belt T4 G10",
-   "Hard Leather Boots T4 G11",
-   "Linen Gloves T4 G10",
+   "Ghost Wand T1 G2",
+   "Leather Armor T5 G2",
+   "Linen Hood T4 G2",
+   "Hard Leather Belt T4 G2",
+   "Leather Boots T5 G2",
+   "Hard Leather Gloves T4 G2",
    "-",
-   "Bronze Ring T3 G9"
+   "-"
   ],
   "stats": {
-   "str": 3,
-   "dex": 8,
-   "vit": 0,
-   "int": 3,
-   "wis": 4,
-   "cha": 4,
-   "luck": 10
+   "str": 2,
+   "dex": 4,
+   "vit": 2,
+   "int": 0,
+   "wis": 2,
+   "cha": 3,
+   "luck": 2
   },
-  "lastReason": "Drink 1 potion(s); Explore (instant-death risk 2.9%, battle-death risk 2.3%, HP 89/100)"
+  "beast": "Basilisk",
+  "lastReason": "Attack Basilisk (L3 T5, 46 HP): P(win)=100.0% P(death)=0.0%; attack value 212.0 vs flee 207.6"
  }
 }
