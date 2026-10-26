@@ -630,17 +630,8 @@ async function renderControls() {
     return;
   }
   try {
-    const vars = await variables();
-    const on = (n) => vars[n]?.value === 'true';
-    $('#ctlSchedule').innerHTML = `
-      <label class="ctl-switch"><input type="checkbox" data-var="MAINNET_ENABLED" ${on('MAINNET_ENABLED') ? 'checked' : ''}> Mainnet за розкладом (кожні 3 год)</label>
-      <label class="ctl-switch"><input type="checkbox" data-var="MAINNET_LIVE" ${on('MAINNET_LIVE') ? 'checked' : ''}> Реальні транзакції за розкладом (інакше dry run)</label>
-      <label class="ctl-field">Proving Grounds за розкладом: входів за запуск (0 = вимкнено)
-        <input type="number" min="0" max="50" data-var="PROVING_GROUNDS_GAMES" value="${esc(vars.PROVING_GROUNDS_GAMES?.value ?? '0')}">
-      </label>
-      <label class="ctl-field">Practice‑підземелля за розкладом
-        <select data-var="PRACTICE_DUNGEON">${(cfg?.dungeons ?? []).map((d) => `<option value="${d === 'default' ? '' : d}" ${(vars.PRACTICE_DUNGEON?.value ?? '') === (d === 'default' ? '' : d) ? 'selected' : ''}>${d}</option>`).join('')}</select>
-      </label>`;
+    // automatic runs are switched off in the workflows (no schedule triggers): nothing here would run by itself
+    $('#ctlSchedule').innerHTML = '<p>Автозапуск вимкнено: бот, тренування й навчання запускаються лише вашими кнопками на «Головній».</p>';
   } catch (e) {
     $('#ctlSchedule').innerHTML = `<p class="bad">${esc(e.message)}</p>`;
   }
@@ -729,7 +720,7 @@ const QUICK = {
     const n = Math.max(1, Math.min(50, Number($('#qaPgCount').value) || 5));
     return {
       confirm: `Зіграти ${n} ${n === 1 ? 'гру' : n < 5 ? 'гри' : 'ігор'} у Proving Grounds у mainnet? Це реальні транзакції з вашого акаунта (газ платить акаунт).`,
-      inputs: { mode: 'mainnet', live: 'true', minutes: String(Math.min(300, 30 + n * 15)), max_games: String(n + 20), proving_grounds: String(n), account: 'cartridge' },
+      inputs: { mode: 'mainnet', live: 'true', minutes: String(Math.min(280, 30 + n * 6)), max_games: String(n + 20), proving_grounds: String(n), account: 'cartridge' },
       label: `Mainnet · Proving Grounds ×${n}`,
     };
   },
@@ -1007,9 +998,6 @@ async function renderChecklist() {
     const acct = gOk ? `Game Account ${short(vars.GAME_ACCOUNT_ADDRESS?.value ?? '')}` : cOk ? `Cartridge ${vars.CARTRIDGE_USERNAME?.value ?? short(vars.MAINNET_ACCOUNT_ADDRESS?.value ?? '')}` : '';
     const exp = gOk ? gExp : cExp;
     const soon = exp && exp - now < 7 * 86400_000;
-    const sched = vars.MAINNET_ENABLED?.value === 'true';
-    const live = vars.MAINNET_LIVE?.value === 'true';
-    const pg = Number(vars.PROVING_GROUNDS_GAMES?.value ?? 0);
     host.innerHTML =
       item(true, 'GitHub‑токен', 'Збережено в цьому браузері.') +
       item(
@@ -1019,9 +1007,9 @@ async function renderChecklist() {
         cOk || gOk ? (soon ? '<a class="btn small" href="#accounts" data-goto="accounts">Оновити</a>' : '') : '<a class="btn small primary" href="#accounts" data-goto="accounts">Підключити</a>',
       ) +
       item(
-        sched && live ? true : null,
+        true,
         'Розклад',
-        sched ? `Mainnet кожні 3 год${live ? '' : ' (dry run — без транзакцій)'}${pg ? ` · Proving Grounds ×${pg}` : ''}` : 'Вимкнено: бот грає mainnet лише коли ви запускаєте вручну.',
+        'Автозапуск вимкнено: бот грає лише коли ви запускаєте його вручну.',
         '<a class="btn small" href="#schedule" data-goto="schedule">Налаштувати</a>',
       );
     $('#tabAccountsDot').hidden = cOk || gOk;

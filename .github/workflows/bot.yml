@@ -1,6 +1,7 @@
 name: Bot
 
-# Plays the free practice dungeon on a schedule and, once enabled, the account's mainnet games.
+# Runs only when started by hand (website buttons or workflow_dispatch): automatic runs are off at the owner's
+# request. The schedule-related variables below only matter if a `schedule:` trigger is added back.
 #   Repository variables (Settings -> Secrets and variables -> Actions -> Variables):
 #     MAINNET_ENABLED=true   also run the mainnet step (needs secret GAME_SESSION_LINK or CARTRIDGE_SESSION_B64)
 #     RONKE_CLAIM=true       claim the Ronke Casino daily free games before mainnet play
@@ -8,8 +9,6 @@ name: Bot
 #     PROVING_GROUNDS_GAMES=N  enter the free Proving Grounds up to N times per run when no game is left (gas: account)
 #     PRACTICE_MINUTES / MAINNET_MINUTES  time budgets (defaults 40 / 120)
 on:
-  schedule:
-    - cron: '17 */3 * * *'
   workflow_dispatch:
     inputs:
       mode:
@@ -91,7 +90,8 @@ jobs:
       - name: Mainnet
         if: (github.event_name == 'schedule' && vars.MAINNET_ENABLED == 'true') || inputs.mode == 'mainnet' || inputs.mode == 'both'
         continue-on-error: true
-        timeout-minutes: 180
+        # up to ~40 Proving Grounds games in one run: time budget (<= 280 min) + 10 min grace + settlement
+        timeout-minutes: 315
         env:
           GAME_SESSION_LINK: ${{ secrets.GAME_SESSION_LINK }}
           CARTRIDGE_SESSION_B64: ${{ secrets.CARTRIDGE_SESSION_B64 }}

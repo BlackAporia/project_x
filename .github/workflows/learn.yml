@@ -5,8 +5,7 @@ name: Learn
 #   policy/policy.json   mainnet (V2 rules): maximize P(reaching levels 40-46) - the leaderboard top, not the mean
 #   policy/practice.json practice games (no item specials): tuned per dungeon, adopted only if it wins on the site engine
 on:
-  schedule:
-    - cron: '41 4 * * *'
+  # no schedule: started by hand only (website "Почати навчання"), at the owner's request
   workflow_dispatch:
     inputs:
       generations:
