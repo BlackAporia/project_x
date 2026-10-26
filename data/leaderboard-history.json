@@ -274,5 +274,12 @@
   "top10": 963,
   "bot": 988,
   "board": "proving-grounds"
+ },
+ {
+  "t": "2026-10-26T16:07:06.788Z",
+  "top1": 1637,
+  "top10": 988,
+  "bot": 988,
+  "board": "proving-grounds"
  }
 ]
