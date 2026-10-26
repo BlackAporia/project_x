@@ -1,13 +1,13 @@
 {
- "updated": "2026-10-26T17:12:31.694Z",
+ "updated": "2026-10-26T17:35:46.655Z",
  "mode": "mainnet",
- "running": false,
- "runId": "2026-10-26T17-07-08-825Z",
+ "running": true,
+ "runId": "2026-10-26T17-35-16-127Z",
  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "recent": [
   {
    "n": 0,
-   "t": "2026-10-26T17:07:33.814Z",
+   "t": "2026-10-26T17:35:31.128Z",
    "level": 17,
    "xp": 303,
    "hp": 235,
@@ -16,51 +16,64 @@
    "phase": "battle",
    "reason": "Flee from Kraken (L14 T1): P(escape)=100.0% P(death)=<0.1%; flee value 532.7 vs attack 526.3",
    "actions": "flee",
-   "ok": false,
-   "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 100125747684354 }, l2_gas: { max_amount: 2310240, max_price_per_unit: 28720164208 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 180151265661 } }) exceed balance (54454874731645552).]"
-  },
-  {
-   "n": 0,
-   "t": "2026-10-26T17:07:49.292Z",
-   "level": 21,
-   "xp": 456,
-   "hp": 236,
-   "maxHp": 310,
-   "gold": 24,
-   "phase": "battle",
-   "reason": "Flee from \"Dread Tear\" Cyclops (L31 T4): P(escape)=89.3% P(death)=10.7%; flee value 532.5 vs attack 399.2",
-   "actions": "flee",
-   "ok": false,
-   "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 100143580697988 }, l2_gas: { max_amount: 2310240, max_price_per_unit: 28720164208 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 180076216830 } }) exceed balance (54454874731645552).]"
-  },
-  {
-   "n": 0,
-   "t": "2026-10-26T17:08:40.322Z",
-   "level": 15,
-   "xp": 228,
-   "hp": 148,
-   "maxHp": 175,
-   "gold": 15,
-   "phase": "level_up",
-   "reason": "Stats +1 DEX; Drink 3 potion(s); Explore (instant-death risk 1.0%, battle-death risk 1.4%, HP 175/175)",
-   "actions": "stats(dex+1) + buy(3 potions) + explore",
-   "ok": false,
-   "error": "expected value at line 1 column 1 [131]"
+   "tx": "0x28662e4e254d4d8d5cd0787ac1c4e40f9092046166cf199f5beeaf79b90b652",
+   "ok": true
   },
   {
    "n": 1,
-   "t": "2026-10-26T17:08:41.933Z",
-   "level": 15,
-   "xp": 228,
-   "hp": 148,
-   "maxHp": 175,
-   "gold": 15,
+   "t": "2026-10-26T17:35:36.957Z",
+   "level": 17,
+   "xp": 304,
+   "hp": 235,
+   "maxHp": 235,
+   "gold": 26,
+   "phase": "explore",
+   "reason": "Explore (instant-death risk 0.6%, battle-death risk 0.3%, HP 235/235)",
+   "actions": "explore",
+   "tx": "0x61a2b661706d3c7d158fddbda6e12077fb4a4a60215d87512137b1757a84418",
+   "ok": true
+  },
+  {
+   "n": 2,
+   "t": "2026-10-26T17:35:40.904Z",
+   "level": 19,
+   "xp": 363,
+   "hp": 235,
+   "maxHp": 235,
+   "gold": 26,
    "phase": "level_up",
-   "reason": "Stats +1 DEX; Drink 3 potion(s); Explore (instant-death risk 1.0%, battle-death risk 1.4%, HP 175/175)",
-   "actions": "stats(dex+1) + buy(3 potions) + explore",
-   "ok": false,
-   "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 100195555314259 }, l2_gas: { max_amount: 2310240, max_price_per_unit: 28720164208 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 179926119168 } }) exceed balance (54454874731645552).]"
+   "reason": "Stats +1 STR +4 VIT; Equip Ornate Greaves; Explore (instant-death risk 0.7%, battle-death risk 0.6%, HP 295/295)",
+   "actions": "stats(str+1 vit+4) + equip(Ornate Greaves) + explore",
+   "tx": "0x306658f34deef57fefba9b1f4ad2e01545bca87117f7c83bcfbded52793daa1",
+   "ok": true
   }
  ],
- "message": "no unplayed games on the account (buy/mint games in the UI)"
+ "current": {
+  "id": "904625697166532776746652061824565847215142356634039918610693669180293810049",
+  "level": 19,
+  "xp": 363,
+  "hp": 235,
+  "maxHp": 235,
+  "gold": 26,
+  "gear": [
+   "Ghost Wand T1 G20",
+   "Silk Robe T2 G19",
+   "DragonsCrown T2 G18",
+   "Mesh Belt T4 G20",
+   "Hard Leather Boots T4 G20",
+   "Wool Gloves T3 G19",
+   "Pendant T1 G13",
+   "Bronze Ring T3 G17"
+  ],
+  "stats": {
+   "str": 1,
+   "dex": 15,
+   "vit": 9,
+   "int": 8,
+   "wis": 6,
+   "cha": 10,
+   "luck": 31
+  },
+  "lastReason": "Stats +1 STR +4 VIT; Equip Ornate Greaves; Explore (instant-death risk 0.7%, battle-death risk 0.6%, HP 295/295)"
+ }
 }
