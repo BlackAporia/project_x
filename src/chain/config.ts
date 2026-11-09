@@ -8,11 +8,13 @@ const list = (k: string, d: string[]) => (process.env[k] ? process.env[k]!.split
 export const MAINNET = {
   chainId: '0x534e5f4d41494e', // SN_MAIN
   rpcUrls: list('STARKNET_RPC_URLS', [
+    // lootsurvivor.io itself uses Cartridge's v0_10 endpoint; v0_9 stopped answering in November 2026
+    'https://api.cartridge.gg/x/starknet/mainnet/rpc/v0_10',
     'https://api.cartridge.gg/x/starknet/mainnet/rpc/v0_9',
     'https://api.cartridge.gg/x/starknet/mainnet',
+    'https://api.zan.top/public/starknet-mainnet/rpc/v0_10',
     'https://rpc.starknet.lava.build',
     'https://starknet.drpc.org',
-    'https://starknet-mainnet.public.zan.top/rpc/v0_9',
   ]),
   /** Cartridge RPC: also serves cartridge_addExecuteOutsideTransaction (paymaster + VRF wrapping) */
   cartridgeRpc: env('CARTRIDGE_RPC_URL', 'https://api.cartridge.gg/x/starknet/mainnet'),

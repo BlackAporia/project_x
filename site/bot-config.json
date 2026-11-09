@@ -81,10 +81,11 @@
     "maxFeeExceptions": "25",
     "rpcUrls": [
       "https://api.cartridge.gg/x/starknet/mainnet",
+      "https://api.cartridge.gg/x/starknet/mainnet/rpc/v0_10",
       "https://api.cartridge.gg/x/starknet/mainnet/rpc/v0_9",
+      "https://api.zan.top/public/starknet-mainnet/rpc/v0_10",
       "https://rpc.starknet.lava.build",
-      "https://starknet.drpc.org",
-      "https://starknet-mainnet.public.zan.top/rpc/v0_9"
+      "https://starknet.drpc.org"
     ],
     "selectors": {
       "get_session_epoch": "0x2286994281fb1102092fd26ee4e2d7f95fec51defce01860bbc5d4d857c2553",
