@@ -1,66 +1,10 @@
 {
- "updated": "2026-11-09T12:24:15.297Z",
+ "updated": "2026-11-09T12:24:29.491Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-11-09T11-17-32-722Z",
  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "recent": [
-  {
-   "n": 66,
-   "t": "2026-11-09T12:20:35.302Z",
-   "level": 11,
-   "xp": 123,
-   "hp": 104,
-   "maxHp": 175,
-   "gold": 0,
-   "phase": "battle",
-   "reason": "Attack Kappa (L14 T5, 35 HP): P(win)=100.0% P(death)=<0.1%; attack value 194.4 vs flee 180.4",
-   "actions": "attack",
-   "tx": "0x3d395798af47aa1c968915ce181266ae194659339c58e432a92e65576d2cb69",
-   "ok": true
-  },
-  {
-   "n": 67,
-   "t": "2026-11-09T12:20:39.642Z",
-   "level": 11,
-   "xp": 123,
-   "hp": 102,
-   "maxHp": 175,
-   "gold": 0,
-   "phase": "battle",
-   "reason": "Attack Kappa (L14 T5, 31 HP): P(win)=100.0% P(death)=<0.1%; attack value 194.6 vs flee 179.8",
-   "actions": "attack",
-   "tx": "0x3f9b31b5e737063e049ca703522fd761c4b6df1a80a8ec896b2e2e34ad9bea5",
-   "ok": true
-  },
-  {
-   "n": 68,
-   "t": "2026-11-09T12:20:45.834Z",
-   "level": 11,
-   "xp": 123,
-   "hp": 100,
-   "maxHp": 175,
-   "gold": 0,
-   "phase": "battle",
-   "reason": "Attack Kappa (L14 T5, 27 HP): P(win)=100.0% P(death)=<0.1%; attack value 194.9 vs flee 179.3",
-   "actions": "attack",
-   "tx": "0x71019038196c6f35258645ebb48ba72f9099d65767a6cfb04899f65349ceb97",
-   "ok": true
-  },
-  {
-   "n": 69,
-   "t": "2026-11-09T12:20:50.226Z",
-   "level": 11,
-   "xp": 123,
-   "hp": 97,
-   "maxHp": 175,
-   "gold": 0,
-   "phase": "battle",
-   "reason": "Attack Kappa (L14 T5, 23 HP): P(win)=100.0% P(death)=<0.1%; attack value 194.9 vs flee 178.6",
-   "actions": "attack",
-   "tx": "0x5deb931b16687489f4ea24eb4c2d604bdf71549fda96f01611efd6b98ddf7d1",
-   "ok": true
-  },
   {
    "n": 70,
    "t": "2026-11-09T12:20:54.609Z",
@@ -564,13 +508,69 @@
    "actions": "attack",
    "tx": "0x37fc9be1774c77401c587d971523741af13dd6f5327e3a1e8858cef5452ae22",
    "ok": true
+  },
+  {
+   "n": 3,
+   "t": "2026-11-09T12:24:15.298Z",
+   "level": 1,
+   "xp": 0,
+   "hp": 73,
+   "maxHp": 115,
+   "gold": 0,
+   "phase": "battle",
+   "reason": "Attack Fairy (L3 T1, 20 HP): P(win)=40.1% P(death)=59.9%; attack value 83.2 vs flee -1.0",
+   "actions": "attack",
+   "tx": "0x43ed00201b857e018fae50edb246cb98af43722ac212a6f6ca32b141ea1d640",
+   "ok": true
+  },
+  {
+   "n": 4,
+   "t": "2026-11-09T12:24:19.655Z",
+   "level": 1,
+   "xp": 0,
+   "hp": 51,
+   "maxHp": 115,
+   "gold": 0,
+   "phase": "battle",
+   "reason": "Attack Fairy (L3 T1, 16 HP): P(win)=21.6% P(death)=78.4%; attack value 44.8 vs flee -1.0",
+   "actions": "attack",
+   "tx": "0x1b917e1dabaff83e8f58599a81ce706178a3e1959d5f4a3b247bf9dcd19a980",
+   "ok": true
+  },
+  {
+   "n": 5,
+   "t": "2026-11-09T12:24:22.402Z",
+   "level": 1,
+   "xp": 0,
+   "hp": 29,
+   "maxHp": 115,
+   "gold": 0,
+   "phase": "battle",
+   "reason": "Attack Fairy (L3 T1, 12 HP): P(win)=3.9% P(death)=96.1%; attack value 8.1 vs flee -1.0",
+   "actions": "attack",
+   "tx": "0x5e8f050931ffe0283c664834ba78152b4798f1817aa39d9b2035e82b56797ef",
+   "ok": true
+  },
+  {
+   "n": 6,
+   "t": "2026-11-09T12:24:26.774Z",
+   "level": 1,
+   "xp": 0,
+   "hp": 9,
+   "maxHp": 115,
+   "gold": 0,
+   "phase": "battle",
+   "reason": "Attack Fairy (L3 T1, 8 HP): P(win)=<0.1% P(death)=100.0%; attack value 0.0 vs flee -1.0",
+   "actions": "attack",
+   "tx": "0x2ab69450262f624a6832865284147c068d272bb69510af4af49e3daa3629904",
+   "ok": true
   }
  ],
  "current": {
   "id": "374144419157391711793985745729727114989126071146465",
   "level": 1,
   "xp": 0,
-  "hp": 94,
+  "hp": 9,
   "maxHp": 115,
   "gold": 0,
   "gear": [
@@ -593,6 +593,6 @@
    "luck": 2
   },
   "beast": "Fairy",
-  "lastReason": "Attack Fairy (L3 T1, 24 HP): P(win)=52.0% P(death)=48.0%; attack value 108.2 vs flee -1.0"
+  "lastReason": "Attack Fairy (L3 T1, 8 HP): P(win)=<0.1% P(death)=100.0%; attack value 0.0 vs flee -1.0"
  }
 }
