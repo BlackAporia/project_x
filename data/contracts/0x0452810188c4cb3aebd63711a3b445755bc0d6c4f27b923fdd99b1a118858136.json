@@ -1,0 +1,912 @@
+{
+ "address": "0x0452810188c4cb3aebd63711a3b445755bc0d6c4f27b923fdd99b1a118858136",
+ "updated": "2026-11-09T09:42:51.318Z",
+ "classHash": "0x05c668438529906abdd5f04cbe44c9919c40a811f922cbdc59630f3116c0fd8f",
+ "functions": [
+  {
+   "name": "init_distribution_pool",
+   "inputs": [
+    {
+     "name": "distribution_initial_tick",
+     "type": "ekubo::types::i129::i129"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u256"
+    }
+   ],
+   "state": "external"
+  },
+  {
+   "name": "premint_tokens",
+   "inputs": [
+    {
+     "name": "recipients",
+     "type": "core::array::Array::<core::starknet::contract_address::ContractAddress>"
+    },
+    {
+     "name": "amounts",
+     "type": "core::array::Array::<core::integer::u256>"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "provide_initial_liquidity",
+   "inputs": [
+    {
+     "name": "payment_token_amount",
+     "type": "core::integer::u128"
+    },
+    {
+     "name": "dungeon_ticket_amount",
+     "type": "core::integer::u128"
+    },
+    {
+     "name": "minimum_liquidity",
+     "type": "core::integer::u128"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "(core::integer::u64, core::integer::u128, core::integer::u256, core::integer::u256)"
+    }
+   ],
+   "state": "external"
+  },
+  {
+   "name": "start_token_distribution",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "(core::integer::u64, core::integer::u128)"
+    }
+   ],
+   "state": "external"
+  },
+  {
+   "name": "claim_proceeds",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u128"
+    }
+   ],
+   "state": "external"
+  },
+  {
+   "name": "claim_and_distribute_buybacks",
+   "inputs": [
+    {
+     "name": "limit",
+     "type": "core::integer::u16"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "(core::integer::u128, core::integer::u128)"
+    }
+   ],
+   "state": "external"
+  },
+  {
+   "name": "distribute_proceeds",
+   "inputs": [
+    {
+     "name": "end_time",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "enable_low_issuance_mode",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u128"
+    }
+   ],
+   "state": "external"
+  },
+  {
+   "name": "force_enable_low_issuance_mode",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u128"
+    }
+   ],
+   "state": "external"
+  },
+  {
+   "name": "disable_low_issuance_mode",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u128"
+    }
+   ],
+   "state": "external"
+  },
+  {
+   "name": "force_disable_low_issuance_mode",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u128"
+    }
+   ],
+   "state": "external"
+  },
+  {
+   "name": "burn",
+   "inputs": [
+    {
+     "name": "amount",
+     "type": "core::integer::u256"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "burn_from",
+   "inputs": [
+    {
+     "name": "from",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "amount",
+     "type": "core::integer::u256"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "set_buyback_order_config",
+   "inputs": [
+    {
+     "name": "config",
+     "type": "ticket_master::interfaces::BuybackOrderConfig"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "set_issuance_reduction_price_x128",
+   "inputs": [
+    {
+     "name": "price",
+     "type": "core::integer::u256"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "set_issuance_reduction_price_duration",
+   "inputs": [
+    {
+     "name": "duration",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "set_issuance_reduction_bips",
+   "inputs": [
+    {
+     "name": "bips",
+     "type": "core::integer::u128"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "set_treasury_address",
+   "inputs": [
+    {
+     "name": "treasury_address",
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "set_velords_address",
+   "inputs": [
+    {
+     "name": "velords_address",
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "withdraw_erc20",
+   "inputs": [
+    {
+     "name": "token_address",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "amount",
+     "type": "core::integer::u256"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "withdraw_erc721",
+   "inputs": [
+    {
+     "name": "token_address",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "token_id",
+     "type": "core::integer::u256"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "get_token_distribution_rate",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u128"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_buyback_rate",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u128"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_buyback_order_key_counter",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u128"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_buyback_order_key_bookmark",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u128"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_buyback_order_key_end_time",
+   "inputs": [
+    {
+     "name": "index",
+     "type": "core::integer::u128"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u64"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_distribution_end_time",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u64"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_distribution_initial_tick",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "ekubo::types::i129::i129"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_distribution_order_key",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "ekubo::interfaces::extensions::twamm::OrderKey"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_distribution_pool_key",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "ekubo::types::keys::PoolKey"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_distribution_pool_fee",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u128"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "is_low_issuance_mode",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_issuance_reduction_price_x128",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u256"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_issuance_reduction_price_duration",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u64"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_core_dispatcher",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "ekubo::interfaces::core::ICoreDispatcher"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_positions_dispatcher",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "ekubo::interfaces::positions::IPositionsDispatcher"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_buyback_order_config",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "ticket_master::interfaces::BuybackOrderConfig"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_pool_id",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u256"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_position_token_id",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u64"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_liquidity_position_id",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u64"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_payment_token",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_extension_address",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_buyback_token",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_registry_dispatcher",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "ekubo::interfaces::token_registry::ITokenRegistryDispatcher"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_oracle_address",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "ekubo_oracle_extension::oracle::IOracleDispatcher"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_tokens_for_distribution",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u256"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_treasury_address",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_velords_address",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_distribution_pool_key_hash",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::felt252"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "is_pool_initialized",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_deployment_state",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u8"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_dungeon_ticket_price_x128",
+   "inputs": [
+    {
+     "name": "duration",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u256"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_position_nft_address",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_issuance_reduction_bips",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u128"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_buyback_pool_key",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "ekubo::types::keys::PoolKey"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_buyback_pool_key_hash",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::felt252"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_unclaimed_buyback_orders_count",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u128"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "is_token0",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_buyback_order_key",
+   "inputs": [
+    {
+     "name": "start_time",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "end_time",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "ekubo::interfaces::extensions::twamm::OrderKey"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "total_supply",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u256"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "balance_of",
+   "inputs": [
+    {
+     "name": "account",
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u256"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "allowance",
+   "inputs": [
+    {
+     "name": "owner",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "spender",
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u256"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "transfer",
+   "inputs": [
+    {
+     "name": "recipient",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "amount",
+     "type": "core::integer::u256"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "external"
+  },
+  {
+   "name": "transfer_from",
+   "inputs": [
+    {
+     "name": "sender",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "recipient",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "amount",
+     "type": "core::integer::u256"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "external"
+  },
+  {
+   "name": "approve",
+   "inputs": [
+    {
+     "name": "spender",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "amount",
+     "type": "core::integer::u256"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "external"
+  },
+  {
+   "name": "name",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::byte_array::ByteArray"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "symbol",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::byte_array::ByteArray"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "decimals",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u8"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "totalSupply",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u256"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "balanceOf",
+   "inputs": [
+    {
+     "name": "account",
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u256"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "transferFrom",
+   "inputs": [
+    {
+     "name": "sender",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "recipient",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "amount",
+     "type": "core::integer::u256"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "external"
+  },
+  {
+   "name": "owner",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "transfer_ownership",
+   "inputs": [
+    {
+     "name": "new_owner",
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "renounce_ownership",
+   "inputs": [],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "transferOwnership",
+   "inputs": [
+    {
+     "name": "newOwner",
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "renounceOwnership",
+   "inputs": [],
+   "outputs": [],
+   "state": "external"
+  }
+ ],
+ "calls": {
+  "symbol": [
+   "0x0",
+   "0x445449434b4554",
+   "0x7"
+  ],
+  "decimals": [
+   "0x12"
+  ],
+  "balance_of:0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82": [
+   "0x289e697bfb9f987215",
+   "0x0"
+  ],
+  "balance_of:0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452": [
+   "0x0",
+   "0x0"
+  ]
+ }
+}

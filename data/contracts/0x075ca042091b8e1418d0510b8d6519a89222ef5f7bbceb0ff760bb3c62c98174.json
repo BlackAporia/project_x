@@ -1,0 +1,612 @@
+{
+ "address": "0x075ca042091b8e1418d0510b8d6519a89222ef5f7bbceb0ff760bb3c62c98174",
+ "updated": "2026-11-09T09:42:45.945Z",
+ "classHash": "0x03f4d49e9f27eb7d4250f5fa4877a0755a8fb8438ea21a534068e64791f9540b",
+ "functions": [
+  {
+   "name": "new_game",
+   "inputs": [
+    {
+     "name": "payment_type",
+     "type": "game_components_metagame::ticket_booth::structs::PaymentType"
+    },
+    {
+     "name": "to",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "soulbound",
+     "type": "core::bool"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::felt252"
+    }
+   ],
+   "state": "external"
+  },
+  {
+   "name": "new_game_batch",
+   "inputs": [
+    {
+     "name": "recipients",
+     "type": "core::array::Span::<core::starknet::contract_address::ContractAddress>"
+    },
+    {
+     "name": "soulbound",
+     "type": "core::bool"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::array::Span::<core::felt252>"
+    }
+   ],
+   "state": "external"
+  },
+  {
+   "name": "claim_beast",
+   "inputs": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252"
+    },
+    {
+     "name": "encounter_xp",
+     "type": "core::integer::u16"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::felt252"
+    }
+   ],
+   "state": "external"
+  },
+  {
+   "name": "claim_jackpot",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "withdraw_funds",
+   "inputs": [
+    {
+     "name": "token_address",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "amount",
+     "type": "core::integer::u256"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "update_opening_time",
+   "inputs": [
+    {
+     "name": "new_opening_time",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "update_payment_token",
+   "inputs": [
+    {
+     "name": "new_payment_token",
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "update_ticket_receiver_address",
+   "inputs": [
+    {
+     "name": "new_ticket_receiver_address",
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "update_settings_id",
+   "inputs": [
+    {
+     "name": "new_settings_id",
+     "type": "core::integer::u32"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "update_cost_to_play",
+   "inputs": [
+    {
+     "name": "new_cost_to_play",
+     "type": "core::integer::u128"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "update_beasts_nft_address",
+   "inputs": [
+    {
+     "name": "new_beasts_nft_address",
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "open_dungeon",
+   "inputs": [],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "close_dungeon",
+   "inputs": [],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "set_species_mapping",
+   "inputs": [
+    {
+     "name": "roster_id",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "beast_id",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "get_game_core_address",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_beasts_nft_address",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_reward_token_address",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "jackpot_claimed",
+   "inputs": [
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "dungeon_opening_time",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u64"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "opening_time",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u64"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "payment_token",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "cost_to_play",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u128"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "ticket_receiver_address",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "settings_id",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u32"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "is_closed",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_golden_pass",
+   "inputs": [
+    {
+     "name": "golden_pass_address",
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::option::Option::<game_components_metagame::ticket_booth::structs::GoldenPass>"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "golden_pass_last_used",
+   "inputs": [
+    {
+     "name": "golden_pass_address",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "token_id",
+     "type": "core::integer::u128"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u64"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "species_mapping",
+   "inputs": [
+    {
+     "name": "roster_id",
+     "type": "core::integer::u8"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "death_mountain::dungeons::beast_kills::SpeciesMapping"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "species_mapping_at",
+   "inputs": [
+    {
+     "name": "roster_id",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "block",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "death_mountain::dungeons::beast_kills::SpeciesMapping"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "collected_at",
+   "inputs": [
+    {
+     "name": "beast_id",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "prefix",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "suffix",
+     "type": "core::integer::u8"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u64"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "minter_id",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u32"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "is_golden_pass_usable",
+   "inputs": [
+    {
+     "name": "golden_pass_address",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "token_id",
+     "type": "core::integer::u128"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "encounter_species",
+   "inputs": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252"
+    },
+    {
+     "name": "beast_seed",
+     "type": "core::integer::u32"
+    },
+    {
+     "name": "prefix",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "suffix",
+     "type": "core::integer::u8"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u64"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "kill_species",
+   "inputs": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252"
+    },
+    {
+     "name": "encounter_xp",
+     "type": "core::integer::u16"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u64"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "is_beast_collectable",
+   "inputs": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252"
+    },
+    {
+     "name": "beast_seed",
+     "type": "core::integer::u32"
+    },
+    {
+     "name": "prefix",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "suffix",
+     "type": "core::integer::u8"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "supports_interface",
+   "inputs": [
+    {
+     "name": "interface_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "verify_beast_kill",
+   "inputs": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252"
+    },
+    {
+     "name": "species_id",
+     "type": "core::integer::u32"
+    },
+    {
+     "name": "prefix",
+     "type": "core::integer::u8"
+    },
+    {
+     "name": "suffix",
+     "type": "core::integer::u8"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "upgrade",
+   "inputs": [
+    {
+     "name": "new_class_hash",
+     "type": "core::starknet::class_hash::ClassHash"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "owner",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "transfer_ownership",
+   "inputs": [
+    {
+     "name": "new_owner",
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "renounce_ownership",
+   "inputs": [],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "transferOwnership",
+   "inputs": [
+    {
+     "name": "newOwner",
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "renounceOwnership",
+   "inputs": [],
+   "outputs": [],
+   "state": "external"
+  }
+ ],
+ "calls": {
+  "cost_to_play": [
+   "0xde0b6b3a7640000"
+  ],
+  "settings_id": [
+   "0x2"
+  ],
+  "is_closed": [
+   "0x0"
+  ],
+  "minter_id": [
+   "0x1"
+  ],
+  "opening_time": [
+   "0x6ae9ce1d"
+  ],
+  "get_game_core_address": [
+   "0x3cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2"
+  ]
+ }
+}

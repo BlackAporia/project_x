@@ -1,9 +1,9 @@
-== bot contract --address 0x0368066825ff8c7ed2b2e73ff513ebd9dc6e41afcbbf853bcf2f793a67a0c264 --call cost_to_play --call payment_token --call is_closed --call settings_id --call minter_id --call opening_time --call get_game_core_address
+== bot contract --address 0x075ca042091b8e1418d0510b8d6519a89222ef5f7bbceb0ff760bb3c62c98174 --call cost_to_play --call settings_id --call is_closed --call minter_id --call opening_time --call get_game_core_address
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts contract --address 0x0368066825ff8c7ed2b2e73ff513ebd9dc6e41afcbbf853bcf2f793a67a0c264 --call cost_to_play --call payment_token --call is_closed --call settings_id --call minter_id --call opening_time --call get_game_core_address
+> node --import tsx src/cli.ts contract --address 0x075ca042091b8e1418d0510b8d6519a89222ef5f7bbceb0ff760bb3c62c98174 --call cost_to_play --call settings_id --call is_closed --call minter_id --call opening_time --call get_game_core_address
 
-0x0368066825ff8c7ed2b2e73ff513ebd9dc6e41afcbbf853bcf2f793a67a0c264 class 0x04268add2e2e0d81b2e586fb5a386705751a014e42adb1899151b52a44a6152c: 43 functions
+0x075ca042091b8e1418d0510b8d6519a89222ef5f7bbceb0ff760bb3c62c98174 class 0x03f4d49e9f27eb7d4250f5fa4877a0755a8fb8438ea21a534068e64791f9540b: 43 functions
   write new_game(payment_type: PaymentType, to: ContractAddress, soulbound: bool) -> felt252
   write new_game_batch(recipients: ContractAddress>, soulbound: bool) -> felt252>
   write claim_beast(adventurer_id: felt252, encounter_xp: u16) -> felt252
@@ -40,7 +40,7 @@
   view  kill_species(adventurer_id: felt252, encounter_xp: u16) -> u64
   view  is_beast_collectable(adventurer_id: felt252, beast_seed: u32, prefix: u8, suffix: u8) -> bool
   view  supports_interface(interface_id: felt252) -> bool
-  view  verify_beast_kill(adventurer_id: felt252, species_id: u64, prefix: u8, suffix: u8) -> bool
+  view  verify_beast_kill(adventurer_id: felt252, species_id: u32, prefix: u8, suffix: u8) -> bool
   write upgrade(new_class_hash: ClassHash) -> 
   view  owner() -> ContractAddress
   write transfer_ownership(new_owner: ContractAddress) -> 
@@ -48,47 +48,111 @@
   write transferOwnership(newOwner: ContractAddress) -> 
   write renounceOwnership() -> 
   cost_to_play = [0xde0b6b3a7640000]
-  payment_token failed: RPC: starknet_call with params {
-  "request": {
-    "contract_address": "0x0368066825ff8c7ed2b2e73ff513ebd9dc6e41afcbbf853bcf2f793a67a0c264",
-    "entry_point_selector": "0x1416d8cf43b04bfba8867b61673
+  settings_id = [0x2]
   is_closed = [0x0]
-  settings_id = [0x8]
-  minter_id = [0x0]
-  opening_time = [0x6ad0f959]
-  get_game_core_address = [0x11afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b]
-== bot contract --address 0x00d042acfc0160b6d725281eca1fb856c3e08ed46fbc20405b4d32d5f3b8ac02 --call is_closed --call settings_id
+  minter_id = [0x1]
+  opening_time = [0x6ae9ce1d]
+  get_game_core_address = [0x3cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2]
+== bot contract --address 0x0452810188C4Cb3AEbD63711a3b445755BC0D6C4f27B923fDd99B1A118858136 --call symbol --call decimals --call balance_of:0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82 --call balance_of:0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts contract --address 0x00d042acfc0160b6d725281eca1fb856c3e08ed46fbc20405b4d32d5f3b8ac02 --call is_closed --call settings_id
+> node --import tsx src/cli.ts contract --address 0x0452810188C4Cb3AEbD63711a3b445755BC0D6C4f27B923fDd99B1A118858136 --call symbol --call decimals --call balance_of:0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82 --call balance_of:0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452
 
-0x00d042acfc0160b6d725281eca1fb856c3e08ed46fbc20405b4d32d5f3b8ac02 class 0x013b2223aa773da7496f693bfc84ba196333a61eaf7f944c80f369a9bb377c5d: 8 functions
-  write enter_dungeon() -> felt252
-  write set_settings_id(settings_id: u32) -> 
-  write close_dungeon() -> 
-  write set_game_core_address(game_core_address: ContractAddress) -> 
-  view  settings_id() -> u32
-  view  is_closed() -> bool
-  view  game_core_address() -> ContractAddress
+0x0452810188c4cb3aebd63711a3b445755bc0d6c4f27b923fdd99b1a118858136 class 0x05c668438529906abdd5f04cbe44c9919c40a811f922cbdc59630f3116c0fd8f: 76 functions
+  write init_distribution_pool(distribution_initial_tick: i129) -> u256
+  write premint_tokens(recipients: ContractAddress>, amounts: u256>) -> 
+  write provide_initial_liquidity(payment_token_amount: u128, dungeon_ticket_amount: u128, minimum_liquidity: u128) -> u256)
+  write start_token_distribution() -> u128)
+  write claim_proceeds() -> u128
+  write claim_and_distribute_buybacks(limit: u16) -> u128)
+  write distribute_proceeds(end_time: u64) -> 
+  write enable_low_issuance_mode() -> u128
+  write force_enable_low_issuance_mode() -> u128
+  write disable_low_issuance_mode() -> u128
+  write force_disable_low_issuance_mode() -> u128
+  write burn(amount: u256) -> 
+  write burn_from(from: ContractAddress, amount: u256) -> 
+  write set_buyback_order_config(config: BuybackOrderConfig) -> 
+  write set_issuance_reduction_price_x128(price: u256) -> 
+  write set_issuance_reduction_price_duration(duration: u64) -> 
+  write set_issuance_reduction_bips(bips: u128) -> 
+  write set_treasury_address(treasury_address: ContractAddress) -> 
+  write set_velords_address(velords_address: ContractAddress) -> 
+  write withdraw_erc20(token_address: ContractAddress, amount: u256) -> 
+  write withdraw_erc721(token_address: ContractAddress, token_id: u256) -> 
+  view  get_token_distribution_rate() -> u128
+  view  get_buyback_rate() -> u128
+  view  get_buyback_order_key_counter() -> u128
+  view  get_buyback_order_key_bookmark() -> u128
+  view  get_buyback_order_key_end_time(index: u128) -> u64
+  view  get_distribution_end_time() -> u64
+  view  get_distribution_initial_tick() -> i129
+  view  get_distribution_order_key() -> OrderKey
+  view  get_distribution_pool_key() -> PoolKey
+  view  get_distribution_pool_fee() -> u128
+  view  is_low_issuance_mode() -> bool
+  view  get_issuance_reduction_price_x128() -> u256
+  view  get_issuance_reduction_price_duration() -> u64
+  view  get_core_dispatcher() -> ICoreDispatcher
+  view  get_positions_dispatcher() -> IPositionsDispatcher
+  view  get_buyback_order_config() -> BuybackOrderConfig
+  view  get_pool_id() -> u256
+  view  get_position_token_id() -> u64
+  view  get_liquidity_position_id() -> u64
+  view  get_payment_token() -> ContractAddress
+  view  get_extension_address() -> ContractAddress
+  view  get_buyback_token() -> ContractAddress
+  view  get_registry_dispatcher() -> ITokenRegistryDispatcher
+  view  get_oracle_address() -> IOracleDispatcher
+  view  get_tokens_for_distribution() -> u256
+  view  get_treasury_address() -> ContractAddress
+  view  get_velords_address() -> ContractAddress
+  view  get_distribution_pool_key_hash() -> felt252
+  view  is_pool_initialized() -> bool
+  view  get_deployment_state() -> u8
+  view  get_dungeon_ticket_price_x128(duration: u64) -> u256
+  view  get_position_nft_address() -> ContractAddress
+  view  get_issuance_reduction_bips() -> u128
+  view  get_buyback_pool_key() -> PoolKey
+  view  get_buyback_pool_key_hash() -> felt252
+  view  get_unclaimed_buyback_orders_count() -> u128
+  view  is_token0() -> bool
+  view  get_buyback_order_key(start_time: u64, end_time: u64) -> OrderKey
+  view  total_supply() -> u256
+  view  balance_of(account: ContractAddress) -> u256
+  view  allowance(owner: ContractAddress, spender: ContractAddress) -> u256
+  write transfer(recipient: ContractAddress, amount: u256) -> bool
+  write transfer_from(sender: ContractAddress, recipient: ContractAddress, amount: u256) -> bool
+  write approve(spender: ContractAddress, amount: u256) -> bool
+  view  name() -> ByteArray
+  view  symbol() -> ByteArray
+  view  decimals() -> u8
+  view  totalSupply() -> u256
+  view  balanceOf(account: ContractAddress) -> u256
+  write transferFrom(sender: ContractAddress, recipient: ContractAddress, amount: u256) -> bool
   view  owner() -> ContractAddress
-  is_closed = [0x0]
-  settings_id = [0x0]
-== bot frontend --call VITE_PUBLIC_BEAST_MODE_TICKET_ADDRESS --call buyTicket --call ticket_price
+  write transfer_ownership(new_owner: ContractAddress) -> 
+  write renounce_ownership() -> 
+  write transferOwnership(newOwner: ContractAddress) -> 
+  write renounceOwnership() -> 
+  symbol = [0x0, 0x445449434b4554, 0x7]
+  decimals = [0x12]
+  balance_of:0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82 = [0x289e697bfb9f987215, 0x0]
+  balance_of:0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452 = [0x0, 0x0]
+== bot v2-leaderboard --ids 1-2 --levels 1204,500
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts frontend --call VITE_PUBLIC_BEAST_MODE_TICKET_ADDRESS --call buyTicket --call ticket_price
+> node --import tsx src/cli.ts v2-leaderboard --ids 1-2 --levels 1204,500
 
-downloaded 348 files, 16.0 MB into /tmp/lsfront-1794216998382
-1 snippet(s) for VITE_PUBLIC_BEAST_MODE_TICKET_ADDRESS, buyTicket, ticket_price -> frontend/snippets.json
-10 dungeon configs on lootsurvivor.io
-  trials                   Trials                     online       Free
-  beastmode                Beast Mode                 online       1 Ticket settings=Ao minter=ko @jo.dungeon
-  ronke-casino             Ronke Casino               Fe?`online`:`coming_soon Free · 3 days settings=Xe minter=We sponsored @Ee
-  karats                   Karats                     online       Free settings=Go minter=qo @Jo
-  lootbag                  Loot Bag                   closed       Loot Bag settings=1 minter=13 @Cr.lootDungeon
-  pvp                      PvP Dungeons               online       Free
-  tournaments              Tournaments                Ug.ready?`online`:`coming_soon  minter=Ug.minterId @Ug.budokanAddress
-  norwich-games-festival   Norwich Games Festival     online       Free @0x04253e24220629b737512a24cb3172fc381db7be7a697d5af358ff21ef1172be
-  blockhash                Blockhash                  closed       Free settings=0
-  unknown                  Unknown Dungeon            offline       @0x04253e24220629b737512a24cb3172fc381db7be7a697d5af358ff21ef1172be
-Ronke dungeons: ronke-casino (Ronke Casino)
+minter 1: 7 game(s); top: {"tokenId":"0x020000000000000000000100000000000000000001c7af5a00f872e6001c3c61","owner":"0x07b32f91c0d9c8a8b4e612ff3c21f58aee2d58f5d562c2d0171bdbcf687856de","sc
+    {"tokenId":"0x020000000000000000000100000000000000000001c7bcd600fa30ce000c94a1","owner":"0x01a8eff8d0d8f4a13b19d8344963fd1718602bc6cbd474e12662f0d53063a314","sc
+    {"tokenId":"0x020000000000000000000100000000000000000001c7ae3c00f84dc2001b2141","owner":"0x03c0f67740e3fe298a52fe75dd24b4981217406f133e0835331379731b67dc92","sc
+    {"tokenId":"0x020000000000000000000100000000000000000001c7bd8900fa487900148981","owner":"0x043d9847de514744a4b12cf60c6d611f2a224d29ea71b444da2000b72f0726ea","sc
+    {"tokenId":"0x020000000000000000000100000000000000000001c7bd0600fa371c000a2141","owner":"0x01a8eff8d0d8f4a13b19d8344963fd1718602bc6cbd474e12662f0d53063a314","sc
+    {"tokenId":"0x020000000000000000000100000000000000000001c797cc00f55ca50007e3e1","owner":"0x0689701974d95364aad9c2306bc322a40a27fb775b0c97733fd0e36e900b1878","sc
+    {"tokenId":"0x020000000000000000000100000000000000000001c7bd8300fa47b40001d7a1","owner":"0x01a8eff8d0d8f4a13b19d8344963fd1718602bc6cbd474e12662f0d53063a314","sc
+  rank of scores 1204, 500: {"500":{"score":500,"rank":1,"total":2},"1204":{"score":1204,"rank":1,"total":2}}
+minter 2: 3 game(s); top: {"tokenId":"0x0000000000000010000002000000000000ae000001c79d7800f61377000c54e1","owner":"0x077b8ed8356a7c1f0903fc4ba6e15f9b09cf437ce04f21b2cbf32dc2790183d0","sc
+    {"tokenId":"0x000000000000001000000200000000000088400001c79ea600f63a0700126441","owner":"0x077b8ed8356a7c1f0903fc4ba6e15f9b09cf437ce04f21b2cbf32dc2790183d0","sc
+    {"tokenId":"0x00000000000000100000020000000000007bc00001c79f0a00f64714000c9d01","owner":"0x077b8ed8356a7c1f0903fc4ba6e15f9b09cf437ce04f21b2cbf32dc2790183d0","sc
+  rank of scores 1204, 500: {"500":{"score":500,"rank":1,"total":3},"1204":{"score":1204,"rank":1,"total":3}}
