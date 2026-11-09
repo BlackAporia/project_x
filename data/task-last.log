@@ -1,20 +1,101 @@
-== bot v2-dryrun --game 904625697166532776746652061824565847215142356634039918610693669180293810049,904625697166532776746652061824565847215142356634039918905841576915152362209,904625697166532776746652061824565847215142356634039919809732044077473389441
+== bot frontend --call beastmode --call beastModeV2 --call ticket
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts v2-dryrun --game 904625697166532776746652061824565847215142356634039918610693669180293810049,904625697166532776746652061824565847215142356634039918905841576915152362209,904625697166532776746652061824565847215142356634039919809732044077473389441
+> node --import tsx src/cli.ts frontend --call beastmode --call beastModeV2 --call ticket
 
-game 904625697166532776746652061824565847215142356634039918610693669180293810049: L17 xp 303 hp 235 gold 26 beastHp 151 stat points 0 stats {"str":1,"dex":10,"vit":6,"int":3,"wis":2,"cha":6,"luck":0} | 95 packets
-  decision: Flee from Kraken (L14 T1): P(escape)=100.0% P(death)=<0.1%; flee value 532.7 vs attack 526.3
-  packets: [{"type":"flee","tillHealth":1023}]
-  replay with the move appended: OK (terminal=0, applied=0)
-  commit_actions (no account) reverts: NOT_OWNER
-game 904625697166532776746652061824565847215142356634039918905841576915152362209: L21 xp 456 hp 236 gold 24 beastHp 428 stat points 0 stats {"str":1,"dex":12,"vit":10,"int":3,"wis":3,"cha":9,"luck":0} | 82 packets
-  decision: Flee from "Dread Tear" Cyclops (L31 T4): P(escape)=89.3% P(death)=10.7%; flee value 532.5 vs attack 399.2
-  packets: [{"type":"flee","tillHealth":1023}]
-  replay with the move appended: OK (terminal=1, applied=0)
-  commit_actions (no account) reverts: NOT_OWNER
-game 904625697166532776746652061824565847215142356634039919809732044077473389441: L15 xp 228 hp 148 gold 15 beastHp 0 stat points 1 stats {"str":2,"dex":10,"vit":5,"int":1,"wis":1,"cha":6,"luck":0} | 50 packets
-  decision: Stats +1 DEX; Drink 3 potion(s); Explore (instant-death risk 1.0%, battle-death risk 1.4%, HP 175/175)
-  packets: [{"type":"upgrade_stat","statId":1,"amount":1},{"type":"buy_potions","quantity":3},{"type":"explore","tillDamage":0,"tillGold":false}]
-  replay with the move appended: OK (terminal=0, applied=0)
-  commit_actions (no account) reverts: NOT_OWNER
+downloaded 348 files, 16.0 MB into /tmp/lsfront-1794216892467
+69 snippet(s) for beastmode, beastModeV2, ticket -> frontend/snippets.json
+10 dungeon configs on lootsurvivor.io, NEW: karats, pvp, tournaments
+  trials                   Trials                     online       Free
+  beastmode                Beast Mode                 online       1 Ticket settings=Ao minter=ko @jo.dungeon
+  ronke-casino             Ronke Casino               Fe?`online`:`coming_soon Free · 3 days settings=Xe minter=We sponsored @Ee
+  karats                   Karats                     online       Free settings=Go minter=qo @Jo
+  lootbag                  Loot Bag                   closed       Loot Bag settings=1 minter=13 @Cr.lootDungeon
+  pvp                      PvP Dungeons               online       Free
+  tournaments              Tournaments                Ug.ready?`online`:`coming_soon  minter=Ug.minterId @Ug.budokanAddress
+  norwich-games-festival   Norwich Games Festival     online       Free @0x04253e24220629b737512a24cb3172fc381db7be7a697d5af358ff21ef1172be
+  blockhash                Blockhash                  closed       Free settings=0
+  unknown                  Unknown Dungeon            offline       @0x04253e24220629b737512a24cb3172fc381db7be7a697d5af358ff21ef1172be
+Ronke dungeons: ronke-casino (Ronke Casino)
+== bot contract --address 0x0368066825ff8c7ed2b2e73ff513ebd9dc6e41afcbbf853bcf2f793a67a0c264 --address 0x0539d24dfdaa2866d975fa93db501b971c08786f2c88e719800be39903e43bbc
+
+> loot-survivor-bot@1.0.0 bot
+> node --import tsx src/cli.ts contract --address 0x0368066825ff8c7ed2b2e73ff513ebd9dc6e41afcbbf853bcf2f793a67a0c264 --address 0x0539d24dfdaa2866d975fa93db501b971c08786f2c88e719800be39903e43bbc
+
+0x0368066825ff8c7ed2b2e73ff513ebd9dc6e41afcbbf853bcf2f793a67a0c264 class 0x04268add2e2e0d81b2e586fb5a386705751a014e42adb1899151b52a44a6152c: 43 functions
+  write new_game(payment_type: PaymentType, to: ContractAddress, soulbound: bool) -> felt252
+  write new_game_batch(recipients: ContractAddress>, soulbound: bool) -> felt252>
+  write claim_beast(adventurer_id: felt252, encounter_xp: u16) -> felt252
+  write claim_jackpot(token_id: felt252) -> 
+  write withdraw_funds(token_address: ContractAddress, amount: u256) -> 
+  write update_opening_time(new_opening_time: u64) -> 
+  write update_payment_token(new_payment_token: ContractAddress) -> 
+  write update_ticket_receiver_address(new_ticket_receiver_address: ContractAddress) -> 
+  write update_settings_id(new_settings_id: u32) -> 
+  write update_cost_to_play(new_cost_to_play: u128) -> 
+  write update_beasts_nft_address(new_beasts_nft_address: ContractAddress) -> 
+  write open_dungeon() -> 
+  write close_dungeon() -> 
+  write set_species_mapping(roster_id: u8, beast_id: u64) -> 
+  view  get_game_core_address() -> ContractAddress
+  view  get_beasts_nft_address() -> ContractAddress
+  view  get_reward_token_address() -> ContractAddress
+  view  jackpot_claimed(token_id: felt252) -> bool
+  view  dungeon_opening_time() -> u64
+  view  opening_time() -> u64
+  view  payment_token() -> ContractAddress
+  view  cost_to_play() -> u128
+  view  ticket_receiver_address() -> ContractAddress
+  view  settings_id() -> u32
+  view  is_closed() -> bool
+  view  get_golden_pass(golden_pass_address: ContractAddress) -> GoldenPass>
+  view  golden_pass_last_used(golden_pass_address: ContractAddress, token_id: u128) -> u64
+  view  species_mapping(roster_id: u8) -> SpeciesMapping
+  view  species_mapping_at(roster_id: u8, block: u64) -> SpeciesMapping
+  view  collected_at(beast_id: u64, prefix: u8, suffix: u8) -> u64
+  view  minter_id() -> u32
+  view  is_golden_pass_usable(golden_pass_address: ContractAddress, token_id: u128) -> bool
+  view  encounter_species(adventurer_id: felt252, beast_seed: u32, prefix: u8, suffix: u8) -> u64
+  view  kill_species(adventurer_id: felt252, encounter_xp: u16) -> u64
+  view  is_beast_collectable(adventurer_id: felt252, beast_seed: u32, prefix: u8, suffix: u8) -> bool
+  view  supports_interface(interface_id: felt252) -> bool
+  view  verify_beast_kill(adventurer_id: felt252, species_id: u64, prefix: u8, suffix: u8) -> bool
+  write upgrade(new_class_hash: ClassHash) -> 
+  view  owner() -> ContractAddress
+  write transfer_ownership(new_owner: ContractAddress) -> 
+  write renounce_ownership() -> 
+  write transferOwnership(newOwner: ContractAddress) -> 
+  write renounceOwnership() -> 
+0x0539d24dfdaa2866d975fa93db501b971c08786f2c88e719800be39903e43bbc class 0x05c949a9b5d1a34d3766689065764f7b5878ee62cd5cdb480315e92fc137cd53: 32 functions
+  write upgrade(new_class_hash: ClassHash) -> 
+  write buy_game(payment_type: PaymentType, player_name: felt252>, to: ContractAddress, soulbound: bool) -> felt252
+  write buy_game_with_salt(payment_type: PaymentType, player_name: felt252>, to: ContractAddress, soulbound: bool, salt: u16) -> felt252
+  view  payment_token() -> ContractAddress
+  view  cost_to_play() -> u128
+  view  settings_id() -> u32>
+  view  start_time() -> u64>
+  view  expiration_time() -> u64>
+  view  get_golden_pass(golden_pass_address: ContractAddress) -> GoldenPass>
+  view  golden_pass_last_used(golden_pass_address: ContractAddress, token_id: u128) -> u64
+  view  is_golden_pass_usable(golden_pass_address: ContractAddress, token_id: u128) -> bool
+  view  ticket_receiver_address() -> ContractAddress
+  view  opening_time() -> u64
+  view  is_closed() -> bool
+  view  owner() -> ContractAddress
+  write transfer_ownership(new_owner: ContractAddress) -> 
+  write renounce_ownership() -> 
+  write claim_beast(adventurer_id: felt252, beast_id: u8, prefix: u8, suffix: u8) -> u256
+  write claim_jackpot(token_id: u64) -> 
+  write withdraw_funds(token_address: ContractAddress, amount: u256) -> 
+  view  get_game_core_address() -> ContractAddress
+  view  get_game_token_address() -> ContractAddress
+  view  get_beasts_nft_address() -> ContractAddress
+  view  jackpot_claimed(token_id: u64) -> bool
+  view  dungeon_opening_time() -> u64
+  write update_opening_time(new_opening_time: u64) -> 
+  write update_payment_token(new_payment_token: ContractAddress) -> 
+  write update_ticket_receiver_address(new_ticket_receiver_address: ContractAddress) -> 
+  write update_settings_id(new_settings_id: u32>) -> 
+  write update_cost_to_play(new_cost_to_play: u128) -> 
+  write open_dungeon() -> 
+  write close_dungeon() -> 
