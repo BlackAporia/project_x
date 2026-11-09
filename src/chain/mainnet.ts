@@ -1,7 +1,7 @@
 // Mainnet play with the owner's own Cartridge Controller account through a session key.
 //   1. once, on your own computer: `npm run authorize` -> approve the session in the browser
 //   2. store .session/cartridge/session.json as the GitHub secret CARTRIDGE_SESSION_B64 (base64)
-// The session key can only call commit_actions / verify_game on the game core and enter the free Proving Grounds (see botPolicies) and expires; the Controller owner key never leaves Cartridge. Nothing secret is ever printed or logged.
+// The session key can only call commit_actions / verify_game on the game cores, enter Proving Grounds and Beast Mode (TICKET approve, new_game, claim_beast; see botPolicies) and expires; the Controller owner key never leaves Cartridge. Nothing secret is ever printed or logged.
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import type { Call } from 'starknet';
@@ -39,6 +39,29 @@ export function botPolicies() {
         name: 'Proving Grounds',
         description: 'Free entry to Loot Survivor games (you pay only gas)',
         methods: [{ name: 'Enter Dungeon', entrypoint: 'enter_dungeon', description: 'Start a free Proving Grounds game' }],
+      },
+      // Beast Mode (same permissions lootsurvivor.io asks its own sessions for): play and settle on the Beast Mode
+      // core, enter with a TICKET, mint earned beasts
+      [MAINNET.beastMode.core]: {
+        name: 'Beast Mode game core',
+        description: 'Play and settle your Beast Mode games',
+        methods: [
+          { name: 'Commit Actions', entrypoint: 'commit_actions', description: 'Submit game moves' },
+          { name: 'Verify Game', entrypoint: 'verify_game', description: 'Settle a finished game so it counts and its beasts can be claimed' },
+        ],
+      },
+      [MAINNET.beastMode.dungeon]: {
+        name: 'Beast Mode',
+        description: 'Enter Beast Mode with a ticket and collect the beasts you defeat',
+        methods: [
+          { name: 'Enter Beast Mode', entrypoint: 'new_game', description: 'Start a Beast Mode game for 1 TICKET' },
+          { name: 'Claim Beast', entrypoint: 'claim_beast', description: 'Mint a beast your settled game earned' },
+        ],
+      },
+      [MAINNET.beastMode.ticket]: {
+        name: 'Dungeon Ticket',
+        description: 'Allow Beast Mode to take 1 TICKET per game',
+        methods: [{ name: 'Approve Ticket', entrypoint: 'approve', description: 'Approve 1 TICKET for a Beast Mode entry' }],
       },
     },
   };

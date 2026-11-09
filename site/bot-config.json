@@ -34,6 +34,54 @@
             "authorized": true
           }
         ]
+      },
+      "0x03cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2": {
+        "name": "Beast Mode game core",
+        "description": "Play and settle your Beast Mode games",
+        "methods": [
+          {
+            "name": "Commit Actions",
+            "entrypoint": "commit_actions",
+            "description": "Submit game moves",
+            "authorized": true
+          },
+          {
+            "name": "Verify Game",
+            "entrypoint": "verify_game",
+            "description": "Settle a finished game so it counts and its beasts can be claimed",
+            "authorized": true
+          }
+        ]
+      },
+      "0x075ca042091b8e1418d0510b8d6519a89222ef5f7bbceb0ff760bb3c62c98174": {
+        "name": "Beast Mode",
+        "description": "Enter Beast Mode with a ticket and collect the beasts you defeat",
+        "methods": [
+          {
+            "name": "Enter Beast Mode",
+            "entrypoint": "new_game",
+            "description": "Start a Beast Mode game for 1 TICKET",
+            "authorized": true
+          },
+          {
+            "name": "Claim Beast",
+            "entrypoint": "claim_beast",
+            "description": "Mint a beast your settled game earned",
+            "authorized": true
+          }
+        ]
+      },
+      "0x0452810188c4cb3aebd63711a3b445755bc0d6c4f27b923fdd99b1a118858136": {
+        "name": "Dungeon Ticket",
+        "description": "Allow Beast Mode to take 1 TICKET per game",
+        "methods": [
+          {
+            "name": "Approve Ticket",
+            "entrypoint": "approve",
+            "description": "Approve 1 TICKET for a Beast Mode entry",
+            "authorized": true
+          }
+        ]
       }
     }
   },

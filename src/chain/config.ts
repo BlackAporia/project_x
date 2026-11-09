@@ -25,6 +25,17 @@ export const MAINNET = {
   gameCoreV2: env('GAME_CORE_V2_ADDRESS', '0x011afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b'),
   /** Proving Grounds: free `enter_dungeon()` (mints a V2 game with the default settings #0; the player pays gas) */
   provingGrounds: env('PROVING_GROUNDS_ADDRESS', '0x00d042acfc0160b6d725281eca1fb856c3e08ed46fbc20405b4d32d5f3b8ac02'),
+  /**
+   * Beast Mode (lootsurvivor.io, Nov 2026): 1 TICKET per game (approve + new_game(PaymentType::Ticket, to, false)),
+   * games live on their own commit-reveal game core (same V2 interface); collectable beasts are minted with claim_beast
+   */
+  beastMode: {
+    dungeon: env('BEAST_MODE_ADDRESS', '0x075ca042091b8e1418d0510b8d6519a89222ef5f7bbceb0ff760bb3c62c98174'),
+    core: env('BEAST_MODE_GAME_CORE_ADDRESS', '0x03cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2'),
+    ticket: env('BEAST_MODE_TICKET_ADDRESS', '0x0452810188c4cb3aebd63711a3b445755bc0d6c4f27b923fdd99b1a118858136'),
+    settingsId: Number(env('BEAST_MODE_SETTINGS_ID', '2')),
+    minterId: Number(env('BEAST_MODE_MINTER_ID', '1')),
+  },
   /** main dungeon (Loot Bag entry) */
   lootDungeon: env('LOOT_DUNGEON_ADDRESS', '0x02dab28ac4edaae7495174f9dd7668eece14b1e50ce170ff8af2a0e215f48875'),
   gameCoreV2Legacy: env('GAME_CORE_V2_LEGACY_ADDRESS', '0x06179f1c747672c08861da1df3b167eb337cba403778345db2aa9840cc3deb86'),

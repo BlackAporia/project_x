@@ -8,6 +8,8 @@ import type { Settings } from './types.ts';
 import { marketDensities } from '../v2/protocol.ts';
 
 interface Snapshot {
+  /** game core the plain numeric keys belong to; other cores' settings are keyed "<core>:<id>" */
+  core?: string;
   settings: Record<string, { name?: string; settings: Record<string, any> }>;
 }
 
@@ -28,13 +30,20 @@ export function resolveSettingsId(dungeon: string | number): number {
 }
 
 /** Engine settings that reproduce a dungeon's client-only (practice) games. */
-export function dungeonEngineSettings(dungeon: string | number, snapshot = loadSnapshot(), mode: 'practice' | 'mainnet' = 'practice'): { settings: Settings; label: string } {
+export function dungeonEngineSettings(
+  dungeon: string | number,
+  snapshot = loadSnapshot(),
+  mode: 'practice' | 'mainnet' = 'practice',
+  /** game core the settings id belongs to when it is not the snapshot's main core (e.g. Beast Mode's core) */
+  core?: string,
+): { settings: Settings; label: string } {
   if (typeof dungeon === 'string' && dungeon.endsWith(':mainnet')) {
     mode = 'mainnet';
     dungeon = dungeon.slice(0, -':mainnet'.length);
   }
   const id = resolveSettingsId(dungeon);
-  const entry = snapshot.settings[String(id)];
+  const coreKey = core && snapshot.core && BigInt(core) !== BigInt(snapshot.core) ? `0x${BigInt(core).toString(16).padStart(64, '0')}:${id}` : null;
+  const entry = coreKey ? snapshot.settings[coreKey] : snapshot.settings[String(id)];
   if (!entry) throw new Error(`no snapshot of game settings #${id} (run: npm run bot -- dungeon-settings --ids ${id} --data config)`);
   const raw = entry.settings;
   const settings: Settings = {

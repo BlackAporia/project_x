@@ -38,6 +38,9 @@ on:
       account:
         description: mainnet account - auto (Game Account if shared, else Cartridge), game or cartridge
         default: 'auto'
+      beast_mode:
+        description: Beast Mode games to enter with the Cartridge account's TICKETs (1 TICKET each; 0 = off)
+        default: '0'
 
 permissions:
   contents: write
@@ -99,6 +102,7 @@ jobs:
           MAINNET_LIVE: ${{ (github.event_name == 'schedule' && vars.MAINNET_LIVE == 'true') || inputs.live == 'true' }}
           PROVING_GROUNDS_GAMES: ${{ inputs.proving_grounds || vars.PROVING_GROUNDS_GAMES || '0' }}
           MAINNET_ACCOUNT: ${{ inputs.account || vars.MAINNET_ACCOUNT || 'auto' }}
+          BEAST_MODE_GAMES: ${{ inputs.beast_mode || '0' }}
         run: scripts/live-push.sh npm run play -- --mode mainnet --minutes "${{ inputs.minutes || vars.MAINNET_MINUTES || '120' }}" --max-games "${{ inputs.max_games || '100' }}"
 
       - name: Leaderboard snapshot

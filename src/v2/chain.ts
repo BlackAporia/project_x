@@ -84,6 +84,12 @@ export class V2Chain {
     return out;
   }
 
+  /** ERC20 balance (u256) of an account, e.g. Beast Mode TICKETs. */
+  async tokenBalance(token: string, owner: string): Promise<bigint> {
+    const r = await retry(() => this.provider.callContract({ contractAddress: token, entrypoint: 'balance_of', calldata: [hex(BigInt(owner))] }), { label: 'token balance', tries: 3 });
+    return BigInt(r[0]) + (BigInt(r[1] ?? 0) << 128n);
+  }
+
   async mintBlock(gameId: bigint): Promise<number> {
     if (!this.mintBlocks.has(gameId)) {
       let b = 0;
@@ -240,13 +246,30 @@ export class V2Chain {
    * Returns the new game id from the core's mint Transfer event (falls back to the newest owned token).
    */
   async enterDungeon(executor: Executor, dungeon: string): Promise<bigint> {
-    const { transaction_hash } = await executor.execute([{ contractAddress: dungeon, entrypoint: 'enter_dungeon', calldata: [] }]);
+    return this.mintWith(executor, [{ contractAddress: dungeon, entrypoint: 'enter_dungeon', calldata: [] }]);
+  }
+
+  /**
+   * Beast Mode entry for one TICKET, as lootsurvivor.io sends it: approve(ticket -> dungeon, 1e18) and
+   * new_game(PaymentType::Ticket = 0, to, soulbound = false) in one transaction.
+   */
+  async enterBeastMode(executor: Executor, bm: { dungeon: string; ticket: string }): Promise<bigint> {
+    const ONE_TICKET = 10n ** 18n;
+    return this.mintWith(executor, [
+      { contractAddress: bm.ticket, entrypoint: 'approve', calldata: [bm.dungeon, hex(ONE_TICKET), '0x0'] },
+      { contractAddress: bm.dungeon, entrypoint: 'new_game', calldata: ['0x0', executor.address, '0x0'] },
+    ]);
+  }
+
+  /** Send the calls that mint a game to the caller and return its id from the core's ERC721 Transfer (mint) event. */
+  private async mintWith(executor: Executor, calls: Array<{ contractAddress: string; entrypoint: string; calldata: string[] }>): Promise<bigint> {
+    const { transaction_hash } = await executor.execute(calls);
     const receipt = (await this.provider.waitForTransaction(transaction_hash, { retryInterval: 2000 })) as unknown as {
       execution_status?: string;
       revert_reason?: string;
       events?: Array<{ from_address: string; keys: string[]; data: string[] }>;
     };
-    if (receipt.execution_status === 'REVERTED') throw new Error(`enter_dungeon reverted: ${String(receipt.revert_reason ?? '').slice(0, 300)}`);
+    if (receipt.execution_status === 'REVERTED') throw new Error(`dungeon entry reverted: ${String(receipt.revert_reason ?? '').slice(0, 300)}`);
     const me = BigInt(executor.address);
     for (const e of receipt.events ?? []) {
       if (BigInt(e.from_address) !== BigInt(this.core) || BigInt(e.keys[0] ?? 0) !== TRANSFER) continue;
@@ -255,7 +278,7 @@ export class V2Chain {
       if (k.length >= 5 && k[1] === 0n && k[2] === me) return k[3] + (k[4] << 128n);
     }
     const owned = await this.ownedGames(executor.address, 1);
-    if (!owned.length) throw new Error(`enter_dungeon succeeded (${transaction_hash}) but no game was found on the account`);
+    if (!owned.length) throw new Error(`dungeon entry succeeded (${transaction_hash}) but no game was found on the account`);
     return owned[owned.length - 1];
   }
 }

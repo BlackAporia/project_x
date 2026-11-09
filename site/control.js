@@ -710,7 +710,7 @@ $('#ctlRun')?.addEventListener('click', async () => {
 // quick actions on the home tab
 document.querySelectorAll('[data-step]').forEach((b) =>
   b.addEventListener('click', () => {
-    const inp = $('#qaPgCount');
+    const inp = b.closest('.stepper').querySelector('input');
     inp.value = String(Math.max(1, Math.min(50, (Number(inp.value) || 1) + Number(b.dataset.step))));
   }),
 );
@@ -722,6 +722,14 @@ const QUICK = {
       confirm: `Зіграти ${n} ${n === 1 ? 'гру' : n < 5 ? 'гри' : 'ігор'} у Proving Grounds у mainnet? Це реальні транзакції з вашого акаунта (газ платить акаунт).`,
       inputs: { mode: 'mainnet', live: 'true', minutes: String(Math.min(280, 30 + n * 6)), max_games: String(n + 20), proving_grounds: String(n), account: 'cartridge' },
       label: `Mainnet · Proving Grounds ×${n}`,
+    };
+  },
+  bm: () => {
+    const n = Math.max(1, Math.min(50, Number($('#qaBmCount').value) || 5));
+    return {
+      confirm: `Зіграти ${n} ${n === 1 ? 'гру' : n < 5 ? 'гри' : 'ігор'} у Beast Mode? Це витратить ${n} TICKET з Cartridge‑акаунта бота (1 за гру) і реальні транзакції. Сесія Cartridge має бути підключена заново з дозволами Beast Mode (вкладка «Акаунти»).`,
+      inputs: { mode: 'mainnet', live: 'true', minutes: String(Math.min(280, 30 + n * 6)), max_games: String(n + 20), beast_mode: String(n), account: 'cartridge' },
+      label: `Mainnet · Beast Mode ×${n}`,
     };
   },
   mine: () => ({

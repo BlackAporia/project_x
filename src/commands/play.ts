@@ -139,7 +139,9 @@ async function openV2Mainnet(live: boolean, game?: string): Promise<Backend> {
   // MAINNET_ACCOUNT=cartridge: Proving Grounds on the Cartridge account (its gas is covered; the Game Account pays
   // every move itself and each one may use up one of the session's 25 higher-fee exceptions)
   const which = process.env.MAINNET_ACCOUNT ?? 'auto';
-  const gs = which === 'cartridge' ? null : gameSessionFromEnv();
+  // Beast Mode (BEAST_MODE_GAMES=N): games on the Beast Mode core, entered with TICKETs held by the Cartridge account
+  const beastGames = Number(process.env.BEAST_MODE_GAMES ?? 0);
+  const gs = which === 'cartridge' || beastGames > 0 ? null : gameSessionFromEnv();
   if (which === 'game' && !gs) throw new Error('MAINNET_ACCOUNT=game but no Game Session (GAME_SESSION_LINK) is set');
   if (gs) {
     const ga = new GameAccountExecutor(provider, gs);
@@ -161,11 +163,27 @@ async function openV2Mainnet(live: boolean, game?: string): Promise<Backend> {
     }
   }
   if (live && !executor) throw new Error('mainnet live play needs a Game Session (GAME_SESSION_LINK) or a Cartridge session (CARTRIDGE_SESSION_B64)');
-  const chain = new V2Chain(provider, MAINNET.gameCoreV2);
+  const bm = MAINNET.beastMode;
+  const chain = new V2Chain(provider, beastGames > 0 ? bm.core : MAINNET.gameCoreV2);
   if (game) return new V2MainnetBackend({ chain, executor: live ? executor : null, dryRun: !live, games: [BigInt(game)] });
   if (!address) throw new Error('mainnet: no account (set CARTRIDGE_SESSION_B64 or MAINNET_ACCOUNT_ADDRESS for a dry run)');
   const games = await chain.ownedGames(address);
-  console.log(`[mainnet v2] account ${address}: ${games.length} game token(s) on the V2 core, live=${live && !!executor}`);
+  console.log(`[mainnet v2] account ${address}: ${games.length} game token(s) on the ${beastGames > 0 ? 'Beast Mode' : 'V2'} core, live=${live && !!executor}`);
+  if (beastGames > 0) {
+    // Beast Mode: one TICKET per new game (bought by the owner); unfinished Beast Mode games are played first
+    const tickets = await chain.tokenBalance(bm.ticket, address).catch(() => -1n);
+    console.log(`[mainnet v2] Beast Mode: ${tickets >= 0n ? `${Number(tickets / 10n ** 15n) / 1000} TICKET on the account` : 'TICKET balance unknown'}, up to ${beastGames} new game(s)`);
+    const enter = executor
+      ? async () => {
+          const t = await chain.tokenBalance(bm.ticket, executor!.address).catch(() => 0n);
+          if (t < 10n ** 18n) throw new Error(`no TICKET left on ${executor!.address} for a Beast Mode entry`);
+          const id = await chain.enterBeastMode(executor!, bm);
+          console.log(`[mainnet v2] entered Beast Mode for 1 TICKET: game ${id}`);
+          return id;
+        }
+      : undefined;
+    return new V2MainnetBackend({ chain, executor, dryRun: !live, games, enter, maxEntries: beastGames, beastDungeon: bm.dungeon });
+  }
   // free mainnet games: enter Proving Grounds when the account has no unplayed game left (gas paid by the account)
   const entries = Number(process.env.PROVING_GROUNDS_GAMES ?? 0);
   const enter =

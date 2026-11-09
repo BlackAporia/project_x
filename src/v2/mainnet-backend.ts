@@ -49,6 +49,10 @@ export class V2MainnetBackend implements Backend {
   private entries: number;
   private owned: bigint[];
   private settled = false;
+  /** Beast Mode dungeon: after settling, mint the collectable beasts the game killed (claim_beast) */
+  private beastDungeon?: string;
+  /** xp at each beast encounter per game (the key claim_beast / kill_species use) */
+  private encounters = new Map<bigint, Set<number>>();
 
   constructor(opts: {
     chain: V2Chain;
@@ -59,6 +63,7 @@ export class V2MainnetBackend implements Backend {
     /** start a new game when the account has none left (e.g. free Proving Grounds entry) */
     enter?: () => Promise<bigint | null>;
     maxEntries?: number;
+    beastDungeon?: string;
   }) {
     this.chain = opts.chain;
     this.executor = opts.executor;
@@ -69,6 +74,7 @@ export class V2MainnetBackend implements Backend {
     this.log = opts.log ?? ((m) => console.log(m));
     this.enter = opts.enter;
     this.entries = opts.maxEntries ?? 0;
+    this.beastDungeon = opts.beastDungeon;
   }
 
   async nextGame(): Promise<bigint | null> {
@@ -113,10 +119,11 @@ export class V2MainnetBackend implements Backend {
       let label = `settings #${settingsId}`;
       let market: MarketConfig | null = null;
       try {
-        const d = dungeonEngineSettings(settingsId, this.snapshot, 'mainnet'); // on-chain games: specials unlock, density market
+        const d = dungeonEngineSettings(settingsId, this.snapshot, 'mainnet', this.chain.core); // on-chain games: specials unlock, density market
         settings = d.settings;
         label = d.label;
-        const raw = this.snapshot.settings[String(settingsId)]?.settings as { market_config?: MarketConfig } | undefined;
+        const key = this.snapshot.core && BigInt(this.chain.core) !== BigInt(this.snapshot.core) ? `0x${BigInt(this.chain.core).toString(16).padStart(64, '0')}:${settingsId}` : String(settingsId);
+        const raw = this.snapshot.settings[key]?.settings as { market_config?: MarketConfig } | undefined;
         market = raw?.market_config ?? null;
       } catch (e) {
         this.log(`[v2] no settings snapshot for #${settingsId} (${(e as Error).message}); using defaults`);
@@ -151,7 +158,35 @@ export class V2MainnetBackend implements Backend {
       const s0 = newGameState(id, c.settings);
       return startGame(s0, 46, new FastRandom(Number(id % 1000003n))).state;
     }
+    if (st.adventurer.beast_health > 0) {
+      const set = this.encounters.get(id) ?? new Set<number>();
+      set.add(st.adventurer.xp);
+      this.encounters.set(id, set);
+    }
     return chainToEngineState(id, st.adventurer, st.bag, st.terminal, c.settings, c.market);
+  }
+
+  /**
+   * Beast Mode: mint the beasts a settled game earned. For every beast the bot met, the dungeon's kill_species(id, xp)
+   * names the species it killed there that is still collectable (0 = nothing to claim); claim_beast then mints it.
+   */
+  async claimBeasts(id: bigint): Promise<number> {
+    if (!this.beastDungeon || !this.executor || this.dryRun) return 0;
+    let n = 0;
+    for (const xp of this.encounters.get(id) ?? []) {
+      try {
+        const r = await this.chain.provider.callContract({ contractAddress: this.beastDungeon, entrypoint: 'kill_species', calldata: ['0x' + id.toString(16), '0x' + xp.toString(16)] });
+        const species = BigInt(r[0] ?? 0);
+        if (species === 0n) continue;
+        const { transaction_hash } = await this.executor.execute([{ contractAddress: this.beastDungeon, entrypoint: 'claim_beast', calldata: ['0x' + id.toString(16), '0x' + xp.toString(16)] }]);
+        await this.chain.provider.waitForTransaction(transaction_hash, { retryInterval: 2000 });
+        this.log(`[v2] game ${id}: claimed beast species ${species} (encounter xp ${xp}, ${transaction_hash})`);
+        n++;
+      } catch (e) {
+        this.log(`[v2] game ${id}: claim_beast at xp ${xp} failed: ${(e as Error).message.slice(0, 200)}`);
+      }
+    }
+    return n;
   }
 
   async execute(id: bigint, actions: Action[]): Promise<{ sent: Action[]; txs: string[]; reverted?: string }> {
@@ -187,7 +222,8 @@ export class V2MainnetBackend implements Backend {
         await this.chain.waitReady(c.transcript);
         const tx = await this.chain.verify(this.executor, c.transcript);
         this.log(`[v2] game ${id} verified (${tx})`);
-        return { verified: true, tx };
+        const beasts = await this.claimBeasts(id);
+        return { verified: true, tx, note: beasts ? `${beasts} beast(s) claimed` : undefined };
       } catch (e) {
         if (await this.chain.isVerified(id).catch(() => false)) return { verified: true };
         const msg = (e as Error).message;
