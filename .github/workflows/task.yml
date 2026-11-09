@@ -13,8 +13,9 @@ on:
 permissions:
   contents: write
 
+# own queue: research tasks must not wait hours behind a long Bot run (data pushes rebase onto bot-data anyway)
 concurrency:
-  group: bot-data
+  group: task
   cancel-in-progress: false
 
 jobs:
