@@ -55,6 +55,16 @@
           <button class="btn primary wide" data-quick="bm">Зіграти</button>
         </article>
         <article class="action">
+          <div class="action-icon">⚔️</div>
+          <h3>PvP Dungeons</h3>
+          <p class="muted small">Щоденний стіл на 3 гравців: до 10 забігів, рахується найкращий, переможець бере $3 USDC. Грає Game Account (Rabby‑гаманець). Вхід безкоштовний, газ за вхід ≈0.15 STRK. Сам бот запускається щодня після 14:00 UTC.</p>
+          <div id="qaPvpInfo" class="pvp-info muted small">Стан столу завантажується…</div>
+          <label class="ctl-field">Скільки забігів зараз
+            <span class="stepper"><button class="btn small" data-step="-1" aria-label="менше">−</button><input id="qaPvpCount" type="number" min="1" max="10" value="10"><button class="btn small" data-step="1" aria-label="більше">+</button></span>
+          </label>
+          <button class="btn primary wide" data-quick="pvp">Грати стіл</button>
+        </article>
+        <article class="action">
           <div class="action-icon">▶️</div>
           <h3>Дограти мої ігри</h3>
           <p class="muted small">Бот зіграє незавершені ігри на вашому акаунті й зарахує їх результати.</p>
@@ -212,8 +222,8 @@
   <!-- ============================== SCHEDULE -->
   <div class="tab-pane" data-pane="schedule" hidden>
     <section class="card ctl">
-      <div class="card-head"><h2>Розклад</h2><span class="muted small">автозапуск вимкнено</span></div>
-      <p class="muted small">Бот нічого не запускає сам.</p>
+      <div class="card-head"><h2>Розклад</h2><span class="muted small">автозапуск лише для PvP</span></div>
+      <p class="muted small">Звичайні ігри бот сам не запускає. Виняток — PvP Dungeons: щодня після 14:00 UTC (і кілька повторів протягом доби) бот сам грає забіги за свій стіл і подає найкращий результат.</p>
       <div id="ctlSchedule"></div>
       <p id="ctlScheduleNote" class="ctl-note" aria-live="polite"></p>
     </section>

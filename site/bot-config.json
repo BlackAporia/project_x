@@ -98,6 +98,7 @@
   ],
   "workflows": {
     "bot": "bot.yml",
+    "pvp": "pvp.yml",
     "learn": "learn.yml",
     "pages": "pages.yml"
   },

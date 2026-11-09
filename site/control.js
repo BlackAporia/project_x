@@ -663,6 +663,16 @@ $('#ctlMode')?.addEventListener('change', () => {
   if (m === 'practice') $('#ctlLive').checked = false;
 });
 
+/** Start another workflow (key in bot-config workflows, e.g. pvp) with its own inputs. */
+async function dispatchWorkflow(key, inputs, label, name) {
+  const cfg = await config();
+  const meta = await repoMeta();
+  const file = cfg.workflows?.[key] ?? `${key}.yml`;
+  await gh(`/repos/${repo}/actions/workflows/${file}/dispatches`, { method: 'POST', body: { ref: meta.default_branch, inputs } });
+  safe(() => localStorage.setItem(LS + 'lastLaunch', JSON.stringify({ label, at: Date.now(), workflow: name })));
+  soonRefresh();
+}
+
 /** Start the Bot workflow with the given inputs; remembers what was asked so the monitor can name the run. */
 async function dispatchBot(inputs, label) {
   const cfg = await config();
@@ -711,7 +721,7 @@ $('#ctlRun')?.addEventListener('click', async () => {
 document.querySelectorAll('[data-step]').forEach((b) =>
   b.addEventListener('click', () => {
     const inp = b.closest('.stepper').querySelector('input');
-    inp.value = String(Math.max(1, Math.min(50, (Number(inp.value) || 1) + Number(b.dataset.step))));
+    inp.value = String(Math.max(Number(inp.min) || 1, Math.min(Number(inp.max) || 50, (Number(inp.value) || 1) + Number(b.dataset.step))));
   }),
 );
 
@@ -730,6 +740,16 @@ const QUICK = {
       confirm: `Зіграти ${n} ${n === 1 ? 'гру' : n < 5 ? 'гри' : 'ігор'} у Beast Mode? Це витратить ${n} TICKET з Cartridge‑акаунта бота (1 за гру) і реальні транзакції. Сесія Cartridge має бути підключена заново з дозволами Beast Mode (вкладка «Акаунти»).`,
       inputs: { mode: 'mainnet', live: 'true', minutes: String(Math.min(280, 30 + n * 6)), max_games: String(n + 20), beast_mode: String(n), account: 'cartridge' },
       label: `Mainnet · Beast Mode ×${n}`,
+    };
+  },
+  pvp: () => {
+    const n = Math.max(1, Math.min(10, Number($('#qaPvpCount').value) || 10));
+    return {
+      confirm: `Зіграти до ${n} ${n === 1 ? 'забігу' : 'забігів'} за сьогоднішній PvP‑стіл? Бот увійде в турнір з Game Account (Rabby‑гаманець) — реальні транзакції, газ за кожен вхід ≈0.15 STRK з Game Account. Найкращий забіг рахується автоматично.`,
+      workflow: 'pvp',
+      name: 'PvP',
+      inputs: { runs: String(n), live: 'true' },
+      label: `PvP Dungeons · до ${n} ${n === 1 ? 'забігу' : 'забігів'}`,
     };
   },
   mine: () => ({
@@ -753,6 +773,18 @@ document.addEventListener('click', async (e) => {
   if (!btn) return;
   if (needToken('#ctlRunNote')) return;
   const q = QUICK[btn.dataset.quick]();
+  if (btn.dataset.quick === 'pvp') {
+    // PvP entries are made by the invited Game Account (the Rabby wallet that signed up)
+    const ga = await secretInfo('GAME_SESSION_LINK').catch(() => null);
+    if (!ga) {
+      note(
+        '#ctlRunNote',
+        'PvP грає ваш <b>Game Account</b> (гаманець, яким ви зареєструвались у PvP). Спершу: <a href="#accounts" data-goto="accounts">🔑 Акаунти</a> → «EVM‑гаманець» → <b>Створити сесію гаманцем</b>, потім знову натисніть «Грати стіл».',
+        'warn',
+      );
+      return;
+    }
+  }
   if (btn.dataset.quick === 'ronke') {
     // Ronke games belong to the Game Account of the Ronin wallet: without its session the bot plays Cartridge
     const ga = await secretInfo('GAME_SESSION_LINK').catch(() => null);
@@ -768,7 +800,8 @@ document.addEventListener('click', async (e) => {
   if (q.confirm && !confirm(q.confirm)) return;
   busy(btn, true);
   try {
-    await dispatchBot(q.inputs, q.label);
+    if (q.workflow) await dispatchWorkflow(q.workflow, q.inputs, q.label, q.name);
+    else await dispatchBot(q.inputs, q.label);
     note('#ctlRunNote', `▶ «${esc(q.label)}» запущено. Прогрес — у блоці «Зараз» нижче.`, 'ok');
     $('#monitor')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
   } catch (err) {
@@ -865,12 +898,52 @@ $('#ctlRuns')?.addEventListener('click', async (e) => {
   }
 });
 
+// ------------------------------------------------------------------ PvP Dungeons (bot-data/pvp.json)
+const fmtUtc = (sec) => new Date(Number(sec) * 1000).toLocaleString('uk-UA', { dateStyle: 'short', timeStyle: 'short' });
+
+/** Today's table and the sign-up steps still open, from the last PvP run (compact: for the monitor). */
+async function pvpSummary(compact = false) {
+  const d = await window.botData?.load('pvp.json').catch(() => undefined);
+  if (!d) return compact ? '' : 'Ще не запускався. Натисніть «Грати стіл».';
+  const st = d.status ?? {};
+  const tid = st.table?.tournamentId;
+  const t = tid ? d.tables?.[tid] : null;
+  const parts = [];
+  if (st.benched) parts.push('<span class="bad">⛔ вас знято зі столів (пропущено 2 столи поспіль) — увімкніть знову на lootsurvivor.io/pvp</span>');
+  if (t) {
+    const used = t.runs?.length ?? 0;
+    parts.push(`Стіл <b>${esc(t.name ?? `#${tid}`)}</b>: забігів <b>${used}</b> з 10 · найкращий <b>${t.best ? `${Number(t.best.score).toLocaleString('uk-UA')} XP` : '—'}</b>${t.submitted ? ' · ✓ подано' : ''}`);
+    const lastNote = (t.notes ?? []).slice(-1)[0];
+    if (lastNote) parts.push(`<span class="warn-text">${esc(lastNote)}</span>`);
+  } else if (st.eligible === false) parts.push('<span class="bad">цей гаманець не в списку PvP</span>');
+  else parts.push('Зараз столу немає: столи розсаджують щодня о 14:00 UTC.');
+  if (!compact) {
+    const week = (st.week ?? []).map((w) => `<span class="badge ${w.won ? 'ok' : w.won === false ? 'bad' : w.played ? 'run' : 'muted'}">День ${w.day}: ${w.won ? 'перемога' : w.won === false ? 'поразка' : w.played ? 'грає' : '—'}</span>`).join(' ');
+    if (week) parts.push(week);
+  }
+  const req = st.requirements ?? {};
+  const due = st.xRequiredFrom ?? {};
+  const todo = [];
+  if (req.xFollow === false) todo.push(`підписатися на @LootSurvivor в X (до ${fmtUtc(due.follow)})`);
+  if (req.xLike === false) todo.push(`<a href="https://x.com/i/status/${esc(st.xLikePostId ?? '')}" target="_blank" rel="noopener">лайкнути пост</a> в X (до ${fmtUtc(due.engage)})`);
+  if (req.xRepost === false) todo.push(`зробити репост в X (до ${fmtUtc(due.engage)})`);
+  if (todo.length) parts.push(`<span class="warn-text">⚠ Без цього бот не зможе грати: ${todo.join('; ')}</span>`);
+  if (d.updated) parts.push(`<span class="muted">оновлено ${new Date(d.updated).toLocaleString('uk-UA', { dateStyle: 'short', timeStyle: 'short' })}</span>`);
+  return compact ? `<div class="mon-result">${parts.join(' · ')}</div>` : parts.join('<br>');
+}
+
+async function renderPvp() {
+  const host = $('#qaPvpInfo');
+  if (host) host.innerHTML = await pvpSummary(false);
+}
+
 // ------------------------------------------------------------------ live monitor ("Зараз")
-const WF_LABEL = { Bot: 'Гра бота', Learn: 'Навчання', Task: 'Службове завдання' };
+const WF_LABEL = { Bot: 'Гра бота', PvP: 'PvP Dungeons', Learn: 'Навчання', Task: 'Службове завдання' };
 const STEP_LABEL = {
   'Discover live contracts and dungeons': 'Перевірка контрактів',
   'Practice dungeon': 'Тренування',
   'Ronke Casino daily games': 'Ronke Casino',
+  'PvP table': 'PvP‑стіл: вхід, забіги, подання результату',
   Mainnet: 'Ігри в mainnet',
   'Leaderboard snapshot': 'Лідерборд',
   Summaries: 'Підсумки',
@@ -910,14 +983,15 @@ async function renderMonitor(runs) {
   const label = launch && launch.workflow === run.name && Math.abs(created - launch.at) < 120_000 ? launch.label : `${WF_LABEL[run.name] ?? run.name}${run.event === 'schedule' ? ' · за розкладом' : ''}`;
   const running = run.status !== 'completed';
   // app.js hides the previous run's live status until this run pushes its own (scripts/live-push.sh, every minute)
-  window.botActiveRunStart = running && run.name === 'Bot' ? new Date(run.run_started_at ?? run.created_at).getTime() : null;
+  const playRun = run.name === 'Bot' || run.name === 'PvP';
+  window.botActiveRunStart = running && playRun ? new Date(run.run_started_at ?? run.created_at).getTime() : null;
   const [stLabel, stCls] = STATUS[run.conclusion ?? run.status] ?? [run.conclusion ?? run.status, ''];
   let stepsHtml = '';
   let pct = running ? 5 : 100;
   if (token() && (running || Date.now() - new Date(run.updated_at).getTime() < 6 * 3600_000)) {
     try {
       const jobs = await gh(`/repos/${repo}/actions/runs/${run.id}/jobs`);
-      const job = jobs.jobs?.find((j) => j.name === 'play' || j.name === 'task' || j.name === 'learn') ?? jobs.jobs?.[0];
+      const job = jobs.jobs?.find((j) => ['play', 'pvp', 'task', 'learn'].includes(j.name)) ?? jobs.jobs?.[0];
       const steps = (job?.steps ?? []).filter((x) => !/^(Set up job|Complete job|Post |Run actions\/|Run npm ci|Run scripts\/data-branch|Remove session)/.test(x.name));
       const done = steps.filter((x) => x.status === 'completed').length;
       if (steps.length) pct = Math.max(pct, Math.round((done / steps.length) * 100));
@@ -934,7 +1008,8 @@ async function renderMonitor(runs) {
   }
   // results of the latest bot run (bot-data/runs.json)
   let result = '';
-  if (run.name === 'Bot') {
+  if (run.name === 'PvP') result += await pvpSummary(true);
+  if (playRun) {
     const d = await window.botData?.load('runs.json').catch(() => undefined);
     const list = Array.isArray(d) ? d : d?.runs ?? [];
     const since = new Date(run.run_started_at ?? run.created_at).getTime() - 60_000;
@@ -950,7 +1025,7 @@ async function renderMonitor(runs) {
         .map(
           (x) => `<div class="mon-result"><span class="badge ${x.mode.startsWith('mainnet') ? 'run' : 'muted'}">${esc(x.mode === 'mainnet' ? 'Mainnet' : x.mode === 'mainnet-dry' ? 'Mainnet (dry run)' : 'Тренування')}</span>
             <b>${x.games}</b> ігор · найкраща <b>${x.bestXp}</b> XP · середня ${x.meanXp}${x.errors ? ` · <span class="bad">${x.errors} помилок</span>` : ''}${x.ended ? '' : ' · <span class="run">триває</span>'}
-            ${x.ended && x.games === 0 && x.mode.startsWith('mainnet') && !failed ? '<span class="muted small">— на акаунті бота не знайшлося незіграних ігор (ігри Ronke потребують сесії Game Account; для нових ігор — Proving Grounds)</span>' : ''}</div>`,
+            ${x.ended && x.games === 0 && x.mode.startsWith('mainnet') && !failed && run.name === 'Bot' ? '<span class="muted small">— на акаунті бота не знайшлося незіграних ігор (ігри Ronke потребують сесії Game Account; для нових ігор — Proving Grounds)</span>' : ''}</div>`,
         )
         .join('')}</div>`;
     } else if (running && !played.length) result = '<p class="muted small">Результати з’являться після першої зіграної гри.</p>';
@@ -1018,7 +1093,7 @@ async function renderChecklist() {
       item(
         true,
         'Розклад',
-        'Автозапуск вимкнено: бот грає лише коли ви запускаєте його вручну.',
+        'Звичайні ігри — лише вручну. PvP Dungeons бот грає сам щодня після 14:00 UTC.',
         '<a class="btn small" href="#schedule" data-goto="schedule">Налаштувати</a>',
       );
     $('#tabAccountsDot').hidden = cOk || gOk;
@@ -1030,7 +1105,7 @@ async function renderChecklist() {
 // ------------------------------------------------------------------ main
 async function renderAll() {
   await renderAccess();
-  await Promise.all([renderWallet(), renderGameAccount(), renderRonke(), renderControls(), renderRuns(), renderChecklist()]);
+  await Promise.all([renderWallet(), renderGameAccount(), renderRonke(), renderPvp(), renderControls(), renderRuns(), renderChecklist()]);
   window.dispatchEvent(new Event('bot:refresh'));
 }
 
@@ -1043,6 +1118,7 @@ setInterval(() => {
   if (Date.now() - last >= every && !document.hidden) {
     last = Date.now();
     renderRuns();
+    renderPvp();
     if (anyRunning) window.dispatchEvent(new Event('bot:refresh'));
   }
 }, 5_000);

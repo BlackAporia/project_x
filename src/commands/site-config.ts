@@ -16,7 +16,7 @@ export function siteConfig() {
     chainId: MAINNET.chainId,
     policies: parsedBotPolicies(),
     dungeons: ['default', ...Object.keys(DUNGEON_SETTINGS)],
-    workflows: { bot: 'bot.yml', learn: 'learn.yml', pages: 'pages.yml' },
+    workflows: { bot: 'bot.yml', pvp: 'pvp.yml', learn: 'learn.yml', pages: 'pages.yml' },
     secret: 'CARTRIDGE_SESSION_B64',
     gameCore: MAINNET.gameCoreV2,
     provingGrounds: MAINNET.provingGrounds,

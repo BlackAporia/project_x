@@ -272,3 +272,5 @@ a.btn { text-decoration: none; display: inline-block; }
 .mon-game { padding: 10px 12px; border: 1px solid var(--border, #333); border-radius: 10px; font-size: 14px; display: grid; gap: 4px; }
 .ok-text { color: var(--good); }
 .warn-text { color: var(--warning); }
+
+.pvp-info { margin: 0.4rem 0 0.6rem; line-height: 1.45; }
