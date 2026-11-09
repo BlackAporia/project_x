@@ -672,11 +672,11 @@
   "id": "2026-11-09T11-17-32-722Z",
   "mode": "mainnet",
   "started": "2026-11-09T11:17:32.722Z",
-  "games": 6,
-  "bestXp": 194,
-  "meanXp": 113,
+  "games": 7,
+  "bestXp": 308,
+  "meanXp": 141,
   "errors": 0,
   "policy": "tail-pg-2026-10-25",
-  "ended": "2026-11-09T11:40:12.729Z"
+  "ended": "2026-11-09T11:46:45.541Z"
  }
 ]
