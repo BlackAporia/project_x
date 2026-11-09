@@ -1,10 +1,47 @@
-== bot frontend --call treeId --call /proof --call function~Nqe( --call tables/ --call qualification:{kind
+== bot pvp-check
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts frontend --call treeId --call /proof --call function~Nqe( --call tables/ --call qualification:{kind
+> node --import tsx src/cli.ts pvp-check
 
-downloaded 348 files, 16.0 MB into /tmp/lsfront-1794240933184
-30 snippet(s) for treeId, /proof, function~Nqe(, tables/, qualification:{kind -> frontend/snippets.json
+Loot Survivor bot
+
+Usage: npm run bot -- <command> [options]
+
+  play         Play games (practice or mainnet) and write dashboard data
+  sim          Simulate one game locally and print the decision log
+  bench        Benchmark the current policy over many simulated games
+  tune         Optimize policy parameters with CMA-ES on simulated games (multi-core)
+  dataset      Export simulated states for the GPU trainer (trainer/)
+  discover     Fetch live contract ABIs, presets and API endpoints; write data/discovery
+  leaderboard  Fetch the mainnet leaderboard and live players; write site/data
+  learn        Learn from top players: ingest their games and update insights
+  authorize    One-time Cartridge Controller session authorization for mainnet play
+  site         Rebuild site/data summaries from the bot data directory
+  local        Local GPU learning loop: self-play dataset -> value net (PyTorch) -> A/B -> tune
+  leaders      Download the full event history of the top leaderboard games for analysis
+  v2-inspect   Validate the V2 commit-reveal read path on live mainnet games (no account needed)
+  validate     A/B a candidate policy on the official site engine (practice) and adopt it only if better
+  dungeon-settings Read dungeon game settings (e.g. Ronke Casino #7) from the V2 game core
+  site-config  Write site/bot-config.json (session policies and RPC for approving the bot on the website)
+  ronke        Ronke Casino daily free games: status for the bot account, --claim to claim today's games
+  reach        Probability of reaching deep levels (multilevel splitting) for one or more policies (--policy a.json,b.json)
+  contract     Inspect live mainnet contracts: ABI and view calls (--address 0x.. --call name:arg,arg)
+  pvp          PvP Dungeons with the invited Game Account: submit/claim earlier tables, play today's table (--live, --max-games runs, --minutes)
+  http-get     GET public JSON endpoints and print status and body (--address url, repeatable)
+  rpc-probe    Raw answers of the RPC endpoints (chainId, specVersion, Cartridge paymaster) to see which still speak JSON-RPC
+  v2-dryrun    Dry-run the bot's next move in a game and print why the core would reject it (--game id,id)
+  v2-verify    Dry-run verify_game for games (--game id,id) and print why settlement would revert
+  v2-beasts    Check the bot's beast derivation and damage against real V2 games, packet by packet (--game id)
+  v2-leaderboard Leaderboards of the V2 dungeons from the lootsurvivor.io API (--ids 0-15 minter ids, --levels scores to rank)
+  v2-audit     Audit the engine against real V2 games: replay each packet on chain and compare with engine draws (--address owner --game id --draws n)
+  frontend     List the dungeons lootsurvivor.io offers now (new ones highlighted); writes data/frontend/dungeons.json
+== bot frontend --call entriesIssued --call /entry/issue --call tables/check
+
+> loot-survivor-bot@1.0.0 bot
+> node --import tsx src/cli.ts frontend --call entriesIssued --call /entry/issue --call tables/check
+
+downloaded 348 files, 16.0 MB into /tmp/lsfront-1794242065126
+4 snippet(s) for entriesIssued, /entry/issue, tables/check -> frontend/snippets.json
 10 dungeon configs on lootsurvivor.io
   trials                   Trials                     online       Free
   beastmode                Beast Mode                 online       1 Ticket settings=Po minter=No @Fo.dungeon
