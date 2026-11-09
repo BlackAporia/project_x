@@ -1,0 +1,32 @@
+{
+ "updated": "2026-11-09T11:46:26.375Z",
+ "address": "0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452",
+ "tables": {},
+ "status": {
+  "eligible": true,
+  "alertsLinked": true,
+  "campaign": {
+   "start": 1794232800,
+   "end": 1794837600,
+   "day": null
+  },
+  "table": null,
+  "benched": false,
+  "requirements": {
+   "phoneRequired": true,
+   "alertsPhone": true,
+   "xLinked": false,
+   "xFollow": false,
+   "xLike": false,
+   "xRepost": false
+  },
+  "seatable": true,
+  "xLikePostId": "2119067400746471796",
+  "xRequiredFrom": {
+   "follow": 1794319200,
+   "engage": 1794405600
+  },
+  "xGate": "play",
+  "week": []
+ }
+}
