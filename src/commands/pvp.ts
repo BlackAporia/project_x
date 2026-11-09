@@ -143,18 +143,21 @@ export async function runPvpCommand(opts: { live: boolean; dataDir: string; maxR
     save();
     return;
   }
-  // allowlist proof (merkle validator) from the table's entry requirement
+  // entry requirement: Option<EntryRequirement{entry_limit, extension{address, config}}> =
+  // [0 (Some), limit, 1 (extension), validator, config_len, ...config]. Like the site, a merkle proof is sent only
+  // when the config names a tree (config[0]); PvP tables carry an empty config and are entered without one.
   const req = await call(budokan, 'get_entry_requirement', [tid]);
   const mv = BigInt(MAINNET.pvp.merkleValidator);
   const at = req.findIndex((x) => x === mv);
+  const configLen = at >= 0 ? Number(req[at + 1] ?? 0n) : 0;
+  const treeId = configLen > 0 ? req[at + 2] : 0n;
   let qualification: string[] | null = null;
-  if (at >= 0) {
-    const treeId = req[at + 2];
+  if (treeId > 0n) {
     qualification = await merkleProof(treeId, address);
     if (!qualification) throw new Error(`${address} is not on table ${today.tournamentId}'s allowlist (tree ${treeId})`);
     console.log(`[pvp] allowlist proof for tree ${treeId}: ${qualification.length} felt(s)`);
   } else {
-    console.log(`[pvp] entry requirement ${req.map((x) => hex(x)).join(',')} (no merkle allowlist found; entering without qualification)`);
+    console.log(`[pvp] entry requirement ${req.map((x) => hex(x)).join(',')}: no allowlist tree, entering without a proof (as the site does)`);
   }
   const enterCall = (): { contractAddress: string; entrypoint: string; calldata: string[] } => ({
     contractAddress: budokan,
@@ -168,9 +171,19 @@ export async function runPvpCommand(opts: { live: boolean; dataDir: string; maxR
     ],
   });
   const chain = new V2Chain(provider, game);
+  // runs already issued to the account at this table (the organizer enters seated players): play those first
+  const issued: bigint[] = [];
+  for (const id of await chain.ownedGames(address).catch(() => [] as bigint[])) {
+    const registered = (await call(budokan, 'is_token_registered', [tid, id]).catch(() => [0n]))[0] === 1n;
+    if (!registered) continue;
+    if (!today.runs.includes(id.toString())) today.runs.push(id.toString());
+    if (!(await chain.gameOver(id).catch(() => false))) issued.push(id);
+  }
+  if (issued.length) console.log(`[pvp] ${issued.length} unplayed run(s) already issued at this table: ${issued.join(', ')}`);
+  save();
   const runsLeft = Math.max(0, opts.maxRuns - today.runs.length);
-  if (!runsLeft || !opts.live) {
-    console.log(`[pvp] ${opts.live ? 'all runs used' : 'dry run'}: not entering`);
+  if ((!runsLeft && !issued.length) || !opts.live) {
+    console.log(`[pvp] ${opts.live ? 'all runs used' : 'dry run'}: not playing`);
     save();
     return;
   }
@@ -178,7 +191,7 @@ export async function runPvpCommand(opts: { live: boolean; dataDir: string; maxR
     chain,
     executor: ga,
     dryRun: false,
-    games: [],
+    games: issued,
     maxEntries: runsLeft,
     enter: async () => {
       const id = await chain.enterWith(ga, [enterCall()]);
@@ -188,7 +201,7 @@ export async function runPvpCommand(opts: { live: boolean; dataDir: string; maxR
       return id;
     },
   });
-  await playLoop({ backend, params: loadParams(), store, minutes: opts.minutes, maxGames: runsLeft + 2 });
+  await playLoop({ backend, params: loadParams(), store, minutes: opts.minutes, maxGames: runsLeft + issued.length + 2 });
   // best settled run of this table
   for (const r of today.runs) {
     const id = BigInt(r);
