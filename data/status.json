@@ -1,9 +1,122 @@
 {
- "updated": "2026-11-09T10:58:31.591Z",
+ "updated": "2026-11-09T11:18:28.412Z",
  "mode": "mainnet",
- "running": false,
- "runId": "2026-11-09T10-57-28-786Z",
+ "running": true,
+ "runId": "2026-11-09T11-17-32-722Z",
  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
- "recent": [],
- "message": "error: could not start a new game: expected value at line 1 column 1 [131]"
+ "recent": [
+  {
+   "n": 0,
+   "t": "2026-11-09T11:17:52.462Z",
+   "level": 1,
+   "xp": 0,
+   "hp": 100,
+   "maxHp": 100,
+   "gold": 40,
+   "phase": "explore",
+   "reason": "Buy Katana, Shoes, Gloves, Heavy Belt, Linen Hood, Leather Armor; Explore until beast (instant-death risk 0.0%, battle-death risk 0.2%, HP 100/100)",
+   "actions": "buy(Katana, Shoes, Gloves, Heavy Belt, Linen Hood, Leather Armor) + explore(till beast)",
+   "tx": "0xa028a2ed59371a15487b6c7a7d78b45be778868f71975e5274234fbf909e9b",
+   "ok": true
+  },
+  {
+   "n": 1,
+   "t": "2026-11-09T11:17:58.819Z",
+   "level": 1,
+   "xp": 0,
+   "hp": 100,
+   "maxHp": 100,
+   "gold": 8,
+   "phase": "battle",
+   "reason": "Attack Phoenix (L2 T3, 12 HP): P(win)=100.0% P(death)=0.0%; attack value 219.7 vs flee -1.0",
+   "actions": "attack(to death)",
+   "tx": "0x6a13dc1809874ebe09bd9d7d9a51f4f61410f629351efa87d46785d6d185c16",
+   "ok": true
+  },
+  {
+   "n": 2,
+   "t": "2026-11-09T11:18:05.236Z",
+   "level": 2,
+   "xp": 4,
+   "hp": 93,
+   "maxHp": 100,
+   "gold": 11,
+   "phase": "level_up",
+   "reason": "Stats +1 VIT; Explore until beast (instant-death risk 0.0%, battle-death risk 0.0%, HP 108/115)",
+   "actions": "stats(vit+1) + explore(till beast)",
+   "tx": "0x79da5c5377a80e6f4099a3800d4357650d929df3d68bd832036448f4021dc87",
+   "ok": true
+  },
+  {
+   "n": 3,
+   "t": "2026-11-09T11:18:09.608Z",
+   "level": 2,
+   "xp": 4,
+   "hp": 108,
+   "maxHp": 115,
+   "gold": 11,
+   "phase": "battle",
+   "reason": "Attack Anansi (L4 T4, 32 HP): P(win)=100.0% P(death)=0.0%; attack value 215.7 vs flee 207.6",
+   "actions": "attack",
+   "tx": "0x24bd4b3a5620c6e7045c22f62a37c0fcc8294aff3c4908e015395060e95d876",
+   "ok": true
+  },
+  {
+   "n": 4,
+   "t": "2026-11-09T11:18:15.792Z",
+   "level": 2,
+   "xp": 4,
+   "hp": 104,
+   "maxHp": 115,
+   "gold": 11,
+   "phase": "battle",
+   "reason": "Attack Anansi (L4 T4, 19 HP): P(win)=100.0% P(death)=0.0%; attack value 215.8 vs flee 206.2",
+   "actions": "attack",
+   "tx": "0x7cb925a66c22e5dd1f89a3f70188560886e448b088e9d99128984b7693edcee",
+   "ok": true
+  },
+  {
+   "n": 5,
+   "t": "2026-11-09T11:18:22.084Z",
+   "level": 2,
+   "xp": 4,
+   "hp": 98,
+   "maxHp": 115,
+   "gold": 11,
+   "phase": "battle",
+   "reason": "Attack Anansi (L4 T4, 6 HP): P(win)=100.0% P(death)=0.0%; attack value 216.1 vs flee 206.2",
+   "actions": "attack",
+   "tx": "0x468f4c95376f053b6ce118a8b4daab75823fe5b9952aaeb760b0da2f14c80bf",
+   "ok": true
+  }
+ ],
+ "current": {
+  "id": "374144419157391711793985745728509629870030627093249",
+  "level": 2,
+  "xp": 4,
+  "hp": 98,
+  "maxHp": 115,
+  "gold": 11,
+  "gear": [
+   "Katana T1 G2",
+   "Leather Armor T5 G2",
+   "Linen Hood T4 G2",
+   "Heavy Belt T5 G2",
+   "Shoes T5 G2",
+   "Gloves T5 G2",
+   "-",
+   "-"
+  ],
+  "stats": {
+   "str": 4,
+   "dex": 2,
+   "vit": 1,
+   "int": 2,
+   "wis": 2,
+   "cha": 2,
+   "luck": 2
+  },
+  "beast": "Anansi",
+  "lastReason": "Attack Anansi (L4 T4, 6 HP): P(win)=100.0% P(death)=0.0%; attack value 216.1 vs flee 206.2"
+ }
 }

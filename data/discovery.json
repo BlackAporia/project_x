@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-09T10:54:45.643Z",
- "mainnetRpc": "https://api.zan.top/public/starknet-mainnet/rpc/v0_10",
+ "updated": "2026-11-09T11:14:54.430Z",
+ "mainnetRpc": "https://rpc.provable.games/rpc",
  "mainnet": {
   "gameCore": {
    "address": "0x023f86f5b4702f6ba114b82fb73448c58aad8f37a28b508b80bf129ee1edc405",
