@@ -27,6 +27,7 @@ const COMMANDS: Record<string, string> = {
   contract: 'Inspect live mainnet contracts: ABI and view calls (--address 0x.. --call name:arg,arg)',
   pvp: 'PvP Dungeons with the invited Game Account: submit/claim earlier tables, play today\'s table (--live, --max-games runs, --minutes)',
   'http-get': 'GET public JSON endpoints and print status and body (--address url, repeatable)',
+  'pvp-check': 'Read-only PvP entry diagnosis: table entries, entry extension, enter_tournament simulated from the Game Account (--ids table, --address account)',
   'rpc-probe': 'Raw answers of the RPC endpoints (chainId, specVersion, Cartridge paymaster) to see which still speak JSON-RPC',
   'v2-dryrun': 'Dry-run the bot\'s next move in a game and print why the core would reject it (--game id,id)',
   'v2-verify': 'Dry-run verify_game for games (--game id,id) and print why settlement would revert',
