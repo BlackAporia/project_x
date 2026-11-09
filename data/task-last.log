@@ -1,66 +1,19 @@
-== bot contract --address 0x0341263a7a0fda541d57b4de1365017066badee008d5536a8adbb14c9292be57 --call get_entry_requirement:8 --call max_entries:8 --call get_entry_count:8 --call current_phase:8
+== bot frontend --call treeId --call /proof --call function~Nqe( --call tables/ --call qualification:{kind
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts contract --address 0x0341263a7a0fda541d57b4de1365017066badee008d5536a8adbb14c9292be57 --call get_entry_requirement:8 --call max_entries:8 --call get_entry_count:8 --call current_phase:8
+> node --import tsx src/cli.ts frontend --call treeId --call /proof --call function~Nqe( --call tables/ --call qualification:{kind
 
-0x0341263a7a0fda541d57b4de1365017066badee008d5536a8adbb14c9292be57 class 0x011e95649b659110b112f217162e9a5f2338483d2c2d3d831b4c99af6a528433: 56 functions
-  write upgrade(new_class_hash: ClassHash) -> 
-  view  schedule_limits() -> ScheduleLimits
-  write set_schedule_limits(limits: ScheduleLimits) -> 
-  view  min_submission_duration() -> u32
-  write set_min_submission_duration(seconds: u32) -> 
-  write sync_supported_interfaces() -> 
-  write set_rewards_class_hash(new_class_hash: ClassHash) -> 
-  view  rewards_class_hash() -> ClassHash
-  write set_protocol_fee_bps(bps: u16) -> 
-  write set_protocol_fee_recipient(recipient: ContractAddress) -> 
-  view  protocol_fee_bps() -> u16
-  view  protocol_fee_recipient() -> ContractAddress
-  view  tournament_protocol_fee_bps(tournament_id: u64) -> u16
-  view  protocol_fee_info() -> ProtocolFeeInfo
-  view  tournament_protocol_fee_info(tournament_id: u64) -> ProtocolFeeInfo
-  write set_protocol_fee_license(license: ByteArray) -> 
-  view  has_context(game_address: ContractAddress, token_id: felt252) -> bool
-  view  context_details(game_address: ContractAddress, token_id: felt252) -> GameContextDetails
-  view  total_tournaments() -> u64
-  view  is_token_registered(tournament_id: u64, token_id: felt252) -> bool
-  view  tournament(tournament_id: u64) -> Tournament
-  view  tournament_game_address(tournament_id: u64) -> ContractAddress
-  view  current_phase(tournament_id: u64) -> Phase
-  view  max_entries(tournament_id: u64) -> u32
-  view  tournament_distribution_shares(tournament_id: u64) -> u16>
-  view  prize_distribution_shares(prize_id: u64) -> u16>
-  write create_tournament(creator_rewards_address: ContractAddress, metadata: Metadata, schedule: Schedule, game_config: GameConfig, entry_fee: EntryFeeKind>, entry_requirement: EntryRequirement>, leaderboard_config: LeaderboardConfig, max_entries: u32) -> Tournament
-  write enter_tournament(tournament_id: u64, player_address: ContractAddress>, qualifier: ContractAddress>, qualification: QualificationProof>, entry_fee_pay_params: felt252>>) -> u32)
-  write enter_tournament_for_recipients(tournament_id: u64, recipients: TournamentRecipientParams>) -> felt252>
-  write ban_entry(tournament_id: u64, game_token_id: felt252, proof: felt252>) -> 
-  write submit_score(tournament_id: u64, token_id: felt252, position: u32) -> 
-  write claim_reward(tournament_id: u64, reward_type: RewardType) -> 
-  write add_prize(tournament_id: u64, prize: Prize, position: u32>) -> u64
-  view  supports_interface(interface_id: felt252) -> bool
-  view  owner() -> ContractAddress
-  write transfer_ownership(new_owner: ContractAddress) -> 
-  write renounce_ownership() -> 
-  view  get_entry_fee(context_id: u64) -> EntryFeeConfig>
-  view  get_entry_requirement(context_id: u64) -> EntryRequirement>
-  view  get_qualification_entries(context_id: u64, proof: QualificationProof) -> QualificationEntries
-  view  get_prize(prize_id: u64) -> PrizeRecord
-  view  get_total_prizes() -> u64
-  view  is_prize_claimed(context_id: u64, prize_type: PrizeType) -> bool
-  view  get_entry(context_id: u64, entry_id: u32) -> Registration
-  view  entry_exists(context_id: u64, entry_id: u32) -> bool
-  view  is_token_banned(context_id: u64, token_id: felt252) -> bool
-  view  get_entry_count(context_id: u64) -> u32
-  view  get_leaderboard_entries(context_id: u64) -> LeaderboardEntry>
-  view  get_leaderboard_entry(context_id: u64, position: u32) -> LeaderboardEntry
-  view  get_top_leaderboard_entries(context_id: u64, count: u32) -> LeaderboardEntry>
-  view  get_position(context_id: u64, token_id: felt252) -> u32>
-  view  qualifies(context_id: u64, score: u64) -> bool
-  view  is_full(context_id: u64) -> bool
-  view  get_leaderboard_length(context_id: u64) -> u32
-  view  get_config(context_id: u64) -> LeaderboardStoreConfig
-  view  find_position(context_id: u64, score: u64, token_id: felt252) -> u32>
-  get_entry_requirement:8 = [0x0, 0xa, 0x1, 0x570d41b66f0eea3c342d570e456e51194817b8eb563dc580c63c2f3d6e505ec, 0x0]
-  max_entries:8 = [0x1e]
-  get_entry_count:8 = [0x3]
-  current_phase:8 = [0x3]
+downloaded 348 files, 16.0 MB into /tmp/lsfront-1794240933184
+30 snippet(s) for treeId, /proof, function~Nqe(, tables/, qualification:{kind -> frontend/snippets.json
+10 dungeon configs on lootsurvivor.io
+  trials                   Trials                     online       Free
+  beastmode                Beast Mode                 online       1 Ticket settings=Po minter=No @Fo.dungeon
+  ronke-casino             Ronke Casino               Fe?`online`:`coming_soon Free · 3 days settings=Xe minter=We sponsored @Ee
+  karats                   Karats                     online       Free settings=Yo minter=Zo @Qo
+  lootbag                  Loot Bag                   closed       Loot Bag settings=1 minter=13 @Xr.lootDungeon
+  pvp                      PvP Dungeons               online       Free
+  tournaments              Tournaments                zg.ready?`online`:`coming_soon  minter=zg.minterId @zg.budokanAddress
+  norwich-games-festival   Norwich Games Festival     online       Free @0x04253e24220629b737512a24cb3172fc381db7be7a697d5af358ff21ef1172be
+  blockhash                Blockhash                  closed       Free settings=0
+  unknown                  Unknown Dungeon            offline       @0x04253e24220629b737512a24cb3172fc381db7be7a697d5af358ff21ef1172be
+Ronke dungeons: ronke-casino (Ronke Casino)
