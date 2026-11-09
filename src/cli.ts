@@ -25,6 +25,7 @@ const COMMANDS: Record<string, string> = {
   ronke: 'Ronke Casino daily free games: status for the bot account, --claim to claim today\'s games',
   reach: 'Probability of reaching deep levels (multilevel splitting) for one or more policies (--policy a.json,b.json)',
   contract: 'Inspect live mainnet contracts: ABI and view calls (--address 0x.. --call name:arg,arg)',
+  'rpc-probe': 'Raw answers of the RPC endpoints (chainId, specVersion, Cartridge paymaster) to see which still speak JSON-RPC',
   'v2-dryrun': 'Dry-run the bot\'s next move in a game and print why the core would reject it (--game id,id)',
   'v2-verify': 'Dry-run verify_game for games (--game id,id) and print why settlement would revert',
   'v2-beasts': 'Check the bot\'s beast derivation and damage against real V2 games, packet by packet (--game id)',
@@ -257,6 +258,13 @@ async function main(): Promise<void> {
       const { runContractCommand } = await import('./commands/contract.ts');
       const list = (v: unknown) => (Array.isArray(v) ? v : typeof v === 'string' ? [v] : []).flatMap((x) => String(x).split(/\s+/)).filter(Boolean);
       await runContractCommand({ addresses: list(values.address), calls: list(values.call), dataDir: str(values.data, process.env.BOT_DATA_DIR ?? 'site/data') });
+      break;
+    }
+    case 'rpc-probe': {
+      const { runRpcProbeCommand } = await import('./commands/rpc-probe.ts');
+      const { MAINNET } = await import('./chain/config.ts');
+      const extra = (Array.isArray(values.address) ? values.address : []).map(String);
+      await runRpcProbeCommand({ urls: [...new Set([MAINNET.cartridgeRpc, ...MAINNET.rpcUrls, ...extra])] });
       break;
     }
     case 'v2-dryrun': {
