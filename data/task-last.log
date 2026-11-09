@@ -1,10 +1,10 @@
-== bot frontend --call .ticket,entrypoint:`approve` --call ticketAddress,entrypoint --call buyBeastModeGame --call enterBeastMode
+== bot frontend --call CairoCustomEnum --call Ticket:{} --call payment_type --call goldenPass --call Enter_Beast_Mode_marker
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts frontend --call .ticket,entrypoint:`approve` --call ticketAddress,entrypoint --call buyBeastModeGame --call enterBeastMode
+> node --import tsx src/cli.ts frontend --call CairoCustomEnum --call Ticket:{} --call payment_type --call goldenPass --call Enter_Beast_Mode_marker
 
-downloaded 348 files, 16.0 MB into /tmp/lsfront-1794217648803
-0 snippet(s) for .ticket,entrypoint:`approve`, ticketAddress,entrypoint, buyBeastModeGame, enterBeastMode -> frontend/snippets.json
+downloaded 348 files, 16.0 MB into /tmp/lsfront-1794217735574
+10 snippet(s) for CairoCustomEnum, Ticket:{}, payment_type, goldenPass, Enter_Beast_Mode_marker -> frontend/snippets.json
 10 dungeon configs on lootsurvivor.io
   trials                   Trials                     online       Free
   beastmode                Beast Mode                 online       1 Ticket settings=Ao minter=ko @jo.dungeon
