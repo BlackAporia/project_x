@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09T10:08:45.228Z",
+ "updated": "2026-11-09T10:21:12.424Z",
  "modes": {
   "mainnet": {
    "games": 97,
@@ -451,18 +451,6 @@
  },
  "runs": [
   {
-   "id": "2026-10-24T20-50-47-405Z",
-   "mode": "practice",
-   "started": "2026-10-24T20:50:47.405Z",
-   "games": 200,
-   "bestXp": 1008,
-   "meanXp": 408,
-   "errors": 0,
-   "policy": "tuned-2026-10-22-g24",
-   "dungeon": "Ronkeverse Large #7",
-   "ended": "2026-10-24T20:51:07.191Z"
-  },
-  {
    "id": "2026-10-24T23-15-56-426Z",
    "mode": "practice",
    "started": "2026-10-24T23:15:56.426Z",
@@ -790,6 +778,17 @@
    "errors": 0,
    "policy": "tail-pg-2026-10-25",
    "ended": "2026-11-09T09:56:43.912Z"
+  },
+  {
+   "id": "2026-11-09T10-20-03-994Z",
+   "mode": "mainnet",
+   "started": "2026-11-09T10:20:03.994Z",
+   "games": 0,
+   "bestXp": 0,
+   "meanXp": 0,
+   "errors": 0,
+   "policy": "tail-pg-2026-10-25",
+   "ended": "2026-11-09T10:21:07.373Z"
   }
  ],
  "policy": {
