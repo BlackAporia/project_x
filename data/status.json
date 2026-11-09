@@ -1,8 +1,8 @@
 {
- "updated": "2026-11-09T09:56:43.911Z",
- "mode": "mainnet-dry",
+ "updated": "2026-11-09T10:08:42.423Z",
+ "mode": "mainnet",
  "running": false,
- "runId": "2026-11-09T09-56-43-910Z",
+ "runId": "",
  "recent": [],
- "message": "no unplayed games on the account (buy/mint games in the UI)"
+ "message": "error: mainnet live play needs a Game Session (GAME_SESSION_LINK) or a Cartridge session (CARTRIDGE_SESSION_B64)"
 }
