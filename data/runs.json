@@ -700,5 +700,16 @@
   "errors": 0,
   "policy": "tail-pg-2026-10-25",
   "ended": "2026-11-09T16:19:18.321Z"
+ },
+ {
+  "id": "2026-11-09T16-43-05-936Z",
+  "mode": "mainnet",
+  "started": "2026-11-09T16:43:05.936Z",
+  "games": 0,
+  "bestXp": 0,
+  "meanXp": 0,
+  "errors": 4,
+  "policy": "tail-pg-2026-10-25",
+  "ended": "2026-11-09T16:43:58.609Z"
  }
 ]
