@@ -1,7 +1,7 @@
 {
- "updated": "2026-11-09T18:28:30.786Z",
+ "updated": "2026-11-09T18:28:51.844Z",
  "mode": "mainnet",
- "running": true,
+ "running": false,
  "runId": "2026-11-09T18-05-20-168Z",
  "account": "0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452",
  "recent": [
@@ -566,32 +566,5 @@
    "ok": true
   }
  ],
- "current": {
-  "id": "50216815005526703580820528271212434227753233660898568063553",
-  "level": 23,
-  "xp": 539,
-  "hp": 131,
-  "maxHp": 265,
-  "gold": 0,
-  "gear": [
-   "Grimoire T1 G20",
-   "Shirt T5 G12",
-   "Divine Hood T2 G12",
-   "Hard Leather Belt T4 G20",
-   "Heavy Boots T5 G11",
-   "Dragonskin Gloves T2 G20",
-   "-",
-   "-"
-  ],
-  "stats": {
-   "str": 3,
-   "dex": 16,
-   "vit": 11,
-   "int": 4,
-   "wis": 4,
-   "cha": 11,
-   "luck": 2
-  },
-  "lastReason": "Explore (instant-death risk 12.7%, battle-death risk 6.9%, HP 131/265)"
- }
+ "message": "no unplayed games on the account (buy/mint games in the UI)"
 }

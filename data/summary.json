@@ -1,27 +1,27 @@
 {
- "updated": "2026-11-09T17:52:58.896Z",
+ "updated": "2026-11-09T18:28:57.514Z",
  "modes": {
   "mainnet": {
-   "games": 150,
+   "games": 154,
    "inProgress": 0,
-   "errors": 3,
+   "errors": 2,
    "best": 1204,
    "bestLevel": 34,
-   "mean": 244,
-   "median": 175,
-   "p90": 569,
-   "last20Mean": 269,
-   "transactions": 8903,
-   "reverts": 50,
+   "mean": 247,
+   "median": 176,
+   "p90": 567,
+   "last20Mean": 261,
+   "transactions": 9178,
+   "reverts": 49,
    "predictionAccuracy": null,
    "deathCauses": [
     [
      "obstacle",
-     37
+     39
     ],
     [
      "Goblin",
-     5
+     6
     ],
     [
      "ambush by Kraken",
@@ -73,7 +73,7 @@
     "7": 4,
     "8": 5,
     "9": 8,
-    "10": 11,
+    "10": 12,
     "11": 14,
     "12": 16,
     "13": 18,
@@ -81,12 +81,12 @@
     "15": 8,
     "16": 4,
     "17": 8,
-    "18": 4,
+    "18": 5,
     "19": 2,
     "20": 5,
-    "21": 3,
+    "21": 4,
     "22": 2,
-    "23": 5,
+    "23": 6,
     "24": 4,
     "25": 2,
     "26": 1,
@@ -453,17 +453,6 @@
  },
  "runs": [
   {
-   "id": "2026-10-25T15-31-26-455Z",
-   "mode": "mainnet",
-   "started": "2026-10-25T15:31:26.455Z",
-   "games": 0,
-   "bestXp": 0,
-   "meanXp": 0,
-   "errors": 0,
-   "policy": "tail-2026-10-25-g3",
-   "ended": "2026-10-25T15:31:39.054Z"
-  },
-  {
    "id": "2026-10-25T16-00-40-070Z",
    "mode": "mainnet",
    "started": "2026-10-25T16:00:40.070Z",
@@ -786,6 +775,17 @@
    "errors": 1,
    "policy": "tail-pg-2026-10-25",
    "ended": "2026-11-09T17:52:56.652Z"
+  },
+  {
+   "id": "2026-11-09T18-05-20-168Z",
+   "mode": "mainnet",
+   "started": "2026-11-09T18:05:20.168Z",
+   "games": 4,
+   "bestXp": 539,
+   "meanXp": 365,
+   "errors": 0,
+   "policy": "tail-pg-2026-10-25",
+   "ended": "2026-11-09T18:28:51.844Z"
   }
  ],
  "policy": {
