@@ -25,6 +25,7 @@ const COMMANDS: Record<string, string> = {
   ronke: 'Ronke Casino daily free games: status for the bot account, --claim to claim today\'s games',
   reach: 'Probability of reaching deep levels (multilevel splitting) for one or more policies (--policy a.json,b.json)',
   contract: 'Inspect live mainnet contracts: ABI and view calls (--address 0x.. --call name:arg,arg)',
+  'http-get': 'GET public JSON endpoints and print status and body (--address url, repeatable)',
   'rpc-probe': 'Raw answers of the RPC endpoints (chainId, specVersion, Cartridge paymaster) to see which still speak JSON-RPC',
   'v2-dryrun': 'Dry-run the bot\'s next move in a game and print why the core would reject it (--game id,id)',
   'v2-verify': 'Dry-run verify_game for games (--game id,id) and print why settlement would revert',
@@ -258,6 +259,11 @@ async function main(): Promise<void> {
       const { runContractCommand } = await import('./commands/contract.ts');
       const list = (v: unknown) => (Array.isArray(v) ? v : typeof v === 'string' ? [v] : []).flatMap((x) => String(x).split(/\s+/)).filter(Boolean);
       await runContractCommand({ addresses: list(values.address), calls: list(values.call), dataDir: str(values.data, process.env.BOT_DATA_DIR ?? 'site/data') });
+      break;
+    }
+    case 'http-get': {
+      const { runHttpGetCommand } = await import('./commands/http-get.ts');
+      await runHttpGetCommand({ urls: (Array.isArray(values.address) ? values.address : []).map(String) });
       break;
     }
     case 'rpc-probe': {
