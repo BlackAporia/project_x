@@ -1,7 +1,7 @@
 {
- "updated": "2026-11-09T17:38:39.507Z",
+ "updated": "2026-11-09T17:39:45.310Z",
  "mode": "mainnet",
- "running": true,
+ "running": false,
  "runId": "2026-11-09T17-12-14-786Z",
  "account": "0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452",
  "recent": [
@@ -566,33 +566,5 @@
    "error": "the Game Account needs gas: 0.0844 STRK on the account, a move may cost up to 0.1003 STRK (deposit STRK to 0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452)"
   }
  ],
- "current": {
-  "id": "50216815005526703580820591876848951277583902225145369078913",
-  "level": 8,
-  "xp": 76,
-  "hp": 102,
-  "maxHp": 160,
-  "gold": 2,
-  "gear": [
-   "Ghost Wand T1 G9",
-   "Linen Robe T3 G9",
-   "Cap T5 G9",
-   "Heavy Belt T5 G9",
-   "Shoes T5 G9",
-   "Chain Gloves T4 G7",
-   "-",
-   "-"
-  ],
-  "stats": {
-   "str": 3,
-   "dex": 5,
-   "vit": 4,
-   "int": 3,
-   "wis": 0,
-   "cha": 4,
-   "luck": 2
-  },
-  "beast": "\"Grim Shout\" Rat",
-  "lastReason": "Attack \"Grim Shout\" Rat (L19 T5, 22 HP): P(win)=100.0% P(death)=0.0%; attack value 180.1 vs flee 167.3"
- }
+ "message": "error: could not start a new game: the Game Account needs gas: 0.0844 STRK on the account, a move may cost up to 0.4813 STRK (deposit STRK to 0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452)"
 }
