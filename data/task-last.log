@@ -1,158 +1,144 @@
-== bot contract --address 0x075ca042091b8e1418d0510b8d6519a89222ef5f7bbceb0ff760bb3c62c98174 --call cost_to_play --call settings_id --call is_closed --call minter_id --call opening_time --call get_game_core_address
+== bot contract --address 0x03cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2 --call get_entropy_block_offset --call settings_count --call balance_of:0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts contract --address 0x075ca042091b8e1418d0510b8d6519a89222ef5f7bbceb0ff760bb3c62c98174 --call cost_to_play --call settings_id --call is_closed --call minter_id --call opening_time --call get_game_core_address
+> node --import tsx src/cli.ts contract --address 0x03cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2 --call get_entropy_block_offset --call settings_count --call balance_of:0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82
 
-0x075ca042091b8e1418d0510b8d6519a89222ef5f7bbceb0ff760bb3c62c98174 class 0x03f4d49e9f27eb7d4250f5fa4877a0755a8fb8438ea21a534068e64791f9540b: 43 functions
-  write new_game(payment_type: PaymentType, to: ContractAddress, soulbound: bool) -> felt252
-  write new_game_batch(recipients: ContractAddress>, soulbound: bool) -> felt252>
-  write claim_beast(adventurer_id: felt252, encounter_xp: u16) -> felt252
-  write claim_jackpot(token_id: felt252) -> 
-  write withdraw_funds(token_address: ContractAddress, amount: u256) -> 
-  write update_opening_time(new_opening_time: u64) -> 
-  write update_payment_token(new_payment_token: ContractAddress) -> 
-  write update_ticket_receiver_address(new_ticket_receiver_address: ContractAddress) -> 
-  write update_settings_id(new_settings_id: u32) -> 
-  write update_cost_to_play(new_cost_to_play: u128) -> 
-  write update_beasts_nft_address(new_beasts_nft_address: ContractAddress) -> 
-  write open_dungeon() -> 
-  write close_dungeon() -> 
-  write set_species_mapping(roster_id: u8, beast_id: u64) -> 
-  view  get_game_core_address() -> ContractAddress
-  view  get_beasts_nft_address() -> ContractAddress
-  view  get_reward_token_address() -> ContractAddress
-  view  jackpot_claimed(token_id: felt252) -> bool
-  view  dungeon_opening_time() -> u64
-  view  opening_time() -> u64
-  view  payment_token() -> ContractAddress
-  view  cost_to_play() -> u128
-  view  ticket_receiver_address() -> ContractAddress
-  view  settings_id() -> u32
-  view  is_closed() -> bool
-  view  get_golden_pass(golden_pass_address: ContractAddress) -> GoldenPass>
-  view  golden_pass_last_used(golden_pass_address: ContractAddress, token_id: u128) -> u64
-  view  species_mapping(roster_id: u8) -> SpeciesMapping
-  view  species_mapping_at(roster_id: u8, block: u64) -> SpeciesMapping
-  view  collected_at(beast_id: u64, prefix: u8, suffix: u8) -> u64
-  view  minter_id() -> u32
-  view  is_golden_pass_usable(golden_pass_address: ContractAddress, token_id: u128) -> bool
-  view  encounter_species(adventurer_id: felt252, beast_seed: u32, prefix: u8, suffix: u8) -> u64
-  view  kill_species(adventurer_id: felt252, encounter_xp: u16) -> u64
-  view  is_beast_collectable(adventurer_id: felt252, beast_seed: u32, prefix: u8, suffix: u8) -> bool
-  view  supports_interface(interface_id: felt252) -> bool
-  view  verify_beast_kill(adventurer_id: felt252, species_id: u32, prefix: u8, suffix: u8) -> bool
+0x03cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2 class 0x02a49068449dff9ceb08f9bcfd98d5c65774909d43ecd0a30c2a30faf608a0ab: 128 functions
+  write commit_actions(adventurer_id: felt252, expected_chain: felt252, encoded_actions: felt252>) -> 
+  write commit_actions_unchecked(adventurer_id: felt252, expected_chain: felt252, encoded_actions: felt252>) -> 
+  view  get_commitment(adventurer_id: felt252) -> felt252
+  write initialize_game(adventurer_id: felt252, packed_adventurer: felt252, packed_bag: felt252, specials_override: felt252) -> 
+  view  get_start_override(adventurer_id: felt252) -> felt252)
+  write verify_game(adventurer_id: felt252, actions: felt252>, blocks: u64>) -> 
+  write verify_actions(adventurer_id: felt252, attempt_nonce: u64, actions: felt252>, blocks: u64>) -> 
+  write apply_actions(adventurer_id: felt252, attempt_nonce: u64, actions: felt252>, blocks: u64>) -> 
+  write verify_games_with_proof(results: ProofResult>) -> 
+  view  direct_replay_started(adventurer_id: felt252) -> bool
+  view  is_verified(adventurer_id: felt252) -> bool
+  view  get_replay_checkpoint(adventurer_id: felt252) -> ReplayCheckpoint
+  view  get_progress(adventurer_id: felt252, initiator: ContractAddress, attempt_nonce: u64) -> SettleProgress
+  view  replay_transcript(adventurer_id: felt252, actions: felt252>, blocks: u64>, hashes: felt252>, committed_len: u32) -> ChainCheck
+  view  replay_provable_transcript(adventurer_id: felt252, actions: felt252>, blocks: u64>, claimed_block_hashes: felt252>, mint_hash: felt252) -> ProvableReplay
+  write set_proof_config(config: ProofConfig) -> 
+  view  get_proof_config() -> ProofConfig
+  view  get_entropy_block_offset() -> u64
+  write set_entropy_block_offset(offset: u64) -> 
+  write add_settings(name: felt252, description: ByteArray, settings: GameSettings) -> u32
+  view  get_settings(settings_id: u32) -> GameSettings
+  view  get_action_settings(settings_id: u32) -> ActionSettings
+  write create_objective(name: ByteArray, description: ByteArray, score_threshold: u32) -> u32
+  view  load_assets(adventurer_id: felt252) -> Bag)
+  view  get_adventurer(adventurer_id: felt252) -> Adventurer
+  view  get_bag(adventurer_id: felt252) -> Bag
+  view  get_packed_state(adventurer_id: felt252>) -> felt252)>
+  view  get_slain_beast(adventurer_id: felt252, encounter_xp: u16) -> RecordedKill>
+  view  get_slain_adventurer(adventurer_id: felt252) -> RecordedKill>
+  write register_enumeration_interface() -> 
+  view  get_combat_class() -> ClassHash
+  view  get_exploration_class() -> ClassHash
+  view  get_market_class() -> ClassHash
+  view  get_inventory_class() -> ClassHash
+  view  get_stat_upgrades_class() -> ClassHash
+  view  get_settlement_class() -> ClassHash
+  view  get_replay_class() -> ClassHash
+  view  get_settings_class() -> ClassHash
+  view  get_metadata_class() -> ClassHash
+  write set_combat_class(class_hash: ClassHash) -> 
+  write set_exploration_class(class_hash: ClassHash) -> 
+  write set_market_class(class_hash: ClassHash) -> 
+  write set_inventory_class(class_hash: ClassHash) -> 
+  write set_stat_upgrades_class(class_hash: ClassHash) -> 
+  write set_settlement_class(class_hash: ClassHash) -> 
+  write set_replay_class(class_hash: ClassHash) -> 
+  write set_settings_class(class_hash: ClassHash) -> 
+  write set_metadata_class(class_hash: ClassHash) -> 
+  view  get_renderer_address() -> ContractAddress
+  write set_renderer_address(address: ContractAddress) -> 
+  view  minted_by_address(token_id: felt252) -> ContractAddress
+  write initialize_game_token_metadata() -> 
+  view  token_address() -> ContractAddress
+  view  settings_address() -> ContractAddress
+  view  objectives_address() -> ContractAddress
+  view  score(token_id: felt252) -> u64
+  view  game_over(token_id: felt252) -> bool
+  view  new_game(token_id: felt252) -> bool
+  view  score_batch(token_ids: felt252>) -> u64>
+  view  game_over_batch(token_ids: felt252>) -> bool>
+  view  settings_exist(settings_id: u32) -> bool
+  view  settings_exist_batch(settings_ids: u32>) -> bool>
+  view  settings_count() -> u32
+  view  settings_details(settings_id: u32) -> GameSettingDetails
+  view  settings_details_batch(settings_ids: u32>) -> GameSettingDetails>
+  view  objective_exists(objective_id: u32) -> bool
+  view  completed_objective(token_id: felt252, objective_id: u32) -> bool
+  view  objective_exists_batch(objective_ids: u32>) -> bool>
+  view  objectives_count() -> u32
+  view  objectives_details(objective_id: u32) -> GameObjectiveDetails
+  view  objectives_details_batch(objective_ids: u32>) -> GameObjectiveDetails>
   write upgrade(new_class_hash: ClassHash) -> 
-  view  owner() -> ContractAddress
-  write transfer_ownership(new_owner: ContractAddress) -> 
-  write renounce_ownership() -> 
-  write transferOwnership(newOwner: ContractAddress) -> 
-  write renounceOwnership() -> 
-  cost_to_play = [0xde0b6b3a7640000]
-  settings_id = [0x2]
-  is_closed = [0x0]
-  minter_id = [0x1]
-  opening_time = [0x6ae9ce1d]
-  get_game_core_address = [0x3cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2]
-== bot contract --address 0x0452810188C4Cb3AEbD63711a3b445755BC0D6C4f27B923fDd99B1A118858136 --call symbol --call decimals --call balance_of:0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82 --call balance_of:0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452
-
-> loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts contract --address 0x0452810188C4Cb3AEbD63711a3b445755BC0D6C4f27B923fDd99B1A118858136 --call symbol --call decimals --call balance_of:0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82 --call balance_of:0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452
-
-0x0452810188c4cb3aebd63711a3b445755bc0d6c4f27b923fdd99b1a118858136 class 0x05c668438529906abdd5f04cbe44c9919c40a811f922cbdc59630f3116c0fd8f: 76 functions
-  write init_distribution_pool(distribution_initial_tick: i129) -> u256
-  write premint_tokens(recipients: ContractAddress>, amounts: u256>) -> 
-  write provide_initial_liquidity(payment_token_amount: u128, dungeon_ticket_amount: u128, minimum_liquidity: u128) -> u256)
-  write start_token_distribution() -> u128)
-  write claim_proceeds() -> u128
-  write claim_and_distribute_buybacks(limit: u16) -> u128)
-  write distribute_proceeds(end_time: u64) -> 
-  write enable_low_issuance_mode() -> u128
-  write force_enable_low_issuance_mode() -> u128
-  write disable_low_issuance_mode() -> u128
-  write force_disable_low_issuance_mode() -> u128
-  write burn(amount: u256) -> 
-  write burn_from(from: ContractAddress, amount: u256) -> 
-  write set_buyback_order_config(config: BuybackOrderConfig) -> 
-  write set_issuance_reduction_price_x128(price: u256) -> 
-  write set_issuance_reduction_price_duration(duration: u64) -> 
-  write set_issuance_reduction_bips(bips: u128) -> 
-  write set_treasury_address(treasury_address: ContractAddress) -> 
-  write set_velords_address(velords_address: ContractAddress) -> 
-  write withdraw_erc20(token_address: ContractAddress, amount: u256) -> 
-  write withdraw_erc721(token_address: ContractAddress, token_id: u256) -> 
-  view  get_token_distribution_rate() -> u128
-  view  get_buyback_rate() -> u128
-  view  get_buyback_order_key_counter() -> u128
-  view  get_buyback_order_key_bookmark() -> u128
-  view  get_buyback_order_key_end_time(index: u128) -> u64
-  view  get_distribution_end_time() -> u64
-  view  get_distribution_initial_tick() -> i129
-  view  get_distribution_order_key() -> OrderKey
-  view  get_distribution_pool_key() -> PoolKey
-  view  get_distribution_pool_fee() -> u128
-  view  is_low_issuance_mode() -> bool
-  view  get_issuance_reduction_price_x128() -> u256
-  view  get_issuance_reduction_price_duration() -> u64
-  view  get_core_dispatcher() -> ICoreDispatcher
-  view  get_positions_dispatcher() -> IPositionsDispatcher
-  view  get_buyback_order_config() -> BuybackOrderConfig
-  view  get_pool_id() -> u256
-  view  get_position_token_id() -> u64
-  view  get_liquidity_position_id() -> u64
-  view  get_payment_token() -> ContractAddress
-  view  get_extension_address() -> ContractAddress
-  view  get_buyback_token() -> ContractAddress
-  view  get_registry_dispatcher() -> ITokenRegistryDispatcher
-  view  get_oracle_address() -> IOracleDispatcher
-  view  get_tokens_for_distribution() -> u256
-  view  get_treasury_address() -> ContractAddress
-  view  get_velords_address() -> ContractAddress
-  view  get_distribution_pool_key_hash() -> felt252
-  view  is_pool_initialized() -> bool
-  view  get_deployment_state() -> u8
-  view  get_dungeon_ticket_price_x128(duration: u64) -> u256
-  view  get_position_nft_address() -> ContractAddress
-  view  get_issuance_reduction_bips() -> u128
-  view  get_buyback_pool_key() -> PoolKey
-  view  get_buyback_pool_key_hash() -> felt252
-  view  get_unclaimed_buyback_orders_count() -> u128
-  view  is_token0() -> bool
-  view  get_buyback_order_key(start_time: u64, end_time: u64) -> OrderKey
-  view  total_supply() -> u256
   view  balance_of(account: ContractAddress) -> u256
-  view  allowance(owner: ContractAddress, spender: ContractAddress) -> u256
-  write transfer(recipient: ContractAddress, amount: u256) -> bool
-  write transfer_from(sender: ContractAddress, recipient: ContractAddress, amount: u256) -> bool
-  write approve(spender: ContractAddress, amount: u256) -> bool
+  view  owner_of(token_id: u256) -> ContractAddress
+  write safe_transfer_from(from: ContractAddress, to: ContractAddress, token_id: u256, data: felt252>) -> 
+  write transfer_from(from: ContractAddress, to: ContractAddress, token_id: u256) -> 
+  write approve(to: ContractAddress, token_id: u256) -> 
+  write set_approval_for_all(operator: ContractAddress, approved: bool) -> 
+  view  get_approved(token_id: u256) -> ContractAddress
+  view  is_approved_for_all(owner: ContractAddress, operator: ContractAddress) -> bool
+  view  supports_interface(interface_id: felt252) -> bool
   view  name() -> ByteArray
   view  symbol() -> ByteArray
-  view  decimals() -> u8
-  view  totalSupply() -> u256
+  view  token_uri(token_id: u256) -> ByteArray
   view  balanceOf(account: ContractAddress) -> u256
-  write transferFrom(sender: ContractAddress, recipient: ContractAddress, amount: u256) -> bool
+  view  ownerOf(tokenId: u256) -> ContractAddress
+  write safeTransferFrom(from: ContractAddress, to: ContractAddress, tokenId: u256, data: felt252>) -> 
+  write transferFrom(from: ContractAddress, to: ContractAddress, tokenId: u256) -> 
+  write setApprovalForAll(operator: ContractAddress, approved: bool) -> 
+  view  getApproved(tokenId: u256) -> ContractAddress
+  view  isApprovedForAll(owner: ContractAddress, operator: ContractAddress) -> bool
+  view  tokenURI(tokenId: u256) -> ByteArray
+  view  token_of_owner_by_index(owner: ContractAddress, index: u256) -> u256
+  view  start(token_id: felt252) -> u64
+  view  end(token_id: felt252) -> u64
+  view  minted_at(token_id: felt252) -> u64
+  view  schema_version(token_id: felt252) -> u8
+  view  is_soulbound(token_id: felt252) -> bool
+  view  paymaster(token_id: felt252) -> bool
+  view  tx_hash(token_id: felt252) -> u16
+  view  mint_nonce(token_id: felt252) -> u16
+  view  minted_at_block_number(token_id: felt252) -> u32
+  view  minted_at_timestamp(token_id: felt252) -> u64
+  view  start_delay(token_id: felt252) -> u64
+  view  play_duration(token_id: felt252) -> u64
+  view  settings_id(token_id: felt252) -> u32
+  view  objective_id(token_id: felt252) -> u32
+  view  minted_by(token_id: felt252) -> u32
+  view  minter_data(token_id: felt252) -> u128
+  view  lifecycle(token_id: felt252) -> Lifecycle
+  view  is_lifecycle_open(token_id: felt252) -> bool
+  view  minter_address_by_token_id(token_id: felt252) -> ContractAddress
+  view  minter_address_by_id(minter_id: u32) -> ContractAddress
+  view  token_data(token_id: felt252) -> GameTokenData
+  write mint(recipient_address: ContractAddress, params: MintParams) -> felt252
+  write mint_batch(recipient_addresses: ContractAddress>, params: MintParams) -> felt252>
+  view  royalty_info(token_id: u256, sale_price: u256) -> u256)
+  view  default_royalty() -> u128)
+  view  token_royalty(token_id: u256) -> u128)
+  write set_default_royalty(receiver: ContractAddress, fee_numerator: u128) -> 
+  write delete_default_royalty() -> 
+  write set_token_royalty(token_id: u256, receiver: ContractAddress, fee_numerator: u128) -> 
+  write reset_token_royalty(token_id: u256) -> 
   view  owner() -> ContractAddress
   write transfer_ownership(new_owner: ContractAddress) -> 
   write renounce_ownership() -> 
   write transferOwnership(newOwner: ContractAddress) -> 
   write renounceOwnership() -> 
-  symbol = [0x0, 0x445449434b4554, 0x7]
-  decimals = [0x12]
-  balance_of:0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82 = [0x289e697bfb9f987215, 0x0]
-  balance_of:0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452 = [0x0, 0x0]
-== bot v2-leaderboard --ids 1-2 --levels 1204,500
+  get_entropy_block_offset = [0x0]
+  settings_count = [0x5]
+  balance_of:0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82 = [0x0, 0x0]
+== bot dungeon-settings --ids 2 --core 0x03cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts v2-leaderboard --ids 1-2 --levels 1204,500
+> node --import tsx src/cli.ts dungeon-settings --ids 2 --core 0x03cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2
 
-minter 1: 7 game(s); top: {"tokenId":"0x020000000000000000000100000000000000000001c7af5a00f872e6001c3c61","owner":"0x07b32f91c0d9c8a8b4e612ff3c21f58aee2d58f5d562c2d0171bdbcf687856de","sc
-    {"tokenId":"0x020000000000000000000100000000000000000001c7bcd600fa30ce000c94a1","owner":"0x01a8eff8d0d8f4a13b19d8344963fd1718602bc6cbd474e12662f0d53063a314","sc
-    {"tokenId":"0x020000000000000000000100000000000000000001c7ae3c00f84dc2001b2141","owner":"0x03c0f67740e3fe298a52fe75dd24b4981217406f133e0835331379731b67dc92","sc
-    {"tokenId":"0x020000000000000000000100000000000000000001c7bd8900fa487900148981","owner":"0x043d9847de514744a4b12cf60c6d611f2a224d29ea71b444da2000b72f0726ea","sc
-    {"tokenId":"0x020000000000000000000100000000000000000001c7bd0600fa371c000a2141","owner":"0x01a8eff8d0d8f4a13b19d8344963fd1718602bc6cbd474e12662f0d53063a314","sc
-    {"tokenId":"0x020000000000000000000100000000000000000001c797cc00f55ca50007e3e1","owner":"0x0689701974d95364aad9c2306bc322a40a27fb775b0c97733fd0e36e900b1878","sc
-    {"tokenId":"0x020000000000000000000100000000000000000001c7bd8300fa47b40001d7a1","owner":"0x01a8eff8d0d8f4a13b19d8344963fd1718602bc6cbd474e12662f0d53063a314","sc
-  rank of scores 1204, 500: {"500":{"score":500,"rank":1,"total":2},"1204":{"score":1204,"rank":1,"total":2}}
-minter 2: 3 game(s); top: {"tokenId":"0x0000000000000010000002000000000000ae000001c79d7800f61377000c54e1","owner":"0x077b8ed8356a7c1f0903fc4ba6e15f9b09cf437ce04f21b2cbf32dc2790183d0","sc
-    {"tokenId":"0x000000000000001000000200000000000088400001c79ea600f63a0700126441","owner":"0x077b8ed8356a7c1f0903fc4ba6e15f9b09cf437ce04f21b2cbf32dc2790183d0","sc
-    {"tokenId":"0x00000000000000100000020000000000007bc00001c79f0a00f64714000c9d01","owner":"0x077b8ed8356a7c1f0903fc4ba6e15f9b09cf437ce04f21b2cbf32dc2790183d0","sc
-  rank of scores 1204, 500: {"500":{"score":500,"rank":1,"total":3},"1204":{"score":1204,"rank":1,"total":3}}
+settings #2: {"details":{"name":"Beast Mode","description":"Beast Mode Settings","settings":[{"name":"433321119326202570340158875351413864","value":"3223600"},{"name":"100890435121534990691620944","value":"48"},{"name":"6611955556124917149965787032676","value":"13360"},{"name":"28398132876162011649813448929350859060328","value":"48"},{"name":"7269922016297474982351965145594107771057273","value":"48"},{"name":"
+saved botdata/data/dungeon-settings.json (1 settings, core 0x03cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2)
