@@ -1,6 +1,6 @@
 {
  "address": "0x0368066825ff8c7ed2b2e73ff513ebd9dc6e41afcbbf853bcf2f793a67a0c264",
- "updated": "2026-11-09T09:35:33.942Z",
+ "updated": "2026-11-09T09:36:32.193Z",
  "classHash": "0x04268add2e2e0d81b2e586fb5a386705751a014e42adb1899151b52a44a6152c",
  "functions": [
   {
@@ -589,5 +589,27 @@
    "state": "external"
   }
  ],
- "calls": {}
+ "calls": {
+  "cost_to_play": [
+   "0xde0b6b3a7640000"
+  ],
+  "payment_token": {
+   "error": "RPC: starknet_call with params {\n  \"request\": {\n    \"contract_address\": \"0x0368066825ff8c7ed2b2e73ff513ebd9dc6e41afcbbf853bcf2f793a67a0c264\",\n    \"entry_point_selector\": \"0x1416d8cf43b04bfba8867b61673fe8e876e2704f2d18cf409245b3497016a71\",\n    \"calldata\": []\n  },\n  \"block_id\": \"latest\"\n}\n\n      -3201"
+  },
+  "is_closed": [
+   "0x0"
+  ],
+  "settings_id": [
+   "0x8"
+  ],
+  "minter_id": [
+   "0x0"
+  ],
+  "opening_time": [
+   "0x6ad0f959"
+  ],
+  "get_game_core_address": [
+   "0x11afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b"
+  ]
+ }
 }

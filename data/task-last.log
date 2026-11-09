@@ -1,26 +1,7 @@
-== bot frontend --call beastmode --call beastModeV2 --call ticket
+== bot contract --address 0x0368066825ff8c7ed2b2e73ff513ebd9dc6e41afcbbf853bcf2f793a67a0c264 --call cost_to_play --call payment_token --call is_closed --call settings_id --call minter_id --call opening_time --call get_game_core_address
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts frontend --call beastmode --call beastModeV2 --call ticket
-
-downloaded 348 files, 16.0 MB into /tmp/lsfront-1794216892467
-69 snippet(s) for beastmode, beastModeV2, ticket -> frontend/snippets.json
-10 dungeon configs on lootsurvivor.io, NEW: karats, pvp, tournaments
-  trials                   Trials                     online       Free
-  beastmode                Beast Mode                 online       1 Ticket settings=Ao minter=ko @jo.dungeon
-  ronke-casino             Ronke Casino               Fe?`online`:`coming_soon Free · 3 days settings=Xe minter=We sponsored @Ee
-  karats                   Karats                     online       Free settings=Go minter=qo @Jo
-  lootbag                  Loot Bag                   closed       Loot Bag settings=1 minter=13 @Cr.lootDungeon
-  pvp                      PvP Dungeons               online       Free
-  tournaments              Tournaments                Ug.ready?`online`:`coming_soon  minter=Ug.minterId @Ug.budokanAddress
-  norwich-games-festival   Norwich Games Festival     online       Free @0x04253e24220629b737512a24cb3172fc381db7be7a697d5af358ff21ef1172be
-  blockhash                Blockhash                  closed       Free settings=0
-  unknown                  Unknown Dungeon            offline       @0x04253e24220629b737512a24cb3172fc381db7be7a697d5af358ff21ef1172be
-Ronke dungeons: ronke-casino (Ronke Casino)
-== bot contract --address 0x0368066825ff8c7ed2b2e73ff513ebd9dc6e41afcbbf853bcf2f793a67a0c264 --address 0x0539d24dfdaa2866d975fa93db501b971c08786f2c88e719800be39903e43bbc
-
-> loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts contract --address 0x0368066825ff8c7ed2b2e73ff513ebd9dc6e41afcbbf853bcf2f793a67a0c264 --address 0x0539d24dfdaa2866d975fa93db501b971c08786f2c88e719800be39903e43bbc
+> node --import tsx src/cli.ts contract --address 0x0368066825ff8c7ed2b2e73ff513ebd9dc6e41afcbbf853bcf2f793a67a0c264 --call cost_to_play --call payment_token --call is_closed --call settings_id --call minter_id --call opening_time --call get_game_core_address
 
 0x0368066825ff8c7ed2b2e73ff513ebd9dc6e41afcbbf853bcf2f793a67a0c264 class 0x04268add2e2e0d81b2e586fb5a386705751a014e42adb1899151b52a44a6152c: 43 functions
   write new_game(payment_type: PaymentType, to: ContractAddress, soulbound: bool) -> felt252
@@ -66,36 +47,48 @@ Ronke dungeons: ronke-casino (Ronke Casino)
   write renounce_ownership() -> 
   write transferOwnership(newOwner: ContractAddress) -> 
   write renounceOwnership() -> 
-0x0539d24dfdaa2866d975fa93db501b971c08786f2c88e719800be39903e43bbc class 0x05c949a9b5d1a34d3766689065764f7b5878ee62cd5cdb480315e92fc137cd53: 32 functions
-  write upgrade(new_class_hash: ClassHash) -> 
-  write buy_game(payment_type: PaymentType, player_name: felt252>, to: ContractAddress, soulbound: bool) -> felt252
-  write buy_game_with_salt(payment_type: PaymentType, player_name: felt252>, to: ContractAddress, soulbound: bool, salt: u16) -> felt252
-  view  payment_token() -> ContractAddress
-  view  cost_to_play() -> u128
-  view  settings_id() -> u32>
-  view  start_time() -> u64>
-  view  expiration_time() -> u64>
-  view  get_golden_pass(golden_pass_address: ContractAddress) -> GoldenPass>
-  view  golden_pass_last_used(golden_pass_address: ContractAddress, token_id: u128) -> u64
-  view  is_golden_pass_usable(golden_pass_address: ContractAddress, token_id: u128) -> bool
-  view  ticket_receiver_address() -> ContractAddress
-  view  opening_time() -> u64
-  view  is_closed() -> bool
-  view  owner() -> ContractAddress
-  write transfer_ownership(new_owner: ContractAddress) -> 
-  write renounce_ownership() -> 
-  write claim_beast(adventurer_id: felt252, beast_id: u8, prefix: u8, suffix: u8) -> u256
-  write claim_jackpot(token_id: u64) -> 
-  write withdraw_funds(token_address: ContractAddress, amount: u256) -> 
-  view  get_game_core_address() -> ContractAddress
-  view  get_game_token_address() -> ContractAddress
-  view  get_beasts_nft_address() -> ContractAddress
-  view  jackpot_claimed(token_id: u64) -> bool
-  view  dungeon_opening_time() -> u64
-  write update_opening_time(new_opening_time: u64) -> 
-  write update_payment_token(new_payment_token: ContractAddress) -> 
-  write update_ticket_receiver_address(new_ticket_receiver_address: ContractAddress) -> 
-  write update_settings_id(new_settings_id: u32>) -> 
-  write update_cost_to_play(new_cost_to_play: u128) -> 
-  write open_dungeon() -> 
+  cost_to_play = [0xde0b6b3a7640000]
+  payment_token failed: RPC: starknet_call with params {
+  "request": {
+    "contract_address": "0x0368066825ff8c7ed2b2e73ff513ebd9dc6e41afcbbf853bcf2f793a67a0c264",
+    "entry_point_selector": "0x1416d8cf43b04bfba8867b61673
+  is_closed = [0x0]
+  settings_id = [0x8]
+  minter_id = [0x0]
+  opening_time = [0x6ad0f959]
+  get_game_core_address = [0x11afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b]
+== bot contract --address 0x00d042acfc0160b6d725281eca1fb856c3e08ed46fbc20405b4d32d5f3b8ac02 --call is_closed --call settings_id
+
+> loot-survivor-bot@1.0.0 bot
+> node --import tsx src/cli.ts contract --address 0x00d042acfc0160b6d725281eca1fb856c3e08ed46fbc20405b4d32d5f3b8ac02 --call is_closed --call settings_id
+
+0x00d042acfc0160b6d725281eca1fb856c3e08ed46fbc20405b4d32d5f3b8ac02 class 0x013b2223aa773da7496f693bfc84ba196333a61eaf7f944c80f369a9bb377c5d: 8 functions
+  write enter_dungeon() -> felt252
+  write set_settings_id(settings_id: u32) -> 
   write close_dungeon() -> 
+  write set_game_core_address(game_core_address: ContractAddress) -> 
+  view  settings_id() -> u32
+  view  is_closed() -> bool
+  view  game_core_address() -> ContractAddress
+  view  owner() -> ContractAddress
+  is_closed = [0x0]
+  settings_id = [0x0]
+== bot frontend --call VITE_PUBLIC_BEAST_MODE_TICKET_ADDRESS --call buyTicket --call ticket_price
+
+> loot-survivor-bot@1.0.0 bot
+> node --import tsx src/cli.ts frontend --call VITE_PUBLIC_BEAST_MODE_TICKET_ADDRESS --call buyTicket --call ticket_price
+
+downloaded 348 files, 16.0 MB into /tmp/lsfront-1794216998382
+1 snippet(s) for VITE_PUBLIC_BEAST_MODE_TICKET_ADDRESS, buyTicket, ticket_price -> frontend/snippets.json
+10 dungeon configs on lootsurvivor.io
+  trials                   Trials                     online       Free
+  beastmode                Beast Mode                 online       1 Ticket settings=Ao minter=ko @jo.dungeon
+  ronke-casino             Ronke Casino               Fe?`online`:`coming_soon Free · 3 days settings=Xe minter=We sponsored @Ee
+  karats                   Karats                     online       Free settings=Go minter=qo @Jo
+  lootbag                  Loot Bag                   closed       Loot Bag settings=1 minter=13 @Cr.lootDungeon
+  pvp                      PvP Dungeons               online       Free
+  tournaments              Tournaments                Ug.ready?`online`:`coming_soon  minter=Ug.minterId @Ug.budokanAddress
+  norwich-games-festival   Norwich Games Festival     online       Free @0x04253e24220629b737512a24cb3172fc381db7be7a697d5af358ff21ef1172be
+  blockhash                Blockhash                  closed       Free settings=0
+  unknown                  Unknown Dungeon            offline       @0x04253e24220629b737512a24cb3172fc381db7be7a697d5af358ff21ef1172be
+Ronke dungeons: ronke-casino (Ronke Casino)
