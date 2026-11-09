@@ -79,6 +79,14 @@ extension valid_entry(0x341263a7a0fda541d57b4de1365017066badee008d5536a8adbb14c9
 extension should_ban(0x341263a7a0fda541d57b4de1365017066badee008d5536a8adbb14c9292be57,0x0,0x8,0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452,0x0): 0x0
 extension entries_left(0x341263a7a0fda541d57b4de1365017066badee008d5536a8adbb14c9292be57,0x0,0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452,0x0): 0x0,0x0
 extension supports_interface(0x8): 0x0
+allowlist: allowlist tree 26: proof of 2 felt(s) accepted, 9 entries left
+extension get_context_tree(budokan, 8): 0x1a
+merkle GET trees/8: HTTP 200 {"id":8,"name":"Super DM unlimited allowlist 2","description":"Single-address allowlist with i32-max entry allowance (effectively unlimited, proof-API-safe)","root":"0x071c6382cfb4eaaf3e2f3b5e85eabc35dc86a48eb6c705bb85c7d26ad1fd00be","entryCount":1,"createdAt":"2026-07-23T13:21:18.004Z"}
+merkle GET trees/8/proof/0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452: HTTP 404 {"error":"Address not found in tree"}
+merkle GET trees/26: HTTP 200 {"id":26,"name":"Daily table d1 #3","description":"Daily tables campaign","root":"0x034f165ee7e84facc54b4b680d6d73e30f346f2c4a1a1fe3fe20d3ae3b6adc54","entryCount":3,"createdAt":"2026-11-09T14:01:24.038Z"}
+merkle GET trees/26/proof/0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452: HTTP 200 {"address":"0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452","count":10,"proof":["0x05993cb5f491bd6e99a87f43a62c6b7e7219ccf33337006525fa2137207e7774"],"qualification":["0xa","0x05993cb5f491bd6e99a87f43a62c6b7e7219ccf33337006525fa2137207e7774"]}
+simulate enter_tournament(player Some(account), qualification Some(Extension(proof 2))): OK result [] fee {"l1_data_gas_consumed":"0x440","l1_data_gas_price":"0x31858b30fa","l1_gas_consumed":"0x0","l1_gas_price":"0x491be47a54f7","l2_gas_consumed":"0x60fee7","l2_gas_price":"0x52e7ce19d","overall_fee":"0x1f76a1904f9812b","unit":"FRI"}
+simulate enter_tournament(player None, qualification Some(Extension(proof 2))): OK result [] fee {"l1_data_gas_consumed":"0x440","l1_data_gas_price":"0x31858b30fa","l1_gas_consumed":"0x0","l1_gas_price":"0x491be47a54f7","l2_gas_consumed":"0x60e879","l2_gas_price":"0x52e7ce19d","overall_fee":"0x1f6f5e04fed11b5","unit":"FRI"}
 simulate enter_tournament(player Some(account), qualification None): REVERTED Transaction execution has failed:
 0: Error in the called contract (contract address: 0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452, class hash: 0x05b73fb61b1d43327bf6bc8eb5ba1f83ae5ff8a798edcb575a04e6d6f365aed7, selector: 0x015d40a3d6ca2ac30f4031e42be28da9b056fef9bb7357ac5e85627ee876e5ad):
 Execution failed. Failure reason:
@@ -109,22 +117,3 @@ Error in contract (contract address: 0x0341263a7a0fda541d57b4de1365017066badee00
 Error in contract (contract address: 0x0570d41b66f0eea3c342d570e456e51194817b8eb563dc580c63c2f3d6e505ec, class hash: 0x046e6592649093cb8f3c397ccf38a75c1dbc438b1bfa045d45d41d26ed852af3, selector: 0x039c51cf638fac3385dad81b9cf839b7e93dc42a23ea2683ae62421df9cb1a45):
 "MerkleValidator: qualification too short".
  || 
-== bot frontend --call entry_limit --call entryLimit --call runsLeft
-
-> loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts frontend --call entry_limit --call entryLimit --call runsLeft
-
-downloaded 348 files, 16.0 MB into /tmp/lsfront-1794242193992
-6 snippet(s) for entry_limit, entryLimit, runsLeft -> frontend/snippets.json
-10 dungeon configs on lootsurvivor.io
-  trials                   Trials                     online       Free
-  beastmode                Beast Mode                 online       1 Ticket settings=Po minter=No @Fo.dungeon
-  ronke-casino             Ronke Casino               Fe?`online`:`coming_soon Free · 3 days settings=Xe minter=We sponsored @Ee
-  karats                   Karats                     online       Free settings=Yo minter=Zo @Qo
-  lootbag                  Loot Bag                   closed       Loot Bag settings=1 minter=13 @Xr.lootDungeon
-  pvp                      PvP Dungeons               online       Free
-  tournaments              Tournaments                zg.ready?`online`:`coming_soon  minter=zg.minterId @zg.budokanAddress
-  norwich-games-festival   Norwich Games Festival     online       Free @0x04253e24220629b737512a24cb3172fc381db7be7a697d5af358ff21ef1172be
-  blockhash                Blockhash                  closed       Free settings=0
-  unknown                  Unknown Dungeon            offline       @0x04253e24220629b737512a24cb3172fc381db7be7a697d5af358ff21ef1172be
-Ronke dungeons: ronke-casino (Ronke Casino)
