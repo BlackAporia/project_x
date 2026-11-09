@@ -1,24 +1,33 @@
 {
- "updated": "2026-11-09T11:46:26.375Z",
+ "updated": "2026-11-09T16:13:19.600Z",
  "address": "0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452",
- "tables": {},
+ "tables": {
+  "8": {
+   "tournamentId": "8",
+   "runs": [],
+   "name": "Daily table d1 #3"
+  }
+ },
  "status": {
   "eligible": true,
   "alertsLinked": true,
   "campaign": {
    "start": 1794232800,
    "end": 1794837600,
-   "day": null
+   "day": 0
   },
-  "table": null,
+  "table": {
+   "name": "Daily table d1 #3",
+   "tournamentId": "8"
+  },
   "benched": false,
   "requirements": {
    "phoneRequired": true,
    "alertsPhone": true,
-   "xLinked": false,
-   "xFollow": false,
+   "xLinked": true,
+   "xFollow": true,
    "xLike": false,
-   "xRepost": false
+   "xRepost": true
   },
   "seatable": true,
   "xLikePostId": "2119067400746471796",
@@ -27,6 +36,13 @@
    "engage": 1794405600
   },
   "xGate": "play",
-  "week": []
+  "week": [
+   {
+    "day": 1,
+    "tournamentId": "8",
+    "played": true,
+    "won": null
+   }
+  ]
  }
 }
