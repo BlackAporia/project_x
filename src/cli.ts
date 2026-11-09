@@ -25,6 +25,7 @@ const COMMANDS: Record<string, string> = {
   ronke: 'Ronke Casino daily free games: status for the bot account, --claim to claim today\'s games',
   reach: 'Probability of reaching deep levels (multilevel splitting) for one or more policies (--policy a.json,b.json)',
   contract: 'Inspect live mainnet contracts: ABI and view calls (--address 0x.. --call name:arg,arg)',
+  pvp: 'PvP Dungeons with the invited Game Account: submit/claim earlier tables, play today\'s table (--live, --max-games runs, --minutes)',
   'http-get': 'GET public JSON endpoints and print status and body (--address url, repeatable)',
   'rpc-probe': 'Raw answers of the RPC endpoints (chainId, specVersion, Cartridge paymaster) to see which still speak JSON-RPC',
   'v2-dryrun': 'Dry-run the bot\'s next move in a game and print why the core would reject it (--game id,id)',
@@ -259,6 +260,16 @@ async function main(): Promise<void> {
       const { runContractCommand } = await import('./commands/contract.ts');
       const list = (v: unknown) => (Array.isArray(v) ? v : typeof v === 'string' ? [v] : []).flatMap((x) => String(x).split(/\s+/)).filter(Boolean);
       await runContractCommand({ addresses: list(values.address), calls: list(values.call), dataDir: str(values.data, process.env.BOT_DATA_DIR ?? 'site/data') });
+      break;
+    }
+    case 'pvp': {
+      const { runPvpCommand } = await import('./commands/pvp.ts');
+      await runPvpCommand({
+        live: values.live === true || process.env.MAINNET_LIVE === 'true',
+        dataDir: str(values.data, process.env.BOT_DATA_DIR ?? 'site/data'),
+        maxRuns: num(values['max-games'], 10),
+        minutes: num(values.minutes, 240),
+      });
       break;
     }
     case 'http-get': {

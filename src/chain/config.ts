@@ -35,6 +35,16 @@ export const MAINNET = {
     settingsId: Number(env('BEAST_MODE_SETTINGS_ID', '2')),
     minterId: Number(env('BEAST_MODE_MINTER_ID', '1')),
   },
+  /**
+   * PvP Dungeons (lootsurvivor.io/pvp): daily Budokan tournaments of 3 invited players; the table comes from the PvP
+   * API, entries need the table's merkle allowlist proof
+   */
+  pvp: {
+    api: env('PVP_API_URL', 'https://budokan-bots-production.up.railway.app'),
+    budokan: env('BUDOKAN_ADDRESS', '0x0341263a7a0fda541d57b4de1365017066badee008d5536a8adbb14c9292be57'),
+    merkleApi: env('MERKLE_API_URL', 'https://merkle-api.up.railway.app'),
+    merkleValidator: env('MERKLE_VALIDATOR_ADDRESS', '0x0570d41b66f0eea3c342d570e456e51194817b8eb563dc580c63c2f3d6e505ec'),
+  },
   /** main dungeon (Loot Bag entry) */
   lootDungeon: env('LOOT_DUNGEON_ADDRESS', '0x02dab28ac4edaae7495174f9dd7668eece14b1e50ce170ff8af2a0e215f48875'),
   gameCoreV2Legacy: env('GAME_CORE_V2_LEGACY_ADDRESS', '0x06179f1c747672c08861da1df3b167eb337cba403778345db2aa9840cc3deb86'),

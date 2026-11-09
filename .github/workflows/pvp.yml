@@ -1,0 +1,54 @@
+name: PvP
+
+# lootsurvivor.io PvP Dungeons, played autonomously with the invited Game Account (secret GAME_SESSION_LINK, created
+# on the website with the wallet that signed up). Tables are seated daily at 14:00 UTC and run 24 h; each run:
+#   - submits the best run of the table that just closed (4 h window) and records the result
+#   - plays today's table: up to 10 runs, each settled on chain
+# The second daily run retries anything the first missed (entering stops at the table's run limit).
+on:
+  schedule:
+    - cron: '17 14 * * *'
+    - cron: '47 16 * * *'
+  workflow_dispatch:
+    inputs:
+      runs:
+        description: runs to play on today's table (the table allows 10)
+        default: '10'
+      live:
+        description: send transactions (true) or only read the table status (false)
+        default: 'true'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pvp
+  cancel-in-progress: false
+
+env:
+  BOT_DATA_DIR: botdata/data
+
+jobs:
+  pvp:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: scripts/data-branch.sh checkout
+      - name: PvP table
+        continue-on-error: true
+        env:
+          GAME_SESSION_LINK: ${{ secrets.GAME_SESSION_LINK }}
+          MAINNET_LIVE: ${{ github.event_name == 'schedule' || inputs.live == 'true' }}
+        run: scripts/live-push.sh npm run bot -- pvp --max-games "${{ inputs.runs || '10' }}" --minutes 240
+      - name: Summaries
+        if: always()
+        run: npm run site -- --data botdata/data
+      - name: Push data
+        if: always()
+        run: scripts/data-branch.sh push "pvp ${{ github.run_id }}"

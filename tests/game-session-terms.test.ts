@@ -69,7 +69,7 @@ test('CreateGameSession digest matches viem and the owner signature round-trips'
 
 test('fee caps follow the STRK price and stay within the frontend bounds', () => {
   const at12c = feeCaps(120_000n);
-  assert.equal(at12c.maxFeePerTxFri, (2500n * 10n ** 18n) / 120_000n);
+  assert.equal(at12c.maxFeePerTxFri, (SELF_PAID.normalCapMicroUsd * 10n ** 18n) / 120_000n);
   assert.equal(feeCaps(1n).maxFeePerTxFri, SELF_PAID.normalBounds[1]);
   assert.equal(feeCaps(10n ** 12n).maxExceptionFeePerTxFri, SELF_PAID.exceptionBounds[0]);
 });

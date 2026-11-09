@@ -261,6 +261,11 @@ export class V2Chain {
     ]);
   }
 
+  /** Any entry that mints a game on this core (e.g. Budokan enter_tournament): returns the new game id. */
+  async enterWith(executor: Executor, calls: Array<{ contractAddress: string; entrypoint: string; calldata: string[] }>): Promise<bigint> {
+    return this.mintWith(executor, calls);
+  }
+
   /** Send the calls that mint a game to the caller and return its id from the core's ERC721 Transfer (mint) event. */
   private async mintWith(executor: Executor, calls: Array<{ contractAddress: string; entrypoint: string; calldata: string[] }>): Promise<bigint> {
     const { transaction_hash } = await executor.execute(calls);

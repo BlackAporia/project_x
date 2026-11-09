@@ -124,10 +124,22 @@
       {
         "target": "0x011afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b",
         "method": "verify_game"
+      },
+      {
+        "target": "0x0341263a7a0fda541d57b4de1365017066badee008d5536a8adbb14c9292be57",
+        "method": "enter_tournament"
+      },
+      {
+        "target": "0x0341263a7a0fda541d57b4de1365017066badee008d5536a8adbb14c9292be57",
+        "method": "submit_score"
+      },
+      {
+        "target": "0x0341263a7a0fda541d57b4de1365017066badee008d5536a8adbb14c9292be57",
+        "method": "claim_reward"
       }
     ],
     "maxSessionSeconds": 7772340,
-    "maxSelfPaidTxs": "2000",
+    "maxSelfPaidTxs": "6000",
     "maxFeeExceptions": "25",
     "rpcUrls": [
       "https://rpc.provable.games/rpc",

@@ -16,10 +16,12 @@ export const GAME_ACCOUNT_SALT = '0x028c0d654fe3920e7ad3c57ec34c195476b373ecd153
 export const SN_MAIN = '0x534e5f4d41494e';
 export const MAX_SESSION_SECONDS = 90 * 86400 - 3600 - 60;
 export const SELF_PAID = {
-  maxSelfPaidTxs: 2000n,
+  // PvP: 10 runs a day of ~50 moves each, paid by the account when not sponsored; the frontend's 2000 x $0.0025 left
+  // most self-paid moves (fee bound ~$0.003) on the 25 exceptions
+  maxSelfPaidTxs: 6000n,
   maxFeeExceptions: 25n,
   /** fee caps in micro-USD, converted to STRK (fri) at approval time */
-  normalCapMicroUsd: 2500n,
+  normalCapMicroUsd: 10000n,
   exceptionCapMicroUsd: 250000n,
   normalBounds: [10n ** 14n, 10n ** 18n] as const,
   exceptionBounds: [10n ** 16n, 10n ** 20n] as const,
@@ -63,12 +65,20 @@ export function gameAccountAddress(owner: string): string {
 }
 
 /** The permissions lootsurvivor.io asks for: enter the main dungeon and Proving Grounds, play and settle games. */
-export function defaultPermissions(p: { lootDungeon: string; provingGrounds?: string; gameCore: string }): Permission[] {
+export function defaultPermissions(p: { lootDungeon: string; provingGrounds?: string; gameCore: string; budokan?: string }): Permission[] {
   return [
     { target: p.lootDungeon, method: 'enter_dungeon' },
     ...(p.provingGrounds ? [{ target: p.provingGrounds, method: 'enter_dungeon' }] : []),
     { target: p.gameCore, method: 'commit_actions' },
     { target: p.gameCore, method: 'verify_game' },
+    // PvP Dungeons / tournaments: enter a table, submit the best run, claim the prize
+    ...(p.budokan
+      ? [
+          { target: p.budokan, method: 'enter_tournament' },
+          { target: p.budokan, method: 'submit_score' },
+          { target: p.budokan, method: 'claim_reward' },
+        ]
+      : []),
   ];
 }
 

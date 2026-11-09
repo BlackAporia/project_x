@@ -25,7 +25,7 @@ export function siteConfig() {
       salt: GAME_ACCOUNT_SALT,
       secret: 'GAME_SESSION_LINK',
       // what the owner approves: the same terms lootsurvivor.io asks for (its session manager / Share is off)
-      permissions: defaultPermissions({ lootDungeon: MAINNET.lootDungeon, provingGrounds: MAINNET.provingGrounds, gameCore: MAINNET.gameCoreV2 }),
+      permissions: defaultPermissions({ lootDungeon: MAINNET.lootDungeon, provingGrounds: MAINNET.provingGrounds, gameCore: MAINNET.gameCoreV2, budokan: MAINNET.pvp.budokan }),
       maxSessionSeconds: MAX_SESSION_SECONDS,
       maxSelfPaidTxs: SELF_PAID.maxSelfPaidTxs.toString(),
       maxFeeExceptions: SELF_PAID.maxFeeExceptions.toString(),
