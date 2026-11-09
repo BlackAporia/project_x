@@ -6,6 +6,7 @@
 //   - the PvP / entry APIs for the account
 import { MAINNET } from '../chain/config.ts';
 import { connectProvider, decodeFelts } from '../chain/rpc.ts';
+import { resolveQualification } from './pvp.ts';
 
 const hex = (v: bigint | number | string) => '0x' + BigInt(v).toString(16);
 
@@ -107,6 +108,21 @@ export async function runPvpCheckCommand(opts: { tournamentId?: string; address?
   // 4) enter_tournament simulated from the account with each plausible qualification
   const qp = types.find((t) => t.type === 'enum' && /QualificationProof/.test(t.name));
   const variants: Array<{ label: string; q: string[] }> = [{ label: 'None', q: ['0x1'] }];
+  const allow = await resolveQualification(call, T, address).catch((e: Error) => ({ required: true, qualification: null, note: e.message }) as Awaited<ReturnType<typeof resolveQualification>>);
+  console.log(`allowlist: ${allow.note}`);
+  if (allow.qualification) variants.unshift({ label: `Some(Extension(proof ${allow.qualification.length}))`, q: ['0x0', '0x1', hex(allow.qualification.length), ...allow.qualification] });
+  const ctxTree = await call(ext, 'get_context_tree', [budokan, T]).catch(() => [] as bigint[]);
+  show(`extension get_context_tree(budokan, ${tid})`, ctxTree);
+  for (const id of [...new Set([T, ...ctxTree.filter((x) => x > 0n)])]) {
+    for (const path of [`trees/${id}`, `trees/${id}/proof/${address.toLowerCase()}`]) {
+      try {
+        const r = await fetch(`${MAINNET.pvp.merkleApi}/${path}`, { headers: { accept: 'application/json' } });
+        console.log(`merkle GET ${path}: HTTP ${r.status} ${(await r.text()).slice(0, 600)}`);
+      } catch (e) {
+        console.log(`merkle GET ${path}: ${(e as Error).message}`);
+      }
+    }
+  }
   for (const [i, v] of ((qp?.variants ?? []) as Array<{ name: string; type: string }>).entries()) {
     if (/Span|Array/.test(v.type)) variants.push({ label: `Some(${v.name}([]))`, q: ['0x0', hex(i), '0x0'] });
   }

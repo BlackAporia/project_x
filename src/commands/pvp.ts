@@ -55,6 +55,49 @@ async function merkleProof(treeId: bigint, address: string): Promise<string[] | 
   return null;
 }
 
+type ViewCall = (target: string, entrypoint: string, calldata?: Array<bigint | number | string>) => Promise<bigint[]>;
+
+/**
+ * The qualification enter_tournament needs for table `tid`: none without an entry requirement, else the merkle
+ * allowlist proof of `address`. The tree is config[0] when the requirement names one, else the validator's tree
+ * for (Budokan, tid); each candidate proof is checked with the validator's valid_entry before it is used.
+ */
+export async function resolveQualification(
+  call: ViewCall,
+  tid: bigint,
+  address: string,
+): Promise<{ required: boolean; qualification: string[] | null; treeId?: bigint; entriesLeft?: number; note: string }> {
+  const budokan = MAINNET.pvp.budokan;
+  const req = await call(budokan, 'get_entry_requirement', [tid]);
+  if (req.length < 2 || req[0] !== 0n) return { required: false, qualification: null, note: 'no entry requirement' };
+  if (req[2] !== 1n) return { required: true, qualification: null, note: `entry requirement is a token gate (${hex(req[3] ?? 0n)}), not supported` };
+  const validator = hex(req[3]);
+  const configLen = Number(req[4] ?? 0n);
+  const candidates: bigint[] = [];
+  if (configLen > 0) candidates.push(req[5]);
+  const ctx = await call(validator, 'get_context_tree', [budokan, tid]).then((x) => x[0]).catch(() => 0n);
+  if (ctx > 0n) candidates.push(ctx);
+  const tried: string[] = [];
+  for (const treeId of [...new Set(candidates)]) {
+    const q = await merkleProof(treeId, address).catch((e: Error) => {
+      tried.push(`tree ${treeId}: ${e.message}`);
+      return null;
+    });
+    if (!q) {
+      tried.push(`tree ${treeId}: not on the list`);
+      continue;
+    }
+    const span = [hex(q.length), ...q];
+    const valid = await call(validator, 'valid_entry', [budokan, tid, address, ...span]).then((x) => x[0] === 1n).catch(() => false);
+    const left = await call(validator, 'entries_left', [budokan, tid, address, ...span])
+      .then((x) => (x[0] === 0n ? Number(x[1]) : undefined))
+      .catch(() => undefined);
+    if (valid) return { required: true, qualification: q, treeId, entriesLeft: left, note: `allowlist tree ${treeId}: proof of ${q.length} felt(s) accepted${left !== undefined ? `, ${left} entr${left === 1 ? 'y' : 'ies'} left` : ''}` };
+    tried.push(`tree ${treeId}: proof rejected by the validator${left !== undefined ? ` (entries left ${left})` : ''}`);
+  }
+  return { required: true, qualification: null, note: `no accepted allowlist proof (${tried.join('; ') || `validator ${validator} names no tree for table ${tid}`})` };
+}
+
 export async function runPvpCommand(opts: { live: boolean; dataDir: string; maxRuns: number; minutes: number }): Promise<void> {
   const { gameSessionFromEnv, GameAccountExecutor, sessionAllows } = await import('../chain/game-account.ts');
   const gs = gameSessionFromEnv();
@@ -144,21 +187,13 @@ export async function runPvpCommand(opts: { live: boolean; dataDir: string; maxR
     return;
   }
   // entry requirement: Option<EntryRequirement{entry_limit, extension{address, config}}> =
-  // [0 (Some), limit, 1 (extension), validator, config_len, ...config]. Like the site, a merkle proof is sent only
-  // when the config names a tree (config[0]); PvP tables carry an empty config and are entered without one.
-  const req = await call(budokan, 'get_entry_requirement', [tid]);
-  const mv = BigInt(MAINNET.pvp.merkleValidator);
-  const at = req.findIndex((x) => x === mv);
-  const configLen = at >= 0 ? Number(req[at + 1] ?? 0n) : 0;
-  const treeId = configLen > 0 ? req[at + 2] : 0n;
-  let qualification: string[] | null = null;
-  if (treeId > 0n) {
-    qualification = await merkleProof(treeId, address);
-    if (!qualification) throw new Error(`${address} is not on table ${today.tournamentId}'s allowlist (tree ${treeId})`);
-    console.log(`[pvp] allowlist proof for tree ${treeId}: ${qualification.length} felt(s)`);
-  } else {
-    console.log(`[pvp] entry requirement ${req.map((x) => hex(x)).join(',')}: no allowlist tree, entering without a proof (as the site does)`);
-  }
+  // [0 (Some), limit, 1 (extension), validator, config_len, ...config]. The merkle validator wants
+  // QualificationProof::Extension(proof) from the merkle service; PvP tables keep their tree in the validator
+  // (get_context_tree), not in the config
+  const allow = await resolveQualification(call, tid, address);
+  const qualification = allow.qualification;
+  console.log(`[pvp] ${allow.note}`);
+  if (allow.required && !qualification) throw new Error(`cannot enter table ${today.tournamentId}: ${allow.note}`);
   const enterCall = (): { contractAddress: string; entrypoint: string; calldata: string[] } => ({
     contractAddress: budokan,
     entrypoint: 'enter_tournament',
@@ -181,7 +216,7 @@ export async function runPvpCommand(opts: { live: boolean; dataDir: string; maxR
   }
   if (issued.length) console.log(`[pvp] ${issued.length} unplayed run(s) already issued at this table: ${issued.join(', ')}`);
   save();
-  const runsLeft = Math.max(0, opts.maxRuns - today.runs.length);
+  const runsLeft = Math.max(0, Math.min(opts.maxRuns - today.runs.length, allow.entriesLeft ?? Infinity));
   if ((!runsLeft && !issued.length) || !opts.live) {
     console.log(`[pvp] ${opts.live ? 'all runs used' : 'dry run'}: not playing`);
     save();
