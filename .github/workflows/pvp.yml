@@ -4,11 +4,17 @@ name: PvP
 # on the website with the wallet that signed up). Tables are seated daily at 14:00 UTC and run 24 h; each run:
 #   - submits the best run of the table that just closed (4 h window) and records the result
 #   - plays today's table: up to 10 runs, each settled on chain
-# The second daily run retries anything the first missed (entering stops at the table's run limit).
+# Later runs retry anything an earlier one missed (entering stops at the table's run limit).
 on:
+  # GitHub may skip or delay a scheduled run (the first 14:17 run never started): several runs a day, each one
+  # idempotent (it only plays the runs the table still allows and submits once)
   schedule:
     - cron: '17 14 * * *'
-    - cron: '47 16 * * *'
+    - cron: '47 15 * * *'
+    - cron: '47 17 * * *'
+    - cron: '47 21 * * *'
+    - cron: '47 3 * * *'
+    - cron: '47 9 * * *'
   workflow_dispatch:
     inputs:
       runs:
