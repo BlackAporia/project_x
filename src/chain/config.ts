@@ -8,16 +8,15 @@ const list = (k: string, d: string[]) => (process.env[k] ? process.env[k]!.split
 export const MAINNET = {
   chainId: '0x534e5f4d41494e', // SN_MAIN
   rpcUrls: list('STARKNET_RPC_URLS', [
-    // lootsurvivor.io itself uses Cartridge's v0_10 endpoint; v0_9 stopped answering in November 2026
-    'https://api.cartridge.gg/x/starknet/mainnet/rpc/v0_10',
-    'https://api.cartridge.gg/x/starknet/mainnet/rpc/v0_9',
-    'https://api.cartridge.gg/x/starknet/mainnet',
+    // Nov 2026: every api.cartridge.gg RPC answers 401 Unauthorized and Lava's endpoint is discontinued (rpc-probe);
+    // lootsurvivor.io reads and relays through rpc.provable.games
+    'https://rpc.provable.games/rpc',
     'https://api.zan.top/public/starknet-mainnet/rpc/v0_10',
-    'https://rpc.starknet.lava.build',
     'https://starknet.drpc.org',
   ]),
-  /** Cartridge RPC: also serves cartridge_addExecuteOutsideTransaction (paymaster + VRF wrapping) */
-  cartridgeRpc: env('CARTRIDGE_RPC_URL', 'https://api.cartridge.gg/x/starknet/mainnet'),
+  /** RPC for the Cartridge session: also serves cartridge_addExecuteOutsideTransaction (paymaster + VRF wrapping);
+   *  Cartridge's own api.cartridge.gg RPC now requires an API key (401), lootsurvivor.io uses rpc.provable.games */
+  cartridgeRpc: env('CARTRIDGE_RPC_URL', 'https://rpc.provable.games/rpc'),
   preset: env('CARTRIDGE_PRESET', 'loot-survivor'),
   // Current Death Mountain deployment (docs.provable.games/lootsurvivor/contracts + Cartridge preset, Sep-Oct 2026)
   gameCore: env('GAME_CORE_ADDRESS', '0x023f86f5b4702f6ba114b82fb73448c58aad8f37a28b508b80bf129ee1edc405'),

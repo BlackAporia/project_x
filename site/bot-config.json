@@ -1,6 +1,6 @@
 {
   "keychainUrl": "https://x.cartridge.gg",
-  "rpcUrl": "https://api.cartridge.gg/x/starknet/mainnet",
+  "rpcUrl": "https://rpc.provable.games/rpc",
   "chainId": "0x534e5f4d41494e",
   "policies": {
     "verified": false,
@@ -130,11 +130,8 @@
     "maxSelfPaidTxs": "2000",
     "maxFeeExceptions": "25",
     "rpcUrls": [
-      "https://api.cartridge.gg/x/starknet/mainnet",
-      "https://api.cartridge.gg/x/starknet/mainnet/rpc/v0_10",
-      "https://api.cartridge.gg/x/starknet/mainnet/rpc/v0_9",
+      "https://rpc.provable.games/rpc",
       "https://api.zan.top/public/starknet-mainnet/rpc/v0_10",
-      "https://rpc.starknet.lava.build",
       "https://starknet.drpc.org"
     ],
     "selectors": {
