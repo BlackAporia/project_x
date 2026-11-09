@@ -1,26 +1,7 @@
-== bot frontend --call $6=class --call merkle-api --call MERKLE --call get_tournament
+== bot contract --address 0x0341263a7a0fda541d57b4de1365017066badee008d5536a8adbb14c9292be57 --call get_entry_requirement:8 --call max_entries:8 --call get_entry_count:8 --call current_phase:8
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts frontend --call $6=class --call merkle-api --call MERKLE --call get_tournament
-
-downloaded 348 files, 16.0 MB into /tmp/lsfront-1794224293452
-4 snippet(s) for $6=class, merkle-api, MERKLE, get_tournament -> frontend/snippets.json
-10 dungeon configs on lootsurvivor.io
-  trials                   Trials                     online       Free
-  beastmode                Beast Mode                 online       1 Ticket settings=Ao minter=ko @jo.dungeon
-  ronke-casino             Ronke Casino               Fe?`online`:`coming_soon Free · 3 days settings=Xe minter=We sponsored @Ee
-  karats                   Karats                     online       Free settings=Go minter=qo @Jo
-  lootbag                  Loot Bag                   closed       Loot Bag settings=1 minter=13 @Cr.lootDungeon
-  pvp                      PvP Dungeons               online       Free
-  tournaments              Tournaments                Ug.ready?`online`:`coming_soon  minter=Ug.minterId @Ug.budokanAddress
-  norwich-games-festival   Norwich Games Festival     online       Free @0x04253e24220629b737512a24cb3172fc381db7be7a697d5af358ff21ef1172be
-  blockhash                Blockhash                  closed       Free settings=0
-  unknown                  Unknown Dungeon            offline       @0x04253e24220629b737512a24cb3172fc381db7be7a697d5af358ff21ef1172be
-Ronke dungeons: ronke-casino (Ronke Casino)
-== bot contract --address 0x0341263a7a0fda541d57b4de1365017066badee008d5536a8adbb14c9292be57 --call game_address
-
-> loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts contract --address 0x0341263a7a0fda541d57b4de1365017066badee008d5536a8adbb14c9292be57 --call game_address
+> node --import tsx src/cli.ts contract --address 0x0341263a7a0fda541d57b4de1365017066badee008d5536a8adbb14c9292be57 --call get_entry_requirement:8 --call max_entries:8 --call get_entry_count:8 --call current_phase:8
 
 0x0341263a7a0fda541d57b4de1365017066badee008d5536a8adbb14c9292be57 class 0x011e95649b659110b112f217162e9a5f2338483d2c2d3d831b4c99af6a528433: 56 functions
   write upgrade(new_class_hash: ClassHash) -> 
@@ -79,3 +60,7 @@ Ronke dungeons: ronke-casino (Ronke Casino)
   view  get_leaderboard_length(context_id: u64) -> u32
   view  get_config(context_id: u64) -> LeaderboardStoreConfig
   view  find_position(context_id: u64, score: u64, token_id: felt252) -> u32>
+  get_entry_requirement:8 = [0x0, 0xa, 0x1, 0x570d41b66f0eea3c342d570e456e51194817b8eb563dc580c63c2f3d6e505ec, 0x0]
+  max_entries:8 = [0x1e]
+  get_entry_count:8 = [0x3]
+  current_phase:8 = [0x3]

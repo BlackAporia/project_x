@@ -1,6 +1,6 @@
 {
  "address": "0x0341263a7a0fda541d57b4de1365017066badee008d5536a8adbb14c9292be57",
- "updated": "2026-11-09T11:39:06.488Z",
+ "updated": "2026-11-09T16:14:50.633Z",
  "classHash": "0x011e95649b659110b112f217162e9a5f2338483d2c2d3d831b4c99af6a528433",
  "functions": [
   {
@@ -869,5 +869,22 @@
    "state": "view"
   }
  ],
- "calls": {}
+ "calls": {
+  "get_entry_requirement:8": [
+   "0x0",
+   "0xa",
+   "0x1",
+   "0x570d41b66f0eea3c342d570e456e51194817b8eb563dc580c63c2f3d6e505ec",
+   "0x0"
+  ],
+  "max_entries:8": [
+   "0x1e"
+  ],
+  "get_entry_count:8": [
+   "0x3"
+  ],
+  "current_phase:8": [
+   "0x3"
+  ]
+ }
 }
