@@ -1,0 +1,873 @@
+{
+ "address": "0x0341263a7a0fda541d57b4de1365017066badee008d5536a8adbb14c9292be57",
+ "updated": "2026-11-09T11:39:06.488Z",
+ "classHash": "0x011e95649b659110b112f217162e9a5f2338483d2c2d3d831b4c99af6a528433",
+ "functions": [
+  {
+   "name": "upgrade",
+   "inputs": [
+    {
+     "name": "new_class_hash",
+     "type": "core::starknet::class_hash::ClassHash"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "schedule_limits",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "budokan_interfaces::budokan::ScheduleLimits"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "set_schedule_limits",
+   "inputs": [
+    {
+     "name": "limits",
+     "type": "budokan_interfaces::budokan::ScheduleLimits"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "min_submission_duration",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u32"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "set_min_submission_duration",
+   "inputs": [
+    {
+     "name": "seconds",
+     "type": "core::integer::u32"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "sync_supported_interfaces",
+   "inputs": [],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "set_rewards_class_hash",
+   "inputs": [
+    {
+     "name": "new_class_hash",
+     "type": "core::starknet::class_hash::ClassHash"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "rewards_class_hash",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::class_hash::ClassHash"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "set_protocol_fee_bps",
+   "inputs": [
+    {
+     "name": "bps",
+     "type": "core::integer::u16"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "set_protocol_fee_recipient",
+   "inputs": [
+    {
+     "name": "recipient",
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "protocol_fee_bps",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u16"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "protocol_fee_recipient",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "tournament_protocol_fee_bps",
+   "inputs": [
+    {
+     "name": "tournament_id",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u16"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "protocol_fee_info",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "budokan_interfaces::budokan::ProtocolFeeInfo"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "tournament_protocol_fee_info",
+   "inputs": [
+    {
+     "name": "tournament_id",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "budokan_interfaces::budokan::ProtocolFeeInfo"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "set_protocol_fee_license",
+   "inputs": [
+    {
+     "name": "license",
+     "type": "core::byte_array::ByteArray"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "has_context",
+   "inputs": [
+    {
+     "name": "game_address",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "context_details",
+   "inputs": [
+    {
+     "name": "game_address",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "game_components_interfaces::structs::metagame::GameContextDetails"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "total_tournaments",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u64"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "is_token_registered",
+   "inputs": [
+    {
+     "name": "tournament_id",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "tournament",
+   "inputs": [
+    {
+     "name": "tournament_id",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "budokan_interfaces::budokan::Tournament"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "tournament_game_address",
+   "inputs": [
+    {
+     "name": "tournament_id",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "current_phase",
+   "inputs": [
+    {
+     "name": "tournament_id",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "budokan_interfaces::budokan::Phase"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "max_entries",
+   "inputs": [
+    {
+     "name": "tournament_id",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u32"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "tournament_distribution_shares",
+   "inputs": [
+    {
+     "name": "tournament_id",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::array::Array::<core::integer::u16>"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "prize_distribution_shares",
+   "inputs": [
+    {
+     "name": "prize_id",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::array::Array::<core::integer::u16>"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "create_tournament",
+   "inputs": [
+    {
+     "name": "creator_rewards_address",
+     "type": "core::starknet::contract_address::ContractAddress"
+    },
+    {
+     "name": "metadata",
+     "type": "budokan_interfaces::budokan::Metadata"
+    },
+    {
+     "name": "schedule",
+     "type": "budokan_interfaces::budokan::Schedule"
+    },
+    {
+     "name": "game_config",
+     "type": "budokan_interfaces::budokan::GameConfig"
+    },
+    {
+     "name": "entry_fee",
+     "type": "core::option::Option::<budokan_interfaces::budokan::EntryFeeKind>"
+    },
+    {
+     "name": "entry_requirement",
+     "type": "core::option::Option::<game_components_interfaces::entry_requirement::EntryRequirement>"
+    },
+    {
+     "name": "leaderboard_config",
+     "type": "budokan_interfaces::budokan::LeaderboardConfig"
+    },
+    {
+     "name": "max_entries",
+     "type": "core::integer::u32"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "budokan_interfaces::budokan::Tournament"
+    }
+   ],
+   "state": "external"
+  },
+  {
+   "name": "enter_tournament",
+   "inputs": [
+    {
+     "name": "tournament_id",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "player_address",
+     "type": "core::option::Option::<core::starknet::contract_address::ContractAddress>"
+    },
+    {
+     "name": "qualifier",
+     "type": "core::option::Option::<core::starknet::contract_address::ContractAddress>"
+    },
+    {
+     "name": "qualification",
+     "type": "core::option::Option::<game_components_interfaces::entry_requirement::QualificationProof>"
+    },
+    {
+     "name": "entry_fee_pay_params",
+     "type": "core::option::Option::<core::array::Span::<core::felt252>>"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "(core::felt252, core::integer::u32)"
+    }
+   ],
+   "state": "external"
+  },
+  {
+   "name": "enter_tournament_for_recipients",
+   "inputs": [
+    {
+     "name": "tournament_id",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "recipients",
+     "type": "core::array::Array::<budokan_interfaces::budokan::TournamentRecipientParams>"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::array::Array::<core::felt252>"
+    }
+   ],
+   "state": "external"
+  },
+  {
+   "name": "ban_entry",
+   "inputs": [
+    {
+     "name": "tournament_id",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "game_token_id",
+     "type": "core::felt252"
+    },
+    {
+     "name": "proof",
+     "type": "core::array::Span::<core::felt252>"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "submit_score",
+   "inputs": [
+    {
+     "name": "tournament_id",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    },
+    {
+     "name": "position",
+     "type": "core::integer::u32"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "claim_reward",
+   "inputs": [
+    {
+     "name": "tournament_id",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "reward_type",
+     "type": "budokan_interfaces::budokan::RewardType"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "add_prize",
+   "inputs": [
+    {
+     "name": "tournament_id",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "prize",
+     "type": "game_components_interfaces::prize::Prize"
+    },
+    {
+     "name": "position",
+     "type": "core::option::Option::<core::integer::u32>"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u64"
+    }
+   ],
+   "state": "external"
+  },
+  {
+   "name": "supports_interface",
+   "inputs": [
+    {
+     "name": "interface_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "owner",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "transfer_ownership",
+   "inputs": [
+    {
+     "name": "new_owner",
+     "type": "core::starknet::contract_address::ContractAddress"
+    }
+   ],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "renounce_ownership",
+   "inputs": [],
+   "outputs": [],
+   "state": "external"
+  },
+  {
+   "name": "get_entry_fee",
+   "inputs": [
+    {
+     "name": "context_id",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::option::Option::<game_components_interfaces::entry_fee::EntryFeeConfig>"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_entry_requirement",
+   "inputs": [
+    {
+     "name": "context_id",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::option::Option::<game_components_interfaces::entry_requirement::EntryRequirement>"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_qualification_entries",
+   "inputs": [
+    {
+     "name": "context_id",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "proof",
+     "type": "game_components_interfaces::entry_requirement::QualificationProof"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "game_components_interfaces::entry_requirement::QualificationEntries"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_prize",
+   "inputs": [
+    {
+     "name": "prize_id",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "game_components_interfaces::prize::PrizeRecord"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_total_prizes",
+   "inputs": [],
+   "outputs": [
+    {
+     "type": "core::integer::u64"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "is_prize_claimed",
+   "inputs": [
+    {
+     "name": "context_id",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "prize_type",
+     "type": "game_components_interfaces::prize::PrizeType"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_entry",
+   "inputs": [
+    {
+     "name": "context_id",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "entry_id",
+     "type": "core::integer::u32"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "game_components_interfaces::registration::Registration"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "entry_exists",
+   "inputs": [
+    {
+     "name": "context_id",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "entry_id",
+     "type": "core::integer::u32"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "is_token_banned",
+   "inputs": [
+    {
+     "name": "context_id",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_entry_count",
+   "inputs": [
+    {
+     "name": "context_id",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u32"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_leaderboard_entries",
+   "inputs": [
+    {
+     "name": "context_id",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::array::Array::<game_components_interfaces::structs::leaderboard::LeaderboardEntry>"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_leaderboard_entry",
+   "inputs": [
+    {
+     "name": "context_id",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "position",
+     "type": "core::integer::u32"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "game_components_interfaces::structs::leaderboard::LeaderboardEntry"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_top_leaderboard_entries",
+   "inputs": [
+    {
+     "name": "context_id",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "count",
+     "type": "core::integer::u32"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::array::Array::<game_components_interfaces::structs::leaderboard::LeaderboardEntry>"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_position",
+   "inputs": [
+    {
+     "name": "context_id",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::option::Option::<core::integer::u32>"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "qualifies",
+   "inputs": [
+    {
+     "name": "context_id",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "score",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "is_full",
+   "inputs": [
+    {
+     "name": "context_id",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::bool"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_leaderboard_length",
+   "inputs": [
+    {
+     "name": "context_id",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::integer::u32"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_config",
+   "inputs": [
+    {
+     "name": "context_id",
+     "type": "core::integer::u64"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "game_components_interfaces::structs::leaderboard::LeaderboardStoreConfig"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "find_position",
+   "inputs": [
+    {
+     "name": "context_id",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "score",
+     "type": "core::integer::u64"
+    },
+    {
+     "name": "token_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::option::Option::<core::integer::u32>"
+    }
+   ],
+   "state": "view"
+  }
+ ],
+ "calls": {}
+}
