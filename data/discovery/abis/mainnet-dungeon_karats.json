@@ -131,16 +131,8 @@
        "type": "core::felt252"
       },
       {
-       "name": "beast_id",
-       "type": "core::integer::u8"
-      },
-      {
-       "name": "prefix",
-       "type": "core::integer::u8"
-      },
-      {
-       "name": "suffix",
-       "type": "core::integer::u8"
+       "name": "encounter_xp",
+       "type": "core::integer::u16"
       }
      ],
      "outputs": [],
@@ -179,6 +171,18 @@
       {
        "name": "settings_id",
        "type": "core::integer::u32"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_game_core_address",
+     "inputs": [
+      {
+       "name": "game_core_address",
+       "type": "core::starknet::contract_address::ContractAddress"
       }
      ],
      "outputs": [],
@@ -242,6 +246,17 @@
      "outputs": [
       {
        "type": "core::integer::u32"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "game_core_address",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::starknet::contract_address::ContractAddress"
       }
      ],
      "state_mutability": "view"
@@ -338,6 +353,26 @@
       {
        "name": "referral_id",
        "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::bool"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "is_reward_claimed",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      },
+      {
+       "name": "encounter_xp",
+       "type": "core::integer::u16"
       }
      ],
      "outputs": [
@@ -487,14 +522,6 @@
    "inputs": [
     {
      "name": "owner",
-     "type": "core::starknet::contract_address::ContractAddress"
-    },
-    {
-     "name": "denshokan_address",
-     "type": "core::starknet::contract_address::ContractAddress"
-    },
-    {
-     "name": "game_token_address",
      "type": "core::starknet::contract_address::ContractAddress"
     },
     {

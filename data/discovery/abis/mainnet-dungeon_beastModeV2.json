@@ -134,7 +134,7 @@
   },
   {
    "type": "struct",
-   "name": "death_mountain::dungeons::beast_mode::SpeciesMapping",
+   "name": "death_mountain::dungeons::beast_kills::SpeciesMapping",
    "members": [
     {
      "name": "beast_id",
@@ -209,7 +209,7 @@
      ],
      "outputs": [
       {
-       "type": "core::integer::u256"
+       "type": "core::felt252"
       }
      ],
      "state_mutability": "external"
@@ -220,7 +220,7 @@
      "inputs": [
       {
        "name": "token_id",
-       "type": "core::integer::u256"
+       "type": "core::felt252"
       }
      ],
      "outputs": [],
@@ -383,7 +383,7 @@
      "inputs": [
       {
        "name": "token_id",
-       "type": "core::integer::u256"
+       "type": "core::felt252"
       }
      ],
      "outputs": [
@@ -517,7 +517,62 @@
      ],
      "outputs": [
       {
-       "type": "death_mountain::dungeons::beast_mode::SpeciesMapping"
+       "type": "death_mountain::dungeons::beast_kills::SpeciesMapping"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "species_mapping_at",
+     "inputs": [
+      {
+       "name": "roster_id",
+       "type": "core::integer::u8"
+      },
+      {
+       "name": "block",
+       "type": "core::integer::u64"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "death_mountain::dungeons::beast_kills::SpeciesMapping"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "collected_at",
+     "inputs": [
+      {
+       "name": "beast_id",
+       "type": "core::integer::u64"
+      },
+      {
+       "name": "prefix",
+       "type": "core::integer::u8"
+      },
+      {
+       "name": "suffix",
+       "type": "core::integer::u8"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u64"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "minter_id",
+     "inputs": [],
+     "outputs": [
+      {
+       "type": "core::integer::u32"
       }
      ],
      "state_mutability": "view"
@@ -544,11 +599,129 @@
     },
     {
      "type": "function",
+     "name": "encounter_species",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      },
+      {
+       "name": "beast_seed",
+       "type": "core::integer::u32"
+      },
+      {
+       "name": "prefix",
+       "type": "core::integer::u8"
+      },
+      {
+       "name": "suffix",
+       "type": "core::integer::u8"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u64"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
+     "name": "kill_species",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      },
+      {
+       "name": "encounter_xp",
+       "type": "core::integer::u16"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::integer::u64"
+      }
+     ],
+     "state_mutability": "view"
+    },
+    {
+     "type": "function",
      "name": "is_beast_collectable",
      "inputs": [
       {
-       "name": "beast_id",
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      },
+      {
+       "name": "beast_seed",
+       "type": "core::integer::u32"
+      },
+      {
+       "name": "prefix",
        "type": "core::integer::u8"
+      },
+      {
+       "name": "suffix",
+       "type": "core::integer::u8"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::bool"
+      }
+     ],
+     "state_mutability": "view"
+    }
+   ]
+  },
+  {
+   "type": "impl",
+   "name": "SRC5Impl",
+   "interface_name": "openzeppelin_interfaces::introspection::ISRC5"
+  },
+  {
+   "type": "interface",
+   "name": "openzeppelin_interfaces::introspection::ISRC5",
+   "items": [
+    {
+     "type": "function",
+     "name": "supports_interface",
+     "inputs": [
+      {
+       "name": "interface_id",
+       "type": "core::felt252"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::bool"
+      }
+     ],
+     "state_mutability": "view"
+    }
+   ]
+  },
+  {
+   "type": "impl",
+   "name": "BeastKillVerifierImpl",
+   "interface_name": "beasts_core::interfaces::IBeastKillVerifier"
+  },
+  {
+   "type": "interface",
+   "name": "beasts_core::interfaces::IBeastKillVerifier",
+   "items": [
+    {
+     "type": "function",
+     "name": "verify_beast_kill",
+     "inputs": [
+      {
+       "name": "adventurer_id",
+       "type": "core::felt252"
+      },
+      {
+       "name": "species_id",
+       "type": "core::integer::u64"
       },
       {
        "name": "prefix",
@@ -821,7 +994,7 @@
     },
     {
      "name": "token_id",
-     "type": "core::integer::u256",
+     "type": "core::felt252",
      "kind": "data"
     },
     {
@@ -878,7 +1051,7 @@
    "members": [
     {
      "name": "token_id",
-     "type": "core::integer::u256",
+     "type": "core::felt252",
      "kind": "key"
     },
     {

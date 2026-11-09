@@ -590,5 +590,16 @@
   "policy": "tuned-2026-10-22-g24",
   "dungeon": "Ronkeverse Large #7",
   "ended": "2026-11-09T09:23:23.734Z"
+ },
+ {
+  "id": "2026-11-09T09-41-39-120Z",
+  "mode": "mainnet-dry",
+  "started": "2026-11-09T09:41:39.120Z",
+  "games": 0,
+  "bestXp": 0,
+  "meanXp": 0,
+  "errors": 0,
+  "policy": "tail-pg-2026-10-25",
+  "ended": "2026-11-09T09:42:05.677Z"
  }
 ]

@@ -1,8 +1,9 @@
 {
- "updated": "2026-11-09T09:30:56.253Z",
- "mode": "mainnet",
+ "updated": "2026-11-09T09:42:05.676Z",
+ "mode": "mainnet-dry",
  "running": false,
- "runId": "",
+ "runId": "2026-11-09T09-41-39-120Z",
+ "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "recent": [],
- "message": "error: RPC: starknet_call with params { \"request\": { \"contract_address\": \"0x011afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b\", \"entry_point_selector\": \"0x35a73cd311a05d46deda634c5ee045db92f811b4e74bca4437fcb5302b7af33\", \"calldata\": [ \"0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82\" ] }, \"block_id\": \"latest\" } -32601: the method starknet_call does not exist/is not"
+ "message": "no unplayed games on the account (buy/mint games in the UI)"
 }

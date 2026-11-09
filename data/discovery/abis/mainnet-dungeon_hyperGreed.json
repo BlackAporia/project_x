@@ -8,20 +8,6 @@
   },
   {
    "type": "enum",
-   "name": "core::option::Option::<core::felt252>",
-   "variants": [
-    {
-     "name": "Some",
-     "type": "core::felt252"
-    },
-    {
-     "name": "None",
-     "type": "()"
-    }
-   ]
-  },
-  {
-   "type": "enum",
    "name": "core::bool",
    "variants": [
     {
@@ -30,6 +16,40 @@
     },
     {
      "name": "True",
+     "type": "()"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "core::array::Span::<core::starknet::contract_address::ContractAddress>",
+   "members": [
+    {
+     "name": "snapshot",
+     "type": "@core::array::Array::<core::starknet::contract_address::ContractAddress>"
+    }
+   ]
+  },
+  {
+   "type": "struct",
+   "name": "core::array::Span::<core::felt252>",
+   "members": [
+    {
+     "name": "snapshot",
+     "type": "@core::array::Array::<core::felt252>"
+    }
+   ]
+  },
+  {
+   "type": "enum",
+   "name": "core::option::Option::<core::felt252>",
+   "variants": [
+    {
+     "name": "Some",
+     "type": "core::felt252"
+    },
+    {
+     "name": "None",
      "type": "()"
     }
    ]
@@ -152,6 +172,54 @@
    "type": "interface",
    "name": "death_mountain::dungeons::hyper_greed::IHyperGreed",
    "items": [
+    {
+     "type": "function",
+     "name": "new_game",
+     "inputs": [
+      {
+       "name": "entry_amount",
+       "type": "core::integer::u128"
+      },
+      {
+       "name": "to",
+       "type": "core::starknet::contract_address::ContractAddress"
+      },
+      {
+       "name": "soulbound",
+       "type": "core::bool"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::felt252"
+      }
+     ],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "new_game_batch",
+     "inputs": [
+      {
+       "name": "entry_amount",
+       "type": "core::integer::u128"
+      },
+      {
+       "name": "recipients",
+       "type": "core::array::Span::<core::starknet::contract_address::ContractAddress>"
+      },
+      {
+       "name": "soulbound",
+       "type": "core::bool"
+      }
+     ],
+     "outputs": [
+      {
+       "type": "core::array::Span::<core::felt252>"
+      }
+     ],
+     "state_mutability": "external"
+    },
     {
      "type": "function",
      "name": "buy_game",
@@ -395,6 +463,18 @@
       {
        "name": "settings_id",
        "type": "core::integer::u32"
+      }
+     ],
+     "outputs": [],
+     "state_mutability": "external"
+    },
+    {
+     "type": "function",
+     "name": "set_game_core_address",
+     "inputs": [
+      {
+       "name": "game_core_address",
+       "type": "core::starknet::contract_address::ContractAddress"
       }
      ],
      "outputs": [],
@@ -812,7 +892,7 @@
     },
     {
      "type": "function",
-     "name": "denshokan_address",
+     "name": "game_core_address",
      "inputs": [],
      "outputs": [
       {
@@ -974,11 +1054,11 @@
   {
    "type": "impl",
    "name": "PausableImpl",
-   "interface_name": "openzeppelin_interfaces::security::pausable::IPausable"
+   "interface_name": "openzeppelin_security::interface::IPausable"
   },
   {
    "type": "interface",
-   "name": "openzeppelin_interfaces::security::pausable::IPausable",
+   "name": "openzeppelin_security::interface::IPausable",
    "items": [
     {
      "type": "function",
@@ -999,14 +1079,6 @@
    "inputs": [
     {
      "name": "owner",
-     "type": "core::starknet::contract_address::ContractAddress"
-    },
-    {
-     "name": "denshokan_address",
-     "type": "core::starknet::contract_address::ContractAddress"
-    },
-    {
-     "name": "game_token_address",
      "type": "core::starknet::contract_address::ContractAddress"
     },
     {
