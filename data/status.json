@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-09T10:57:28.792Z",
+ "updated": "2026-11-09T10:58:31.591Z",
  "mode": "mainnet",
- "running": true,
+ "running": false,
  "runId": "2026-11-09T10-57-28-786Z",
  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "recent": [],
- "message": "looking for unplayed games on the account"
+ "message": "error: could not start a new game: expected value at line 1 column 1 [131]"
 }
