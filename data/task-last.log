@@ -1,29 +1,7 @@
-== bot http-get --address https://budokan-bots-production.up.railway.app/pvp/status?address=0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82 --address https://budokan-bots-production.up.railway.app/pvp/status?address=0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452 --address https://budokan-bots-production.up.railway.app/pvp/status/0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82 --address https://budokan-bots-production.up.railway.app/pvp --address https://budokan-bots-production.up.railway.app/
+== bot http-get --address https://budokan-bots-production.up.railway.app/tables/status?address=0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82 --address https://budokan-bots-production.up.railway.app/tables/status?address=0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts http-get --address https://budokan-bots-production.up.railway.app/pvp/status?address=0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82 --address https://budokan-bots-production.up.railway.app/pvp/status?address=0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452 --address https://budokan-bots-production.up.railway.app/pvp/status/0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82 --address https://budokan-bots-production.up.railway.app/pvp --address https://budokan-bots-production.up.railway.app/
+> node --import tsx src/cli.ts http-get --address https://budokan-bots-production.up.railway.app/tables/status?address=0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82 --address https://budokan-bots-production.up.railway.app/tables/status?address=0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452
 
-GET https://budokan-bots-production.up.railway.app/pvp/status?address=0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82: HTTP 404 {"error":"not_found"}
-GET https://budokan-bots-production.up.railway.app/pvp/status?address=0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452: HTTP 404 {"error":"not_found"}
-GET https://budokan-bots-production.up.railway.app/pvp/status/0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82: HTTP 404 {"error":"not_found"}
-GET https://budokan-bots-production.up.railway.app/pvp: HTTP 404 {"error":"not_found"}
-GET https://budokan-bots-production.up.railway.app/: HTTP 404 {"error":"not_found"}
-== bot frontend --call O3}/ --call pvp/status
-
-> loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts frontend --call O3}/ --call pvp/status
-
-downloaded 348 files, 16.0 MB into /tmp/lsfront-1794223907337
-1 snippet(s) for O3}/, pvp/status -> frontend/snippets.json
-10 dungeon configs on lootsurvivor.io
-  trials                   Trials                     online       Free
-  beastmode                Beast Mode                 online       1 Ticket settings=Ao minter=ko @jo.dungeon
-  ronke-casino             Ronke Casino               Fe?`online`:`coming_soon Free · 3 days settings=Xe minter=We sponsored @Ee
-  karats                   Karats                     online       Free settings=Go minter=qo @Jo
-  lootbag                  Loot Bag                   closed       Loot Bag settings=1 minter=13 @Cr.lootDungeon
-  pvp                      PvP Dungeons               online       Free
-  tournaments              Tournaments                Ug.ready?`online`:`coming_soon  minter=Ug.minterId @Ug.budokanAddress
-  norwich-games-festival   Norwich Games Festival     online       Free @0x04253e24220629b737512a24cb3172fc381db7be7a697d5af358ff21ef1172be
-  blockhash                Blockhash                  closed       Free settings=0
-  unknown                  Unknown Dungeon            offline       @0x04253e24220629b737512a24cb3172fc381db7be7a697d5af358ff21ef1172be
-Ronke dungeons: ronke-casino (Ronke Casino)
+GET https://budokan-bots-production.up.railway.app/tables/status?address=0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82: HTTP 200 {"eligible":false,"alertsLinked":false,"campaign":{"start":1794232800,"end":1794837600,"day":null},"table":null,"benched":false,"requirements":{"phoneRequired":true,"alertsPhone":false,"xLinked":false,"xFollow":false,"xLike":false,"xRepost":false},"seatable":false,"xLikePostId":"2119067400746471796","xRequiredFrom":{"follow":1794319200,"engage":1794405600},"xGate":"play","week":[]}
+GET https://budokan-bots-production.up.railway.app/tables/status?address=0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452: HTTP 200 {"eligible":true,"alertsLinked":true,"campaign":{"start":1794232800,"end":1794837600,"day":null},"table":null,"benched":false,"requirements":{"phoneRequired":true,"alertsPhone":true,"xLinked":false,"xFollow":false,"xLike":false,"xRepost":false},"seatable":true,"xLikePostId":"2119067400746471796","xRequiredFrom":{"follow":1794319200,"engage":1794405600},"xGate":"play","week":[]}
