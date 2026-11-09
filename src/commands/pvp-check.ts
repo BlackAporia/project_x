@@ -73,7 +73,16 @@ export async function runPvpCheckCommand(opts: { tournamentId?: string; address?
   await tryCall('get_entry_fee', budokan, 'get_entry_fee', [T]);
   const count = await call(budokan, 'get_entry_count', [T]).then((x) => Number(x[0])).catch(() => 0);
   console.log(`entries: ${count}`);
-  for (let i = 1; i <= Math.min(count, 40); i++) await tryCall(`get_entry(${tid}, ${i})`, budokan, 'get_entry', [T, i]);
+  const game = hex((await call(budokan, 'tournament_game_address', [T]))[0]);
+  for (let i = 1; i <= Math.min(count, 40); i++) {
+    const e = await call(budokan, 'get_entry', [T, i]).catch(() => [] as bigint[]);
+    show(`get_entry(${tid}, ${i})`, e);
+    if (e[2] !== undefined) {
+      await tryCall(`  settings_id(${hex(e[2])})`, game, 'settings_id', [e[2]]);
+      await tryCall(`  score`, game, 'score', [e[2]]);
+      await tryCall(`  owner_of`, game, 'owner_of', [e[2], 0n]);
+    }
+  }
 
   // 3) the entry-requirement extension
   const req = await call(budokan, 'get_entry_requirement', [T]).catch(() => [] as bigint[]);
