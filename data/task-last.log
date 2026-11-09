@@ -3,45 +3,119 @@
 > loot-survivor-bot@1.0.0 bot
 > node --import tsx src/cli.ts pvp-check
 
-Loot Survivor bot
+GET tables/status?address=0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452: HTTP 200 {"eligible":true,"alertsLinked":true,"campaign":{"start":1794232800,"end":1794837600,"day":0},"table":{"name":"Daily table d1 #3","tournamentId":"8"},"benched":false,"requirements":{"phoneRequired":true,"alertsPhone":true,"xLinked":true,"xFollow":true,"xLike":false,"xRepost":true},"seatable":true,"xLikePostId":"2119067400746471796","xRequiredFrom":{"follow":1794319200,"engage":1794405600},"xGate":"play","week":[{"day":1,"tournamentId":"8","played":true,"won":null}]}
+GET tables/check?address=0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452: HTTP 200 {"invited":true,"name":null,"address":"0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452","campaign":{"start":1794232800,"end":1794837600}}
+GET entry/status: HTTP 404 {"error":"not_found"}
+struct budokan_interfaces::budokan::EntryFee [{"name":"token_address","type":"core::starknet::contract_address::ContractAddress"},{"name":"amount","type":"core::integer::u128"},{"name":"tournament_creator_share","type":"core::integer::u16"},{"name":"game_fee_share","type":"core::integer::u16"},{"name":"refund_share","type":"core::integer::u16"},{"name":"distribution","type":"game_components_interfaces::distribution::Distribution"},{"name":"distribution_count","type":"core::integer::u32"}]
+struct metagame_extensions_interfaces::extension::ExtensionConfig [{"name":"address","type":"core::starknet::contract_address::ContractAddress"},{"name":"config","type":"core::array::Span::<core::felt252>"}]
+enum budokan_interfaces::budokan::EntryFeeKind [{"name":"BuiltIn","type":"budokan_interfaces::budokan::EntryFee"},{"name":"Extension","type":"metagame_extensions_interfaces::extension::ExtensionConfig"}]
+enum core::option::Option::<budokan_interfaces::budokan::EntryFeeKind> [{"name":"Some","type":"budokan_interfaces::budokan::EntryFeeKind"},{"name":"None","type":"()"}]
+enum game_components_interfaces::entry_requirement::EntryRequirementType [{"name":"token","type":"core::starknet::contract_address::ContractAddress"},{"name":"extension","type":"metagame_extensions_interfaces::extension::ExtensionConfig"}]
+struct game_components_interfaces::entry_requirement::EntryRequirement [{"name":"entry_limit","type":"core::integer::u32"},{"name":"entry_requirement_type","type":"game_components_interfaces::entry_requirement::EntryRequirementType"}]
+enum core::option::Option::<game_components_interfaces::entry_requirement::EntryRequirement> [{"name":"Some","type":"game_components_interfaces::entry_requirement::EntryRequirement"},{"name":"None","type":"()"}]
+enum budokan_interfaces::budokan::Phase [{"name":"Scheduled","type":"()"},{"name":"Registration","type":"()"},{"name":"Staging","type":"()"},{"name":"Live","type":"()"},{"name":"Submission","type":"()"},{"name":"Finalized","type":"()"}]
+enum game_components_interfaces::entry_requirement::QualificationProof [{"name":"NFT","type":"game_components_interfaces::entry_requirement::NFTQualification"},{"name":"Extension","type":"core::array::Span::<core::felt252>"}]
+enum core::option::Option::<game_components_interfaces::entry_requirement::QualificationProof> [{"name":"Some","type":"game_components_interfaces::entry_requirement::QualificationProof"},{"name":"None","type":"()"}]
+struct budokan_interfaces::budokan::TournamentRecipientParams [{"name":"player_address","type":"core::option::Option::<core::starknet::contract_address::ContractAddress>"},{"name":"qualifier","type":"core::option::Option::<core::starknet::contract_address::ContractAddress>"},{"name":"qualification","type":"core::option::Option::<game_components_interfaces::entry_requirement::QualificationProof>"}]
+enum game_components_interfaces::prize::PrizeType [{"name":"Single","type":"core::integer::u64"},{"name":"Distributed","type":"(core::integer::u64, core::integer::u32)"}]
+enum budokan_interfaces::budokan::EntryFeeRewardType [{"name":"Position","type":"core::integer::u32"},{"name":"TournamentCreator","type":"()"},{"name":"GameFee","type":"()"},{"name":"Refund","type":"core::felt252"},{"name":"ProtocolFee","type":"()"}]
+struct budokan_interfaces::budokan::ExtensionEntryFeeClaim [{"name":"token_id","type":"core::option::Option::<core::felt252>"},{"name":"claim_params","type":"core::array::Span::<core::felt252>"}]
+enum budokan_interfaces::budokan::EntryFeeClaim [{"name":"Token","type":"budokan_interfaces::budokan::EntryFeeRewardType"},{"name":"Extension","type":"budokan_interfaces::budokan::ExtensionEntryFeeClaim"}]
+enum budokan_interfaces::budokan::RewardType [{"name":"Prize","type":"budokan_interfaces::budokan::PrizeClaim"},{"name":"EntryFee","type":"budokan_interfaces::budokan::EntryFeeClaim"}]
+struct game_components_interfaces::entry_fee::EntryFeeConfig [{"name":"token_address","type":"core::starknet::contract_address::ContractAddress"},{"name":"amount","type":"core::integer::u128"},{"name":"game_creator_share","type":"core::option::Option::<core::integer::u16>"},{"name":"refund_share","type":"core::option::Option::<core::integer::u16>"},{"name":"additional_shares","type":"core::array::Span::<game_components_interfaces::entry_fee::AdditionalShare>"},{"name":"distribution","type":"core::option::Option::<game_components_interfaces::distribution::Distribution>"},{"name":"distribution_count","type":"core::integer::u32"}]
+enum core::option::Option::<game_components_interfaces::entry_fee::EntryFeeConfig> [{"name":"Some","type":"game_components_interfaces::entry_fee::EntryFeeConfig"},{"name":"None","type":"()"}]
+struct game_components_interfaces::registration::Registration [{"name":"context_id","type":"core::integer::u64"},{"name":"entry_id","type":"core::integer::u32"},{"name":"game_token_id","type":"core::felt252"},{"name":"has_submitted","type":"core::bool"},{"name":"is_banned","type":"core::bool"}]
+view tournament_protocol_fee_bps(tournament_id: u64)
+view tournament_protocol_fee_info(tournament_id: u64)
+view total_tournaments()
+view tournament(tournament_id: u64)
+view tournament_game_address(tournament_id: u64)
+view current_phase(tournament_id: u64)
+view tournament_distribution_shares(tournament_id: u64)
+view get_entry_fee(context_id: u64)
+view get_entry_requirement(context_id: u64)
+view get_qualification_entries(context_id: u64, proof: QualificationProof)
+view get_entry(context_id: u64, entry_id: u32)
+view entry_exists(context_id: u64, entry_id: u32)
+view get_entry_count(context_id: u64)
+view get_leaderboard_entry(context_id: u64, position: u32)
+view qualifies(context_id: u64, score: u64)
+current_phase(8): 0x3
+tournament(8): 0x8,0x6af1d235,0x4be57c9b30dbadb56d36595559e13d5e1e68ab327e20645967c0cd18eec17b,0x0,0x4461696c79207461626c65206431202333,0x1,0x46726565206461696c79207461626c652e2042657374207665726966696564,0x2072756e2074616b657320746865207072697a652e,0x15,0x0,0x0,0x27b,0x15180,0x15180,0x3cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2,0x0,0x0,0x0,0x1,0x0,0xa,0x1,0x570d41b66f0eea3c342d570e456e51194817b8eb563dc580c63c2f3d6e505ec,0x0,0x0,0x1
+get_entry_requirement: 0x0,0xa,0x1,0x570d41b66f0eea3c342d570e456e51194817b8eb563dc580c63c2f3d6e505ec,0x0
+get_entry_fee: 0x1
+entries: 3
+get_entry(8, 1): 0x8,0x1,0x8000003000000000000b3e00001c84c15010e0d510005c581,0x1,0x0
+get_entry(8, 2): 0x8,0x2,0x8000003000000000000b3000001c84c1c010e0e4f001f9061,0x1,0x0
+get_entry(8, 3): 0x8,0x3,0x8000003000000000000b1a00001c84c27010e0fd5000bfa61,0x1,0x0
+extension 0x570d41b66f0eea3c342d570e456e51194817b8eb563dc580c63c2f3d6e505ec ext create_tree(root: felt252) -> u64
+extension 0x570d41b66f0eea3c342d570e456e51194817b8eb563dc580c63c2f3d6e505ec view get_tree_root(tree_id: u64) -> felt252
+extension 0x570d41b66f0eea3c342d570e456e51194817b8eb563dc580c63c2f3d6e505ec view get_tree_owner(tree_id: u64) -> ContractAddress
+extension 0x570d41b66f0eea3c342d570e456e51194817b8eb563dc580c63c2f3d6e505ec view get_context_tree(context_owner: ContractAddress, context_id: u64) -> u64
+extension 0x570d41b66f0eea3c342d570e456e51194817b8eb563dc580c63c2f3d6e505ec view verify_proof(tree_id: u64, player_address: ContractAddress, count: u32, proof: felt252>) -> bool
+extension 0x570d41b66f0eea3c342d570e456e51194817b8eb563dc580c63c2f3d6e505ec view is_context_registered(context_owner: ContractAddress, context_id: u64) -> bool
+extension 0x570d41b66f0eea3c342d570e456e51194817b8eb563dc580c63c2f3d6e505ec view bannable(context_owner: ContractAddress, context_id: u64) -> bool
+extension 0x570d41b66f0eea3c342d570e456e51194817b8eb563dc580c63c2f3d6e505ec view valid_entry(context_owner: ContractAddress, context_id: u64, player_address: ContractAddress, qualification: felt252>) -> bool
+extension 0x570d41b66f0eea3c342d570e456e51194817b8eb563dc580c63c2f3d6e505ec view should_ban(context_owner: ContractAddress, context_id: u64, game_token_id: felt252, current_owner: ContractAddress, qualification: felt252>) -> bool
+extension 0x570d41b66f0eea3c342d570e456e51194817b8eb563dc580c63c2f3d6e505ec view entries_left(context_owner: ContractAddress, context_id: u64, player_address: ContractAddress, qualification: felt252>) -> u32>
+extension 0x570d41b66f0eea3c342d570e456e51194817b8eb563dc580c63c2f3d6e505ec ext add_config(context_id: u64, entry_limit: u32, config: felt252>) -> 
+extension 0x570d41b66f0eea3c342d570e456e51194817b8eb563dc580c63c2f3d6e505ec ext add_entry(context_id: u64, game_token_id: felt252, player_address: ContractAddress, qualification: felt252>) -> 
+extension 0x570d41b66f0eea3c342d570e456e51194817b8eb563dc580c63c2f3d6e505ec ext remove_entry(context_id: u64, game_token_id: felt252, player_address: ContractAddress, qualification: felt252>) -> 
+extension 0x570d41b66f0eea3c342d570e456e51194817b8eb563dc580c63c2f3d6e505ec view supports_interface(interface_id: felt252) -> bool
+extension get_tree_root(0x8): 0x71c6382cfb4eaaf3e2f3b5e85eabc35dc86a48eb6c705bb85c7d26ad1fd00be
+extension get_tree_owner(0x8): 0x7b7598d4556649e0e9d0c9d8c7bed5628e29db5db669afa2eb84394a9bdd32e
+extension get_context_tree(0x341263a7a0fda541d57b4de1365017066badee008d5536a8adbb14c9292be57,0x0): 0x0
+extension verify_proof(0x8,0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452,0x0,0x0): 0x0
+extension is_context_registered(0x341263a7a0fda541d57b4de1365017066badee008d5536a8adbb14c9292be57,0x0): 0x0
+extension bannable(0x341263a7a0fda541d57b4de1365017066badee008d5536a8adbb14c9292be57,0x0): 0x0
+extension valid_entry(0x341263a7a0fda541d57b4de1365017066badee008d5536a8adbb14c9292be57,0x0,0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452,0x0): ERROR 52",
+      "0x0"
+    ]
+  },
+  "block_id": "latest"
+}
 
-Usage: npm run bot -- <command> [options]
-
-  play         Play games (practice or mainnet) and write dashboard data
-  sim          Simulate one game locally and print the decision log
-  bench        Benchmark the current policy over many simulated games
-  tune         Optimize policy parameters with CMA-ES on simulated games (multi-core)
-  dataset      Export simulated states for the GPU trainer (trainer/)
-  discover     Fetch live contract ABIs, presets and API endpoints; write data/discovery
-  leaderboard  Fetch the mainnet leaderboard and live players; write site/data
-  learn        Learn from top players: ingest their games and update insights
-  authorize    One-time Cartridge Controller session authorization for mainnet play
-  site         Rebuild site/data summaries from the bot data directory
-  local        Local GPU learning loop: self-play dataset -> value net (PyTorch) -> A/B -> tune
-  leaders      Download the full event history of the top leaderboard games for analysis
-  v2-inspect   Validate the V2 commit-reveal read path on live mainnet games (no account needed)
-  validate     A/B a candidate policy on the official site engine (practice) and adopt it only if better
-  dungeon-settings Read dungeon game settings (e.g. Ronke Casino #7) from the V2 game core
-  site-config  Write site/bot-config.json (session policies and RPC for approving the bot on the website)
-  ronke        Ronke Casino daily free games: status for the bot account, --claim to claim today's games
-  reach        Probability of reaching deep levels (multilevel splitting) for one or more policies (--policy a.json,b.json)
-  contract     Inspect live mainnet contracts: ABI and view calls (--address 0x.. --call name:arg,arg)
-  pvp          PvP Dungeons with the invited Game Account: submit/claim earlier tables, play today's table (--live, --max-games runs, --minutes)
-  http-get     GET public JSON endpoints and print status and body (--address url, repeatable)
-  rpc-probe    Raw answers of the RPC endpoints (chainId, specVersion, Cartridge paymaster) to see which still speak JSON-RPC
-  v2-dryrun    Dry-run the bot's next move in a game and print why the core would reject it (--game id,id)
-  v2-verify    Dry-run verify_game for games (--game id,id) and print why settlement would revert
-  v2-beasts    Check the bot's beast derivation and damage against real V2 games, packet by packet (--game id)
-  v2-leaderboard Leaderboards of the V2 dungeons from the lootsurvivor.io API (--ids 0-15 minter ids, --levels scores to rank)
-  v2-audit     Audit the engine against real V2 games: replay each packet on chain and compare with engine draws (--address owner --game id --draws n)
-  frontend     List the dungeons lootsurvivor.io offers now (new ones highlighted); writes data/frontend/dungeons.json
-== bot frontend --call entriesIssued --call /entry/issue --call tables/check
+      40: Contract error: {"revert_error":{"class_hash":"0x46e6592649093cb8f3c397ccf38a75c1dbc438b1bfa045d45d41d26ed852af3","contract_address":"0x570d41b66f0eea3c342d570e456e51194817b8eb563dc580c63c2f3d6e505ec","error":"\"MerkleValidator: qualification too short\"","selector":"0x39c51cf638fac3385dad81b9cf839b7e93dc42a23ea2683ae62421df9cb1a45"}} 
+extension should_ban(0x341263a7a0fda541d57b4de1365017066badee008d5536a8adbb14c9292be57,0x0,0x8,0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452,0x0): 0x0
+extension entries_left(0x341263a7a0fda541d57b4de1365017066badee008d5536a8adbb14c9292be57,0x0,0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452,0x0): 0x0,0x0
+extension supports_interface(0x8): 0x0
+simulate enter_tournament(player Some(account), qualification None): REVERTED Transaction execution has failed:
+0: Error in the called contract (contract address: 0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452, class hash: 0x05b73fb61b1d43327bf6bc8eb5ba1f83ae5ff8a798edcb575a04e6d6f365aed7, selector: 0x015d40a3d6ca2ac30f4031e42be28da9b056fef9bb7357ac5e85627ee876e5ad):
+Execution failed. Failure reason:
+Error in contract (contract address: 0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452, class hash: 0x05b73fb61b1d43327bf6bc8eb5ba1f83ae5ff8a798edcb575a04e6d6f365aed7, selector: 0x015d40a3d6ca2ac30f4031e42be28da9b056fef9bb7357ac5e85627ee876e5ad):
+Error in contract (contract address: 0x0341263a7a0fda541d57b4de1365017066badee008d5536a8adbb14c9292be57, class hash: 0x011e95649b659110b112f217162e9a5f2338483d2c2d3d831b4c99af6a528433, selector: 0x01ae65ec115901fc67e2dae1026e57331afbae15b400f45640e9248478c2edf4):
+"Budokan: Tournament 8 has an entry requirement but no qualification was provided".
+ || 
+simulate enter_tournament(player None, qualification None): REVERTED Transaction execution has failed:
+0: Error in the called contract (contract address: 0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452, class hash: 0x05b73fb61b1d43327bf6bc8eb5ba1f83ae5ff8a798edcb575a04e6d6f365aed7, selector: 0x015d40a3d6ca2ac30f4031e42be28da9b056fef9bb7357ac5e85627ee876e5ad):
+Execution failed. Failure reason:
+Error in contract (contract address: 0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452, class hash: 0x05b73fb61b1d43327bf6bc8eb5ba1f83ae5ff8a798edcb575a04e6d6f365aed7, selector: 0x015d40a3d6ca2ac30f4031e42be28da9b056fef9bb7357ac5e85627ee876e5ad):
+Error in contract (contract address: 0x0341263a7a0fda541d57b4de1365017066badee008d5536a8adbb14c9292be57, class hash: 0x011e95649b659110b112f217162e9a5f2338483d2c2d3d831b4c99af6a528433, selector: 0x01ae65ec115901fc67e2dae1026e57331afbae15b400f45640e9248478c2edf4):
+"Budokan: Tournament 8 has an entry requirement but no qualification was provided".
+ || 
+simulate enter_tournament(player Some(account), qualification Some(Extension([]))): REVERTED Transaction execution has failed:
+0: Error in the called contract (contract address: 0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452, class hash: 0x05b73fb61b1d43327bf6bc8eb5ba1f83ae5ff8a798edcb575a04e6d6f365aed7, selector: 0x015d40a3d6ca2ac30f4031e42be28da9b056fef9bb7357ac5e85627ee876e5ad):
+Execution failed. Failure reason:
+Error in contract (contract address: 0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452, class hash: 0x05b73fb61b1d43327bf6bc8eb5ba1f83ae5ff8a798edcb575a04e6d6f365aed7, selector: 0x015d40a3d6ca2ac30f4031e42be28da9b056fef9bb7357ac5e85627ee876e5ad):
+Error in contract (contract address: 0x0341263a7a0fda541d57b4de1365017066badee008d5536a8adbb14c9292be57, class hash: 0x011e95649b659110b112f217162e9a5f2338483d2c2d3d831b4c99af6a528433, selector: 0x01ae65ec115901fc67e2dae1026e57331afbae15b400f45640e9248478c2edf4):
+Error in contract (contract address: 0x0570d41b66f0eea3c342d570e456e51194817b8eb563dc580c63c2f3d6e505ec, class hash: 0x046e6592649093cb8f3c397ccf38a75c1dbc438b1bfa045d45d41d26ed852af3, selector: 0x039c51cf638fac3385dad81b9cf839b7e93dc42a23ea2683ae62421df9cb1a45):
+"MerkleValidator: qualification too short".
+ || 
+simulate enter_tournament(player None, qualification Some(Extension([]))): REVERTED Transaction execution has failed:
+0: Error in the called contract (contract address: 0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452, class hash: 0x05b73fb61b1d43327bf6bc8eb5ba1f83ae5ff8a798edcb575a04e6d6f365aed7, selector: 0x015d40a3d6ca2ac30f4031e42be28da9b056fef9bb7357ac5e85627ee876e5ad):
+Execution failed. Failure reason:
+Error in contract (contract address: 0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452, class hash: 0x05b73fb61b1d43327bf6bc8eb5ba1f83ae5ff8a798edcb575a04e6d6f365aed7, selector: 0x015d40a3d6ca2ac30f4031e42be28da9b056fef9bb7357ac5e85627ee876e5ad):
+Error in contract (contract address: 0x0341263a7a0fda541d57b4de1365017066badee008d5536a8adbb14c9292be57, class hash: 0x011e95649b659110b112f217162e9a5f2338483d2c2d3d831b4c99af6a528433, selector: 0x01ae65ec115901fc67e2dae1026e57331afbae15b400f45640e9248478c2edf4):
+Error in contract (contract address: 0x0570d41b66f0eea3c342d570e456e51194817b8eb563dc580c63c2f3d6e505ec, class hash: 0x046e6592649093cb8f3c397ccf38a75c1dbc438b1bfa045d45d41d26ed852af3, selector: 0x039c51cf638fac3385dad81b9cf839b7e93dc42a23ea2683ae62421df9cb1a45):
+"MerkleValidator: qualification too short".
+ || 
+== bot frontend --call entry_limit --call entryLimit --call runsLeft
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts frontend --call entriesIssued --call /entry/issue --call tables/check
+> node --import tsx src/cli.ts frontend --call entry_limit --call entryLimit --call runsLeft
 
-downloaded 348 files, 16.0 MB into /tmp/lsfront-1794242065126
-4 snippet(s) for entriesIssued, /entry/issue, tables/check -> frontend/snippets.json
+downloaded 348 files, 16.0 MB into /tmp/lsfront-1794242193992
+6 snippet(s) for entry_limit, entryLimit, runsLeft -> frontend/snippets.json
 10 dungeon configs on lootsurvivor.io
   trials                   Trials                     online       Free
   beastmode                Beast Mode                 online       1 Ticket settings=Po minter=No @Fo.dungeon
