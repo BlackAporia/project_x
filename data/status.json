@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09T16:44:49.703Z",
+ "updated": "2026-11-09T16:45:16.269Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-11-09T16-43-05-936Z",
@@ -438,10 +438,122 @@
    "actions": "buy(Divine Hood, Heavy Belt, Studded Leather Boots, Gauntlets, Leather Armor) + explore(till beast)",
    "ok": false,
    "error": "Game Session does not permit commit_actions on 0x3cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2"
+  },
+  {
+   "n": 3,
+   "t": "2026-11-09T16:44:49.704Z",
+   "level": 1,
+   "xp": 0,
+   "hp": 130,
+   "maxHp": 130,
+   "gold": 40,
+   "phase": "explore",
+   "reason": "Buy Divine Hood, Heavy Belt, Studded Leather Boots, Gauntlets, Leather Armor; Explore until beast (instant-death risk 0.0%, battle-death risk <0.1%, HP 130/130)",
+   "actions": "buy(Divine Hood, Heavy Belt, Studded Leather Boots, Gauntlets, Leather Armor) + explore(till beast)",
+   "ok": false,
+   "error": "Game Session does not permit commit_actions on 0x3cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2"
+  },
+  {
+   "n": 0,
+   "t": "2026-11-09T16:45:11.570Z",
+   "level": 1,
+   "xp": 0,
+   "hp": 130,
+   "maxHp": 130,
+   "gold": 40,
+   "phase": "explore",
+   "reason": "Buy Grimoire, Divine Hood, Shoes, Gloves; Explore until beast (instant-death risk 0.0%, battle-death risk <0.1%, HP 130/130)",
+   "actions": "buy(Grimoire, Divine Hood, Shoes, Gloves) + explore(till beast)",
+   "ok": false,
+   "error": "Game Session does not permit commit_actions on 0x3cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2"
+  },
+  {
+   "n": 1,
+   "t": "2026-11-09T16:45:12.193Z",
+   "level": 1,
+   "xp": 0,
+   "hp": 130,
+   "maxHp": 130,
+   "gold": 40,
+   "phase": "explore",
+   "reason": "Buy Grimoire, Divine Hood, Shoes, Gloves; Explore until beast (instant-death risk 0.0%, battle-death risk <0.1%, HP 130/130)",
+   "actions": "buy(Grimoire, Divine Hood, Shoes, Gloves) + explore(till beast)",
+   "ok": false,
+   "error": "Game Session does not permit commit_actions on 0x3cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2"
+  },
+  {
+   "n": 2,
+   "t": "2026-11-09T16:45:12.683Z",
+   "level": 1,
+   "xp": 0,
+   "hp": 130,
+   "maxHp": 130,
+   "gold": 40,
+   "phase": "explore",
+   "reason": "Buy Grimoire, Divine Hood, Shoes, Gloves; Explore until beast (instant-death risk 0.0%, battle-death risk <0.1%, HP 130/130)",
+   "actions": "buy(Grimoire, Divine Hood, Shoes, Gloves) + explore(till beast)",
+   "ok": false,
+   "error": "Game Session does not permit commit_actions on 0x3cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2"
+  },
+  {
+   "n": 3,
+   "t": "2026-11-09T16:45:13.180Z",
+   "level": 1,
+   "xp": 0,
+   "hp": 130,
+   "maxHp": 130,
+   "gold": 40,
+   "phase": "explore",
+   "reason": "Buy Grimoire, Divine Hood, Shoes, Gloves; Explore until beast (instant-death risk 0.0%, battle-death risk <0.1%, HP 130/130)",
+   "actions": "buy(Grimoire, Divine Hood, Shoes, Gloves) + explore(till beast)",
+   "ok": false,
+   "error": "Game Session does not permit commit_actions on 0x3cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2"
+  },
+  {
+   "n": 0,
+   "t": "2026-11-09T16:45:14.771Z",
+   "level": 1,
+   "xp": 0,
+   "hp": 130,
+   "maxHp": 130,
+   "gold": 40,
+   "phase": "explore",
+   "reason": "Buy Grimoire, Divine Hood, Shoes, Gloves; Explore until beast (instant-death risk 0.0%, battle-death risk <0.1%, HP 130/130)",
+   "actions": "buy(Grimoire, Divine Hood, Shoes, Gloves) + explore(till beast)",
+   "ok": false,
+   "error": "Game Session does not permit commit_actions on 0x3cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2"
+  },
+  {
+   "n": 1,
+   "t": "2026-11-09T16:45:15.260Z",
+   "level": 1,
+   "xp": 0,
+   "hp": 130,
+   "maxHp": 130,
+   "gold": 40,
+   "phase": "explore",
+   "reason": "Buy Grimoire, Divine Hood, Shoes, Gloves; Explore until beast (instant-death risk 0.0%, battle-death risk <0.1%, HP 130/130)",
+   "actions": "buy(Grimoire, Divine Hood, Shoes, Gloves) + explore(till beast)",
+   "ok": false,
+   "error": "Game Session does not permit commit_actions on 0x3cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2"
+  },
+  {
+   "n": 2,
+   "t": "2026-11-09T16:45:15.769Z",
+   "level": 1,
+   "xp": 0,
+   "hp": 130,
+   "maxHp": 130,
+   "gold": 40,
+   "phase": "explore",
+   "reason": "Buy Grimoire, Divine Hood, Shoes, Gloves; Explore until beast (instant-death risk 0.0%, battle-death risk <0.1%, HP 130/130)",
+   "actions": "buy(Grimoire, Divine Hood, Shoes, Gloves) + explore(till beast)",
+   "ok": false,
+   "error": "Game Session does not permit commit_actions on 0x3cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2"
   }
  ],
  "current": {
-  "id": "50216815005526703580820592525886058594418909047246261883841",
+  "id": "50216815005526703580820592525886058594418909047314982260801",
   "level": 1,
   "xp": 0,
   "hp": 130,
@@ -458,14 +570,14 @@
    "-"
   ],
   "stats": {
-   "str": 1,
-   "dex": 3,
+   "str": 2,
+   "dex": 0,
    "vit": 2,
-   "int": 1,
-   "wis": 3,
-   "cha": 2,
+   "int": 3,
+   "wis": 4,
+   "cha": 1,
    "luck": 2
   },
-  "lastReason": "Buy Divine Hood, Heavy Belt, Studded Leather Boots, Gauntlets, Leather Armor; Explore until beast (instant-death risk 0.0%, battle-death risk <0.1%, HP 130/130)"
+  "lastReason": "Buy Grimoire, Divine Hood, Shoes, Gloves; Explore until beast (instant-death risk 0.0%, battle-death risk <0.1%, HP 130/130)"
  }
 }

@@ -1,10 +1,10 @@
 {
- "updated": "2026-11-09T16:19:22.899Z",
+ "updated": "2026-11-09T16:45:25.211Z",
  "modes": {
   "mainnet": {
    "games": 145,
    "inProgress": 0,
-   "errors": 2,
+   "errors": 7,
    "best": 1204,
    "bestLevel": 34,
    "mean": 244,
@@ -12,7 +12,7 @@
    "p90": 569,
    "last20Mean": 265,
    "transactions": 8606,
-   "reverts": 49,
+   "reverts": 69,
    "predictionAccuracy": null,
    "deathCauses": [
     [
@@ -453,18 +453,6 @@
  },
  "runs": [
   {
-   "id": "2026-10-25T14-07-15-459Z",
-   "mode": "mainnet",
-   "started": "2026-10-25T14:07:15.459Z",
-   "games": 1,
-   "bestXp": 106,
-   "meanXp": 106,
-   "errors": 0,
-   "policy": "tail-2026-10-25-g3",
-   "ended": "2026-10-25T14:10:32.294Z",
-   "note": "5 old finished games were re-counted; corrected"
-  },
-  {
    "id": "2026-10-25T14-17-44-454Z",
    "mode": "mainnet",
    "started": "2026-10-25T14:17:44.454Z",
@@ -786,6 +774,17 @@
    "errors": 0,
    "policy": "tail-pg-2026-10-25",
    "ended": "2026-11-09T16:19:18.321Z"
+  },
+  {
+   "id": "2026-11-09T16-43-05-936Z",
+   "mode": "mainnet",
+   "started": "2026-11-09T16:43:05.936Z",
+   "games": 0,
+   "bestXp": 0,
+   "meanXp": 0,
+   "errors": 10,
+   "policy": "tail-pg-2026-10-25",
+   "ended": "2026-11-09T16:45:16.767Z"
   }
  ],
  "policy": {
