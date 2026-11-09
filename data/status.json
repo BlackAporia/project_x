@@ -1,66 +1,10 @@
 {
- "updated": "2026-11-09T15:30:50.693Z",
+ "updated": "2026-11-09T15:31:45.877Z",
  "mode": "mainnet",
- "running": true,
+ "running": false,
  "runId": "2026-11-09T11-17-32-722Z",
  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "recent": [
-  {
-   "n": 38,
-   "t": "2026-11-09T15:25:05.208Z",
-   "level": 17,
-   "xp": 307,
-   "hp": 115,
-   "maxHp": 115,
-   "gold": 4,
-   "phase": "level_up",
-   "reason": "Stats +1 DEX; Explore (instant-death risk 4.5%, battle-death risk 2.0%, HP 115/115)",
-   "actions": "stats(dex+1) + explore",
-   "tx": "0x37ccc243bcaf7eb49705385834896a4ae86218f7cab193f206a1c8e3398977d",
-   "ok": true
-  },
-  {
-   "n": 39,
-   "t": "2026-11-09T15:25:09.694Z",
-   "level": 19,
-   "xp": 362,
-   "hp": 24,
-   "maxHp": 115,
-   "gold": 4,
-   "phase": "level_up",
-   "reason": "Stats +1 DEX +1 CHA; Drink 4 potion(s); Explore (instant-death risk 11.8%, battle-death risk 3.0%, HP 64/115)",
-   "actions": "stats(dex+1 cha+1) + buy(4 potions) + explore",
-   "tx": "0x4e4e12ced54889eb074bd4ebb47633d612c915db6237479bc5b5335045907f8",
-   "ok": true
-  },
-  {
-   "n": 40,
-   "t": "2026-11-09T15:25:14.280Z",
-   "level": 19,
-   "xp": 362,
-   "hp": 64,
-   "maxHp": 115,
-   "gold": 0,
-   "phase": "battle",
-   "reason": "Attack Leviathan (L12 T4, 193 HP): P(win)=99.4% P(death)=0.6%; attack value 579.9 vs flee 496.9",
-   "actions": "attack",
-   "tx": "0x1d6dcc08da10c3dd9049d4b6927f15b2564bd7a868e3e014d50c01889c1104e",
-   "ok": true
-  },
-  {
-   "n": 41,
-   "t": "2026-11-09T15:25:20.493Z",
-   "level": 19,
-   "xp": 362,
-   "hp": 62,
-   "maxHp": 115,
-   "gold": 0,
-   "phase": "battle",
-   "reason": "Attack Leviathan (L12 T4, 127 HP): P(win)=100.0% P(death)=0.0%; attack value 583.9 vs flee 495.1",
-   "actions": "attack",
-   "tx": "0x3dc10c77978979ac7aaf0e0ea8dc3b3157b0854cd1f49e586cec215c1bb7d2c",
-   "ok": true
-  },
   {
    "n": 42,
    "t": "2026-11-09T15:25:26.700Z",
@@ -564,35 +508,63 @@
    "actions": "attack",
    "ok": false,
    "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 106676771853066 }, l2_gas: { max_amount: 2497920, max_price_per_unit: 33649434076 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 206400147105 } }) exceed balance (324606440108970928).]"
+  },
+  {
+   "n": 0,
+   "t": "2026-11-09T15:31:31.577Z",
+   "level": 1,
+   "xp": 0,
+   "hp": 115,
+   "maxHp": 115,
+   "gold": 40,
+   "phase": "explore",
+   "reason": "Buy Grimoire, Silk Robe, Linen Gloves, Heavy Boots, Full Helm, Sash; Explore until beast (instant-death risk 0.0%, battle-death risk <0.1%, HP 115/115)",
+   "actions": "buy(Grimoire, Silk Robe, Linen Gloves, Heavy Boots, Full Helm, Sash) + explore(till beast)",
+   "tx": "0x71ac3039cc6bd7210f517ccec7f16540fecd200121b6f53e116d324ab46a734",
+   "ok": true
+  },
+  {
+   "n": 1,
+   "t": "2026-11-09T15:31:36.075Z",
+   "level": 1,
+   "xp": 0,
+   "hp": 115,
+   "maxHp": 115,
+   "gold": 2,
+   "phase": "battle",
+   "reason": "Attack Fenrir (L1 T2, 25 HP): P(win)=100.0% P(death)=0.0%; attack value 217.4 vs flee -1.0",
+   "actions": "attack(to death)",
+   "tx": "0x5621ecd00c008e6bd76be7ec6eaf6ffe48e7afb03529feb1adbce126703c32a",
+   "ok": true
+  },
+  {
+   "n": 2,
+   "t": "2026-11-09T15:31:40.523Z",
+   "level": 2,
+   "xp": 4,
+   "hp": 103,
+   "maxHp": 115,
+   "gold": 4,
+   "phase": "level_up",
+   "reason": "Stats +1 VIT; Explore until beast (instant-death risk 0.0%, battle-death risk 0.0%, HP 118/130)",
+   "actions": "stats(vit+1) + explore(till beast)",
+   "tx": "0x4d74e42d7539d8baeac609288f973eb2f9cad1d170332c03d51c549232682d7",
+   "ok": true
+  },
+  {
+   "n": 3,
+   "t": "2026-11-09T15:31:44.922Z",
+   "level": 3,
+   "xp": 9,
+   "hp": 116,
+   "maxHp": 130,
+   "gold": 5,
+   "phase": "level_up",
+   "reason": "Stats +1 DEX; Explore until beast (instant-death risk 0.0%, battle-death risk 0.0%, HP 116/130)",
+   "actions": "stats(dex+1) + explore(till beast)",
+   "ok": false,
+   "error": "Validation failure [55 | Resources bounds ({ l1_gas: { max_amount: 0, max_price_per_unit: 107378039831263 }, l2_gas: { max_amount: 2497920, max_price_per_unit: 33649434076 }, l1_data_gas: { max_amount: 384, max_price_per_unit: 209613829011 } }) exceed balance (71419808363906960).]"
   }
  ],
- "current": {
-  "id": "374144419157391711793985745733139762671341050129473",
-  "level": 8,
-  "xp": 75,
-  "hp": 123,
-  "maxHp": 130,
-  "gold": 15,
-  "gear": [
-   "Ghost Wand T1 G9",
-   "Leather Armor T5 G9",
-   "Linen Hood T4 G9",
-   "Sash T5 G9",
-   "Linen Shoes T4 G6",
-   "Linen Gloves T4 G4",
-   "-",
-   "-"
-  ],
-  "stats": {
-   "str": 2,
-   "dex": 5,
-   "vit": 2,
-   "int": 3,
-   "wis": 3,
-   "cha": 4,
-   "luck": 2
-  },
-  "beast": "Jotunn",
-  "lastReason": "Attack Jotunn (L2 T2, 2 HP): P(win)=100.0% P(death)=0.0%; attack value 178.5 vs flee 172.2"
- }
+ "message": "no unplayed games on the account (buy/mint games in the UI)"
 }
