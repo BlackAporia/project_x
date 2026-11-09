@@ -46,8 +46,20 @@ get_entry_requirement: 0x0,0xa,0x1,0x570d41b66f0eea3c342d570e456e51194817b8eb563
 get_entry_fee: 0x1
 entries: 3
 get_entry(8, 1): 0x8,0x1,0x8000003000000000000b3e00001c84c15010e0d510005c581,0x1,0x0
+  settings_id(0x8000003000000000000b3e00001c84c15010e0d510005c581): 0x0
+  score: 0x78
+  owner_of: ERROR 
+      40: Contract error: {"revert_error":{"class_hash":"0x2a49068449dff9ceb08f9bcfd98d5c65774909d43ecd0a30c2a30faf608a0ab","contract_address":"0x3cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2","error":"0x4661696c656420746f20646573657269616c697a6520706172616d202331 ('Failed to deserialize param #1')","selector":"0x3552df12bdc6089cf963c40c4cf56fbfd4bd14680c244d1c5494c2790f1ea5c"}} Failed to deserialize param #1
 get_entry(8, 2): 0x8,0x2,0x8000003000000000000b3000001c84c1c010e0e4f001f9061,0x1,0x0
+  settings_id(0x8000003000000000000b3000001c84c1c010e0e4f001f9061): 0x0
+  score: 0x104
+  owner_of: ERROR 
+      40: Contract error: {"revert_error":{"class_hash":"0x2a49068449dff9ceb08f9bcfd98d5c65774909d43ecd0a30c2a30faf608a0ab","contract_address":"0x3cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2","error":"0x4661696c656420746f20646573657269616c697a6520706172616d202331 ('Failed to deserialize param #1')","selector":"0x3552df12bdc6089cf963c40c4cf56fbfd4bd14680c244d1c5494c2790f1ea5c"}} Failed to deserialize param #1
 get_entry(8, 3): 0x8,0x3,0x8000003000000000000b1a00001c84c27010e0fd5000bfa61,0x1,0x0
+  settings_id(0x8000003000000000000b1a00001c84c27010e0fd5000bfa61): 0x0
+  score: 0x21
+  owner_of: ERROR 
+      40: Contract error: {"revert_error":{"class_hash":"0x2a49068449dff9ceb08f9bcfd98d5c65774909d43ecd0a30c2a30faf608a0ab","contract_address":"0x3cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2","error":"0x4661696c656420746f20646573657269616c697a6520706172616d202331 ('Failed to deserialize param #1')","selector":"0x3552df12bdc6089cf963c40c4cf56fbfd4bd14680c244d1c5494c2790f1ea5c"}} Failed to deserialize param #1
 extension 0x570d41b66f0eea3c342d570e456e51194817b8eb563dc580c63c2f3d6e505ec ext create_tree(root: felt252) -> u64
 extension 0x570d41b66f0eea3c342d570e456e51194817b8eb563dc580c63c2f3d6e505ec view get_tree_root(tree_id: u64) -> felt252
 extension 0x570d41b66f0eea3c342d570e456e51194817b8eb563dc580c63c2f3d6e505ec view get_tree_owner(tree_id: u64) -> ContractAddress
@@ -85,8 +97,8 @@ merkle GET trees/8: HTTP 200 {"id":8,"name":"Super DM unlimited allowlist 2","de
 merkle GET trees/8/proof/0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452: HTTP 404 {"error":"Address not found in tree"}
 merkle GET trees/26: HTTP 200 {"id":26,"name":"Daily table d1 #3","description":"Daily tables campaign","root":"0x034f165ee7e84facc54b4b680d6d73e30f346f2c4a1a1fe3fe20d3ae3b6adc54","entryCount":3,"createdAt":"2026-11-09T14:01:24.038Z"}
 merkle GET trees/26/proof/0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452: HTTP 200 {"address":"0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452","count":10,"proof":["0x05993cb5f491bd6e99a87f43a62c6b7e7219ccf33337006525fa2137207e7774"],"qualification":["0xa","0x05993cb5f491bd6e99a87f43a62c6b7e7219ccf33337006525fa2137207e7774"]}
-simulate enter_tournament(player Some(account), qualification Some(Extension(proof 2))): OK result [] fee {"l1_data_gas_consumed":"0x440","l1_data_gas_price":"0x31858b30fa","l1_gas_consumed":"0x0","l1_gas_price":"0x491be47a54f7","l2_gas_consumed":"0x60fee7","l2_gas_price":"0x52e7ce19d","overall_fee":"0x1f76a1904f9812b","unit":"FRI"}
-simulate enter_tournament(player None, qualification Some(Extension(proof 2))): OK result [] fee {"l1_data_gas_consumed":"0x440","l1_data_gas_price":"0x31858b30fa","l1_gas_consumed":"0x0","l1_gas_price":"0x491be47a54f7","l2_gas_consumed":"0x60e879","l2_gas_price":"0x52e7ce19d","overall_fee":"0x1f6f5e04fed11b5","unit":"FRI"}
+simulate enter_tournament(player Some(account), qualification Some(Extension(proof 2))): OK result [] fee {"l1_data_gas_consumed":"0x440","l1_data_gas_price":"0x318f64c99d","l1_gas_consumed":"0x0","l1_gas_price":"0x4972e930ce58","l2_gas_consumed":"0x60fee7","l2_gas_price":"0x52e7ce19d","overall_fee":"0x1f76a42e1c235eb","unit":"FRI"}
+simulate enter_tournament(player None, qualification Some(Extension(proof 2))): OK result [] fee {"l1_data_gas_consumed":"0x440","l1_data_gas_price":"0x318f64c99d","l1_gas_consumed":"0x0","l1_gas_price":"0x4972e930ce58","l2_gas_consumed":"0x60e879","l2_gas_price":"0x52e7ce19d","overall_fee":"0x1f6f60a2cb5c675","unit":"FRI"}
 simulate enter_tournament(player Some(account), qualification None): REVERTED Transaction execution has failed:
 0: Error in the called contract (contract address: 0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452, class hash: 0x05b73fb61b1d43327bf6bc8eb5ba1f83ae5ff8a798edcb575a04e6d6f365aed7, selector: 0x015d40a3d6ca2ac30f4031e42be28da9b056fef9bb7357ac5e85627ee876e5ad):
 Execution failed. Failure reason:
@@ -117,3 +129,15 @@ Error in contract (contract address: 0x0341263a7a0fda541d57b4de1365017066badee00
 Error in contract (contract address: 0x0570d41b66f0eea3c342d570e456e51194817b8eb563dc580c63c2f3d6e505ec, class hash: 0x046e6592649093cb8f3c397ccf38a75c1dbc438b1bfa045d45d41d26ed852af3, selector: 0x039c51cf638fac3385dad81b9cf839b7e93dc42a23ea2683ae62421df9cb1a45):
 "MerkleValidator: qualification too short".
  || 
+== bot dungeon-settings --core 0x03cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2 --ids 0,1,3,4,5,6
+
+> loot-survivor-bot@1.0.0 bot
+> node --import tsx src/cli.ts dungeon-settings --core 0x03cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2 --ids 0,1,3,4,5,6
+
+settings #0: {"details":{"name":"Default","description":"Default Game Settings","settings":[{"name":"433321119326202570340158875351413864","value":"3223600"},{"name":"100890435121534990691620944","value":"48"},{"name":"6611955556124917149965787032676","value":"13360"},{"name":"28398132876162011649813448929350859060328","value":"48"},{"name":"7269922016297474982351965145594107771057273","value":"48"},{"name":"2
+settings #1: {"details":{"name":"Loot Bag","description":"Bring your own Loot bag: the bag you hold on Ethereum is the run you start.","settings":[{"name":"433321119326202570340158875351413864","value":"3223600"},{"name":"100890435121534990691620944","value":"48"},{"name":"6611955556124917149965787032676","value":"13360"},{"name":"28398132876162011649813448929350859060328","value":"48"},{"name":"72699220162974
+settings #3: {"details":{"name":"Karats","description":"Karats: a geared start, with kills on the ledger.","settings":[{"name":"433321119326202570340158875351413864","value":"3224629"},{"name":"100890435121534990691620944","value":"13369"},{"name":"6611955556124917149965787032676","value":"12592"},{"name":"28398132876162011649813448929350859060328","value":"51"},{"name":"726992201629747498235196514559410777105
+settings #4: {"details":{"name":"Greed Run v2","description":"Hard Default: a Wand and nothing else.","settings":[{"name":"433321119326202570340158875351413864","value":"3223600"},{"name":"100890435121534990691620944","value":"48"},{"name":"6611955556124917149965787032676","value":"13360"},{"name":"28398132876162011649813448929350859060328","value":"48"},{"name":"7269922016297474982351965145594107771057273","v
+settings #5: {"details":{"name":"Greed Run","description":"Hard Default: a Wand and 12 random starting stats.","settings":[{"name":"433321119326202570340158875351413864","value":"3223600"},{"name":"100890435121534990691620944","value":"48"},{"name":"6611955556124917149965787032676","value":"13360"},{"name":"28398132876162011649813448929350859060328","value":"48"},{"name":"72699220162974749823519651455941077710
+settings #6: {"details":{"name":"","description":"","settings":[{"name":"433321119326202570340158875351413864","value":"48"},{"name":"100890435121534990691620944","value":"48"},{"name":"6611955556124917149965787032676","value":"48"},{"name":"28398132876162011649813448929350859060328","value":"48"},{"name":"7269922016297474982351965145594107771057273","value":"48"},{"name":"2839813287616201164981366200809003898
+saved botdata/data/dungeon-settings.json (6 settings, core 0x03cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2)
