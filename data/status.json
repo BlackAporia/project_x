@@ -1,52 +1,10 @@
 {
- "updated": "2026-11-09T15:16:44.455Z",
+ "updated": "2026-11-09T15:17:45.457Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-11-09T11-17-32-722Z",
  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "recent": [
-  {
-   "n": 176,
-   "t": "2026-11-09T15:13:30.226Z",
-   "level": 12,
-   "xp": 151,
-   "hp": 130,
-   "maxHp": 130,
-   "gold": 16,
-   "phase": "explore",
-   "reason": "Explore (instant-death risk 1.3%, battle-death risk 1.3%, HP 130/130)",
-   "actions": "explore",
-   "tx": "0xe6b756cdc3e882920a773ab458482ba344750e2f81d4429981072bba7b8d7d",
-   "ok": true
-  },
-  {
-   "n": 177,
-   "t": "2026-11-09T15:13:33.202Z",
-   "level": 14,
-   "xp": 201,
-   "hp": 145,
-   "maxHp": 145,
-   "gold": 16,
-   "phase": "level_up",
-   "reason": "Stats +2 VIT; Explore (instant-death risk 0.9%, battle-death risk 0.8%, HP 175/175)",
-   "actions": "stats(vit+2) + explore",
-   "tx": "0x673e3aff78b34c529c717c4fe754d760fef6758ab15348ae3c99eefa0ddc004",
-   "ok": true
-  },
-  {
-   "n": 178,
-   "t": "2026-11-09T15:13:36.298Z",
-   "level": 16,
-   "xp": 258,
-   "hp": 68,
-   "maxHp": 175,
-   "gold": 16,
-   "phase": "level_up",
-   "reason": "Stats +2 DEX; Drink 11 potion(s); Explore (instant-death risk 1.3%, battle-death risk 0.9%, HP 175/175)",
-   "actions": "stats(dex+2) + buy(11 potions) + explore",
-   "tx": "0x4e4ad3df94c3fdde95122e1998d023281d67266e65fb61172acbeede0b780ce",
-   "ok": true
-  },
   {
    "n": 179,
    "t": "2026-11-09T15:13:40.959Z",
@@ -564,34 +522,77 @@
    "actions": "stats(cha+1) + explore",
    "tx": "0x549ba2d4914be421e86e20db6f38f99de67fb489a9dc9372a3f7806a7c17d8f",
    "ok": true
+  },
+  {
+   "n": 0,
+   "t": "2026-11-09T15:17:31.986Z",
+   "level": 1,
+   "xp": 0,
+   "hp": 130,
+   "maxHp": 130,
+   "gold": 40,
+   "phase": "explore",
+   "reason": "Buy Katana, Dragonskin Boots, Shirt, Gloves, Hood; Explore until beast (instant-death risk 0.0%, battle-death risk <0.1%, HP 130/130)",
+   "actions": "buy(Katana, Dragonskin Boots, Shirt, Gloves, Hood) + explore(till beast)",
+   "tx": "0x347325ae0efd38b02c02ba2ce6101196a1c31a4a985f2ce4c343c8142e9326c",
+   "ok": true
+  },
+  {
+   "n": 1,
+   "t": "2026-11-09T15:17:36.542Z",
+   "level": 2,
+   "xp": 5,
+   "hp": 130,
+   "maxHp": 130,
+   "gold": 2,
+   "phase": "level_up",
+   "reason": "Stats +1 VIT; Buy Heavy Belt; Explore until beast (instant-death risk 0.0%, battle-death risk 0.0%, HP 145/145)",
+   "actions": "stats(vit+1) + buy(Heavy Belt) + explore(till beast)",
+   "tx": "0x76863c08058215f859033ce03974206b01c66c4f8a49730654017f29b14e371",
+   "ok": true
+  },
+  {
+   "n": 2,
+   "t": "2026-11-09T15:17:40.996Z",
+   "level": 2,
+   "xp": 5,
+   "hp": 145,
+   "maxHp": 145,
+   "gold": 0,
+   "phase": "battle",
+   "reason": "Attack Hydra (L6 T4, 18 HP): P(win)=100.0% P(death)=0.0%; attack value 217.6 vs flee 209.0",
+   "actions": "attack",
+   "tx": "0x48f69a01c4072467da3626500463e50b3359ff298b1ba239a217e484419abd",
+   "ok": true
   }
  ],
  "current": {
-  "id": "374144419157391711793985745732604807088715232673825",
-  "level": 23,
-  "xp": 530,
-  "hp": 12,
-  "maxHp": 235,
+  "id": "374144419157391711793985745732936848484752128173217",
+  "level": 2,
+  "xp": 5,
+  "hp": 145,
+  "maxHp": 145,
   "gold": 0,
   "gear": [
-   "Tome T3 G19",
-   "Shirt T5 G10",
-   "Helm T5 G11",
-   "War Belt T2 G12",
-   "Hard Leather Boots T4 G20",
-   "Dragonskin Gloves T2 G12",
-   "Amulet T1 G12",
-   "Bronze Ring T3 G15"
+   "Katana T1 G2",
+   "Shirt T5 G2",
+   "Hood T5 G2",
+   "Heavy Belt T5 G1",
+   "Dragonskin Boots T2 G2",
+   "Gloves T5 G2",
+   "-",
+   "-"
   ],
   "stats": {
-   "str": 2,
-   "dex": 20,
-   "vit": 9,
-   "int": 4,
-   "wis": 3,
-   "cha": 11,
-   "luck": 27
+   "str": 1,
+   "dex": 3,
+   "vit": 3,
+   "int": 2,
+   "wis": 2,
+   "cha": 2,
+   "luck": 2
   },
-  "lastReason": "Stats +1 CHA; Explore (instant-death risk 44.9%, battle-death risk 4.3%, HP 12/235)"
+  "beast": "Hydra",
+  "lastReason": "Attack Hydra (L6 T4, 18 HP): P(win)=100.0% P(death)=0.0%; attack value 217.6 vs flee 209.0"
  }
 }
