@@ -1,10 +1,10 @@
-== bot frontend --call signupUntil --call PvP --call pvp-signup --call budokanAddress --call entryDeadline --call Rabby
+== bot frontend --call /pvp/ --call enter_tournament --call submit_score --call devicePhone --call Invite-only --call P3=
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts frontend --call signupUntil --call PvP --call pvp-signup --call budokanAddress --call entryDeadline --call Rabby
+> node --import tsx src/cli.ts frontend --call /pvp/ --call enter_tournament --call submit_score --call devicePhone --call Invite-only --call P3=
 
-downloaded 348 files, 16.0 MB into /tmp/lsfront-1794223064507
-35 snippet(s) for signupUntil, PvP, pvp-signup, budokanAddress, entryDeadline, Rabby -> frontend/snippets.json
+downloaded 348 files, 16.0 MB into /tmp/lsfront-1794223167240
+15 snippet(s) for /pvp/, enter_tournament, submit_score, devicePhone, Invite-only, P3= -> frontend/snippets.json
 10 dungeon configs on lootsurvivor.io
   trials                   Trials                     online       Free
   beastmode                Beast Mode                 online       1 Ticket settings=Ao minter=ko @jo.dungeon
