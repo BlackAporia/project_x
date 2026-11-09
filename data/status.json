@@ -1,8 +1,9 @@
 {
- "updated": "2026-11-09T10:08:42.423Z",
+ "updated": "2026-11-09T10:20:03.995Z",
  "mode": "mainnet",
- "running": false,
- "runId": "",
+ "running": true,
+ "runId": "2026-11-09T10-20-03-994Z",
+ "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "recent": [],
- "message": "error: mainnet live play needs a Game Session (GAME_SESSION_LINK) or a Cartridge session (CARTRIDGE_SESSION_B64)"
+ "message": "looking for unplayed games on the account"
 }
