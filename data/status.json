@@ -1,8 +1,8 @@
 {
- "updated": "2026-11-09T09:26:50.623Z",
+ "updated": "2026-11-09T09:30:56.253Z",
  "mode": "mainnet",
  "running": false,
  "runId": "",
  "recent": [],
- "message": "error: RPC: starknet_call with params { \"request\": { \"contract_address\": \"0x011afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b\", \"entry_point_selector\": \"0x35a73cd311a05d46deda634c5ee045db92f811b4e74bca4437fcb5302b7af33\", \"calldata\": [ \"0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452\" ] }, \"block_id\": \"latest\" } -32601: the method starknet_call does not exist/is not"
+ "message": "error: RPC: starknet_call with params { \"request\": { \"contract_address\": \"0x011afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b\", \"entry_point_selector\": \"0x35a73cd311a05d46deda634c5ee045db92f811b4e74bca4437fcb5302b7af33\", \"calldata\": [ \"0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82\" ] }, \"block_id\": \"latest\" } -32601: the method starknet_call does not exist/is not"
 }
