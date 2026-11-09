@@ -1,52 +1,10 @@
 {
- "updated": "2026-11-09T11:31:53.722Z",
+ "updated": "2026-11-09T11:32:03.749Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-11-09T11-17-32-722Z",
  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "recent": [
-  {
-   "n": 11,
-   "t": "2026-11-09T11:29:09.579Z",
-   "level": 3,
-   "xp": 9,
-   "hp": 92,
-   "maxHp": 130,
-   "gold": 0,
-   "phase": "battle",
-   "reason": "Attack Troll (L3 T1, 9 HP): P(win)=100.0% P(death)=0.0%; attack value 212.9 vs flee 200.6",
-   "actions": "attack",
-   "tx": "0x66d1cfbd6ca1cba7aee3f552a513132ba7881fb5948176de8026f61cd74e6a8",
-   "ok": true
-  },
-  {
-   "n": 12,
-   "t": "2026-11-09T11:29:13.899Z",
-   "level": 3,
-   "xp": 9,
-   "hp": 79,
-   "maxHp": 130,
-   "gold": 0,
-   "phase": "battle",
-   "reason": "Attack Troll (L3 T1, 5 HP): P(win)=100.0% P(death)=0.0%; attack value 211.9 vs flee 198.2",
-   "actions": "attack",
-   "tx": "0x15287cbd3880177deaafdd286139febeb2f1ff65f0e44a8e589533d43d2eb1b",
-   "ok": true
-  },
-  {
-   "n": 13,
-   "t": "2026-11-09T11:29:18.245Z",
-   "level": 3,
-   "xp": 9,
-   "hp": 77,
-   "maxHp": 130,
-   "gold": 0,
-   "phase": "battle",
-   "reason": "Attack Troll (L3 T1, 1 HP): P(win)=100.0% P(death)=0.0%; attack value 212.3 vs flee 198.1",
-   "actions": "attack",
-   "tx": "0x15076ad4ae63fd12230442e9660e13867a0d4f74ea5e95d71adbb1e22f2460",
-   "ok": true
-  },
   {
    "n": 14,
    "t": "2026-11-09T11:29:22.695Z",
@@ -564,35 +522,76 @@
    "actions": "flee",
    "tx": "0x38c8d48c4e948c07afc178893c8b743945d34d2bf082d8881cfaad63347284e",
    "ok": true
+  },
+  {
+   "n": 51,
+   "t": "2026-11-09T11:31:53.724Z",
+   "level": 11,
+   "xp": 121,
+   "hp": 129,
+   "maxHp": 130,
+   "gold": 4,
+   "phase": "level_up",
+   "reason": "Stats +1 DEX; Drink 1 potion(s); Explore (instant-death risk 1.0%, battle-death risk 2.1%, HP 130/130)",
+   "actions": "stats(dex+1) + buy(1 potion) + explore",
+   "tx": "0x476939f87c10b4693731824dbd655edae63ca126753f7d5070af87afa0dfeaa",
+   "ok": true
+  },
+  {
+   "n": 52,
+   "t": "2026-11-09T11:31:58.191Z",
+   "level": 11,
+   "xp": 136,
+   "hp": 128,
+   "maxHp": 130,
+   "gold": 1,
+   "phase": "explore",
+   "reason": "Explore (instant-death risk 1.0%, battle-death risk 2.1%, HP 128/130)",
+   "actions": "explore",
+   "tx": "0x10d93ef61f0b506dd1825946466a93638bfdbe9d0905893c4f64466257382b",
+   "ok": true
+  },
+  {
+   "n": 53,
+   "t": "2026-11-09T11:32:01.014Z",
+   "level": 13,
+   "xp": 194,
+   "hp": 38,
+   "maxHp": 130,
+   "gold": 1,
+   "phase": "level_up",
+   "reason": "Stats +1 DEX +1 CHA; Explore (instant-death risk 13.9%, battle-death risk 7.8%, HP 38/130)",
+   "actions": "stats(dex+1 cha+1) + explore",
+   "tx": "0x72b78a8af530a2ede63999d75506273d6202a7dd3f0083aa78c00bd5ef4d117",
+   "ok": true
   }
  ],
  "current": {
   "id": "374144419157391711793985745728712544056460636403841",
-  "level": 10,
-  "xp": 120,
-  "hp": 129,
+  "level": 13,
+  "xp": 194,
+  "hp": 38,
   "maxHp": 130,
-  "gold": 4,
+  "gold": 1,
   "gear": [
-   "Wand T5 G10",
-   "Ring Mail T5 G10",
-   "Linen Hood T4 G10",
-   "Sash T5 G10",
-   "Wool Shoes T3 G10",
-   "DemonsHands T1 G10",
+   "Wand T5 G13",
+   "Ring Mail T5 G13",
+   "Linen Hood T4 G13",
+   "Sash T5 G13",
+   "Wool Shoes T3 G13",
+   "DemonsHands T1 G13",
    "-",
    "-"
   ],
   "stats": {
    "str": 3,
-   "dex": 6,
+   "dex": 7,
    "vit": 2,
    "int": 3,
    "wis": 3,
    "cha": 4,
    "luck": 2
   },
-  "beast": "Hydra",
-  "lastReason": "Flee from Hydra (L18 T4): P(escape)=99.9% P(death)=<0.1%; flee value 154.4 vs attack 152.1"
+  "lastReason": "Stats +1 DEX +1 CHA; Explore (instant-death risk 13.9%, battle-death risk 7.8%, HP 38/130)"
  }
 }
