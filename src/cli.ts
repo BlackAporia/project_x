@@ -272,6 +272,12 @@ async function main(): Promise<void> {
       });
       break;
     }
+    case 'pvp-check': {
+      const { runPvpCheckCommand } = await import('./commands/pvp-check.ts');
+      const addr = Array.isArray(values.address) ? String(values.address[0] ?? '') : str(values.address, '');
+      await runPvpCheckCommand({ tournamentId: str(values.ids, '') || undefined, address: addr || undefined });
+      break;
+    }
     case 'http-get': {
       const { runHttpGetCommand } = await import('./commands/http-get.ts');
       await runHttpGetCommand({ urls: (Array.isArray(values.address) ? values.address : []).map(String) });

@@ -20,6 +20,7 @@ import { randomBytes } from 'node:crypto';
 import { Account, byteArray, CallData, ec, outsideExecution, OutsideExecutionTypesV2, Signer, typedData, type Call, type RpcProvider, type Signature } from 'starknet';
 import type { Executor } from './client.ts';
 import { createSessionTypedData, felt64, GAME_ACCOUNT_SALT, gameAccountAddress, recoverOwner, sessionDigest } from './game-session-terms.ts';
+import { rpcErrorDetail } from './rpc.ts';
 
 export const GAME_ACCOUNT = {
   classHash: '0x5b73fb61b1d43327bf6bc8eb5ba1f83ae5ff8a798edcb575a04e6d6f365aed7',
@@ -331,7 +332,10 @@ export class GameAccountExecutor implements Executor {
     if (!(await this.isDeployed())) throw new Error('the Game Account is not deployed yet and the paymaster refused to sponsor its setup: play one sponsored action on lootsurvivor.io first');
     this.account ??= new Account({ provider: this.provider, address: this.address, signer: new SessionTxSigner(this), cairoVersion: '1' });
     const nonce = await this.provider.getNonceForAddress(this.address);
-    const est = await this.account.estimateInvokeFee(calls, { nonce, tip: TIP, skipValidate: false });
+    const est = await this.account.estimateInvokeFee(calls, { nonce, tip: TIP, skipValidate: false }).catch((e: unknown) => {
+      // keep the node's answer (revert reason), not the echoed request that fills the start of the message
+      throw new Error(`fee estimate failed: ${rpcErrorDetail(e)}`);
+    });
     const rb = est.resourceBounds as unknown as Bounds;
     const bump = (r: Bounds[keyof Bounds]) => ({ max_amount: plus(BigInt(r.max_amount), 10n), max_price_per_unit: plus(BigInt(r.max_price_per_unit), 30n) });
     const bounds: Bounds = { l1_gas: bump(rb.l1_gas), l1_data_gas: bump(rb.l1_data_gas), l2_gas: bump(rb.l2_gas) };

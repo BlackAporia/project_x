@@ -49,3 +49,29 @@ export async function connectProvider(urls: string[], rounds = Number(process.en
   }
   throw new Error(`no RPC endpoint reachable:\n  ${errors.join('\n  ')}`);
 }
+
+/** Felts inside an error that are short strings, decoded (Cairo panics carry their message as felts). */
+export function decodeFelts(text: string): string {
+  const out: string[] = [];
+  for (const m of text.match(/0x[0-9a-fA-F]{2,64}/g) ?? []) {
+    let h = m.slice(2);
+    if (h.length % 2) h = '0' + h;
+    const s = Buffer.from(h, 'hex').toString('latin1');
+    if (s.length >= 3 && /^[\x20-\x7e]+$/.test(s)) out.push(s);
+  }
+  return [...new Set(out)].join(' | ');
+}
+
+/**
+ * The useful part of a starknet.js RPC error: its message starts with the whole request ("RPC: method with params
+ * {...}") and ends with the node's answer, so a shortened message loses exactly the revert reason. Returns
+ * "code message: data (decoded strings)" when the error carries the node's answer, else the message.
+ */
+export function rpcErrorDetail(e: unknown): string {
+  const err = e as Error & { baseError?: { code?: unknown; message?: unknown; data?: unknown } };
+  const base = err?.baseError;
+  if (!base) return String(err?.message ?? e);
+  const data = base.data === undefined ? '' : typeof base.data === 'string' ? base.data : JSON.stringify(base.data);
+  const decoded = decodeFelts(data);
+  return `${base.code ?? ''} ${base.message ?? ''}${data ? `: ${data.slice(0, 1200)}` : ''}${decoded ? ` (${decoded})` : ''}`.trim();
+}
