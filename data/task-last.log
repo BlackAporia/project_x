@@ -1,10 +1,10 @@
-== bot frontend --call tables/check --call entry/status --call enter_tournament_for_recipients --call find_position --call qualification:
+== bot frontend --call getProof( --call merkleValidator: --call tournamentValidator: --call SN_MAIN:{tournamentValidator
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts frontend --call tables/check --call entry/status --call enter_tournament_for_recipients --call find_position --call qualification:
+> node --import tsx src/cli.ts frontend --call getProof( --call merkleValidator: --call tournamentValidator: --call SN_MAIN:{tournamentValidator
 
-downloaded 348 files, 16.0 MB into /tmp/lsfront-1794224063747
-9 snippet(s) for tables/check, entry/status, enter_tournament_for_recipients, find_position, qualification: -> frontend/snippets.json
+downloaded 348 files, 16.0 MB into /tmp/lsfront-1794224177600
+16 snippet(s) for getProof(, merkleValidator:, tournamentValidator:, SN_MAIN:{tournamentValidator -> frontend/snippets.json
 10 dungeon configs on lootsurvivor.io
   trials                   Trials                     online       Free
   beastmode                Beast Mode                 online       1 Ticket settings=Ao minter=ko @jo.dungeon
