@@ -1,10 +1,10 @@
-== bot frontend --call entrypoint:`new_game` --call PaymentType --call claim_beast --call is_beast_collectable
+== bot frontend --call .ticket,entrypoint:`approve` --call ticketAddress,entrypoint --call buyBeastModeGame --call enterBeastMode
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts frontend --call entrypoint:`new_game` --call PaymentType --call claim_beast --call is_beast_collectable
+> node --import tsx src/cli.ts frontend --call .ticket,entrypoint:`approve` --call ticketAddress,entrypoint --call buyBeastModeGame --call enterBeastMode
 
-downloaded 348 files, 16.0 MB into /tmp/lsfront-1794217492237
-14 snippet(s) for entrypoint:`new_game`, PaymentType, claim_beast, is_beast_collectable -> frontend/snippets.json
+downloaded 348 files, 16.0 MB into /tmp/lsfront-1794217648803
+0 snippet(s) for .ticket,entrypoint:`approve`, ticketAddress,entrypoint, buyBeastModeGame, enterBeastMode -> frontend/snippets.json
 10 dungeon configs on lootsurvivor.io
   trials                   Trials                     online       Free
   beastmode                Beast Mode                 online       1 Ticket settings=Ao minter=ko @jo.dungeon
