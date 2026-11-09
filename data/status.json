@@ -1,52 +1,10 @@
 {
- "updated": "2026-11-09T12:40:28.654Z",
+ "updated": "2026-11-09T12:40:41.957Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-11-09T11-17-32-722Z",
  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "recent": [
-  {
-   "n": 32,
-   "t": "2026-11-09T12:36:52.283Z",
-   "level": 10,
-   "xp": 120,
-   "hp": 129,
-   "maxHp": 130,
-   "gold": 2,
-   "phase": "battle",
-   "reason": "Attack Dragon (L4 T4, 80 HP): P(win)=100.0% P(death)=0.0%; attack value 205.2 vs flee 172.0",
-   "actions": "attack",
-   "tx": "0x347f304cf28fde45f8ef6259f41e27c1845bbc4d3030e0181965327b396c3cf",
-   "ok": true
-  },
-  {
-   "n": 33,
-   "t": "2026-11-09T12:36:55.051Z",
-   "level": 11,
-   "xp": 124,
-   "hp": 129,
-   "maxHp": 130,
-   "gold": 6,
-   "phase": "level_up",
-   "reason": "Stats +1 DEX; Drink 1 potion(s); Explore (instant-death risk 1.1%, battle-death risk 1.7%, HP 130/130)",
-   "actions": "stats(dex+1) + buy(1 potion) + explore",
-   "tx": "0x42a848f52a5b40ec17e5a236265219f352b542f9be6bb10d779713e12a654bd",
-   "ok": true
-  },
-  {
-   "n": 34,
-   "t": "2026-11-09T12:37:01.242Z",
-   "level": 11,
-   "xp": 125,
-   "hp": 130,
-   "maxHp": 130,
-   "gold": 5,
-   "phase": "explore",
-   "reason": "Explore (instant-death risk 1.1%, battle-death risk 1.7%, HP 130/130)",
-   "actions": "explore",
-   "tx": "0x23df218bfd7e44cb3607078ee84579d5a8c5971add44d68a399f5988a8bcd6a",
-   "ok": true
-  },
   {
    "n": 35,
    "t": "2026-11-09T12:37:04.053Z",
@@ -564,13 +522,55 @@
    "actions": "stats(dex+1) + explore",
    "tx": "0x185fe842e240c22725e2532e7c7998b1d12c58477975e799ef568e7a554c288",
    "ok": true
+  },
+  {
+   "n": 36,
+   "t": "2026-11-09T12:40:28.655Z",
+   "level": 8,
+   "xp": 79,
+   "hp": 5,
+   "maxHp": 160,
+   "gold": 0,
+   "phase": "battle",
+   "reason": "Flee from Oni (L14 T1): P(escape)=67.1% P(death)=32.9%; flee value 42.8 vs attack 6.8",
+   "actions": "flee",
+   "tx": "0x41e18baf1e19ff4ad46e6de21f917a57b5b6867a9fd9c20a18df487cc9ff353",
+   "ok": true
+  },
+  {
+   "n": 37,
+   "t": "2026-11-09T12:40:31.431Z",
+   "level": 8,
+   "xp": 80,
+   "hp": 5,
+   "maxHp": 160,
+   "gold": 0,
+   "phase": "explore",
+   "reason": "Explore (instant-death risk 32.8%, battle-death risk 12.5%, HP 5/160)",
+   "actions": "explore",
+   "tx": "0x116c549fd2ca4640595cdd3961d4351f187d9400638af5d68b3e6265fdee96a",
+   "ok": true
+  },
+  {
+   "n": 38,
+   "t": "2026-11-09T12:40:37.597Z",
+   "level": 9,
+   "xp": 84,
+   "hp": 5,
+   "maxHp": 160,
+   "gold": 0,
+   "phase": "level_up",
+   "reason": "Stats +1 DEX; Explore (instant-death risk 35.4%, battle-death risk 11.2%, HP 5/160)",
+   "actions": "stats(dex+1) + explore",
+   "tx": "0x1e1679547ac10b5b7ccdedc52964c5e589a47a5484763f4897e463c7864fdbe",
+   "ok": true
   }
  ],
  "current": {
   "id": "374144419157391711793985745729985369408292602684609",
-  "level": 8,
-  "xp": 79,
-  "hp": 21,
+  "level": 9,
+  "xp": 84,
+  "hp": 5,
   "maxHp": 160,
   "gold": 0,
   "gear": [
@@ -585,13 +585,13 @@
   ],
   "stats": {
    "str": 4,
-   "dex": 4,
+   "dex": 5,
    "vit": 4,
    "int": 2,
    "wis": 0,
    "cha": 4,
    "luck": 2
   },
-  "lastReason": "Stats +1 DEX; Explore (instant-death risk 17.4%, battle-death risk 9.9%, HP 21/160)"
+  "lastReason": "Stats +1 DEX; Explore (instant-death risk 35.4%, battle-death risk 11.2%, HP 5/160)"
  }
 }
