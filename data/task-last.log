@@ -1,29 +1,19 @@
-== bot rpc-probe --address https://api.cartridge.gg/x/starknet/mainnet/rpc/v0_8 --address https://rpc.provable.games/rpc
+== bot frontend --call signupUntil --call PvP --call pvp-signup --call budokanAddress --call entryDeadline --call Rabby
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts rpc-probe --address https://api.cartridge.gg/x/starknet/mainnet/rpc/v0_8 --address https://rpc.provable.games/rpc
+> node --import tsx src/cli.ts frontend --call signupUntil --call PvP --call pvp-signup --call budokanAddress --call entryDeadline --call Rabby
 
-https://api.cartridge.gg/x/starknet/mainnet starknet_chainId: HTTP 401 Unauthorized 
-https://api.cartridge.gg/x/starknet/mainnet starknet_specVersion: HTTP 401 Unauthorized 
-https://api.cartridge.gg/x/starknet/mainnet cartridge_addExecuteOutsideTransaction: HTTP 401 Unauthorized 
-https://api.cartridge.gg/x/starknet/mainnet/rpc/v0_10 starknet_chainId: HTTP 401 Unauthorized 
-https://api.cartridge.gg/x/starknet/mainnet/rpc/v0_10 starknet_specVersion: HTTP 401 Unauthorized 
-https://api.cartridge.gg/x/starknet/mainnet/rpc/v0_10 cartridge_addExecuteOutsideTransaction: HTTP 401 Unauthorized 
-https://api.cartridge.gg/x/starknet/mainnet/rpc/v0_9 starknet_chainId: HTTP 401 Unauthorized 
-https://api.cartridge.gg/x/starknet/mainnet/rpc/v0_9 starknet_specVersion: HTTP 401 Unauthorized 
-https://api.cartridge.gg/x/starknet/mainnet/rpc/v0_9 cartridge_addExecuteOutsideTransaction: HTTP 401 Unauthorized 
-https://api.zan.top/public/starknet-mainnet/rpc/v0_10 starknet_chainId: HTTP 200 {"id":1,"jsonrpc":"2.0","result":"0x534e5f4d41494e"}
-https://api.zan.top/public/starknet-mainnet/rpc/v0_10 starknet_specVersion: HTTP 200 {"id":1,"jsonrpc":"2.0","result":"0.10.3-rc.0"}
-https://api.zan.top/public/starknet-mainnet/rpc/v0_10 cartridge_addExecuteOutsideTransaction: HTTP 400 {"error":{"code":-32601,"message":"method error; invalid method: cartridge_addExecuteOutsideTransaction","data":{"traceId":"1a1c00359207704d"}},"id":1,"jsonrpc":"2.0"}
-https://rpc.starknet.lava.build starknet_chainId: HTTP 410 {"error":"This endpoint has been discontinued.","message":"For an up to date list of available endpoints, visit https://gateway.lavanet.xyz"}
-https://rpc.starknet.lava.build starknet_specVersion: HTTP 410 {"error":"This endpoint has been discontinued.","message":"For an up to date list of available endpoints, visit https://gateway.lavanet.xyz"}
-https://rpc.starknet.lava.build cartridge_addExecuteOutsideTransaction: HTTP 410 {"error":"This endpoint has been discontinued.","message":"For an up to date list of available endpoints, visit https://gateway.lavanet.xyz"}
-https://starknet.drpc.org starknet_chainId: HTTP 200 {"id":1,"jsonrpc":"2.0","result":"0x534e5f4d41494e"}
-https://starknet.drpc.org starknet_specVersion: HTTP 400 {"id":1,"jsonrpc":"2.0","error":{"message":"the method starknet_specVersion does not exist/is not available","code":-32601}}
-https://starknet.drpc.org cartridge_addExecuteOutsideTransaction: HTTP 400 {"id":1,"jsonrpc":"2.0","error":{"message":"method is not available","code":-32601}}
-https://api.cartridge.gg/x/starknet/mainnet/rpc/v0_8 starknet_chainId: HTTP 401 Unauthorized 
-https://api.cartridge.gg/x/starknet/mainnet/rpc/v0_8 starknet_specVersion: HTTP 401 Unauthorized 
-https://api.cartridge.gg/x/starknet/mainnet/rpc/v0_8 cartridge_addExecuteOutsideTransaction: HTTP 401 Unauthorized 
-https://rpc.provable.games/rpc starknet_chainId: HTTP 200 {"id":1,"jsonrpc":"2.0","result":"0x534e5f4d41494e"}
-https://rpc.provable.games/rpc starknet_specVersion: HTTP 200 {"id":1,"jsonrpc":"2.0","result":"0.10.3-rc.0"}
-https://rpc.provable.games/rpc cartridge_addExecuteOutsideTransaction: HTTP 200 {"jsonrpc":"2.0","id":1,"error":{"code":-32003,"message":"insufficient credits and no applicable paymaster found"}}
+downloaded 348 files, 16.0 MB into /tmp/lsfront-1794223064507
+35 snippet(s) for signupUntil, PvP, pvp-signup, budokanAddress, entryDeadline, Rabby -> frontend/snippets.json
+10 dungeon configs on lootsurvivor.io
+  trials                   Trials                     online       Free
+  beastmode                Beast Mode                 online       1 Ticket settings=Ao minter=ko @jo.dungeon
+  ronke-casino             Ronke Casino               Fe?`online`:`coming_soon Free · 3 days settings=Xe minter=We sponsored @Ee
+  karats                   Karats                     online       Free settings=Go minter=qo @Jo
+  lootbag                  Loot Bag                   closed       Loot Bag settings=1 minter=13 @Cr.lootDungeon
+  pvp                      PvP Dungeons               online       Free
+  tournaments              Tournaments                Ug.ready?`online`:`coming_soon  minter=Ug.minterId @Ug.budokanAddress
+  norwich-games-festival   Norwich Games Festival     online       Free @0x04253e24220629b737512a24cb3172fc381db7be7a697d5af358ff21ef1172be
+  blockhash                Blockhash                  closed       Free settings=0
+  unknown                  Unknown Dungeon            offline       @0x04253e24220629b737512a24cb3172fc381db7be7a697d5af358ff21ef1172be
+Ronke dungeons: ronke-casino (Ronke Casino)
