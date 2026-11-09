@@ -19,6 +19,8 @@ const hex = (v: bigint | number) => '0x' + BigInt(v).toString(16);
 
 /** Budokan phases as current_phase returns them (bracket client: 3 = live, 5 = finalized). */
 const PHASE = { live: 3, submission: 4, finalized: 5 } as const;
+/** runs a player may enter per table (the entry requirement's entry_limit; the validator's entries_left wins) */
+const TABLE_RUNS = 10;
 
 interface TableState {
   tournamentId: string;
@@ -216,7 +218,10 @@ export async function runPvpCommand(opts: { live: boolean; dataDir: string; maxR
   }
   if (issued.length) console.log(`[pvp] ${issued.length} unplayed run(s) already issued at this table: ${issued.join(', ')}`);
   save();
-  const runsLeft = Math.max(0, Math.min(opts.maxRuns - today.runs.length, allow.entriesLeft ?? Infinity));
+  // --max-games N: up to N new entries in this call, never more than the table still allows this account
+  const tableLeft = allow.entriesLeft ?? Math.max(0, TABLE_RUNS - today.runs.length);
+  const runsLeft = Math.max(0, Math.min(opts.maxRuns, tableLeft));
+  console.log(`[pvp] ${tableLeft} entr${tableLeft === 1 ? 'y' : 'ies'} left on this table; entering up to ${runsLeft} now`);
   if ((!runsLeft && !issued.length) || !opts.live) {
     console.log(`[pvp] ${opts.live ? 'all runs used' : 'dry run'}: not playing`);
     save();
@@ -232,7 +237,7 @@ export async function runPvpCommand(opts: { live: boolean; dataDir: string; maxR
       const id = await chain.enterWith(ga, [enterCall()]);
       today.runs.push(id.toString());
       save();
-      console.log(`[pvp] entered run ${today.runs.length}/${opts.maxRuns} on table ${today.tournamentId}: game ${id}`);
+      console.log(`[pvp] entered run ${today.runs.length}/${TABLE_RUNS} on table ${today.tournamentId}: game ${id}`);
       return id;
     },
   });

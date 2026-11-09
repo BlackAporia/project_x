@@ -18,7 +18,7 @@ on:
   workflow_dispatch:
     inputs:
       runs:
-        description: runs to play on today's table (the table allows 10)
+        description: new runs to enter and play on today's table now (the table allows 10 per player)
         default: '10'
       live:
         description: send transactions (true) or only read the table status (false)
