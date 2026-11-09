@@ -1,9 +1,9 @@
 {
- "updated": "2026-10-26T17:56:56.729Z",
+ "updated": "2026-11-09T09:04:16.189Z",
  "board": {
   "name": "Proving Grounds",
   "minterId": 10,
-  "total": 461
+  "total": 537
  },
  "entries": [
   {
@@ -34,6 +34,19 @@
   },
   {
    "rank": 3,
+   "tokenId": "0x020000000000000000000a00000000000000000001c812c3010603d10006ce01",
+   "player": null,
+   "owner": "0x011a38b6ac19b58545cfc10d72cde8c7dbfd9346670cbbd410026ff1ef3f1e76",
+   "xp": 1551,
+   "level": 39,
+   "gameOver": true,
+   "settled": false,
+   "updated": "2026-10-30T10:07:35.000Z",
+   "settingsId": 0,
+   "bot": false
+  },
+  {
+   "rank": 4,
    "tokenId": "0x020000000000000000000a00000000000000000001c7fd350102fdca000ca361",
    "player": null,
    "owner": "0x05b7e307d9dc6e7195681eeaa05fbd0a989173bda36160f5ea8f02e466101be6",
@@ -46,7 +59,33 @@
    "bot": false
   },
   {
-   "rank": 4,
+   "rank": 5,
+   "tokenId": "0x020000000000000000000a00000000000000000001c807f60104817000056fa1",
+   "player": null,
+   "owner": "0x034b911ec7a6c4276f1ecbc083823d678d0908e3853e345de850ff142e98e16e",
+   "xp": 1400,
+   "level": 37,
+   "gameOver": true,
+   "settled": false,
+   "updated": "2026-10-28T12:03:20.000Z",
+   "settingsId": 0,
+   "bot": false
+  },
+  {
+   "rank": 6,
+   "tokenId": "0x020000000000000000000a00000000000000000001c81435010637ad0013a221",
+   "player": null,
+   "owner": "0x034b911ec7a6c4276f1ecbc083823d678d0908e3853e345de850ff142e98e16e",
+   "xp": 1319,
+   "level": 36,
+   "gameOver": true,
+   "settled": false,
+   "updated": "2026-10-30T16:32:25.000Z",
+   "settingsId": 0,
+   "bot": false
+  },
+  {
+   "rank": 7,
    "tokenId": "0x020000000000000000000a00000000000000000001c7fcb70102ec0000158221",
    "player": null,
    "owner": "0x04ca31f839b32ffd48a958693c4b22b02916142c3bea8d62cd59ffcf94f21b32",
@@ -59,7 +98,7 @@
    "bot": false
   },
   {
-   "rank": 5,
+   "rank": 8,
    "tokenId": "0x020000000000000000000a00000000000000000001c7fdc10103118b001edb81",
    "player": null,
    "owner": "0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
@@ -72,7 +111,7 @@
    "bot": true
   },
   {
-   "rank": 6,
+   "rank": 9,
    "tokenId": "0x020000000000000000000a00000000000000000001c7fb910102c2a9001196e1",
    "player": null,
    "owner": "0x00c2fc361793494b5526b3968e0a3b80ad6d0fbb5c2961f4818a928f799a9d4a",
@@ -85,7 +124,7 @@
    "bot": false
   },
   {
-   "rank": 7,
+   "rank": 10,
    "tokenId": "0x020000000000000000000a00000000000000000001c7e76200ffeb8100176521",
    "player": null,
    "owner": "0x04fc6bcea9b03092cd953b90c921f7aef50020ffaed1cb729bd3210396b57afa",
@@ -98,7 +137,7 @@
    "bot": false
   },
   {
-   "rank": 8,
+   "rank": 11,
    "tokenId": "0x020000000000000000000a00000000000000000001c7e73000ffe46e0002ce41",
    "player": null,
    "owner": "0x003b1e83f8662f277b86a9baa13f3b78c04aafe742e149c3e0a50d6027ebb37f",
@@ -111,7 +150,7 @@
    "bot": false
   },
   {
-   "rank": 9,
+   "rank": 12,
    "tokenId": "0x020000000000000000000a00000000000000000001c7e80d0100038700174741",
    "player": null,
    "owner": "0x06013c2915ae97d21f8eb88ee03fa72d9a4803c1ed258935d87bc93f260b0196",
@@ -124,7 +163,7 @@
    "bot": false
   },
   {
-   "rank": 10,
+   "rank": 13,
    "tokenId": "0x020000000000000000000a00000000000000000001c7ea8b01005d1a00091981",
    "player": null,
    "owner": "0x040d1751c1a470b6ffa3136a9e51eeaa2f15707d5e087b36cbe1f3a02b96f981",
@@ -137,7 +176,7 @@
    "bot": false
   },
   {
-   "rank": 11,
+   "rank": 14,
    "tokenId": "0x020000000000000000000a00000000000000000001c7f7c301023942000ab721",
    "player": null,
    "owner": "0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
@@ -150,7 +189,7 @@
    "bot": true
   },
   {
-   "rank": 12,
+   "rank": 15,
    "tokenId": "0x020000000000000000000a00000000000000000001c7f7b2010236c300120941",
    "player": null,
    "owner": "0x04ca31f839b32ffd48a958693c4b22b02916142c3bea8d62cd59ffcf94f21b32",
@@ -163,7 +202,7 @@
    "bot": false
   },
   {
-   "rank": 13,
+   "rank": 16,
    "tokenId": "0x020000000000000000000a00000000000000000001c7f19601015a960008fd61",
    "player": null,
    "owner": "0x011a38b6ac19b58545cfc10d72cde8c7dbfd9346670cbbd410026ff1ef3f1e76",
@@ -176,7 +215,7 @@
    "bot": false
   },
   {
-   "rank": 14,
+   "rank": 17,
    "tokenId": "0x020000000000000000000a00000000000000000001c7fb8c0102c1d600191fc1",
    "player": null,
    "owner": "0x04ca31f839b32ffd48a958693c4b22b02916142c3bea8d62cd59ffcf94f21b32",
@@ -189,7 +228,7 @@
    "bot": false
   },
   {
-   "rank": 15,
+   "rank": 18,
    "tokenId": "0x020000000000000000000a00000000000000000001c7fd070102f764000e20a1",
    "player": null,
    "owner": "0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
@@ -202,7 +241,33 @@
    "bot": true
   },
   {
-   "rank": 16,
+   "rank": 19,
+   "tokenId": "0x020000000000000000000a00000000000000000001c8131501060f610013e061",
+   "player": null,
+   "owner": "0x034b911ec7a6c4276f1ecbc083823d678d0908e3853e345de850ff142e98e16e",
+   "xp": 927,
+   "level": 30,
+   "gameOver": true,
+   "settled": false,
+   "updated": "2026-10-30T11:31:03.000Z",
+   "settingsId": 0,
+   "bot": false
+  },
+  {
+   "rank": 20,
+   "tokenId": "0x020000000000000000000a00000000000000000001c820580107eaa700055fe1",
+   "player": null,
+   "owner": "0x034b911ec7a6c4276f1ecbc083823d678d0908e3853e345de850ff142e98e16e",
+   "xp": 905,
+   "level": 30,
+   "gameOver": true,
+   "settled": false,
+   "updated": "2026-11-01T19:54:55.000Z",
+   "settingsId": 0,
+   "bot": false
+  },
+  {
+   "rank": 21,
    "tokenId": "0x020000000000000000000a00000000000000000001c7ea73010059b0000d6481",
    "player": null,
    "owner": "0x07cc8f090c34ab297bbc5ce87a1808c5945cf1a0d298cfb1bdf5252a009d4a3c",
@@ -215,7 +280,7 @@
    "bot": false
   },
   {
-   "rank": 17,
+   "rank": 22,
    "tokenId": "0x020000000000000000000a00000000000000000001c7f39b0101a34400002c61",
    "player": null,
    "owner": "0x053387790ea7e36ad8e848f28a58a9f9b60e934e78cc46a835ba7386df25d8b5",
@@ -228,7 +293,7 @@
    "bot": false
   },
   {
-   "rank": 18,
+   "rank": 23,
    "tokenId": "0x020000000000000000000a00000000000000000001c7ea3a010051b2001df641",
    "player": null,
    "owner": "0x07cc8f090c34ab297bbc5ce87a1808c5945cf1a0d298cfb1bdf5252a009d4a3c",
@@ -241,7 +306,7 @@
    "bot": false
   },
   {
-   "rank": 19,
+   "rank": 24,
    "tokenId": "0x020000000000000000000a00000000000000000001c7ea0b01004b3000026c21",
    "player": null,
    "owner": "0x05960dbe5371de91d15babb3a362c7d4e39fbcd094994f6c8581e17c951b50ee",
@@ -254,7 +319,7 @@
    "bot": false
   },
   {
-   "rank": 20,
+   "rank": 25,
    "tokenId": "0x020000000000000000000a00000000000000000001c7f17c010156e700133741",
    "player": null,
    "owner": "0x011a38b6ac19b58545cfc10d72cde8c7dbfd9346670cbbd410026ff1ef3f1e76",
@@ -267,7 +332,7 @@
    "bot": false
   },
   {
-   "rank": 21,
+   "rank": 26,
    "tokenId": "0x020000000000000000000a00000000000000000001c7f7ee01023f370014e201",
    "player": null,
    "owner": "0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
@@ -280,7 +345,20 @@
    "bot": true
   },
   {
-   "rank": 22,
+   "rank": 27,
+   "tokenId": "0x020000000000000000000a00000000000000000001c80871010492b8001883e1",
+   "player": null,
+   "owner": "0x034b911ec7a6c4276f1ecbc083823d678d0908e3853e345de850ff142e98e16e",
+   "xp": 772,
+   "level": 27,
+   "gameOver": true,
+   "settled": false,
+   "updated": "2026-10-30T10:56:28.000Z",
+   "settingsId": 0,
+   "bot": false
+  },
+  {
+   "rank": 28,
    "tokenId": "0x020000000000000000000a00000000000000000001c7f73601022557001ec241",
    "player": null,
    "owner": "0x053387790ea7e36ad8e848f28a58a9f9b60e934e78cc46a835ba7386df25d8b5",
@@ -293,7 +371,20 @@
    "bot": false
   },
   {
-   "rank": 23,
+   "rank": 29,
+   "tokenId": "0x020000000000000000000a00000000000000000001c8138501061f17001e59e1",
+   "player": null,
+   "owner": "0x034b911ec7a6c4276f1ecbc083823d678d0908e3853e345de850ff142e98e16e",
+   "xp": 742,
+   "level": 27,
+   "gameOver": true,
+   "settled": false,
+   "updated": "2026-10-30T13:10:19.000Z",
+   "settingsId": 0,
+   "bot": false
+  },
+  {
+   "rank": 30,
    "tokenId": "0x020000000000000000000a00000000000000000001c7f832010248e00016ef81",
    "player": null,
    "owner": "0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
@@ -306,7 +397,7 @@
    "bot": true
   },
   {
-   "rank": 24,
+   "rank": 31,
    "tokenId": "0x020000000000000000000a00000000000000000001c7f5590101e1fc000322c1",
    "player": null,
    "owner": "0x04ca31f839b32ffd48a958693c4b22b02916142c3bea8d62cd59ffcf94f21b32",
@@ -319,7 +410,7 @@
    "bot": false
   },
   {
-   "rank": 25,
+   "rank": 32,
    "tokenId": "0x020000000000000000000a00000000000000000001c7ed8f0100c996001719c1",
    "player": null,
    "owner": "0x07902b1ca336973df3345a5718fd4f24d5bbdf120c4232723644e5e1ceb75ef0",
@@ -332,7 +423,7 @@
    "bot": false
   },
   {
-   "rank": 26,
+   "rank": 33,
    "tokenId": "0x020000000000000000000a00000000000000000001c7f56c0101e4bd0004bbc1",
    "player": null,
    "owner": "0x04ca31f839b32ffd48a958693c4b22b02916142c3bea8d62cd59ffcf94f21b32",
@@ -345,7 +436,7 @@
    "bot": false
   },
   {
-   "rank": 27,
+   "rank": 34,
    "tokenId": "0x020000000000000000000a00000000000000000001c7e7a900fff56e00132681",
    "player": null,
    "owner": "0x06013c2915ae97d21f8eb88ee03fa72d9a4803c1ed258935d87bc93f260b0196",
@@ -358,7 +449,7 @@
    "bot": false
   },
   {
-   "rank": 28,
+   "rank": 35,
    "tokenId": "0x020000000000000000000a00000000000000000001c7f64e010204a80006b2e1",
    "player": null,
    "owner": "0x061d598f806fac13da93722bc893383eb77ba509d2fcef7cba9853abc5b7bb4c",
@@ -371,7 +462,7 @@
    "bot": false
   },
   {
-   "rank": 29,
+   "rank": 36,
    "tokenId": "0x020000000000000000000a00000000000000000001c7fd130102f90200182681",
    "player": null,
    "owner": "0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
@@ -384,7 +475,7 @@
    "bot": true
   },
   {
-   "rank": 30,
+   "rank": 37,
    "tokenId": "0x020000000000000000000a00000000000000000001c7eaf001006b59000367a1",
    "player": null,
    "owner": "0x058e6cacec273b5e7bbac125066186ae32d71b804acef860a9108f8e299a54eb",
@@ -397,7 +488,7 @@
    "bot": false
   },
   {
-   "rank": 31,
+   "rank": 38,
    "tokenId": "0x020000000000000000000a00000000000000000001c7e99801003ae9000a7841",
    "player": null,
    "owner": "0x030be6e438b2d0a1b18045bdf83b91f45fa9eb2f0c49d8835c99ed1a1a482462",
@@ -410,7 +501,7 @@
    "bot": false
   },
   {
-   "rank": 32,
+   "rank": 39,
    "tokenId": "0x020000000000000000000a00000000000000000001c7f334010194c100079301",
    "player": null,
    "owner": "0x05e1eb256e4a1486f79d0e6cb419e63288f41c38924abb8e4371b936db661942",
@@ -423,7 +514,7 @@
    "bot": false
   },
   {
-   "rank": 33,
+   "rank": 40,
    "tokenId": "0x020000000000000000000a00000000000000000001c7fda501030d8a001f0cc1",
    "player": null,
    "owner": "0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
@@ -436,7 +527,7 @@
    "bot": true
   },
   {
-   "rank": 34,
+   "rank": 41,
    "tokenId": "0x020000000000000000000a00000000000000000001c7f9600102736d00094321",
    "player": null,
    "owner": "0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
@@ -449,7 +540,7 @@
    "bot": true
   },
   {
-   "rank": 35,
+   "rank": 42,
    "tokenId": "0x020000000000000000000a00000000000000000001c7f94901027040001f40e1",
    "player": null,
    "owner": "0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
@@ -462,7 +553,7 @@
    "bot": true
   },
   {
-   "rank": 36,
+   "rank": 43,
    "tokenId": "0x020000000000000000000a00000000000000000001c7f1a801015d230002b861",
    "player": null,
    "owner": "0x011a38b6ac19b58545cfc10d72cde8c7dbfd9346670cbbd410026ff1ef3f1e76",
@@ -475,7 +566,7 @@
    "bot": false
   },
   {
-   "rank": 37,
+   "rank": 44,
    "tokenId": "0x020000000000000000000a00000000000000000001c7fd9001030aad00175ae1",
    "player": null,
    "owner": "0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
@@ -488,7 +579,7 @@
    "bot": true
   },
   {
-   "rank": 38,
+   "rank": 45,
    "tokenId": "0x020000000000000000000a00000000000000000001c7f7d201023b500014cea1",
    "player": null,
    "owner": "0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
@@ -501,7 +592,7 @@
    "bot": true
   },
   {
-   "rank": 39,
+   "rank": 46,
    "tokenId": "0x020000000000000000000a00000000000000000001c7ed440100bf1c000a5ee1",
    "player": null,
    "owner": "0x04af22fa6d29a9fe5781def72d8c85c0722096fc3646f3bde2dd6e1d0cc7fa9b",
@@ -514,7 +605,7 @@
    "bot": false
   },
   {
-   "rank": 40,
+   "rank": 47,
    "tokenId": "0x020000000000000000000a00000000000000000001c7fd800103085a00148781",
    "player": null,
    "owner": "0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
@@ -527,7 +618,7 @@
    "bot": true
   },
   {
-   "rank": 41,
+   "rank": 48,
    "tokenId": "0x020000000000000000000a00000000000000000001c7ea66010057f80019d0a1",
    "player": null,
    "owner": "0x07cc8f090c34ab297bbc5ce87a1808c5945cf1a0d298cfb1bdf5252a009d4a3c",
@@ -540,7 +631,7 @@
    "bot": false
   },
   {
-   "rank": 42,
+   "rank": 49,
    "tokenId": "0x020000000000000000000a00000000000000000001c7ed990100cb1b0015bde1",
    "player": null,
    "owner": "0x053387790ea7e36ad8e848f28a58a9f9b60e934e78cc46a835ba7386df25d8b5",
@@ -553,7 +644,7 @@
    "bot": false
   },
   {
-   "rank": 43,
+   "rank": 50,
    "tokenId": "0x020000000000000000000a00000000000000000001c7e9e90100466200047201",
    "player": null,
    "owner": "0x07cc8f090c34ab297bbc5ce87a1808c5945cf1a0d298cfb1bdf5252a009d4a3c",
@@ -566,7 +657,7 @@
    "bot": false
   },
   {
-   "rank": 44,
+   "rank": 51,
    "tokenId": "0x020000000000000000000a00000000000000000001c7e9f60100483d001441a1",
    "player": null,
    "owner": "0x032a8ac0ab2b7d9b401cf2afdfd390b3e7ddb3adde34912325181c8f7e041758",
@@ -579,7 +670,33 @@
    "bot": false
   },
   {
-   "rank": 45,
+   "rank": 52,
+   "tokenId": "0x020000000000000000000a00000000000000000001c7e9b601003f40000b0de1",
+   "player": null,
+   "owner": "0x030be6e438b2d0a1b18045bdf83b91f45fa9eb2f0c49d8835c99ed1a1a482462",
+   "xp": 527,
+   "level": 22,
+   "gameOver": true,
+   "settled": false,
+   "updated": "2026-11-02T07:09:19.000Z",
+   "settingsId": 0,
+   "bot": false
+  },
+  {
+   "rank": 53,
+   "tokenId": "0x020000000000000000000a00000000000000000001c807ce01047bc5001f3761",
+   "player": null,
+   "owner": "0x034b911ec7a6c4276f1ecbc083823d678d0908e3853e345de850ff142e98e16e",
+   "xp": 526,
+   "level": 22,
+   "gameOver": true,
+   "settled": false,
+   "updated": "2026-10-28T11:07:06.000Z",
+   "settingsId": 0,
+   "bot": false
+  },
+  {
+   "rank": 54,
    "tokenId": "0x020000000000000000000a00000000000000000001c7f5410101deb2000e3c81",
    "player": null,
    "owner": "0x04ca31f839b32ffd48a958693c4b22b02916142c3bea8d62cd59ffcf94f21b32",
@@ -592,7 +709,20 @@
    "bot": false
   },
   {
-   "rank": 46,
+   "rank": 55,
+   "tokenId": "0x020000000000000000000a00000000000000000001c8148d010643ec000fcce1",
+   "player": null,
+   "owner": "0x034b911ec7a6c4276f1ecbc083823d678d0908e3853e345de850ff142e98e16e",
+   "xp": 512,
+   "level": 22,
+   "gameOver": true,
+   "settled": false,
+   "updated": "2026-10-30T17:46:14.000Z",
+   "settingsId": 0,
+   "bot": false
+  },
+  {
+   "rank": 56,
    "tokenId": "0x020000000000000000000a00000000000000000001c7eebc0100f3b700130841",
    "player": null,
    "owner": "0x05e1eb256e4a1486f79d0e6cb419e63288f41c38924abb8e4371b936db661942",
@@ -605,7 +735,20 @@
    "bot": false
   },
   {
-   "rank": 47,
+   "rank": 57,
+   "tokenId": "0x020000000000000000000a00000000000000000001c8098f0104bab0001e5fe1",
+   "player": null,
+   "owner": "0x02be1067847717b0b7d40768b66befd9f1d77232e60ccebf8d8851739b712644",
+   "xp": 511,
+   "level": 22,
+   "gameOver": true,
+   "settled": false,
+   "updated": "2026-10-28T18:41:39.000Z",
+   "settingsId": 0,
+   "bot": false
+  },
+  {
+   "rank": 58,
    "tokenId": "0x020000000000000000000a00000000000000000001c7eb1b0100715800005241",
    "player": null,
    "owner": "0x040d1751c1a470b6ffa3136a9e51eeaa2f15707d5e087b36cbe1f3a02b96f981",
@@ -618,7 +761,7 @@
    "bot": false
   },
   {
-   "rank": 48,
+   "rank": 59,
    "tokenId": "0x020000000000000000000a00000000000000000001c7fd1c0102fa4600172361",
    "player": null,
    "owner": "0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
@@ -631,7 +774,7 @@
    "bot": true
   },
   {
-   "rank": 49,
+   "rank": 60,
    "tokenId": "0x020000000000000000000a00000000000000000001c7f7e401023dc900070ec1",
    "player": null,
    "owner": "0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
@@ -644,7 +787,7 @@
    "bot": true
   },
   {
-   "rank": 50,
+   "rank": 61,
    "tokenId": "0x020000000000000000000a00000000000000000001c7e78c00fff1520008c061",
    "player": null,
    "owner": "0x058e6cacec273b5e7bbac125066186ae32d71b804acef860a9108f8e299a54eb",
@@ -657,7 +800,7 @@
    "bot": false
   },
   {
-   "rank": 51,
+   "rank": 62,
    "tokenId": "0x020000000000000000000a00000000000000000001c7ea01010049b000111c81",
    "player": null,
    "owner": "0x05960dbe5371de91d15babb3a362c7d4e39fbcd094994f6c8581e17c951b50ee",
@@ -670,7 +813,7 @@
    "bot": false
   },
   {
-   "rank": 52,
+   "rank": 63,
    "tokenId": "0x020000000000000000000a00000000000000000001c7f4170101b4b8000550c1",
    "player": null,
    "owner": "0x07902b1ca336973df3345a5718fd4f24d5bbdf120c4232723644e5e1ceb75ef0",
@@ -683,7 +826,7 @@
    "bot": false
   },
   {
-   "rank": 53,
+   "rank": 64,
    "tokenId": "0x020000000000000000000a00000000000000000001c7fcf80102f53a0012f661",
    "player": null,
    "owner": "0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
@@ -696,7 +839,7 @@
    "bot": true
   },
   {
-   "rank": 54,
+   "rank": 65,
    "tokenId": "0x020000000000000000000a00000000000000000001c7f9560102720700190261",
    "player": null,
    "owner": "0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
@@ -709,7 +852,7 @@
    "bot": true
   },
   {
-   "rank": 55,
+   "rank": 66,
    "tokenId": "0x020000000000000000000a00000000000000000001c7f814010244ae000da701",
    "player": null,
    "owner": "0x04ca31f839b32ffd48a958693c4b22b02916142c3bea8d62cd59ffcf94f21b32",
@@ -722,7 +865,7 @@
    "bot": false
   },
   {
-   "rank": 56,
+   "rank": 67,
    "tokenId": "0x020000000000000000000a00000000000000000001c7fd76010306fd000912c1",
    "player": null,
    "owner": "0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
@@ -735,7 +878,7 @@
    "bot": true
   },
   {
-   "rank": 57,
+   "rank": 68,
    "tokenId": "0x020000000000000000000a00000000000000000001c7eac00100648f001993a1",
    "player": null,
    "owner": "0x058e6cacec273b5e7bbac125066186ae32d71b804acef860a9108f8e299a54eb",
@@ -748,7 +891,7 @@
    "bot": false
   },
   {
-   "rank": 58,
+   "rank": 69,
    "tokenId": "0x020000000000000000000a00000000000000000001c7f8050102427600103321",
    "player": null,
    "owner": "0x04ca31f839b32ffd48a958693c4b22b02916142c3bea8d62cd59ffcf94f21b32",
@@ -761,7 +904,7 @@
    "bot": false
   },
   {
-   "rank": 59,
+   "rank": 70,
    "tokenId": "0x020000000000000000000a00000000000000000001c7f70101021dd2001fd8a1",
    "player": null,
    "owner": "0x07902b1ca336973df3345a5718fd4f24d5bbdf120c4232723644e5e1ceb75ef0",
@@ -774,7 +917,7 @@
    "bot": false
   },
   {
-   "rank": 60,
+   "rank": 71,
    "tokenId": "0x020000000000000000000a00000000000000000001c7ef6401010b6100164a41",
    "player": null,
    "owner": "0x040d1751c1a470b6ffa3136a9e51eeaa2f15707d5e087b36cbe1f3a02b96f981",
@@ -787,7 +930,7 @@
    "bot": false
   },
   {
-   "rank": 61,
+   "rank": 72,
    "tokenId": "0x020000000000000000000a00000000000000000001c7ea58010055ec000b9f41",
    "player": null,
    "owner": "0x07cc8f090c34ab297bbc5ce87a1808c5945cf1a0d298cfb1bdf5252a009d4a3c",
@@ -800,7 +943,7 @@
    "bot": false
   },
   {
-   "rank": 62,
+   "rank": 73,
    "tokenId": "0x020000000000000000000a00000000000000000001c7eb7401007dda0008dba1",
    "player": null,
    "owner": "0x040d1751c1a470b6ffa3136a9e51eeaa2f15707d5e087b36cbe1f3a02b96f981",
@@ -813,7 +956,7 @@
    "bot": false
   },
   {
-   "rank": 63,
+   "rank": 74,
    "tokenId": "0x020000000000000000000a00000000000000000001c7fd000102f64e0012c9e1",
    "player": null,
    "owner": "0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
@@ -826,7 +969,7 @@
    "bot": true
   },
   {
-   "rank": 64,
+   "rank": 75,
    "tokenId": "0x020000000000000000000a00000000000000000001c7e71900ffe13c0016a561",
    "player": null,
    "owner": "0x03a496b92d292386ad70dab94ae181a06d289440e3b632a2435721b4280874c4",
@@ -839,7 +982,7 @@
    "bot": false
   },
   {
-   "rank": 65,
+   "rank": 76,
    "tokenId": "0x020000000000000000000a00000000000000000001c7f807010242cb000eaa01",
    "player": null,
    "owner": "0x07902b1ca336973df3345a5718fd4f24d5bbdf120c4232723644e5e1ceb75ef0",
@@ -852,7 +995,7 @@
    "bot": false
   },
   {
-   "rank": 66,
+   "rank": 77,
    "tokenId": "0x020000000000000000000a00000000000000000001c7f86b010250db000514c1",
    "player": null,
    "owner": "0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
@@ -865,7 +1008,7 @@
    "bot": true
   },
   {
-   "rank": 67,
+   "rank": 78,
    "tokenId": "0x020000000000000000000a00000000000000000001c7ef6b01010c710018a001",
    "player": null,
    "owner": "0x00d60bb5170a2d4acf8605c1e67220097fa9422c790f9e0743aa2ff80f5b1ea8",
@@ -878,7 +1021,7 @@
    "bot": false
   },
   {
-   "rank": 68,
+   "rank": 79,
    "tokenId": "0x020000000000000000000a00000000000000000001c7e7dd00fffcc700075841",
    "player": null,
    "owner": "0x0729956262c2bc64d68c3f4880fdd0c40a146732ffd7318bd7e0c0c10ae8feb9",
@@ -891,7 +1034,7 @@
    "bot": false
   },
   {
-   "rank": 69,
+   "rank": 80,
    "tokenId": "0x020000000000000000000a00000000000000000001c7f0c401013cfb0010ec81",
    "player": null,
    "owner": "0x01fc70da61c0f4b6df5176b12feabbd246bebdf4cf896469a604f07129b9a949",
@@ -904,7 +1047,20 @@
    "bot": false
   },
   {
-   "rank": 70,
+   "rank": 81,
+   "tokenId": "0x020000000000000000000a00000000000000000001c809dd0104c59b001ddfa1",
+   "player": null,
+   "owner": "0x034b911ec7a6c4276f1ecbc083823d678d0908e3853e345de850ff142e98e16e",
+   "xp": 404,
+   "level": 20,
+   "gameOver": true,
+   "settled": false,
+   "updated": "2026-10-28T19:51:14.000Z",
+   "settingsId": 0,
+   "bot": false
+  },
+  {
+   "rank": 82,
    "tokenId": "0x020000000000000000000a00000000000000000001c7f30e01018f72001d0281",
    "player": null,
    "owner": "0x05e1eb256e4a1486f79d0e6cb419e63288f41c38924abb8e4371b936db661942",
@@ -917,7 +1073,7 @@
    "bot": false
   },
   {
-   "rank": 71,
+   "rank": 83,
    "tokenId": "0x020000000000000000000a00000000000000000001c7f87e01025383000225a1",
    "player": null,
    "owner": "0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
@@ -930,7 +1086,7 @@
    "bot": true
   },
   {
-   "rank": 72,
+   "rank": 84,
    "tokenId": "0x020000000000000000000a00000000000000000001c7fd290102fc23001171c1",
    "player": null,
    "owner": "0x05b7e307d9dc6e7195681eeaa05fbd0a989173bda36160f5ea8f02e466101be6",
@@ -943,7 +1099,7 @@
    "bot": false
   },
   {
-   "rank": 73,
+   "rank": 85,
    "tokenId": "0x020000000000000000000a00000000000000000001c7eb540100796c001591a1",
    "player": null,
    "owner": "0x040d1751c1a470b6ffa3136a9e51eeaa2f15707d5e087b36cbe1f3a02b96f981",
@@ -956,7 +1112,7 @@
    "bot": false
   },
   {
-   "rank": 74,
+   "rank": 86,
    "tokenId": "0x020000000000000000000a00000000000000000001c7f69a01020f5300195fa1",
    "player": null,
    "owner": "0x04ca31f839b32ffd48a958693c4b22b02916142c3bea8d62cd59ffcf94f21b32",
@@ -969,7 +1125,20 @@
    "bot": false
   },
   {
-   "rank": 75,
+   "rank": 87,
+   "tokenId": "0x020000000000000000000a00000000000000000001c8084301048c3d00101941",
+   "player": null,
+   "owner": "0x034b911ec7a6c4276f1ecbc083823d678d0908e3853e345de850ff142e98e16e",
+   "xp": 391,
+   "level": 19,
+   "gameOver": true,
+   "settled": false,
+   "updated": "2026-10-28T13:00:15.000Z",
+   "settingsId": 0,
+   "bot": false
+  },
+  {
+   "rank": 88,
    "tokenId": "0x020000000000000000000a00000000000000000001c7f6dc010218950009e561",
    "player": null,
    "owner": "0x053387790ea7e36ad8e848f28a58a9f9b60e934e78cc46a835ba7386df25d8b5",
@@ -982,7 +1151,7 @@
    "bot": false
   },
   {
-   "rank": 76,
+   "rank": 89,
    "tokenId": "0x020000000000000000000a00000000000000000001c7eb1c0100717a00159541",
    "player": null,
    "owner": "0x058e6cacec273b5e7bbac125066186ae32d71b804acef860a9108f8e299a54eb",
@@ -995,7 +1164,7 @@
    "bot": false
   },
   {
-   "rank": 77,
+   "rank": 90,
    "tokenId": "0x020000000000000000000a00000000000000000001c7ec03010091ff00020561",
    "player": null,
    "owner": "0x040d1751c1a470b6ffa3136a9e51eeaa2f15707d5e087b36cbe1f3a02b96f981",
@@ -1008,7 +1177,20 @@
    "bot": false
   },
   {
-   "rank": 78,
+   "rank": 91,
+   "tokenId": "0x020000000000000000000a00000000000000000001c80e54010565c8001b18c1",
+   "player": null,
+   "owner": "0x034b911ec7a6c4276f1ecbc083823d678d0908e3853e345de850ff142e98e16e",
+   "xp": 374,
+   "level": 19,
+   "gameOver": true,
+   "settled": false,
+   "updated": "2026-10-29T14:53:31.000Z",
+   "settingsId": 0,
+   "bot": false
+  },
+  {
+   "rank": 92,
    "tokenId": "0x020000000000000000000a00000000000000000001c7ee7b0100ea8a000989a1",
    "player": null,
    "owner": "0x0608247e2ed085ea65fa01652d00354ccb975702b40e014d309d2628a8953f40",
@@ -1021,7 +1203,7 @@
    "bot": false
   },
   {
-   "rank": 79,
+   "rank": 93,
    "tokenId": "0x020000000000000000000a00000000000000000001c7fd3e0102ff0f000756e1",
    "player": null,
    "owner": "0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
@@ -1034,7 +1216,7 @@
    "bot": true
   },
   {
-   "rank": 80,
+   "rank": 94,
    "tokenId": "0x020000000000000000000a00000000000000000001c7f18f01015995001334a1",
    "player": null,
    "owner": "0x011a38b6ac19b58545cfc10d72cde8c7dbfd9346670cbbd410026ff1ef3f1e76",
@@ -1047,7 +1229,7 @@
    "bot": false
   },
   {
-   "rank": 81,
+   "rank": 95,
    "tokenId": "0x020000000000000000000a00000000000000000001c7ea1501004c8900014241",
    "player": null,
    "owner": "0x0673441e27f0e41a42ba50b17d95dce4dd033fa162afdced67cac43bd22015a8",
@@ -1060,7 +1242,7 @@
    "bot": false
   },
   {
-   "rank": 82,
+   "rank": 96,
    "tokenId": "0x020000000000000000000a00000000000000000001c7f74201022712001679a1",
    "player": null,
    "owner": "0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
@@ -1073,7 +1255,20 @@
    "bot": true
   },
   {
-   "rank": 83,
+   "rank": 97,
+   "tokenId": "0x020000000000000000000a00000000000000000001c8241401087078001d7f61",
+   "player": null,
+   "owner": "0x034b911ec7a6c4276f1ecbc083823d678d0908e3853e345de850ff142e98e16e",
+   "xp": 355,
+   "level": 18,
+   "gameOver": true,
+   "settled": false,
+   "updated": "2026-11-02T13:58:11.000Z",
+   "settingsId": 0,
+   "bot": false
+  },
+  {
+   "rank": 98,
    "tokenId": "0x020000000000000000000a00000000000000000001c7ebb701008743001da681",
    "player": null,
    "owner": "0x00ad0fdc6558d32928fe69349c6cc85a446868875f0edc20f23878dabb6e09dd",
@@ -1086,7 +1281,7 @@
    "bot": false
   },
   {
-   "rank": 84,
+   "rank": 99,
    "tokenId": "0x020000000000000000000a00000000000000000001c7ec4d01009c7200047da1",
    "player": null,
    "owner": "0x07cc8f090c34ab297bbc5ce87a1808c5945cf1a0d298cfb1bdf5252a009d4a3c",
@@ -1099,7 +1294,7 @@
    "bot": false
   },
   {
-   "rank": 85,
+   "rank": 100,
    "tokenId": "0x020000000000000000000a00000000000000000001c7fd1a0102fa14000c1ce1",
    "player": null,
    "owner": "0x05b7e307d9dc6e7195681eeaa05fbd0a989173bda36160f5ea8f02e466101be6",
@@ -1108,201 +1303,6 @@
    "gameOver": true,
    "settled": false,
    "updated": "2026-10-26T13:29:26.000Z",
-   "settingsId": 0,
-   "bot": false
-  },
-  {
-   "rank": 86,
-   "tokenId": "0x020000000000000000000a00000000000000000001c7f5350101dd01001fbac1",
-   "player": null,
-   "owner": "0x04ca31f839b32ffd48a958693c4b22b02916142c3bea8d62cd59ffcf94f21b32",
-   "xp": 344,
-   "level": 18,
-   "gameOver": true,
-   "settled": false,
-   "updated": "2026-10-25T03:45:27.000Z",
-   "settingsId": 0,
-   "bot": false
-  },
-  {
-   "rank": 87,
-   "tokenId": "0x020000000000000000000a00000000000000000001c7e7b100fff67d00096d21",
-   "player": null,
-   "owner": "0x058e6cacec273b5e7bbac125066186ae32d71b804acef860a9108f8e299a54eb",
-   "xp": 332,
-   "level": 18,
-   "gameOver": true,
-   "settled": false,
-   "updated": "2026-10-22T18:07:46.000Z",
-   "settingsId": 0,
-   "bot": false
-  },
-  {
-   "rank": 88,
-   "tokenId": "0x020000000000000000000a00000000000000000001c7ec3c01009a0d0003a9c1",
-   "player": null,
-   "owner": "0x07cc8f090c34ab297bbc5ce87a1808c5945cf1a0d298cfb1bdf5252a009d4a3c",
-   "xp": 332,
-   "level": 18,
-   "gameOver": true,
-   "settled": false,
-   "updated": "2026-10-23T13:29:20.000Z",
-   "settingsId": 0,
-   "bot": false
-  },
-  {
-   "rank": 89,
-   "tokenId": "0x020000000000000000000a00000000000000000001c7e84b01000c39001e21a1",
-   "player": null,
-   "owner": "0x059748c926521dfdac24f3b96c35e2ed7b9d1107db974d3eec957fe2fdacc930",
-   "xp": 329,
-   "level": 18,
-   "gameOver": true,
-   "settled": false,
-   "updated": "2026-10-22T20:38:49.000Z",
-   "settingsId": 0,
-   "bot": false
-  },
-  {
-   "rank": 90,
-   "tokenId": "0x020000000000000000000a00000000000000000001c7f4fb0101d4c1001bc0a1",
-   "player": null,
-   "owner": "0x04ca31f839b32ffd48a958693c4b22b02916142c3bea8d62cd59ffcf94f21b32",
-   "xp": 329,
-   "level": 18,
-   "gameOver": true,
-   "settled": false,
-   "updated": "2026-10-25T02:47:02.000Z",
-   "settingsId": 0,
-   "bot": false
-  },
-  {
-   "rank": 91,
-   "tokenId": "0x020000000000000000000a00000000000000000001c7f0ac0101399d001ffc41",
-   "player": null,
-   "owner": "0x061d598f806fac13da93722bc893383eb77ba509d2fcef7cba9853abc5b7bb4c",
-   "xp": 327,
-   "level": 18,
-   "gameOver": true,
-   "settled": false,
-   "updated": "2026-10-24T08:26:53.000Z",
-   "settingsId": 0,
-   "bot": false
-  },
-  {
-   "rank": 92,
-   "tokenId": "0x020000000000000000000a00000000000000000001c7eccf0100aeb400103001",
-   "player": null,
-   "owner": "0x040d1751c1a470b6ffa3136a9e51eeaa2f15707d5e087b36cbe1f3a02b96f981",
-   "xp": 325,
-   "level": 18,
-   "gameOver": true,
-   "settled": false,
-   "updated": "2026-10-23T16:00:24.000Z",
-   "settingsId": 0,
-   "bot": false
-  },
-  {
-   "rank": 93,
-   "tokenId": "0x020000000000000000000a00000000000000000001c7e7a600fff4fe00189b21",
-   "player": null,
-   "owner": "0x058e6cacec273b5e7bbac125066186ae32d71b804acef860a9108f8e299a54eb",
-   "xp": 324,
-   "level": 18,
-   "gameOver": true,
-   "settled": false,
-   "updated": "2026-10-22T17:52:54.000Z",
-   "settingsId": 0,
-   "bot": false
-  },
-  {
-   "rank": 94,
-   "tokenId": "0x020000000000000000000a00000000000000000001c7fb190102b1ab001dca41",
-   "player": null,
-   "owner": "0x04ca31f839b32ffd48a958693c4b22b02916142c3bea8d62cd59ffcf94f21b32",
-   "xp": 324,
-   "level": 18,
-   "gameOver": true,
-   "settled": false,
-   "updated": "2026-10-26T04:56:18.000Z",
-   "settingsId": 0,
-   "bot": false
-  },
-  {
-   "rank": 95,
-   "tokenId": "0x020000000000000000000a00000000000000000001c7f5760101e629001f72a1",
-   "player": null,
-   "owner": "0x061d598f806fac13da93722bc893383eb77ba509d2fcef7cba9853abc5b7bb4c",
-   "xp": 323,
-   "level": 17,
-   "gameOver": true,
-   "settled": false,
-   "updated": "2026-10-25T08:14:34.000Z",
-   "settingsId": 0,
-   "bot": false
-  },
-  {
-   "rank": 96,
-   "tokenId": "0x020000000000000000000a00000000000000000001c7fd5e0103038900075921",
-   "player": null,
-   "owner": "0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
-   "xp": 323,
-   "level": 17,
-   "gameOver": true,
-   "settled": true,
-   "updated": "2026-10-26T14:31:58.000Z",
-   "settingsId": 0,
-   "bot": true
-  },
-  {
-   "rank": 97,
-   "tokenId": "0x020000000000000000000a00000000000000000001c7f7ff0102419c000dcf61",
-   "player": null,
-   "owner": "0x07902b1ca336973df3345a5718fd4f24d5bbdf120c4232723644e5e1ceb75ef0",
-   "xp": 319,
-   "level": 17,
-   "gameOver": true,
-   "settled": false,
-   "updated": "2026-10-25T15:35:22.000Z",
-   "settingsId": 0,
-   "bot": false
-  },
-  {
-   "rank": 98,
-   "tokenId": "0x020000000000000000000a00000000000000000001c7eae4010069a900153b21",
-   "player": null,
-   "owner": "0x058e6cacec273b5e7bbac125066186ae32d71b804acef860a9108f8e299a54eb",
-   "xp": 311,
-   "level": 17,
-   "gameOver": true,
-   "settled": false,
-   "updated": "2026-10-23T07:43:39.000Z",
-   "settingsId": 0,
-   "bot": false
-  },
-  {
-   "rank": 99,
-   "tokenId": "0x020000000000000000000a00000000000000000001c7e84501000b60000f8ae1",
-   "player": null,
-   "owner": "0x0729956262c2bc64d68c3f4880fdd0c40a146732ffd7318bd7e0c0c10ae8feb9",
-   "xp": 309,
-   "level": 17,
-   "gameOver": true,
-   "settled": false,
-   "updated": "2026-10-23T16:24:53.000Z",
-   "settingsId": 0,
-   "bot": false
-  },
-  {
-   "rank": 100,
-   "tokenId": "0x020000000000000000000a00000000000000000001c7f3160101909b001ee841",
-   "player": null,
-   "owner": "0x053387790ea7e36ad8e848f28a58a9f9b60e934e78cc46a835ba7386df25d8b5",
-   "xp": 307,
-   "level": 17,
-   "gameOver": true,
-   "settled": false,
-   "updated": "2026-10-24T18:49:44.000Z",
    "settingsId": 0,
    "bot": false
   }
@@ -1422,6 +1422,156 @@
   ]
  },
  "live": [
+  {
+   "tokenId": "1604538075862138306720021238295623950937750492414361167557481717563393",
+   "player": null,
+   "owner": "0x34b911ec7a6c4276f1ecbc083823d678d0908e3853e345de850ff142e98e16e",
+   "xp": 0,
+   "level": 1,
+   "gameOver": false,
+   "updated": "2026-11-06T04:03:00.871Z",
+   "settingsId": 3
+  },
+  {
+   "tokenId": "1217831340855196317165266240639484711628163009786227957994492966993921",
+   "player": null,
+   "owner": "0x34b911ec7a6c4276f1ecbc083823d678d0908e3853e345de850ff142e98e16e",
+   "xp": 0,
+   "level": 1,
+   "gameOver": false,
+   "updated": "2026-11-06T04:02:49.256Z",
+   "settingsId": 3
+  },
+  {
+   "tokenId": "516030229175931225010340504153803538820441401719651807558605771636737",
+   "player": null,
+   "owner": "0x34b911ec7a6c4276f1ecbc083823d678d0908e3853e345de850ff142e98e16e",
+   "xp": 0,
+   "level": 1,
+   "gameOver": false,
+   "updated": "2026-11-06T04:02:37.636Z",
+   "settingsId": 3
+  },
+  {
+   "tokenId": "248537008337795970797628698349966739761910454483394451863222265839617",
+   "player": null,
+   "owner": "0x689701974d95364aad9c2306bc322a40a27fb775b0c97733fd0e36e900b1878",
+   "xp": 0,
+   "level": 1,
+   "gameOver": false,
+   "updated": "2026-11-05T15:24:08.415Z",
+   "settingsId": 1
+  },
+  {
+   "tokenId": "81438416396461947712437344631865598211706731677058695183106079658606593",
+   "player": null,
+   "owner": "0x5378be688f31d94dc4f9feeb5ce5eaa8bd0e21c070ae91d93de3b8fe1739fc",
+   "xp": 0,
+   "level": 1,
+   "gameOver": false,
+   "updated": "2026-11-05T14:33:02.312Z",
+   "settingsId": 1
+  },
+  {
+   "tokenId": "10297857128518196954259758549674240301712708151873097872668448448839681",
+   "player": null,
+   "owner": "0x34b911ec7a6c4276f1ecbc083823d678d0908e3853e345de850ff142e98e16e",
+   "xp": 0,
+   "level": 1,
+   "gameOver": false,
+   "updated": "2026-11-04T21:08:50.534Z",
+   "settingsId": 3
+  },
+  {
+   "tokenId": "9532447392671123321339290324467622187784373906184590059034957423050753",
+   "player": null,
+   "owner": "0x34b911ec7a6c4276f1ecbc083823d678d0908e3853e345de850ff142e98e16e",
+   "xp": 0,
+   "level": 1,
+   "gameOver": false,
+   "updated": "2026-11-04T21:08:50.374Z",
+   "settingsId": 3
+  },
+  {
+   "tokenId": "9089293269329834679714451263973035596751858652421762525839657988521985",
+   "player": null,
+   "owner": "0x34b911ec7a6c4276f1ecbc083823d678d0908e3853e345de850ff142e98e16e",
+   "xp": 0,
+   "level": 1,
+   "gameOver": false,
+   "updated": "2026-11-04T21:08:38.787Z",
+   "settingsId": 3
+  },
+  {
+   "tokenId": "90568570834962211130615076121777967991414898269142490110326476898305",
+   "player": null,
+   "owner": "0x223e2f1b09f495eb4784de5da08751eef6339294e3e02f525c49b3c4df38880",
+   "xp": 0,
+   "level": 1,
+   "gameOver": false,
+   "updated": "2026-11-04T17:24:30.514Z",
+   "settingsId": 1
+  },
+  {
+   "tokenId": "679896155012206207512300912661972041533845083212059707993269240594433",
+   "player": null,
+   "owner": "0x550212d3f13a373dfe9e3ef6aa41fba4124bde63fd7955393f879de19f3f47f",
+   "xp": 0,
+   "level": 1,
+   "gameOver": false,
+   "updated": "2026-11-04T17:17:45.815Z",
+   "settingsId": 3
+  },
+  {
+   "tokenId": "394783345279586978327182269158877184922746076024573531838828983007313921",
+   "player": null,
+   "owner": "0x223e2f1b09f495eb4784de5da08751eef6339294e3e02f525c49b3c4df38880",
+   "xp": 0,
+   "level": 1,
+   "gameOver": false,
+   "updated": "2026-11-04T16:47:50.808Z",
+   "settingsId": 1
+  },
+  {
+   "tokenId": "146594710002634634453907313999075087869481501299384828843952317661185",
+   "player": null,
+   "owner": "0x5b7e307d9dc6e7195681eeaa05fbd0a989173bda36160f5ea8f02e466101be6",
+   "xp": 150,
+   "level": 12,
+   "gameOver": false,
+   "updated": "2026-10-30T12:49:48.950Z",
+   "settingsId": 1
+  },
+  {
+   "tokenId": "293189420005266238337409174611314606575186174506207827622116661919745",
+   "player": null,
+   "owner": "0x5b7e307d9dc6e7195681eeaa05fbd0a989173bda36160f5ea8f02e466101be6",
+   "xp": 70,
+   "level": 8,
+   "gameOver": false,
+   "updated": "2026-10-29T09:24:35.379Z",
+   "settingsId": 1
+  },
+  {
+   "tokenId": "403977950840586378363755482055750012553404618556601691481649258168321",
+   "player": null,
+   "owner": "0x1f7968b3595142c0d4094ebd20ea43d87db7285d8a11e43e7ebc996fc8bc95",
+   "xp": 0,
+   "level": 1,
+   "gameOver": false,
+   "updated": "2026-10-28T23:48:08.041Z",
+   "settingsId": 1
+  },
+  {
+   "tokenId": "45916159167493963970697631491400745573762702946842677445499625144321",
+   "player": null,
+   "owner": "0x1f7968b3595142c0d4094ebd20ea43d87db7285d8a11e43e7ebc996fc8bc95",
+   "xp": 0,
+   "level": 1,
+   "gameOver": false,
+   "updated": "2026-10-28T21:25:06.014Z",
+   "settingsId": 1
+  },
   {
    "tokenId": "254013247504562964885783582097687593195904342082759520892991850938369",
    "player": null,
@@ -1571,156 +1721,6 @@
    "gameOver": false,
    "updated": "2026-10-06T08:08:52.809Z",
    "settingsId": 1
-  },
-  {
-   "tokenId": "26529430018809579025636467407300819883113654557649032311733812438499329",
-   "player": null,
-   "owner": "0x34b911ec7a6c4276f1ecbc083823d678d0908e3853e345de850ff142e98e16e",
-   "xp": 0,
-   "level": 1,
-   "gameOver": false,
-   "updated": "2026-10-04T19:41:09.397Z",
-   "settingsId": 3
-  },
-  {
-   "tokenId": "25999498567133399262172543891991826314548081299104981939398074844577793",
-   "player": null,
-   "owner": "0x34b911ec7a6c4276f1ecbc083823d678d0908e3853e345de850ff142e98e16e",
-   "xp": 0,
-   "level": 1,
-   "gameOver": false,
-   "updated": "2026-10-04T19:40:57.834Z",
-   "settingsId": 3
-  },
-  {
-   "tokenId": "25764862781295853850209582526300358426132429241867877033655926331015169",
-   "player": null,
-   "owner": "0x34b911ec7a6c4276f1ecbc083823d678d0908e3853e345de850ff142e98e16e",
-   "xp": 0,
-   "level": 1,
-   "gameOver": false,
-   "updated": "2026-10-04T19:40:26.170Z",
-   "settingsId": 3
-  },
-  {
-   "tokenId": "23815321637927523210057723926257168207737079677147915070178107804614657",
-   "player": null,
-   "owner": "0x34b911ec7a6c4276f1ecbc083823d678d0908e3853e345de850ff142e98e16e",
-   "xp": 317,
-   "level": 17,
-   "gameOver": false,
-   "updated": "2026-10-02T10:06:17.227Z",
-   "settingsId": 3
-  },
-  {
-   "tokenId": "401819891359713295313590359040980322290574590655168302564292677504860161",
-   "player": null,
-   "owner": "0x4fc6bcea9b03092cd953b90c921f7aef50020ffaed1cb729bd3210396b57afa",
-   "xp": 4,
-   "level": 2,
-   "gameOver": false,
-   "updated": "2026-09-29T19:05:22.865Z",
-   "settingsId": 1
-  },
-  {
-   "tokenId": "20219960000366010416404633612089854404510601656731213616600693342209",
-   "player": null,
-   "owner": "0x253407431f728299895516804ae67f581880154bd988a2f20e51c9911f60f1",
-   "xp": 4,
-   "level": 2,
-   "gameOver": false,
-   "updated": "2026-09-24T21:52:12.528Z",
-   "settingsId": 1
-  },
-  {
-   "tokenId": "1482375817526611970150435074889781242801416503422813632863210221600769",
-   "player": null,
-   "owner": "0x36b4ffdbc2f7be5b2becb52289413c4b49fc85bd0eb162e66e03d5e129b2ca",
-   "xp": 0,
-   "level": 1,
-   "gameOver": false,
-   "updated": "2026-09-24T14:35:56.661Z",
-   "settingsId": 3
-  },
-  {
-   "tokenId": "1031639209185187211083345916402991227742703618181536687479895701323777",
-   "player": null,
-   "owner": "0x36b4ffdbc2f7be5b2becb52289413c4b49fc85bd0eb162e66e03d5e129b2ca",
-   "xp": 0,
-   "level": 1,
-   "gameOver": false,
-   "updated": "2026-09-24T14:35:56.643Z",
-   "settingsId": 3
-  },
-  {
-   "tokenId": "655042454178426711451591049405164914669571941638782941812184341020673",
-   "player": null,
-   "owner": "0x36b4ffdbc2f7be5b2becb52289413c4b49fc85bd0eb162e66e03d5e129b2ca",
-   "xp": 0,
-   "level": 1,
-   "gameOver": false,
-   "updated": "2026-09-24T14:35:44.852Z",
-   "settingsId": 3
-  },
-  {
-   "tokenId": "368092998079107844930461922890405226926150415755715376122207332745609217",
-   "player": null,
-   "owner": "0x5f7a79ea7a6814624c1982129873ac6498787bd6c75c3a3b7841a492cf8b4e2",
-   "xp": 150,
-   "level": 12,
-   "gameOver": false,
-   "updated": "2026-09-20T09:14:37.304Z",
-   "settingsId": 1
-  },
-  {
-   "tokenId": "157125939169490353123697852604497442771220767400774772045775359705089",
-   "player": null,
-   "owner": "0x253407431f728299895516804ae67f581880154bd988a2f20e51c9911f60f1",
-   "xp": 4,
-   "level": 2,
-   "gameOver": false,
-   "updated": "2026-09-17T13:11:49.333Z",
-   "settingsId": 1
-  },
-  {
-   "tokenId": "9863970486843741345064334846679642898102677952514284409691958132342785",
-   "player": null,
-   "owner": "0x34b911ec7a6c4276f1ecbc083823d678d0908e3853e345de850ff142e98e16e",
-   "xp": 0,
-   "level": 1,
-   "gameOver": false,
-   "updated": "2026-09-17T06:41:14.165Z",
-   "settingsId": 3
-  },
-  {
-   "tokenId": "243482018337705225836127122926271108277518486044236472044999585824769",
-   "player": null,
-   "owner": "0x5f7a79ea7a6814624c1982129873ac6498787bd6c75c3a3b7841a492cf8b4e2",
-   "xp": 0,
-   "level": 1,
-   "gameOver": false,
-   "updated": "2026-09-15T06:41:19.436Z",
-   "settingsId": 1
-  },
-  {
-   "tokenId": "51392398334258937678988081272870613301077856176843118573247812075521",
-   "player": null,
-   "owner": "0x5cd13f9eaa8f52855859c3ec9c18f37b8a7f23866532f9a80a2ceef62a26199",
-   "xp": 86,
-   "level": 9,
-   "gameOver": false,
-   "updated": "2026-09-15T02:25:22.665Z",
-   "settingsId": 1
-  },
-  {
-   "tokenId": "422512914174254463602451183466658963212518571424572504615230740889601",
-   "player": null,
-   "owner": "0x5f7a79ea7a6814624c1982129873ac6498787bd6c75c3a3b7841a492cf8b4e2",
-   "xp": 88,
-   "level": 9,
-   "gameOver": false,
-   "updated": "2026-09-14T03:58:47.029Z",
-   "settingsId": 1
   }
  ],
  "bot": {
@@ -1728,31 +1728,30 @@
    "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
    "0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452"
   ],
-  "bestRank": 5,
+  "bestRank": 8,
   "bestXp": 1204,
   "inTop": [
-   5,
-   11,
-   15,
-   21,
-   23,
-   29,
-   33,
-   34,
-   35,
-   37,
-   38,
+   8,
+   14,
+   18,
+   26,
+   30,
+   36,
    40,
-   48,
-   49,
-   53,
-   54,
-   56,
-   63,
-   66,
-   71,
-   79,
-   82,
+   41,
+   42,
+   44,
+   45,
+   47,
+   59,
+   60,
+   64,
+   65,
+   67,
+   74,
+   77,
+   83,
+   93,
    96
   ]
  },
