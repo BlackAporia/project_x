@@ -1,10 +1,10 @@
-== bot frontend --call /pvp/ --call enter_tournament --call submit_score --call devicePhone --call Invite-only --call P3=
+== bot frontend --call budokan-bots-production --call ${hJe} --call function t6( --call function TKe(
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts frontend --call /pvp/ --call enter_tournament --call submit_score --call devicePhone --call Invite-only --call P3=
+> node --import tsx src/cli.ts frontend --call budokan-bots-production --call ${hJe} --call function t6( --call function TKe(
 
-downloaded 348 files, 16.0 MB into /tmp/lsfront-1794223167240
-15 snippet(s) for /pvp/, enter_tournament, submit_score, devicePhone, Invite-only, P3= -> frontend/snippets.json
+downloaded 348 files, 16.0 MB into /tmp/lsfront-1794223259923
+1653 snippet(s) for budokan-bots-production, ${hJe}, function, function -> frontend/snippets.json
 10 dungeon configs on lootsurvivor.io
   trials                   Trials                     online       Free
   beastmode                Beast Mode                 online       1 Ticket settings=Ao minter=ko @jo.dungeon
