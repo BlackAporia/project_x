@@ -1,66 +1,10 @@
 {
- "updated": "2026-11-09T18:10:12.254Z",
+ "updated": "2026-11-09T18:10:33.385Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-11-09T18-05-20-168Z",
  "account": "0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452",
  "recent": [
-  {
-   "n": 17,
-   "t": "2026-11-09T18:07:12.513Z",
-   "level": 13,
-   "xp": 194,
-   "hp": 90,
-   "maxHp": 160,
-   "gold": 0,
-   "phase": "level_up",
-   "reason": "Stats +1 DEX; Explore (instant-death risk 5.8%, battle-death risk 3.7%, HP 90/160)",
-   "actions": "stats(dex+1) + explore",
-   "tx": "0x65f4a1d27b74474d9673e79ed4fac35b83f5dec325185ef6f30a2492423497f",
-   "ok": true
-  },
-  {
-   "n": 18,
-   "t": "2026-11-09T18:07:16.916Z",
-   "level": 14,
-   "xp": 198,
-   "hp": 90,
-   "maxHp": 160,
-   "gold": 0,
-   "phase": "level_up",
-   "reason": "Stats +1 CHA; Explore (instant-death risk 7.0%, battle-death risk 5.1%, HP 90/160)",
-   "actions": "stats(cha+1) + explore",
-   "tx": "0x43f248e573287e12df5222fbbc40653b5ea4ed95cfc37bad63cbb15a1469371",
-   "ok": true
-  },
-  {
-   "n": 19,
-   "t": "2026-11-09T18:07:19.689Z",
-   "level": 14,
-   "xp": 199,
-   "hp": 94,
-   "maxHp": 160,
-   "gold": 0,
-   "phase": "explore",
-   "reason": "Explore (instant-death risk 6.5%, battle-death risk 4.8%, HP 94/160)",
-   "actions": "explore",
-   "tx": "0x328619bf17bf61a4ef0e6d1ffc312cdbc67a644022e7b0d0dfb28805635f0a2",
-   "ok": true
-  },
-  {
-   "n": 20,
-   "t": "2026-11-09T18:07:24.075Z",
-   "level": 14,
-   "xp": 200,
-   "hp": 94,
-   "maxHp": 160,
-   "gold": 13,
-   "phase": "explore",
-   "reason": "Drink 6 potion(s); Explore (instant-death risk 1.9%, battle-death risk 2.9%, HP 154/160)",
-   "actions": "buy(6 potions) + explore",
-   "tx": "0x69abcdeef4191df762f20fb8aa8e96e31e697624ab80b89a40301d64114f5b4",
-   "ok": true
-  },
   {
    "n": 21,
    "t": "2026-11-09T18:07:28.440Z",
@@ -564,15 +508,71 @@
    "actions": "explore",
    "tx": "0x5726b6783cb32f91dc3a28a86fe011ce7f6043574d10d74f94c750bdaea1186",
    "ok": true
+  },
+  {
+   "n": 57,
+   "t": "2026-11-09T18:10:12.255Z",
+   "level": 21,
+   "xp": 472,
+   "hp": 280,
+   "maxHp": 280,
+   "gold": 22,
+   "phase": "explore",
+   "reason": "Explore (instant-death risk 2.5%, battle-death risk 1.6%, HP 280/280)",
+   "actions": "explore",
+   "tx": "0x238684690a107d325568891dcbd877bdc7b2633d7d4ab67c7322f71a409992a",
+   "ok": true
+  },
+  {
+   "n": 58,
+   "t": "2026-11-09T18:10:18.486Z",
+   "level": 21,
+   "xp": 472,
+   "hp": 82,
+   "maxHp": 280,
+   "gold": 22,
+   "phase": "battle",
+   "reason": "Flee from \"Cataclysm Grasp\" Troll (L72 T1): P(escape)=76.2% P(death)=23.8%; flee value 447.1 vs attack 0.0",
+   "actions": "flee",
+   "tx": "0xb34004a7662b3f60842e4c891b752ef2e08073c069aec14ff3b447ec94afb0",
+   "ok": true
+  },
+  {
+   "n": 59,
+   "t": "2026-11-09T18:10:22.848Z",
+   "level": 21,
+   "xp": 473,
+   "hp": 82,
+   "maxHp": 280,
+   "gold": 22,
+   "phase": "explore",
+   "reason": "Drink 20 potion(s); Explore (instant-death risk 2.5%, battle-death risk 1.6%, HP 280/280)",
+   "actions": "buy(20 potions) + explore",
+   "tx": "0x2b0dcc39ad6fd277673f9003edd650f22d547bf6c6b4935588916125f1dd14",
+   "ok": true
+  },
+  {
+   "n": 60,
+   "t": "2026-11-09T18:10:27.238Z",
+   "level": 21,
+   "xp": 473,
+   "hp": 123,
+   "maxHp": 280,
+   "gold": 2,
+   "phase": "battle",
+   "reason": "Flee from \"Sorrow Glow\" Goblin (L45 T1): P(escape)=76.2% P(death)=23.8%; flee value 381.5 vs attack 0.0",
+   "actions": "flee",
+   "tx": "0x41fa193e001a8ac1ab711ac922e3b020866c3a53cbe3d9029c5d40d58fdcfa7",
+   "ok": true
   }
  ],
  "current": {
   "id": "50216815005526703580820591876848951277583902225145369078913",
   "level": 21,
-  "xp": 471,
-  "hp": 280,
+  "xp": 473,
+  "hp": 123,
   "maxHp": 280,
-  "gold": 22,
+  "gold": 2,
   "gear": [
    "Ghost Wand T1 G20",
    "Linen Robe T3 G20",
@@ -592,6 +592,7 @@
    "cha": 10,
    "luck": 13
   },
-  "lastReason": "Explore (instant-death risk 2.5%, battle-death risk 1.6%, HP 280/280)"
+  "beast": "\"Sorrow Glow\" Goblin",
+  "lastReason": "Flee from \"Sorrow Glow\" Goblin (L45 T1): P(escape)=76.2% P(death)=23.8%; flee value 381.5 vs attack 0.0"
  }
 }

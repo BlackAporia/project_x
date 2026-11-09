@@ -749,10 +749,11 @@
   "id": "2026-11-09T18-05-20-168Z",
   "mode": "mainnet",
   "started": "2026-11-09T18:05:20.168Z",
-  "games": 0,
-  "bestXp": 0,
-  "meanXp": 0,
+  "games": 1,
+  "bestXp": 473,
+  "meanXp": 473,
   "errors": 0,
-  "policy": "tail-pg-2026-10-25"
+  "policy": "tail-pg-2026-10-25",
+  "ended": "2026-11-09T18:10:54.469Z"
  }
 ]
