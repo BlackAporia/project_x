@@ -1,24 +1,9 @@
 {
- "updated": "2026-11-09T17:52:56.651Z",
+ "updated": "2026-11-09T18:05:20.168Z",
  "mode": "mainnet",
- "running": false,
- "runId": "2026-11-09T17-51-07-771Z",
+ "running": true,
+ "runId": "2026-11-09T18-05-20-168Z",
  "account": "0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452",
- "recent": [
-  {
-   "n": 0,
-   "t": "2026-11-09T17:51:48.420Z",
-   "level": 8,
-   "xp": 76,
-   "hp": 102,
-   "maxHp": 160,
-   "gold": 2,
-   "phase": "battle",
-   "reason": "Attack \"Grim Shout\" Rat (L19 T5, 22 HP): P(win)=100.0% P(death)=0.0%; attack value 180.1 vs flee 167.3",
-   "actions": "attack",
-   "ok": false,
-   "error": "the Game Account needs gas: 0.0844 STRK on the account, a move may cost up to 0.1002 STRK (deposit STRK to 0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452)"
-  }
- ],
- "message": "error: could not start a new game: the Game Account needs gas: 0.0844 STRK on the account, a move may cost up to 0.4807 STRK (deposit STRK to 0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452)"
+ "recent": [],
+ "message": "looking for unplayed games on the account"
 }
