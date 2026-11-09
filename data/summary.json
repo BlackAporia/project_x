@@ -1,23 +1,23 @@
 {
- "updated": "2026-11-09T10:58:37.195Z",
+ "updated": "2026-11-09T11:43:11.789Z",
  "modes": {
   "mainnet": {
-   "games": 97,
+   "games": 103,
    "inProgress": 0,
    "errors": 0,
    "best": 1204,
    "bestLevel": 34,
-   "mean": 251,
+   "mean": 243,
    "median": 173,
-   "p90": 572,
-   "last20Mean": 289,
-   "transactions": 5699,
+   "p90": 569,
+   "last20Mean": 265,
+   "transactions": 5951,
    "reverts": 47,
    "predictionAccuracy": null,
    "deathCauses": [
     [
      "obstacle",
-     24
+     26
     ],
     [
      "Qilin",
@@ -48,6 +48,10 @@
      2
     ],
     [
+     "Griffin",
+     2
+    ],
+    [
      "Wyvern",
      2
     ],
@@ -58,23 +62,19 @@
     [
      "Pixie",
      2
-    ],
-    [
-     "ambush by Leprechaun",
-     2
     ]
    ],
    "levels": {
     "2": 1,
     "5": 4,
-    "6": 4,
-    "7": 2,
+    "6": 5,
+    "7": 4,
     "8": 3,
     "9": 3,
     "10": 9,
-    "11": 8,
+    "11": 9,
     "12": 12,
-    "13": 11,
+    "13": 13,
     "14": 5,
     "15": 7,
     "16": 1,
@@ -451,18 +451,6 @@
  },
  "runs": [
   {
-   "id": "2026-10-25T12-18-55-579Z",
-   "mode": "mainnet",
-   "started": "2026-10-25T12:18:55.579Z",
-   "games": 5,
-   "bestXp": 355,
-   "meanXp": 174,
-   "errors": 0,
-   "policy": "tail-2026-10-25-g3",
-   "dungeon": "Default #0 (mainnet rules)",
-   "ended": "2026-10-25T12:47:36.001Z"
-  },
-  {
    "id": "2026-10-25T13-44-36-028Z",
    "mode": "mainnet",
    "started": "2026-10-25T13:44:36.028Z",
@@ -785,6 +773,17 @@
    "errors": 0,
    "policy": "tail-pg-2026-10-25",
    "ended": "2026-11-09T10:58:31.592Z"
+  },
+  {
+   "id": "2026-11-09T11-17-32-722Z",
+   "mode": "mainnet",
+   "started": "2026-11-09T11:17:32.722Z",
+   "games": 6,
+   "bestXp": 194,
+   "meanXp": 113,
+   "errors": 0,
+   "policy": "tail-pg-2026-10-25",
+   "ended": "2026-11-09T11:40:12.729Z"
   }
  ],
  "policy": {
