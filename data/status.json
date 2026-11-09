@@ -1,52 +1,10 @@
 {
- "updated": "2026-11-09T11:22:36.367Z",
+ "updated": "2026-11-09T11:22:49.877Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-11-09T11-17-32-722Z",
  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "recent": [
-  {
-   "n": 10,
-   "t": "2026-11-09T11:18:49.635Z",
-   "level": 2,
-   "xp": 8,
-   "hp": 60,
-   "maxHp": 115,
-   "gold": 15,
-   "phase": "battle",
-   "reason": "Attack Wyvern (L5 T2, 10 HP): P(win)=100.0% P(death)=0.0%; attack value 214.4 vs flee 200.5",
-   "actions": "attack",
-   "tx": "0x6a46b66d450e08ec34e9c48b67a173f977f114da7b1fe81f5f289e315af5963",
-   "ok": true
-  },
-  {
-   "n": 11,
-   "t": "2026-11-09T11:18:52.541Z",
-   "level": 2,
-   "xp": 8,
-   "hp": 34,
-   "maxHp": 115,
-   "gold": 15,
-   "phase": "battle",
-   "reason": "Attack Wyvern (L5 T2, 2 HP): P(win)=100.0% P(death)=0.0%; attack value 213.3 vs flee 196.3",
-   "actions": "attack",
-   "tx": "0x6f3053430ed44cc845b65d3cafecf3e9958e9b1f36578a1348971141cd10d14",
-   "ok": true
-  },
-  {
-   "n": 12,
-   "t": "2026-11-09T11:18:58.732Z",
-   "level": 4,
-   "xp": 17,
-   "hp": 34,
-   "maxHp": 115,
-   "gold": 25,
-   "phase": "level_up",
-   "reason": "Stats +1 DEX +1 CHA; Buy Studded Leather Armor; Drink 4 potion(s); Explore until beast (instant-death risk <0.1%, battle-death risk 0.5%, HP 74/115)",
-   "actions": "stats(dex+1 cha+1) + buy(4 potions, Studded Leather Armor) + explore(till beast)",
-   "tx": "0x619de0ffc1996e59b7a20b1265a69e75dd95995abfcd4787092e4eb5e2c8d5c",
-   "ok": true
-  },
   {
    "n": 13,
    "t": "2026-11-09T11:19:03.211Z",
@@ -564,13 +522,55 @@
    "actions": "explore",
    "tx": "0x6dc3c847cb0dbb2db246e216270b71904edfc99e5a5bb9e921c6079effc2ff7",
    "ok": true
+  },
+  {
+   "n": 24,
+   "t": "2026-11-09T11:22:36.368Z",
+   "level": 6,
+   "xp": 48,
+   "hp": 70,
+   "maxHp": 145,
+   "gold": 0,
+   "phase": "explore",
+   "reason": "Explore (instant-death risk 1.5%, battle-death risk 3.3%, HP 70/145)",
+   "actions": "explore",
+   "tx": "0x4a078064a68536225903e299f2250eb3cb987da1929e62ffb50dc3f8b110b77",
+   "ok": true
+  },
+  {
+   "n": 25,
+   "t": "2026-11-09T11:22:39.207Z",
+   "level": 6,
+   "xp": 48,
+   "hp": 55,
+   "maxHp": 145,
+   "gold": 0,
+   "phase": "battle",
+   "reason": "Flee from Roc (L10 T3): P(escape)=89.6% P(death)=10.4%; flee value 129.2 vs attack 80.2",
+   "actions": "flee",
+   "tx": "0x4a4424b8aeeb3d9b0ab59f22dd44a96d9759063b77202bab12f8b55741cf5e7",
+   "ok": true
+  },
+  {
+   "n": 26,
+   "t": "2026-11-09T11:22:43.590Z",
+   "level": 6,
+   "xp": 48,
+   "hp": 10,
+   "maxHp": 145,
+   "gold": 0,
+   "phase": "battle",
+   "reason": "Flee from Roc (L10 T3): P(escape)=66.4% P(death)=33.6%; flee value 65.0 vs attack 0.0",
+   "actions": "flee",
+   "tx": "0x76707ed00c31d1f52013fbdbb472444186b88f3e6c887347fed366c68cfc552",
+   "ok": true
   }
  ],
  "current": {
   "id": "374144419157391711793985745728564970102711316959713",
   "level": 6,
-  "xp": 41,
-  "hp": 70,
+  "xp": 48,
+  "hp": 10,
   "maxHp": 145,
   "gold": 0,
   "gear": [
@@ -592,6 +592,7 @@
    "cha": 3,
    "luck": 2
   },
-  "lastReason": "Explore (instant-death risk 1.5%, battle-death risk 3.3%, HP 70/145)"
+  "beast": "Roc",
+  "lastReason": "Flee from Roc (L10 T3): P(escape)=66.4% P(death)=33.6%; flee value 65.0 vs attack 0.0"
  }
 }
