@@ -49,6 +49,8 @@ export class V2MainnetBackend implements Backend {
   private entries: number;
   private owned: bigint[];
   private settled = false;
+  /** why the last attempt to start a new game failed (shown instead of "no unplayed games") */
+  blockedReason?: string;
   /** Beast Mode dungeon: after settling, mint the collectable beasts the game killed (claim_beast) */
   private beastDungeon?: string;
   /** xp at each beast encounter per game (the key claim_beast / kill_species use) */
@@ -103,7 +105,10 @@ export class V2MainnetBackend implements Backend {
           break;
         } catch (e) {
           this.log(`[v2] could not start a new game (attempt ${attempt}/3): ${(e as Error).message.slice(0, 300)}`);
-          if (attempt === 3) this.entries = 0;
+          if (attempt === 3) {
+            this.entries = 0;
+            this.blockedReason = (e as Error).message.slice(0, 300);
+          }
           else await new Promise((r) => setTimeout(r, 20_000 * attempt));
         }
       }

@@ -128,7 +128,7 @@ export async function openSitePracticeBackend(store: DataStore, opts: { dungeon?
 async function openV2Mainnet(live: boolean, game?: string): Promise<Backend> {
   const { MAINNET } = await import('../chain/config.ts');
   const { connectProvider } = await import('../chain/rpc.ts');
-  const { restoreSessionFromEnv, sessionProvider, SessionExecutor } = await import('../chain/mainnet.ts');
+  const { restoreSessionFromEnv, sessionProvider, SessionExecutor, sessionPermits } = await import('../chain/mainnet.ts');
   const { V2Chain } = await import('../v2/chain.ts');
   const { V2MainnetBackend } = await import('../v2/mainnet-backend.ts');
   const { provider } = await connectProvider(MAINNET.rpcUrls);
@@ -170,6 +170,9 @@ async function openV2Mainnet(live: boolean, game?: string): Promise<Backend> {
   const games = await chain.ownedGames(address);
   console.log(`[mainnet v2] account ${address}: ${games.length} game token(s) on the ${beastGames > 0 ? 'Beast Mode' : 'V2'} core, live=${live && !!executor}`);
   if (beastGames > 0) {
+    if (live && executor && !(sessionPermits(bm.dungeon, 'new_game') && sessionPermits(bm.core, 'commit_actions'))) {
+      throw new Error('the Cartridge session has no Beast Mode permissions: connect Cartridge again on the website (Accounts tab) and approve Beast Mode, then start the run again');
+    }
     // Beast Mode: one TICKET per new game (bought by the owner); unfinished Beast Mode games are played first
     const tickets = await chain.tokenBalance(bm.ticket, address).catch(() => -1n);
     console.log(`[mainnet v2] Beast Mode: ${tickets >= 0n ? `${Number(tickets / 10n ** 15n) / 1000} TICKET on the account` : 'TICKET balance unknown'}, up to ${beastGames} new game(s)`);

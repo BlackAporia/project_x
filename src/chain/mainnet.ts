@@ -61,7 +61,8 @@ export function botPolicies() {
       [MAINNET.beastMode.ticket]: {
         name: 'Dungeon Ticket',
         description: 'Allow Beast Mode to take 1 TICKET per game',
-        methods: [{ name: 'Approve Ticket', entrypoint: 'approve', description: 'Approve 1 TICKET for a Beast Mode entry' }],
+        // spender + amount: Cartridge limits the approval to the Beast Mode dungeon and 1 TICKET (1e18) per call
+        methods: [{ name: 'Approve Ticket', entrypoint: 'approve', description: 'Approve 1 TICKET for a Beast Mode entry', spender: MAINNET.beastMode.dungeon, amount: '0xde0b6b3a7640000' }],
       },
     },
   };
@@ -105,12 +106,42 @@ export async function sessionProvider() {
   const mod = await import('@cartridge/controller/session/node');
   const SessionProvider = mod.default;
   const usePreset = process.env.CARTRIDGE_USE_PRESET === 'true';
+  // sign with the policies the session was approved with: the session's merkle root covers exactly those, so
+  // passing the bot's current (wider) list made Cartridge reject every call of an older session
+  const policies = storedSessionPolicies() ?? botPolicies();
   return new SessionProvider({
     rpc: MAINNET.cartridgeRpc,
     chainId: MAINNET.chainId,
-    ...(usePreset ? { preset: MAINNET.preset } : { policies: botPolicies() as never, shouldOverridePresetPolicies: true }),
+    ...(usePreset ? { preset: MAINNET.preset } : { policies: policies as never, shouldOverridePresetPolicies: true }),
     basePath: SESSION_DIR,
   });
+}
+
+type PolicyMethod = { name?: string; entrypoint: string; description?: string; authorized?: boolean; [k: string]: unknown };
+
+/** The policies stored with the approved session (website sessions keep them next to the registration). */
+export function storedSessionPolicies(): { contracts: Record<string, { name?: string; description?: string; methods: PolicyMethod[] }> } | null {
+  const file = join(SESSION_DIR, 'session.json');
+  if (!existsSync(file)) return null;
+  try {
+    const data = JSON.parse(readFileSync(file, 'utf8')) as { policies?: { contracts?: Record<string, { name?: string; description?: string; methods?: PolicyMethod[] }> } };
+    const contracts = data.policies?.contracts;
+    if (!contracts || !Object.keys(contracts).length) return null;
+    return {
+      contracts: Object.fromEntries(
+        Object.entries(contracts).map(([address, c]) => [address, { ...c, methods: (c.methods ?? []).map(({ authorized: _a, ...m }) => m) }]),
+      ),
+    };
+  } catch {
+    return null;
+  }
+}
+
+/** Whether the approved Cartridge session may call `entrypoint` on `target` (true when it is not known). */
+export function sessionPermits(target: string, entrypoint: string): boolean {
+  const p = storedSessionPolicies();
+  if (!p) return true;
+  return Object.entries(p.contracts).some(([address, c]) => BigInt(address) === BigInt(target) && c.methods.some((m) => m.entrypoint === entrypoint));
 }
 
 export class SessionExecutor implements Executor {

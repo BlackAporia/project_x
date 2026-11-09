@@ -79,6 +79,8 @@
             "name": "Approve Ticket",
             "entrypoint": "approve",
             "description": "Approve 1 TICKET for a Beast Mode entry",
+            "spender": "0x075ca042091b8e1418d0510b8d6519a89222ef5f7bbceb0ff760bb3c62c98174",
+            "amount": "0xde0b6b3a7640000",
             "authorized": true
           }
         ]

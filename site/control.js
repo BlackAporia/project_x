@@ -939,6 +939,9 @@ async function renderMonitor(runs) {
     const list = Array.isArray(d) ? d : d?.runs ?? [];
     const since = new Date(run.run_started_at ?? run.created_at).getTime() - 60_000;
     const mine = list.filter((x) => new Date(x.started).getTime() >= since);
+    // a run that failed (no RPC, refused entry, bad session...) leaves its error in status.json
+    const st = await window.botData?.load('status.json').catch(() => undefined);
+    const failed = st?.message?.startsWith('error:') && new Date(st.updated).getTime() >= since;
     const gl = await window.botData?.load('games.json').catch(() => undefined);
     const played = (Array.isArray(gl) ? gl : []).filter((g) => g.mode === 'mainnet' && g.status !== 'dry_run' && new Date(g.started).getTime() >= since);
     if (played.length) result += `<div class="mon-games">${played.map(gameResult).join('')}</div>`;
@@ -947,13 +950,11 @@ async function renderMonitor(runs) {
         .map(
           (x) => `<div class="mon-result"><span class="badge ${x.mode.startsWith('mainnet') ? 'run' : 'muted'}">${esc(x.mode === 'mainnet' ? 'Mainnet' : x.mode === 'mainnet-dry' ? 'Mainnet (dry run)' : 'Тренування')}</span>
             <b>${x.games}</b> ігор · найкраща <b>${x.bestXp}</b> XP · середня ${x.meanXp}${x.errors ? ` · <span class="bad">${x.errors} помилок</span>` : ''}${x.ended ? '' : ' · <span class="run">триває</span>'}
-            ${x.ended && x.games === 0 && x.mode.startsWith('mainnet') ? '<span class="muted small">— на акаунті бота не знайшлося незіграних ігор (ігри Ronke потребують сесії Game Account; для нових ігор — Proving Grounds)</span>' : ''}</div>`,
+            ${x.ended && x.games === 0 && x.mode.startsWith('mainnet') && !failed ? '<span class="muted small">— на акаунті бота не знайшлося незіграних ігор (ігри Ronke потребують сесії Game Account; для нових ігор — Proving Grounds)</span>' : ''}</div>`,
         )
         .join('')}</div>`;
     } else if (running && !played.length) result = '<p class="muted small">Результати з’являться після першої зіграної гри.</p>';
-    // a run that died before playing (no RPC, bad session...) leaves its error in status.json
-    const st = await window.botData?.load('status.json').catch(() => undefined);
-    if (st?.message?.startsWith('error:') && new Date(st.updated).getTime() >= since) {
+    if (failed) {
       result += `<p class="bad small">✗ Бот зупинився з помилкою: ${esc(st.message.slice(7, 300))}</p>`;
     }
   }

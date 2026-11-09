@@ -265,7 +265,7 @@ function renderLive(status) {
   if (stale) {
     host.innerHTML = '<p class="muted">Запуск іде, бот ще не надіслав перших даних — вони оновлюються щохвилини.</p>';
   } else if (!c || !status.running) {
-    host.innerHTML = `<p class="muted">Немає активної гри.${status?.message ? `<br>${esc(MSG_UK[status.message] ?? status.message)}${status.account ? ` <span class="small">· акаунт ${esc(short(status.account))}</span>` : ''} <span class="small">· ${ago(status.updated)}</span>` : ''}</p>`;
+    host.innerHTML = `<p class="muted">Немає активної гри.${status?.message ? `<br>${esc(MSG_UK[status.message] ?? (status.message.startsWith('error:') ? `✗ Помилка: ${status.message.slice(7)}` : status.message))}${status.account ? ` <span class="small">· акаунт ${esc(short(status.account))}</span>` : ''} <span class="small">· ${ago(status.updated)}</span>` : ''}</p>`;
   } else {
     const hpPct = c.maxHp ? Math.round((c.hp / c.maxHp) * 100) : 0;
     const slots = ['Зброя', 'Груди', 'Голова', 'Пояс', 'Ноги', 'Руки', 'Шия', 'Кільце'];

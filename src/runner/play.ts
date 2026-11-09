@@ -34,6 +34,8 @@ export interface Backend {
   finish?(id: bigint): Promise<SettleResult | null>;
   /** optional: play this game again later in the run (it stopped on errors while alive) */
   requeue?(id: bigint): void;
+  /** optional: why no new game could be started (entry refused), set when nextGame returns null for that reason */
+  blockedReason?: string;
 }
 
 export function describeAction(a: Action): string {
@@ -213,7 +215,11 @@ export async function playLoop(opts: PlayOptions): Promise<RunRecord> {
       break;
     }
     if (id === null) {
-      status.message = backend.mode === 'mainnet' ? 'no unplayed games on the account (buy/mint games in the UI)' : 'no more games';
+      status.message = backend.blockedReason
+        ? `error: could not start a new game: ${backend.blockedReason}`
+        : backend.mode === 'mainnet'
+          ? 'no unplayed games on the account (buy/mint games in the UI)'
+          : 'no more games';
       log(`[${backend.mode}] ${status.message}`);
       break;
     }
