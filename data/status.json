@@ -1,52 +1,10 @@
 {
- "updated": "2026-11-09T17:35:36.307Z",
+ "updated": "2026-11-09T17:35:49.076Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-11-09T17-12-14-786Z",
  "account": "0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452",
  "recent": [
-  {
-   "n": 65,
-   "t": "2026-11-09T17:32:28.011Z",
-   "level": 10,
-   "xp": 117,
-   "hp": 160,
-   "maxHp": 160,
-   "gold": 5,
-   "phase": "explore",
-   "reason": "Explore (instant-death risk 0.3%, battle-death risk 0.8%, HP 160/160)",
-   "actions": "explore",
-   "tx": "0x5a61c98c77a2cbd6219cdc0e2b4fca9bad96886e2b85479a93a7c3ada3863d6",
-   "ok": true
-  },
-  {
-   "n": 66,
-   "t": "2026-11-09T17:32:30.653Z",
-   "level": 10,
-   "xp": 117,
-   "hp": 160,
-   "maxHp": 160,
-   "gold": 5,
-   "phase": "battle",
-   "reason": "Attack Juggernaut (L5 T5, 124 HP): P(win)=100.0% P(death)=0.0%; attack value 202.6 vs flee 173.0",
-   "actions": "attack",
-   "tx": "0x387a991f9133a50ba4047a99499793f309eca229e549935910b4ec9f030c8c9",
-   "ok": true
-  },
-  {
-   "n": 67,
-   "t": "2026-11-09T17:32:36.565Z",
-   "level": 10,
-   "xp": 117,
-   "hp": 158,
-   "maxHp": 160,
-   "gold": 5,
-   "phase": "battle",
-   "reason": "Attack Juggernaut (L5 T5, 112 HP): P(win)=100.0% P(death)=0.0%; attack value 202.6 vs flee 172.0",
-   "actions": "attack",
-   "tx": "0x5aa33d60f2c0700c2e08dc5dd0f3b9be843b556db7d3890b3227b1c49dd43b1",
-   "ok": true
-  },
   {
    "n": 68,
    "t": "2026-11-09T17:32:40.807Z",
@@ -564,13 +522,55 @@
    "actions": "explore",
    "tx": "0x27d357c5516cd9a84368661f1c36b4a52ff686a7783d634b7a93e5514a7eb2a",
    "ok": true
+  },
+  {
+   "n": 21,
+   "t": "2026-11-09T17:35:36.308Z",
+   "level": 11,
+   "xp": 128,
+   "hp": 130,
+   "maxHp": 130,
+   "gold": 0,
+   "phase": "explore",
+   "reason": "Explore (instant-death risk 1.0%, battle-death risk 2.4%, HP 130/130)",
+   "actions": "explore",
+   "tx": "0x7b5a51d6f883cb9f5a7f55edf0d570f92ae061169daa059cd7f8cfebfa632ff",
+   "ok": true
+  },
+  {
+   "n": 22,
+   "t": "2026-11-09T17:35:40.562Z",
+   "level": 11,
+   "xp": 128,
+   "hp": 96,
+   "maxHp": 130,
+   "gold": 0,
+   "phase": "battle",
+   "reason": "Flee from \"Empyrean Grasp\" Nephilim (L27 T2): P(escape)=83.8% P(death)=16.2%; flee value 143.0 vs attack 82.2",
+   "actions": "flee",
+   "tx": "0x1f7aef09a7d8e6071f0ff02381bc79a0a34fa2222162831eb154691e1dc0a61",
+   "ok": true
+  },
+  {
+   "n": 23,
+   "t": "2026-11-09T17:35:44.828Z",
+   "level": 11,
+   "xp": 128,
+   "hp": 86,
+   "maxHp": 130,
+   "gold": 0,
+   "phase": "battle",
+   "reason": "Flee from \"Empyrean Grasp\" Nephilim (L27 T2): P(escape)=82.7% P(death)=17.3%; flee value 137.0 vs attack 74.5",
+   "actions": "flee",
+   "tx": "0x800e8d21763aeed92427fbea72592df72f2c7ffddc449f799e2eace092f163",
+   "ok": true
   }
  ],
  "current": {
   "id": "50216815005526703580820592525886058594418909047314982260801",
   "level": 11,
-  "xp": 127,
-  "hp": 130,
+  "xp": 128,
+  "hp": 86,
   "maxHp": 130,
   "gold": 0,
   "gear": [
@@ -592,6 +592,7 @@
    "cha": 4,
    "luck": 2
   },
-  "lastReason": "Explore (instant-death risk 1.0%, battle-death risk 2.4%, HP 130/130)"
+  "beast": "\"Empyrean Grasp\" Nephilim",
+  "lastReason": "Flee from \"Empyrean Grasp\" Nephilim (L27 T2): P(escape)=82.7% P(death)=17.3%; flee value 137.0 vs attack 74.5"
  }
 }
