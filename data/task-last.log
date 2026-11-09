@@ -1,10 +1,20 @@
-== bot frontend --call budokan-bots-production --call ${hJe} --call function t6( --call function TKe(
+== bot http-get --address https://budokan-bots-production.up.railway.app/pvp/status?address=0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82 --address https://budokan-bots-production.up.railway.app/pvp/status?address=0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452 --address https://budokan-bots-production.up.railway.app/pvp/status/0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82 --address https://budokan-bots-production.up.railway.app/pvp --address https://budokan-bots-production.up.railway.app/
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts frontend --call budokan-bots-production --call ${hJe} --call function t6( --call function TKe(
+> node --import tsx src/cli.ts http-get --address https://budokan-bots-production.up.railway.app/pvp/status?address=0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82 --address https://budokan-bots-production.up.railway.app/pvp/status?address=0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452 --address https://budokan-bots-production.up.railway.app/pvp/status/0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82 --address https://budokan-bots-production.up.railway.app/pvp --address https://budokan-bots-production.up.railway.app/
 
-downloaded 348 files, 16.0 MB into /tmp/lsfront-1794223259923
-1653 snippet(s) for budokan-bots-production, ${hJe}, function, function -> frontend/snippets.json
+GET https://budokan-bots-production.up.railway.app/pvp/status?address=0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82: HTTP 404 {"error":"not_found"}
+GET https://budokan-bots-production.up.railway.app/pvp/status?address=0x066d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452: HTTP 404 {"error":"not_found"}
+GET https://budokan-bots-production.up.railway.app/pvp/status/0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82: HTTP 404 {"error":"not_found"}
+GET https://budokan-bots-production.up.railway.app/pvp: HTTP 404 {"error":"not_found"}
+GET https://budokan-bots-production.up.railway.app/: HTTP 404 {"error":"not_found"}
+== bot frontend --call O3}/ --call pvp/status
+
+> loot-survivor-bot@1.0.0 bot
+> node --import tsx src/cli.ts frontend --call O3}/ --call pvp/status
+
+downloaded 348 files, 16.0 MB into /tmp/lsfront-1794223907337
+1 snippet(s) for O3}/, pvp/status -> frontend/snippets.json
 10 dungeon configs on lootsurvivor.io
   trials                   Trials                     online       Free
   beastmode                Beast Mode                 online       1 Ticket settings=Ao minter=ko @jo.dungeon
