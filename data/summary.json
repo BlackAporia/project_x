@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-09T17:39:47.096Z",
+ "updated": "2026-11-09T17:52:58.896Z",
  "modes": {
   "mainnet": {
    "games": 150,
@@ -11,7 +11,7 @@
    "median": 175,
    "p90": 569,
    "last20Mean": 269,
-   "transactions": 8930,
+   "transactions": 8903,
    "reverts": 50,
    "predictionAccuracy": null,
    "deathCauses": [
@@ -453,16 +453,6 @@
  },
  "runs": [
   {
-   "id": "2026-10-25T15-28-30-538Z",
-   "mode": "mainnet",
-   "started": "2026-10-25T15:28:30.538Z",
-   "games": 0,
-   "bestXp": 0,
-   "meanXp": 0,
-   "errors": 0,
-   "policy": "tail-2026-10-25-g3"
-  },
-  {
    "id": "2026-10-25T15-31-26-455Z",
    "mode": "mainnet",
    "started": "2026-10-25T15:31:26.455Z",
@@ -785,6 +775,17 @@
    "errors": 1,
    "policy": "tail-pg-2026-10-25",
    "ended": "2026-11-09T17:39:45.311Z"
+  },
+  {
+   "id": "2026-11-09T17-51-07-771Z",
+   "mode": "mainnet",
+   "started": "2026-11-09T17:51:07.771Z",
+   "games": 0,
+   "bestXp": 0,
+   "meanXp": 0,
+   "errors": 1,
+   "policy": "tail-pg-2026-10-25",
+   "ended": "2026-11-09T17:52:56.652Z"
   }
  ],
  "policy": {
