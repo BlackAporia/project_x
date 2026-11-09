@@ -1,52 +1,10 @@
 {
- "updated": "2026-11-09T15:25:50.473Z",
+ "updated": "2026-11-09T15:26:03.936Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-11-09T11-17-32-722Z",
  "account": "0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82",
  "recent": [
-  {
-   "n": 8,
-   "t": "2026-11-09T15:22:51.670Z",
-   "level": 6,
-   "xp": 47,
-   "hp": 93,
-   "maxHp": 115,
-   "gold": 12,
-   "phase": "battle",
-   "reason": "Flee from Werewolf (L10 T2): P(escape)=99.3% P(death)=0.7%; flee value 176.5 vs attack 168.5",
-   "actions": "flee",
-   "tx": "0x6e454c8fdd7aa5c8822e93c5ff1b782fa973df514611a42a1d0d3454637dbf1",
-   "ok": true
-  },
-  {
-   "n": 9,
-   "t": "2026-11-09T15:22:56.131Z",
-   "level": 6,
-   "xp": 48,
-   "hp": 93,
-   "maxHp": 115,
-   "gold": 12,
-   "phase": "explore",
-   "reason": "Explore until beast (instant-death risk 0.1%, battle-death risk 0.4%, HP 93/115)",
-   "actions": "explore(till beast)",
-   "tx": "0x6b6c04e9712a585deeab5f11fd9f20bae3c88f2e1b2333dabee27ce7d7e9bea",
-   "ok": true
-  },
-  {
-   "n": 10,
-   "t": "2026-11-09T15:23:00.595Z",
-   "level": 8,
-   "xp": 79,
-   "hp": 93,
-   "maxHp": 115,
-   "gold": 12,
-   "phase": "level_up",
-   "reason": "Stats +1 DEX +1 CHA; Drink 3 potion(s); Explore (instant-death risk 0.3%, battle-death risk 0.8%, HP 115/115)",
-   "actions": "stats(dex+1 cha+1) + buy(3 potions) + explore",
-   "tx": "0x3218a0bdc2bd0d34714182286d438e40c835c07c44f0121fb66af2d9d832062",
-   "ok": true
-  },
   {
    "n": 11,
    "t": "2026-11-09T15:23:06.856Z",
@@ -564,18 +522,60 @@
    "actions": "attack",
    "tx": "0x55404a942e2f16a2e50fee712124aad6be5cfed24e9d2e45417162240608611",
    "ok": true
+  },
+  {
+   "n": 48,
+   "t": "2026-11-09T15:25:50.475Z",
+   "level": 19,
+   "xp": 371,
+   "hp": 113,
+   "maxHp": 115,
+   "gold": 1,
+   "phase": "battle",
+   "reason": "Attack \"Maelstrom Instrument\" Direwolf (L42 T5, 98 HP): P(win)=100.0% P(death)=0.0%; attack value 611.4 vs flee 575.0",
+   "actions": "attack",
+   "tx": "0x3f24a83e0f5ce90a88c8b795413d7583eccfffcee2e04977d6d18a6e1a4390e",
+   "ok": true
+  },
+  {
+   "n": 49,
+   "t": "2026-11-09T15:25:54.934Z",
+   "level": 19,
+   "xp": 384,
+   "hp": 113,
+   "maxHp": 115,
+   "gold": 22,
+   "phase": "explore",
+   "reason": "Buy DragonsCrown (bag); Drink 1 potion(s); Explore (instant-death risk 6.0%, battle-death risk 2.0%, HP 115/115)",
+   "actions": "buy(1 potion, DragonsCrown) + explore",
+   "tx": "0x236fff0bade52fc9f2a8b944b6ab6649208aba81bf09e76b659f7e58ca442df",
+   "ok": true
+  },
+  {
+   "n": 50,
+   "t": "2026-11-09T15:25:59.418Z",
+   "level": 19,
+   "xp": 385,
+   "hp": 115,
+   "maxHp": 115,
+   "gold": 14,
+   "phase": "explore",
+   "reason": "Explore (instant-death risk 6.0%, battle-death risk 2.0%, HP 115/115)",
+   "actions": "explore",
+   "tx": "0x7499f51a750d5dedf9353fa4776109a57fb7c547cb21fb133e0c21654fe8cd9",
+   "ok": true
   }
  ],
  "current": {
   "id": "374144419157391711793985745733029082205872295730209",
   "level": 19,
-  "xp": 371,
+  "xp": 385,
   "hp": 115,
   "maxHp": 115,
-  "gold": 1,
+  "gold": 14,
   "gear": [
    "Grimoire T1 G19",
-   "Studded Leather Armor T3 G11",
+   "Studded Leather Armor T3 G12",
    "Linen Hood T4 G17",
    "Demonhide Belt T1 G19",
    "Wool Shoes T3 G19",
@@ -592,7 +592,6 @@
    "cha": 9,
    "luck": 2
   },
-  "beast": "\"Maelstrom Instrument\" Direwolf",
-  "lastReason": "Attack \"Maelstrom Instrument\" Direwolf (L42 T5, 340 HP): P(win)=100.0% P(death)=0.0%; attack value 610.3 vs flee 573.4"
+  "lastReason": "Explore (instant-death risk 6.0%, battle-death risk 2.0%, HP 115/115)"
  }
 }
