@@ -65,12 +65,17 @@ export function gameAccountAddress(owner: string): string {
 }
 
 /** The permissions lootsurvivor.io asks for: enter the main dungeon and Proving Grounds, play and settle games. */
-export function defaultPermissions(p: { lootDungeon: string; provingGrounds?: string; gameCore: string; budokan?: string }): Permission[] {
+export function defaultPermissions(p: { lootDungeon: string; provingGrounds?: string; gameCore: string; budokan?: string; extraCores?: string[] }): Permission[] {
   return [
     { target: p.lootDungeon, method: 'enter_dungeon' },
     ...(p.provingGrounds ? [{ target: p.provingGrounds, method: 'enter_dungeon' }] : []),
     { target: p.gameCore, method: 'commit_actions' },
     { target: p.gameCore, method: 'verify_game' },
+    // other game cores the bot plays on (PvP tables run on the Beast Mode core)
+    ...(p.extraCores ?? []).flatMap((core) => [
+      { target: core, method: 'commit_actions' },
+      { target: core, method: 'verify_game' },
+    ]),
     // PvP Dungeons / tournaments: enter a table, submit the best run, claim the prize
     ...(p.budokan
       ? [

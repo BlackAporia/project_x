@@ -127,6 +127,14 @@
         "method": "verify_game"
       },
       {
+        "target": "0x03cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2",
+        "method": "commit_actions"
+      },
+      {
+        "target": "0x03cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2",
+        "method": "verify_game"
+      },
+      {
         "target": "0x0341263a7a0fda541d57b4de1365017066badee008d5536a8adbb14c9292be57",
         "method": "enter_tournament"
       },

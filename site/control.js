@@ -445,6 +445,7 @@ async function renderGameAccount() {
       <dt>Власник (EVM)</dt><dd>${esc(short(vars.GAME_ACCOUNT_OWNER?.value ?? ''))}</dd>
       <dt>Сесія діє до</dt><dd>${exp ? `${new Date(exp).toLocaleString('uk-UA')}${exp < Date.now() ? ' — <b class="bad">закінчилась</b>' : ''}` : '–'}</dd>
       <dt>Газ (STRK)</dt><dd id="ctlGaGas" class="muted">перевіряю…</dd>
+      ${vars.GAME_SESSION_FULL?.value === 'true' ? '' : '<dt>Дозволи</dt><dd><b class="warn-text">⚠ сесія створена до PvP: вона не дозволяє грати забіги PvP‑столів.</b> Натисніть <b>«Оновити сесію»</b> нижче й підпишіть у тому ж гаманці (Rabby) — це не транзакція.</dd>'}
     </dl>`;
     $('#ctlGaRemove').hidden = false;
     $('#ctlGaCreate').textContent = 'Оновити сесію';
@@ -469,9 +470,15 @@ async function renderGameAccount() {
   }
 }
 
+/** Does a session's permission list cover every permission the bot asks for now (e.g. PvP on the Beast Mode core)? */
+function coversBotPermissions(perms, cfg) {
+  return (cfg.gameAccount.permissions ?? []).every((need) => (perms ?? []).some((p) => BigInt(p.target) === BigInt(need.target) && p.method === need.method));
+}
+
 async function saveGameSession(link, g) {
   const cfg = await config();
   await putSecret(cfg.gameAccount.secret, link);
+  await setVariable('GAME_SESSION_FULL', String(coversBotPermissions(g.perms, cfg)));
   await setVariable('GAME_ACCOUNT_ADDRESS', g.account);
   await setVariable('GAME_ACCOUNT_OWNER', g.owner);
   await setVariable('GAME_SESSION_EXPIRES', String(g.expiresAt));
@@ -522,7 +529,7 @@ $('#ctlGaCreate')?.addEventListener('click', async (ev) => {
     const felts = ownerSignatureFelts(sig);
     if (recoverOwner(sessionDigest(td), felts) !== owner) throw new Error('підпис не належить цьому гаманцю — сесію не збережено');
     const link = sessionLink({ owner, privateKey: key.privKey, terms, ownerSignature: felts });
-    await saveGameSession(link, { account, owner, expiresAt: Number(expiresAt) });
+    await saveGameSession(link, { account, owner, expiresAt: Number(expiresAt), perms: cfg.gameAccount.permissions });
     note(
       '#ctlGaNote',
       `Готово. Бот гратиме Game Account <b>${esc(short(account))}</b> (гаманець ${esc(short(owner))}) до ${new Date(Number(expiresAt) * 1000).toLocaleString('uk-UA')}.` +
@@ -780,6 +787,15 @@ document.addEventListener('click', async (e) => {
       note(
         '#ctlRunNote',
         'PvP грає ваш <b>Game Account</b> (гаманець, яким ви зареєструвались у PvP). Спершу: <a href="#accounts" data-goto="accounts">🔑 Акаунти</a> → «EVM‑гаманець» → <b>Створити сесію гаманцем</b>, потім знову натисніть «Грати стіл».',
+        'warn',
+      );
+      return;
+    }
+    const vars = await variables().catch(() => ({}));
+    if (vars.GAME_SESSION_FULL?.value !== 'true') {
+      note(
+        '#ctlRunNote',
+        'Поточна сесія Game Account створена до PvP і не дозволяє ходи у PvP‑забігах (вони йдуть на ядрі Beast Mode). Оновіть її: <a href="#accounts" data-goto="accounts">🔑 Акаунти</a> → «EVM‑гаманець» → <b>Оновити сесію</b> (підпис у Rabby, не транзакція), потім знову натисніть «Грати стіл». Уже вхідні забіги бот дограє першими.',
         'warn',
       );
       return;

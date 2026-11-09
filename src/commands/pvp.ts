@@ -207,6 +207,15 @@ export async function runPvpCommand(opts: { live: boolean; dataDir: string; maxR
       '0x1', // entry_fee_pay_params: None
     ],
   });
+  // the table's runs are games on its game core: entering one the session cannot play would waste the entry
+  const cannot = ['commit_actions', 'verify_game'].filter((m) => !sessionAllows(gs, game, m));
+  if (cannot.length) {
+    const msg = `the Game Session does not permit ${cannot.join(' / ')} on this table's game core ${game}: create a new session on the bot website (Accounts -> EVM wallet -> create session) so the bot can play PvP runs`;
+    (today.notes ??= []).push(msg.slice(0, 200));
+    store.writeStatus({ updated: new Date().toISOString(), mode: 'mainnet', running: false, runId: `pvp-${Date.now()}`, account: address, recent: [], message: `error: ${msg}` });
+    save();
+    throw new Error(msg);
+  }
   const chain = new V2Chain(provider, game);
   // runs already issued to the account at this table (the organizer enters seated players): play those first
   const issued: bigint[] = [];
