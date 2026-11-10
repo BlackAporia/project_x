@@ -1,52 +1,10 @@
 {
- "updated": "2026-11-10T17:21:23.449Z",
+ "updated": "2026-11-10T17:21:38.589Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-11-10T16-39-32-215Z",
  "account": "0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452",
  "recent": [
-  {
-   "n": 16,
-   "t": "2026-11-10T17:17:26.670Z",
-   "level": 8,
-   "xp": 70,
-   "hp": 83,
-   "maxHp": 130,
-   "gold": 3,
-   "phase": "explore",
-   "reason": "Drink 3 potion(s); Explore (instant-death risk 0.3%, battle-death risk 3.1%, HP 113/130)",
-   "actions": "buy(3 potions) + explore",
-   "tx": "0x6fb77852c696377fdc569e4a2a18a1088d2d873cc520d8a2c9610feec56691f",
-   "ok": true
-  },
-  {
-   "n": 17,
-   "t": "2026-11-10T17:17:31.584Z",
-   "level": 8,
-   "xp": 75,
-   "hp": 113,
-   "maxHp": 130,
-   "gold": 0,
-   "phase": "explore",
-   "reason": "Explore (instant-death risk 0.3%, battle-death risk 3.0%, HP 113/130)",
-   "actions": "explore",
-   "tx": "0x6a8c497ceba2fe83ccb7e9e02c3fa13c789d42124f41a13c8a9498187b6e938",
-   "ok": true
-  },
-  {
-   "n": 18,
-   "t": "2026-11-10T17:17:36.502Z",
-   "level": 10,
-   "xp": 100,
-   "hp": 106,
-   "maxHp": 130,
-   "gold": 0,
-   "phase": "level_up",
-   "reason": "Stats +2 DEX; Explore (instant-death risk 1.4%, battle-death risk 3.2%, HP 106/130)",
-   "actions": "stats(dex+2) + explore",
-   "tx": "0x57d7d93ba72ce6a0c25216eba29d88c546656a8d5f7b2d5e64adf713e49df23",
-   "ok": true
-  },
   {
    "n": 19,
    "t": "2026-11-10T17:17:41.469Z",
@@ -564,15 +522,57 @@
    "actions": "stats(dex+1) + explore",
    "tx": "0x6cf08800ea197cc3f249b8eea28dd2ad17fbc4642928a687e93a1eafe78aa77",
    "ok": true
+  },
+  {
+   "n": 30,
+   "t": "2026-11-10T17:21:23.450Z",
+   "level": 12,
+   "xp": 152,
+   "hp": 115,
+   "maxHp": 115,
+   "gold": 2,
+   "phase": "battle",
+   "reason": "Attack Kraken (L1 T1, 30 HP): P(win)=100.0% P(death)=0.0%; attack value 235.4 vs flee 231.1",
+   "actions": "attack",
+   "tx": "0x222e8d39f8c8eed73b41533ee34ddc8312437722d03154e8d7fb3782e01a5ea",
+   "ok": true
+  },
+  {
+   "n": 31,
+   "t": "2026-11-10T17:21:30.250Z",
+   "level": 12,
+   "xp": 152,
+   "hp": 113,
+   "maxHp": 115,
+   "gold": 2,
+   "phase": "battle",
+   "reason": "Attack Kraken (L1 T1, 5 HP): P(win)=100.0% P(death)=0.0%; attack value 235.4 vs flee 230.1",
+   "actions": "attack",
+   "tx": "0x71891204e18c08c478353d6eef3a507704afc41ac7701a958750d73163f6a30",
+   "ok": true
+  },
+  {
+   "n": 32,
+   "t": "2026-11-10T17:21:35.249Z",
+   "level": 12,
+   "xp": 156,
+   "hp": 113,
+   "maxHp": 115,
+   "gold": 4,
+   "phase": "explore",
+   "reason": "Drink 1 potion(s); Explore (instant-death risk 2.2%, battle-death risk 2.0%, HP 115/115)",
+   "actions": "buy(1 potion) + explore",
+   "tx": "0x36e1f6f5bc99c2488219203b4200eb888635dcfda74e31c873a027868eff411",
+   "ok": true
   }
  ],
  "current": {
   "id": "175758849713260318857536352432406665002104562010627316609089",
   "level": 12,
-  "xp": 152,
-  "hp": 115,
+  "xp": 156,
+  "hp": 113,
   "maxHp": 115,
-  "gold": 2,
+  "gold": 4,
   "gear": [
    "Grimoire T1 G12",
    "Leather Armor T5 G12",
@@ -585,13 +585,13 @@
   ],
   "stats": {
    "str": 0,
-   "dex": 8,
+   "dex": 9,
    "vit": 1,
    "int": 2,
    "wis": 5,
    "cha": 6,
    "luck": 2
   },
-  "lastReason": "Stats +1 DEX; Explore (instant-death risk 2.2%, battle-death risk 2.0%, HP 115/115)"
+  "lastReason": "Drink 1 potion(s); Explore (instant-death risk 2.2%, battle-death risk 2.0%, HP 115/115)"
  }
 }
