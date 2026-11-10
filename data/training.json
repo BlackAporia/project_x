@@ -86,5 +86,49 @@
   "max": 1146,
   "games": 800,
   "source": "cmaes"
+ },
+ {
+  "date": "2026-11-10T19:23:51.663Z",
+  "generation": 3,
+  "objective": "tail",
+  "fitness": -3.087242172145702,
+  "mean": 0,
+  "p90": 0,
+  "max": 0,
+  "games": 1600,
+  "source": "tail"
+ },
+ {
+  "date": "2026-11-10T19:28:35.652Z",
+  "generation": 4,
+  "objective": "blend",
+  "fitness": 506.52375,
+  "mean": 359.735,
+  "p90": 605,
+  "max": 999,
+  "games": 800,
+  "source": "cmaes"
+ },
+ {
+  "date": "2026-11-10T19:33:05.525Z",
+  "generation": 8,
+  "objective": "blend",
+  "fitness": 497.38125,
+  "mean": 349.1375,
+  "p90": 604,
+  "max": 881,
+  "games": 800,
+  "source": "cmaes"
+ },
+ {
+  "date": "2026-11-10T19:37:38.870Z",
+  "generation": 12,
+  "objective": "blend",
+  "fitness": 556.870625,
+  "mean": 375.885,
+  "p90": 679,
+  "max": 1180,
+  "games": 800,
+  "source": "cmaes"
  }
 ]
