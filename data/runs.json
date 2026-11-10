@@ -808,6 +808,7 @@
   "bestXp": 0,
   "meanXp": 0,
   "errors": 0,
-  "policy": "tail-pg-2026-10-25"
+  "policy": "tail-pg-2026-10-25",
+  "ended": "2026-11-10T21:29:58.293Z"
  }
 ]
