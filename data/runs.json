@@ -771,10 +771,11 @@
   "id": "2026-11-10T16-39-32-215Z",
   "mode": "mainnet",
   "started": "2026-11-10T16:39:32.215Z",
-  "games": 0,
-  "bestXp": 0,
-  "meanXp": 0,
+  "games": 1,
+  "bestXp": 151,
+  "meanXp": 151,
   "errors": 0,
-  "policy": "tail-pg-2026-10-25"
+  "policy": "tail-pg-2026-10-25",
+  "ended": "2026-11-10T16:47:38.990Z"
  }
 ]
