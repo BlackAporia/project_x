@@ -1,7 +1,7 @@
 {
- "updated": "2026-11-10T16:34:10.017Z",
+ "updated": "2026-11-10T16:34:50.241Z",
  "mode": "mainnet",
- "running": true,
+ "running": false,
  "runId": "2026-11-10T16-32-28-848Z",
  "account": "0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452",
  "recent": [
@@ -256,35 +256,91 @@
    "actions": "flee",
    "tx": "0x792f2ce6506050e2bd92dc5e5aaccb5e584db85c3723e545f03145528226fbc",
    "ok": true
+  },
+  {
+   "n": 18,
+   "t": "2026-11-10T16:34:10.018Z",
+   "level": 7,
+   "xp": 59,
+   "hp": 71,
+   "maxHp": 130,
+   "gold": 4,
+   "phase": "explore",
+   "reason": "Drink 4 potion(s); Explore (instant-death risk 0.3%, battle-death risk 0.4%, HP 111/130)",
+   "actions": "buy(4 potions) + explore",
+   "tx": "0x17e4819025e2d1d77ed238902719604dd39efecd01dfeb6e2f323f804584ad8",
+   "ok": true
+  },
+  {
+   "n": 19,
+   "t": "2026-11-10T16:34:14.126Z",
+   "level": 7,
+   "xp": 59,
+   "hp": 111,
+   "maxHp": 130,
+   "gold": 0,
+   "phase": "battle",
+   "reason": "Flee from Hydra (L18 T4): P(escape)=99.9% P(death)=0.1%; flee value 170.2 vs attack 159.1",
+   "actions": "flee",
+   "tx": "0x2fbb4bc76ecb7b9ddfd637fac204a8bae4c61da1f3bf1c73339d6fae489de9b",
+   "ok": true
+  },
+  {
+   "n": 20,
+   "t": "2026-11-10T16:34:16.618Z",
+   "level": 7,
+   "xp": 60,
+   "hp": 111,
+   "maxHp": 130,
+   "gold": 0,
+   "phase": "explore",
+   "reason": "Explore (instant-death risk 0.3%, battle-death risk 0.4%, HP 111/130)",
+   "actions": "explore",
+   "tx": "0x11a21b8d7a4222f0a4eb957dec3835730f63153fed51060966063022330b26",
+   "ok": true
+  },
+  {
+   "n": 21,
+   "t": "2026-11-10T16:34:20.722Z",
+   "level": 7,
+   "xp": 61,
+   "hp": 111,
+   "maxHp": 130,
+   "gold": 1,
+   "phase": "explore",
+   "reason": "Drink 1 potion(s); Explore until beast (instant-death risk 0.2%, battle-death risk 0.3%, HP 121/130)",
+   "actions": "buy(1 potion) + explore(till beast)",
+   "tx": "0x60345ee8d5cc8722d3d939b5d284b312add76d9533f2640ead77f41a627ba18",
+   "ok": true
+  },
+  {
+   "n": 22,
+   "t": "2026-11-10T16:34:23.217Z",
+   "level": 8,
+   "xp": 79,
+   "hp": 100,
+   "maxHp": 130,
+   "gold": 4,
+   "phase": "level_up",
+   "reason": "Stats +1 CHA; Drink 3 potion(s); Explore (instant-death risk 0.3%, battle-death risk 0.9%, HP 130/130)",
+   "actions": "stats(cha+1) + buy(3 potions) + explore",
+   "tx": "0x53d9a06acdc4f392eef45d8a5235bbae1fe033afec5072b7332e1714fe63fee",
+   "ok": true
+  },
+  {
+   "n": 23,
+   "t": "2026-11-10T16:34:27.312Z",
+   "level": 8,
+   "xp": 80,
+   "hp": 130,
+   "maxHp": 130,
+   "gold": 1,
+   "phase": "explore",
+   "reason": "Explore (instant-death risk 0.3%, battle-death risk 0.9%, HP 130/130)",
+   "actions": "explore",
+   "tx": "0x694929dc11e97184d503ea969e20a9fb368109c75aeff5e6d39354d7ff2bd3e",
+   "ok": true
   }
  ],
- "current": {
-  "id": "175758849713260318857536382288113601576514875826443743610497",
-  "level": 7,
-  "xp": 58,
-  "hp": 71,
-  "maxHp": 130,
-  "gold": 4,
-  "gear": [
-   "Warhammer T1 G7",
-   "Leather Armor T5 G7",
-   "Cap T5 G7",
-   "Linen Sash T4 G7",
-   "Shoes T5 G7",
-   "Gloves T5 G7",
-   "-",
-   "-"
-  ],
-  "stats": {
-   "str": 2,
-   "dex": 6,
-   "vit": 2,
-   "int": 2,
-   "wis": 1,
-   "cha": 5,
-   "luck": 2
-  },
-  "beast": "Satori",
-  "lastReason": "Flee from Satori (L16 T4): P(escape)=99.2% P(death)=0.8%; flee value 164.2 vs attack 150.8"
- }
+ "message": "no unplayed games on the account (buy/mint games in the UI)"
 }
