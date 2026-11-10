@@ -1,33 +1,33 @@
 {
-  "updated": "2026-10-25T09:26:10.849Z",
-  "players": 42,
+  "updated": "2026-11-10T18:08:21.896Z",
+  "players": 38,
   "aggregate": {
     "early": {
-      "players": 3,
+      "players": 0,
       "ratios": {
-        "str": 0.199,
-        "dex": 0.56,
-        "vit": 0.557,
-        "int": 0.08,
-        "wis": 0.278,
-        "cha": 0.518
+        "str": 0,
+        "dex": 0,
+        "vit": 0,
+        "int": 0,
+        "wis": 0,
+        "cha": 0
       }
     },
     "late": {
-      "players": 39,
+      "players": 38,
       "ratios": {
-        "str": 0.181,
-        "dex": 0.646,
-        "vit": 0.795,
-        "int": 0.042,
-        "wis": 0.069,
-        "cha": 0.172
+        "str": 0.183,
+        "dex": 0.644,
+        "vit": 0.8,
+        "int": 0.04,
+        "wis": 0.068,
+        "cha": 0.169
       }
     },
-    "avgLevel": 42.8,
-    "avgArmorFilled": 4.88,
-    "avgGearTier": 1.2,
-    "jewelryShare": 0.95,
+    "avgLevel": 45.8,
+    "avgArmorFilled": 5,
+    "avgGearTier": 1.1,
+    "jewelryShare": 1,
     "weaponTypes": [
       [
         "Warhammer",
@@ -35,11 +35,11 @@
       ],
       [
         "Katana",
-        11
+        9
       ],
       [
         "Ghost Wand",
-        9
+        8
       ],
       [
         "Grimoire",
@@ -47,10 +47,6 @@
       ],
       [
         "Chronicle",
-        1
-      ],
-      [
-        "Wand",
         1
       ]
     ]
