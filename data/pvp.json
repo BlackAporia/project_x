@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-10T11:49:16.026Z",
+ "updated": "2026-11-10T16:32:34.027Z",
  "address": "0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452",
  "tables": {
   "8": {
@@ -21,7 +21,16 @@
    "best": {
     "tokenId": "50216815005526703580820528271212434227753233660898568063553",
     "score": 539
-   }
+   },
+   "submitted": true
+  },
+  "28": {
+   "tournamentId": "28",
+   "runs": [
+    "175758849713260318857536382288113601576514875826443743610497"
+   ],
+   "name": "Daily table d2 #5",
+   "gameAddress": "0x3cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2"
   }
  },
  "status": {
@@ -30,11 +39,11 @@
   "campaign": {
    "start": 1794232800,
    "end": 1794837600,
-   "day": 0
+   "day": 1
   },
   "table": {
-   "name": "Daily table d1 #3",
-   "tournamentId": "8"
+   "name": "Daily table d2 #5",
+   "tournamentId": "28"
   },
   "benched": false,
   "requirements": {
@@ -57,6 +66,12 @@
     "day": 1,
     "tournamentId": "8",
     "played": true,
+    "won": null
+   },
+   {
+    "day": 2,
+    "tournamentId": "28",
+    "played": false,
     "won": null
    }
   ]
