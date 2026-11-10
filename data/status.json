@@ -1,7 +1,7 @@
 {
- "updated": "2026-11-10T17:21:38.589Z",
+ "updated": "2026-11-10T17:25:16.760Z",
  "mode": "mainnet",
- "running": true,
+ "running": false,
  "runId": "2026-11-10T16-39-32-215Z",
  "account": "0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452",
  "recent": [
@@ -566,32 +566,5 @@
    "ok": true
   }
  ],
- "current": {
-  "id": "175758849713260318857536352432406665002104562010627316609089",
-  "level": 12,
-  "xp": 156,
-  "hp": 113,
-  "maxHp": 115,
-  "gold": 4,
-  "gear": [
-   "Grimoire T1 G12",
-   "Leather Armor T5 G12",
-   "Cap T5 G12",
-   "Sash T5 G12",
-   "Chain Boots T4 G11",
-   "Leather Gloves T5 G12",
-   "-",
-   "-"
-  ],
-  "stats": {
-   "str": 0,
-   "dex": 9,
-   "vit": 1,
-   "int": 2,
-   "wis": 5,
-   "cha": 6,
-   "luck": 2
-  },
-  "lastReason": "Drink 1 potion(s); Explore (instant-death risk 2.2%, battle-death risk 2.0%, HP 115/115)"
- }
+ "message": "error: could not start a new game: RPC: starknet_addInvokeTransaction with params {\n  \"invoke_transaction\": {\n    \"type\": \"INVOKE\",\n    \"sender_address\": \"0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452\",\n    \"calldata\": [\n      \"0x1\",\n      \"0x341263a7a0fda541d57b4de1365017066badee008d5536a8adbb14c9292be57\",\n      "
 }
