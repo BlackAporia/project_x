@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11T01:33:14.817Z",
+ "updated": "2026-11-11T11:28:28.186Z",
  "address": "0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452",
  "tables": {
   "8": {
@@ -91,10 +91,10 @@
    "playedDays": 2,
    "fullDays": 1,
    "campaign": {
-    "potUsd": 19.44,
-    "winners": 1,
-    "totalEntries": 99,
-    "playedSeats": 81
+    "potUsd": 21.36,
+    "winners": 2,
+    "totalEntries": 112,
+    "playedSeats": 89
    }
   }
  }
