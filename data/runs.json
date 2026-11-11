@@ -876,5 +876,15 @@
   "errors": 0,
   "policy": "tail-pg-2026-10-25",
   "ended": "2026-11-11T22:18:46.697Z"
+ },
+ {
+  "id": "2026-11-11T23-43-29-669Z",
+  "mode": "mainnet",
+  "started": "2026-11-11T23:43:29.669Z",
+  "games": 0,
+  "bestXp": 0,
+  "meanXp": 0,
+  "errors": 0,
+  "policy": "tail-pg-2026-10-25"
  }
 ]
