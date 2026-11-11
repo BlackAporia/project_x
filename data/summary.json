@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-11T17:29:20.181Z",
+ "updated": "2026-11-11T21:24:47.322Z",
  "modes": {
   "mainnet": {
    "games": 162,
@@ -453,17 +453,6 @@
  },
  "runs": [
   {
-   "id": "2026-10-26T04-48-22-253Z",
-   "mode": "mainnet-dry",
-   "started": "2026-10-26T04:48:22.253Z",
-   "games": 0,
-   "bestXp": 0,
-   "meanXp": 0,
-   "errors": 0,
-   "policy": "tail-pg-2026-10-25",
-   "ended": "2026-10-26T04:48:33.042Z"
-  },
-  {
    "id": "2026-10-26T11-41-07-266Z",
    "mode": "mainnet",
    "started": "2026-10-26T11:41:07.266Z",
@@ -782,6 +771,17 @@
    "errors": 0,
    "policy": "tail-pg-2026-10-25",
    "ended": "2026-11-11T17:29:15.657Z"
+  },
+  {
+   "id": "2026-11-11T21-23-40-540Z",
+   "mode": "mainnet",
+   "started": "2026-11-11T21:23:40.540Z",
+   "games": 0,
+   "bestXp": 0,
+   "meanXp": 0,
+   "errors": 0,
+   "policy": "tail-pg-2026-10-25",
+   "ended": "2026-11-11T21:24:44.265Z"
   }
  ],
  "policy": {
