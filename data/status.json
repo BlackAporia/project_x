@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-12T21:56:40.030Z",
+ "updated": "2026-11-12T22:52:27.595Z",
  "mode": "mainnet",
- "running": false,
- "runId": "2026-11-12T21-55-37-341Z",
+ "running": true,
+ "runId": "2026-11-12T22-52-27-594Z",
  "account": "0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452",
  "recent": [],
- "message": "error: could not start a new game: RPC: starknet_addInvokeTransaction with params {\n  \"invoke_transaction\": {\n    \"type\": \"INVOKE\",\n    \"sender_address\": \"0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452\",\n    \"calldata\": [\n      \"0x1\",\n      \"0x341263a7a0fda541d57b4de1365017066badee008d5536a8adbb14c9292be57\",\n      "
+ "message": "looking for unplayed games on the account"
 }
