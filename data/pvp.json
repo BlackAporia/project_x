@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-12T11:54:29.207Z",
+ "updated": "2026-11-12T17:45:07.222Z",
  "address": "0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452",
  "tables": {
   "8": {
@@ -43,12 +43,19 @@
     "tokenId": "175758849713260318857536368658334347922979732562728725971841",
     "score": 394
    },
-   "submitted": true
+   "submitted": true,
+   "claimed": true
   },
   "55": {
    "tournamentId": "55",
    "runs": [],
    "name": "Daily table d3 #17",
+   "gameAddress": "0x3cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2"
+  },
+  "77": {
+   "tournamentId": "77",
+   "runs": [],
+   "name": "Daily table d4 #18",
    "gameAddress": "0x3cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2"
   }
  },
@@ -58,13 +65,13 @@
   "campaign": {
    "start": 1794232800,
    "end": 1794837600,
-   "day": 2
+   "day": 3
   },
   "table": {
-   "name": "Daily table d3 #17",
-   "tournamentId": "55"
+   "name": "Daily table d4 #18",
+   "tournamentId": "77"
   },
-  "benched": false,
+  "benched": true,
   "requirements": {
    "phoneRequired": true,
    "alertsPhone": true,
@@ -73,7 +80,7 @@
    "xLike": false,
    "xRepost": true
   },
-  "seatable": true,
+  "seatable": false,
   "xLikePostId": "2119067400746471796",
   "xRequiredFrom": {
    "follow": 1794319200,
@@ -91,11 +98,17 @@
     "day": 2,
     "tournamentId": "28",
     "played": true,
-    "won": null
+    "won": false
    },
    {
     "day": 3,
     "tournamentId": "55",
+    "played": false,
+    "won": null
+   },
+   {
+    "day": 4,
+    "tournamentId": "77",
     "played": false,
     "won": null
    }
@@ -105,10 +118,10 @@
    "playedDays": 2,
    "fullDays": 1,
    "campaign": {
-    "potUsd": 32.16,
+    "potUsd": 36.48,
     "winners": 3,
-    "totalEntries": 167,
-    "playedSeats": 134
+    "totalEntries": 188,
+    "playedSeats": 152
    }
   }
  }
