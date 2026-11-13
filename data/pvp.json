@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-13T11:37:55.907Z",
+ "updated": "2026-11-13T17:23:16.828Z",
  "address": "0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452",
  "tables": {
   "8": {
@@ -65,12 +65,9 @@
   "campaign": {
    "start": 1794232800,
    "end": 1794837600,
-   "day": 3
+   "day": 4
   },
-  "table": {
-   "name": "Daily table d4 #18",
-   "tournamentId": "77"
-  },
+  "table": null,
   "benched": true,
   "requirements": {
    "phoneRequired": true,
@@ -104,7 +101,7 @@
     "day": 3,
     "tournamentId": "55",
     "played": false,
-    "won": null
+    "won": false
    },
    {
     "day": 4,
@@ -118,10 +115,10 @@
    "playedDays": 2,
    "fullDays": 1,
    "campaign": {
-    "potUsd": 42.72,
+    "potUsd": 45.84,
     "winners": 4,
-    "totalEntries": 223,
-    "playedSeats": 178
+    "totalEntries": 239,
+    "playedSeats": 191
    }
   }
  }
