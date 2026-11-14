@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-14T10:57:57.750Z",
+ "updated": "2026-11-14T16:07:24.095Z",
  "address": "0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452",
  "tables": {
   "8": {
@@ -65,7 +65,7 @@
   "campaign": {
    "start": 1794232800,
    "end": 1794837600,
-   "day": 4
+   "day": 5
   },
   "table": null,
   "benched": true,
@@ -107,7 +107,7 @@
     "day": 4,
     "tournamentId": "77",
     "played": false,
-    "won": null
+    "won": false
    }
   ],
   "draw": {
@@ -115,10 +115,10 @@
    "playedDays": 2,
    "fullDays": 1,
    "campaign": {
-    "potUsd": 52.8,
+    "potUsd": 58.32,
     "winners": 5,
-    "totalEntries": 272,
-    "playedSeats": 220
+    "totalEntries": 302,
+    "playedSeats": 243
    }
   }
  }
