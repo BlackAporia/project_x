@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-16T12:04:25.667Z",
+ "updated": "2026-11-16T19:52:31.944Z",
  "address": "0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452",
  "tables": {
   "8": {
@@ -65,10 +65,10 @@
   "campaign": {
    "start": 1794232800,
    "end": 1794837600,
-   "day": 6
+   "day": null
   },
   "table": null,
-  "benched": true,
+  "benched": false,
   "requirements": {
    "phoneRequired": true,
    "alertsPhone": true,
@@ -77,7 +77,7 @@
    "xLike": false,
    "xRepost": true
   },
-  "seatable": false,
+  "seatable": true,
   "xLikePostId": "2119067400746471796",
   "xRequiredFrom": {
    "follow": 1794319200,
@@ -115,10 +115,10 @@
    "playedDays": 2,
    "fullDays": 1,
    "campaign": {
-    "potUsd": 73.68,
+    "potUsd": 76.32,
     "winners": 7,
-    "totalEntries": 384,
-    "playedSeats": 307
+    "totalEntries": 399,
+    "playedSeats": 318
    }
   }
  }
