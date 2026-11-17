@@ -267,7 +267,7 @@ $('#ctlConnect')?.addEventListener('click', async () => {
     public_key: key.pubKey,
     redirect_uri: redirect,
     redirect_query_name: 'startapp',
-    rpc_url: cfg.rpcUrl,
+    rpc_url: cfg.keychainRpcUrl ?? cfg.rpcUrl,
     policies: JSON.stringify(cfg.policies),
   });
   location.href = `${cfg.keychainUrl}/session?${q}`;

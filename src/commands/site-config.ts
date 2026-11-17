@@ -13,6 +13,9 @@ export function siteConfig() {
   return {
     keychainUrl: 'https://x.cartridge.gg',
     rpcUrl: MAINNET.cartridgeRpc,
+    // the Cartridge keychain registers the session through this RPC from the owner's browser: it must be Cartridge's
+    // own endpoint (its paymaster and session registration); the bot itself uses rpcUrl
+    keychainRpcUrl: 'https://api.cartridge.gg/x/starknet/mainnet',
     chainId: MAINNET.chainId,
     policies: parsedBotPolicies(),
     dungeons: ['default', ...Object.keys(DUNGEON_SETTINGS)],
