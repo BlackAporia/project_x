@@ -140,8 +140,11 @@ async function openV2Mainnet(live: boolean, game?: string): Promise<Backend> {
   // every move itself and each one may use up one of the session's 25 higher-fee exceptions)
   const which = process.env.MAINNET_ACCOUNT ?? 'auto';
   // Beast Mode (BEAST_MODE_GAMES=N): games on the Beast Mode core, entered with TICKETs held by the Cartridge account
-  const beastGames = Number(process.env.BEAST_MODE_GAMES ?? 0);
-  const gs = which === 'cartridge' || beastGames > 0 ? null : gameSessionFromEnv();
+  // Loot Bag (BEAST_MODE_GAMES=loot): play the account's unfinished games on the Beast Mode core, where Loot Bag runs
+  // live (bought on lootsurvivor.io with Controller); no new entries are made, nothing is spent
+  const lootBag = String(process.env.BEAST_MODE_GAMES ?? '').trim().toLowerCase() === 'loot';
+  const beastGames = lootBag ? 0 : Number(process.env.BEAST_MODE_GAMES ?? 0) || 0;
+  const gs = which === 'cartridge' || beastGames > 0 || (lootBag && which !== 'game') ? null : gameSessionFromEnv();
   if (which === 'game' && !gs) throw new Error('MAINNET_ACCOUNT=game but no Game Session (GAME_SESSION_LINK) is set');
   if (gs) {
     const ga = new GameAccountExecutor(provider, gs);
@@ -164,11 +167,19 @@ async function openV2Mainnet(live: boolean, game?: string): Promise<Backend> {
   }
   if (live && !executor) throw new Error('mainnet live play needs a Game Session (GAME_SESSION_LINK) or a Cartridge session (CARTRIDGE_SESSION_B64)');
   const bm = MAINNET.beastMode;
-  const chain = new V2Chain(provider, beastGames > 0 ? bm.core : MAINNET.gameCoreV2);
+  const chain = new V2Chain(provider, beastGames > 0 || lootBag ? bm.core : MAINNET.gameCoreV2);
   if (game) return new V2MainnetBackend({ chain, executor: live ? executor : null, dryRun: !live, games: [BigInt(game)] });
   if (!address) throw new Error('mainnet: no account (set CARTRIDGE_SESSION_B64 or MAINNET_ACCOUNT_ADDRESS for a dry run)');
   const games = await chain.ownedGames(address);
-  console.log(`[mainnet v2] account ${address}: ${games.length} game token(s) on the ${beastGames > 0 ? 'Beast Mode' : 'V2'} core, live=${live && !!executor}`);
+  console.log(`[mainnet v2] account ${address}: ${games.length} game token(s) on the ${beastGames > 0 ? 'Beast Mode' : lootBag ? 'Beast Mode (Loot Bag)' : 'V2'} core, live=${live && !!executor}`);
+  if (lootBag) {
+    if (live && executor && !sessionPermits(bm.core, 'commit_actions')) {
+      throw new Error('the Cartridge session cannot move on the Beast Mode core (Loot Bag runs live there): connect Cartridge again on the website (Accounts tab), then start the run again');
+    }
+    if (!games.length) throw new Error(`no Loot Bag game on ${address}: enter Loot Bag on lootsurvivor.io with this account first (the bot plays the runs it finds)`);
+    console.log(`[mainnet v2] Loot Bag: playing the account's unfinished runs on the Beast Mode core, no new entries`);
+    return new V2MainnetBackend({ chain, executor, dryRun: !live, games });
+  }
   if (beastGames > 0) {
     if (live && executor && !(sessionPermits(bm.dungeon, 'new_game') && sessionPermits(bm.core, 'commit_actions'))) {
       throw new Error('the Cartridge session has no Beast Mode permissions: connect Cartridge again on the website (Accounts tab) and approve Beast Mode, then start the run again');

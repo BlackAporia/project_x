@@ -759,6 +759,11 @@ const QUICK = {
       label: `PvP Dungeons · до ${n} ${n === 1 ? 'забігу' : 'забігів'}`,
     };
   },
+  lootbag: () => ({
+    confirm: 'Дограти ваші забіги Loot Bag на Cartridge‑акаунті (реальні ходи, газ як у Beast Mode)? Нові входи бот не робить.',
+    inputs: { mode: 'mainnet', live: 'true', minutes: '240', max_games: '30', beast_mode: 'loot', account: 'cartridge' },
+    label: 'Mainnet · Loot Bag',
+  }),
   mine: () => ({
     confirm: 'Дограти незавершені ігри на вашому акаунті (реальні транзакції)?',
     inputs: { mode: 'mainnet', live: 'true', minutes: '150', max_games: '50' },

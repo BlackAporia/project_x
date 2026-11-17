@@ -45,7 +45,9 @@ export const MAINNET = {
     merkleApi: env('MERKLE_API_URL', 'https://merkle-api.up.railway.app'),
     merkleValidator: env('MERKLE_VALIDATOR_ADDRESS', '0x0570d41b66f0eea3c342d570e456e51194817b8eb563dc580c63c2f3d6e505ec'),
   },
-  /** main dungeon (Loot Bag entry) */
+  /** Loot Bag dungeon on lootsurvivor.io now (new_game with a Loot bag proof; runs on the Beast Mode core, settings #6) */
+  lootBagDungeon: env('LOOT_BAG_DUNGEON_ADDRESS', '0x03921001b64ad6af2bae27b95c27c465fc8921d9c537f4821eb3023b5889622f'),
+  /** older Loot dungeon (enter_dungeon, main core) */
   lootDungeon: env('LOOT_DUNGEON_ADDRESS', '0x02dab28ac4edaae7495174f9dd7668eece14b1e50ce170ff8af2a0e215f48875'),
   gameCoreV2Legacy: env('GAME_CORE_V2_LEGACY_ADDRESS', '0x06179f1c747672c08861da1df3b167eb337cba403778345db2aa9840cc3deb86'),
   gameToken: env('GAME_TOKEN_ADDRESS', '0x04de0351ceab4ecd50be6ee09329b0dcb3b96a9da88cc158f453823a389722fa'),

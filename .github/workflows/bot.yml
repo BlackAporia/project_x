@@ -39,7 +39,7 @@ on:
         description: mainnet account - auto (Game Account if shared, else Cartridge), game or cartridge
         default: 'auto'
       beast_mode:
-        description: Beast Mode games to enter with the Cartridge account's TICKETs (1 TICKET each; 0 = off)
+        description: Beast Mode games to enter with the Cartridge account's TICKETs (1 TICKET each; 0 = off; loot = play the account's Loot Bag runs)
         default: '0'
 
 permissions:
