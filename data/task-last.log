@@ -1,10 +1,18 @@
-== bot frontend --call dp.safeParse --call ip.safeParse --call dp.parse --call ip.parse --call /bags --call proof/
+== bot http-get --address https://api-v2-next.up.railway.app/loot/bags?owner=0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82 --address https://api-v2-next.up.railway.app/loot/bags?owner=0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82 --address https://api-v2-next.up.railway.app/loot/bags?owner=0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts frontend --call dp.safeParse --call ip.safeParse --call dp.parse --call ip.parse --call /bags --call proof/
+> node --import tsx src/cli.ts http-get --address https://api-v2-next.up.railway.app/loot/bags?owner=0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82 --address https://api-v2-next.up.railway.app/loot/bags?owner=0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82 --address https://api-v2-next.up.railway.app/loot/bags?owner=0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452
 
-downloaded 369 files, 16.4 MB into /tmp/lsfront-1794936568529
-4 snippet(s) for dp.safeParse, ip.safeParse, dp.parse, ip.parse, /bags, proof/ -> frontend/snippets.json
+GET https://api-v2-next.up.railway.app/loot/bags?owner=0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82: HTTP 400 {"error":"owner must be an EVM address"}
+GET https://api-v2-next.up.railway.app/loot/bags?owner=0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82: HTTP 400 {"error":"owner must be an EVM address"}
+GET https://api-v2-next.up.railway.app/loot/bags?owner=0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452: HTTP 400 {"error":"owner must be an EVM address"}
+== bot frontend --call enterWithBag --call stark_loot --call starkLoot --call StarkLoot
+
+> loot-survivor-bot@1.0.0 bot
+> node --import tsx src/cli.ts frontend --call enterWithBag --call stark_loot --call starkLoot --call StarkLoot
+
+downloaded 369 files, 16.4 MB into /tmp/lsfront-1794936671999
+4 snippet(s) for enterWithBag, stark_loot, starkLoot, StarkLoot -> frontend/snippets.json
 10 dungeon configs on lootsurvivor.io
   trials                   Trials                     online       Free
   beastmode                Beast Mode                 online       1 Ticket settings=Lre minter=Ire @no.dungeon
