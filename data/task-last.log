@@ -1,10 +1,10 @@
-== bot frontend --call entryAvailableAt --call ethAddress --call blockNumber
+== bot frontend --call dp.safeParse --call ip.safeParse --call dp.parse --call ip.parse --call /bags --call proof/
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts frontend --call entryAvailableAt --call ethAddress --call blockNumber
+> node --import tsx src/cli.ts frontend --call dp.safeParse --call ip.safeParse --call dp.parse --call ip.parse --call /bags --call proof/
 
-downloaded 369 files, 16.4 MB into /tmp/lsfront-1794936426142
-109 snippet(s) for entryAvailableAt, ethAddress, blockNumber -> frontend/snippets.json
+downloaded 369 files, 16.4 MB into /tmp/lsfront-1794936568529
+4 snippet(s) for dp.safeParse, ip.safeParse, dp.parse, ip.parse, /bags, proof/ -> frontend/snippets.json
 10 dungeon configs on lootsurvivor.io
   trials                   Trials                     online       Free
   beastmode                Beast Mode                 online       1 Ticket settings=Lre minter=Ire @no.dungeon
