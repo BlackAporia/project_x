@@ -1,7 +1,7 @@
 {
- "updated": "2026-11-10T19:39:10.098Z",
- "core": "0x011afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b",
- "settingsCount": "8",
+ "updated": "2026-11-17T17:34:21.829Z",
+ "core": "0x03cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2",
+ "settingsCount": "6",
  "dungeons": {
   "ronke": {
    "ids": [
@@ -65,14 +65,14 @@
   }
  },
  "settings": {
-  "7": {
+  "6": {
    "details": {
-    "name": "Ronkeverse Large",
-    "description": "Ronkeverse end-to-end test: fixed magic loadout, current packet rules and per-kill bounty records.",
+    "name": "Loot Bag (2)",
+    "description": "Bring your own Loot bag: the bag you hold on Ethereum is the run you start.",
     "settings": [
      {
       "name": "433321119326202570340158875351413864",
-      "value": "3224368"
+      "value": "3223600"
      },
      {
       "name": "100890435121534990691620944",
@@ -80,35 +80,35 @@
      },
      {
       "name": "6611955556124917149965787032676",
-      "value": "13616"
+      "value": "12592"
      },
      {
       "name": "28398132876162011649813448929350859060328",
-      "value": "50"
+      "value": "48"
      },
      {
       "name": "7269922016297474982351965145594107771057273",
-      "value": "52"
+      "value": "48"
      },
      {
       "name": "28398132876162011649813662008090038989945",
-      "value": "50"
+      "value": "48"
      },
      {
       "name": "121969051970578258033516665558319613280980631970661",
-      "value": "52"
+      "value": "48"
      },
      {
       "name": "433321119326202570340175385507164013",
-      "value": "52"
+      "value": "48"
      },
      {
       "name": "28398132876162011649812292611510585486689",
-      "value": "51"
+      "value": "48"
      },
      {
       "name": "6611955556124917149965871309675",
-      "value": "50"
+      "value": "48"
      },
      {
       "name": "20548572355282026622582813800",
@@ -132,7 +132,7 @@
      },
      {
       "name": "97015453563628144281218462592572464639527495495534",
-      "value": "13109"
+      "value": "12853"
      },
      {
       "name": "1569466082370345761062883041045605",
@@ -172,51 +172,51 @@
      },
      {
       "name": "1692660622366629948586621194036325",
-      "value": "48"
+      "value": "49"
      }
     ]
    },
    "settings": {
-    "settings_id": "7",
+    "settings_id": "6",
     "adventurer": {
-     "health": "130",
+     "health": "100",
      "xp": "0",
-     "gold": "50",
+     "gold": "10",
      "beast_health": "0",
      "stat_upgrades_available": "0",
      "stats": {
-      "strength": "2",
-      "dexterity": "4",
-      "vitality": "2",
-      "intelligence": "4",
-      "wisdom": "4",
-      "charisma": "3",
-      "luck": "2"
+      "strength": "0",
+      "dexterity": "0",
+      "vitality": "0",
+      "intelligence": "0",
+      "wisdom": "0",
+      "charisma": "0",
+      "luck": "0"
      },
      "equipment": {
       "weapon": {
-       "id": "10",
-       "xp": "1"
+       "id": "0",
+       "xp": "0"
       },
       "chest": {
-       "id": "21",
-       "xp": "1"
+       "id": "0",
+       "xp": "0"
       },
       "head": {
-       "id": "26",
-       "xp": "1"
+       "id": "0",
+       "xp": "0"
       },
       "waist": {
-       "id": "31",
-       "xp": "1"
+       "id": "0",
+       "xp": "0"
       },
       "foot": {
-       "id": "36",
-       "xp": "1"
+       "id": "0",
+       "xp": "0"
       },
       "hand": {
-       "id": "41",
-       "xp": "1"
+       "id": "0",
+       "xp": "0"
       },
       "neck": {
        "id": "0",
@@ -297,7 +297,7 @@
     "game_seed": "0",
     "randomness_mode": "0",
     "in_battle": false,
-    "base_damage_reduction": "35",
+    "base_damage_reduction": "25",
     "market_config": {
      "pair01": "0",
      "pair23": "6427752177035961102167848369362115108888355516328177934794752",
@@ -305,12 +305,12 @@
     },
     "random_starting_stats": "0",
     "collectables_enabled": true,
-    "start_override": false
+    "start_override": true
    },
    "actionSettings": {
     "game_seed": "0",
     "randomness_mode": "0",
-    "base_damage_reduction": "35",
+    "base_damage_reduction": "25",
     "collectables_enabled": true,
     "specials_override": "0",
     "market_config": {

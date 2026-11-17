@@ -1,142 +1,16 @@
-== bot contract --address 0x05817c9625ad12198ebe04cc28e827e3b4d09465ddce16a6d7fc628afa3243ab --call balance_of:0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82 --call balance_of:0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452
+== bot dungeon-settings --core 0x03cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2 --ids 6
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts contract --address 0x05817c9625ad12198ebe04cc28e827e3b4d09465ddce16a6d7fc628afa3243ab --call balance_of:0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82 --call balance_of:0x66d5a1db95492c40629a376cbe9cfedadf24636d251ad6b4b371db72ef7a452
+> node --import tsx src/cli.ts dungeon-settings --core 0x03cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2 --ids 6
 
-0x05817c9625ad12198ebe04cc28e827e3b4d09465ddce16a6d7fc628afa3243ab class 0x016750a09837c17969b68a976624ec1f11dbe11f33a3824a1391132a86a3c305: 43 functions
-  view  get_bag(bag_id: u64) -> LootBag
-  view  get_bag_names(bag_id: u64) -> LootBagNames
-  view  get_packed_bag(bag_id: u64) -> PackedLootBag
-  view  get_weapon_item(bag_id: u64) -> LootItem
-  view  get_chest_item(bag_id: u64) -> LootItem
-  view  get_head_item(bag_id: u64) -> LootItem
-  view  get_waist_item(bag_id: u64) -> LootItem
-  view  get_foot_item(bag_id: u64) -> LootItem
-  view  get_hand_item(bag_id: u64) -> LootItem
-  view  get_neck_item(bag_id: u64) -> LootItem
-  view  get_ring_item(bag_id: u64) -> LootItem
-  view  get_weapon_id(bag_id: u64) -> u8
-  view  get_chest_id(bag_id: u64) -> u8
-  view  get_head_id(bag_id: u64) -> u8
-  view  get_waist_id(bag_id: u64) -> u8
-  view  get_foot_id(bag_id: u64) -> u8
-  view  get_hand_id(bag_id: u64) -> u8
-  view  get_neck_id(bag_id: u64) -> u8
-  view  get_ring_id(bag_id: u64) -> u8
-  view  get_weapon_name(bag_id: u64) -> ByteArray
-  view  get_chest_name(bag_id: u64) -> ByteArray
-  view  get_head_name(bag_id: u64) -> ByteArray
-  view  get_waist_name(bag_id: u64) -> ByteArray
-  view  get_foot_name(bag_id: u64) -> ByteArray
-  view  get_hand_name(bag_id: u64) -> ByteArray
-  view  get_neck_name(bag_id: u64) -> ByteArray
-  view  get_ring_name(bag_id: u64) -> ByteArray
-  view  get_item_name(item_id: u8) -> ByteArray
-  view  get_suffix_name_by_id(suffix_id: u8) -> ByteArray
-  view  get_name_prefix_by_id(name_prefix_id: u8) -> ByteArray
-  view  get_name_suffix_by_id(name_suffix_id: u8) -> ByteArray
-  view  get_weapon_greatness(bag_id: u64) -> u8
-  view  get_chest_greatness(bag_id: u64) -> u8
-  view  get_head_greatness(bag_id: u64) -> u8
-  view  get_waist_greatness(bag_id: u64) -> u8
-  view  get_foot_greatness(bag_id: u64) -> u8
-  view  get_hand_greatness(bag_id: u64) -> u8
-  view  get_neck_greatness(bag_id: u64) -> u8
-  view  get_ring_greatness(bag_id: u64) -> u8
-  view  get_item_type(item_id: u8) -> Type
-  view  get_item_tier(item_id: u8) -> Tier
-  view  get_item_slot(item_id: u8) -> Slot
-  view  get_version() -> felt252
-== bot contract --address 0x03921001b64ad6af2bae27b95c27c465fc8921d9c537f4821eb3023b5889622f --call settings_id --call game_core_address --call is_closed
+settings #6: {"details":{"name":"Loot Bag (2)","description":"Bring your own Loot bag: the bag you hold on Ethereum is the run you start.","settings":[{"name":"433321119326202570340158875351413864","value":"3223600"},{"name":"100890435121534990691620944","value":"48"},{"name":"6611955556124917149965787032676","value":"12592"},{"name":"28398132876162011649813448929350859060328","value":"48"},{"name":"7269922016
+saved botdata/data/dungeon-settings.json (1 settings, core 0x03cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2)
+== bot contract --address 0x03cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2 --call balance_of:0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts contract --address 0x03921001b64ad6af2bae27b95c27c465fc8921d9c537f4821eb3023b5889622f --call settings_id --call game_core_address --call is_closed
+> node --import tsx src/cli.ts contract --address 0x03cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2 --call balance_of:0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82
 
-0x03921001b64ad6af2bae27b95c27c465fc8921d9c537f4821eb3023b5889622f class 0x00a0da6a609b4a77cb29f3e0bc60e0ca676fcd8d25752c51ea104610e40373ef: 75 functions
-  write new_game(proof: felt252>, leaf: LootBagLeafData, verification: VerificationMethod, recipient: ContractAddress>) -> felt252
-  write new_game_batch(claims: DungeonClaim>) -> felt252>
-  write mint_liquidity(to: ContractAddress, bag_ids: u64>) -> 
-  write authorized_mint(to: ContractAddress, bag_ids: u64>) -> felt252>
-  write claim_collectable(adventurer_id: felt252, encounter_xp: u16) -> u256
-  write stake_beast(token_id: u256) -> 
-  write unsafe_stake_beast(token_id: u256) -> 
-  write transform_beast(token_id: u256) -> u256
-  write withdraw_beast(token_id: u256) -> 
-  write set_root(root: felt252) -> 
-  write set_root_setter(root_setter: ContractAddress) -> 
-  write set_authorized_minter(minter: ContractAddress, allowance: MinterAllowance) -> 
-  write set_registry_address(registry_address: ContractAddress) -> 
-  write set_root_grace_period(grace_period: u64) -> 
-  write set_max_signature_age(max_signature_age: u64) -> 
-  write set_dungeon_name(dungeon_name: felt252) -> 
-  write set_entry_proof_config(config: ProofConfig) -> 
-  view  entry_proof_config() -> ProofConfig
-  write set_attested_ownership(config: AttestedOwnership) -> 
-  view  attested_ownership() -> AttestedOwnership
-  write set_snapshot_ownership(enabled: bool) -> 
-  view  snapshot_ownership_enabled() -> bool
-  write set_settings_id(settings_id: u32) -> 
-  write set_game_core_address(game_core_address: ContractAddress) -> 
-  write set_stark_loot_address(stark_loot_address: ContractAddress) -> 
-  write set_entry_cooldown(entry_cooldown: u64) -> 
-  write set_soulbound(soulbound: bool) -> 
-  write set_beast_nft_address(beast_nft_address: ContractAddress) -> 
-  write set_transformation_period(transformation_period: u64) -> 
-  write set_beast_id(collection_id: u8, beast_id: u64) -> 
-  write close_dungeon() -> 
-  write open_dungeon() -> 
-  write set_starter_reward(token: ContractAddress, amount: u128) -> 
-  write withdraw_token(token: ContractAddress, to: ContractAddress, amount: u256) -> 
-  view  get_root() -> felt252
-  view  get_previous_root() -> felt252
-  view  previous_root_valid_until() -> u64
-  view  root_grace_period() -> u64
-  view  max_signature_age() -> u64
-  view  dungeon_name() -> felt252
-  view  root_setter() -> ContractAddress
-  view  authorized_minter(minter: ContractAddress) -> MinterAllowance
-  view  registry_address() -> ContractAddress
-  view  leaf_hash(leaf: LootBagLeafData) -> felt252
-  view  entry_message(bag_id: u64, player: ContractAddress, signed_at: u64) -> ByteArray
-  view  entry_cooldown() -> u64
-  view  last_entry_at(bag_id: u64) -> u64
-  view  entry_available_at(bag_id: u64) -> u64
-  view  entry_available_at_batch(bag_ids: u64>) -> u64>
-  view  can_enter(bag_id: u64) -> bool
-  view  settings_id() -> u32
-  view  game_core_address() -> ContractAddress
-  view  stark_loot_address() -> ContractAddress
-  view  soulbound() -> bool
-  view  is_closed() -> bool
-  view  beast_nft_address() -> ContractAddress
-  view  transformation_period() -> u64
-  view  beast_stake(token_id: u256) -> BeastStake
-  view  beast_id(collection_id: u8) -> u64
-  view  minter_id() -> u32
-  view  starter_reward() -> u128)
-  view  starter_reward_claimed(bag_id: u64) -> bool
-  view  transformation_reservations(beast_id: u64) -> u16
-  view  unsafe_stakes(beast_id: u64) -> u16
-  view  mega_beasts(beast_id: u64) -> u16
-  view  next_transformation_period(beast_id: u64) -> u64
-  view  is_beast_collectable(adventurer_id: felt252, beast_id: u8, prefix: u8, suffix: u8) -> bool
-  view  supports_interface(interface_id: felt252) -> bool
-  view  verify_beast_kill(adventurer_id: felt252, species_id: u32, prefix: u8, suffix: u8) -> bool
-  write upgrade(new_class_hash: ClassHash) -> 
-  view  owner() -> ContractAddress
-  write transfer_ownership(new_owner: ContractAddress) -> 
-  write renounce_ownership() -> 
-  write transferOwnership(newOwner: ContractAddress) -> 
-  write renounceOwnership() -> 
-  settings_id = [0x6]
-  game_core_address = [0x3cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2]
-  is_closed = [0x0]
-== bot contract --address 0x011afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b --call balance_of:0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82
-
-> loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts contract --address 0x011afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b --call balance_of:0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82
-
-0x011afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b class 0x011fd12ac33848a5399e04dc25d817214a43f5f1b12337c8b83ae253db3bc2a4: 128 functions
+0x03cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2 class 0x05f80fd85543a8fdd564be0899ab9097ce6e8074ca683d1e104ddc2fe57e6beb: 129 functions
   write commit_actions(adventurer_id: felt252, expected_chain: felt252, encoded_actions: felt252>) -> 
   write commit_actions_unchecked(adventurer_id: felt252, expected_chain: felt252, encoded_actions: felt252>) -> 
   view  get_commitment(adventurer_id: felt252) -> felt252
@@ -166,6 +40,7 @@
   view  get_packed_state(adventurer_id: felt252>) -> felt252)>
   view  get_slain_beast(adventurer_id: felt252, encounter_xp: u16) -> RecordedKill>
   view  get_slain_adventurer(adventurer_id: felt252) -> RecordedKill>
+  view  get_terminal_entropy(adventurer_id: felt252) -> felt252
   write register_enumeration_interface() -> 
   view  get_combat_class() -> ClassHash
   view  get_exploration_class() -> ClassHash
@@ -265,4 +140,4 @@
   write renounce_ownership() -> 
   write transferOwnership(newOwner: ContractAddress) -> 
   write renounceOwnership() -> 
-  balance_of:0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82 = [0x5e, 0x0]
+  balance_of:0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82 = [0x33, 0x0]

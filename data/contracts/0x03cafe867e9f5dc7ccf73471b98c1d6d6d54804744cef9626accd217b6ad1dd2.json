@@ -1,7 +1,7 @@
 {
  "address": "0x03cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2",
- "updated": "2026-11-09T09:43:45.016Z",
- "classHash": "0x02a49068449dff9ceb08f9bcfd98d5c65774909d43ecd0a30c2a30faf608a0ab",
+ "updated": "2026-11-17T17:34:22.487Z",
+ "classHash": "0x05f80fd85543a8fdd564be0899ab9097ce6e8074ca683d1e104ddc2fe57e6beb",
  "functions": [
   {
    "name": "commit_actions",
@@ -508,6 +508,21 @@
    "outputs": [
     {
      "type": "core::option::Option::<death_mountain::models::beast::RecordedKill>"
+    }
+   ],
+   "state": "view"
+  },
+  {
+   "name": "get_terminal_entropy",
+   "inputs": [
+    {
+     "name": "adventurer_id",
+     "type": "core::felt252"
+    }
+   ],
+   "outputs": [
+    {
+     "type": "core::felt252"
     }
    ],
    "state": "view"
@@ -1859,14 +1874,8 @@
   }
  ],
  "calls": {
-  "get_entropy_block_offset": [
-   "0x0"
-  ],
-  "settings_count": [
-   "0x5"
-  ],
   "balance_of:0x3b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82": [
-   "0x0",
+   "0x33",
    "0x0"
   ]
  }
