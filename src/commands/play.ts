@@ -165,7 +165,10 @@ async function openV2Mainnet(live: boolean, game?: string): Promise<Backend> {
       address = account.address;
     }
   }
-  if (live && !executor) throw new Error('mainnet live play needs a Game Session (GAME_SESSION_LINK) or a Cartridge session (CARTRIDGE_SESSION_B64)');
+  if (live && !executor) {
+    if (!gs && process.env.CARTRIDGE_SESSION_B64) throw new Error('the Cartridge session has expired or is no longer valid: connect Cartridge again on the website (Accounts tab), then start the run again');
+    throw new Error('mainnet live play needs a Game Session (GAME_SESSION_LINK) or a Cartridge session (CARTRIDGE_SESSION_B64)');
+  }
   const bm = MAINNET.beastMode;
   const chain = new V2Chain(provider, beastGames > 0 || lootBag ? bm.core : MAINNET.gameCoreV2);
   if (game) return new V2MainnetBackend({ chain, executor: live ? executor : null, dryRun: !live, games: [BigInt(game)] });
