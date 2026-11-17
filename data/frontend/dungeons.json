@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-17T17:23:53.505Z",
+ "updated": "2026-11-17T17:26:24.038Z",
  "new": [],
  "dungeons": [
   {
@@ -117,7 +117,7 @@
     "difficulty": "Hard",
     "reward": "Prizes"
    },
-   "raw": "tournaments:{id:`tournaments`,name:`Tournaments`,tagline:`Compete for rewards`,cardImage:`/images/dungeons/tournaments.png`,accentColor:`#e65100`,address:xg.budokanAddress,dataStack:`v2`,v2GameCore:qa.gameCore,v2MinterId:xg.minterId,tokenLayout:`packet`,status:xg.ready?`online`:`coming_soon`,hideAnalytics:!0,hideLiveSidebar:!0,entryCost:``,difficulty:`Hard`,tags:[`PvP`],reward:`Prizes`,overview:_Xe,hideLeaderboard:!0,myGames:yYe,bracket:(0,U.lazy)(()=>Aa(()=>import(`./TournamentsBracketPage-Bwg6swNR.js`),__vite__mapDeps([91,2,28,92,48,52,38,56,53,5,54,37,47,39,40,49,50,51,55,1,3,4,18,57,58,8,9,59,12,22,16,15,60,13,11,61,62,93,41,94])))}"
+   "raw": "tournaments:{id:`tournaments`,name:`Tournaments`,tagline:`Compete for rewards`,cardImage:`/images/dungeons/tournaments.png`,accentColor:`#e65100`,address:xg.budokanAddress,dataStack:`v2`,v2GameCore:qa.gameCore,v2MinterId:xg.minterId,tokenLayout:`packet`,status:xg.ready?`online`:`coming_soon`,hideAnalytics:!0,hideLiveSidebar:!0,entryCost:``,difficulty:`Hard`,tags:[`PvP`],reward:`Prizes`,overview:_Xe,hideLeaderboard:!0,myGames:yYe,bracket:(0,U.lazy)(()=>Aa(()=>import(`./TournamentsBracketPage-BfaqNWnt.js`),__vite__mapDeps([91,2,28,92,48,52,38,56,53,5,54,37,47,39,40,49,50,51,55,1,3,4,18,57,58,8,9,59,12,22,16,15,60,13,11,61,62,93,41,94])))}"
   },
   {
    "id": "norwich-games-festival",

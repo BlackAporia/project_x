@@ -1,10 +1,10 @@
-== bot frontend --call lootbag --call lootDungeon --call Loot·Bag
+== bot frontend --call enter_dungeon --call bag_id --call verification --call leaf
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts frontend --call lootbag --call lootDungeon --call Loot·Bag
+> node --import tsx src/cli.ts frontend --call enter_dungeon --call bag_id --call verification --call leaf
 
-downloaded 369 files, 16.4 MB into /tmp/lsfront-1794936101834
-56 snippet(s) for lootbag, lootDungeon, Loot·Bag -> frontend/snippets.json
+downloaded 369 files, 16.4 MB into /tmp/lsfront-1794936296854
+105 snippet(s) for enter_dungeon, bag_id, verification, leaf -> frontend/snippets.json
 10 dungeon configs on lootsurvivor.io
   trials                   Trials                     online       Free
   beastmode                Beast Mode                 online       1 Ticket settings=Lre minter=Ire @no.dungeon
@@ -17,10 +17,10 @@ downloaded 369 files, 16.4 MB into /tmp/lsfront-1794936101834
   blockhash                Blockhash                  closed       Free settings=0
   unknown                  Unknown Dungeon            offline       @0x04253e24220629b737512a24cb3172fc381db7be7a697d5af358ff21ef1172be
 Ronke dungeons: ronke-casino (Ronke Casino)
-== bot contract --address 0x02dab28ac4edaae7495174f9dd7668eece14b1e50ce170ff8af2a0e215f48875
+== bot contract --address 0x02dab28ac4edaae7495174f9dd7668eece14b1e50ce170ff8af2a0e215f48875 --call settings_id --call game_core_address --call is_closed --call entry_cooldown --call entry_proof_config --call get_root
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts contract --address 0x02dab28ac4edaae7495174f9dd7668eece14b1e50ce170ff8af2a0e215f48875
+> node --import tsx src/cli.ts contract --address 0x02dab28ac4edaae7495174f9dd7668eece14b1e50ce170ff8af2a0e215f48875 --call settings_id --call game_core_address --call is_closed --call entry_cooldown --call entry_proof_config --call get_root
 
 0x02dab28ac4edaae7495174f9dd7668eece14b1e50ce170ff8af2a0e215f48875 class 0x007b546a670c786c6905bfe9ec6e2c5aa50435ab4d37e1e9e64e613d9b6c3eb0: 59 functions
   write enter_dungeon(proof: felt252>, leaf: LootBagLeafData, verification: VerificationMethod, recipient: ContractAddress>) -> felt252
@@ -82,3 +82,9 @@ Ronke dungeons: ronke-casino (Ronke Casino)
   write renounce_ownership() -> 
   write transferOwnership(newOwner: ContractAddress) -> 
   write renounceOwnership() -> 
+  settings_id = [0x1]
+  game_core_address = [0x11afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b]
+  is_closed = [0x0]
+  entry_cooldown = [0x12c]
+  entry_proof_config = [0x0, 0x0, 0x0, 0x0, 0x0]
+  get_root = [0x4e560fc36cb01157f69a7864cdca4e142510f374dce87bb09cf75ea1693c5ae]

@@ -1,6 +1,6 @@
 {
  "address": "0x02dab28ac4edaae7495174f9dd7668eece14b1e50ce170ff8af2a0e215f48875",
- "updated": "2026-11-17T17:23:54.934Z",
+ "updated": "2026-11-17T17:26:25.127Z",
  "classHash": "0x007b546a670c786c6905bfe9ec6e2c5aa50435ab4d37e1e9e64e613d9b6c3eb0",
  "functions": [
   {
@@ -719,5 +719,28 @@
    "state": "external"
   }
  ],
- "calls": {}
+ "calls": {
+  "settings_id": [
+   "0x1"
+  ],
+  "game_core_address": [
+   "0x11afdfce6a8c4514c542f57f9ec91a9076784e229df55e1a3d6ec4f9c40183b"
+  ],
+  "is_closed": [
+   "0x0"
+  ],
+  "entry_cooldown": [
+   "0x12c"
+  ],
+  "entry_proof_config": [
+   "0x0",
+   "0x0",
+   "0x0",
+   "0x0",
+   "0x0"
+  ],
+  "get_root": [
+   "0x4e560fc36cb01157f69a7864cdca4e142510f374dce87bb09cf75ea1693c5ae"
+  ]
+ }
 }
