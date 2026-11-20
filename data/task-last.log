@@ -1,151 +1,142 @@
-== bot http-get --address https://api-v2-next.up.railway.app/games/0x0100000000001ec400000400000000060000000001c878ba01144c4d00048b41 --address https://api-v2-next.up.railway.app/games/452312848583315826826593562265559739615615503280302997973565942490504399681 --address https://api-v2-next.up.railway.app/kills?adventurer=0x0100000000001ec400000400000000060000000001c878ba01144c4d00048b41 --address https://api-v2-next.up.railway.app/loot/kills?adventurer=0x0100000000001ec400000400000000060000000001c878ba01144c4d00048b41
+== bot v2-story --game 0x0100000000001ec400000400000000060000000001c878ba01144c4d00048b41
 
 > loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts http-get --address https://api-v2-next.up.railway.app/games/0x0100000000001ec400000400000000060000000001c878ba01144c4d00048b41 --address https://api-v2-next.up.railway.app/games/452312848583315826826593562265559739615615503280302997973565942490504399681 --address https://api-v2-next.up.railway.app/kills?adventurer=0x0100000000001ec400000400000000060000000001c878ba01144c4d00048b41 --address https://api-v2-next.up.railway.app/loot/kills?adventurer=0x0100000000001ec400000400000000060000000001c878ba01144c4d00048b41
+> node --import tsx src/cli.ts v2-story --game 0x0100000000001ec400000400000000060000000001c878ba01144c4d00048b41
 
-GET https://api-v2-next.up.railway.app/games/0x0100000000001ec400000400000000060000000001c878ba01144c4d00048b41: HTTP 200 {"tokenId":"0x0100000000001ec400000400000000060000000001c878ba01144c4d00048b41","gameCore":"0x03cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2","minterId":4,"owner":"0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82","adventurer":{"xp":711,"gold":302,"stats":{"luck":57,"wisdom":1,"charisma":6,"strength":1,"vitality":8,"dexterity":17,"intelligence":2},"health":0,"equipment":{"foot":{"id":32,"xp":400},"hand":{"id":37,"xp":400},"head":{"id":22,"xp":400},"neck":{"id":3,"xp":400},"ring":{"id":6,"xp":279},"chest":{"id":17,"xp":400},"waist":{"id":27,"xp":400},"weapon":{"id":42,"xp":215}},"beast_salt":69464,"level_salt":5912,"beast_health":594,"item_specials_salt":2138,"stat_upgrades_available":0},"bag":[{"id":97,"xp":400},{"id":88,"xp":242},{"id":13,"xp":106},{"id":53,"xp":299},{"id":72,"xp":0},{"id":43,"xp":400},{"id":47,"xp":400},{"id":62,"xp":0},{"id":67,"xp":0},{"id":87,"xp":0},{"id":77,"xp":0},{"id":8,"xp":400},{"id":1,"xp":0},{"id":0,"xp":0},{"id":0,"xp":0}],"beast":{"id":11,"name":"\"Foe Bite\" Rakshasa","seed":2803812527,"tier":3,"type":"Magic","level":76,"health":594,"classId":3,"baseName":"Rakshasa","traitSeed":"1879269136366372424","isCollectable":false,"specialPrefix":"Foe","specialSuffix":"Bite"},"actionCount":93,"started":true,"gameOver":true,"settled":true,"stuck":false,"rolling":"954703708215176125051892586848587940164336519301643922332274443810518436371","lastActionBlock":18118611}
-GET https://api-v2-next.up.railway.app/games/452312848583315826826593562265559739615615503280302997973565942490504399681: HTTP 200 {"tokenId":"0x0100000000001ec400000400000000060000000001c878ba01144c4d00048b41","gameCore":"0x03cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2","minterId":4,"owner":"0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82","adventurer":{"xp":711,"gold":302,"stats":{"luck":57,"wisdom":1,"charisma":6,"strength":1,"vitality":8,"dexterity":17,"intelligence":2},"health":0,"equipment":{"foot":{"id":32,"xp":400},"hand":{"id":37,"xp":400},"head":{"id":22,"xp":400},"neck":{"id":3,"xp":400},"ring":{"id":6,"xp":279},"chest":{"id":17,"xp":400},"waist":{"id":27,"xp":400},"weapon":{"id":42,"xp":215}},"beast_salt":69464,"level_salt":5912,"beast_health":594,"item_specials_salt":2138,"stat_upgrades_available":0},"bag":[{"id":97,"xp":400},{"id":88,"xp":242},{"id":13,"xp":106},{"id":53,"xp":299},{"id":72,"xp":0},{"id":43,"xp":400},{"id":47,"xp":400},{"id":62,"xp":0},{"id":67,"xp":0},{"id":87,"xp":0},{"id":77,"xp":0},{"id":8,"xp":400},{"id":1,"xp":0},{"id":0,"xp":0},{"id":0,"xp":0}],"beast":{"id":11,"name":"\"Foe Bite\" Rakshasa","seed":2803812527,"tier":3,"type":"Magic","level":76,"health":594,"classId":3,"baseName":"Rakshasa","traitSeed":"1879269136366372424","isCollectable":false,"specialPrefix":"Foe","specialSuffix":"Bite"},"actionCount":93,"started":true,"gameOver":true,"settled":true,"stuck":false,"rolling":"954703708215176125051892586848587940164336519301643922332274443810518436371","lastActionBlock":18118611}
-GET https://api-v2-next.up.railway.app/kills?adventurer=0x0100000000001ec400000400000000060000000001c878ba01144c4d00048b41: HTTP 400 {"error":"owner must be a Starknet address"}
-GET https://api-v2-next.up.railway.app/loot/kills?adventurer=0x0100000000001ec400000400000000060000000001c878ba01144c4d00048b41: HTTP 400 {"error":"owner must be a Starknet address"}
-== bot contract --address 0x03cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2 --call score:0x0100000000001ec400000400000000060000000001c878ba01144c4d00048b41 --call game_over:0x0100000000001ec400000400000000060000000001c878ba01144c4d00048b41 --call get_start_override:0x0100000000001ec400000400000000060000000001c878ba01144c4d00048b41 --call owner_of:0x0100000000001ec400000400000000060000000001c878ba01144c4d00048b41,0
-
-> loot-survivor-bot@1.0.0 bot
-> node --import tsx src/cli.ts contract --address 0x03cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2 --call score:0x0100000000001ec400000400000000060000000001c878ba01144c4d00048b41 --call game_over:0x0100000000001ec400000400000000060000000001c878ba01144c4d00048b41 --call get_start_override:0x0100000000001ec400000400000000060000000001c878ba01144c4d00048b41 --call owner_of:0x0100000000001ec400000400000000060000000001c878ba01144c4d00048b41,0
-
-0x03cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2 class 0x05f80fd85543a8fdd564be0899ab9097ce6e8074ca683d1e104ddc2fe57e6beb: 129 functions
-  write commit_actions(adventurer_id: felt252, expected_chain: felt252, encoded_actions: felt252>) -> 
-  write commit_actions_unchecked(adventurer_id: felt252, expected_chain: felt252, encoded_actions: felt252>) -> 
-  view  get_commitment(adventurer_id: felt252) -> felt252
-  write initialize_game(adventurer_id: felt252, packed_adventurer: felt252, packed_bag: felt252, specials_override: felt252) -> 
-  view  get_start_override(adventurer_id: felt252) -> felt252)
-  write verify_game(adventurer_id: felt252, actions: felt252>, blocks: u64>) -> 
-  write verify_actions(adventurer_id: felt252, attempt_nonce: u64, actions: felt252>, blocks: u64>) -> 
-  write apply_actions(adventurer_id: felt252, attempt_nonce: u64, actions: felt252>, blocks: u64>) -> 
-  write verify_games_with_proof(results: ProofResult>) -> 
-  view  direct_replay_started(adventurer_id: felt252) -> bool
-  view  is_verified(adventurer_id: felt252) -> bool
-  view  get_replay_checkpoint(adventurer_id: felt252) -> ReplayCheckpoint
-  view  get_progress(adventurer_id: felt252, initiator: ContractAddress, attempt_nonce: u64) -> SettleProgress
-  view  replay_transcript(adventurer_id: felt252, actions: felt252>, blocks: u64>, hashes: felt252>, committed_len: u32) -> ChainCheck
-  view  replay_provable_transcript(adventurer_id: felt252, actions: felt252>, blocks: u64>, claimed_block_hashes: felt252>, mint_hash: felt252) -> ProvableReplay
-  write set_proof_config(config: ProofConfig) -> 
-  view  get_proof_config() -> ProofConfig
-  view  get_entropy_block_offset() -> u64
-  write set_entropy_block_offset(offset: u64) -> 
-  write add_settings(name: felt252, description: ByteArray, settings: GameSettings) -> u32
-  view  get_settings(settings_id: u32) -> GameSettings
-  view  get_action_settings(settings_id: u32) -> ActionSettings
-  write create_objective(name: ByteArray, description: ByteArray, score_threshold: u32) -> u32
-  view  load_assets(adventurer_id: felt252) -> Bag)
-  view  get_adventurer(adventurer_id: felt252) -> Adventurer
-  view  get_bag(adventurer_id: felt252) -> Bag
-  view  get_packed_state(adventurer_id: felt252>) -> felt252)>
-  view  get_slain_beast(adventurer_id: felt252, encounter_xp: u16) -> RecordedKill>
-  view  get_slain_adventurer(adventurer_id: felt252) -> RecordedKill>
-  view  get_terminal_entropy(adventurer_id: felt252) -> felt252
-  write register_enumeration_interface() -> 
-  view  get_combat_class() -> ClassHash
-  view  get_exploration_class() -> ClassHash
-  view  get_market_class() -> ClassHash
-  view  get_inventory_class() -> ClassHash
-  view  get_stat_upgrades_class() -> ClassHash
-  view  get_settlement_class() -> ClassHash
-  view  get_replay_class() -> ClassHash
-  view  get_settings_class() -> ClassHash
-  view  get_metadata_class() -> ClassHash
-  write set_combat_class(class_hash: ClassHash) -> 
-  write set_exploration_class(class_hash: ClassHash) -> 
-  write set_market_class(class_hash: ClassHash) -> 
-  write set_inventory_class(class_hash: ClassHash) -> 
-  write set_stat_upgrades_class(class_hash: ClassHash) -> 
-  write set_settlement_class(class_hash: ClassHash) -> 
-  write set_replay_class(class_hash: ClassHash) -> 
-  write set_settings_class(class_hash: ClassHash) -> 
-  write set_metadata_class(class_hash: ClassHash) -> 
-  view  get_renderer_address() -> ContractAddress
-  write set_renderer_address(address: ContractAddress) -> 
-  view  minted_by_address(token_id: felt252) -> ContractAddress
-  write initialize_game_token_metadata() -> 
-  view  token_address() -> ContractAddress
-  view  settings_address() -> ContractAddress
-  view  objectives_address() -> ContractAddress
-  view  score(token_id: felt252) -> u64
-  view  game_over(token_id: felt252) -> bool
-  view  new_game(token_id: felt252) -> bool
-  view  score_batch(token_ids: felt252>) -> u64>
-  view  game_over_batch(token_ids: felt252>) -> bool>
-  view  settings_exist(settings_id: u32) -> bool
-  view  settings_exist_batch(settings_ids: u32>) -> bool>
-  view  settings_count() -> u32
-  view  settings_details(settings_id: u32) -> GameSettingDetails
-  view  settings_details_batch(settings_ids: u32>) -> GameSettingDetails>
-  view  objective_exists(objective_id: u32) -> bool
-  view  completed_objective(token_id: felt252, objective_id: u32) -> bool
-  view  objective_exists_batch(objective_ids: u32>) -> bool>
-  view  objectives_count() -> u32
-  view  objectives_details(objective_id: u32) -> GameObjectiveDetails
-  view  objectives_details_batch(objective_ids: u32>) -> GameObjectiveDetails>
-  write upgrade(new_class_hash: ClassHash) -> 
-  view  balance_of(account: ContractAddress) -> u256
-  view  owner_of(token_id: u256) -> ContractAddress
-  write safe_transfer_from(from: ContractAddress, to: ContractAddress, token_id: u256, data: felt252>) -> 
-  write transfer_from(from: ContractAddress, to: ContractAddress, token_id: u256) -> 
-  write approve(to: ContractAddress, token_id: u256) -> 
-  write set_approval_for_all(operator: ContractAddress, approved: bool) -> 
-  view  get_approved(token_id: u256) -> ContractAddress
-  view  is_approved_for_all(owner: ContractAddress, operator: ContractAddress) -> bool
-  view  supports_interface(interface_id: felt252) -> bool
-  view  name() -> ByteArray
-  view  symbol() -> ByteArray
-  view  token_uri(token_id: u256) -> ByteArray
-  view  balanceOf(account: ContractAddress) -> u256
-  view  ownerOf(tokenId: u256) -> ContractAddress
-  write safeTransferFrom(from: ContractAddress, to: ContractAddress, tokenId: u256, data: felt252>) -> 
-  write transferFrom(from: ContractAddress, to: ContractAddress, tokenId: u256) -> 
-  write setApprovalForAll(operator: ContractAddress, approved: bool) -> 
-  view  getApproved(tokenId: u256) -> ContractAddress
-  view  isApprovedForAll(owner: ContractAddress, operator: ContractAddress) -> bool
-  view  tokenURI(tokenId: u256) -> ByteArray
-  view  token_of_owner_by_index(owner: ContractAddress, index: u256) -> u256
-  view  start(token_id: felt252) -> u64
-  view  end(token_id: felt252) -> u64
-  view  minted_at(token_id: felt252) -> u64
-  view  schema_version(token_id: felt252) -> u8
-  view  is_soulbound(token_id: felt252) -> bool
-  view  paymaster(token_id: felt252) -> bool
-  view  tx_hash(token_id: felt252) -> u16
-  view  mint_nonce(token_id: felt252) -> u16
-  view  minted_at_block_number(token_id: felt252) -> u32
-  view  minted_at_timestamp(token_id: felt252) -> u64
-  view  start_delay(token_id: felt252) -> u64
-  view  play_duration(token_id: felt252) -> u64
-  view  settings_id(token_id: felt252) -> u32
-  view  objective_id(token_id: felt252) -> u32
-  view  minted_by(token_id: felt252) -> u32
-  view  minter_data(token_id: felt252) -> u128
-  view  lifecycle(token_id: felt252) -> Lifecycle
-  view  is_lifecycle_open(token_id: felt252) -> bool
-  view  minter_address_by_token_id(token_id: felt252) -> ContractAddress
-  view  minter_address_by_id(minter_id: u32) -> ContractAddress
-  view  token_data(token_id: felt252) -> GameTokenData
-  write mint(recipient_address: ContractAddress, params: MintParams) -> felt252
-  write mint_batch(recipient_addresses: ContractAddress>, params: MintParams) -> felt252>
-  view  royalty_info(token_id: u256, sale_price: u256) -> u256)
-  view  default_royalty() -> u128)
-  view  token_royalty(token_id: u256) -> u128)
-  write set_default_royalty(receiver: ContractAddress, fee_numerator: u128) -> 
-  write delete_default_royalty() -> 
-  write set_token_royalty(token_id: u256, receiver: ContractAddress, fee_numerator: u128) -> 
-  write reset_token_royalty(token_id: u256) -> 
-  view  owner() -> ContractAddress
-  write transfer_ownership(new_owner: ContractAddress) -> 
-  write renounce_ownership() -> 
-  write transferOwnership(newOwner: ContractAddress) -> 
-  write renounceOwnership() -> 
-  score:0x0100000000001ec400000400000000060000000001c878ba01144c4d00048b41 = [0x2c7]
-  game_over:0x0100000000001ec400000400000000060000000001c878ba01144c4d00048b41 = [0x1]
-  get_start_override:0x0100000000001ec400000400000000060000000001c878ba01144c4d00048b41 = [0x10001400006404888003a26100a032580035c82f002b, 0x0, 0x803612058352f2b3a5188131a1d716a173b410fa18b607209]
-  owner_of:0x0100000000001ec400000400000000060000000001c878ba01144c4d00048b41,0 failed: RPC: starknet_call with params {
+#1 L1 xp 2 hp 115/100 gold 9 | +1 dex, buy 2 potion(s), explore (stop at 1 dmg) till gold
+#2 L1 xp 2 hp 115/100 gold 9 | explore (stop at 1 dmg) till gold | facing Cyclops (T4 Magic, lvl 2, 11 HP)
+#3 L2 xp 6 hp 111/100 gold 11 | attack to the end | SLAIN Cyclops (T4 Magic, lvl 2, 11 HP) | LEVEL 2
+#4 L3 xp 10 hp 111/100 gold 11 | +1 str, explore (stop at 1 dmg) till gold | LEVEL 3
+#5 L4 xp 24 hp 115/100 gold 11 | +1 dex, explore (stop at 1 dmg) till gold | LEVEL 4
+#6 L5 xp 28 hp 127/115 gold 11 | +1 vit, explore (stop at 1 dmg) till gold | LEVEL 5
+#7 L5 xp 28 hp 102/115 gold 11 | +1 dex, explore (stop at 1 dmg) till gold | facing Ammit (T2 Magic, lvl 13, 19 HP)
+#8 L7 xp 51 hp 96/115 gold 41 | attack to the end | SLAIN Ammit (T2 Magic, lvl 13, 19 HP) | LEVEL 7
+#9 L7 xp 51 hp 129/115 gold 37 | +2 dex, buy 4 potion(s), explore (stop at 1 dmg) till gold | facing Qilin (T1 Magic, lvl 12, 98 HP)
+#10 L7 xp 52 hp 129/115 gold 37 | flee (stop at 129 HP) | SLAIN Qilin (T1 Magic, lvl 12, 98 HP)
+#11 L7 xp 52 hp 128/115 gold 37 | explore (stop at 1 dmg) till gold | facing Wolf (T2 Magic, lvl 10, 84 HP)
+#12 L8 xp 69 hp 110/115 gold 62 | attack to the end | SLAIN Wolf (T2 Magic, lvl 10, 84 HP) | LEVEL 8
+#13 L8 xp 69 hp 129/115 gold 15 | +1 dex, +1 cha, buy Divine Gloves (T1), buy Brightsilk Sash (T1), equip Brightsilk Sash (T1), buy Grimoire (T1), buy 2 potion(s), equip War Belt (T2), explore (stop at 1 dmg) till gold | facing "Maelstrom Bender" Rat (T5 Magic, lvl 20, 75 HP)
+#14 L8 xp 77 hp 159/115 gold 28 | attack to the end | SLAIN "Maelstrom Bender" Rat (T5 Magic, lvl 20, 75 HP)
+#15 L9 xp 81 hp 156/115 gold 28 | explore (stop at 1 dmg) till gold | LEVEL 9
+#16 L9 xp 82 hp 156/115 gold 37 | +1 wis, explore (stop at 1 dmg) till gold
+#17 L9 xp 95 hp 153/115 gold 37 | explore (stop at 1 dmg) till gold
+#18 L9 xp 95 hp 138/115 gold 37 | explore (stop at 1 dmg) till gold | facing "Oblivion Peak" Ogre (T3 Bludgeon, lvl 27, 92 HP)
+#19 L9 xp 96 hp 138/115 gold 37 | flee (stop at 138 HP) | SLAIN "Oblivion Peak" Ogre (T3 Bludgeon, lvl 27, 92 HP)
+#20 L11 xp 133 hp 157/115 gold 34 | buy 3 potion(s), equip Brightsilk Sash (T1), equip Divine Gloves (T1), explore (stop at 1 dmg) till gold | LEVEL 11 | gear foot: Brightsilk Sash (T1); neck: Divine Gloves (T1)
+#21 L13 xp 179 hp 172/130 gold 19 | +2 dex, +1 vit, buy Crown (T1), equip Crown (T1), explore (stop at 1 dmg) till gold | LEVEL 13 | gear waist: Crown (T1)
+#22 L13 xp 179 hp 187/145 gold 19 | +1 dex, +1 vit, explore (stop at 1 dmg) till gold | facing "Golem Growl" Yeti (T3 Blade, lvl 37, 199 HP)
+#23 L13 xp 180 hp 187/145 gold 19 | flee (stop at 187 HP) | SLAIN "Golem Growl" Yeti (T3 Blade, lvl 37, 199 HP)
+#24 L14 xp 215 hp 169/145 gold 19 | explore (stop at 1 dmg) till gold | LEVEL 14
+#25 L14 xp 219 hp 187/145 gold 16 | +1 cha, buy 3 potion(s), explore (stop at 1 dmg) till gold
+#26 L15 xp 229 hp 184/145 gold 16 | explore (stop at 1 dmg) till gold | LEVEL 15
+#27 L15 xp 230 hp 184/145 gold 23 | +1 dex, explore (stop at 1 dmg) till gold
+#28 L15 xp 253 hp 181/145 gold 23 | explore (stop at 1 dmg) till gold
+#29 L16 xp 257 hp 178/145 gold 23 | explore (stop at 1 dmg) till gold | LEVEL 16
+#30 L16 xp 257 hp 189/145 gold 19 | +1 dex, buy 2 potion(s), explore (stop at 1 dmg) till gold | facing "Miracle Shadow" Ent (T5 Blade, lvl 21, 93 HP)
+#31 L16 xp 264 hp 189/145 gold 37 | attack to the end, buy Warhammer (T1), equip Warhammer (T1), explore (stop at 1 dmg) till gold | SLAIN "Miracle Shadow" Ent (T5 Blade, lvl 21, 93 HP) | gear chest: Warhammer (T1)
+#32 L16 xp 264 hp 153/145 gold 37 | explore (stop at 1 dmg) till gold | facing Roc (T3 Blade, lvl 17, 135 HP)
+#33 L16 xp 264 hp 151/145 gold 37 | equip Falchion (T2) | gear chest: Falchion (T2) | facing Roc (T3 Blade, lvl 17, 135 HP)
+#34 L16 xp 281 hp 149/145 gold 74 | attack to the end | SLAIN Roc (T3 Blade, lvl 17, 135 HP)
+#35 L16 xp 282 hp 139/145 gold 64 | buy 5 potion(s), explore (stop at 1 dmg) till gold | facing "Ghoul Bender" Nemeanlion (T1 Blade, lvl 24, 300 HP)
+#36 L16 xp 282 hp 119/145 gold 64 | flee (stop at 139 HP) | facing "Ghoul Bender" Nemeanlion (T1 Blade, lvl 24, 300 HP)
+#37 L16 xp 283 hp 119/145 gold 64 | flee (stop at 119 HP) | SLAIN "Ghoul Bender" Nemeanlion (T1 Blade, lvl 24, 300 HP)
+#38 L17 xp 293 hp 187/145 gold 48 | buy 8 potion(s), explore (stop at 1 dmg) till gold | LEVEL 17
+#39 L17 xp 294 hp 187/145 gold 61 | +1 cha, explore (stop at 1 dmg) till gold
+#40 L17 xp 295 hp 190/145 gold 49 | buy Katana (T1), equip Katana (T1), explore (stop at 1 dmg) till gold | gear chest: Katana (T1) | facing "Miracle Grasp" Cyclops (T4 Magic, lvl 44, 300 HP)
+#41 L17 xp 295 hp 158/145 gold 49 | equip Falchion (T2), equip DragonsCrown (T2) | gear chest: Falchion (T2); waist: DragonsCrown (T2) | facing "Miracle Grasp" Cyclops (T4 Magic, lvl 44, 300 HP)
+#42 L18 xp 324 hp 184/145 gold 118 | attack to the end | SLAIN "Miracle Grasp" Cyclops (T4 Magic, lvl 44, 300 HP) | LEVEL 18
+#43 L18 xp 328 hp 211/175 gold 106 | +1 dex, +2 vit, +1 int, buy Divine Robe (T1), equip Divine Robe (T1), equip Crown (T1), explore (stop at 1 dmg) till gold | gear head: Divine Robe (T1); waist: Crown (T1)
+#44 L18 xp 328 hp 250/175 gold 98 | buy 4 potion(s), explore (stop at 1 dmg) till gold | facing Roc (T3 Blade, lvl 17, 352 HP)
+#45 L18 xp 328 hp 248/175 gold 98 | equip Katana (T1) | gear chest: Katana (T1) | facing Roc (T3 Blade, lvl 17, 352 HP)
+#46 L18 xp 328 hp 246/175 gold 98 | equip Falchion (T2) | gear chest: Falchion (T2) | facing Roc (T3 Blade, lvl 17, 352 HP)
+#47 L18 xp 344 hp 240/175 gold 138 | attack to the end | SLAIN Roc (T3 Blade, lvl 17, 352 HP)
+#48 L18 xp 344 hp 203/175 gold 138 | equip Grimoire (T1), explore (stop at 1 dmg) till gold | gear chest: Grimoire (T1) | facing "Loath Bite" Leprechaun (T2 Blade, lvl 31, 219 HP)
+#49 L18 xp 345 hp 203/175 gold 138 | flee (stop at 203 HP) | SLAIN "Loath Bite" Leprechaun (T2 Blade, lvl 31, 219 HP)
+#50 L20 xp 400 hp 250/175 gold 80 | buy Demonhide Boots (T1), buy DemonsHands (T1), buy Ornate Belt (T1), buy Holy Chestplate (T1), buy 5 potion(s), explore (stop at 1 dmg) till gold | LEVEL 20
+#51 L20 xp 414 hp 247/175 gold 80 | +1 dex, +1 cha, explore (stop at 1 dmg) till gold
+#52 L20 xp 429 hp 231/175 gold 80 | explore (stop at 1 dmg) till gold
+#53 L21 xp 452 hp 231/175 gold 80 | explore (stop at 1 dmg) till gold | LEVEL 21
+#54 L21 xp 453 hp 265/190 gold 87 | +1 dex, +1 vit, +1 cha, buy 2 potion(s), explore (stop at 1 dmg) till gold
+#55 L21 xp 453 hp 264/190 gold 87 | explore (stop at 1 dmg) till gold | facing "Brood Glow" Sprite (T4 Magic, lvl 55, 481 HP)
+#56 L21 xp 453 hp 262/190 gold 87 | equip Falchion (T2), equip Demon Husk (T1), equip DragonsCrown (T2) | gear chest: Falchion (T2); head: Demon Husk (T1); waist: DragonsCrown (T2) | facing "Brood Glow" Sprite (T4 Magic, lvl 55, 481 HP)
+#57 L22 xp 484 hp 258/190 gold 175 | attack to the end | SLAIN "Brood Glow" Sprite (T4 Magic, lvl 55, 481 HP) | LEVEL 22
+#58 L22 xp 485 hp 258/190 gold 176 | +1 dex, explore (stop at 1 dmg) till gold
+#59 L22 xp 485 hp 189/190 gold 176 | explore (stop at 1 dmg) till gold | facing "Golem Bender" Jotunn (T2 Magic, lvl 63, 131 HP)
+#60 L22 xp 486 hp 189/190 gold 176 | flee (stop at 189 HP) | SLAIN "Golem Bender" Jotunn (T2 Magic, lvl 63, 131 HP)
+#61 L22 xp 486 hp 265/190 gold 150 | buy Platinum Ring (T1), buy 8 potion(s), equip Divine Robe (T1), equip Crown (T1), equip Platinum Ring (T1), explore (stop at 1 dmg) till gold | gear head: Divine Robe (T1); waist: Crown (T1) | facing "Blood Roar" Gnome (T5 Blade, lvl 70, 337 HP)
+#62 L22 xp 486 hp 263/190 gold 150 | equip Gold Ring (T1) | facing "Blood Roar" Gnome (T5 Blade, lvl 70, 337 HP)
+#63 L22 xp 505 hp 246/190 gold 206 | attack to the end | SLAIN "Blood Roar" Gnome (T5 Blade, lvl 70, 337 HP)
+#64 L22 xp 505 hp 225/190 gold 206 | equip Platinum Ring (T1), explore (stop at 1 dmg) till gold | facing "Rune Roar" Kelpie (T3 Blade, lvl 42, 111 HP)
+#65 L22 xp 506 hp 225/190 gold 206 | flee (stop at 225 HP) | SLAIN "Rune Roar" Kelpie (T3 Blade, lvl 42, 111 HP)
+#66 L22 xp 507 hp 257/190 gold 198 | buy 4 potion(s), explore (stop at 1 dmg) till gold | facing "Gloom Shadow" Ettin (T3 Magic, lvl 57, 194 HP)
+#67 L23 xp 554 hp 246/190 gold 283 | attack to the end | SLAIN "Gloom Shadow" Ettin (T3 Magic, lvl 57, 194 HP) | LEVEL 23
+#68 L23 xp 554 hp 260/205 gold 273 | +1 dex, +1 vit, buy Pendant (T1), equip Katana (T1), explore (stop at 1 dmg) till gold | gear chest: Katana (T1) | facing "Apocalypse Shadow" Rakshasa (T1 Bludgeon, lvl 24, 359 HP)
+#69 L23 xp 554 hp 258/205 gold 273 | equip Grimoire (T1) | gear chest: Grimoire (T1) | facing "Apocalypse Shadow" Rakshasa (T1 Bludgeon, lvl 24, 359 HP)
+#70 L23 xp 554 hp 256/205 gold 273 | equip Katana (T1) | gear chest: Katana (T1) | facing "Apocalypse Shadow" Rakshasa (T1 Bludgeon, lvl 24, 359 HP)
+#71 L24 xp 586 hp 78/205 gold 333 | attack to the end | SLAIN "Apocalypse Shadow" Rakshasa (T1 Bludgeon, lvl 24, 359 HP) | LEVEL 24
+#72 L24 xp 606 hp 277/205 gold 291 | +1 cha, buy 21 potion(s), explore (stop at 1 dmg) till gold
+#73 L24 xp 619 hp 274/205 gold 291 | explore (stop at 1 dmg) till gold
+#74 L24 xp 619 hp 274/205 gold 291 | explore (stop at 1 dmg) till gold | facing "Shimmering Bender" Minotaur (T5 Bludgeon, lvl 80, 362 HP)
+#75 L25 xp 639 hp 94/205 gold 331 | attack to the end | SLAIN "Shimmering Bender" Minotaur (T5 Bludgeon, lvl 80, 362 HP) | LEVEL 25
+#76 L25 xp 639 hp 190/220 gold 274 | +1 vit, +1 int, buy 19 potion(s), explore (stop at 1 dmg) till gold | facing "Glyph Form" Kelpie (T3 Blade, lvl 67, 106 HP)
+#77 L25 xp 640 hp 190/220 gold 274 | flee (stop at 190 HP) | SLAIN "Glyph Form" Kelpie (T3 Blade, lvl 67, 106 HP)
+#78 L25 xp 641 hp 295/220 gold 246 | buy 11 potion(s), explore (stop at 1 dmg) till gold
+#79 L25 xp 641 hp 294/220 gold 246 | explore (stop at 1 dmg) till gold | facing "Apocalypse Sun" Bigfoot (T2 Bludgeon, lvl 66, 221 HP)
+#80 L25 xp 642 hp 294/220 gold 246 | flee (stop at 294 HP) | SLAIN "Apocalypse Sun" Bigfoot (T2 Bludgeon, lvl 66, 221 HP)
+#81 L25 xp 642 hp 294/220 gold 246 | explore (stop at 1 dmg) till gold | facing "Horror Tear" Mantis (T3 Magic, lvl 70, 341 HP)
+#82 L25 xp 643 hp 294/220 gold 246 | flee (stop at 294 HP) | SLAIN "Horror Tear" Mantis (T3 Magic, lvl 70, 341 HP)
+#83 L25 xp 664 hp 291/220 gold 246 | explore (stop at 1 dmg) till gold
+#84 L25 xp 675 hp 292/220 gold 246 | explore (stop at 1 dmg) till gold
+#85 L26 xp 676 hp 292/220 gold 251 | explore (stop at 1 dmg) till gold | LEVEL 26
+#86 L26 xp 686 hp 289/220 gold 251 | +1 dex, explore (stop at 1 dmg) till gold
+#87 L26 xp 687 hp 295/220 gold 251 | explore (stop at 1 dmg) till gold | facing "Phoenix Bane" Rat (T5 Magic, lvl 64, 490 HP)
+#88 L26 xp 687 hp 293/220 gold 251 | equip Gold Ring (T1) | facing "Phoenix Bane" Rat (T5 Magic, lvl 64, 490 HP)
+#89 L26 xp 702 hp 289/220 gold 302 | attack to the end | SLAIN "Phoenix Bane" Rat (T5 Magic, lvl 64, 490 HP)
+#90 L26 xp 711 hp 292/220 gold 302 | equip Platinum Ring (T1), explore (stop at 1 dmg) till gold
+#91 L26 xp 711 hp 70/220 gold 302 | explore (stop at 1 dmg) till gold | facing "Foe Bite" Jiangshi (T3 Magic, lvl 76, 594 HP)
+#92 L26 xp 711 hp 2/220 gold 302 | flee (stop at 70 HP) | facing "Foe Bite" Jiangshi (T3 Magic, lvl 76, 594 HP)
+#93 L26 xp 711 hp 0/220 gold 302 | flee (stop at 2 HP) | DEAD ("Foe Bite" Jiangshi (T3 Magic, lvl 76, 594 HP))
+[retry] v2 owner_of failed (1/3): RPC: starknet_call with params {
   "request": {
     "contract_address": "0x03cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2",
     "entry_point_selector": "0x3552df12bdc6089cf963c40c4cf
+[retry] v2 owner_of failed (2/3): RPC: starknet_call with params {
+  "request": {
+    "contract_address": "0x03cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2",
+    "entry_point_selector": "0x3552df12bdc6089cf963c40c4cf
+[story] start gear {"gear":{"weapon":"-","chest":"Falchion (T2)","head":"Demon Husk (T1)","waist":"DragonsCrown (T2)","foot":"War Belt (T2)","hand":"Divine Slippers (T1)","neck":"Holy Gauntlets (T1)","ring":"Amulet (T1)"},"stats":{"str":0,"dex":0,"vit":0,"int":0,"wis":0,"cha":0,"luck":0},"hp":100,"gold":10}
+[story] 93 packets, 24 beasts slain, final level 26 xp 711, killed by "Foe Bite" Jiangshi (T3 Magic, lvl 76, 594 HP)
+Error: ENOENT: no such file or directory, open 'botdata/data/story/0x100000000001ec400000400000000060000000001c878ba01144c4d00048b41.json.tmp'
+    at writeFileSync (node:fs:2430:20)
+    at writeFileSync (/home/runner/work/project_x/project_x/src/runner/datastore.ts:7:3)
+    at DataStore.writeJson (/home/runner/work/project_x/project_x/src/runner/datastore.ts:183:5)
+    at runV2StoryCommand (/home/runner/work/project_x/project_x/src/commands/v2-story.ts:162:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async main (/home/runner/work/project_x/project_x/src/cli.ts:279:7)
+== bot http-get --address https://api-v2-next.up.railway.app/games/leaderboard?game_core=0x03cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2&minter_id=4 --address https://api-v2-next.up.railway.app/loot/kills?owner=0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82 --address https://api-v2-next.up.railway.app/kills?owner=0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82
+
+> loot-survivor-bot@1.0.0 bot
+> node --import tsx src/cli.ts http-get --address https://api-v2-next.up.railway.app/games/leaderboard?game_core=0x03cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2&minter_id=4 --address https://api-v2-next.up.railway.app/loot/kills?owner=0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82 --address https://api-v2-next.up.railway.app/kills?owner=0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82
+
+GET https://api-v2-next.up.railway.app/games/leaderboard?game_core=0x03cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2&minter_id=4: HTTP 200 {"data":[{"tokenId":"0x0100000000001f3800000400000000060000000001c878ba01144c5600057861","owner":"0x0770c765bb27d9b8360f78534ec82edb3958f714d5ce5c5a27f7c2691427a9d0","score":1695,"gameOver":true,"settled":true,"stuck":false,"terminalReason":1,"actionCount":230,"lastActionAt":"2026-11-19T13:38:11.000Z"},{"tokenId":"0x0100000000001eb300000400000000060000000001c878ba01144c4d00048b41","owner":"0x06336b7809a48c96cc07814eef704cbda7fa5f0ac03ff5a0e8b4478869788c32","score":1682,"gameOver":true,"settled":true,"stuck":false,"terminalReason":1,"actionCount":125,"lastActionAt":"2026-11-20T16:02:57.000Z"},{"tokenId":"0x0100000000001eb500000400000000060000000001c878ba01144c690007ab61","owner":"0x076245337b43c8cf37be47b95c38262259ff8cdc3d3fb971eb809a545022d3d3","score":1627,"gameOver":true,"settled":true,"stuck":false,"terminalReason":1,"actionCount":196,"lastActionAt":"2026-11-17T17:58:53.000Z"},{"tokenId":"0x0100000000001ec500000400000000060000000001c878ba01144c690007ab61","owner":"0x07155b794c3c575ad8b3cfb1021246cd2c25d983f2410ff03867f305d80680ca","score":1506,"gameOver":true,"settled":true,"stuck":false,"terminalReason":1,"actionCount":146,"lastActionAt":"2026-11-19T15:47:17.000Z"},{"tokenId":"0x0100000000001ea400000400000000060000000001c878ba01144c4d00048b41","owner":"0x06336b7809a48c96cc07814eef704cbda7fa5f0ac03ff5a0e8b4478869788c32","score":1486,"gameOver":true,"settled":true,"stuck":false,"terminalReason":1,"actionCount":133,"lastActionAt":"2026-11-18T09:58:09.000Z"},{"tokenId":"0x01
+GET https://api-v2-next.up.railway.app/loot/kills?owner=0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82: HTTP 200 {"owner":"0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82","dungeon":"0x03921001b64ad6af2bae27b95c27c465fc8921d9c537f4821eb3023b5889622f","kills":[{"adventurerId":"0x0100000000001ec400000400000000060000000001c878ba01144c4d00048b41","bagId":7876,"encounterXp":69,"beastEntropy":"4368482404624295780","actionIndex":13,"rosterId":24,"beastId":10,"prefix":41,"suffix":9,"health":75,"level":20,"gameOver":true,"settled":true,"recorded":true,"replayedPackets":null,"claimed":true,"claimedTokenId":"73823920477234561343411701385210796706872435537619982835366296568619","claimedAt":"2026-11-17T17:59:10.000Z","claimTxHash":"0x005e4dd9e919963428d3cc133c6828c3237386ed7cf7a6c4d121a91dc590d319","collectable":null,"owner":null},{"adventurerId":"0x0100000000001ec400000400000000060000000001c878ba01144c4d00048b41","bagId":7876,"encounterXp":257,"beastEntropy":"4520452386891599221","actionIndex":30,"rosterId":50,"beastId":20,"prefix":43,"suffix":10,"health":93,"level":21,"gameOver":true,"settled":true,"recorded":true,"replayedPackets":null,"claimed":true,"claimedTokenId":"82262068048100179938201830167460169950677874300373523351314982929263","claimedAt":"2026-11-17T17:59:10.000Z","claimTxHash":"0x005e4dd9e919963428d3cc133c6828c3237386ed7cf7a6c4d121a91dc590d319","collectable":null,"owner":null},{"adventurerId":"0x0100000000001ec400000400000000060000000001c878ba01144c4d00048b41","bagId":7876,"encounterXp":295,"beastEntropy":"5449995602757561182","actionIndex":41,"rosterId":20,"beastId
+GET https://api-v2-next.up.railway.app/kills?owner=0x03b318c215e22262cd9a5accf8a97bfefa0805dfe03ddfd370ed4db2f5f50e82: HTTP 400 {"error":"dungeon must be a Starknet address"}
+== bot frontend --call /loot/ --call Dt(`/
+
+> loot-survivor-bot@1.0.0 bot
+> node --import tsx src/cli.ts frontend --call /loot/ --call Dt(`/
+
+downloaded 392 files, 16.7 MB into /tmp/lsfront-1795207600924
+7 snippet(s) for /loot/, Dt(`/ -> frontend/snippets.json
+10 dungeon configs on lootsurvivor.io
+  trials                   Trials                     online       Free
+  beastmode                Beast Mode                 online       1 Ticket settings=die minter=uie @So.dungeon
+  ronke-casino             Ronke Casino               De?`online`:`coming_soon Free · 3 days settings=Ee minter=ve sponsored @_e
+  karats                   Karats                     online       Free settings=wie minter=void @Wo
+  lootbag                  Loot Bag                   online       Loot Bag settings=6 minter=4 @Co.lootDungeon
+  pvp                      PvP Dungeons               online       Free
+  tournaments              Tournaments                Wg.ready?`online`:`coming_soon  minter=Wg.minterId @Wg.budokanAddress
+  norwich-games-festival   Norwich Games Festival     online       Free @0x04253e24220629b737512a24cb3172fc381db7be7a697d5af358ff21ef1172be
+  blockhash                Blockhash                  closed       Free settings=0
+  unknown                  Unknown Dungeon            offline       @0x04253e24220629b737512a24cb3172fc381db7be7a697d5af358ff21ef1172be
+Ronke dungeons: ronke-casino (Ronke Casino)
