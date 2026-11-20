@@ -5,7 +5,7 @@
 //   v2-story --game <id> [--core 0x..]   (default core: Beast Mode, where Loot Dungeon runs live)
 import { MAINNET } from '../chain/config.ts';
 import { connectProvider } from '../chain/rpc.ts';
-import { level, maxHealth } from '../game/adventurer.ts';
+import { level } from '../game/adventurer.ts';
 import { beastName } from '../game/beast.ts';
 import { ITEM_ROWS } from '../game/data.ts';
 import { dungeonEngineSettings, loadSnapshot } from '../game/dungeons.ts';
@@ -25,7 +25,7 @@ function gear(s: GameState): Record<string, string> {
   const e = s.adventurer.equipment as unknown as Record<string, { id: number; xp: number }> | Array<{ id: number; xp: number }>;
   const out: Record<string, string> = {};
   SLOTS.forEach((slot, i) => {
-    const it = Array.isArray(e) ? e[i] : e[slot];
+    const it = Array.isArray(e) ? e[i + 1] : e[slot]; // the engine indexes equipment by Slot (1 = weapon)
     out[slot] = itemName(it?.id ?? 0);
   });
   return out;
@@ -117,7 +117,6 @@ export async function runV2StoryCommand(opts: { game: string; core?: string; dat
       level: lvl,
       xp: s.adventurer.xp,
       hp: s.adventurer.health,
-      maxHp: maxHealth(s.adventurer.stats),
       gold: s.adventurer.gold,
       stats: s.adventurer.stats,
       gear: gear(s),
@@ -129,7 +128,7 @@ export async function runV2StoryCommand(opts: { game: string; core?: string; dat
       if (lvl > level(prev.s.adventurer)) step.levelUp = lvl;
       if (prev.beastHp > 0 && a.beast_health === 0 && s.adventurer.health > 0) {
         const xpGain = s.adventurer.xp - prev.s.adventurer.xp;
-        if (xpGain > 0) {
+        if (did.some((d) => d.startsWith('attack'))) {
           step.slain = prev.beast;
           kills.push({ k, beast: prev.beast, xpGain, level: lvl });
         } else step.escaped = prev.beast;
@@ -140,7 +139,7 @@ export async function runV2StoryCommand(opts: { game: string; core?: string; dat
     }
     steps.push(step);
     console.log(
-      `#${k} L${lvl} xp ${s.adventurer.xp} hp ${s.adventurer.health}/${step.maxHp} gold ${s.adventurer.gold} | ${did.join(', ')}${step.slain ? ` | SLAIN ${step.slain}` : ''}${step.escaped ? ` | escaped ${step.escaped}` : ''}${step.levelUp ? ` | LEVEL ${lvl}` : ''}${step.gearChanged ? ` | gear ${(step.gearChanged as string[]).join('; ')}` : ''}${beast && !step.dead ? ` | facing ${beast}` : ''}${step.dead ? ` | DEAD (${step.killedBy})` : ''}`,
+      `#${k} L${lvl} xp ${s.adventurer.xp} hp ${s.adventurer.health} gold ${s.adventurer.gold} | ${did.join(', ')}${step.slain ? ` | SLAIN ${step.slain}` : ''}${step.escaped ? ` | escaped ${step.escaped}` : ''}${step.levelUp ? ` | LEVEL ${lvl}` : ''}${step.gearChanged ? ` | gear ${(step.gearChanged as string[]).join('; ')}` : ''}${beast && !step.dead ? ` | facing ${beast}` : ''}${step.dead ? ` | DEAD (${step.killedBy})` : ''}`,
     );
     prev = { s, beastHp: a.beast_health, beast };
   }
@@ -159,5 +158,8 @@ export async function runV2StoryCommand(opts: { game: string; core?: string; dat
   };
   console.log(`[story] start gear ${JSON.stringify(start)}`);
   console.log(`[story] ${steps.length} packets, ${kills.length} beasts slain, final level ${last.level} xp ${last.xp}, ${last.dead ? `killed by ${last.killedBy}` : 'alive'}`);
+  const { mkdirSync } = await import('node:fs');
+  const { join } = await import('node:path');
+  mkdirSync(join(opts.dataDir, 'story'), { recursive: true });
   new DataStore(opts.dataDir).writeJson(`story/${story.game}.json`, story);
 }
