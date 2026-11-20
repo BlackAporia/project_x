@@ -1,0 +1,4133 @@
+{
+ "game": "0x100000000001ec400000400000000060000000001c878ba01144c4d00048b41",
+ "core": "0x03cafe867e9f5dc7ccf73471b98c1d6d6d54804744cef9626accd217b6ad1dd2",
+ "settings": "Loot Bag (2) #6 (mainnet rules)",
+ "owner": null,
+ "packets": 93,
+ "start": {
+  "gear": {
+   "weapon": "Falchion (T2)",
+   "chest": "Demon Husk (T1)",
+   "head": "DragonsCrown (T2)",
+   "waist": "War Belt (T2)",
+   "foot": "Divine Slippers (T1)",
+   "hand": "Holy Gauntlets (T1)",
+   "neck": "Amulet (T1)",
+   "ring": "Gold Ring (T1)"
+  },
+  "stats": {
+   "str": 0,
+   "dex": 0,
+   "vit": 0,
+   "int": 0,
+   "wis": 0,
+   "cha": 0,
+   "luck": 0
+  },
+  "hp": 100,
+  "gold": 10
+ },
+ "final": {
+  "k": 93,
+  "did": [
+   "flee (stop at 2 HP)"
+  ],
+  "level": 26,
+  "xp": 711,
+  "hp": 0,
+  "gold": 302,
+  "stats": {
+   "str": 1,
+   "dex": 17,
+   "vit": 8,
+   "int": 2,
+   "wis": 1,
+   "cha": 6,
+   "luck": 0
+  },
+  "gear": {
+   "weapon": "Katana (T1)",
+   "chest": "Divine Robe (T1)",
+   "head": "Crown (T1)",
+   "waist": "Brightsilk Sash (T1)",
+   "foot": "Divine Slippers (T1)",
+   "hand": "Divine Gloves (T1)",
+   "neck": "Amulet (T1)",
+   "ring": "Platinum Ring (T1)"
+  },
+  "bag": [
+   "Holy Gauntlets (T1)",
+   "War Belt (T2)",
+   "Grimoire (T1)",
+   "DragonsCrown (T2)",
+   "Warhammer (T1)",
+   "Falchion (T2)",
+   "Demon Husk (T1)",
+   "Demonhide Boots (T1)",
+   "DemonsHands (T1)",
+   "Ornate Belt (T1)",
+   "Holy Chestplate (T1)",
+   "Gold Ring (T1)",
+   "Pendant (T1)"
+  ],
+  "beast": "\"Foe Bite\" Jiangshi (T3 Magic, lvl 76, 594 HP)",
+  "dead": true,
+  "killedBy": "\"Foe Bite\" Jiangshi (T3 Magic, lvl 76, 594 HP)"
+ },
+ "kills": [
+  {
+   "k": 3,
+   "beast": "Cyclops (T4 Magic, lvl 2, 11 HP)",
+   "xpGain": 4,
+   "level": 2
+  },
+  {
+   "k": 8,
+   "beast": "Ammit (T2 Magic, lvl 13, 19 HP)",
+   "xpGain": 23,
+   "level": 7
+  },
+  {
+   "k": 12,
+   "beast": "Wolf (T2 Magic, lvl 10, 84 HP)",
+   "xpGain": 17,
+   "level": 8
+  },
+  {
+   "k": 14,
+   "beast": "\"Maelstrom Bender\" Rat (T5 Magic, lvl 20, 75 HP)",
+   "xpGain": 8,
+   "level": 8
+  },
+  {
+   "k": 31,
+   "beast": "\"Miracle Shadow\" Ent (T5 Blade, lvl 21, 93 HP)",
+   "xpGain": 7,
+   "level": 16
+  },
+  {
+   "k": 34,
+   "beast": "Roc (T3 Blade, lvl 17, 135 HP)",
+   "xpGain": 17,
+   "level": 16
+  },
+  {
+   "k": 42,
+   "beast": "\"Miracle Grasp\" Cyclops (T4 Magic, lvl 44, 300 HP)",
+   "xpGain": 29,
+   "level": 18
+  },
+  {
+   "k": 47,
+   "beast": "Roc (T3 Blade, lvl 17, 352 HP)",
+   "xpGain": 16,
+   "level": 18
+  },
+  {
+   "k": 57,
+   "beast": "\"Brood Glow\" Sprite (T4 Magic, lvl 55, 481 HP)",
+   "xpGain": 31,
+   "level": 22
+  },
+  {
+   "k": 63,
+   "beast": "\"Blood Roar\" Gnome (T5 Blade, lvl 70, 337 HP)",
+   "xpGain": 19,
+   "level": 22
+  },
+  {
+   "k": 67,
+   "beast": "\"Gloom Shadow\" Ettin (T3 Magic, lvl 57, 194 HP)",
+   "xpGain": 47,
+   "level": 23
+  },
+  {
+   "k": 71,
+   "beast": "\"Apocalypse Shadow\" Rakshasa (T1 Bludgeon, lvl 24, 359 HP)",
+   "xpGain": 32,
+   "level": 24
+  },
+  {
+   "k": 75,
+   "beast": "\"Shimmering Bender\" Minotaur (T5 Bludgeon, lvl 80, 362 HP)",
+   "xpGain": 20,
+   "level": 25
+  },
+  {
+   "k": 89,
+   "beast": "\"Phoenix Bane\" Rat (T5 Magic, lvl 64, 490 HP)",
+   "xpGain": 15,
+   "level": 26
+  }
+ ],
+ "steps": [
+  {
+   "k": 1,
+   "did": [
+    "+1 dex",
+    "buy 2 potion(s)",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 1,
+   "xp": 2,
+   "hp": 115,
+   "gold": 9,
+   "stats": {
+    "str": 0,
+    "dex": 1,
+    "vit": 0,
+    "int": 0,
+    "wis": 0,
+    "cha": 0,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "DragonsCrown (T2)",
+    "waist": "War Belt (T2)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Holy Gauntlets (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [],
+   "beast": null,
+   "dead": false
+  },
+  {
+   "k": 2,
+   "did": [
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 1,
+   "xp": 2,
+   "hp": 115,
+   "gold": 9,
+   "stats": {
+    "str": 0,
+    "dex": 1,
+    "vit": 0,
+    "int": 0,
+    "wis": 0,
+    "cha": 0,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "DragonsCrown (T2)",
+    "waist": "War Belt (T2)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Holy Gauntlets (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [],
+   "beast": "Cyclops (T4 Magic, lvl 2, 11 HP)",
+   "dead": false
+  },
+  {
+   "k": 3,
+   "did": [
+    "attack to the end"
+   ],
+   "level": 2,
+   "xp": 6,
+   "hp": 111,
+   "gold": 11,
+   "stats": {
+    "str": 0,
+    "dex": 1,
+    "vit": 0,
+    "int": 0,
+    "wis": 0,
+    "cha": 0,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "DragonsCrown (T2)",
+    "waist": "War Belt (T2)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Holy Gauntlets (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [],
+   "beast": null,
+   "dead": false,
+   "levelUp": 2,
+   "slain": "Cyclops (T4 Magic, lvl 2, 11 HP)"
+  },
+  {
+   "k": 4,
+   "did": [
+    "+1 str",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 3,
+   "xp": 10,
+   "hp": 111,
+   "gold": 11,
+   "stats": {
+    "str": 1,
+    "dex": 1,
+    "vit": 0,
+    "int": 0,
+    "wis": 0,
+    "cha": 0,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "DragonsCrown (T2)",
+    "waist": "War Belt (T2)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Holy Gauntlets (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [],
+   "beast": null,
+   "dead": false,
+   "levelUp": 3
+  },
+  {
+   "k": 5,
+   "did": [
+    "+1 dex",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 4,
+   "xp": 24,
+   "hp": 115,
+   "gold": 11,
+   "stats": {
+    "str": 1,
+    "dex": 2,
+    "vit": 0,
+    "int": 0,
+    "wis": 0,
+    "cha": 0,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "DragonsCrown (T2)",
+    "waist": "War Belt (T2)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Holy Gauntlets (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [],
+   "beast": null,
+   "dead": false,
+   "levelUp": 4
+  },
+  {
+   "k": 6,
+   "did": [
+    "+1 vit",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 5,
+   "xp": 28,
+   "hp": 127,
+   "gold": 11,
+   "stats": {
+    "str": 1,
+    "dex": 2,
+    "vit": 1,
+    "int": 0,
+    "wis": 0,
+    "cha": 0,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "DragonsCrown (T2)",
+    "waist": "War Belt (T2)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Holy Gauntlets (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [],
+   "beast": null,
+   "dead": false,
+   "levelUp": 5
+  },
+  {
+   "k": 7,
+   "did": [
+    "+1 dex",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 5,
+   "xp": 28,
+   "hp": 102,
+   "gold": 11,
+   "stats": {
+    "str": 1,
+    "dex": 3,
+    "vit": 1,
+    "int": 0,
+    "wis": 0,
+    "cha": 0,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "DragonsCrown (T2)",
+    "waist": "War Belt (T2)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Holy Gauntlets (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [],
+   "beast": "Ammit (T2 Magic, lvl 13, 19 HP)",
+   "dead": false
+  },
+  {
+   "k": 8,
+   "did": [
+    "attack to the end"
+   ],
+   "level": 7,
+   "xp": 51,
+   "hp": 96,
+   "gold": 41,
+   "stats": {
+    "str": 1,
+    "dex": 3,
+    "vit": 1,
+    "int": 0,
+    "wis": 0,
+    "cha": 0,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "DragonsCrown (T2)",
+    "waist": "War Belt (T2)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Holy Gauntlets (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [],
+   "beast": null,
+   "dead": false,
+   "levelUp": 7,
+   "slain": "Ammit (T2 Magic, lvl 13, 19 HP)"
+  },
+  {
+   "k": 9,
+   "did": [
+    "+2 dex",
+    "buy 4 potion(s)",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 7,
+   "xp": 51,
+   "hp": 129,
+   "gold": 37,
+   "stats": {
+    "str": 1,
+    "dex": 5,
+    "vit": 1,
+    "int": 0,
+    "wis": 0,
+    "cha": 0,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "DragonsCrown (T2)",
+    "waist": "War Belt (T2)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Holy Gauntlets (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [],
+   "beast": "Qilin (T1 Magic, lvl 12, 98 HP)",
+   "dead": false
+  },
+  {
+   "k": 10,
+   "did": [
+    "flee (stop at 129 HP)"
+   ],
+   "level": 7,
+   "xp": 52,
+   "hp": 129,
+   "gold": 37,
+   "stats": {
+    "str": 1,
+    "dex": 5,
+    "vit": 1,
+    "int": 0,
+    "wis": 0,
+    "cha": 0,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "DragonsCrown (T2)",
+    "waist": "War Belt (T2)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Holy Gauntlets (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [],
+   "beast": null,
+   "dead": false,
+   "escaped": "Qilin (T1 Magic, lvl 12, 98 HP)"
+  },
+  {
+   "k": 11,
+   "did": [
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 7,
+   "xp": 52,
+   "hp": 128,
+   "gold": 37,
+   "stats": {
+    "str": 1,
+    "dex": 5,
+    "vit": 1,
+    "int": 0,
+    "wis": 0,
+    "cha": 0,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "DragonsCrown (T2)",
+    "waist": "War Belt (T2)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Holy Gauntlets (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [],
+   "beast": "Wolf (T2 Magic, lvl 10, 84 HP)",
+   "dead": false
+  },
+  {
+   "k": 12,
+   "did": [
+    "attack to the end"
+   ],
+   "level": 8,
+   "xp": 69,
+   "hp": 110,
+   "gold": 62,
+   "stats": {
+    "str": 1,
+    "dex": 5,
+    "vit": 1,
+    "int": 0,
+    "wis": 0,
+    "cha": 0,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "DragonsCrown (T2)",
+    "waist": "War Belt (T2)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Holy Gauntlets (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [],
+   "beast": null,
+   "dead": false,
+   "levelUp": 8,
+   "slain": "Wolf (T2 Magic, lvl 10, 84 HP)"
+  },
+  {
+   "k": 13,
+   "did": [
+    "+1 dex",
+    "+1 cha",
+    "buy Divine Gloves (T1)",
+    "buy Brightsilk Sash (T1)",
+    "equip Brightsilk Sash (T1)",
+    "buy Grimoire (T1)",
+    "buy 2 potion(s)",
+    "equip War Belt (T2)",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 8,
+   "xp": 69,
+   "hp": 129,
+   "gold": 15,
+   "stats": {
+    "str": 1,
+    "dex": 6,
+    "vit": 1,
+    "int": 0,
+    "wis": 0,
+    "cha": 1,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "DragonsCrown (T2)",
+    "waist": "War Belt (T2)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Holy Gauntlets (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Divine Gloves (T1)",
+    "Brightsilk Sash (T1)",
+    "Grimoire (T1)"
+   ],
+   "beast": "\"Maelstrom Bender\" Rat (T5 Magic, lvl 20, 75 HP)",
+   "dead": false
+  },
+  {
+   "k": 14,
+   "did": [
+    "attack to the end"
+   ],
+   "level": 8,
+   "xp": 77,
+   "hp": 159,
+   "gold": 28,
+   "stats": {
+    "str": 1,
+    "dex": 6,
+    "vit": 1,
+    "int": 0,
+    "wis": 0,
+    "cha": 1,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "DragonsCrown (T2)",
+    "waist": "War Belt (T2)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Holy Gauntlets (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Divine Gloves (T1)",
+    "Brightsilk Sash (T1)",
+    "Grimoire (T1)"
+   ],
+   "beast": null,
+   "dead": false,
+   "slain": "\"Maelstrom Bender\" Rat (T5 Magic, lvl 20, 75 HP)"
+  },
+  {
+   "k": 15,
+   "did": [
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 9,
+   "xp": 81,
+   "hp": 156,
+   "gold": 28,
+   "stats": {
+    "str": 1,
+    "dex": 6,
+    "vit": 1,
+    "int": 0,
+    "wis": 0,
+    "cha": 1,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "DragonsCrown (T2)",
+    "waist": "War Belt (T2)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Holy Gauntlets (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Divine Gloves (T1)",
+    "Brightsilk Sash (T1)",
+    "Grimoire (T1)"
+   ],
+   "beast": null,
+   "dead": false,
+   "levelUp": 9
+  },
+  {
+   "k": 16,
+   "did": [
+    "+1 wis",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 9,
+   "xp": 82,
+   "hp": 156,
+   "gold": 37,
+   "stats": {
+    "str": 1,
+    "dex": 6,
+    "vit": 1,
+    "int": 0,
+    "wis": 1,
+    "cha": 1,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "DragonsCrown (T2)",
+    "waist": "War Belt (T2)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Holy Gauntlets (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Divine Gloves (T1)",
+    "Brightsilk Sash (T1)",
+    "Grimoire (T1)"
+   ],
+   "beast": null,
+   "dead": false
+  },
+  {
+   "k": 17,
+   "did": [
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 9,
+   "xp": 95,
+   "hp": 153,
+   "gold": 37,
+   "stats": {
+    "str": 1,
+    "dex": 6,
+    "vit": 1,
+    "int": 0,
+    "wis": 1,
+    "cha": 1,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "DragonsCrown (T2)",
+    "waist": "War Belt (T2)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Holy Gauntlets (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Divine Gloves (T1)",
+    "Brightsilk Sash (T1)",
+    "Grimoire (T1)"
+   ],
+   "beast": null,
+   "dead": false
+  },
+  {
+   "k": 18,
+   "did": [
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 9,
+   "xp": 95,
+   "hp": 138,
+   "gold": 37,
+   "stats": {
+    "str": 1,
+    "dex": 6,
+    "vit": 1,
+    "int": 0,
+    "wis": 1,
+    "cha": 1,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "DragonsCrown (T2)",
+    "waist": "War Belt (T2)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Holy Gauntlets (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Divine Gloves (T1)",
+    "Brightsilk Sash (T1)",
+    "Grimoire (T1)"
+   ],
+   "beast": "\"Oblivion Peak\" Ogre (T3 Bludgeon, lvl 27, 92 HP)",
+   "dead": false
+  },
+  {
+   "k": 19,
+   "did": [
+    "flee (stop at 138 HP)"
+   ],
+   "level": 9,
+   "xp": 96,
+   "hp": 138,
+   "gold": 37,
+   "stats": {
+    "str": 1,
+    "dex": 6,
+    "vit": 1,
+    "int": 0,
+    "wis": 1,
+    "cha": 1,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "DragonsCrown (T2)",
+    "waist": "War Belt (T2)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Holy Gauntlets (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Divine Gloves (T1)",
+    "Brightsilk Sash (T1)",
+    "Grimoire (T1)"
+   ],
+   "beast": null,
+   "dead": false,
+   "escaped": "\"Oblivion Peak\" Ogre (T3 Bludgeon, lvl 27, 92 HP)"
+  },
+  {
+   "k": 20,
+   "did": [
+    "buy 3 potion(s)",
+    "equip Brightsilk Sash (T1)",
+    "equip Divine Gloves (T1)",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 11,
+   "xp": 133,
+   "hp": 157,
+   "gold": 34,
+   "stats": {
+    "str": 1,
+    "dex": 6,
+    "vit": 1,
+    "int": 0,
+    "wis": 1,
+    "cha": 1,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "DragonsCrown (T2)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)"
+   ],
+   "beast": null,
+   "dead": false,
+   "levelUp": 11,
+   "gearChanged": [
+    "waist: Brightsilk Sash (T1)",
+    "hand: Divine Gloves (T1)"
+   ]
+  },
+  {
+   "k": 21,
+   "did": [
+    "+2 dex",
+    "+1 vit",
+    "buy Crown (T1)",
+    "equip Crown (T1)",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 13,
+   "xp": 179,
+   "hp": 172,
+   "gold": 19,
+   "stats": {
+    "str": 1,
+    "dex": 8,
+    "vit": 2,
+    "int": 0,
+    "wis": 1,
+    "cha": 1,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)"
+   ],
+   "beast": null,
+   "dead": false,
+   "levelUp": 13,
+   "gearChanged": [
+    "head: Crown (T1)"
+   ]
+  },
+  {
+   "k": 22,
+   "did": [
+    "+1 dex",
+    "+1 vit",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 13,
+   "xp": 179,
+   "hp": 187,
+   "gold": 19,
+   "stats": {
+    "str": 1,
+    "dex": 9,
+    "vit": 3,
+    "int": 0,
+    "wis": 1,
+    "cha": 1,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)"
+   ],
+   "beast": "\"Golem Growl\" Yeti (T3 Blade, lvl 37, 199 HP)",
+   "dead": false
+  },
+  {
+   "k": 23,
+   "did": [
+    "flee (stop at 187 HP)"
+   ],
+   "level": 13,
+   "xp": 180,
+   "hp": 187,
+   "gold": 19,
+   "stats": {
+    "str": 1,
+    "dex": 9,
+    "vit": 3,
+    "int": 0,
+    "wis": 1,
+    "cha": 1,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)"
+   ],
+   "beast": null,
+   "dead": false,
+   "escaped": "\"Golem Growl\" Yeti (T3 Blade, lvl 37, 199 HP)"
+  },
+  {
+   "k": 24,
+   "did": [
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 14,
+   "xp": 215,
+   "hp": 169,
+   "gold": 19,
+   "stats": {
+    "str": 1,
+    "dex": 9,
+    "vit": 3,
+    "int": 0,
+    "wis": 1,
+    "cha": 1,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)"
+   ],
+   "beast": null,
+   "dead": false,
+   "levelUp": 14
+  },
+  {
+   "k": 25,
+   "did": [
+    "+1 cha",
+    "buy 3 potion(s)",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 14,
+   "xp": 219,
+   "hp": 187,
+   "gold": 16,
+   "stats": {
+    "str": 1,
+    "dex": 9,
+    "vit": 3,
+    "int": 0,
+    "wis": 1,
+    "cha": 2,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)"
+   ],
+   "beast": null,
+   "dead": false
+  },
+  {
+   "k": 26,
+   "did": [
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 15,
+   "xp": 229,
+   "hp": 184,
+   "gold": 16,
+   "stats": {
+    "str": 1,
+    "dex": 9,
+    "vit": 3,
+    "int": 0,
+    "wis": 1,
+    "cha": 2,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)"
+   ],
+   "beast": null,
+   "dead": false,
+   "levelUp": 15
+  },
+  {
+   "k": 27,
+   "did": [
+    "+1 dex",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 15,
+   "xp": 230,
+   "hp": 184,
+   "gold": 23,
+   "stats": {
+    "str": 1,
+    "dex": 10,
+    "vit": 3,
+    "int": 0,
+    "wis": 1,
+    "cha": 2,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)"
+   ],
+   "beast": null,
+   "dead": false
+  },
+  {
+   "k": 28,
+   "did": [
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 15,
+   "xp": 253,
+   "hp": 181,
+   "gold": 23,
+   "stats": {
+    "str": 1,
+    "dex": 10,
+    "vit": 3,
+    "int": 0,
+    "wis": 1,
+    "cha": 2,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)"
+   ],
+   "beast": null,
+   "dead": false
+  },
+  {
+   "k": 29,
+   "did": [
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 16,
+   "xp": 257,
+   "hp": 178,
+   "gold": 23,
+   "stats": {
+    "str": 1,
+    "dex": 10,
+    "vit": 3,
+    "int": 0,
+    "wis": 1,
+    "cha": 2,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)"
+   ],
+   "beast": null,
+   "dead": false,
+   "levelUp": 16
+  },
+  {
+   "k": 30,
+   "did": [
+    "+1 dex",
+    "buy 2 potion(s)",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 16,
+   "xp": 257,
+   "hp": 189,
+   "gold": 19,
+   "stats": {
+    "str": 1,
+    "dex": 11,
+    "vit": 3,
+    "int": 0,
+    "wis": 1,
+    "cha": 2,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)"
+   ],
+   "beast": "\"Miracle Shadow\" Ent (T5 Blade, lvl 21, 93 HP)",
+   "dead": false
+  },
+  {
+   "k": 31,
+   "did": [
+    "attack to the end",
+    "buy Warhammer (T1)",
+    "equip Warhammer (T1)",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 16,
+   "xp": 264,
+   "hp": 189,
+   "gold": 37,
+   "stats": {
+    "str": 1,
+    "dex": 11,
+    "vit": 3,
+    "int": 0,
+    "wis": 1,
+    "cha": 2,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Warhammer (T1)",
+    "chest": "Demon Husk (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Falchion (T2)"
+   ],
+   "beast": null,
+   "dead": false,
+   "slain": "\"Miracle Shadow\" Ent (T5 Blade, lvl 21, 93 HP)",
+   "gearChanged": [
+    "weapon: Warhammer (T1)"
+   ]
+  },
+  {
+   "k": 32,
+   "did": [
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 16,
+   "xp": 264,
+   "hp": 153,
+   "gold": 37,
+   "stats": {
+    "str": 1,
+    "dex": 11,
+    "vit": 3,
+    "int": 0,
+    "wis": 1,
+    "cha": 2,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Warhammer (T1)",
+    "chest": "Demon Husk (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Falchion (T2)"
+   ],
+   "beast": "Roc (T3 Blade, lvl 17, 135 HP)",
+   "dead": false
+  },
+  {
+   "k": 33,
+   "did": [
+    "equip Falchion (T2)"
+   ],
+   "level": 16,
+   "xp": 264,
+   "hp": 151,
+   "gold": 37,
+   "stats": {
+    "str": 1,
+    "dex": 11,
+    "vit": 3,
+    "int": 0,
+    "wis": 1,
+    "cha": 2,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)"
+   ],
+   "beast": "Roc (T3 Blade, lvl 17, 135 HP)",
+   "dead": false,
+   "gearChanged": [
+    "weapon: Falchion (T2)"
+   ]
+  },
+  {
+   "k": 34,
+   "did": [
+    "attack to the end"
+   ],
+   "level": 16,
+   "xp": 281,
+   "hp": 149,
+   "gold": 74,
+   "stats": {
+    "str": 1,
+    "dex": 11,
+    "vit": 3,
+    "int": 0,
+    "wis": 1,
+    "cha": 2,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)"
+   ],
+   "beast": null,
+   "dead": false,
+   "slain": "Roc (T3 Blade, lvl 17, 135 HP)"
+  },
+  {
+   "k": 35,
+   "did": [
+    "buy 5 potion(s)",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 16,
+   "xp": 282,
+   "hp": 139,
+   "gold": 64,
+   "stats": {
+    "str": 1,
+    "dex": 11,
+    "vit": 3,
+    "int": 0,
+    "wis": 1,
+    "cha": 2,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)"
+   ],
+   "beast": "\"Ghoul Bender\" Nemeanlion (T1 Blade, lvl 24, 300 HP)",
+   "dead": false
+  },
+  {
+   "k": 36,
+   "did": [
+    "flee (stop at 139 HP)"
+   ],
+   "level": 16,
+   "xp": 282,
+   "hp": 119,
+   "gold": 64,
+   "stats": {
+    "str": 1,
+    "dex": 11,
+    "vit": 3,
+    "int": 0,
+    "wis": 1,
+    "cha": 2,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)"
+   ],
+   "beast": "\"Ghoul Bender\" Nemeanlion (T1 Blade, lvl 24, 300 HP)",
+   "dead": false
+  },
+  {
+   "k": 37,
+   "did": [
+    "flee (stop at 119 HP)"
+   ],
+   "level": 16,
+   "xp": 283,
+   "hp": 119,
+   "gold": 64,
+   "stats": {
+    "str": 1,
+    "dex": 11,
+    "vit": 3,
+    "int": 0,
+    "wis": 1,
+    "cha": 2,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)"
+   ],
+   "beast": null,
+   "dead": false,
+   "escaped": "\"Ghoul Bender\" Nemeanlion (T1 Blade, lvl 24, 300 HP)"
+  },
+  {
+   "k": 38,
+   "did": [
+    "buy 8 potion(s)",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 17,
+   "xp": 293,
+   "hp": 187,
+   "gold": 48,
+   "stats": {
+    "str": 1,
+    "dex": 11,
+    "vit": 3,
+    "int": 0,
+    "wis": 1,
+    "cha": 2,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)"
+   ],
+   "beast": null,
+   "dead": false,
+   "levelUp": 17
+  },
+  {
+   "k": 39,
+   "did": [
+    "+1 cha",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 17,
+   "xp": 294,
+   "hp": 187,
+   "gold": 61,
+   "stats": {
+    "str": 1,
+    "dex": 11,
+    "vit": 3,
+    "int": 0,
+    "wis": 1,
+    "cha": 3,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)"
+   ],
+   "beast": null,
+   "dead": false
+  },
+  {
+   "k": 40,
+   "did": [
+    "buy Katana (T1)",
+    "equip Katana (T1)",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 17,
+   "xp": 295,
+   "hp": 190,
+   "gold": 49,
+   "stats": {
+    "str": 1,
+    "dex": 11,
+    "vit": 3,
+    "int": 0,
+    "wis": 1,
+    "cha": 3,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Katana (T1)",
+    "chest": "Demon Husk (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Falchion (T2)"
+   ],
+   "beast": "\"Miracle Grasp\" Cyclops (T4 Magic, lvl 44, 300 HP)",
+   "dead": false,
+   "gearChanged": [
+    "weapon: Katana (T1)"
+   ]
+  },
+  {
+   "k": 41,
+   "did": [
+    "equip Falchion (T2)",
+    "equip DragonsCrown (T2)"
+   ],
+   "level": 17,
+   "xp": 295,
+   "hp": 158,
+   "gold": 49,
+   "stats": {
+    "str": 1,
+    "dex": 11,
+    "vit": 3,
+    "int": 0,
+    "wis": 1,
+    "cha": 3,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "DragonsCrown (T2)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "Crown (T1)",
+    "Warhammer (T1)",
+    "Katana (T1)"
+   ],
+   "beast": "\"Miracle Grasp\" Cyclops (T4 Magic, lvl 44, 300 HP)",
+   "dead": false,
+   "gearChanged": [
+    "weapon: Falchion (T2)",
+    "head: DragonsCrown (T2)"
+   ]
+  },
+  {
+   "k": 42,
+   "did": [
+    "attack to the end"
+   ],
+   "level": 18,
+   "xp": 324,
+   "hp": 184,
+   "gold": 118,
+   "stats": {
+    "str": 1,
+    "dex": 11,
+    "vit": 3,
+    "int": 0,
+    "wis": 1,
+    "cha": 3,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "DragonsCrown (T2)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "Crown (T1)",
+    "Warhammer (T1)",
+    "Katana (T1)"
+   ],
+   "beast": null,
+   "dead": false,
+   "levelUp": 18,
+   "slain": "\"Miracle Grasp\" Cyclops (T4 Magic, lvl 44, 300 HP)"
+  },
+  {
+   "k": 43,
+   "did": [
+    "+1 dex",
+    "+2 vit",
+    "+1 int",
+    "buy Divine Robe (T1)",
+    "equip Divine Robe (T1)",
+    "equip Crown (T1)",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 18,
+   "xp": 328,
+   "hp": 211,
+   "gold": 106,
+   "stats": {
+    "str": 1,
+    "dex": 12,
+    "vit": 5,
+    "int": 1,
+    "wis": 1,
+    "cha": 3,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Katana (T1)",
+    "Demon Husk (T1)"
+   ],
+   "beast": null,
+   "dead": false,
+   "gearChanged": [
+    "chest: Divine Robe (T1)",
+    "head: Crown (T1)"
+   ]
+  },
+  {
+   "k": 44,
+   "did": [
+    "buy 4 potion(s)",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 18,
+   "xp": 328,
+   "hp": 250,
+   "gold": 98,
+   "stats": {
+    "str": 1,
+    "dex": 12,
+    "vit": 5,
+    "int": 1,
+    "wis": 1,
+    "cha": 3,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Katana (T1)",
+    "Demon Husk (T1)"
+   ],
+   "beast": "Roc (T3 Blade, lvl 17, 352 HP)",
+   "dead": false
+  },
+  {
+   "k": 45,
+   "did": [
+    "equip Katana (T1)"
+   ],
+   "level": 18,
+   "xp": 328,
+   "hp": 248,
+   "gold": 98,
+   "stats": {
+    "str": 1,
+    "dex": 12,
+    "vit": 5,
+    "int": 1,
+    "wis": 1,
+    "cha": 3,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Katana (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Falchion (T2)",
+    "Demon Husk (T1)"
+   ],
+   "beast": "Roc (T3 Blade, lvl 17, 352 HP)",
+   "dead": false,
+   "gearChanged": [
+    "weapon: Katana (T1)"
+   ]
+  },
+  {
+   "k": 46,
+   "did": [
+    "equip Falchion (T2)"
+   ],
+   "level": 18,
+   "xp": 328,
+   "hp": 246,
+   "gold": 98,
+   "stats": {
+    "str": 1,
+    "dex": 12,
+    "vit": 5,
+    "int": 1,
+    "wis": 1,
+    "cha": 3,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Katana (T1)",
+    "Demon Husk (T1)"
+   ],
+   "beast": "Roc (T3 Blade, lvl 17, 352 HP)",
+   "dead": false,
+   "gearChanged": [
+    "weapon: Falchion (T2)"
+   ]
+  },
+  {
+   "k": 47,
+   "did": [
+    "attack to the end"
+   ],
+   "level": 18,
+   "xp": 344,
+   "hp": 240,
+   "gold": 138,
+   "stats": {
+    "str": 1,
+    "dex": 12,
+    "vit": 5,
+    "int": 1,
+    "wis": 1,
+    "cha": 3,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Katana (T1)",
+    "Demon Husk (T1)"
+   ],
+   "beast": null,
+   "dead": false,
+   "slain": "Roc (T3 Blade, lvl 17, 352 HP)"
+  },
+  {
+   "k": 48,
+   "did": [
+    "equip Grimoire (T1)",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 18,
+   "xp": 344,
+   "hp": 203,
+   "gold": 138,
+   "stats": {
+    "str": 1,
+    "dex": 12,
+    "vit": 5,
+    "int": 1,
+    "wis": 1,
+    "cha": 3,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Grimoire (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Falchion (T2)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Katana (T1)",
+    "Demon Husk (T1)"
+   ],
+   "beast": "\"Loath Bite\" Leprechaun (T2 Blade, lvl 31, 219 HP)",
+   "dead": false,
+   "gearChanged": [
+    "weapon: Grimoire (T1)"
+   ]
+  },
+  {
+   "k": 49,
+   "did": [
+    "flee (stop at 203 HP)"
+   ],
+   "level": 18,
+   "xp": 345,
+   "hp": 203,
+   "gold": 138,
+   "stats": {
+    "str": 1,
+    "dex": 12,
+    "vit": 5,
+    "int": 1,
+    "wis": 1,
+    "cha": 3,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Grimoire (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Falchion (T2)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Katana (T1)",
+    "Demon Husk (T1)"
+   ],
+   "beast": null,
+   "dead": false,
+   "escaped": "\"Loath Bite\" Leprechaun (T2 Blade, lvl 31, 219 HP)"
+  },
+  {
+   "k": 50,
+   "did": [
+    "buy Demonhide Boots (T1)",
+    "buy DemonsHands (T1)",
+    "buy Ornate Belt (T1)",
+    "buy Holy Chestplate (T1)",
+    "buy 5 potion(s)",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 20,
+   "xp": 400,
+   "hp": 250,
+   "gold": 80,
+   "stats": {
+    "str": 1,
+    "dex": 12,
+    "vit": 5,
+    "int": 1,
+    "wis": 1,
+    "cha": 3,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Grimoire (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Falchion (T2)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Katana (T1)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)"
+   ],
+   "beast": null,
+   "dead": false,
+   "levelUp": 20
+  },
+  {
+   "k": 51,
+   "did": [
+    "+1 dex",
+    "+1 cha",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 20,
+   "xp": 414,
+   "hp": 247,
+   "gold": 80,
+   "stats": {
+    "str": 1,
+    "dex": 13,
+    "vit": 5,
+    "int": 1,
+    "wis": 1,
+    "cha": 4,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Grimoire (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Falchion (T2)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Katana (T1)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)"
+   ],
+   "beast": null,
+   "dead": false
+  },
+  {
+   "k": 52,
+   "did": [
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 20,
+   "xp": 429,
+   "hp": 231,
+   "gold": 80,
+   "stats": {
+    "str": 1,
+    "dex": 13,
+    "vit": 5,
+    "int": 1,
+    "wis": 1,
+    "cha": 4,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Grimoire (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Falchion (T2)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Katana (T1)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)"
+   ],
+   "beast": null,
+   "dead": false
+  },
+  {
+   "k": 53,
+   "did": [
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 21,
+   "xp": 452,
+   "hp": 231,
+   "gold": 80,
+   "stats": {
+    "str": 1,
+    "dex": 13,
+    "vit": 5,
+    "int": 1,
+    "wis": 1,
+    "cha": 4,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Grimoire (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Falchion (T2)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Katana (T1)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)"
+   ],
+   "beast": null,
+   "dead": false,
+   "levelUp": 21
+  },
+  {
+   "k": 54,
+   "did": [
+    "+1 dex",
+    "+1 vit",
+    "+1 cha",
+    "buy 2 potion(s)",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 21,
+   "xp": 453,
+   "hp": 265,
+   "gold": 87,
+   "stats": {
+    "str": 1,
+    "dex": 14,
+    "vit": 6,
+    "int": 1,
+    "wis": 1,
+    "cha": 5,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Grimoire (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Falchion (T2)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Katana (T1)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)"
+   ],
+   "beast": null,
+   "dead": false
+  },
+  {
+   "k": 55,
+   "did": [
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 21,
+   "xp": 453,
+   "hp": 264,
+   "gold": 87,
+   "stats": {
+    "str": 1,
+    "dex": 14,
+    "vit": 6,
+    "int": 1,
+    "wis": 1,
+    "cha": 5,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Grimoire (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Falchion (T2)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Katana (T1)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)"
+   ],
+   "beast": "\"Brood Glow\" Sprite (T4 Magic, lvl 55, 481 HP)",
+   "dead": false
+  },
+  {
+   "k": 56,
+   "did": [
+    "equip Falchion (T2)",
+    "equip Demon Husk (T1)",
+    "equip DragonsCrown (T2)"
+   ],
+   "level": 21,
+   "xp": 453,
+   "hp": 262,
+   "gold": 87,
+   "stats": {
+    "str": 1,
+    "dex": 14,
+    "vit": 6,
+    "int": 1,
+    "wis": 1,
+    "cha": 5,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "DragonsCrown (T2)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "Crown (T1)",
+    "Warhammer (T1)",
+    "Katana (T1)",
+    "Divine Robe (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)"
+   ],
+   "beast": "\"Brood Glow\" Sprite (T4 Magic, lvl 55, 481 HP)",
+   "dead": false,
+   "gearChanged": [
+    "weapon: Falchion (T2)",
+    "chest: Demon Husk (T1)",
+    "head: DragonsCrown (T2)"
+   ]
+  },
+  {
+   "k": 57,
+   "did": [
+    "attack to the end"
+   ],
+   "level": 22,
+   "xp": 484,
+   "hp": 258,
+   "gold": 175,
+   "stats": {
+    "str": 1,
+    "dex": 14,
+    "vit": 6,
+    "int": 1,
+    "wis": 1,
+    "cha": 5,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "DragonsCrown (T2)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "Crown (T1)",
+    "Warhammer (T1)",
+    "Katana (T1)",
+    "Divine Robe (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)"
+   ],
+   "beast": null,
+   "dead": false,
+   "levelUp": 22,
+   "slain": "\"Brood Glow\" Sprite (T4 Magic, lvl 55, 481 HP)"
+  },
+  {
+   "k": 58,
+   "did": [
+    "+1 dex",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 22,
+   "xp": 485,
+   "hp": 258,
+   "gold": 176,
+   "stats": {
+    "str": 1,
+    "dex": 15,
+    "vit": 6,
+    "int": 1,
+    "wis": 1,
+    "cha": 5,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "DragonsCrown (T2)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "Crown (T1)",
+    "Warhammer (T1)",
+    "Katana (T1)",
+    "Divine Robe (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)"
+   ],
+   "beast": null,
+   "dead": false
+  },
+  {
+   "k": 59,
+   "did": [
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 22,
+   "xp": 485,
+   "hp": 189,
+   "gold": 176,
+   "stats": {
+    "str": 1,
+    "dex": 15,
+    "vit": 6,
+    "int": 1,
+    "wis": 1,
+    "cha": 5,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "DragonsCrown (T2)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "Crown (T1)",
+    "Warhammer (T1)",
+    "Katana (T1)",
+    "Divine Robe (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)"
+   ],
+   "beast": "\"Golem Bender\" Jotunn (T2 Magic, lvl 63, 131 HP)",
+   "dead": false
+  },
+  {
+   "k": 60,
+   "did": [
+    "flee (stop at 189 HP)"
+   ],
+   "level": 22,
+   "xp": 486,
+   "hp": 189,
+   "gold": 176,
+   "stats": {
+    "str": 1,
+    "dex": 15,
+    "vit": 6,
+    "int": 1,
+    "wis": 1,
+    "cha": 5,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Demon Husk (T1)",
+    "head": "DragonsCrown (T2)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "Crown (T1)",
+    "Warhammer (T1)",
+    "Katana (T1)",
+    "Divine Robe (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)"
+   ],
+   "beast": null,
+   "dead": false,
+   "escaped": "\"Golem Bender\" Jotunn (T2 Magic, lvl 63, 131 HP)"
+  },
+  {
+   "k": 61,
+   "did": [
+    "buy Platinum Ring (T1)",
+    "buy 8 potion(s)",
+    "equip Divine Robe (T1)",
+    "equip Crown (T1)",
+    "equip Platinum Ring (T1)",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 22,
+   "xp": 486,
+   "hp": 265,
+   "gold": 150,
+   "stats": {
+    "str": 1,
+    "dex": 15,
+    "vit": 6,
+    "int": 1,
+    "wis": 1,
+    "cha": 5,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Platinum Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Katana (T1)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)",
+    "Gold Ring (T1)"
+   ],
+   "beast": "\"Blood Roar\" Gnome (T5 Blade, lvl 70, 337 HP)",
+   "dead": false,
+   "gearChanged": [
+    "chest: Divine Robe (T1)",
+    "head: Crown (T1)",
+    "ring: Platinum Ring (T1)"
+   ]
+  },
+  {
+   "k": 62,
+   "did": [
+    "equip Gold Ring (T1)"
+   ],
+   "level": 22,
+   "xp": 486,
+   "hp": 263,
+   "gold": 150,
+   "stats": {
+    "str": 1,
+    "dex": 15,
+    "vit": 6,
+    "int": 1,
+    "wis": 1,
+    "cha": 5,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Katana (T1)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)",
+    "Platinum Ring (T1)"
+   ],
+   "beast": "\"Blood Roar\" Gnome (T5 Blade, lvl 70, 337 HP)",
+   "dead": false,
+   "gearChanged": [
+    "ring: Gold Ring (T1)"
+   ]
+  },
+  {
+   "k": 63,
+   "did": [
+    "attack to the end"
+   ],
+   "level": 22,
+   "xp": 505,
+   "hp": 246,
+   "gold": 206,
+   "stats": {
+    "str": 1,
+    "dex": 15,
+    "vit": 6,
+    "int": 1,
+    "wis": 1,
+    "cha": 5,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Katana (T1)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)",
+    "Platinum Ring (T1)"
+   ],
+   "beast": null,
+   "dead": false,
+   "slain": "\"Blood Roar\" Gnome (T5 Blade, lvl 70, 337 HP)"
+  },
+  {
+   "k": 64,
+   "did": [
+    "equip Platinum Ring (T1)",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 22,
+   "xp": 505,
+   "hp": 225,
+   "gold": 206,
+   "stats": {
+    "str": 1,
+    "dex": 15,
+    "vit": 6,
+    "int": 1,
+    "wis": 1,
+    "cha": 5,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Platinum Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Katana (T1)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)",
+    "Gold Ring (T1)"
+   ],
+   "beast": "\"Rune Roar\" Kelpie (T3 Blade, lvl 42, 111 HP)",
+   "dead": false,
+   "gearChanged": [
+    "ring: Platinum Ring (T1)"
+   ]
+  },
+  {
+   "k": 65,
+   "did": [
+    "flee (stop at 225 HP)"
+   ],
+   "level": 22,
+   "xp": 506,
+   "hp": 225,
+   "gold": 206,
+   "stats": {
+    "str": 1,
+    "dex": 15,
+    "vit": 6,
+    "int": 1,
+    "wis": 1,
+    "cha": 5,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Platinum Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Katana (T1)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)",
+    "Gold Ring (T1)"
+   ],
+   "beast": null,
+   "dead": false,
+   "escaped": "\"Rune Roar\" Kelpie (T3 Blade, lvl 42, 111 HP)"
+  },
+  {
+   "k": 66,
+   "did": [
+    "buy 4 potion(s)",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 22,
+   "xp": 507,
+   "hp": 257,
+   "gold": 198,
+   "stats": {
+    "str": 1,
+    "dex": 15,
+    "vit": 6,
+    "int": 1,
+    "wis": 1,
+    "cha": 5,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Platinum Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Katana (T1)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)",
+    "Gold Ring (T1)"
+   ],
+   "beast": "\"Gloom Shadow\" Ettin (T3 Magic, lvl 57, 194 HP)",
+   "dead": false
+  },
+  {
+   "k": 67,
+   "did": [
+    "attack to the end"
+   ],
+   "level": 23,
+   "xp": 554,
+   "hp": 246,
+   "gold": 283,
+   "stats": {
+    "str": 1,
+    "dex": 15,
+    "vit": 6,
+    "int": 1,
+    "wis": 1,
+    "cha": 5,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Falchion (T2)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Platinum Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Katana (T1)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)",
+    "Gold Ring (T1)"
+   ],
+   "beast": null,
+   "dead": false,
+   "levelUp": 23,
+   "slain": "\"Gloom Shadow\" Ettin (T3 Magic, lvl 57, 194 HP)"
+  },
+  {
+   "k": 68,
+   "did": [
+    "+1 dex",
+    "+1 vit",
+    "buy Pendant (T1)",
+    "equip Katana (T1)",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 23,
+   "xp": 554,
+   "hp": 260,
+   "gold": 273,
+   "stats": {
+    "str": 1,
+    "dex": 16,
+    "vit": 7,
+    "int": 1,
+    "wis": 1,
+    "cha": 5,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Katana (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Platinum Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Falchion (T2)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)",
+    "Gold Ring (T1)",
+    "Pendant (T1)"
+   ],
+   "beast": "\"Apocalypse Shadow\" Rakshasa (T1 Bludgeon, lvl 24, 359 HP)",
+   "dead": false,
+   "gearChanged": [
+    "weapon: Katana (T1)"
+   ]
+  },
+  {
+   "k": 69,
+   "did": [
+    "equip Grimoire (T1)"
+   ],
+   "level": 23,
+   "xp": 554,
+   "hp": 258,
+   "gold": 273,
+   "stats": {
+    "str": 1,
+    "dex": 16,
+    "vit": 7,
+    "int": 1,
+    "wis": 1,
+    "cha": 5,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Grimoire (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Platinum Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Katana (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Falchion (T2)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)",
+    "Gold Ring (T1)",
+    "Pendant (T1)"
+   ],
+   "beast": "\"Apocalypse Shadow\" Rakshasa (T1 Bludgeon, lvl 24, 359 HP)",
+   "dead": false,
+   "gearChanged": [
+    "weapon: Grimoire (T1)"
+   ]
+  },
+  {
+   "k": 70,
+   "did": [
+    "equip Katana (T1)"
+   ],
+   "level": 23,
+   "xp": 554,
+   "hp": 256,
+   "gold": 273,
+   "stats": {
+    "str": 1,
+    "dex": 16,
+    "vit": 7,
+    "int": 1,
+    "wis": 1,
+    "cha": 5,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Katana (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Platinum Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Falchion (T2)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)",
+    "Gold Ring (T1)",
+    "Pendant (T1)"
+   ],
+   "beast": "\"Apocalypse Shadow\" Rakshasa (T1 Bludgeon, lvl 24, 359 HP)",
+   "dead": false,
+   "gearChanged": [
+    "weapon: Katana (T1)"
+   ]
+  },
+  {
+   "k": 71,
+   "did": [
+    "attack to the end"
+   ],
+   "level": 24,
+   "xp": 586,
+   "hp": 78,
+   "gold": 333,
+   "stats": {
+    "str": 1,
+    "dex": 16,
+    "vit": 7,
+    "int": 1,
+    "wis": 1,
+    "cha": 5,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Katana (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Platinum Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Falchion (T2)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)",
+    "Gold Ring (T1)",
+    "Pendant (T1)"
+   ],
+   "beast": null,
+   "dead": false,
+   "levelUp": 24,
+   "slain": "\"Apocalypse Shadow\" Rakshasa (T1 Bludgeon, lvl 24, 359 HP)"
+  },
+  {
+   "k": 72,
+   "did": [
+    "+1 cha",
+    "buy 21 potion(s)",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 24,
+   "xp": 606,
+   "hp": 277,
+   "gold": 291,
+   "stats": {
+    "str": 1,
+    "dex": 16,
+    "vit": 7,
+    "int": 1,
+    "wis": 1,
+    "cha": 6,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Katana (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Platinum Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Falchion (T2)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)",
+    "Gold Ring (T1)",
+    "Pendant (T1)"
+   ],
+   "beast": null,
+   "dead": false
+  },
+  {
+   "k": 73,
+   "did": [
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 24,
+   "xp": 619,
+   "hp": 274,
+   "gold": 291,
+   "stats": {
+    "str": 1,
+    "dex": 16,
+    "vit": 7,
+    "int": 1,
+    "wis": 1,
+    "cha": 6,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Katana (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Platinum Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Falchion (T2)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)",
+    "Gold Ring (T1)",
+    "Pendant (T1)"
+   ],
+   "beast": null,
+   "dead": false
+  },
+  {
+   "k": 74,
+   "did": [
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 24,
+   "xp": 619,
+   "hp": 274,
+   "gold": 291,
+   "stats": {
+    "str": 1,
+    "dex": 16,
+    "vit": 7,
+    "int": 1,
+    "wis": 1,
+    "cha": 6,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Katana (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Platinum Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Falchion (T2)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)",
+    "Gold Ring (T1)",
+    "Pendant (T1)"
+   ],
+   "beast": "\"Shimmering Bender\" Minotaur (T5 Bludgeon, lvl 80, 362 HP)",
+   "dead": false
+  },
+  {
+   "k": 75,
+   "did": [
+    "attack to the end"
+   ],
+   "level": 25,
+   "xp": 639,
+   "hp": 94,
+   "gold": 331,
+   "stats": {
+    "str": 1,
+    "dex": 16,
+    "vit": 7,
+    "int": 1,
+    "wis": 1,
+    "cha": 6,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Katana (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Platinum Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Falchion (T2)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)",
+    "Gold Ring (T1)",
+    "Pendant (T1)"
+   ],
+   "beast": null,
+   "dead": false,
+   "levelUp": 25,
+   "slain": "\"Shimmering Bender\" Minotaur (T5 Bludgeon, lvl 80, 362 HP)"
+  },
+  {
+   "k": 76,
+   "did": [
+    "+1 vit",
+    "+1 int",
+    "buy 19 potion(s)",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 25,
+   "xp": 639,
+   "hp": 190,
+   "gold": 274,
+   "stats": {
+    "str": 1,
+    "dex": 16,
+    "vit": 8,
+    "int": 2,
+    "wis": 1,
+    "cha": 6,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Katana (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Platinum Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Falchion (T2)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)",
+    "Gold Ring (T1)",
+    "Pendant (T1)"
+   ],
+   "beast": "\"Glyph Form\" Kelpie (T3 Blade, lvl 67, 106 HP)",
+   "dead": false
+  },
+  {
+   "k": 77,
+   "did": [
+    "flee (stop at 190 HP)"
+   ],
+   "level": 25,
+   "xp": 640,
+   "hp": 190,
+   "gold": 274,
+   "stats": {
+    "str": 1,
+    "dex": 16,
+    "vit": 8,
+    "int": 2,
+    "wis": 1,
+    "cha": 6,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Katana (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Platinum Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Falchion (T2)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)",
+    "Gold Ring (T1)",
+    "Pendant (T1)"
+   ],
+   "beast": null,
+   "dead": false,
+   "escaped": "\"Glyph Form\" Kelpie (T3 Blade, lvl 67, 106 HP)"
+  },
+  {
+   "k": 78,
+   "did": [
+    "buy 11 potion(s)",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 25,
+   "xp": 641,
+   "hp": 295,
+   "gold": 246,
+   "stats": {
+    "str": 1,
+    "dex": 16,
+    "vit": 8,
+    "int": 2,
+    "wis": 1,
+    "cha": 6,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Katana (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Platinum Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Falchion (T2)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)",
+    "Gold Ring (T1)",
+    "Pendant (T1)"
+   ],
+   "beast": null,
+   "dead": false
+  },
+  {
+   "k": 79,
+   "did": [
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 25,
+   "xp": 641,
+   "hp": 294,
+   "gold": 246,
+   "stats": {
+    "str": 1,
+    "dex": 16,
+    "vit": 8,
+    "int": 2,
+    "wis": 1,
+    "cha": 6,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Katana (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Platinum Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Falchion (T2)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)",
+    "Gold Ring (T1)",
+    "Pendant (T1)"
+   ],
+   "beast": "\"Apocalypse Sun\" Bigfoot (T2 Bludgeon, lvl 66, 221 HP)",
+   "dead": false
+  },
+  {
+   "k": 80,
+   "did": [
+    "flee (stop at 294 HP)"
+   ],
+   "level": 25,
+   "xp": 642,
+   "hp": 294,
+   "gold": 246,
+   "stats": {
+    "str": 1,
+    "dex": 16,
+    "vit": 8,
+    "int": 2,
+    "wis": 1,
+    "cha": 6,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Katana (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Platinum Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Falchion (T2)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)",
+    "Gold Ring (T1)",
+    "Pendant (T1)"
+   ],
+   "beast": null,
+   "dead": false,
+   "escaped": "\"Apocalypse Sun\" Bigfoot (T2 Bludgeon, lvl 66, 221 HP)"
+  },
+  {
+   "k": 81,
+   "did": [
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 25,
+   "xp": 642,
+   "hp": 294,
+   "gold": 246,
+   "stats": {
+    "str": 1,
+    "dex": 16,
+    "vit": 8,
+    "int": 2,
+    "wis": 1,
+    "cha": 6,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Katana (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Platinum Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Falchion (T2)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)",
+    "Gold Ring (T1)",
+    "Pendant (T1)"
+   ],
+   "beast": "\"Horror Tear\" Mantis (T3 Magic, lvl 70, 341 HP)",
+   "dead": false
+  },
+  {
+   "k": 82,
+   "did": [
+    "flee (stop at 294 HP)"
+   ],
+   "level": 25,
+   "xp": 643,
+   "hp": 294,
+   "gold": 246,
+   "stats": {
+    "str": 1,
+    "dex": 16,
+    "vit": 8,
+    "int": 2,
+    "wis": 1,
+    "cha": 6,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Katana (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Platinum Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Falchion (T2)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)",
+    "Gold Ring (T1)",
+    "Pendant (T1)"
+   ],
+   "beast": null,
+   "dead": false,
+   "escaped": "\"Horror Tear\" Mantis (T3 Magic, lvl 70, 341 HP)"
+  },
+  {
+   "k": 83,
+   "did": [
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 25,
+   "xp": 664,
+   "hp": 291,
+   "gold": 246,
+   "stats": {
+    "str": 1,
+    "dex": 16,
+    "vit": 8,
+    "int": 2,
+    "wis": 1,
+    "cha": 6,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Katana (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Platinum Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Falchion (T2)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)",
+    "Gold Ring (T1)",
+    "Pendant (T1)"
+   ],
+   "beast": null,
+   "dead": false
+  },
+  {
+   "k": 84,
+   "did": [
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 25,
+   "xp": 675,
+   "hp": 292,
+   "gold": 246,
+   "stats": {
+    "str": 1,
+    "dex": 16,
+    "vit": 8,
+    "int": 2,
+    "wis": 1,
+    "cha": 6,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Katana (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Platinum Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Falchion (T2)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)",
+    "Gold Ring (T1)",
+    "Pendant (T1)"
+   ],
+   "beast": null,
+   "dead": false
+  },
+  {
+   "k": 85,
+   "did": [
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 26,
+   "xp": 676,
+   "hp": 292,
+   "gold": 251,
+   "stats": {
+    "str": 1,
+    "dex": 16,
+    "vit": 8,
+    "int": 2,
+    "wis": 1,
+    "cha": 6,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Katana (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Platinum Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Falchion (T2)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)",
+    "Gold Ring (T1)",
+    "Pendant (T1)"
+   ],
+   "beast": null,
+   "dead": false,
+   "levelUp": 26
+  },
+  {
+   "k": 86,
+   "did": [
+    "+1 dex",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 26,
+   "xp": 686,
+   "hp": 289,
+   "gold": 251,
+   "stats": {
+    "str": 1,
+    "dex": 17,
+    "vit": 8,
+    "int": 2,
+    "wis": 1,
+    "cha": 6,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Katana (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Platinum Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Falchion (T2)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)",
+    "Gold Ring (T1)",
+    "Pendant (T1)"
+   ],
+   "beast": null,
+   "dead": false
+  },
+  {
+   "k": 87,
+   "did": [
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 26,
+   "xp": 687,
+   "hp": 295,
+   "gold": 251,
+   "stats": {
+    "str": 1,
+    "dex": 17,
+    "vit": 8,
+    "int": 2,
+    "wis": 1,
+    "cha": 6,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Katana (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Platinum Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Falchion (T2)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)",
+    "Gold Ring (T1)",
+    "Pendant (T1)"
+   ],
+   "beast": "\"Phoenix Bane\" Rat (T5 Magic, lvl 64, 490 HP)",
+   "dead": false
+  },
+  {
+   "k": 88,
+   "did": [
+    "equip Gold Ring (T1)"
+   ],
+   "level": 26,
+   "xp": 687,
+   "hp": 293,
+   "gold": 251,
+   "stats": {
+    "str": 1,
+    "dex": 17,
+    "vit": 8,
+    "int": 2,
+    "wis": 1,
+    "cha": 6,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Katana (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Falchion (T2)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)",
+    "Platinum Ring (T1)",
+    "Pendant (T1)"
+   ],
+   "beast": "\"Phoenix Bane\" Rat (T5 Magic, lvl 64, 490 HP)",
+   "dead": false,
+   "gearChanged": [
+    "ring: Gold Ring (T1)"
+   ]
+  },
+  {
+   "k": 89,
+   "did": [
+    "attack to the end"
+   ],
+   "level": 26,
+   "xp": 702,
+   "hp": 289,
+   "gold": 302,
+   "stats": {
+    "str": 1,
+    "dex": 17,
+    "vit": 8,
+    "int": 2,
+    "wis": 1,
+    "cha": 6,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Katana (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Gold Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Falchion (T2)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)",
+    "Platinum Ring (T1)",
+    "Pendant (T1)"
+   ],
+   "beast": null,
+   "dead": false,
+   "slain": "\"Phoenix Bane\" Rat (T5 Magic, lvl 64, 490 HP)"
+  },
+  {
+   "k": 90,
+   "did": [
+    "equip Platinum Ring (T1)",
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 26,
+   "xp": 711,
+   "hp": 292,
+   "gold": 302,
+   "stats": {
+    "str": 1,
+    "dex": 17,
+    "vit": 8,
+    "int": 2,
+    "wis": 1,
+    "cha": 6,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Katana (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Platinum Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Falchion (T2)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)",
+    "Gold Ring (T1)",
+    "Pendant (T1)"
+   ],
+   "beast": null,
+   "dead": false,
+   "gearChanged": [
+    "ring: Platinum Ring (T1)"
+   ]
+  },
+  {
+   "k": 91,
+   "did": [
+    "explore (stop at 1 dmg) till gold"
+   ],
+   "level": 26,
+   "xp": 711,
+   "hp": 70,
+   "gold": 302,
+   "stats": {
+    "str": 1,
+    "dex": 17,
+    "vit": 8,
+    "int": 2,
+    "wis": 1,
+    "cha": 6,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Katana (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Platinum Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Falchion (T2)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)",
+    "Gold Ring (T1)",
+    "Pendant (T1)"
+   ],
+   "beast": "\"Foe Bite\" Jiangshi (T3 Magic, lvl 76, 594 HP)",
+   "dead": false
+  },
+  {
+   "k": 92,
+   "did": [
+    "flee (stop at 70 HP)"
+   ],
+   "level": 26,
+   "xp": 711,
+   "hp": 2,
+   "gold": 302,
+   "stats": {
+    "str": 1,
+    "dex": 17,
+    "vit": 8,
+    "int": 2,
+    "wis": 1,
+    "cha": 6,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Katana (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Platinum Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Falchion (T2)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)",
+    "Gold Ring (T1)",
+    "Pendant (T1)"
+   ],
+   "beast": "\"Foe Bite\" Jiangshi (T3 Magic, lvl 76, 594 HP)",
+   "dead": false
+  },
+  {
+   "k": 93,
+   "did": [
+    "flee (stop at 2 HP)"
+   ],
+   "level": 26,
+   "xp": 711,
+   "hp": 0,
+   "gold": 302,
+   "stats": {
+    "str": 1,
+    "dex": 17,
+    "vit": 8,
+    "int": 2,
+    "wis": 1,
+    "cha": 6,
+    "luck": 0
+   },
+   "gear": {
+    "weapon": "Katana (T1)",
+    "chest": "Divine Robe (T1)",
+    "head": "Crown (T1)",
+    "waist": "Brightsilk Sash (T1)",
+    "foot": "Divine Slippers (T1)",
+    "hand": "Divine Gloves (T1)",
+    "neck": "Amulet (T1)",
+    "ring": "Platinum Ring (T1)"
+   },
+   "bag": [
+    "Holy Gauntlets (T1)",
+    "War Belt (T2)",
+    "Grimoire (T1)",
+    "DragonsCrown (T2)",
+    "Warhammer (T1)",
+    "Falchion (T2)",
+    "Demon Husk (T1)",
+    "Demonhide Boots (T1)",
+    "DemonsHands (T1)",
+    "Ornate Belt (T1)",
+    "Holy Chestplate (T1)",
+    "Gold Ring (T1)",
+    "Pendant (T1)"
+   ],
+   "beast": "\"Foe Bite\" Jiangshi (T3 Magic, lvl 76, 594 HP)",
+   "dead": true,
+   "killedBy": "\"Foe Bite\" Jiangshi (T3 Magic, lvl 76, 594 HP)"
+  }
+ ],
+ "updated": "2026-11-20T20:50:55.675Z"
+}
