@@ -27,6 +27,7 @@ const COMMANDS: Record<string, string> = {
   contract: 'Inspect live mainnet contracts: ABI and view calls (--address 0x.. --call name:arg,arg)',
   pvp: 'PvP Dungeons with the invited Game Account: submit/claim earlier tables, play today\'s table (--live, --max-games runs, --minutes)',
   'http-get': 'GET public JSON endpoints and print status and body (--address url, repeatable)',
+  'v2-story': 'The story of one V2 game packet by packet from the chain: actions, levels, gear, beasts, death (--game id, --core 0x..)',
   'pvp-check': 'Read-only PvP entry diagnosis: table entries, entry extension, enter_tournament simulated from the Game Account (--ids table, --address account)',
   'rpc-probe': 'Raw answers of the RPC endpoints (chainId, specVersion, Cartridge paymaster) to see which still speak JSON-RPC',
   'v2-dryrun': 'Dry-run the bot\'s next move in a game and print why the core would reject it (--game id,id)',
@@ -271,6 +272,11 @@ async function main(): Promise<void> {
         maxRuns: num(values['max-games'], 10),
         minutes: num(values.minutes, 240),
       });
+      break;
+    }
+    case 'v2-story': {
+      const { runV2StoryCommand } = await import('./commands/v2-story.ts');
+      await runV2StoryCommand({ game: str(values.game, ''), core: str(values.core, '') || undefined, dataDir: str(values.data, process.env.BOT_DATA_DIR ?? 'site/data') });
       break;
     }
     case 'pvp-check': {
