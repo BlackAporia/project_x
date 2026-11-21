@@ -1,0 +1,568 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Loot Dungeon run video</title>
+<style>html,body{margin:0;background:#000}canvas{display:block}</style>
+</head>
+<body>
+<canvas id="c" width="1920" height="1080"></canvas>
+<script src="data.js"></script>
+<script src="timing.js"></script>
+<script>
+const W = 1920, H = 1080;
+const C = window.T.cues;
+/** duration of the scene being drawn (set by render) */
+let D = 0;
+const c = document.getElementById('c');
+const g = c.getContext('2d');
+const SERIF = '"Liberation Serif","DejaVu Serif",serif';
+const MONO = '"JetBrains Mono","DejaVu Sans Mono",monospace';
+const SANS = '"Liberation Sans","DejaVu Sans",sans-serif';
+const GOLD = '#d9a520', WHITE = '#f2efe6', GREY = '#8d887c', DIM = '#55514a', RED = '#d4483c', MEGA = '#c792ff';
+const TIERC = { 1: '#e3b341', 2: '#c9ced6', 3: '#7fb0e0', 4: '#8fcf8a', 5: '#a39e93' };
+
+const card = new Image();
+card.src = 'surtr.png';
+const megasImg = new Image();
+megasImg.src = 'megas-cover.png';
+
+const clamp = (x, a = 0, b = 1) => Math.max(a, Math.min(b, x));
+const ease = (x) => { x = clamp(x); return x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2; };
+const out = (x) => 1 - Math.pow(1 - clamp(x), 3);
+const back = (x) => { x = clamp(x); const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
+/** fade in from a, hold, fade out by b (local scene time) */
+const vis = (t, a, b = 1e9, fi = 0.45, fo = 0.45) => (t < a || t > b ? 0 : Math.min(clamp((t - a) / fi), clamp((b - t) / fo)));
+const lerp = (a, b, x) => a + (b - a) * x;
+
+function txt(s, x, y, o = {}) {
+  const { size = 48, font = SERIF, color = WHITE, align = 'center', alpha = 1, weight = '', base = 'middle', italic = false, shadow = 0 } = o;
+  if (alpha <= 0) return 0;
+  g.save();
+  g.globalAlpha *= alpha;
+  g.fillStyle = color;
+  g.font = `${italic ? 'italic ' : ''}${weight} ${size}px ${font}`;
+  g.textAlign = align;
+  g.textBaseline = base;
+  if (shadow) { g.shadowColor = color; g.shadowBlur = shadow; }
+  g.fillText(s, x, y);
+  const w = g.measureText(s).width;
+  g.restore();
+  return w;
+}
+/** text made of [string, color] runs, laid out from a centre or left point */
+function runs(parts, x, y, o = {}) {
+  const { size = 48, font = SERIF, align = 'center', alpha = 1, weight = '' } = o;
+  g.save();
+  g.font = `${weight} ${size}px ${font}`;
+  const widths = parts.map(([s]) => g.measureText(s).width);
+  const total = widths.reduce((a, b) => a + b, 0);
+  let cx = align === 'center' ? x - total / 2 : align === 'right' ? x - total : x;
+  g.restore();
+  parts.forEach(([s, col], i) => { txt(s, cx, y, { size, font, color: col, align: 'left', alpha, weight }); cx += widths[i]; });
+}
+function wrap(s, x, y, maxW, o = {}) {
+  const { size = 40, lh = 1.35 } = o;
+  g.save();
+  g.font = `${o.weight ?? ''} ${size}px ${o.font ?? SERIF}`;
+  const words = s.split(' ');
+  const lines = [];
+  let line = '';
+  for (const w of words) {
+    const test = line ? line + ' ' + w : w;
+    if (g.measureText(test).width > maxW && line) { lines.push(line); line = w; } else line = test;
+  }
+  if (line) lines.push(line);
+  g.restore();
+  lines.forEach((l, i) => txt(l, x, y + i * size * lh, o));
+  return lines.length;
+}
+function rect(x, y, w, h, o = {}) {
+  const { fill, stroke, lw = 2, r = 0, alpha = 1, glow = 0 } = o;
+  if (alpha <= 0) return;
+  g.save();
+  g.globalAlpha *= alpha;
+  g.beginPath();
+  g.roundRect(x, y, w, h, r);
+  if (glow) { g.shadowColor = stroke ?? fill; g.shadowBlur = glow; }
+  if (fill) { g.fillStyle = fill; g.fill(); }
+  if (stroke) { g.strokeStyle = stroke; g.lineWidth = lw; g.stroke(); }
+  g.restore();
+}
+function hpBar(x, y, w, h, from, to, max, prog, alpha, color = RED) {
+  const v = lerp(from, to, prog);
+  rect(x, y, w, h, { stroke: '#3a3630', lw: 2, r: 6, alpha });
+  rect(x + 3, y + 3, Math.max(0, (w - 6) * v / max), h - 6, { fill: color, r: 4, alpha });
+  txt(`${Math.round(v)} HP`, x + w + 24, y + h / 2, { size: 34, font: MONO, align: 'left', alpha, color: WHITE });
+}
+
+// deterministic noise in [0, 1)
+const hash = (i, k = 0) => { const x = Math.sin(i * 127.1 + k * 311.7) * 43758.5453; return x - Math.floor(x); };
+const BPM = 112, BEAT = 60 / BPM;
+/** 1 on every beat, decaying fast (only where the music has drums) */
+function pulse(t) {
+  const SCn = window.T.scenes;
+  if (t < SCn.bag[0] || t >= SCn.outro[0] || (t >= SCn.death[0] && t < SCn.death[1])) return 0;
+  return Math.exp(-((t - SCn.bag[0]) % BEAT) * 9);
+}
+/** slow golden dust drifting up */
+function dust(t, red) {
+  g.save();
+  for (let i = 0; i < 70; i++) {
+    const sp = 18 + hash(i, 1) * 40;
+    const x = (hash(i, 2) * W + Math.sin(t * 0.4 + i) * 30 + W) % W;
+    const y = H - ((hash(i, 3) * (H + 80) + t * sp) % (H + 80)) + 40;
+    const r = 0.8 + hash(i, 4) * 2.2;
+    const tw = 0.35 + 0.65 * Math.abs(Math.sin(t * (0.8 + hash(i, 5) * 2) + i));
+    g.globalAlpha = 0.18 * tw + 0.1 * pulse(t);
+    g.fillStyle = red ? '#ff8a6a' : (i % 5 === 0 ? MEGA : GOLD);
+    g.beginPath(); g.arc(x, y, r, 0, Math.PI * 2); g.fill();
+  }
+  g.restore();
+}
+/** a burst of sparkles from (cx, cy) starting at t0 */
+function sparkle(cx, cy, t0, t, color = GOLD, n = 26, spread = 160) {
+  const k = t - t0;
+  if (k < 0 || k > 1.4) return;
+  g.save();
+  for (let i = 0; i < n; i++) {
+    const ang = hash(i, 7 + cx) * Math.PI * 2;
+    const dist = out(k / 1.1) * spread * (0.4 + hash(i, 8 + cy) * 0.8);
+    const x = cx + Math.cos(ang) * dist, y = cy + Math.sin(ang) * dist + k * k * 40;
+    const sz = (1 - k / 1.4) * (2 + hash(i, 9) * 4);
+    g.globalAlpha = clamp(1 - k / 1.4);
+    g.fillStyle = i % 3 === 0 ? '#fff6d8' : color;
+    g.shadowColor = color; g.shadowBlur = 10;
+    g.beginPath();
+    g.moveTo(x, y - sz * 2); g.lineTo(x + sz * 0.6, y); g.lineTo(x, y + sz * 2); g.lineTo(x - sz * 0.6, y); g.closePath();
+    g.fill();
+  }
+  g.restore();
+}
+
+// film grain, made once (seeded) and shifted every frame
+const grain = document.createElement('canvas');
+grain.width = 512; grain.height = 512;
+{
+  const gc = grain.getContext('2d');
+  const id = gc.createImageData(512, 512);
+  let s = 1234567;
+  for (let i = 0; i < id.data.length; i += 4) {
+    s = (s * 1103515245 + 12345) & 0x7fffffff;
+    const v = s % 255;
+    id.data[i] = id.data[i + 1] = id.data[i + 2] = v;
+    id.data[i + 3] = 18;
+  }
+  gc.putImageData(id, 0, 0);
+}
+function background(t, tint = null) {
+  g.fillStyle = '#050505';
+  g.fillRect(0, 0, W, H);
+  const rg = g.createRadialGradient(W / 2, H / 2, 200, W / 2, H / 2, 1150);
+  const pb = pulse(t);
+  rg.addColorStop(0, tint ?? `rgb(${Math.round(21 + 10 * pb)},${Math.round(18 + 8 * pb)},${Math.round(12 + 3 * pb)})`);
+  rg.addColorStop(1, '#020202');
+  g.fillStyle = rg;
+  g.fillRect(0, 0, W, H);
+  const ox = Math.floor((t * 37) % 512), oy = Math.floor((t * 53) % 512);
+  g.save();
+  g.translate(-ox, -oy);
+  g.fillStyle = g.createPattern(grain, 'repeat');
+  g.fillRect(0, 0, W + 512, H + 512);
+  g.restore();
+  dust(t, !!tint);
+}
+function chapter(label, alpha) {
+  txt(label, 80, 70, { size: 26, font: MONO, color: GOLD, align: 'left', alpha: alpha * 0.9 });
+}
+
+// ------------------------------------------------------------------ scenes
+const BAG = [
+  ['Falchion', 2], ['Demon Husk', 1], ["Dragon's Crown", 2], ['War Belt', 2],
+  ['Divine Slippers', 1], ['Holy Gauntlets', 1], ['Amulet', 1], ['Gold Ring', 1],
+];
+const FINAL = [
+  ['Katana', 1], ['Divine Robe', 1], ['Crown', 1], ['Brightsilk Sash', 1],
+  ['Divine Slippers', 1], ['Divine Gloves', 1], ['Amulet', 1], ['Platinum Ring', 1],
+];
+const SLOTS = ['WEAPON', 'CHEST', 'HEAD', 'WAIST', 'FOOT', 'HAND', 'NECK', 'RING'];
+
+function sHook(t) {
+  txt("I've never owned a Loot bag.", W / 2, 400, { size: 76, alpha: vis(t, 0.3, 6.6) });
+  txt('So I bought one run.', W / 2, 510, { size: 76, alpha: vis(t, 1.9, 6.6) });
+  const a = vis(t, 3.4, 6.6, 0.3);
+  if (a > 0) {
+    const s = back((t - 3.4) / 0.6);
+    g.save();
+    g.translate(W / 2, 680);
+    g.scale(lerp(0.6, 1, s), lerp(0.6, 1, s));
+    txt('51 $SURVIVOR', 0, 0, { size: 150, font: MONO, color: GOLD, alpha: a, weight: 'bold', shadow: 30 });
+    g.restore();
+  }
+  txt("Here's everything that happened, straight from the chain.", W / 2, 840, { size: 36, color: GREY, alpha: vis(t, 5.0, 6.6), italic: true });
+}
+
+function sBag(t) {
+  const a = vis(t, 0, 9.6);
+  chapter('01 · THE BAG', a);
+  const x = 230, y = 200, s = 660;
+  rect(x, y, s, s, { fill: '#000', stroke: '#e9e5da', lw: 2, alpha: a });
+  txt('LOOT BAG #7876', x, y - 34, { size: 28, font: MONO, color: GOLD, align: 'left', alpha: a });
+  BAG.forEach(([name, tier], i) => {
+    const ti = 0.8 + i * 0.45;
+    const n = Math.floor(clamp((t - ti) / 0.35) * name.length);
+    if (n <= 0) return;
+    txt(name.slice(0, n), x + 44, y + 80 + i * 72, { size: 44, align: 'left', alpha: a, base: 'middle' });
+    if (n >= name.length) txt(`T${tier}`, x + s - 44, y + 80 + i * 72, { size: 26, font: MONO, color: TIERC[tier], align: 'right', alpha: a * vis(t, ti + 0.35, 99, 0.3) });
+  });
+  const rx = 1010;
+  txt('In the Loot Dungeon,', rx, 360, { size: 66, align: 'left', alpha: vis(t, 1.2, 9.6) });
+  runs([['your bag is your ', WHITE], ['build.', GOLD]], rx, 450, { size: 66, align: 'left', alpha: vis(t, 1.8, 9.6) });
+  wrap('You start the run wearing its exact eight items: the same weapon, armor and jewelry written on the bag.', rx, 570, 760, { size: 38, color: GREY, align: 'left', alpha: vis(t, 3.0, 9.6) });
+  txt('Loot (for Adventurers) · 2021 · 8,000 bags · fully onchain · CC0', rx, 790, { size: 26, font: MONO, color: DIM, align: 'left', alpha: vis(t, 5.0, 9.6) });
+}
+
+function sWays(t) {
+  const a = vis(t, 0, 7.6);
+  chapter('02 · GETTING IN', a);
+  txt('Two ways in', W / 2, 190, { size: 72, alpha: a });
+  const panel = (x, title, lines, accent, d, extra) => {
+    const pa = vis(t, d, 7.6);
+    const dy = (1 - out((t - d) / 0.6)) * 40;
+    rect(x, 290 + dy, 760, 560, { fill: '#0c0b09', stroke: accent, lw: 2, r: 18, alpha: pa });
+    txt(title, x + 50, 360 + dy, { size: 34, font: MONO, color: accent, align: 'left', alpha: pa });
+    lines.forEach((l, i) => txt(l, x + 50, 450 + dy + i * 66, { size: 42, align: 'left', alpha: pa }));
+    extra && extra(pa, dy);
+  };
+  panel(160, 'HOLD A BAG', ['Prove you own it', 'Play free: 1 run every 23 h', 'The bag never leaves', 'your Ethereum wallet'], GREY, 0.6);
+  panel(1000, 'NO BAG  ·  MY WAY IN', ['Buy an entry in the', 'Loot bag pool with $SURVIVOR', "Play a real bag's run"], GOLD, 1.6, (pa, dy) => {
+    txt('51 $SURVIVOR', 1050, 700 + dy, { size: 84, font: MONO, color: GOLD, align: 'left', alpha: pa * vis(t, 2.8, 99), weight: 'bold' });
+    txt('you can sell the adventurer back anytime', 1050, 790 + dy, { size: 28, color: GREY, align: 'left', alpha: pa * vis(t, 3.4, 99), italic: true });
+  });
+}
+
+function sGear(t) {
+  const a = vis(t, 0, 7.6);
+  chapter('03 · THE KIT', a);
+  txt('From bag gear to a full T1 kit', W / 2, 170, { size: 66, alpha: a });
+  const col = (x, title, items, d) => {
+    txt(title, x, 270, { size: 28, font: MONO, color: GOLD, align: 'left', alpha: vis(t, d, 7.6) });
+    items.forEach(([n, tier], i) => {
+      const ia = vis(t, d + 0.15 + i * 0.12, 7.6, 0.3);
+      txt(SLOTS[i], x, 340 + i * 62, { size: 22, font: MONO, color: DIM, align: 'left', alpha: ia });
+      txt(n, x + 150, 340 + i * 62, { size: 40, align: 'left', alpha: ia });
+      txt(`T${tier}`, x + 640, 340 + i * 62, { size: 26, font: MONO, color: TIERC[tier], align: 'right', alpha: ia });
+    });
+  };
+  col(190, 'MOVE 1 · FROM THE BAG', BAG, 0.4);
+  const arr = vis(t, 1.6, 7.6);
+  txt('→', W / 2, 560, { size: 120, color: GOLD, alpha: arr });
+  col(1090, 'MOVE 93 · WHAT I DIED IN', FINAL, 1.9);
+  runs([['13 items bought  ·  ', GREY], ['103 potions', WHITE], ['  ·  656 gold earned', GREY]], W / 2, 920, { size: 36, font: MONO, alpha: vis(t, 3.4, 7.6) });
+}
+
+// run chart: time keys -> moves revealed
+const CK = C.chartKeys;
+const KEYS = [[0, 0], [CK[2][0], 3], [CK[3][0], 14], [CK[3][0] + 2.3, 21], [CK[5][0] - 0.8, 37], [CK[5][0] + 1.8, 43], [CK[7][0], 57], [CK[8][0] - 0.9, 71]];
+const MARKS = [
+  [3, 'Move 3 · first kill, level 2'],
+  [14, 'Move 14 · first collectable beast: "Maelstrom Bender" Brownie, T5'],
+  [21, 'Moves 13–21 · first shopping trips: T1 gloves, sash and crown'],
+  [37, 'Move 37 · fled a 300 HP beast at level 16. DEX pays off'],
+  [43, 'Move 43 · Katana + Divine Robe: the T1 kit takes shape'],
+  [57, 'Move 57 · "Brood Glow" Tengu, level 55. Today it is a Mega'],
+  [71, 'Move 71 · "Apocalypse Shadow" Surtr, T1 Brute: 256 → 78 HP. Won.'],
+  [75, 'Move 75 · a level-80 Bugbear at my level 24: 274 → 94 HP. Won.'],
+  [91, 'Move 91 · one explore, one ambush: 292 → 70 HP'],
+  [93, 'Move 93 · two flees fail. Dead at level 26.'],
+];
+function movesAt(t) {
+  for (let i = 1; i < KEYS.length; i++) {
+    const [t0, m0] = KEYS[i - 1], [t1, m1] = KEYS[i];
+    if (t <= t1) return lerp(m0, m1, ease((t - t0) / (t1 - t0)));
+  }
+  return KEYS[KEYS.length - 1][1];
+}
+function sChart(t) {
+  const a = vis(t, 0, D - 0.25);
+  chapter('04 · THE RUN · 93 MOVES', a);
+  const { lv, hp } = window.RUN;
+  const X0 = 170, X1 = 1760, Y0 = 170, Y1 = 700;
+  const mx = (k) => lerp(X0, X1, (k - 1) / 92);
+  const ly = (l) => lerp(Y1, Y0, l / 28);
+  const hy = (h) => lerp(Y1, Y0 + 120, h / 300);
+  g.save();
+  g.globalAlpha = a;
+  // grid
+  g.strokeStyle = '#1d1b17';
+  g.lineWidth = 1;
+  for (let l = 0; l <= 25; l += 5) {
+    g.beginPath(); g.moveTo(X0, ly(l)); g.lineTo(X1, ly(l)); g.stroke();
+    txt(`L${l}`, X0 - 20, ly(l), { size: 22, font: MONO, color: DIM, align: 'right' });
+  }
+  for (let k = 10; k <= 90; k += 10) txt(String(k), mx(k), Y1 + 30, { size: 20, font: MONO, color: DIM });
+  txt('move', X1 + 24, Y1 + 30, { size: 20, font: MONO, color: DIM, align: 'left' });
+  txt('— level', X1 - 300, Y0 - 30, { size: 24, font: MONO, color: GOLD, align: 'left' });
+  txt('— HP', X1 - 130, Y0 - 30, { size: 24, font: MONO, color: '#a3473f', align: 'left' });
+  const m = movesAt(t);
+  const n = Math.floor(m);
+  const frac = m - n;
+  const path = (arr, fy) => {
+    g.beginPath();
+    for (let k = 1; k <= Math.min(93, n + 1); k++) {
+      let v = arr[k - 1];
+      let x = mx(k);
+      if (k === n + 1 && k <= 93) { v = lerp(arr[k - 2] ?? v, v, frac); x = lerp(mx(k - 1), mx(k), frac); }
+      k === 1 ? g.moveTo(x, fy(v)) : g.lineTo(x, fy(v));
+    }
+  };
+  if (n >= 1) {
+    g.strokeStyle = '#a3473f'; g.lineWidth = 2.5; path(hp, hy); g.stroke();
+    g.strokeStyle = GOLD; g.lineWidth = 5; g.shadowColor = GOLD; g.shadowBlur = 14; path(lv, ly); g.stroke();
+    g.shadowBlur = 0;
+  }
+  g.restore();
+  // markers
+  let current = null;
+  MARKS.forEach(([k, label], i) => {
+    if (m < k) return;
+    const x = mx(k), y = ly(lv[k - 1]);
+    const ma = a * clamp((m - k) * 2 + 0.2);
+    rect(x - 9, y - 9, 18, 18, { fill: k === 93 ? RED : k === 71 ? MEGA : WHITE, r: 9, alpha: ma, glow: 16 });
+    txt(String(i + 1), x, y - 30, { size: 20, font: MONO, color: GREY, alpha: ma });
+    current = [k, label, i];
+  });
+  if (current) {
+    const [k, label] = current;
+    const since = KEYS.find(([, mm]) => mm === k)?.[0] ?? 0;
+    const ca = a * vis(t, since, 99, 0.35);
+    rect(170, 800, 1590, 150, { fill: '#0d0c0a', stroke: k === 93 ? RED : GOLD, lw: 2, r: 16, alpha: ca });
+    txt(label, W / 2, 875, { size: 44, alpha: ca, color: k === 93 ? '#ffb3aa' : WHITE });
+  }
+}
+
+function sSurtr(t) {
+  const E = D - 0.3;
+  const a = vis(t, 0, E);
+  chapter('05 · THE BEAST', a);
+  if (card.complete && card.naturalWidth) {
+    const s = lerp(0.92, 1, out(t / 1.2));
+    const w = 270 * 1.75 * s, h = 372 * 1.75 * s;
+    g.save();
+    g.globalAlpha = a;
+    g.shadowColor = GOLD;
+    g.shadowBlur = 50 + 20 * Math.sin(t * 3);
+    g.drawImage(card, 470 - w / 2, 540 - h / 2, w, h);
+    g.restore();
+  }
+  const x = 900;
+  txt('MOVE 71', x, 230, { size: 30, font: MONO, color: GOLD, align: 'left', alpha: vis(t, 0.3, E) });
+  txt('"Apocalypse Shadow"', x, 310, { size: 50, align: 'left', alpha: vis(t, 0.5, E), italic: true, color: GREY });
+  txt('Surtr', x, 395, { size: 104, align: 'left', alpha: vis(t, 0.6, E), weight: 'bold' });
+  txt('Tier 1 · Brute · level 24 · 359 HP', x, 480, { size: 36, font: MONO, align: 'left', alpha: vis(t, 0.9, E), color: WHITE });
+  const hb = vis(t, 1.4, E);
+  txt('my HP in that one fight', x, 560, { size: 26, font: MONO, color: GREY, align: 'left', alpha: hb });
+  hpBar(x, 585, 600, 42, 256, 78, 300, ease((t - (C.surtrDrop - 2.2)) / 2.2), hb);
+  wrap('One of 30 new beasts. Each named beast is one of a kind: the first adventurer to slay it collects it.', x, 700, 900, { size: 36, align: 'left', color: GREY, alpha: vis(t, 3.0, E) });
+  const ma = vis(t, C.surtrMega - 0.2, E);
+  sparkle(x + 100, 873, C.surtrMega - 0.1, t, MEGA, 30, 190);
+  sparkle(470, 300, C.surtrMega - 0.05, t, GOLD, 30, 260);
+  rect(x, 840, 200, 64, { fill: '#2a1840', stroke: MEGA, lw: 2, r: 32, alpha: ma, glow: 24 });
+  txt('MEGA', x + 100, 873, { size: 32, font: MONO, color: MEGA, alpha: ma, weight: 'bold' });
+  txt('Staked after the run. It has already evolved.', x + 230, 873, { size: 32, align: 'left', alpha: ma });
+}
+
+function sDeath(t) {
+  const E = D - 0.3;
+  const a = vis(t, 0, E);
+  chapter('06 · THE END', a);
+  const drop = C.deathDrop - 0.35;
+  const hit = t > drop + 0.3 && t < drop + 0.8 ? (drop + 0.8 - t) * 30 : 0;
+  g.save();
+  g.translate(Math.sin(t * 90) * hit, Math.cos(t * 70) * hit);
+  txt('MOVE 91', W / 2, 220, { size: 30, font: MONO, color: GOLD, alpha: vis(t, 0.2, E) });
+  txt('Exploring with 292 HP.', W / 2, 310, { size: 64, alpha: vis(t, 0.4, E) });
+  hpBar(560, 390, 700, 46, 292, 70, 300, ease((t - drop) / 0.35), vis(t, C.deathAmbush, E));
+  txt('"Foe Bite" Poltergeist', W / 2, 560, { size: 82, color: '#ffb3aa', alpha: vis(t, C.deathName, E), weight: 'bold', shadow: 18 });
+  txt('Tier 3 · Magical · level 76 · 594 HP', W / 2, 645, { size: 38, font: MONO, alpha: vis(t, C.deathName + 0.4, E) });
+  txt('Three times my level. Two flees failed.', W / 2, 740, { size: 46, color: GREY, alpha: vis(t, C.deathName + 1.4, E), italic: true });
+  runs([['Dead at level 26  ·  711 XP  ·  ', WHITE], ['302 gold unspent', GOLD]], W / 2, 860, { size: 44, font: MONO, alpha: vis(t, C.deathDead, E) });
+  g.restore();
+}
+
+const BEASTS = [
+  ['Maelstrom Bender', 'Brownie', 'T5 · Magical · L20', 0],
+  ['Miracle Shadow', 'Kamaitachi', 'T5 · Hunter · L21', 1],
+  ['Miracle Grasp', 'Kikimora', 'T4 · Magical · L44', 0],
+  ['Brood Glow', 'Tengu', 'T4 · Magical · L55', 1],
+  ['Blood Roar', 'Enfield', 'T5 · Hunter · L70', 0],
+  ['Gloom Shadow', 'Leshy', 'T3 · Magical · L57', 0],
+  ['Apocalypse Shadow', 'Surtr', 'T1 · Brute · L24', 1],
+  ['Shimmering Bender', 'Bugbear', 'T5 · Brute · L80', 0],
+  ['Phoenix Bane', 'Brownie', 'T5 · Magical · L64', 0],
+];
+function sHaul(t) {
+  const E = D - 0.3;
+  const a = vis(t, 0, E);
+  chapter('07 · THE HAUL', a);
+  txt('9 beasts collected from one run', W / 2, 150, { size: 64, alpha: a });
+  const FLIP = { 0: 0, 2: 1, 7: 2 }; // Maelstrom Bender, Miracle Grasp, Shimmering Bender: Mega since Nov 21
+  BEASTS.forEach(([ep, name, meta, mega0], i) => {
+    const col = i % 3, row = Math.floor(i / 3);
+    const x = 150 + col * 550, y = 220 + row * 215;
+    const d = 0.5 + i * 0.25;
+    const ca = vis(t, d, E, 0.35);
+    const dy = (1 - out((t - d) / 0.5)) * 30;
+    let mega = mega0, sx = 1, fresh = false;
+    if (i in FLIP) {
+      const f0 = C.haulOther + 0.35 + FLIP[i] * 0.3;
+      const k = clamp((t - f0) / 0.45);
+      sx = Math.abs(Math.cos(k * Math.PI));
+      if (k >= 0.5) { mega = 1; fresh = true; }
+      sparkle(x + 255, y + 92, f0 + 0.22, t, MEGA, 28, 170);
+    } else if (mega0) sparkle(x + 255, y + 92, d + 0.15, t, MEGA, 18, 120);
+    g.save();
+    g.translate(x + 255, 0); g.scale(Math.max(0.02, sx), 1); g.translate(-(x + 255), 0);
+    const accent = mega ? MEGA : GOLD;
+    rect(x, y + dy, 510, 185, { fill: mega ? '#170f22' : '#0e0d0b', stroke: mega ? MEGA : '#4a4234', lw: 2, r: 14, alpha: ca, glow: mega ? 18 : 0 });
+    txt(`"${ep}"`, x + 30, y + dy + 42, { size: 26, color: GREY, align: 'left', alpha: ca, italic: true });
+    txt(name, x + 30, y + dy + 95, { size: 50, align: 'left', alpha: ca, weight: 'bold' });
+    txt(meta, x + 30, y + dy + 150, { size: 24, font: MONO, color: WHITE, align: 'left', alpha: ca });
+    txt(mega ? 'MEGA' : 'EVOLVING', x + 480, y + dy + 42, { size: 22, font: MONO, color: accent, align: 'right', alpha: ca, weight: 'bold' });
+    if (fresh) txt('NEW · NOV 21', x + 480, y + dy + 150, { size: 20, font: MONO, color: MEGA, align: 'right', alpha: ca });
+    g.restore();
+  });
+  const ba = vis(t, C.haulMega, E);
+  runs([['3 of the first ', WHITE], ['22 Mega beasts', MEGA], [' in the whole dungeon are mine.', WHITE]], W / 2, 905, { size: 44, alpha: ba });
+  txt('The other 6 went straight into staking.', W / 2, 970, { size: 32, color: GREY, alpha: vis(t, C.haulOther, C.haulOther + 1.0, 0.3, 0.25), italic: true });
+  runs([['Update, Nov 21: ', GREY], ['3 more are already Mega', MEGA], ['. The last 3 evolve today.', GREY]], W / 2, 970, { size: 32, alpha: vis(t, C.haulOther + 1.05, E, 0.3) });
+}
+
+const TIPS = [
+  ['Read the bag before you buy the run', 'Your bag is your opening hand. Mine: a T2 Falchion and mixed T1/T2 armor. The weapon decides your first fights.', 'bag #7876 · 51 $SURVIVOR'],
+  ['Carry all three weapon types', 'Blade beats Magical beasts. Bludgeon beats Hunters. Magic beats Brutes. Switch before you swing.', 'I switched weapons mid-fight 7 times'],
+  ['Rings are tools, not loot', 'The Platinum Ring adds damage. Put the Gold Ring on for the killing blow: more gold from the kill.', '5 ring swaps in one run'],
+  ['DEX is your escape key', 'Running from a beast twice your level is a strategy, not a loss.', '17 of 35 stat points in DEX · 10 of 13 escapes worked'],
+  ['Spend gold before you explore', 'One step at level 26 cost me 222 HP. Gold in your pocket cannot save you.', 'died with 302 gold unspent'],
+  ['Staking is a bet', 'While a beast evolves into its Mega form, anyone who slays the same beast takes it. Only 207 Mega spots per beast.', '12 beasts already taken mid-evolution'],
+];
+function sTips(t) {
+  const E = D - 0.3;
+  const a = vis(t, 0, E);
+  chapter('08 · WHAT I LEARNED', a);
+  const st = C.tipStarts;
+  txt('What I learned', W / 2, 520, { size: 96, alpha: vis(t, 0.1, st[0] - 0.05, 0.4, 0.3) });
+  let i = -1;
+  for (let k = 0; k < st.length; k++) if (t >= st[k]) i = k;
+  if (i >= 0) {
+    const from = st[i], to = i + 1 < st.length ? st[i + 1] : E;
+    const lt = t - from;
+    const [title, body, stat] = TIPS[i];
+    const ta = a * vis(t, from, to - 0.02, 0.35, 0.3);
+    const dx = (1 - out(lt / 0.5)) * 60;
+    txt(`TIP ${i + 1} / ${TIPS.length}`, 200 + dx, 300, { size: 32, font: MONO, color: GOLD, align: 'left', alpha: ta });
+    txt(title, 200 + dx, 400, { size: 80, align: 'left', alpha: ta, weight: 'bold' });
+    wrap(body, 200 + dx, 520, 1450, { size: 44, align: 'left', color: '#d8d3c6', alpha: ta });
+    rect(200 + dx, 760, 18, 70, { fill: GOLD, alpha: ta });
+    txt(stat, 250 + dx, 796, { size: 36, font: MONO, color: GOLD, align: 'left', alpha: ta * vis(lt, 0.6, 99, 0.3) });
+  }
+  for (let k = 0; k < TIPS.length; k++) rect(W / 2 - 150 + k * 52, 980, 36, 8, { fill: k <= i ? GOLD : '#2b2822', r: 4, alpha: a });
+}
+
+const NUMS = [
+  [501, 'runs on the leaderboard'], [1353, 'beasts collected'], [824, 'staked to evolve'],
+  [22, 'Mega beasts so far'], [12, 'taken mid-evolution'], [1695, 'XP · best run'],
+];
+function sNums(t) {
+  const E = D - 0.3;
+  const a = vis(t, 0, E);
+  chapter('09 · THE DUNGEON SO FAR', a);
+  txt('Loot Dungeon · first 3 days', W / 2, 160, { size: 66, alpha: a });
+  NUMS.forEach(([v, label], i) => {
+    const col = i % 3, row = Math.floor(i / 3);
+    const x = 200 + col * 520, y = 260 + row * 250;
+    const d = 0.4 + i * 0.2;
+    const na = vis(t, d, E, 0.35);
+    const shown = Math.round(v * out((t - d) / 1.3));
+    rect(x, y, 480, 210, { fill: '#0d0c0a', stroke: '#3b352b', lw: 2, r: 16, alpha: na });
+    txt(shown.toLocaleString('en-US'), x + 240, y + 90, { size: 88, font: MONO, color: i === 3 ? MEGA : GOLD, alpha: na, weight: 'bold' });
+    txt(label, x + 240, y + 165, { size: 32, alpha: na, color: WHITE });
+  });
+  const ma = vis(t, C.numsMine - 0.3, E);
+  sparkle(W / 2, 860, C.numsMine - 0.1, t, GOLD, 34, 320);
+  rect(200, 800, 1520, 120, { fill: '#17130a', stroke: GOLD, lw: 2, r: 16, alpha: ma, glow: 20 });
+  runs([['My first run: ', WHITE], ['711 XP · level 26 · #79 of 501', GOLD], [' · top 16%', WHITE]], W / 2, 860, { size: 36, font: MONO, alpha: ma });
+}
+
+function sMegas(t) {
+  const E = D - 0.3;
+  const a = vis(t, 0, E, 0.5, 0.4);
+  if (megasImg.complete && megasImg.naturalWidth) {
+    const z = lerp(1.0, 1.045, ease(t / D));
+    const w = W * z, h = H * z;
+    g.save();
+    g.globalAlpha = a;
+    g.drawImage(megasImg, (W - w) / 2, (H - h) / 2 - 8 * z, w, h);
+    g.restore();
+  }
+  // sparkles over the six Mega cards, one after another
+  for (let i = 0; i < 6; i++) sparkle(185 + i * 310, 470, 0.5 + i * 0.28, t, i % 2 ? GOLD : MEGA, 24, 150);
+  sparkle(1750, 352, 2.4, t, MEGA, 30, 200);
+  rect(36, 36, 300, 46, { fill: 'rgba(5,5,5,0.75)', r: 8, alpha: a });
+  txt('10 · UPDATE · NOV 21', 56, 59, { size: 24, font: MONO, color: GOLD, align: 'left', alpha: a });
+}
+
+function sOutro(t) {
+  const a = vis(t, 0.2, 99, 0.6);
+  g.save();
+  for (let i = 0; i < 90; i++) {
+    const x = hash(i, 11) * W + Math.sin(t * 2 + i) * 20;
+    const y = -40 + ((hash(i, 12) * 300 + t * (120 + hash(i, 13) * 160)) % (H + 80));
+    g.globalAlpha = 0.55 * a;
+    g.fillStyle = i % 4 === 0 ? MEGA : i % 4 === 1 ? '#fff1c4' : GOLD;
+    g.save(); g.translate(x, y); g.rotate(t * 3 + i);
+    g.fillRect(-4, -2, 8, 4);
+    g.restore();
+  }
+  g.restore();
+  sparkle(W / 2, 545, 1.0, t, GOLD, 30, 380);
+  txt('Your bag is your character.', W / 2, 400, { size: 92, alpha: a });
+  txt('lootsurvivor.io/lootbag', W / 2, 545, { size: 60, font: MONO, color: GOLD, alpha: vis(t, 1.0, 99), shadow: 20 });
+  txt('@LootSurvivor   ·   @lootproject', W / 2, 650, { size: 42, color: WHITE, alpha: vis(t, 1.6, 99) });
+  txt('All numbers from my own onchain run and the Loot Dungeon API · 20 Nov 2026', W / 2, 960, { size: 24, font: MONO, color: DIM, alpha: vis(t, 2.4, 99) });
+}
+
+const SC = window.T.scenes;
+// [slot start, slot end, draw, design length (time-stretched into the slot) or 0 (the scene reads D and the cues)]
+const SCENES = [
+  ['hook', sHook, 7], ['bag', sBag, 10], ['ways', sWays, 8], ['gear', sGear, 8], ['chart', sChart, 0],
+  ['surtr', sSurtr, 0], ['death', sDeath, 0], ['haul', sHaul, 0], ['tips', sTips, 0], ['nums', sNums, 0], ['megas', sMegas, 0], ['outro', sOutro, 0],
+].map(([n, f, design]) => [SC[n][0], SC[n][1], f, design]);
+const DURATION = window.T.total;
+
+window.render = (t) => {
+  const [d0, d1] = SC.death;
+  const death = t >= d0 && t < d1 ? vis(t - d0, 0, d1 - d0, 1, 1) : 0;
+  const tint = 'rgb(' + Math.round(lerp(21, 46, death)) + ',' + Math.round(lerp(18, 10, death)) + ',' + Math.round(lerp(12, 10, death)) + ')';
+  background(t, death > 0 ? tint : null);
+  for (const [a, b, f, design] of SCENES) {
+    if (t < a || t >= b) continue;
+    D = b - a;
+    f(design ? (t - a) * (design / D) : t - a);
+  }
+  const p = clamp(t / DURATION);
+  g.fillStyle = '#1a1814';
+  g.fillRect(0, H - 6, W, 6);
+  g.save();
+  g.shadowColor = GOLD; g.shadowBlur = 6 + 18 * pulse(t);
+  g.fillStyle = GOLD;
+  g.fillRect(0, H - 6, W * p, 6);
+  g.restore();
+  if (t > SC.bag[0] && t < SC.megas[0]) txt('lootsurvivor.io/lootbag', W - 80, 70, { size: 24, font: MONO, color: DIM, align: 'right' });
+};
+window.DURATION = DURATION;
+const loaded = (im) => new Promise((r) => (im.complete && im.naturalWidth ? r() : (im.onload = r)));
+window.ready = document.fonts.ready.then(() => Promise.all([loaded(card), loaded(megasImg)]));
+</script>
+</body>
+</html>

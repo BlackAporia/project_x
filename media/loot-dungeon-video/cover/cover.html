@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Loot Dungeon Megas cover</title>
+<style>
+  :root { --gold: #d9a520; --white: #f2efe6; --grey: #8d887c; --dim: #5d584f; --mega: #c792ff; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1600px; height: 900px; background: #050505; overflow: hidden; }
+  body {
+    font-family: "Liberation Serif", "DejaVu Serif", serif; color: var(--white); position: relative;
+    background:
+      radial-gradient(ellipse 900px 420px at 50% 56%, rgba(150, 90, 230, 0.22), transparent 70%),
+      radial-gradient(ellipse 1100px 700px at 50% 40%, #16120c, #030303 75%);
+  }
+  .mono { font-family: "JetBrains Mono", "DejaVu Sans Mono", monospace; }
+  .top { position: absolute; top: 46px; left: 0; right: 0; text-align: center; font-size: 22px; letter-spacing: 4px; color: var(--gold); }
+  h1 { position: absolute; top: 92px; left: 0; right: 0; text-align: center; font-size: 82px; font-weight: 400; letter-spacing: 0.5px; }
+  .sub { position: absolute; top: 196px; left: 0; right: 0; text-align: center; font-size: 46px; }
+  .sub .m { color: var(--mega); text-shadow: 0 0 24px rgba(199, 146, 255, 0.55); font-weight: 700; }
+  .sub .g { color: var(--grey); font-style: italic; }
+  .hero { position: absolute; top: 292px; left: 50%; transform: translateX(-50%); width: 1500px; }
+  .hero img { width: 1500px; display: block; filter: drop-shadow(0 0 28px rgba(199, 146, 255, 0.35)); border-radius: 10px; }
+  .badge { position: absolute; top: -52px; right: 4px; padding: 6px 16px; border-radius: 22px; background: #22133a; border: 2px solid var(--mega);
+    color: var(--mega); font-size: 20px; letter-spacing: 3px; box-shadow: 0 0 22px rgba(199, 146, 255, 0.5); }
+  .row { position: absolute; top: 660px; left: 50px; right: 50px; display: flex; gap: 22px; justify-content: center; }
+  .evo { display: flex; align-items: center; gap: 16px; padding: 14px 22px 14px 14px; border-radius: 16px; background: rgba(14, 12, 9, 0.92);
+    border: 1px solid #4a4234; width: 470px; }
+  .evo img { width: 72px; height: 72px; border-radius: 50%; }
+  .evo .n { font-size: 26px; }
+  .evo .n i { color: var(--grey); font-size: 21px; }
+  .evo .bar { margin-top: 10px; height: 8px; border-radius: 4px; background: #2b2822; overflow: hidden; width: 330px; }
+  .evo .bar b { display: block; height: 100%; width: 95%; background: linear-gradient(90deg, var(--gold), #f3d27a); }
+  .evo .t { margin-top: 7px; font-size: 16px; color: var(--gold); letter-spacing: 1px; }
+  .done .evo { border-color: var(--mega); box-shadow: 0 0 18px rgba(199, 146, 255, 0.28); }
+  .done .evo .bar b { width: 100%; background: linear-gradient(90deg, #9a6be0, var(--mega)); }
+  .done .evo .t { color: var(--mega); }
+  .foot { position: absolute; bottom: 30px; left: 0; right: 0; text-align: center; }
+  .foot .a { font-size: 25px; color: var(--gold); letter-spacing: 1px; }
+  .foot .b { margin-top: 12px; font-size: 22px; color: var(--grey); }
+</style>
+</head>
+<body>
+  <div class="top mono">LOOT DUNGEON · ONE RUN · BAG #7876</div>
+  <h1>One run. Nine beasts.</h1>
+  <div class="sub" id="sub"></div>
+  <div class="hero">
+    <img src="megas.png" alt="">
+    <div class="badge mono" id="badge">6 × MEGA</div>
+  </div>
+  <div class="row" id="row">
+    <div class="evo"><img src="ic1.png" alt=""><div><div class="n">"Blood Roar" Enfield <i>· Lv 70</i></div><div class="bar"><b></b></div><div class="t mono">EVOLVING · DAY 4 OF 4</div></div></div>
+    <div class="evo"><img src="ic2.png" alt=""><div><div class="n">"Gloom Shadow" Leshy <i>· Lv 57</i></div><div class="bar"><b></b></div><div class="t mono">EVOLVING · DAY 4 OF 4</div></div></div>
+    <div class="evo"><img src="ic3.png" alt=""><div><div class="n">"Phoenix Bane" Brownie <i>· Lv 64</i></div><div class="bar"><b></b></div><div class="t mono">EVOLVING · DAY 4 OF 4</div></div></div>
+  </div>
+  <div class="foot">
+    <div class="a mono">51 $SURVIVOR in · 9 beasts out · 0 left unstaked</div>
+    <div class="b">@LootSurvivor · @lootproject · lootsurvivor.io/lootbag</div>
+  </div>
+<script>
+  // ?v=done: the version for after the last three finish evolving
+  const done = new URLSearchParams(location.search).get('v') === 'done';
+  document.getElementById('sub').innerHTML = done
+    ? '<span class="m">All nine went Mega.</span>'
+    : '<span class="m">6 already Mega.</span> <span class="g">The last 3 finish today.</span>';
+  if (done) {
+    document.body.classList.add('done');
+    document.getElementById('badge').textContent = '9 / 9 MEGA';
+    document.querySelectorAll('.evo .t').forEach((e) => (e.textContent = 'MEGA · EVOLVED NOV 21'));
+  }
+</script>
+</body>
+</html>
