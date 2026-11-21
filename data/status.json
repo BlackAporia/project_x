@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21T12:52:29.118Z",
+ "updated": "2026-11-21T12:52:31.925Z",
  "mode": "mainnet",
  "running": true,
  "runId": "2026-11-21T12-51-37-800Z",
@@ -130,13 +130,27 @@
    "actions": "attack",
    "tx": "0x267b286dff4b355e8d37eb8902bb6916bf21f2927462c96a9e47e5bf6294988",
    "ok": true
+  },
+  {
+   "n": 9,
+   "t": "2026-11-21T12:52:29.119Z",
+   "level": 11,
+   "xp": 128,
+   "hp": 31,
+   "maxHp": 130,
+   "gold": 14,
+   "phase": "battle",
+   "reason": "Flee from Goblin (L11 T1): P(escape)=67.8% P(death)=32.2%; flee value 119.5 vs attack 56.0",
+   "actions": "flee",
+   "tx": "0x339a371a50e5b5b3006291703107d809f07bb81fc924b1e4420e469db5f3f5d",
+   "ok": true
   }
  ],
  "current": {
   "id": "374144419157391711793985745733139762671341050129473",
   "level": 11,
   "xp": 128,
-  "hp": 110,
+  "hp": 31,
   "maxHp": 130,
   "gold": 14,
   "gear": [
@@ -159,6 +173,6 @@
    "luck": 2
   },
   "beast": "Goblin",
-  "lastReason": "Attack Goblin (L11 T1, 42 HP): P(win)=59.3% P(death)=24.5%; attack value 200.0 vs flee 173.0"
+  "lastReason": "Flee from Goblin (L11 T1): P(escape)=67.8% P(death)=32.2%; flee value 119.5 vs attack 56.0"
  }
 }
